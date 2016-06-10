@@ -1,0 +1,1 @@
+C:\Depot\itext\sharp\itext7\samples\itextsharp.samples\obj\Release\itextsharp.samples.csprojResolveAssemblyReference.cache
