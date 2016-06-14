@@ -21,7 +21,7 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
 using iText.Kernel.Pdf.Canvas;
 using iText.Layout;
-using iText.Layout.Property;
+using iText.Layout.Properties;
 using iText.Signatures;
 using NUnit.Framework;
 using Org.BouncyCastle.Pkcs;

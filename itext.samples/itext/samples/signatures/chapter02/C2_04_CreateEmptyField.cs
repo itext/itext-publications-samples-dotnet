@@ -18,6 +18,7 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.Forms;
 using iText.Forms.Fields;
+using iText.Kernel.Colors;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
@@ -25,8 +26,7 @@ using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Xobject;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Layout.Property;
-using iText.Samples.Signatures;
+using iText.Layout.Properties;
 using iText.Signatures;
 using Org.BouncyCastle.Pkcs;
 
@@ -68,14 +68,14 @@ namespace iText.Samples.Signatures.Chapter02
 				mkDictionary = new PdfDictionary();
 			}
 			PdfArray black = new PdfArray();
-			black.Add(new PdfNumber(iText.Kernel.Color.Color.BLACK.GetColorValue()[0]));
-			black.Add(new PdfNumber(iText.Kernel.Color.Color.BLACK.GetColorValue()[1]));
-			black.Add(new PdfNumber(iText.Kernel.Color.Color.BLACK.GetColorValue()[2]));
+			black.Add(new PdfNumber(Color.BLACK.GetColorValue()[0]));
+			black.Add(new PdfNumber(Color.BLACK.GetColorValue()[1]));
+			black.Add(new PdfNumber(Color.BLACK.GetColorValue()[2]));
 			mkDictionary.Put(PdfName.BC, black);
 			PdfArray white = new PdfArray();
-			black.Add(new PdfNumber(iText.Kernel.Color.Color.WHITE.GetColorValue()[0]));
-			black.Add(new PdfNumber(iText.Kernel.Color.Color.WHITE.GetColorValue()[1]));
-			black.Add(new PdfNumber(iText.Kernel.Color.Color.WHITE.GetColorValue()[2]));
+			black.Add(new PdfNumber(Color.WHITE.GetColorValue()[0]));
+			black.Add(new PdfNumber(Color.WHITE.GetColorValue()[1]));
+			black.Add(new PdfNumber(Color.WHITE.GetColorValue()[2]));
 			mkDictionary.Put(PdfName.BG, white);
 			field.GetWidgets()[0].SetAppearanceCharacteristics(mkDictionary);
 			// add the field
@@ -84,9 +84,12 @@ namespace iText.Samples.Signatures.Chapter02
 			Rectangle rect = new Rectangle(0, 0, 200, 100);
 			PdfFormXObject xObject = new PdfFormXObject(rect);
 			PdfCanvas canvas = new PdfCanvas(xObject, pdfDoc);
-			canvas.SetStrokeColor(iText.Kernel.Color.Color.BLUE).SetFillColor(iText.Kernel.Color.Color
-				.LIGHT_GRAY).Rectangle(0.5f, 0.5f, 199.5f, 99.5f).FillStroke().SetFillColor(iText.Kernel.Color.Color
-				.BLUE);
+			canvas
+                .SetStrokeColor(Color.BLUE)
+                .SetFillColor(Color.LIGHT_GRAY)
+                .Rectangle(0.5f, 0.5f, 199.5f, 99.5f)
+                .FillStroke()
+                .SetFillColor(Color.BLUE);
 			new iText.Layout.Canvas(canvas, pdfDoc, rect).ShowTextAligned("SIGN HERE", 100
 				, 50, TextAlignment.CENTER, (float)(Math.PI / 180) * 25);
 			// TODO Acrobat does not render new appearance (Foxit however does)

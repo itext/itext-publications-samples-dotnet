@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using iText.Forms;
 using iText.Forms.Fields;
+using iText.Kernel.Colors;
 using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms {
@@ -19,7 +20,7 @@ namespace iText.Samples.Sandbox.Acroforms {
             {
                 if (name.Key.IndexOf("Total") > 0)
                 {
-                    name.Value.GetWidgets()[0].SetColor(iText.Kernel.Color.Color.RED);
+                    name.Value.GetWidgets()[0].SetColor(Color.RED);
                 }
                 name.Value.SetValue("X");
             }

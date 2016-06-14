@@ -14,6 +14,7 @@ Copyright (c) 1998-2016 iText Group NV
 using System;
 using System.Collections.Generic;
 using System.IO;
+using iText.Kernel.Colors;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.X509;
@@ -58,7 +59,7 @@ namespace iText.Samples.Signatures.Chapter02
 			float width = n0.GetBBox().ToRectangle().GetWidth();
 			float height = n0.GetBBox().ToRectangle().GetHeight();
 			PdfCanvas canvas = new PdfCanvas(n0, signer.GetDocument());
-			canvas.SetFillColor(iText.Kernel.Color.Color.LIGHT_GRAY);
+			canvas.SetFillColor(Color.LIGHT_GRAY);
 			canvas.Rectangle(x, y, width, height);
 			canvas.Fill();
 			// Creating the appearance for layer 2

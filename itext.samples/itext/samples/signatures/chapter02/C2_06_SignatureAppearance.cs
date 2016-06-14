@@ -24,7 +24,6 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Xobject;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Layout.Property;
 using iText.Samples.Signatures;
 using iText.Signatures;
 using Org.BouncyCastle.Pkcs;
