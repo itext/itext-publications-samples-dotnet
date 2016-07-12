@@ -85,6 +85,10 @@
       <Project>{14A163C0-0054-480D-A096-EDA51DD933EA}</Project>
       <Name>itext.sign</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\zugferd\itext\itext.zugferd\itext.zugferd.csproj">
+      <Project>{CF45E61E-A3BC-4B64-AA92-5814AF726286}</Project>
+      <Name>itext.zugferd</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
