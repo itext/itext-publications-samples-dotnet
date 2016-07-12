@@ -8,8 +8,9 @@ Copyright (c) 1998-2016 iText Group NV
 * Part of a set of classes based on a sample database.
 */
 
+using System;
 using System.Collections.Generic;
-using SharpHsql;
+using java.sql;
 
 namespace iText.Samples.Sandbox.Zugferd.Pojo {
     /// <summary>Factory that creates Invoice, Customer, Product, and Item classes.</summary>
@@ -17,72 +18,74 @@ namespace iText.Samples.Sandbox.Zugferd.Pojo {
     public class PojoFactory {
         protected internal static PojoFactory factory = null;
 
+        protected Connection connection;
+
         protected internal Dictionary<int, Customer> customerCache = new Dictionary<int, Customer>();
 
         protected internal Dictionary<int, Product> productCache = new Dictionary<int, Product>();
 
-        private Database db;
-        private Channel channel;
+        protected PreparedStatement getCustomer;
+        protected PreparedStatement getProduct;
+        protected PreparedStatement getItems;
+
+        private static readonly String DB = NUnit.Framework.TestContext.CurrentContext.TestDirectory + " /../../resources/zugferd/db/invoices";
 
         /// <exception cref="System.TypeLoadException"/>
-        /// <exception cref="Java.Sql.SQLException"/>
+        /// <exception cref="SQLException"/>
         private PojoFactory() {
-            // Create an in memory database by creating with the name "."
-            // This has no logging or other disk access
-            db = new Database(".");
-            // The "sa" user is created by default with no password, so we can connect
-            // using this user
-            channel = db.Connect("sa", "");
-            System.Type.GetType("org.hsqldb.jdbcDriver");
-            //connection = DriverManager.GetConnection("jdbc:hsqldb:src/test/resources/zugferd/db/invoices", "SA", "");
-            //getCustomer = connection.PrepareStatement("SELECT * FROM Customer WHERE id = ?");
-            //getProduct = connection.PrepareStatement("SELECT * FROM Product WHERE id = ?");
-            //getItems = connection.PrepareStatement("");
+            DriverManager.registerDriver(new org.hsqldb.jdbcDriver());
+            connection = DriverManager.getConnection("jdbc:hsqldb:" + DB, "SA", "");
+            getCustomer = connection.prepareStatement("SELECT * FROM Customer WHERE id = ?");
+            getProduct = connection.prepareStatement("SELECT * FROM Product WHERE id = ?");
+            getItems = connection.prepareStatement("SELECT * FROM Item WHERE invoiceid = ?");
         }
 
-        /// <exception cref="Java.Sql.SQLException"/>
+        /// <exception cref="SQLException"/>
         public static PojoFactory GetInstance() {
-            if (factory == null || factory.db.IsShutdown) {
+            if (factory == null || factory.connection.isClosed()) {
                 factory = new PojoFactory();
             }
             return factory;
         }
 
-        /// <exception cref="Java.Sql.SQLException"/>
+        /// <exception cref="SQLException"/>
         public virtual void Close() {
-            db.Dispose();
+            connection.close();
         }
 
-        /// <exception cref="Java.Sql.SQLException"/>
+        /// <exception cref="SQLException"/>
         public virtual IList<Invoice> GetInvoices() {
-            IList<Invoice> invoices = new List<Invoice>();
-            //Statement stm = connection.CreateStatement();
-            //ResultSet rs = stm.ExecuteQuery("SELECT * FROM Invoice");
-            //while (rs.Next()) {
-            //    invoices.Add(GetInvoice(rs));
-            //}
-            //stm.Close();
+            List<Invoice> invoices = new List<Invoice>();
+            Statement stm = connection.createStatement();
+            ResultSet rs = stm.executeQuery("SELECT * FROM Invoice");
+            while (rs.next())
+            {
+                invoices.Add(GetInvoice(rs));
+            }
+            stm.close();
             return invoices;
         }
 
-        /// <exception cref="Java.Sql.SQLException"/>
-        public virtual Invoice GetInvoice(Record rs) {
+        /// <exception cref="SQLException"/>
+        public virtual Invoice GetInvoice(ResultSet rs) {
             Invoice invoice = new Invoice();
-            //invoice.SetId(rs.GetInt("id"));
-            //invoice.SetCustomer(GetCustomer(rs.GetInt("customerid")));
-            //IList<Item> items = GetItems(rs.GetInt("id"));
-            //invoice.SetItems(items);
-            //double total = 0;
-            //foreach (Item item in items) {
-            //    total += item.GetCost();
-            //}
-            //invoice.SetTotal(total);
-            //invoice.SetInvoiceDate(rs.GetDate("invoicedate"));
+            invoice.SetId(rs.getInt("id"));
+            invoice.SetCustomer(GetCustomer(rs.getInt("customerid")));
+            IList<Item> items = GetItems(rs.getInt("id"));
+            invoice.SetItems(items);
+            double total = 0;
+            foreach (Item item in items)
+            {
+                total += item.GetCost();
+            }
+            invoice.SetTotal(total);
+            // TODO
+            //invoice.SetInvoiceDate(rs.getDate("invoicedate"));
             return invoice;
         }
 
-        /// <exception cref="Java.Sql.SQLException"/>
-        public virtual Item GetItem(Record rs) {
+        /// <exception cref="SQLException"/>
+        public virtual Item GetItem(ResultSet rs) {
             Item item = new Item();
             //item.SetItem(rs.GetInt("Item"));
             //Product product = GetProduct(rs.GetInt("ProductId"));
@@ -92,7 +95,7 @@ namespace iText.Samples.Sandbox.Zugferd.Pojo {
             return item;
         }
 
-        /// <exception cref="Java.Sql.SQLException"/>
+        /// <exception cref="SQLException"/>
         public virtual Customer GetCustomer(int id) {
             //if (customerCache.Contains(id)) {
             //    return customerCache.Get(id);
@@ -114,7 +117,7 @@ namespace iText.Samples.Sandbox.Zugferd.Pojo {
             return null;
         }
 
-        /// <exception cref="Java.Sql.SQLException"/>
+        /// <exception cref="SQLException"/>
         public virtual Product GetProduct(int id) {
             //if (productCache.Contains(id)) {
             //    return productCache.Get(id);
@@ -133,7 +136,7 @@ namespace iText.Samples.Sandbox.Zugferd.Pojo {
             return null;
         }
 
-        /// <exception cref="Java.Sql.SQLException"/>
+        /// <exception cref="SQLException"/>
         public virtual IList<Item> GetItems(int invoiceid) {
             IList<Item> items = new List<Item>();
             //Result res = db.Execute(String.Format("SELECT * FROM Item WHERE invoiceid = {0}", invoiceid), channel);

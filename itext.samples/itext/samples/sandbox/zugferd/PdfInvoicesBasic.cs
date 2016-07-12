@@ -33,15 +33,15 @@ namespace iText.Samples.Sandbox.Zugferd {
     /// </summary>
     /// <author>Bruno Lowagie</author>
     public class PdfInvoicesBasic : GenericTest {
-        public const String DEST = "./target/test/resources/zugferd/pdfa/basic00000.pdf";
+        public static readonly String DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/zugferd/pdfa/basic00000.pdf";
 
-        public const String DEST_PATTERN = "./target/test/resources/zugferd/pdfa/basic%05d.pdf";
+        public static readonly String DEST_PATTERN = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/zugferd/pdfa/basic%05d.pdf";
 
-        public const String ICC = "./src/test/resources/data/sRGB_CS_profile.icm";
+        public static readonly String ICC = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/data/sRGB_CS_profile.icm";
 
-        public const String FONT = "./src/test/resources/font/OpenSans-Regular.ttf";
+        public static readonly String FONT = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/font/OpenSans-Regular.ttf";
 
-        public const String FONTB = "./src/test/resources/font/OpenSans-Bold.ttf";
+        public static readonly String FONTB = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/font/OpenSans-Bold.ttf";
 
         protected internal PdfFont font;
 
