@@ -14,6 +14,7 @@ using iText.Zugferd.Profiles;
 using iText.Zugferd.Validation.Basic;
 using iText.Zugferd.Validation.Comfort;
 
+// TODO STRING.format
 namespace iText.Samples.Sandbox.Zugferd.Data {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class InvoiceData {
@@ -63,12 +64,12 @@ namespace iText.Samples.Sandbox.Zugferd.Data {
                  });
             profileImp.AddPaymentMeans("", "", "BE 41 7360 0661 9710", "", "", "KREDBEBB", "", "KBC");
             profileImp.AddPaymentMeans("", "", "BE 56 0015 4298 7888", "", "", "GEBABEBB", "", "BNP Paribas");
-            IDictionary<double, double?> taxes = new SortedDictionary<double, double?>();
+            IDictionary<double, double> taxes = new SortedDictionary<double, double>();
             double tax;
             foreach (Item item in invoice.GetItems()) {
                 tax = item.GetProduct().GetVat();
                 if (taxes.ContainsKey(tax)) {
-                    taxes[tax] = taxes.Get(tax) + item.GetCost();
+                    taxes[tax] = taxes[tax] + item.GetCost();
                 }
                 else {
                     taxes[tax] = item.GetCost();
@@ -102,14 +103,14 @@ namespace iText.Samples.Sandbox.Zugferd.Data {
                  }, "", "", "", "", "BE 41 7360 0661 9710", "", "", "", "", "", "KREDBEBB", "", "KBC");
             profileImp.AddPaymentMeans(PaymentMeansCode.PAYMENT_TO_BANK_ACCOUNT, new String[] { "Use this as an alternative account."
                  }, "", "", "", "", "BE 56 0015 4298 7888", "", "", "", "", "", "GEBABEBB", "", "BNP Paribas");
-            IDictionary<double, double?> taxes = new SortedDictionary<double, double?>();
+            IDictionary<double, double> taxes = new SortedDictionary<double, double>();
             double tax;
             int counter = 0;
             foreach (Item item in invoice.GetItems()) {
                 counter++;
                 tax = item.GetProduct().GetVat();
                 if (taxes.ContainsKey(tax)) {
-                    taxes[tax] = taxes.Get(tax) + item.GetCost();
+                    taxes[tax] = taxes[tax] + item.GetCost();
                 }
                 else {
                     taxes[tax] = item.GetCost();
@@ -141,7 +142,7 @@ namespace iText.Samples.Sandbox.Zugferd.Data {
 
         public static double Round(double d) {
             d = d * 100;
-            long tmp = Math.Round(d);
+            long tmp = (long) Math.Round(d);
             return (double)tmp / 100;
         }
 

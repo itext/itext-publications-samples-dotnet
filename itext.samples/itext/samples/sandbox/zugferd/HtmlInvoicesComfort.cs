@@ -12,6 +12,7 @@ using iText.Samples.Sandbox.Zugferd.Pojo;
 using iText.Zugferd;
 using iText.Zugferd.Profiles;
 
+// TODO string format
 namespace iText.Samples.Sandbox.Zugferd
 {
     /// <author>Bruno Lowagie</author>
@@ -32,17 +33,15 @@ namespace iText.Samples.Sandbox.Zugferd
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         /// <exception cref="Javax.Xml.Transform.TransformerException"/>
         public static void Main(String[] args) {
-            FileInfo file = new FileInfo(DEST);
-            file.GetParentFile().Mkdirs();
-            FileInfo css = new FileInfo(CSS);
-            CopyFile(css, new FileInfo(file.GetParentFile(), css.Name));
-            FileInfo logo = new FileInfo(LOGO);
-            CopyFile(logo, new FileInfo(file.GetParentFile(), logo.Name));
+            Directory.CreateDirectory(Directory.GetParent(DEST).FullName);
+            CopyFile(CSS, Directory.GetParent(DEST).FullName + Path.DirectorySeparatorChar + Path.GetFileName(CSS));
+            CopyFile(LOGO, Directory.GetParent(DEST).FullName + Path.DirectorySeparatorChar + Path.GetFileName(LOGO));
             HtmlInvoicesComfort app = new HtmlInvoicesComfort();
             PojoFactory factory = PojoFactory.GetInstance();
             IList<Invoice> invoices = factory.GetInvoices();
             foreach (Invoice invoice in invoices) {
-                app.CreateHtml(invoice, new FileWriter(String.Format(DEST, invoice.GetId())));
+                // TODO
+                //app.CreateHtml(invoice, new FileWriter(String.Format(DEST, invoice.GetId())));
             }
             factory.Close();
         }
@@ -56,22 +55,23 @@ namespace iText.Samples.Sandbox.Zugferd
         public virtual void CreateHtml(Invoice invoice, TextWriter writer) {
             IComfortProfile comfort = new InvoiceData().CreateComfortProfileData(invoice);
             InvoiceDOM dom = new InvoiceDOM(comfort);
-            StreamSource xml = new StreamSource(new MemoryStream(dom.ToXML()));
-            StreamSource xsl = new StreamSource(new FileInfo(XSL));
-            TransformerFactory factory = TransformerFactory.NewInstance();
-            Transformer transformer = factory.NewTransformer(xsl);
-            transformer.Transform(xml, new StreamResult(writer));
+            // TODO
+            //StreamSource xml = new StreamSource(new MemoryStream(dom.ToXML()));
+            //StreamSource xsl = new StreamSource(new FileInfo(XSL));
+            //TransformerFactory factory = TransformerFactory.NewInstance();
+            //Transformer transformer = factory.NewTransformer(xsl);
+            //transformer.Transform(xml, new StreamResult(writer));
             writer.Flush();
             writer.Close();
         }
 
         /// <exception cref="System.IO.IOException"/>
-        private static void CopyFile(FileInfo source, FileInfo dest) {
+        private static void CopyFile(String source, String dest) {
             System.IO.Stream input = new FileStream(source, FileMode.Open, FileAccess.Read);
             System.IO.Stream output = new FileStream(dest, FileMode.Create);
             byte[] buf = new byte[1024];
             int bytesRead;
-            while ((bytesRead = input.Read(buf)) > 0) {
+            while ((bytesRead = input.Read(buf, 0, buf.Length)) > 0) {
                 output.Write(buf, 0, bytesRead);
             }
         }

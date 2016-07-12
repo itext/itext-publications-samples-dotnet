@@ -26,7 +26,6 @@ namespace iText.Samples.Sandbox.Zugferd.Test {
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         /// <exception cref="Java.Text.ParseException"/>
         public static void Main(String[] args) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
             ComfortProfileImp data = new ComfortProfileImp();
             // SpecifiedExchangedDocumentContext
             data.SetTest(true);
@@ -34,7 +33,7 @@ namespace iText.Samples.Sandbox.Zugferd.Test {
             data.SetId("HeaderExchangedDocument.ID");
             data.SetName("HeaderExchangedDocument.Name");
             data.SetTypeCode(DocumentTypeCode.DEBIT_NOTE_FINANCIAL_ADJUSTMENT);
-            data.SetDate(sdf.Parse("2016/04/01"), DateFormatCode.YYYYMMDD);
+            data.SetDate(new DateTime(2016, 04, 01), DateFormatCode.YYYYMMDD);
             data.AddNote(new String[] { "HeaderExchangedDocument.Note[0][0]", "HeaderExchangedDocument.Note[0][1]" }, 
                 FreeTextSubjectCode.REGULATORY_INFORMATION);
             data.AddNote(new String[] { "HeaderExchangedDocument.Note[1][0]", "HeaderExchangedDocument.Note[1][1]" }, 
@@ -72,17 +71,17 @@ namespace iText.Samples.Sandbox.Zugferd.Test {
             data.AddBuyerTaxRegistration(TaxIDTypeCode.FISCAL_NUMBER, "BuyerTradeParty.SpecifiedTaxRegistration.SchemeID[1]"
                 );
             // ApplicableSupplyChainTradeAgreement
-            data.SetBuyerOrderReferencedDocumentIssueDateTime(sdf.Parse("2016/04/02"), DateFormatCode.YYYYMMDD);
+            data.SetBuyerOrderReferencedDocumentIssueDateTime(new DateTime(2016, 04, 02), DateFormatCode.YYYYMMDD);
             data.SetBuyerOrderReferencedDocumentID("ApplicableSupplyChainTradeAgreement.BuyerOrderReferencedDocumentID"
                 );
-            data.SetContractReferencedDocumentIssueDateTime(sdf.Parse("2016/04/03"), DateFormatCode.YYYYMMDD);
+            data.SetContractReferencedDocumentIssueDateTime(new DateTime(2016, 04, 03), DateFormatCode.YYYYMMDD);
             data.SetContractReferencedDocumentID("ApplicableSupplyChainTradeAgreement.ContractReferencedDocument");
-            data.SetCustomerOrderReferencedDocumentIssueDateTime(sdf.Parse("2016/04/04"), DateFormatCode.YYYYMMDD);
+            data.SetCustomerOrderReferencedDocumentIssueDateTime(new DateTime(2016, 04, 04), DateFormatCode.YYYYMMDD);
             data.SetCustomerOrderReferencedDocumentID("ApplicableSupplyChainTradeAgreement.CustomerOrderReferencedDocument"
                 );
             // ApplicableSupplyChainTradeDelivery
-            data.SetDeliveryDate(sdf.Parse("2016/04/05"), DateFormatCode.YYYYMMDD);
-            data.SetDeliveryNoteReferencedDocumentIssueDateTime(sdf.Parse("2016/04/06"), DateFormatCode.YYYYMMDD);
+            data.SetDeliveryDate(new DateTime(2016, 04, 05), DateFormatCode.YYYYMMDD);
+            data.SetDeliveryNoteReferencedDocumentIssueDateTime(new DateTime(2016, 04, 06), DateFormatCode.YYYYMMDD);
             data.SetDeliveryNoteReferencedDocumentID("ApplicableSupplyChainTradeAgreement.DeliveryNoteReferencedDocument"
                 );
             // ApplicableSupplyChainTradeSettlement
@@ -127,7 +126,7 @@ namespace iText.Samples.Sandbox.Zugferd.Test {
                 "S", "6.00");
             data.AddApplicableTradeTax("21.00", "USD", "VAT", "ApplicableTradeTax.ExemptionReason[1]", "100.00", "USD"
                 , "S", "21.00");
-            data.SetBillingStartEnd(sdf.Parse("2016/04/01"), DateFormatCode.YYYYMMDD, sdf.Parse("2016/04/30"), DateFormatCode
+            data.SetBillingStartEnd(new DateTime(2016, 04, 01), DateFormatCode.YYYYMMDD, new DateTime(2016, 04, 30), DateFormatCode
                 .YYYYMMDD);
             data.AddSpecifiedTradeAllowanceCharge(true, "0.1234", "USD", "TradeAllowanceCharge.Reason[0]", new String[
                 ] { "VAT", "VAT" }, new String[] { "S", "S" }, new String[] { "6.00", "21.00" });
@@ -140,9 +139,9 @@ namespace iText.Samples.Sandbox.Zugferd.Test {
                 , "SpecifiedLogisticsServiceCharge.Description[1][1]" }, "0.1234", "EUR", new String[] { "VAT", "VAT" }
                 , new String[] { "S", "S" }, new String[] { "0.00", "8.00" });
             data.AddSpecifiedTradePaymentTerms(new String[] { "SpecifiedTradePaymentTerms.Information[0][0]", "SpecifiedTradePaymentTerms.Information[0][1]"
-                 }, sdf.Parse("2016/05/01"), DateFormatCode.YYYYMMDD);
+                 }, new DateTime(2016, 05, 01), DateFormatCode.YYYYMMDD);
             data.AddSpecifiedTradePaymentTerms(new String[] { "SpecifiedTradePaymentTerms.Information[1][0]", "SpecifiedTradePaymentTerms.Information[1][1]"
-                 }, sdf.Parse("2016/05/02"), DateFormatCode.YYYYMMDD);
+                 }, new DateTime(2016, 05, 02), DateFormatCode.YYYYMMDD);
             // SpecifiedTradeSettlementMonetarySummation       
             data.SetMonetarySummation("1000.00", "USD", "0.00", "USD", "0.00", "USD", "1000.00", "USD", "210.00", "USD"
                 , "1210.00", "USD");

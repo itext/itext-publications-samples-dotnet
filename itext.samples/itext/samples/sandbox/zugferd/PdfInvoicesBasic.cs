@@ -6,8 +6,12 @@ Copyright (c) 1998-2016 iText Group NV
 */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Text;
+using System.Threading;
 using iText.IO.Font;
+using iText.IO.Util;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -28,7 +32,7 @@ namespace iText.Samples.Sandbox.Zugferd {
     /// (Basic profile).
     /// </summary>
     /// <author>Bruno Lowagie</author>
-    public class PdfInvoicesBasic {
+    public class PdfInvoicesBasic : GenericTest {
         public const String DEST = "./target/test/resources/zugferd/pdfa/basic00000.pdf";
 
         public const String DEST_PATTERN = "./target/test/resources/zugferd/pdfa/basic%05d.pdf";
@@ -67,10 +71,10 @@ namespace iText.Samples.Sandbox.Zugferd {
         /// <exception cref="Java.Text.ParseException"/>
         /// <exception cref="iText.Zugferd.Exceptions.DataIncompleteException"/>
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
-        protected internal virtual void ManipulatePdf(String dest) {
-            Locale.SetDefault(Locale.ENGLISH);
-            FileInfo file = new FileInfo(DEST_PATTERN);
-            file.GetParentFile().Mkdirs();
+        protected override void ManipulatePdf(String dest) {
+            CultureInfo ci = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentCulture = ci;
+            Directory.CreateDirectory(Directory.GetParent(DEST_PATTERN).FullName);
             PdfInvoicesBasic app = new PdfInvoicesBasic();
             PojoFactory factory = PojoFactory.GetInstance();
             IList<Invoice> invoices = factory.GetInvoices();
@@ -162,7 +166,7 @@ namespace iText.Samples.Sandbox.Zugferd {
             PdfDictionary parameters = new PdfDictionary();
             parameters.Put(PdfName.ModDate, new PdfDate().GetPdfObject());
             // platform-independent newlines
-            byte[] xml = iText.IO.Util.JavaUtil.GetStringForBytes(dom.ToXML()).Replace("\r\n", "\n").GetBytes();
+            byte[] xml = Encoding.UTF8.GetBytes(JavaUtil.GetStringForBytes(dom.ToXML()).Replace("\r\n", "\n"));
             PdfFileSpec fileSpec = PdfFileSpec.CreateEmbeddedFileSpec(pdfDoc, xml, "ZUGFeRD invoice", "ZUGFeRD-invoice.xml"
                 , new PdfName("application/xml"), parameters, PdfName.Alternative, false);
             pdfDoc.AddFileAttachment("ZUGFeRD invoice", fileSpec);
@@ -267,8 +271,14 @@ namespace iText.Samples.Sandbox.Zugferd {
 
         /// <exception cref="Java.Text.ParseException"/>
         public virtual String ConvertDate(DateTime d, String newFormat) {
-            SimpleDateFormat sdf = new SimpleDateFormat(newFormat);
-            return sdf.Format(d);
+            return d.ToString(newFormat);
+        }
+
+
+        [NUnit.Framework.Test]
+        public override void Test()
+        {
+            base.Test();
         }
     }
 }

@@ -25,7 +25,6 @@ namespace iText.Samples.Sandbox.Zugferd.Test {
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         /// <exception cref="Java.Text.ParseException"/>
         public static void Main(String[] args) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
             BasicProfileImp data = new BasicProfileImp();
             // SpecifiedExchangedDocumentContext
             data.SetTest(true);
@@ -33,7 +32,7 @@ namespace iText.Samples.Sandbox.Zugferd.Test {
             data.SetId("HeaderExchangedDocument.ID");
             data.SetName("HeaderExchangedDocument.Name");
             data.SetTypeCode(DocumentTypeCode.COMMERCIAL_INVOICE);
-            data.SetDate(sdf.Parse("2015/04/01"), DateFormatCode.YYYYMMDD);
+            data.SetDate(new DateTime(2015, 04, 01), DateFormatCode.YYYYMMDD);
             data.AddNote(new String[] { "HeaderExchangedDocument.Note[0][0]", "HeaderExchangedDocument.Note[0][1]" });
             data.AddNote(new String[] { "HeaderExchangedDocument.Note[1][0]", "HeaderExchangedDocument.Note[1][1]" });
             data.AddNote(new String[] { "HeaderExchangedDocument.Note[2][0]", "HeaderExchangedDocument.Note[2][1]" });
@@ -59,7 +58,7 @@ namespace iText.Samples.Sandbox.Zugferd.Test {
             data.AddBuyerTaxRegistration(TaxIDTypeCode.FISCAL_NUMBER, "BuyerTradeParty.SpecifiedTaxRegistration.SchemeID[1]"
                 );
             // ApplicableSupplyChainTradeDelivery
-            data.SetDeliveryDate(sdf.Parse("2015/04/01"), DateFormatCode.YYYYMMDD);
+            data.SetDeliveryDate(new DateTime(2015, 04, 01), DateFormatCode.YYYYMMDD);
             // ApplicableSupplyChainTradeSettlement
             data.SetPaymentReference("ApplicableSupplyChainTradeSettlement.PaymentReference");
             data.SetInvoiceCurrencyCode("EUR");

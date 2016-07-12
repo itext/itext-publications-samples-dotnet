@@ -6,7 +6,9 @@ Copyright (c) 1998-2016 iText Group NV
 */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Threading;
 using iText.Samples.Sandbox.Zugferd.Data;
 using iText.Samples.Sandbox.Zugferd.Pojo;
 using iText.Zugferd;
@@ -25,9 +27,9 @@ namespace iText.Samples.Sandbox.Zugferd {
         /// <exception cref="iText.Zugferd.Exceptions.DataIncompleteException"/>
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         public static void Main(String[] args) {
-            Locale.SetDefault(Locale.ENGLISH);
-            FileInfo file = new FileInfo(DEST);
-            file.GetParentFile().Mkdirs();
+            CultureInfo ci = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentCulture = ci;
+            Directory.CreateDirectory(Directory.GetParent(DEST).FullName);
             PojoFactory factory = PojoFactory.GetInstance();
             IList<Invoice> invoices = factory.GetInvoices();
             InvoiceData invoiceData = new InvoiceData();
@@ -38,7 +40,7 @@ namespace iText.Samples.Sandbox.Zugferd {
                 dom = new InvoiceDOM(comfort);
                 byte[] xml = dom.ToXML();
                 FileStream fos = new FileStream(String.Format(DEST, invoice.GetId()), FileMode.Create);
-                fos.Write(xml);
+                fos.Write(xml, 0, xml.Length);
                 fos.Flush();
                 fos.Close();
             }
