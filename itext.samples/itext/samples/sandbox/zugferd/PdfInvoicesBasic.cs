@@ -25,7 +25,6 @@ using iText.Samples.Sandbox.Zugferd.Data;
 using iText.Samples.Sandbox.Zugferd.Pojo;
 using iText.Zugferd;
 using iText.Zugferd.Profiles;
-using static System.Double;
 
 namespace iText.Samples.Sandbox.Zugferd {
     /// <summary>
@@ -232,7 +231,7 @@ namespace iText.Samples.Sandbox.Zugferd {
                 table.AddCell(GetCell(percentage[i], TextAlignment.RIGHT, font, 12));
                 table.AddCell(GetCell(@base[i], TextAlignment.RIGHT, font, 12));
                 table.AddCell(GetCell(tax[i], TextAlignment.RIGHT, font, 12));
-                double total = Parse(@base[i], CultureInfo.InvariantCulture) + Parse
+                double total = double.Parse(@base[i], CultureInfo.InvariantCulture) + double.Parse
                     (tax[i], CultureInfo.InvariantCulture);
                 table.AddCell(GetCell(InvoiceData.Format2dec(InvoiceData.Round(total)), TextAlignment.RIGHT, font, 12));
                 table.AddCell(GetCell(currency[i], TextAlignment.LEFT, font, 12));
