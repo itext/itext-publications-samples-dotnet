@@ -11,13 +11,15 @@ using iText.Samples.Sandbox.Zugferd.Data;
 using iText.Samples.Sandbox.Zugferd.Pojo;
 using iText.Zugferd;
 using iText.Zugferd.Profiles;
+using java.io;
+using javax.xml.transform;
+using javax.xml.transform.stream;
 
-// TODO string format
 namespace iText.Samples.Sandbox.Zugferd
 {
     /// <author>Bruno Lowagie</author>
     public class HtmlInvoicesComfort {
-        public const String DEST = "./target/main/resources/zugferd/html/comfort%05d.html";
+        public const String DEST = "./target/main/resources/zugferd/html/comfort{0:00000}.html";
 
         public const String XSL = "./src/main/resources/xml/invoice.xsl";
 
@@ -25,13 +27,13 @@ namespace iText.Samples.Sandbox.Zugferd
 
         public const String LOGO = "./src/main/resources/img/logo.png";
 
-        /// <exception cref="Java.Sql.SQLException"/>
+        /// <exception cref="SQLException"/>
         /// <exception cref="System.IO.IOException"/>
-        /// <exception cref="Javax.Xml.Parsers.ParserConfigurationException"/>
-        /// <exception cref="Org.Xml.Sax.SAXException"/>
+        /// <exception cref="ParserConfigurationException"/>
+        /// <exception cref="SAXException"/>
         /// <exception cref="iText.Zugferd.Exceptions.DataIncompleteException"/>
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
-        /// <exception cref="Javax.Xml.Transform.TransformerException"/>
+        /// <exception cref="TransformerException"/>
         public static void Main(String[] args) {
             Directory.CreateDirectory(Directory.GetParent(DEST).FullName);
             CopyFile(CSS, Directory.GetParent(DEST).FullName + Path.DirectorySeparatorChar + Path.GetFileName(CSS));
@@ -40,29 +42,27 @@ namespace iText.Samples.Sandbox.Zugferd
             PojoFactory factory = PojoFactory.GetInstance();
             IList<Invoice> invoices = factory.GetInvoices();
             foreach (Invoice invoice in invoices) {
-                // TODO
-                //app.CreateHtml(invoice, new FileWriter(String.Format(DEST, invoice.GetId())));
+                app.CreateHtml(invoice, new FileWriter(String.Format(DEST, invoice.GetId())));
             }
             factory.Close();
         }
 
         /// <exception cref="System.IO.IOException"/>
-        /// <exception cref="Javax.Xml.Parsers.ParserConfigurationException"/>
-        /// <exception cref="Org.Xml.Sax.SAXException"/>
+        /// <exception cref="ParserConfigurationException"/>
+        /// <exception cref="SAXException"/>
         /// <exception cref="iText.Zugferd.Exceptions.DataIncompleteException"/>
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
-        /// <exception cref="Javax.Xml.Transform.TransformerException"/>
-        public virtual void CreateHtml(Invoice invoice, TextWriter writer) {
+        /// <exception cref="TransformerException"/>
+        public virtual void CreateHtml(Invoice invoice, FileWriter writer) {
             IComfortProfile comfort = new InvoiceData().CreateComfortProfileData(invoice);
             InvoiceDOM dom = new InvoiceDOM(comfort);
-            // TODO
-            //StreamSource xml = new StreamSource(new MemoryStream(dom.ToXML()));
-            //StreamSource xsl = new StreamSource(new FileInfo(XSL));
-            //TransformerFactory factory = TransformerFactory.NewInstance();
-            //Transformer transformer = factory.NewTransformer(xsl);
-            //transformer.Transform(xml, new StreamResult(writer));
-            writer.Flush();
-            writer.Close();
+            StreamSource xml = new StreamSource(new ByteArrayInputStream(dom.ToXML()));
+            StreamSource xsl = new StreamSource(new FileInputStream(XSL));
+            TransformerFactory factory = TransformerFactory.newInstance();
+            Transformer transformer = factory.newTransformer(xsl);
+            transformer.transform(xml, new StreamResult(writer));
+            writer.flush();
+            writer.close();
         }
 
         /// <exception cref="System.IO.IOException"/>

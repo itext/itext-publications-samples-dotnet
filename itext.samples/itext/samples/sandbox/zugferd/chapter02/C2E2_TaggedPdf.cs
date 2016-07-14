@@ -19,7 +19,7 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Zugferd.Chapter02 {
     /// <summary>Creates a Tagged PDF with images and text.</summary>
-    public class C2E2_TaggedPdf {
+    public class C2E2_TaggedPdf : GenericTest {
         public const String FOX = "./src/test/resources/img/fox.bmp";
 
         public const String DOG = "./src/test/resources/img/dog.bmp";
@@ -29,7 +29,7 @@ namespace iText.Samples.Sandbox.Zugferd.Chapter02 {
         /// <summary>Creates a tagged PDF with images and text.</summary>
         /// <exception cref="System.IO.IOException">* @throws InterruptedException</exception>
         /// <exception cref="System.Exception"/>
-        protected internal virtual void ManipulatePdf(String dest) {
+        protected override void ManipulatePdf(String dest) {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest, new WriterProperties().SetPdfVersion(PdfVersion.PDF_1_7
                 )));
             Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).Rotate());

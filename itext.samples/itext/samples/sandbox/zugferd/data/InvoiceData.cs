@@ -14,7 +14,6 @@ using iText.Zugferd.Profiles;
 using iText.Zugferd.Validation.Basic;
 using iText.Zugferd.Validation.Comfort;
 
-// TODO STRING.format
 namespace iText.Samples.Sandbox.Zugferd.Data {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class InvoiceData {
@@ -37,7 +36,7 @@ namespace iText.Samples.Sandbox.Zugferd.Data {
 
         public virtual void ImportData(BasicProfileImp profileImp, Invoice invoice) {
             profileImp.SetTest(true);
-            profileImp.SetId(String.Format("I/%05d", invoice.GetId()));
+            profileImp.SetId(String.Format("I/{0:00000}", invoice.GetId()));
             profileImp.SetName("INVOICE");
             profileImp.SetTypeCode(DocumentTypeCode.COMMERCIAL_INVOICE);
             profileImp.SetDate(invoice.GetInvoiceDate(), DateFormatCode.YYYYMMDD);
@@ -50,12 +49,12 @@ namespace iText.Samples.Sandbox.Zugferd.Data {
             profileImp.AddSellerTaxRegistration(TaxIDTypeCode.FISCAL_NUMBER, "201/113/40209");
             profileImp.AddSellerTaxRegistration(TaxIDTypeCode.VAT, "BE123456789");
             Customer customer = invoice.GetCustomer();
-            profileImp.SetBuyerName(String.Format("%s, %s", customer.GetLastName(), customer.GetFirstName()));
+            profileImp.SetBuyerName(String.Format("{0}, {1}", customer.GetLastName(), customer.GetFirstName()));
             profileImp.SetBuyerPostcode(customer.GetPostalcode());
             profileImp.SetBuyerLineOne(customer.GetStreet());
             profileImp.SetBuyerCityName(customer.GetCity());
             profileImp.SetBuyerCountryID(customer.GetCountryId());
-            profileImp.SetPaymentReference(String.Format("%09d", invoice.GetId()));
+            profileImp.SetPaymentReference(String.Format("{0:000000000}", invoice.GetId()));
             profileImp.SetInvoiceCurrencyCode("EUR");
         }
 
@@ -147,11 +146,11 @@ namespace iText.Samples.Sandbox.Zugferd.Data {
         }
 
         public static String Format2dec(double d) {
-            return String.Format("%.2f", d);
+            return String.Format("{0:0.00}", d);
         }
 
         public static String Format4dec(double d) {
-            return String.Format("%.4f", d);
+            return String.Format("{0:0.0000}", d);
         }
     }
 }

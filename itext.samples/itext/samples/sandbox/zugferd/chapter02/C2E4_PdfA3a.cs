@@ -21,7 +21,7 @@ using iText.Pdfa;
 
 namespace iText.Samples.Sandbox.Zugferd.Chapter02 {
     /// <summary>Creates a PDF that conforms with PDF/A-3 Level A.</summary>
-    public class C2E4_PdfA3a {
+    public class C2E4_PdfA3a : GenericTest {
         public const String ICC = "./src/test/resources/data/sRGB_CS_profile.icm";
 
         public const String FONT = "./src/test/resources/font/FreeSans.ttf";
@@ -35,7 +35,7 @@ namespace iText.Samples.Sandbox.Zugferd.Chapter02 {
         /// <exception cref="System.IO.IOException"/>
         /// <exception cref="iText.Kernel.XMP.XMPException"/>
         /// <exception cref="System.Exception"/>
-        public virtual void ManipulatePdf(String dest) {
+        protected override void ManipulatePdf(String dest) {
             //PDF/A-3a
             //Set output intents
             //Create PdfAWDocument with the required conformance level

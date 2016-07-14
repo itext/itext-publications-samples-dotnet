@@ -25,6 +25,7 @@ using iText.Samples.Sandbox.Zugferd.Data;
 using iText.Samples.Sandbox.Zugferd.Pojo;
 using iText.Zugferd;
 using iText.Zugferd.Profiles;
+using static System.Double;
 
 namespace iText.Samples.Sandbox.Zugferd {
     /// <summary>
@@ -35,7 +36,7 @@ namespace iText.Samples.Sandbox.Zugferd {
     public class PdfInvoicesBasic : GenericTest {
         public static readonly String DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/zugferd/pdfa/basic00000.pdf";
 
-        public static readonly String DEST_PATTERN = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/zugferd/pdfa/basic%05d.pdf";
+        public static readonly String DEST_PATTERN = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/zugferd/pdfa/basic{0:00000}.pdf";
 
         public static readonly String ICC = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/data/sRGB_CS_profile.icm";
 
@@ -71,7 +72,7 @@ namespace iText.Samples.Sandbox.Zugferd {
         /// <exception cref="Java.Text.ParseException"/>
         /// <exception cref="iText.Zugferd.Exceptions.DataIncompleteException"/>
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
-        protected override void ManipulatePdf(String dest) {
+        protected void ManipulatePdf(String dest) {
             CultureInfo ci = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentCulture = ci;
             Directory.CreateDirectory(Directory.GetParent(DEST_PATTERN).FullName);
@@ -193,7 +194,7 @@ namespace iText.Samples.Sandbox.Zugferd {
                 cell.Add(new Paragraph(line2).SetFont(font).SetFontSize(12));
             }
             if (null != countryID && null != postcode && null != city) {
-                cell.Add(new Paragraph(String.Format("%s-%s %s", countryID, postcode, city)).SetFont(font).SetFontSize(12)
+                cell.Add(new Paragraph(String.Format("{0}-{1} {2}", countryID, postcode, city)).SetFont(font).SetFontSize(12)
                     );
             }
             return cell;
@@ -209,7 +210,7 @@ namespace iText.Samples.Sandbox.Zugferd {
             else {
                 int n = taxId.Length;
                 for (int i = 0; i < n; i++) {
-                    cell.Add(new Paragraph(String.Format("%s: %s", taxSchema[i], taxId[i])).SetFont(font).SetFontSize(10));
+                    cell.Add(new Paragraph(String.Format("{0}: {1}", taxSchema[i], taxId[i])).SetFont(font).SetFontSize(10));
                 }
             }
             return cell;
@@ -231,8 +232,8 @@ namespace iText.Samples.Sandbox.Zugferd {
                 table.AddCell(GetCell(percentage[i], TextAlignment.RIGHT, font, 12));
                 table.AddCell(GetCell(@base[i], TextAlignment.RIGHT, font, 12));
                 table.AddCell(GetCell(tax[i], TextAlignment.RIGHT, font, 12));
-                double total = System.Double.Parse(@base[i], System.Globalization.CultureInfo.InvariantCulture) + System.Double.Parse
-                    (tax[i], System.Globalization.CultureInfo.InvariantCulture);
+                double total = Parse(@base[i], CultureInfo.InvariantCulture) + Parse
+                    (tax[i], CultureInfo.InvariantCulture);
                 table.AddCell(GetCell(InvoiceData.Format2dec(InvoiceData.Round(total)), TextAlignment.RIGHT, font, 12));
                 table.AddCell(GetCell(currency[i], TextAlignment.LEFT, font, 12));
             }
@@ -260,11 +261,11 @@ namespace iText.Samples.Sandbox.Zugferd {
         }
 
         public virtual Paragraph GetPaymentInfo(String @ref, String[] bic, String[] iban) {
-            Paragraph p = new Paragraph(String.Format("Please wire the amount due to our bank account using the following reference: %s"
+            Paragraph p = new Paragraph(String.Format("Please wire the amount due to our bank account using the following reference: {0}"
                 , @ref)).SetFont(font).SetFontSize(12);
             int n = bic.Length;
             for (int i = 0; i < n; i++) {
-                p.Add(String.Format("BIC: %s - IBAN: %s", bic[i], iban[i]));
+                p.Add(String.Format("BIC: {0} - IBAN: {1}", bic[i], iban[i]));
             }
             return p;
         }

@@ -17,7 +17,7 @@ using iText.Zugferd.Profiles;
 namespace iText.Samples.Sandbox.Zugferd {
     /// <author>Bruno Lowagie</author>
     public class XmlInvoicesComfort {
-        public static readonly String DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/itext/zugferd/pdfa/comfort%05d.xml";
+        public static readonly String DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/itext/zugferd/pdfa/comfort{0:00000}.xml";
 
         /// <exception cref="Java.Sql.SQLException"/>
         /// <exception cref="Javax.Xml.Parsers.ParserConfigurationException"/>
