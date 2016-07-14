@@ -71,7 +71,7 @@ namespace iText.Samples.Sandbox.Zugferd {
         /// <exception cref="Java.Text.ParseException"/>
         /// <exception cref="iText.Zugferd.Exceptions.DataIncompleteException"/>
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
-        protected void ManipulatePdf(String dest) {
+        protected override void ManipulatePdf(String dest) {
             CultureInfo ci = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentCulture = ci;
             Directory.CreateDirectory(Directory.GetParent(DEST_PATTERN).FullName);
@@ -272,13 +272,6 @@ namespace iText.Samples.Sandbox.Zugferd {
         /// <exception cref="Java.Text.ParseException"/>
         public virtual String ConvertDate(DateTime d, String newFormat) {
             return d.ToString(newFormat);
-        }
-
-
-        [NUnit.Framework.Test]
-        public override void Test()
-        {
-            base.Test();
         }
     }
 }

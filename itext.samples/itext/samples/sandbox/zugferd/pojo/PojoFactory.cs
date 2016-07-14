@@ -79,7 +79,7 @@ namespace iText.Samples.Sandbox.Zugferd.Pojo {
             }
             invoice.SetTotal(total);
             java.util.Date date = rs.getDate("invoicedate");
-            invoice.SetInvoiceDate(new DateTime(date.getTime()));
+            invoice.SetInvoiceDate(new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(date.getTime() / 1000).ToLocalTime());
             return invoice;
         }
 

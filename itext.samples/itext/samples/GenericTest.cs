@@ -7,7 +7,6 @@ using iText.Test;
 using NUnit.Framework;
 
 namespace iText.Samples {
-    [LogListener]
     [TestFixture]
     public class GenericTest {
         
@@ -118,8 +117,8 @@ namespace iText.Samples {
                 return;
             }
             CompareTool compareTool = new CompareTool();
-            string outPath = "./target/" + new DirectoryInfo(dest).Parent;
-            new DirectoryInfo(outPath).Create();
+            string outPath = new DirectoryInfo(dest).Parent.FullName;
+            Directory.CreateDirectory(outPath);
             if (compareXml) {
                 if (!compareTool.CompareXmls(dest, cmp)) {
                     AddError("The XML structures are different.");

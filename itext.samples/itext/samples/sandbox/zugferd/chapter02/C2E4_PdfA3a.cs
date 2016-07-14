@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Zugferd.Chapter02 {
 
         public static readonly String DOG = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/img/dog.bmp";
 
-        public static readonly String DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "./test/resources/zugferd/chapter02/C2E4_PdfA3a.pdf";
+        public static readonly String DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/zugferd/chapter02/C2E4_PdfA3a.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         /// <exception cref="iText.Kernel.XMP.XMPException"/>
