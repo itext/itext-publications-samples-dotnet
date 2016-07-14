@@ -20,11 +20,11 @@ using iText.Layout.Element;
 namespace iText.Samples.Sandbox.Zugferd.Chapter02 {
     /// <summary>Creates a Tagged PDF with images and text.</summary>
     public class C2E2_TaggedPdf : GenericTest {
-        public const String FOX = "./src/test/resources/img/fox.bmp";
+        public static readonly String FOX = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/img/fox.bmp";
 
-        public const String DOG = "./src/test/resources/img/dog.bmp";
+        public static readonly String DOG = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/img/dog.bmp";
 
-        public const String DEST = "./target/test/resources/zugferd/chapter02/C2E2_TaggedPdf.pdf";
+        public static readonly String DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/zugferd/chapter02/C2E2_TaggedPdf.pdf";
 
         /// <summary>Creates a tagged PDF with images and text.</summary>
         /// <exception cref="System.IO.IOException">* @throws InterruptedException</exception>

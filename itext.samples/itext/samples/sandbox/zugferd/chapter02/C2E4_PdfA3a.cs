@@ -22,15 +22,15 @@ using iText.Pdfa;
 namespace iText.Samples.Sandbox.Zugferd.Chapter02 {
     /// <summary>Creates a PDF that conforms with PDF/A-3 Level A.</summary>
     public class C2E4_PdfA3a : GenericTest {
-        public const String ICC = "./src/test/resources/data/sRGB_CS_profile.icm";
+        public static readonly String ICC = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/data/sRGB_CS_profile.icm";
 
-        public const String FONT = "./src/test/resources/font/FreeSans.ttf";
+        public static readonly String FONT = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/font/FreeSans.ttf";
 
-        public const String FOX = "./src/test/resources/img/fox.bmp";
+        public static readonly String FOX = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/img/fox.bmp";
 
-        public const String DOG = "./src/test/resources/img/dog.bmp";
+        public static readonly String DOG = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/img/dog.bmp";
 
-        public const String DEST = "./target/test/resources/zugferd/chapter02/C2E4_PdfA3a.pdf";
+        public static readonly String DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "./test/resources/zugferd/chapter02/C2E4_PdfA3a.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         /// <exception cref="iText.Kernel.XMP.XMPException"/>
