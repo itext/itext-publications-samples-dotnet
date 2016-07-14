@@ -26,11 +26,5 @@ namespace iText.Samples.Sandbox.Acroforms
             xfa.Write(pdfDoc);
             pdfDoc.Close();
         }
-
-        [NUnit.Framework.Test]
-        public override void Test()
-        {
-            base.Test();
-        }
     }
 }

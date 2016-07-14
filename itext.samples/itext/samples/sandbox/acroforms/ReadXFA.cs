@@ -48,11 +48,5 @@ namespace iText.Samples.Sandbox.Acroforms {
 
             pdfDoc.Close();
         }
-
-        [NUnit.Framework.Test]
-        public override void Test()
-        {
-            base.Test();
-        }
     }
 }
