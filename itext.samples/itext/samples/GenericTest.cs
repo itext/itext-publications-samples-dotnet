@@ -8,6 +8,7 @@ using NUnit.Framework;
 
 namespace iText.Samples {
     [TestFixture]
+    [LogListener]
     public class GenericTest {
         
         protected bool compareRenders = false;

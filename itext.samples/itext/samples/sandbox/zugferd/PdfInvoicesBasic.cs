@@ -10,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Threading;
+using iText.IO;
 using iText.IO.Font;
 using iText.IO.Util;
 using iText.Kernel.Font;
@@ -23,8 +24,15 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Samples.Sandbox.Zugferd.Data;
 using iText.Samples.Sandbox.Zugferd.Pojo;
+using iText.Test.Attributes;
 using iText.Zugferd;
 using iText.Zugferd.Profiles;
+using java.sql;
+using java.text;
+using javax.xml.parsers;
+using javax.xml.transform;
+using NUnit.Framework;
+using org.xml.sax;
 
 namespace iText.Samples.Sandbox.Zugferd {
     /// <summary>
@@ -50,12 +58,12 @@ namespace iText.Samples.Sandbox.Zugferd {
         // Since all the document are technically almost the same
         // we will check only the first one
         /// <exception cref="System.IO.IOException"/>
-        /// <exception cref="Javax.Xml.Parsers.ParserConfigurationException"/>
-        /// <exception cref="Java.Sql.SQLException"/>
-        /// <exception cref="Org.Xml.Sax.SAXException"/>
-        /// <exception cref="Javax.Xml.Transform.TransformerException"/>
+        /// <exception cref="ParserConfigurationException"/>
+        /// <exception cref="SQLException"/>
+        /// <exception cref="SAXException"/>
+        /// <exception cref="TransformerException"/>
         /// <exception cref="iText.Kernel.XMP.XMPException"/>
-        /// <exception cref="Java.Text.ParseException"/>
+        /// <exception cref="ParseException"/>
         /// <exception cref="iText.Zugferd.Exceptions.DataIncompleteException"/>
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         public static void Main(String[] args) {
@@ -63,12 +71,12 @@ namespace iText.Samples.Sandbox.Zugferd {
         }
 
         /// <exception cref="System.IO.IOException"/>
-        /// <exception cref="Javax.Xml.Parsers.ParserConfigurationException"/>
-        /// <exception cref="Java.Sql.SQLException"/>
-        /// <exception cref="Org.Xml.Sax.SAXException"/>
-        /// <exception cref="Javax.Xml.Transform.TransformerException"/>
+        /// <exception cref="ParserConfigurationException"/>
+        /// <exception cref="SQLException"/>
+        /// <exception cref="SAXException"/>
+        /// <exception cref="TransformerException"/>
         /// <exception cref="iText.Kernel.XMP.XMPException"/>
-        /// <exception cref="Java.Text.ParseException"/>
+        /// <exception cref="ParseException"/>
         /// <exception cref="iText.Zugferd.Exceptions.DataIncompleteException"/>
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         protected override void ManipulatePdf(String dest) {
@@ -84,12 +92,12 @@ namespace iText.Samples.Sandbox.Zugferd {
             factory.Close();
         }
 
-        /// <exception cref="Javax.Xml.Parsers.ParserConfigurationException"/>
-        /// <exception cref="Org.Xml.Sax.SAXException"/>
-        /// <exception cref="Javax.Xml.Transform.TransformerException"/>
+        /// <exception cref="ParserConfigurationException"/>
+        /// <exception cref="SAXException"/>
+        /// <exception cref="TransformerException"/>
         /// <exception cref="System.IO.IOException"/>
         /// <exception cref="iText.Kernel.XMP.XMPException"/>
-        /// <exception cref="Java.Text.ParseException"/>
+        /// <exception cref="ParseException"/>
         /// <exception cref="iText.Zugferd.Exceptions.DataIncompleteException"/>
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         public virtual void CreatePdf(Invoice invoice) {
@@ -269,9 +277,17 @@ namespace iText.Samples.Sandbox.Zugferd {
             return p;
         }
 
-        /// <exception cref="Java.Text.ParseException"/>
+        /// <exception cref="ParseException"/>
         public virtual String ConvertDate(DateTime d, String newFormat) {
             return d.ToString(newFormat);
+        }
+
+        [LogMessage(LogMessageConstant.FONT_HAS_INVALID_GLYPH, Ignore = true)]
+        [LogMessage(ZugferdLogMessageConstant.WRONG_OR_NO_CONFORMANCE_LEVEL, Ignore = true)]
+        [LogMessage(ZugferdLogMessageConstant.NO_ZUGFERD_PROFILE_TYPE_SPECIFIED, Ignore = true)]
+        [Test]
+        public override void Test() {
+            base.Test();
         }
     }
 }
