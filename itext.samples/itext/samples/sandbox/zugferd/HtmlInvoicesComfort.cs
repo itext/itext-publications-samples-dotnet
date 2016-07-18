@@ -7,6 +7,7 @@ Copyright (c) 1998-2016 iText Group NV
 using System;
 using System.Collections.Generic;
 using System.IO;
+using iText.License;
 using iText.Samples.Sandbox.Zugferd.Data;
 using iText.Samples.Sandbox.Zugferd.Pojo;
 using iText.Zugferd;
@@ -35,6 +36,7 @@ namespace iText.Samples.Sandbox.Zugferd
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         /// <exception cref="TransformerException"/>
         public static void Main(String[] args) {
+            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-multiple-products.xml");
             Directory.CreateDirectory(Directory.GetParent(DEST).FullName);
             CopyFile(CSS, Directory.GetParent(DEST).FullName + Path.DirectorySeparatorChar + Path.GetFileName(CSS));
             CopyFile(LOGO, Directory.GetParent(DEST).FullName + Path.DirectorySeparatorChar + Path.GetFileName(LOGO));

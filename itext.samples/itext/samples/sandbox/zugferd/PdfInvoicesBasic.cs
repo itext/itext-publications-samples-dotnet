@@ -22,19 +22,16 @@ using iText.Layout;
 using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Layout.Properties;
+using iText.License;
 using iText.Samples.Sandbox.Zugferd.Data;
 using iText.Samples.Sandbox.Zugferd.Pojo;
 using iText.Test.Attributes;
 using iText.Zugferd;
 using iText.Zugferd.Profiles;
-using java.sql;
-using java.text;
-using javax.xml.parsers;
-using javax.xml.transform;
 using NUnit.Framework;
-using org.xml.sax;
 
-namespace iText.Samples.Sandbox.Zugferd {
+namespace iText.Samples.Sandbox.Zugferd
+{
     /// <summary>
     /// Reads invoice data from a test database and creates ZUGFeRD invoices
     /// (Basic profile).
@@ -80,6 +77,7 @@ namespace iText.Samples.Sandbox.Zugferd {
         /// <exception cref="iText.Zugferd.Exceptions.DataIncompleteException"/>
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         protected override void ManipulatePdf(String dest) {
+            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-multiple-products.xml");
             CultureInfo ci = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentCulture = ci;
             Directory.CreateDirectory(Directory.GetParent(DEST_PATTERN).FullName);

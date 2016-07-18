@@ -140,6 +140,10 @@
       <Project>{CF45E61E-A3BC-4B64-AA92-5814AF726286}</Project>
       <Name>itext.zugferd</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\licensekey\itext\itext.license\itext.licensekey.csproj">
+      <Project>{48A742FF-BF78-402F-AC44-184BD2734634}</Project>
+      <Name>itext.licensekey</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

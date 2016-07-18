@@ -10,6 +10,7 @@ Copyright (c) 1998-2016 iText Group NV
 * that make it easy for us to detect errors.
 */
 using System;
+using iText.License;
 using iText.Zugferd;
 using iText.Zugferd.Profiles;
 using iText.Zugferd.Validation.Basic;
@@ -26,6 +27,7 @@ namespace iText.Samples.Sandbox.Zugferd.Test {
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         /// <exception cref="Java.Text.ParseException"/>
         public static void Main(String[] args) {
+            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-multiple-products.xml");
             ComfortProfileImp data = new ComfortProfileImp();
             // SpecifiedExchangedDocumentContext
             data.SetTest(true);
