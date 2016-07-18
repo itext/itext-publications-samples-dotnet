@@ -28,7 +28,7 @@ namespace iText.Samples.Sandbox.Zugferd.Test {
         /// <exception cref="Java.Text.ParseException"/>
         public static void Main(String[] args) {
             LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-multiple-products.xml");
-            ComfortProfileImp data = new ComfortProfileImp();
+            ComfortProfileImp data = new ComfortProfileImp(true);
             // SpecifiedExchangedDocumentContext
             data.SetTest(true);
             // HeaderExchangedDocument

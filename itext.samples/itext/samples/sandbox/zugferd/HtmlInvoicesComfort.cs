@@ -56,7 +56,7 @@ namespace iText.Samples.Sandbox.Zugferd
         /// <exception cref="iText.Zugferd.Exceptions.InvalidCodeException"/>
         /// <exception cref="TransformerException"/>
         public virtual void CreateHtml(Invoice invoice, FileWriter writer) {
-            IComfortProfile comfort = new InvoiceData().CreateComfortProfileData(invoice);
+            IComfortProfile comfort = new InvoiceData().CreateComfortProfileData(invoice, true);
             InvoiceDOM dom = new InvoiceDOM(comfort);
             StreamSource xml = new StreamSource(new ByteArrayInputStream(dom.ToXML()));
             StreamSource xsl = new StreamSource(new FileInputStream(XSL));

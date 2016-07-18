@@ -38,7 +38,7 @@ namespace iText.Samples.Sandbox.Zugferd {
             IBasicProfile comfort;
             InvoiceDOM dom;
             foreach (Invoice invoice in invoices) {
-                comfort = invoiceData.CreateComfortProfileData(invoice);
+                comfort = invoiceData.CreateComfortProfileData(invoice, true);
                 dom = new InvoiceDOM(comfort);
                 byte[] xml = dom.ToXML();
                 FileStream fos = new FileStream(String.Format(DEST, invoice.GetId()), FileMode.Create);

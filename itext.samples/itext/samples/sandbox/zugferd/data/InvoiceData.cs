@@ -20,22 +20,21 @@ namespace iText.Samples.Sandbox.Zugferd.Data {
         public InvoiceData() {
         }
 
-        public virtual IBasicProfile CreateBasicProfileData(Invoice invoice) {
-            BasicProfileImp profileImp = new BasicProfileImp();
+        public virtual IBasicProfile CreateBasicProfileData(Invoice invoice, bool testInvoice) {
+            BasicProfileImp profileImp = new BasicProfileImp(testInvoice);
             ImportData(profileImp, invoice);
             ImportBasicData(profileImp, invoice);
             return profileImp;
         }
 
-        public virtual IComfortProfile CreateComfortProfileData(Invoice invoice) {
-            ComfortProfileImp profileImp = new ComfortProfileImp();
+        public virtual IComfortProfile CreateComfortProfileData(Invoice invoice, bool testInvoice) {
+            ComfortProfileImp profileImp = new ComfortProfileImp(testInvoice);
             ImportData(profileImp, invoice);
             ImportComfortData(profileImp, invoice);
             return profileImp;
         }
 
         public virtual void ImportData(BasicProfileImp profileImp, Invoice invoice) {
-            profileImp.SetTest(true);
             profileImp.SetId(String.Format("I/{0:00000}", invoice.GetId()));
             profileImp.SetName("INVOICE");
             profileImp.SetTypeCode(DocumentTypeCode.COMMERCIAL_INVOICE);

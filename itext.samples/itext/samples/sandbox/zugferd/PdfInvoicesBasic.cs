@@ -103,7 +103,7 @@ namespace iText.Samples.Sandbox.Zugferd
             fontb = PdfFontFactory.CreateFont(FONTB, PdfEncodings.WINANSI, true);
             String dest = String.Format(DEST_PATTERN, invoice.GetId());
             InvoiceData invoiceData = new InvoiceData();
-            IBasicProfile basic = invoiceData.CreateBasicProfileData(invoice);
+            IBasicProfile basic = invoiceData.CreateBasicProfileData(invoice, true);
             FileStream @is = new FileStream(ICC, FileMode.Open, FileAccess.Read);
             ZugferdDocument pdfDoc = new ZugferdDocument(new PdfWriter(dest), new PdfOutputIntent("Custom", "", "http://www.color.org"
                 , "sRGB IEC61966-2.1", @is));
