@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.samples", "itext.samples\itext.samples.csproj", "{C0E65B6F-D2E0-4AE3-BAC2-0CD8C9F58A45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.samples", "itext\itext.samples\itext.samples.csproj", "{C0E65B6F-D2E0-4AE3-BAC2-0CD8C9F58A45}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.barcodes", "..\itextcore\itext\itext.barcodes\itext.barcodes.csproj", "{DCAE8241-E391-418D-BA36-C7C064D7C413}"
 EndProject
