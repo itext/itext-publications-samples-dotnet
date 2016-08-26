@@ -22,6 +22,7 @@ using Org.BouncyCastle.Security.Certificates;
 
 namespace iText.Samples.Signatures
 {
+    [LogListener]
 	public class SignatureTest
 	{
 	    public static readonly string ADOBE = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/encryption/adobeRootCA.cer";

@@ -14,12 +14,9 @@ Copyright (c) 1998-2016 iText Group NV
 using System;
 using System.Collections.Generic;
 using System.IO;
-using iText.IO.Log;
 using Org.BouncyCastle.Ocsp;
 using Org.BouncyCastle.X509;
 using iText.Signatures;
-using iText.Test;
-using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.Security.Certificates;
 
 namespace iText.Samples.Signatures.Chapter05
@@ -196,8 +193,7 @@ namespace iText.Samples.Signatures.Chapter05
 		[NUnit.Framework.Test]
 		public override void RunTest()
 		{
-            LoggerFactory.BindFactory(new Log4NetLoggerFactory());
-			SetupSystemOutput();
+            SetupSystemOutput();
 			C5_03_CertificateValidation.Main(null);
 			String sysOut = GetSystemOutput();
 			// Replace time added by LOGGER
