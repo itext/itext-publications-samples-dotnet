@@ -76,14 +76,7 @@ namespace Tutorial.Chapter06 {
                 sourcePdfDocument = new PdfDocument(new PdfReader(new MemoryStream(baos.ToArray())));
                 //Copy pages
                 sourcePdfDocument.CopyPagesTo(1, sourcePdfDocument.GetNumberOfPages(), destPdfDocument, null);
-                try {
-                    sourcePdfDocument.CopyPagesTo(1, sourcePdfDocument.GetNumberOfPages(), destPdfDocumentSmartMode, null);
-                } catch(Exception e)
-                {
-                    Debug.WriteLine(i +", "+ line);
-                    Debug.WriteLine(e.StackTrace);
-                    i++;
-                }
+                sourcePdfDocument.CopyPagesTo(1, sourcePdfDocument.GetNumberOfPages(), destPdfDocumentSmartMode, null);
                 sourcePdfDocument.Close();
             }
             sr.Close();
