@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>eee84512-f6a8-4cd0-946b-6513d33fdea1</ProjectGuid>
+    <ProjectGuid>{EEE84512-F6A8-4CD0-946B-6513D33FDEA1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>itext.publications.jumpstart</RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>itext.publications.jumpstart</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,24 +31,75 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.2.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\NUnit.3.2.1\lib\net40\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="tutorial\**\*.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj">
+      <Project>{dcae8241-e391-418d-ba36-c7c064d7c413}</Project>
+      <Name>itext.barcodes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj">
+      <Project>{0f10190c-7611-4378-a157-03bf2ed78e30}</Project>
+      <Name>itext.font-asian</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.csproj">
+      <Project>{e2828ac4-3c63-4b2a-b5ad-5f98862775be}</Project>
+      <Name>itext.forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj">
+      <Project>{56137079-541a-425a-ab97-43af63793c97}</Project>
+      <Name>itext.hyph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.csproj">
+      <Project>{cee5e7e1-1bf0-4be1-9941-903262ce2f83}</Project>
+      <Name>itext.io</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj">
+      <Project>{4e7819e8-7555-4e2e-9a01-d8718a2cfdda}</Project>
+      <Name>itext.kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.layout\itext.layout.csproj">
+      <Project>{42173642-db52-44d3-9883-3e34c65c53bc}</Project>
+      <Name>itext.layout</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj">
+      <Project>{9fc2f0b3-a8d2-46da-8724-72e00e67a8fa}</Project>
+      <Name>itext.pdfa</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj">
+      <Project>{f9880dc4-f015-4413-af86-66d0e9512774}</Project>
+      <Name>itext.pdftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.sign\itext.sign.csproj">
+      <Project>{14A163C0-0054-480D-A096-EDA51DD933EA}</Project>
+      <Name>itext.sign</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\zugferd\itext\itext.zugferd\itext.zugferd.csproj">
+      <Project>{CF45E61E-A3BC-4B64-AA92-5814AF726286}</Project>
+      <Name>itext.zugferd</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\licensekey\itext\itext.license\itext.licensekey.csproj">
+      <Project>{48A742FF-BF78-402F-AC44-184BD2734634}</Project>
+      <Name>itext.licensekey</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +109,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>
