@@ -7,12 +7,14 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Xobject;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter06 {
+    [WrapToTest]
     public class C06E03_TheGoldenGateBridge_N_up {
-        public const String SRC = "resources/pdf/the_golden_gate_bridge.pdf";
+        public const String SRC = "../../resources/pdf/the_golden_gate_bridge.pdf";
 
-        public const String DEST = "results/chapter06/the_golden_gate_bridge_nup.pdf";
+        public const String DEST = "../../results/chapter06/the_golden_gate_bridge_nup.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

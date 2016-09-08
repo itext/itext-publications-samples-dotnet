@@ -10,11 +10,13 @@ using iText.Kernel.Pdf.Annot;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter04 {
     /// <summary>Simple text markup annotation example.</summary>
+    [WrapToTest]
     public class C04E01_04_TextMarkupAnnotation {
-        public const String DEST = "results/chapter04/textmarkup_annotation.pdf";
+        public const String DEST = "../../results/chapter04/textmarkup_annotation.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

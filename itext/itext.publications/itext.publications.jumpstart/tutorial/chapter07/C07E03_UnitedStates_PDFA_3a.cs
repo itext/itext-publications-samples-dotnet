@@ -12,18 +12,20 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Pdfa;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter07 {
+    [WrapToTest]
     public class C07E03_UnitedStates_PDFA_3a {
-        public const String DATA = "resources/data/united_states.csv";
+        public const String DATA = "../../resources/data/united_states.csv";
 
-        public const String FONT = "resources/font/FreeSans.ttf";
+        public const String FONT = "../../resources/font/FreeSans.ttf";
 
-        public const String BOLD_FONT = "resources/font/FreeSansBold.ttf";
+        public const String BOLD_FONT = "../../resources/font/FreeSansBold.ttf";
 
-        public const String INTENT = "resources/color/sRGB_CS_profile.icm";
+        public const String INTENT = "../../resources/color/sRGB_CS_profile.icm";
 
-        public const String DEST = "results/chapter07/united_states_PDFA-3a.pdf";
+        public const String DEST = "../../results/chapter07/united_states_PDFA-3a.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

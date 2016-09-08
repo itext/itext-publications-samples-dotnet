@@ -6,11 +6,13 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter01 {
     /// <summary>Simple Hello World example.</summary>
+    [WrapToTest]
     public class C01E01_HelloWorld {
-        public const String DEST = "results/chapter01/hello_world.pdf";
+        public const String DEST = "../../results/chapter01/hello_world.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

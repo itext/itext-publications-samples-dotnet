@@ -15,13 +15,15 @@ using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Layout.Renderer;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter03 {
     /// <summary>Simple table renderer example.</summary>
+    [WrapToTest]
     public class C03E02_PremierLeague {
-        public const String DATA = "resources/data/premier_league.csv";
+        public const String DATA = "../../resources/data/premier_league.csv";
 
-        public const String DEST = "results/chapter03/premier_league.pdf";
+        public const String DEST = "../../results/chapter03/premier_league.pdf";
 
         internal Color greenColor = new DeviceCmyk(0.78f, 0, 0.81f, 0.21f);
 

@@ -15,13 +15,15 @@ using iText.Layout;
 using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Layout.Properties;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter03 {
     /// <summary>Simple event handler example.</summary>
+    [WrapToTest]
     public class C03E03_UFO {
-        public const String DATA = "resources/data/ufo.csv";
+        public const String DATA = "../../resources/data/ufo.csv";
 
-        public const String DEST = "results/chapter03/ufo.pdf";
+        public const String DEST = "../../results/chapter03/ufo.pdf";
 
         internal static PdfFont helvetica = null;
 

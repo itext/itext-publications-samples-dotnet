@@ -11,14 +11,16 @@ using iText.Kernel.Pdf.Canvas.Draw;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter06 {
+    [WrapToTest]
     public class C06E06_88th_Oscar_Combine_AddTOC {
-        public const String SRC1 = "resources/pdf/88th_noms_announcement.pdf";
+        public const String SRC1 = "../../resources/pdf/88th_noms_announcement.pdf";
 
-        public const String SRC2 = "resources/pdf/oscars_movies_checklist_2016.pdf";
+        public const String SRC2 = "../../resources/pdf/oscars_movies_checklist_2016.pdf";
 
-        public const String DEST = "results/chapter06/88th_oscar_the_revenant_nominations_TOC.pdf";
+        public const String DEST = "../../results/chapter06/88th_oscar_the_revenant_nominations_TOC.pdf";
     
         public static readonly IDictionary<String, int> TheRevenantNominations = new SortedDictionary<String, int
             >();

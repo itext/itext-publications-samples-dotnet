@@ -9,14 +9,16 @@ using iText.Forms.Fields;
 using iText.IO.Source;
 using iText.IO.Util;
 using iText.Kernel.Pdf;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter06 {
+    [WrapToTest]
     public class C06E08_FillOutAndMergeForms {
-        public const String DEST = "results/chapter06/fill_out_and_merge_forms.pdf";
+        public const String DEST = "../../results/chapter06/fill_out_and_merge_forms.pdf";
 
-        public const String SRC = "resources/pdf/state.pdf";
+        public const String SRC = "../../resources/pdf/state.pdf";
 
-        public const String DATA = "resources/data/united_states.csv";
+        public const String DATA = "../../resources/data/united_states.csv";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

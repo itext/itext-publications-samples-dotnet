@@ -10,16 +10,18 @@ using iText.IO.Source;
 using iText.IO.Util;
 using iText.Kernel.Pdf;
 using System.Diagnostics;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter06 {
+    [WrapToTest]
     public class C06E09_FillOutFlattenAndMergeForms {
-        public const String DEST1 = "results/chapter06/fill_out_flatten_forms_merge.pdf";
+        public const String DEST1 = "../../results/chapter06/fill_out_flatten_forms_merge.pdf";
 
-        public const String DEST2 = "results/chapter06/fill_out_flatten_forms_smart_merge.pdf";
+        public const String DEST2 = "../../results/chapter06/fill_out_flatten_forms_smart_merge.pdf";
 
-        public const String SRC = "resources/pdf/state.pdf";
+        public const String SRC = "../../resources/pdf/state.pdf";
 
-        public const String DATA = "resources/data/united_states.csv";
+        public const String DATA = "../../resources/data/united_states.csv";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

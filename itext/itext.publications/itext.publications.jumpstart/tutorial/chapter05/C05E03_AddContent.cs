@@ -13,13 +13,15 @@ using iText.Kernel.Pdf.Extgstate;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter05 {
     /// <summary>Simple adding content example.</summary>
+    [WrapToTest]
     public class C05E03_AddContent {
-        public const String SRC = "resources/pdf/ufo.pdf";
+        public const String SRC = "../../resources/pdf/ufo.pdf";
 
-        public const String DEST = "results/chapter05/add_content.pdf";
+        public const String DEST = "../../results/chapter05/add_content.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

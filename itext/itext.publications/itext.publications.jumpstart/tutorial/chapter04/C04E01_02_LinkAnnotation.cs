@@ -9,11 +9,13 @@ using iText.Kernel.Pdf.Action;
 using iText.Kernel.Pdf.Annot;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter04 {
     /// <summary>Simple link annotation example.</summary>
+    [WrapToTest]
     public class C04E01_02_LinkAnnotation {
-        public const String DEST = "results/chapter04/link_annotation.pdf";
+        public const String DEST = "../../results/chapter04/link_annotation.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

@@ -10,13 +10,15 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter01 {
     /// <summary>Simple table example.</summary>
+    [WrapToTest]
     public class C01E04_UnitedStates {
-        public const String DATA = "resources/data/united_states.csv";
+        public const String DATA = "../../resources/data/united_states.csv";
 
-        public const String DEST = "results/chapter01/united_states.pdf";
+        public const String DEST = "../../results/chapter01/united_states.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

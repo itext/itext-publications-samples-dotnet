@@ -7,13 +7,15 @@ using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Pdf;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter04 {
     /// <summary>Simple filling out form example.</summary>
+    [WrapToTest]
     public class C04E05_FlattenForm {
-        public const String SRC = "resources/pdf/job_application.pdf";
+        public const String SRC = "../../resources/pdf/job_application.pdf";
 
-        public const String DEST = "results/chapter04/flatten_form.pdf";
+        public const String DEST = "../../results/chapter04/flatten_form.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

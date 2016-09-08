@@ -5,14 +5,16 @@ using System;
 using System.IO;
 using iText.Kernel.Pdf;
 using iText.Kernel.Utils;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter06 {
+    [WrapToTest]
     public class C06E04_88th_Oscar_Combine {
-        public const String SRC1 = "resources/pdf/88th_reminder_list.pdf";
+        public const String SRC1 = "../../resources/pdf/88th_reminder_list.pdf";
 
-        public const String SRC2 = "resources/pdf/88th_noms_announcement.pdf";
+        public const String SRC2 = "../../resources/pdf/88th_noms_announcement.pdf";
 
-        public const String DEST = "results/chapter06/88th_oscar_combined_documents.pdf";
+        public const String DEST = "../../results/chapter06/88th_oscar_combined_documents.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

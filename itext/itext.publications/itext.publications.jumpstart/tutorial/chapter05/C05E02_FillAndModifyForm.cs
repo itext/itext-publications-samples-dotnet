@@ -10,13 +10,15 @@ using iText.IO.Font;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter05 {
     /// <summary>Simple filling out form example.</summary>
+    [WrapToTest]
     public class C05E02_FillAndModifyForm {
-        public const String SRC = "resources/pdf/job_application.pdf";
+        public const String SRC = "../../resources/pdf/job_application.pdf";
 
-        public const String DEST = "results/chapter05/filled_out_job_application.pdf";
+        public const String DEST = "../../results/chapter05/filled_out_job_application.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

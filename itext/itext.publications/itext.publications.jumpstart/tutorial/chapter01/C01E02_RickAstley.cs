@@ -8,11 +8,13 @@ using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter01 {
     /// <summary>Simple List example.</summary>
+    [WrapToTest]
     public class C01E02_RickAstley {
-        public const String DEST = "results/chapter01/rick_astley.pdf";
+        public const String DEST = "../../results/chapter01/rick_astley.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

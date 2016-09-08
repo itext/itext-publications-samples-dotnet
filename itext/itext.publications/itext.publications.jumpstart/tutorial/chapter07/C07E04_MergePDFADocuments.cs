@@ -3,16 +3,18 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Kernel.Utils;
 using iText.Pdfa;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter07 {
+    [WrapToTest]
     public class C07E04_MergePDFADocuments {
-        public const String INTENT = "resources/color/sRGB_CS_profile.icm";
+        public const String INTENT = "../../resources/color/sRGB_CS_profile.icm";
 
-        public const String SRC1 = "resources/pdf/quick_brown_fox_PDFA-1a.pdf";
+        public const String SRC1 = "../../resources/pdf/quick_brown_fox_PDFA-1a.pdf";
 
-        public const String SRC2 = "resources/pdf/united_states_PDFA-1a.pdf";
+        public const String SRC2 = "../../resources/pdf/united_states_PDFA-1a.pdf";
 
-        public const String DEST = "results/chapter07/merged_PDFA-1a_documents.pdf";
+        public const String DEST = "../../results/chapter07/merged_PDFA-1a_documents.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

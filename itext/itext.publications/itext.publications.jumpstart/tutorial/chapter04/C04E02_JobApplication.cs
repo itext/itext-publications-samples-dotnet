@@ -11,11 +11,13 @@ using iText.Kernel.Pdf.Action;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter04 {
     /// <summary>Simple widget annotation example.</summary>
+    [WrapToTest]
     public class C04E02_JobApplication {
-        public const String DEST = "results/chapter04/job_application.pdf";
+        public const String DEST = "../../results/chapter04/job_application.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

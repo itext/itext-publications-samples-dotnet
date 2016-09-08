@@ -6,11 +6,13 @@ using System.IO;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter02 {
     /// <summary>Simple drawing lines example.</summary>
+    [WrapToTest]
     public class C02E01_Axes {
-        public const String DEST = "results/chapter02/axes.pdf";
+        public const String DEST = "../../results/chapter02/axes.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

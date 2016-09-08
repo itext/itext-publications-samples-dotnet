@@ -7,12 +7,14 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Xobject;
+using iText.Test.Attributes;
 
 namespace Tutorial.Chapter06 {
+    [WrapToTest]
     public class C06E01_TheGoldenGateBridge_Scale_Shrink {
-        public const String SRC = "resources/pdf/the_golden_gate_bridge.pdf";
+        public const String SRC = "../../resources/pdf/the_golden_gate_bridge.pdf";
 
-        public const String DEST = "results/chapter06/the_golden_gate_bridge_scale_shrink.pdf";
+        public const String DEST = "../../results/chapter06/the_golden_gate_bridge_scale_shrink.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
