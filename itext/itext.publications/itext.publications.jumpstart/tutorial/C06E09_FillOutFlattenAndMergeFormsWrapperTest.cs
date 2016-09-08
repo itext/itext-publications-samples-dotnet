@@ -1,20 +1,25 @@
 using System;
 using System.Collections.Generic;
-using NUnit.Framework.Runners;
+using System.Reflection;
 using iText.Kernel.Utils;
 using iText.Test;
+using NUnit.Framework;
 
 namespace Tutorial {
     /// <summary>
     /// C06E09_FillOutFlattenAndMergeForms sample has irregular DEST files: it has two of them,
     /// so we need process it in a specific way.
     /// </summary>
+    [TestFixtureSource("Data")]
     public class C06E09_FillOutFlattenAndMergeFormsWrapperTest : WrappedSamplesRunner {
-        [Parameterized.Parameters(Name = "{index}: {0}")]
-        public static ICollection<Object[]> Data() {
+
+        public C06E09_FillOutFlattenAndMergeFormsWrapperTest(RunnerParams runnerParams) : base(runnerParams) {
+        }
+
+        public static ICollection<TestFixtureData> Data() {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddClassToRunnerSearchPath("tutorial.chapter06.C06E09_FillOutFlattenAndMergeForms");
-            return GenerateTestsList(searchConfig);
+            searchConfig.AddClassToRunnerSearchPath("Tutorial.Chapter06.C06E09_FillOutFlattenAndMergeForms");
+            return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 
         /// <exception cref="System.Exception"/>
