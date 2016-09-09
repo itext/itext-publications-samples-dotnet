@@ -33,15 +33,11 @@ namespace Tutorial.Chapter05 {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
             IDictionary<String, PdfFormField> fields = form.GetFormFields();
-            PdfFormField toSet;
-            fields.TryGetValue("name", out toSet);
-            toSet.SetValue("James Bond").SetBackgroundColor(Color.ORANGE);
-            fields.TryGetValue("experience1", out toSet);
-            toSet.SetValue("Yes");
-            fields.TryGetValue("experience2", out toSet);
-            toSet.SetValue("Yes");
-            fields.TryGetValue("experience3", out toSet);
-            toSet.SetValue("Yes");
+            fields["name"].SetValue("James Bond").SetBackgroundColor(Color.ORANGE);
+            fields["language"].SetValue("English");
+            fields["experience1"].SetValue("Yes");
+            fields["experience2"].SetValue("Yes");
+            fields["experience3"].SetValue("Yes");
             IList<PdfObject> options = new List<PdfObject>();
             options.Add(new PdfString("Any"));
             options.Add(new PdfString("8.30 am - 12.30 pm"));
@@ -51,12 +47,10 @@ namespace Tutorial.Chapter05 {
             options.Add(new PdfString("12.30 am - 4.30 am"));
             options.Add(new PdfString("4.30 am - 8.30 am"));
             PdfArray arr = new PdfArray(options);
-            fields.TryGetValue("shift", out toSet);
-            toSet.SetOptions(arr);
-            toSet.SetValue("Any");
+            fields["shift"].SetOptions(arr);
+            fields["shift"].SetValue("Any");
             PdfFont courier = PdfFontFactory.CreateFont(FontConstants.COURIER);
-            fields.TryGetValue("info", out toSet);
-            toSet.SetValue("I was 38 years old when I became an MI6 agent.", courier, 7f);
+            fields["info"].SetValue("I was 38 years old when I became an MI6 agent.", courier, 7f);
             pdfDoc.Close();
         }
     }
