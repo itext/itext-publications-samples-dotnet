@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "addons", "addons", "{FEC4AE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.publications.signatures", "itext\itext.publications\itext.publications.signatures\itext.publications.signatures.csproj", "{1AB95867-356A-4665-BBD6-B7E97F993970}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.publications.jumpstart", "itext\itext.publications\itext.publications.jumpstart\itext.publications.jumpstart.csproj", "{EEE84512-F6A8-4CD0-946B-6513D33FDEA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,10 @@ Global
 		{1AB95867-356A-4665-BBD6-B7E97F993970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AB95867-356A-4665-BBD6-B7E97F993970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AB95867-356A-4665-BBD6-B7E97F993970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEE84512-F6A8-4CD0-946B-6513D33FDEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE84512-F6A8-4CD0-946B-6513D33FDEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEE84512-F6A8-4CD0-946B-6513D33FDEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE84512-F6A8-4CD0-946B-6513D33FDEA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
