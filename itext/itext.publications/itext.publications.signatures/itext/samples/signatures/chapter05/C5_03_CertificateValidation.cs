@@ -130,9 +130,9 @@ namespace iText.Samples.Signatures.Chapter05
 		{
 			System.Console.Out.WriteLine("Issuer: " + cert.IssuerDN);
 			System.Console.Out.WriteLine("Subject: " + cert.SubjectDN);
-		    System.Console.Out.WriteLine("Valid from: " + (cert.NotBefore.ToLocalTime().ToString("yyyy-MM-dd")));
+		    System.Console.Out.WriteLine("Valid from: " + (cert.NotBefore.ToUniversalTime().ToString("yyyy-MM-dd")));
 
-            System.Console.Out.WriteLine("Valid to: " + cert.NotAfter.ToLocalTime().ToString("yyyy-MM-dd"));
+            System.Console.Out.WriteLine("Valid to: " + cert.NotAfter.ToUniversalTime().ToString("yyyy-MM-dd"));
 			try
 			{
 				cert.CheckValidity(signDate);
