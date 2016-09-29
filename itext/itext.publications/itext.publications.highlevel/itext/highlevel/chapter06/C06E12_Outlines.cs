@@ -39,7 +39,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter06 {
                 PdfOutline imdb = movie.AddOutline("Link to IMDB");
                 imdb.SetColor(Color.BLUE);
                 imdb.SetStyle(PdfOutline.FLAG_BOLD);
-                String url = String.Format("http://www.imdb.com/title/tt%s", record[0]);
+                String url = String.Format("http://www.imdb.com/title/tt{0}", record[0]);
                 imdb.AddAction(PdfAction.CreateURI(url));
                 PdfOutline info = movie.AddOutline("More info:");
                 info.SetOpen(false);

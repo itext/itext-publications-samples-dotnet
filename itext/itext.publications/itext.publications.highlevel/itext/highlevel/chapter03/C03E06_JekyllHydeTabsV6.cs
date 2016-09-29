@@ -53,7 +53,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter03 {
             foreach (IList<String> record in resultSet) {
                 Paragraph p = new Paragraph();
                 p.AddTabStops(tabstops);
-                PdfAction uri = PdfAction.CreateURI(String.Format("http://www.imdb.com/title/tt%s", record[0]));
+                PdfAction uri = PdfAction.CreateURI(String.Format("http://www.imdb.com/title/tt{0}", record[0]));
                 Link link = new Link(record[2].Trim(), uri);
                 p.Add(record[1].Trim()).Add(new Tab()).Add(link).Add(new Tab()).Add(record[3].Trim()).Add(new Tab()).Add(record
                     [4].Trim()).Add(new Tab()).Add(record[5].Trim() + " \'");

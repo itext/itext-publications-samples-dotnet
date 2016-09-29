@@ -39,7 +39,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter04 {
             foreach (IList<String> record in resultSet) {
                 ListItem li = new ListItem();
                 li.SetKeepTogether(true);
-                String url = String.Format("http://www.imdb.com/title/tt%s", record[0]);
+                String url = String.Format("http://www.imdb.com/title/tt{0}", record[0]);
                 Link movie = new Link(record[2], PdfAction.CreateURI(url));
                 li.Add(new Paragraph(movie.SetFontSize(14))).Add(new Paragraph(String.Format("Directed by {0} ({1}, {2})", record
                     [3], record[4], record[1])));

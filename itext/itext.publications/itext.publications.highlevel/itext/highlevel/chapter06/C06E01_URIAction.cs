@@ -47,7 +47,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter06 {
                     img.ScaleToFit(10000, 120);
                     li.Add(img);
                 }
-                String url = String.Format("http://www.imdb.com/title/tt%s", record[0]);
+                String url = String.Format("http://www.imdb.com/title/tt{0}", record[0]);
                 li.SetAction(PdfAction.CreateURI(url));
                 list.Add(li);
             }

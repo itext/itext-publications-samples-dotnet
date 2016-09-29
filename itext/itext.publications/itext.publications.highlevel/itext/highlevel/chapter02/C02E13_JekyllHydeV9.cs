@@ -66,7 +66,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter02 {
             int n = pdf.GetNumberOfPages();
             Paragraph footer;
             for (int page = 1; page <= n; page++) {
-                footer = new Paragraph(String.Format("Page %s of %s", page, n));
+                footer = new Paragraph(String.Format("Page {0} of {1}", page, n));
                 document.ShowTextAligned(footer, 297.5f, 20, page, TextAlignment.CENTER, VerticalAlignment.MIDDLE, 0);
             }
             //Close document

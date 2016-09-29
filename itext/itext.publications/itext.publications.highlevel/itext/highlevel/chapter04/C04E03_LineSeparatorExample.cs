@@ -43,7 +43,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter04 {
             IList<IList<String>> resultSet = CsvTo2DList.Convert(SRC, "|");
             resultSet.RemoveAt(0);
             foreach (IList<String> record in resultSet) {
-                String url = String.Format("http://www.imdb.com/title/tt%s", record[0]);
+                String url = String.Format("http://www.imdb.com/title/tt{0}", record[0]);
                 Link movie = new Link(record[2], PdfAction.CreateURI(url));
                 Div div = new Div().SetKeepTogether(true).SetBorderLeft(new SolidBorder(2)).SetPaddingLeft(3).SetMarginBottom
                     (10).Add(new Paragraph(movie.SetFontSize(14f))).Add(new Paragraph(String.Format("Directed by {0} ({1}, {2})"
