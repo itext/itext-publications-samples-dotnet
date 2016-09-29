@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using iText.IO.Util;
 using iText.Kernel.Utils;
 using iText.Test;
 using NUnit.Framework;
@@ -8,8 +9,8 @@ using NUnit.Framework;
 namespace itext.publications.highlevel.itext.highlevel {
     [TestFixtureSource("Data")]
     public class HighLevelWrapperTest : WrappedSamplesRunner {
-        public HighLevelWrapperTest(RunnerParams runnerParams) : base(runnerParams)
-        {
+        public HighLevelWrapperTest(RunnerParams runnerParams) : base(runnerParams) {
+            ResourceUtil.AddToResourceSearch(TestContext.CurrentContext.TestDirectory + "/itext.hyph.dll");
         }
         public static ICollection<TestFixtureData> Data() {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
