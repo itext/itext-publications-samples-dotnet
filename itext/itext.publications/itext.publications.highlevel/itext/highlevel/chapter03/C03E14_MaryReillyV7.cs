@@ -19,7 +19,7 @@ namespace iText.Highlevel.Chapter03 {
 
         public const String MARY = "../../resources/img/0117002.jpg";
 
-        public const String DEST = "results/chapter03/mary_reilly_V7.pdf";
+        public const String DEST = "../../results/chapter03/mary_reilly_V7.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

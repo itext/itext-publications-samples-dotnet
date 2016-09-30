@@ -31,7 +31,7 @@ namespace iText.Highlevel.Chapter07 {
 
         public const String IMG = "../../resources/img/3132614.jpg";
 
-        public const String DEST = "results/chapter07/jekyll_hyde_compressed.pdf";
+        public const String DEST = "../../results/chapter07/jekyll_hyde_compressed.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

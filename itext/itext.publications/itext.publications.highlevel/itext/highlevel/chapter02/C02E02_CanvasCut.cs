@@ -17,7 +17,7 @@ namespace iText.Highlevel.Chapter02 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest] 
     public class C02E02_CanvasCut {
-        public const String DEST = "results/chapter02/canvas_cut.pdf";
+        public const String DEST = "../../results/chapter02/canvas_cut.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

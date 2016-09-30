@@ -19,7 +19,7 @@ namespace iText.Highlevel.Notused {
     public class JekyllHydeV6 {
         public const String SRC = "../../resources/txt/jekyll_hyde.txt";
 
-        public const String DEST = "results/chapter02/jekyll_hyde_v6.pdf";
+        public const String DEST = "../../results/chapter02/jekyll_hyde_v6.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

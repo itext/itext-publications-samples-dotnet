@@ -14,7 +14,7 @@ namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C05E03_CellAlignment {
-        public const String DEST = "results/chapter05/cell_alignment.pdf";
+        public const String DEST = "../../results/chapter05/cell_alignment.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

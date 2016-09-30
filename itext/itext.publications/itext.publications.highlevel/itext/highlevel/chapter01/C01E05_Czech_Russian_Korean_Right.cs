@@ -16,7 +16,7 @@ namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C01E05_Czech_Russian_Korean_Right {
-        public const String DEST = "results/chapter01/czech_russian_korean.pdf";
+        public const String DEST = "../../results/chapter01/czech_russian_korean.pdf";
 
         public const String FONT = "../../resources/fonts/FreeSans.ttf";
 

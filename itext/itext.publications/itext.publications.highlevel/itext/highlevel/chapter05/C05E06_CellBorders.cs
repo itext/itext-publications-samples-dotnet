@@ -56,7 +56,7 @@ namespace iText.Highlevel.Chapter05 {
             private readonly C05E06_CellBorders _enclosing;
         }
 
-        public const String DEST = "results/chapter05/cell_borders.pdf";
+        public const String DEST = "../../results/chapter05/cell_borders.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

@@ -15,7 +15,7 @@ namespace iText.Highlevel.Chapter06 {
     /// <author>iText</author>
     [WrapToTest]
     public class C06E08_ExplicitDestinations {
-        public const String DEST = "results/chapter06/jekyll_hyde_explicit.pdf";
+        public const String DEST = "../../results/chapter06/jekyll_hyde_explicit.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

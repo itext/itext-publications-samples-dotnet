@@ -17,7 +17,7 @@ namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C01E10_ReusingStyles {
-        public const String DEST = "results/chapter01/style_example.pdf";
+        public const String DEST = "../../results/chapter01/style_example.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

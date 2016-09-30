@@ -14,7 +14,7 @@ namespace iText.Highlevel.Chapter07 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C07E08_FullScreen {
-        public const String DEST = "results/chapter07/fullscreen.pdf";
+        public const String DEST = "../../results/chapter07/fullscreen.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

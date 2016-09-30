@@ -16,7 +16,7 @@ namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C01E09_ColorRendering {
-        public const String DEST = "results/chapter01/color_rendermode.pdf";
+        public const String DEST = "../../results/chapter01/color_rendermode.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

@@ -20,7 +20,7 @@ namespace iText.Highlevel.Chapter06 {
     public class C06E01_URIAction {
         public const String SRC = "../../resources/data/jekyll_hyde.csv";
 
-        public const String DEST = "results/chapter06/jekyll_hyde_action_uri.pdf";
+        public const String DEST = "../../results/chapter06/jekyll_hyde_action_uri.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

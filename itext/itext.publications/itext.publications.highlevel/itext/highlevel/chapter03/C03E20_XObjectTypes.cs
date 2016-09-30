@@ -19,7 +19,7 @@ namespace iText.Highlevel.Chapter03 {
 
         public const String SRC = "../../resources/pdfs/jekyll_hyde.pdf";
 
-        public const String DEST = "results/chapter03/xobject_types.pdf";
+        public const String DEST = "../../results/chapter03/xobject_types.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

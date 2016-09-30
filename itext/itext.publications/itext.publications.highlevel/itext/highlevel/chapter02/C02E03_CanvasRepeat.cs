@@ -41,7 +41,7 @@ namespace iText.Highlevel.Chapter02 {
             private readonly C02E03_CanvasRepeat _enclosing;
         }
 
-        public const String DEST = "results/chapter02/canvas_repeat.pdf";
+        public const String DEST = "../../results/chapter02/canvas_repeat.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

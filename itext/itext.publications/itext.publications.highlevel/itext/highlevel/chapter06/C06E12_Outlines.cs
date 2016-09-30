@@ -17,7 +17,7 @@ namespace iText.Highlevel.Chapter06 {
     public class C06E12_Outlines {
         public const String SRC = "../../resources/data/jekyll_hyde.csv";
 
-        public const String DEST = "results/chapter06/jekyll_hyde_outlines.pdf";
+        public const String DEST = "../../results/chapter06/jekyll_hyde_outlines.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

@@ -12,7 +12,7 @@ using iText.Test.Attributes;
 namespace iText.Highlevel.Chapter03 {
     [WrapToTest]
     public class C03E07_TextExample {
-        public const String DEST = "results/chapter03/jekyll_hyde_text.pdf";
+        public const String DEST = "../../results/chapter03/jekyll_hyde_text.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

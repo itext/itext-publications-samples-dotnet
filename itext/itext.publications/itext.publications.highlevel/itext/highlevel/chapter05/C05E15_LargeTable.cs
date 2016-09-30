@@ -14,7 +14,7 @@ namespace iText.Highlevel.Chapter05 {
 
     [WrapToTest]
     public class C05E15_LargeTable {
-        public const String DEST = "results/chapter05/large_table.pdf";
+        public const String DEST = "../../results/chapter05/large_table.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

@@ -15,7 +15,7 @@ namespace iText.Highlevel.Chapter06 {
     /// <author>iText</author>
     [WrapToTest]
     public class C06E05_RemoteGoto {
-        public const String DEST = "results/chapter06/jekyll_hyde_remote.pdf";
+        public const String DEST = "../../results/chapter06/jekyll_hyde_remote.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

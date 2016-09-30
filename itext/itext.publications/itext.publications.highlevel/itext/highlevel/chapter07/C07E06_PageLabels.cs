@@ -24,7 +24,7 @@ namespace iText.Highlevel.Chapter07 {
     public class C07E06_PageLabels {
         public const String SRC = "../../resources/txt/jekyll_hyde.txt";
 
-        public const String DEST = "results/chapter07/pagelabels.pdf";
+        public const String DEST = "../../results/chapter07/pagelabels.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

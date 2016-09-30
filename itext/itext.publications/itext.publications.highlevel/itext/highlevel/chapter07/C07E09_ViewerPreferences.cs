@@ -14,7 +14,7 @@ namespace iText.Highlevel.Chapter07 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C07E09_ViewerPreferences {
-        public const String DEST = "results/chapter07/viewerpreferences.pdf";
+        public const String DEST = "../../results/chapter07/viewerpreferences.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

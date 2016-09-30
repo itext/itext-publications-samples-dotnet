@@ -25,7 +25,7 @@ namespace iText.Highlevel.Chapter06 {
     public class C06E03_TOC_GoToPage {
         public const String SRC = "../../resources/txt/jekyll_hyde.txt";
 
-        public const String DEST = "results/chapter06/jekyll_hyde_toc1.pdf";
+        public const String DEST = "../../results/chapter06/jekyll_hyde_toc1.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

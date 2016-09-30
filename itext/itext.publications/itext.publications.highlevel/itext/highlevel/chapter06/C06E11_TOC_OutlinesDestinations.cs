@@ -23,7 +23,7 @@ namespace iText.Highlevel.Chapter06 {
     public class C06E11_TOC_OutlinesDestinations {
         public const String SRC = "../../resources/txt/jekyll_hyde.txt";
 
-        public const String DEST = "results/chapter06/jekyll_hyde_outline2.pdf";
+        public const String DEST = "../../results/chapter06/jekyll_hyde_outline2.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

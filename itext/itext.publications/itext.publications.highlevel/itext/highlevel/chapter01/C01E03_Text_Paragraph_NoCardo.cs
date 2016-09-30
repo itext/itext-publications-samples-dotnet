@@ -15,7 +15,7 @@ namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C01E03_Text_Paragraph_NoCardo {
-        public const String DEST = "results/chapter01/text_paragraph_no_cardo.pdf";
+        public const String DEST = "../../results/chapter01/text_paragraph_no_cardo.pdf";
 
         public const String REGULAR = "../../resources/fonts/Cardo-Regular.ttf";
 

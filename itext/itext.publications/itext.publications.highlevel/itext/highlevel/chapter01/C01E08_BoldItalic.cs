@@ -14,7 +14,7 @@ namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C01E08_BoldItalic {
-        public const String DEST = "results/chapter01/bold_italic.pdf";
+        public const String DEST = "../../results/chapter01/bold_italic.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

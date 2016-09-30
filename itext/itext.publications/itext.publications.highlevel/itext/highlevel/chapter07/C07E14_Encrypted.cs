@@ -13,7 +13,7 @@ namespace iText.Highlevel.Chapter07 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C07E14_Encrypted {
-        public const String DEST = "results/chapter07/encrypted.pdf";
+        public const String DEST = "../../results/chapter07/encrypted.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

@@ -17,7 +17,7 @@ namespace iText.Highlevel.Chapter02 {
     public class C02E15_ShowTextAlignedKerned {
         public static String KEY = "../../resources/license/itextkey-typography.xml";
 
-        public const String DEST = "results/chapter02/showtextalignedkerned.pdf";
+        public const String DEST = "../../results/chapter02/showtextalignedkerned.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

@@ -14,7 +14,7 @@ namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C05E04_ColumnHeights {
-        public const String DEST = "results/chapter05/column_heights.pdf";
+        public const String DEST = "../../results/chapter05/column_heights.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

@@ -20,7 +20,7 @@ namespace iText.Highlevel.Chapter03 {
     public class C03E01_JekyllHydeTabsV1 {
         public const String SRC = "../../resources/data/jekyll_hyde.csv";
 
-        public const String DEST = "results/chapter03/jekyll_hyde_tabs1.pdf";
+        public const String DEST = "../../results/chapter03/jekyll_hyde_tabs1.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

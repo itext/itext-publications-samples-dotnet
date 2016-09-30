@@ -24,7 +24,7 @@ namespace iText.Highlevel.Chapter07 {
     public class C07E07_PageLayoutPageMode {
         public const String SRC = "../../resources/txt/jekyll_hyde.txt";
 
-        public const String DEST = "results/chapter07/page_mode_page_layout.pdf";
+        public const String DEST = "../../results/chapter07/page_mode_page_layout.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

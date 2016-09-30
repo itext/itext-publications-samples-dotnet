@@ -50,7 +50,7 @@ namespace iText.Highlevel.Chapter04 {
             private readonly C04E06_CustomParagraph _enclosing;
         }
 
-        public const String DEST = "results/chapter04/custom_paragraph.pdf";
+        public const String DEST = "../../results/chapter04/custom_paragraph.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

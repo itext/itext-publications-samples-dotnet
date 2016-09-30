@@ -15,7 +15,7 @@ namespace iText.Highlevel.Chapter04 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C04E10_NestedLists {
-        public const String DEST = "results/chapter04/nested_list.pdf";
+        public const String DEST = "../../results/chapter04/nested_list.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

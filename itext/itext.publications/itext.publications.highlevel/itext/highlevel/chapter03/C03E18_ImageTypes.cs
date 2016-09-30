@@ -30,7 +30,7 @@ namespace iText.Highlevel.Chapter03 {
 
         public const String TEST7 = "../../resources/img/test/marbles.tif";
 
-        public const String DEST = "results/chapter03/image_types.pdf";
+        public const String DEST = "../../results/chapter03/image_types.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

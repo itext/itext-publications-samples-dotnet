@@ -70,7 +70,7 @@ namespace iText.Highlevel.Chapter02 {
 
         public const String SRC = "../../resources/txt/jekyll_hyde.txt";
 
-        public const String DEST = "results/chapter02/jekyll_hyde_v7.pdf";
+        public const String DEST = "../../results/chapter02/jekyll_hyde_v7.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {

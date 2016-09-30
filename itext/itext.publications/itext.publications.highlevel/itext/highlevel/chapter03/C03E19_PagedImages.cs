@@ -23,7 +23,7 @@ namespace iText.Highlevel.Chapter03 {
 
         public const String TEST3 = "../../resources/img/test/marbles.tif";
 
-        public const String DEST = "results/chapter03/paged_images.pdf";
+        public const String DEST = "../../results/chapter03/paged_images.pdf";
 
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
