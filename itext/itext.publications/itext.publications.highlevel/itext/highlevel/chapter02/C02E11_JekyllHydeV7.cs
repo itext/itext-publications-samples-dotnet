@@ -31,9 +31,8 @@ namespace iText.Highlevel.Chapter02 {
 
             protected internal ICollection<int> moveColumn = new HashSet<int>();
 
-            public MyColumnRenderer(C02E11_JekyllHydeV7 _enclosing, Document document, Rectangle[] columns)
+            public MyColumnRenderer(Document document, Rectangle[] columns)
                 : base(document, false) {
-                this._enclosing = _enclosing;
                 this.columns = columns;
             }
 
@@ -64,8 +63,6 @@ namespace iText.Highlevel.Chapter02 {
                 }
                 base.FlushSingleRenderer(resultRenderer);
             }
-
-            private readonly C02E11_JekyllHydeV7 _enclosing;
         }
 
         public const String SRC = "../../resources/txt/jekyll_hyde.txt";
@@ -93,7 +90,7 @@ namespace iText.Highlevel.Chapter02 {
             //Define column areas
             Rectangle[] columns = new Rectangle[] { new Rectangle(offSet, offSet, columnWidth, columnHeight), new Rectangle
                 (offSet + columnWidth + gutter, offSet, columnWidth, columnHeight) };
-            DocumentRenderer renderer = new C02E11_JekyllHydeV7.MyColumnRenderer(this, document, columns);
+            DocumentRenderer renderer = new C02E11_JekyllHydeV7.MyColumnRenderer(document, columns);
             document.SetRenderer(renderer);
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
             PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);

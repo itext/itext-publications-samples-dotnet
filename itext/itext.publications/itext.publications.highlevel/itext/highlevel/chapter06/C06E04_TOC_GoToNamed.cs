@@ -60,8 +60,7 @@ namespace iText.Highlevel.Chapter06 {
                 if (title) {
                     name = String.Format("title{0:00}", counter++);
                     Util.Pair<String, int> titlePage = new Util.Pair<string, int>(line, pdf.GetNumberOfPages());
-                    p.SetFont(bold).SetFontSize(12).SetKeepWithNext(true).SetDestination(name).SetNextRenderer(new C06E04_TOC_GoToNamed.UpdatePageRenderer
-                        (this, p, titlePage));
+                    p.SetFont(bold).SetFontSize(12).SetKeepWithNext(true).SetDestination(name).SetNextRenderer(new UpdatePageRenderer(p, titlePage));
                     title = false;
                     document.Add(p);
                     toc.Add(new Util.Pair<string,Util.Pair<string,int>>(name, titlePage));
@@ -81,7 +80,6 @@ namespace iText.Highlevel.Chapter06 {
             document.Add(new AreaBreak(AreaBreakType.NEXT_PAGE));
             p = new Paragraph().SetFont(bold).Add("Table of Contents").SetDestination("toc");
             document.Add(p);
-            //toc.JRemoveAt(0);
             toc.RemoveAt(0);
             IList<TabStop> tabstops = new List<TabStop>();
             tabstops.Add(new TabStop(580, TabAlignment.RIGHT, new DottedLine()));
@@ -98,10 +96,9 @@ namespace iText.Highlevel.Chapter06 {
         protected internal class UpdatePageRenderer : ParagraphRenderer {
             protected internal Util.Pair<String, int> entry;
 
-            public UpdatePageRenderer(C06E04_TOC_GoToNamed _enclosing, Paragraph modelElement, Util.Pair
+            public UpdatePageRenderer(Paragraph modelElement, Util.Pair
                 <String, int> entry)
                 : base(modelElement) {
-                this._enclosing = _enclosing;
                 this.entry = entry;
             }
 
@@ -110,8 +107,6 @@ namespace iText.Highlevel.Chapter06 {
                 this.entry.Value = layoutContext.GetArea().GetPageNumber();
                 return result;
             }
-
-            private readonly C06E04_TOC_GoToNamed _enclosing;
         }
     }
 }

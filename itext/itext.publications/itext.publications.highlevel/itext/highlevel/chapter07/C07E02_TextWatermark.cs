@@ -37,7 +37,7 @@ namespace iText.Highlevel.Chapter07 {
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
-            pdf.AddEventHandler(PdfDocumentEvent.END_PAGE, new C07E02_TextWatermark.TextWatermark(this));
+            pdf.AddEventHandler(PdfDocumentEvent.END_PAGE, new TextWatermark());
             // Initialize document
             Document document = new Document(pdf);
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
@@ -70,8 +70,7 @@ namespace iText.Highlevel.Chapter07 {
             internal PdfFont helvetica;
 
             /// <exception cref="System.IO.IOException"/>
-            protected internal TextWatermark(C07E02_TextWatermark _enclosing) {
-                this._enclosing = _enclosing;
+            protected internal TextWatermark() {
                 this.helvetica = PdfFontFactory.CreateFont(FontConstants.HELVETICA);
                 this.lime = new DeviceCmyk(0.208f, 0, 0.584f, 0);
                 this.blue = new DeviceCmyk(0.445f, 0.0546f, 0, 0.0667f);
@@ -93,8 +92,6 @@ namespace iText.Highlevel.Chapter07 {
                 }
                 pdfCanvas.Release();
             }
-
-            private readonly C07E02_TextWatermark _enclosing;
         }
     }
 }

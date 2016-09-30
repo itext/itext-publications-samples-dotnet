@@ -79,8 +79,7 @@ namespace iText.Highlevel.Chapter06 {
                 outline = outline.AddOutline(title);
                 return outline;
             }
-            C06E11_TOC_OutlinesDestinations.OutlineRenderer renderer = new C06E11_TOC_OutlinesDestinations.OutlineRenderer
-                (this, p, title, outline);
+            OutlineRenderer renderer = new OutlineRenderer(p, title, outline);
             p.SetNextRenderer(renderer);
             return outline;
         }
@@ -90,10 +89,9 @@ namespace iText.Highlevel.Chapter06 {
 
             protected internal String title;
 
-            public OutlineRenderer(C06E11_TOC_OutlinesDestinations _enclosing, Paragraph modelElement, String title, PdfOutline
+            public OutlineRenderer(Paragraph modelElement, String title, PdfOutline
                  parent)
                 : base(modelElement) {
-                this._enclosing = _enclosing;
                 this.title = title;
                 this.parent = parent;
             }
@@ -106,8 +104,6 @@ namespace iText.Highlevel.Chapter06 {
                 PdfOutline outline = this.parent.AddOutline(this.title);
                 outline.AddDestination(dest);
             }
-
-            private readonly C06E11_TOC_OutlinesDestinations _enclosing;
         }
     }
 }

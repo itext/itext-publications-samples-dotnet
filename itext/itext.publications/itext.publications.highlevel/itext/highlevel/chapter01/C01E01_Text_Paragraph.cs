@@ -21,7 +21,6 @@ namespace itext.highlevel.chapter01 {
         /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
-            //file.Directory.Create();
             file.Directory.Create();
             new C01E01_Text_Paragraph().CreatePdf(DEST);
         }

@@ -46,7 +46,7 @@ namespace iText.Highlevel.Chapter07 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest, new WriterProperties().SetFullCompressionMode(true))
                 );
             iText.Layout.Element.Image img = new Image(ImageDataFactory.Create(IMG));
-            IEventHandler handler = new C07E13_Compressed.TransparentImage(this, img);
+            IEventHandler handler = new C07E13_Compressed.TransparentImage(img);
             pdf.AddEventHandler(PdfDocumentEvent.START_PAGE, handler);
             // Initialize document
             Document document = new Document(pdf);
@@ -104,8 +104,7 @@ namespace iText.Highlevel.Chapter07 {
 
             protected internal iText.Layout.Element.Image img;
 
-            public TransparentImage(C07E13_Compressed _enclosing, iText.Layout.Element.Image img) {
-                this._enclosing = _enclosing;
+            public TransparentImage(iText.Layout.Element.Image img) {
                 this.img = img;
                 this.gState = new PdfExtGState().SetFillOpacity(0.2f);
             }
@@ -122,8 +121,6 @@ namespace iText.Highlevel.Chapter07 {
                 pdfCanvas.RestoreState();
                 pdfCanvas.Release();
             }
-
-            private readonly C07E13_Compressed _enclosing;
         }
     }
 }

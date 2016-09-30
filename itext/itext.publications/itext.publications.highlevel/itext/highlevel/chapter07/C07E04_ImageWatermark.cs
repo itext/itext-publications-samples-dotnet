@@ -47,7 +47,7 @@ namespace iText.Highlevel.Chapter07 {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             iText.Layout.Element.Image img = new Image(ImageDataFactory.Create(IMG));
-            IEventHandler handler = new C07E04_ImageWatermark.TransparentImage(this, img);
+            IEventHandler handler = new TransparentImage( img);
             pdf.AddEventHandler(PdfDocumentEvent.START_PAGE, handler);
             // Initialize document
             Document document = new Document(pdf);
@@ -67,8 +67,11 @@ namespace iText.Highlevel.Chapter07 {
                 if (title) {
                     name = String.Format("title{0:00}", counter++);
                     Util.Pair<String, int> titlePage = new Util.Pair<string,int>(line, pdf.GetNumberOfPages());
-                    p.SetFont(bold).SetFontSize(12).SetKeepWithNext(true).SetDestination(name).SetNextRenderer(new C07E04_ImageWatermark.UpdatePageRenderer
-                        (this, p, titlePage));
+                    p.SetFont(bold).
+                        SetFontSize(12)
+                        .SetKeepWithNext(true)
+                        .SetDestination(name)
+                        .SetNextRenderer(new UpdatePageRenderer(p, titlePage));
                     title = false;
                     document.Add(p);
                     toc.Add(new Util.Pair<string,Util.Pair<string,int>>(name, titlePage));
@@ -105,10 +108,9 @@ namespace iText.Highlevel.Chapter07 {
         protected internal class UpdatePageRenderer : ParagraphRenderer {
             protected internal Util.Pair<String, int> entry;
 
-            public UpdatePageRenderer(C07E04_ImageWatermark _enclosing, Paragraph modelElement, Util.Pair
+            public UpdatePageRenderer(Paragraph modelElement, Util.Pair
                 <String, int> entry)
                 : base(modelElement) {
-                this._enclosing = _enclosing;
                 this.entry = entry;
             }
 
@@ -117,8 +119,6 @@ namespace iText.Highlevel.Chapter07 {
                 this.entry.Value = layoutContext.GetArea().GetPageNumber();
                 return result;
             }
-
-            private readonly C07E04_ImageWatermark _enclosing;
         }
 
         protected internal class TransparentImage : IEventHandler {
@@ -126,8 +126,7 @@ namespace iText.Highlevel.Chapter07 {
 
             protected internal iText.Layout.Element.Image img;
 
-            public TransparentImage(C07E04_ImageWatermark _enclosing, iText.Layout.Element.Image img) {
-                this._enclosing = _enclosing;
+            public TransparentImage(iText.Layout.Element.Image img) {
                 this.img = img;
                 this.gState = new PdfExtGState().SetFillOpacity(0.2f);
             }
@@ -144,8 +143,6 @@ namespace iText.Highlevel.Chapter07 {
                 pdfCanvas.RestoreState();
                 pdfCanvas.Release();
             }
-
-            private readonly C07E04_ImageWatermark _enclosing;
         }
     }
 }

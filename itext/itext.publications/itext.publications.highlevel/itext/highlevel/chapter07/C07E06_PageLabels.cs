@@ -86,7 +86,6 @@ namespace iText.Highlevel.Chapter07 {
             document.Add(p);
             page = pdf.GetLastPage();
             page.SetPageLabel(null,  "TOC", 1);
-            //page.SetPageLabel(PageLabelNumberingStyleConstants.DECIMAL_ARABIC_NUMERALS, "TOC", 1);
             toc.RemoveAt(0);
             IList<TabStop> tabstops = new List<TabStop>();
             tabstops.Add(new TabStop(580, TabAlignment.RIGHT, new DottedLine()));

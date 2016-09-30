@@ -37,9 +37,8 @@ namespace iText.Highlevel.Chapter07 {
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
-            pdf.AddEventHandler(PdfDocumentEvent.START_PAGE, new C07E03_PageXofY.Header(this, "The Strange Case of Dr. Jekyll and Mr. Hyde"
-                ));
-            C07E03_PageXofY.PageXofY @event = new C07E03_PageXofY.PageXofY(this, pdf);
+            pdf.AddEventHandler(PdfDocumentEvent.START_PAGE, new C07E03_PageXofY.Header("The Strange Case of Dr. Jekyll and Mr. Hyde"));
+            C07E03_PageXofY.PageXofY @event = new C07E03_PageXofY.PageXofY(pdf);
             pdf.AddEventHandler(PdfDocumentEvent.END_PAGE, @event);
             // Initialize document
             Document document = new Document(pdf);
@@ -69,8 +68,7 @@ namespace iText.Highlevel.Chapter07 {
         protected internal class Header : IEventHandler {
             internal String header;
 
-            public Header(C07E03_PageXofY _enclosing, String header) {
-                this._enclosing = _enclosing;
+            public Header(String header) {
                 this.header = header;
             }
 
@@ -86,8 +84,6 @@ namespace iText.Highlevel.Chapter07 {
                 iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, pageSize);
                 canvas.ShowTextAligned(this.header, pageSize.GetWidth() / 2, pageSize.GetTop() - 30, TextAlignment.CENTER);
             }
-
-            private readonly C07E03_PageXofY _enclosing;
         }
 
         protected internal class PageXofY : IEventHandler {
@@ -103,8 +99,7 @@ namespace iText.Highlevel.Chapter07 {
 
             protected internal float descent = 3;
 
-            public PageXofY(C07E03_PageXofY _enclosing, PdfDocument pdf) {
-                this._enclosing = _enclosing;
+            public PageXofY(PdfDocument pdf) {
                 this.placeholder = new PdfFormXObject(new Rectangle(0, 0, this.side, this.side));
             }
 
@@ -126,8 +121,6 @@ namespace iText.Highlevel.Chapter07 {
                 iText.Layout.Canvas canvas = new iText.Layout.Canvas(this.placeholder, pdf);
                 canvas.ShowTextAligned(pdf.GetNumberOfPages().ToString(), 0, this.descent, TextAlignment.LEFT);
             }
-
-            private readonly C07E03_PageXofY _enclosing;
         }
     }
 }

@@ -32,8 +32,8 @@ namespace iText.Highlevel.Chapter07 {
             PdfReader reader = new PdfReader(src);
             PdfWriter writer = new PdfWriter(dest);
             PdfDocument pdf = new PdfDocument(reader, writer);
-            pdf.AddEventHandler(PdfDocumentEvent.INSERT_PAGE, new C07E05_AddRemovePages.AddPageHandler(this));
-            pdf.AddEventHandler(PdfDocumentEvent.REMOVE_PAGE, new C07E05_AddRemovePages.RemovePageHandler(this));
+            pdf.AddEventHandler(PdfDocumentEvent.INSERT_PAGE, new AddPageHandler());
+            pdf.AddEventHandler(PdfDocumentEvent.REMOVE_PAGE, new RemovePageHandler());
             pdf.AddNewPage(1, PageSize.A4);
             int total = pdf.GetNumberOfPages();
             for (int i = 9; i <= total; i++) {
@@ -55,11 +55,9 @@ namespace iText.Highlevel.Chapter07 {
                 canvas.Add(new Paragraph().Add(docEvent.GetEventType()));
             }
 
-            internal AddPageHandler(C07E05_AddRemovePages _enclosing) {
-                this._enclosing = _enclosing;
+            internal AddPageHandler() {
             }
 
-            private readonly C07E05_AddRemovePages _enclosing;
         }
 
         protected internal class RemovePageHandler : IEventHandler {
@@ -68,11 +66,8 @@ namespace iText.Highlevel.Chapter07 {
                 System.Console.Out.WriteLine(docEvent.GetEventType());
             }
 
-            internal RemovePageHandler(C07E05_AddRemovePages _enclosing) {
-                this._enclosing = _enclosing;
+            internal RemovePageHandler() {
             }
-
-            private readonly C07E05_AddRemovePages _enclosing;
         }
     }
 }

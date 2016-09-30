@@ -36,8 +36,7 @@ namespace iText.Highlevel.Chapter07 {
         public virtual void CreatePdf(String dest) {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             pdf.GetCatalog().SetPageLayout(PdfName.TwoColumnLeft);
-            C07E01_EventHandlers.PageRotationEventHandler eventHandler = new C07E01_EventHandlers.PageRotationEventHandler
-                (this);
+            C07E01_EventHandlers.PageRotationEventHandler eventHandler = new PageRotationEventHandler();
             pdf.AddEventHandler(PdfDocumentEvent.START_PAGE, eventHandler);
             Document document = new Document(pdf, PageSize.A8);
             document.Add(new Paragraph("Dr. Jekyll"));
@@ -65,11 +64,8 @@ namespace iText.Highlevel.Chapter07 {
                 docEvent.GetPage().Put(PdfName.Rotate, this.rotation);
             }
 
-            internal PageRotationEventHandler(C07E01_EventHandlers _enclosing) {
-                this._enclosing = _enclosing;
+            internal PageRotationEventHandler() {
             }
-
-            private readonly C07E01_EventHandlers _enclosing;
         }
     }
 }

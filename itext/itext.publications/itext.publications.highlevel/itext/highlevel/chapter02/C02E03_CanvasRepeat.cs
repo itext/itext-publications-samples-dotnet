@@ -24,9 +24,8 @@ namespace iText.Highlevel.Chapter02 {
         internal class MyCanvasRenderer : CanvasRenderer {
             protected internal bool full = false;
 
-            public MyCanvasRenderer(C02E03_CanvasRepeat _enclosing, Canvas canvas)
+            public MyCanvasRenderer(Canvas canvas)
                 : base(canvas) {
-                this._enclosing = _enclosing;
             }
 
             public override void AddChild(IRenderer renderer) {
@@ -37,8 +36,6 @@ namespace iText.Highlevel.Chapter02 {
             public virtual bool IsFull() {
                 return this.full;
             }
-
-            private readonly C02E03_CanvasRepeat _enclosing;
         }
 
         public const String DEST = "../../results/chapter02/canvas_repeat.pdf";
@@ -60,7 +57,7 @@ namespace iText.Highlevel.Chapter02 {
             pdfCanvas.Rectangle(rectangle);
             pdfCanvas.Stroke();
             iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, rectangle);
-            MyCanvasRenderer renderer = new MyCanvasRenderer(this, canvas);
+            MyCanvasRenderer renderer = new MyCanvasRenderer(canvas);
             canvas.SetRenderer(renderer);
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
             PdfFont bold = PdfFontFactory.CreateFont(FontConstants.TIMES_BOLD);

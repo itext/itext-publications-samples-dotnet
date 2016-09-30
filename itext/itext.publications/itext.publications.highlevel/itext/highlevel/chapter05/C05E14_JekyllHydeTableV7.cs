@@ -48,7 +48,7 @@ namespace iText.Highlevel.Chapter05 {
                 table.AddCell(record[0]);
                 table.AddCell(record[1]);
                 Cell cell = new Cell().Add(record[2]);
-                cell.SetNextRenderer(new C05E14_JekyllHydeTableV7.RunlengthRenderer(this, cell, record[5]));
+                cell.SetNextRenderer(new C05E14_JekyllHydeTableV7.RunlengthRenderer(cell, record[5]));
                 table.AddCell(cell);
                 table.AddCell(record[3]);
                 table.AddCell(record[4]);
@@ -61,9 +61,8 @@ namespace iText.Highlevel.Chapter05 {
         private class RunlengthRenderer : CellRenderer {
             private int runlength;
 
-            public RunlengthRenderer(C05E14_JekyllHydeTableV7 _enclosing, Cell modelElement, String duration)
+            public RunlengthRenderer(Cell modelElement, String duration)
                 : base(modelElement) {
-                this._enclosing = _enclosing;
                 if (String.IsNullOrEmpty(duration.Trim())) {
                     this.runlength = 0;
                 }
@@ -73,7 +72,7 @@ namespace iText.Highlevel.Chapter05 {
             }
 
             public override IRenderer GetNextRenderer() {
-                return new C05E14_JekyllHydeTableV7.RunlengthRenderer(this._enclosing, ((Cell)this.GetModelElement()), this.runlength
+                return new C05E14_JekyllHydeTableV7.RunlengthRenderer(((Cell)this.GetModelElement()), this.runlength
                     .ToString());
             }
 
@@ -102,8 +101,6 @@ namespace iText.Highlevel.Chapter05 {
                 canvas.RestoreState();
                 base.DrawBackground(drawContext);
             }
-
-            private readonly C05E14_JekyllHydeTableV7 _enclosing;
         }
     }
 }

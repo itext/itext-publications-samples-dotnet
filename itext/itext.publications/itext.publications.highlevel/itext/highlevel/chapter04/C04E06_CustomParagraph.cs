@@ -20,9 +20,8 @@ namespace iText.Highlevel.Chapter04 {
     [WrapToTest]
     public class C04E06_CustomParagraph {
         internal class MyParagraphRenderer : ParagraphRenderer {
-            public MyParagraphRenderer(C04E06_CustomParagraph _enclosing, Paragraph modelElement)
+            public MyParagraphRenderer(Paragraph modelElement)
                 : base(modelElement) {
-                this._enclosing = _enclosing;
             }
 
             public override void DrawBackground(DrawContext drawContext) {
@@ -46,8 +45,6 @@ namespace iText.Highlevel.Chapter04 {
                     }
                 }
             }
-
-            private readonly C04E06_CustomParagraph _enclosing;
         }
 
         public const String DEST = "../../results/chapter04/custom_paragraph.pdf";
@@ -70,7 +67,7 @@ namespace iText.Highlevel.Chapter04 {
             document.Add(p1);
             Paragraph p2 = new Paragraph("The Strange Case of Dr. Jekyll and Mr. Hyde");
             p2.SetBackgroundColor(Color.ORANGE);
-            p2.SetNextRenderer(new C04E06_CustomParagraph.MyParagraphRenderer(this, p2));
+            p2.SetNextRenderer(new C04E06_CustomParagraph.MyParagraphRenderer(p2));
             document.Add(p2);
             document.Close();
         }
