@@ -57,8 +57,8 @@ namespace itext.publications.highlevel.itext.highlevel.chapter07 {
             Paragraph p;
             bool title = true;
             int counter = 0;
-            IList<KeyValuePair<String, KeyValuePair<String, int>>> toc = new List<KeyValuePair
-                <String, KeyValuePair<String, int>>>();
+            IList<util.Pair<String, util.Pair<String, int>>> toc = new List<util.Pair
+                <String, util.Pair<String, int>>>();
             while ((line = sr.ReadLine()) != null) {
                 p = new Paragraph(line);
                 p.SetKeepTogether(true);
@@ -67,7 +67,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter07 {
                     p.SetFont(bold).SetFontSize(12).SetKeepWithNext(true).SetDestination(name);
                     title = false;
                     document.Add(p);
-                    toc.Add(new KeyValuePair<string,KeyValuePair<string, int>>(name, new KeyValuePair<String,int>(line, pdf.GetNumberOfPages())));
+                    toc.Add(new util.Pair<string,util.Pair<string, int>>(name, new util.Pair<String,int>(line, pdf.GetNumberOfPages())));
                 }
                 else {
                     p.SetFirstLineIndent(36);
@@ -90,8 +90,8 @@ namespace itext.publications.highlevel.itext.highlevel.chapter07 {
             toc.RemoveAt(0);
             IList<TabStop> tabstops = new List<TabStop>();
             tabstops.Add(new TabStop(580, TabAlignment.RIGHT, new DottedLine()));
-            foreach (KeyValuePair<String, KeyValuePair<String, int>> entry in toc) {
-                KeyValuePair<String, int> text = entry.Value;
+            foreach (util.Pair<String, util.Pair<String, int>> entry in toc) {
+                util.Pair<String, int> text = entry.Value;
                 p = new Paragraph().AddTabStops(tabstops).Add(text.Key).Add(new Tab()).Add(text.Value.ToString()).SetAction
                     (PdfAction.CreateGoTo(entry.Key));
                 document.Add(p);

@@ -50,7 +50,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter06 {
             Paragraph p;
             bool title = true;
             int counter = 0;
-            IList<KeyValuePair<String, int>> toc = new List<KeyValuePair<String, int>>();
+            IList<util.Pair<String, int>> toc = new List<util.Pair<String, int>>();
             while ((line = sr.ReadLine()) != null) {
                 p = new Paragraph(line);
                 p.SetKeepTogether(true);
@@ -60,7 +60,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter06 {
                     title = false;
                     document.Add(p);
                     // The following line is problematic when using setKeepWithNext
-                    toc.Add(new KeyValuePair<string, int>(line, pdf.GetNumberOfPages()));
+                    toc.Add(new util.Pair<string, int>(line, pdf.GetNumberOfPages()));
                 }
                 else {
                     p.SetFirstLineIndent(36);
@@ -80,7 +80,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter06 {
             toc.RemoveAt(0);
             IList<TabStop> tabstops = new List<TabStop>();
             tabstops.Add(new TabStop(580, TabAlignment.RIGHT, new DottedLine()));
-            foreach (KeyValuePair<String, int> entry in toc) {
+            foreach (util.Pair<String, int> entry in toc) {
                 p = new Paragraph().AddTabStops(tabstops).Add(entry.Key).Add(new Tab()).Add(entry.Value.ToString()).SetAction
                     (PdfAction.CreateGoTo(PdfExplicitDestination.CreateFit(entry.Value)));
                 document.Add(p);

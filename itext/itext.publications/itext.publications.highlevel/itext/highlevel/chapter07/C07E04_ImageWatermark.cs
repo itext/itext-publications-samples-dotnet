@@ -59,19 +59,19 @@ namespace itext.publications.highlevel.itext.highlevel.chapter07 {
             Paragraph p;
             bool title = true;
             int counter = 0;
-            IList<KeyValuePair<String, KeyValuePair<String, int>>> toc = new List<KeyValuePair
-                <String, KeyValuePair<String, int>>>();
+            IList<util.Pair<String, util.Pair<String, int>>> toc = new List<util.Pair
+                <String, util.Pair<String, int>>>();
             while ((line = sr.ReadLine()) != null) {
                 p = new Paragraph(line);
                 p.SetKeepTogether(true);
                 if (title) {
                     name = String.Format("title{0:00}", counter++);
-                    KeyValuePair<String, int> titlePage = new KeyValuePair<string,int>(line, pdf.GetNumberOfPages());
+                    util.Pair<String, int> titlePage = new util.Pair<string,int>(line, pdf.GetNumberOfPages());
                     p.SetFont(bold).SetFontSize(12).SetKeepWithNext(true).SetDestination(name).SetNextRenderer(new C07E04_ImageWatermark.UpdatePageRenderer
                         (this, p, titlePage));
                     title = false;
                     document.Add(p);
-                    toc.Add(new KeyValuePair<string,KeyValuePair<string,int>>(name, titlePage));
+                    toc.Add(new util.Pair<string,util.Pair<string,int>>(name, titlePage));
                 }
                 else {
                     p.SetFirstLineIndent(36);
@@ -92,8 +92,8 @@ namespace itext.publications.highlevel.itext.highlevel.chapter07 {
             toc.RemoveAt(0);
             IList<TabStop> tabstops = new List<TabStop>();
             tabstops.Add(new TabStop(580, TabAlignment.RIGHT, new DottedLine()));
-            foreach (KeyValuePair<String, KeyValuePair<String, int>> entry in toc) {
-                KeyValuePair<String, int> text = entry.Value;
+            foreach (util.Pair<String, util.Pair<String, int>> entry in toc) {
+                util.Pair<String, int> text = entry.Value;
                 p = new Paragraph().AddTabStops(tabstops).Add(text.Key).Add(new Tab()).Add(text.Value.ToString()).SetAction
                     (PdfAction.CreateGoTo(entry.Key));
                 document.Add(p);
@@ -103,9 +103,9 @@ namespace itext.publications.highlevel.itext.highlevel.chapter07 {
         }
 
         protected internal class UpdatePageRenderer : ParagraphRenderer {
-            protected internal KeyValuePair<String, int> entry;
+            protected internal util.Pair<String, int> entry;
 
-            public UpdatePageRenderer(C07E04_ImageWatermark _enclosing, Paragraph modelElement, KeyValuePair
+            public UpdatePageRenderer(C07E04_ImageWatermark _enclosing, Paragraph modelElement, util.Pair
                 <String, int> entry)
                 : base(modelElement) {
                 this._enclosing = _enclosing;
@@ -114,7 +114,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter07 {
 
             public override LayoutResult Layout(LayoutContext layoutContext) {
                 LayoutResult result = base.Layout(layoutContext);
-                this.entry = new KeyValuePair<string, int>(entry.Key, layoutContext.GetArea().GetPageNumber());
+                this.entry.Value = layoutContext.GetArea().GetPageNumber();
                 return result;
             }
 

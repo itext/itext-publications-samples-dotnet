@@ -167,6 +167,7 @@
     <Compile Include="itext\highlevel\notused\JekyllHydeV7.cs" />
     <Compile Include="itext\highlevel\notused\Renderers.cs" />
     <Compile Include="itext\highlevel\util\CsvTo2DList.cs" />
+    <Compile Include="itext\highlevel\util\Pair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
