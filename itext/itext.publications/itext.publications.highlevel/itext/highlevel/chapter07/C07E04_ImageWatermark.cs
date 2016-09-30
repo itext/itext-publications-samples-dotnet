@@ -65,7 +65,7 @@ namespace itext.publications.highlevel.itext.highlevel.chapter07 {
                 p = new Paragraph(line);
                 p.SetKeepTogether(true);
                 if (title) {
-                    name = String.Format("title{0}", counter++);
+                    name = String.Format("title{0:00}", counter++);
                     KeyValuePair<String, int> titlePage = new KeyValuePair<string,int>(line, pdf.GetNumberOfPages());
                     p.SetFont(bold).SetFontSize(12).SetKeepWithNext(true).SetDestination(name).SetNextRenderer(new C07E04_ImageWatermark.UpdatePageRenderer
                         (this, p, titlePage));
