@@ -3,7 +3,6 @@
 * in the context of the book: iText 7 building blocks
 */
 using System;
-using System.Drawing;
 using System.IO;
 using iText.IO.Image;
 using iText.Kernel.Colors;
@@ -75,15 +74,13 @@ namespace itext.publications.highlevel.itext.highlevel.chapter03 {
             iText.Layout.Element.Image img5 = new iText.Layout.Element.Image(ImageDataFactory.Create(TEST5));
             img5.SetBackgroundColor(Color.LIGHT_GRAY);
             document.Add(img5);
-            // AWT
-            //Todo: Review this test
-            /*
-            System.Drawing.Image awtImage = Toolkit.GetDefaultToolkit().CreateImage(TEST5);
-            iText.Layout.Element.Image awt = new iText.Layout.Element.Image(ImageDataFactory.Create(awtImage, Color.YELLOW
-                ));
+            
+            // System.Drawing.Image
+            System.Drawing.Image systemDrawingImage = System.Drawing.Image.FromFile(TEST5);
+            iText.Layout.Element.Image awt = new iText.Layout.Element.Image(ImageDataFactory.Create(systemDrawingImage, System.Drawing.Color.Yellow));
             awt.SetMarginTop(10);
             document.Add(awt);
-            */
+            
             // JBIG2
             iText.Layout.Element.Image img6 = new iText.Layout.Element.Image(ImageDataFactory.Create(TEST6));
             document.Add(img6);
