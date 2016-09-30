@@ -11,7 +11,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter01 {
+namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C01E02_Text_Paragraph_Cardo {

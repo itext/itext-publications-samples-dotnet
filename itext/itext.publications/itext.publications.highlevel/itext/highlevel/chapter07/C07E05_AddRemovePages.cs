@@ -12,7 +12,7 @@ using iText.Kernel.Pdf.Canvas;
 using iText.Layout.Element;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter07 {
+namespace iText.Highlevel.Chapter07 {
     /// <author>iText</author>
     [WrapToTest]
     public class C07E05_AddRemovePages {

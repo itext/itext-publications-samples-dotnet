@@ -9,7 +9,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter03 {
+namespace iText.Highlevel.Chapter03 {
     [WrapToTest]
     public class C03E07_TextExample {
         public const String DEST = "results/chapter03/jekyll_hyde_text.pdf";

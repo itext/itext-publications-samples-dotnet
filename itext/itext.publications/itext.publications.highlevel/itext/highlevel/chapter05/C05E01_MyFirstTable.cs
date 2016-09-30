@@ -8,7 +8,7 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter05 {
+namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C05E01_MyFirstTable {
         public const String DEST = "results/chapter05/my_first_table.pdf";

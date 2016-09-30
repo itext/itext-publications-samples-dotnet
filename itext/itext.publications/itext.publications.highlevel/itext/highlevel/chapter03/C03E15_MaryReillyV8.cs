@@ -11,7 +11,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter03 {
+namespace iText.Highlevel.Chapter03 {
     [WrapToTest]
     public class C03E15_MaryReillyV8 {
         public const String MARY = "../../resources/img/0117002.jpg";

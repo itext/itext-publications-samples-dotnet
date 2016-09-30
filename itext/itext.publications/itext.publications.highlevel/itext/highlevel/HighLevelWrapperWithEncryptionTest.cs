@@ -18,7 +18,7 @@ namespace iText.Highlevel
         /*    [Parameterized.Parameters(QName = "{index}: {0}")]*/
         public static ICollection<TestFixtureData> Data() {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddClassToRunnerSearchPath("itext.publications.highlevel.itext.highlevel.chapter07.C07E14_Encrypted");
+            searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter07.C07E14_Encrypted");
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 

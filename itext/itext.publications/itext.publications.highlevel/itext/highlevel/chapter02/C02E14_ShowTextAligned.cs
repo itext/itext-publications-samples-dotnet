@@ -11,7 +11,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter02 {
+namespace iText.Highlevel.Chapter02 {
     /// <author>iText</author>
     [WrapToTest]
     public class C02E14_ShowTextAligned {

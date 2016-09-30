@@ -14,7 +14,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter04 {
+namespace iText.Highlevel.Chapter04 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C04E09_ListItemExample {

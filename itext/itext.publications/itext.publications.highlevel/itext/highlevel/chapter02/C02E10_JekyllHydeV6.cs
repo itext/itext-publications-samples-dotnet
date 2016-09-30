@@ -16,7 +16,7 @@ using iText.Layout.Properties;
 using iText.Layout.Renderer;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter02 {
+namespace iText.Highlevel.Chapter02 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C02E10_JekyllHydeV6 {

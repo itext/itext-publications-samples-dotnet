@@ -20,7 +20,7 @@ namespace iText.Highlevel {
 
         public static ICollection<TestFixtureData> Data() {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddClassToRunnerSearchPath("itext.publications.highlevel.itext.highlevel.chapter02.C02E15_ShowTextAlignedKerned");
+            searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter02.C02E15_ShowTextAlignedKerned");
             return GenerateTestsList(Assembly.GetExecutingAssembly(),searchConfig);
         }
 

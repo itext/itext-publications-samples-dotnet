@@ -13,7 +13,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter03 {
+namespace iText.Highlevel.Chapter03 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C03E19_PagedImages {

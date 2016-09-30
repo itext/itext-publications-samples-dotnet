@@ -20,7 +20,7 @@ using iText.Layout.Properties;
 using iText.Layout.Renderer;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter06 {
+namespace iText.Highlevel.Chapter06 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C06E04_TOC_GoToNamed {
@@ -52,19 +52,19 @@ namespace itext.publications.highlevel.itext.highlevel.chapter06 {
             bool title = true;
             int counter = 0;
             
-            IList<util.Pair<String, util.Pair<String, int>>> toc = new List<util.Pair
-                <String, util.Pair<String, int>>>();
+            IList<Util.Pair<String, Util.Pair<String, int>>> toc = new List<Util.Pair
+                <String, Util.Pair<String, int>>>();
             while ((line = sr.ReadLine()) != null) {
                 p = new Paragraph(line);
                 p.SetKeepTogether(true);
                 if (title) {
                     name = String.Format("title{0:00}", counter++);
-                    util.Pair<String, int> titlePage = new util.Pair<string, int>(line, pdf.GetNumberOfPages());
+                    Util.Pair<String, int> titlePage = new Util.Pair<string, int>(line, pdf.GetNumberOfPages());
                     p.SetFont(bold).SetFontSize(12).SetKeepWithNext(true).SetDestination(name).SetNextRenderer(new C06E04_TOC_GoToNamed.UpdatePageRenderer
                         (this, p, titlePage));
                     title = false;
                     document.Add(p);
-                    toc.Add(new util.Pair<string,util.Pair<string,int>>(name, titlePage));
+                    toc.Add(new Util.Pair<string,Util.Pair<string,int>>(name, titlePage));
                 }
                 else {
                     p.SetFirstLineIndent(36);
@@ -85,8 +85,8 @@ namespace itext.publications.highlevel.itext.highlevel.chapter06 {
             toc.RemoveAt(0);
             IList<TabStop> tabstops = new List<TabStop>();
             tabstops.Add(new TabStop(580, TabAlignment.RIGHT, new DottedLine()));
-            foreach (util.Pair<String, util.Pair<String, int>> entry in toc) {
-                util.Pair<String, int> text = entry.Value;
+            foreach (Util.Pair<String, Util.Pair<String, int>> entry in toc) {
+                Util.Pair<String, int> text = entry.Value;
                 p = new Paragraph().AddTabStops(tabstops).Add(text.Key).Add(new Tab()).Add(text.Value.ToString()).SetAction
                     (PdfAction.CreateGoTo(entry.Key));
                 document.Add(p);
@@ -96,9 +96,9 @@ namespace itext.publications.highlevel.itext.highlevel.chapter06 {
         }
 
         protected internal class UpdatePageRenderer : ParagraphRenderer {
-            protected internal util.Pair<String, int> entry;
+            protected internal Util.Pair<String, int> entry;
 
-            public UpdatePageRenderer(C06E04_TOC_GoToNamed _enclosing, Paragraph modelElement, util.Pair
+            public UpdatePageRenderer(C06E04_TOC_GoToNamed _enclosing, Paragraph modelElement, Util.Pair
                 <String, int> entry)
                 : base(modelElement) {
                 this._enclosing = _enclosing;

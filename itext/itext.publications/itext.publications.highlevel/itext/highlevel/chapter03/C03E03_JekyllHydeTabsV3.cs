@@ -15,7 +15,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter03 {
+namespace iText.Highlevel.Chapter03 {
     /// <author>iText</author>
     [WrapToTest]
     public class C03E03_JekyllHydeTabsV3 {

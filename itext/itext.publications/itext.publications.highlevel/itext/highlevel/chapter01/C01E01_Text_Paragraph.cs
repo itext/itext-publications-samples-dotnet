@@ -12,7 +12,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter01 {
+namespace itext.highlevel.chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C01E01_Text_Paragraph {

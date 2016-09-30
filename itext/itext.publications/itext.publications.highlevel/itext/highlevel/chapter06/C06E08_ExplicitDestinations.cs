@@ -11,7 +11,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter06 {
+namespace iText.Highlevel.Chapter06 {
     /// <author>iText</author>
     [WrapToTest]
     public class C06E08_ExplicitDestinations {

@@ -6,7 +6,7 @@ using iText.Kernel.Utils;
 using iText.Test;
 using NUnit.Framework;
 
-namespace itext.publications.highlevel.itext.highlevel {
+namespace iText.Highlevel {
     [TestFixtureSource("Data")]
     public class HighLevelWrapperTest : WrappedSamplesRunner {
         public HighLevelWrapperTest(RunnerParams runnerParams) : base(runnerParams) {
@@ -14,11 +14,11 @@ namespace itext.publications.highlevel.itext.highlevel {
         }
         public static ICollection<TestFixtureData> Data() {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddPackageToRunnerSearchPath("itext.publications.highlevel.itext.highlevel");
+            searchConfig.AddPackageToRunnerSearchPath("iText.Highlevel");
             
-            searchConfig.IgnorePackageOrClass("itext.publications.highlevel.itext.highlevel.chapter02.C02E15_ShowTextAlignedKerned");
-            searchConfig.IgnorePackageOrClass("itext.publications.highlevel.itext.highlevel.chapter07.C07E14_Encrypted");
-            return GenerateTestsList(Assembly.GetExecutingAssembly(),searchConfig);
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter02.C02E15_ShowTextAlignedKerned");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter07.C07E14_Encrypted");
+            return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 
         /// <exception cref="System.Exception"/>

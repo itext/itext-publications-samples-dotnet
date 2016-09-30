@@ -18,7 +18,7 @@ using iText.Layout.Hyphenation;
 using iText.Layout.Properties;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter07 {
+namespace iText.Highlevel.Chapter07 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C07E02_TextWatermark {

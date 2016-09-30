@@ -15,7 +15,7 @@ using iText.Layout.Properties;
 using iText.Layout.Renderer;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter05 {
+namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C05E06_CellBorders {

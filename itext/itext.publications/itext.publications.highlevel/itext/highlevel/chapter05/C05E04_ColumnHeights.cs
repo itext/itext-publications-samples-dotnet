@@ -10,7 +10,7 @@ using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter05 {
+namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C05E04_ColumnHeights {

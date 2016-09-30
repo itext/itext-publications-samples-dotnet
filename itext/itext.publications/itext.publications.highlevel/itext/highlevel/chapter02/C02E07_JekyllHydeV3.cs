@@ -14,7 +14,7 @@ using iText.Layout.Hyphenation;
 using iText.Layout.Properties;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter02 {
+namespace iText.Highlevel.Chapter02 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C02E07_JekyllHydeV3 {

@@ -11,7 +11,7 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Action;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter06 {
+namespace iText.Highlevel.Chapter06 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C06E12_Outlines {

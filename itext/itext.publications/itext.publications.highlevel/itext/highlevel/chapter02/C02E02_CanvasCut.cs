@@ -13,7 +13,7 @@ using iText.Kernel.Pdf.Canvas;
 using iText.Layout.Element;
 using iText.Test.Attributes;
 
-namespace itext.publications.highlevel.itext.highlevel.chapter02 {
+namespace iText.Highlevel.Chapter02 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest] 
     public class C02E02_CanvasCut {
