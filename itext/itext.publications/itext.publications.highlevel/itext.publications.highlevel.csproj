@@ -7,9 +7,10 @@
     <ProjectGuid>{065CBFEA-AF4C-4D42-812D-B42C375B7AF7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>itext.publications.highlevel</RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>itext.publications.highlevel</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,145 +31,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="dotMemory.Unit, Version=103.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\JetBrains.dotMemoryUnit.2.3.20160517.113140\lib\dotMemory.Unit.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework, Version=3.2.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\NUnit.3.2.1\lib\net45\nunit.framework.dll</HintPath>
+      <HintPath>$(SolutionDir)\packages\NUnit.3.2.1\lib\net40\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="itext\highlevel\chapter01\C01E01_Text_Paragraph.cs" />
-    <Compile Include="itext\highlevel\chapter01\C01E02_Text_Paragraph_Cardo.cs" />
-    <Compile Include="itext\highlevel\chapter01\C01E03_Text_Paragraph_NoCardo.cs" />
-    <Compile Include="itext\highlevel\chapter01\C01E04_Czech_Russian_Korean_Wrong.cs" />
-    <Compile Include="itext\highlevel\chapter01\C01E05_Czech_Russian_Korean_Right.cs" />
-    <Compile Include="itext\highlevel\chapter01\C01E06_Czech_Russian_Korean_Unicode.cs" />
-    <Compile Include="itext\highlevel\chapter01\C01E07_FontSize.cs" />
-    <Compile Include="itext\highlevel\chapter01\C01E08_BoldItalic.cs" />
-    <Compile Include="itext\highlevel\chapter01\C01E09_ColorRendering.cs" />
-    <Compile Include="itext\highlevel\chapter01\C01E10_ReusingStyles.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E01_CanvasExample.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E02_CanvasCut.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E03_CanvasRepeat.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E04_CanvasReturn.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E05_JekyllHydeV1.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E06_JekyllHydeV2.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E07_JekyllHydeV3.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E08_JekyllHydeV4.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E09_JekyllHydeV5.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E10_JekyllHydeV6.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E11_JekyllHydeV7.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E12_JekyllHydeV8.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E13_JekyllHydeV9.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E14_ShowTextAligned.cs" />
-    <Compile Include="itext\highlevel\chapter02\C02E15_ShowTextAlignedKerned.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E01_JekyllHydeTabsV1.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E02_JekyllHydeTabsV2.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E03_JekyllHydeTabsV3.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E04_JekyllHydeTabsV4.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E05_JekyllHydeTabsV5.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E06_JekyllHydeTabsV6.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E07_TextExample.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E08_MaryReillyV1.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E09_MaryReillyV2.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E10_MaryReillyV3.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E11_MaryReillyV4.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E12_MaryReillyV5.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E13_MaryReillyV6.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E14_MaryReillyV7.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E15_MaryReillyV8.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E16_MaryReillyV9.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E17_MaryReillyV10.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E18_ImageTypes.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E19_PagedImages.cs" />
-    <Compile Include="itext\highlevel\chapter03\C03E20_XObjectTypes.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E01_DivExample1.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E02_DivExample2.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E03_LineSeparatorExample.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E04_ParagraphAndDiv1.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E05_ParagraphAndDiv2.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E05_ParagraphAndDiv3.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E06_CustomParagraph.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E07_ListTypes.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E08_CustomListSymbols.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E09_ListItemExample.cs" />
-    <Compile Include="itext\highlevel\chapter04\C04E10_NestedLists.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E01_MyFirstTable.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E02_ColumnWidths.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E03_CellAlignment.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E04_ColumnHeights.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E05_CellMarginPadding.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E06_CellBorders.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E07_NestedTable.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E08_JekyllHydeTableV1.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E09_JekyllHydeTableV2.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E10_JekyllHydeTableV3.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E11_JekyllHydeTableV4.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E12_JekyllHydeTableV5.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E13_JekyllHydeTableV6.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E14_JekyllHydeTableV7.cs" />
-    <Compile Include="itext\highlevel\chapter05\C05E15_LargeTable.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E01_URIAction.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E02_NamedAction.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E03_TOC_GoToPage.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E04_TOC_GoToNamed.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E05_RemoteGoto.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E06_JavaScript.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E07_ChainedActions.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E08_ExplicitDestinations.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E09_Annotation.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E10_TOC_OutlinesNames.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E11_TOC_OutlinesDestinations.cs" />
-    <Compile Include="itext\highlevel\chapter06\C06E12_Outlines.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E01_EventHandlers.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E02_TextWatermark.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E03_PageXofY.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E04_ImageWatermark.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E05_AddRemovePages.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E06_PageLabels.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E07_PageLayoutPageMode.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E08_FullScreen.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E09_ViewerPreferences.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E10_PrinterPreferences.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E11_Actions.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E12_Metadata.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E13_Compressed.cs" />
-    <Compile Include="itext\highlevel\chapter07\C07E14_Encrypted.cs" />
-    <Compile Include="itext\highlevel\HighLevelWrapperTest.cs" />
-    <Compile Include="itext\highlevel\HighLevelWrapperWithEncryptionTest.cs" />
-    <Compile Include="itext\highlevel\HighLevelWrapperWithLicenseTest.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\CanvasFontMethods.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\CanvasLayoutMethods.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\CellProperties.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\DivProperties.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\DocumentFontMethods.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\DocumentLayoutMethods.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\ImageProperties.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\ListProperties.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\ListSeparatorProperties.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\ParagraphProperties.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\TableProperties.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\TextProperties.cs" />
-    <Compile Include="itext\highlevel\notused\appendix\TextWithColoredBorder.cs" />
-    <Compile Include="itext\highlevel\notused\C04E10_MaryReillyV3.cs" />
-    <Compile Include="itext\highlevel\notused\JekyllHydeV5.cs" />
-    <Compile Include="itext\highlevel\notused\JekyllHydeV6.cs" />
-    <Compile Include="itext\highlevel\notused\JekyllHydeV7.cs" />
-    <Compile Include="itext\highlevel\notused\Renderers.cs" />
-    <Compile Include="itext\highlevel\util\CsvTo2DList.cs" />
-    <Compile Include="itext\highlevel\util\Pair.cs" />
+    <Compile Include="itext\highlevel\**\*.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -215,16 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="resources\data\" />
-    <Folder Include="resources\fonts\" />
-    <Folder Include="resources\img\" />
-    <Folder Include="resources\pdfs\" />
-    <Folder Include="resources\txt\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
