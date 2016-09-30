@@ -7,9 +7,11 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
+    [WrapToTest]
     public class C05E01_MyFirstTable {
         public const String DEST = "../../results/chapter05/my_first_table.pdf";
 
