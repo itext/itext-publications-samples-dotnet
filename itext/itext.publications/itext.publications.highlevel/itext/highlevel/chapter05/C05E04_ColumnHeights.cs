@@ -33,9 +33,9 @@ namespace iText.Highlevel.Chapter05 {
             Document document = new Document(pdf);
             Table table = new Table(1);
             table.AddCell(p);
-            Cell cell = new Cell().SetHeight(16).Add(p);
+            Cell cell = new Cell().SetMinHeight(16).Add(p);
             table.AddCell(cell);
-            cell = new Cell().SetHeight(144).Add(p);
+            cell = new Cell().SetMinHeight(144).Add(p);
             table.AddCell(cell);
             cell = new Cell().Add(p).SetRotationAngle(Math.PI / 6);
             table.AddCell(cell);
