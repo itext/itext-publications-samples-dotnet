@@ -10,7 +10,6 @@ namespace iText.Highlevel {
     [TestFixtureSource("Data")]
     public class HighLevelWrapperTest : WrappedSamplesRunner {
         public HighLevelWrapperTest(RunnerParams runnerParams) : base(runnerParams) {
-            ResourceUtil.AddToResourceSearch(TestContext.CurrentContext.TestDirectory + "/itext.hyph.dll");
         }
         public static ICollection<TestFixtureData> Data() {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
