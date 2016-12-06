@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itext.licensekey, Version=2.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\itext7.licensekey.2.0.2\lib\net40\itext.licensekey.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)\packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -81,10 +85,6 @@
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.sign\itext.sign.csproj">
       <Project>{14a163c0-0054-480d-a096-eda51dd933ea}</Project>
       <Name>itext.sign</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\licensekey\itext\itext.license\itext.licensekey.csproj">
-      <Project>{48a742ff-bf78-402f-ac44-184bd2734634}</Project>
-      <Name>itext.licensekey</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\typography\itext\itext.typography\itext.typography.csproj">
       <Project>{cfe438d3-b3ae-4596-8410-3d9bbc39a05a}</Project>

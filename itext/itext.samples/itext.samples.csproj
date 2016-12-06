@@ -82,6 +82,10 @@
       <HintPath>$(SolutionDir)\packages\IKVM.Runtime.7.2.4630.5\lib\IKVM.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="itext.licensekey, Version=2.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\itext7.licensekey.2.0.2\lib\net40\itext.licensekey.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)\packages\NUnit.3.4.1\lib\net40\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -139,10 +143,6 @@
     <ProjectReference Include="..\..\..\zugferd\itext\itext.zugferd\itext.zugferd.csproj">
       <Project>{CF45E61E-A3BC-4B64-AA92-5814AF726286}</Project>
       <Name>itext.zugferd</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\licensekey\itext\itext.license\itext.licensekey.csproj">
-      <Project>{48A742FF-BF78-402F-AC44-184BD2734634}</Project>
-      <Name>itext.licensekey</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
