@@ -64,7 +64,7 @@ namespace iText.Highlevel.Chapter05 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             // Initialize document
             Document document = new Document(pdf);
-            Table table1 = new Table(new float[] { 2, 1, 1 });
+            Table table1 = new Table(UnitValue.CreatePercentArray(new float[] { 2, 1, 1 }));
             table1.SetWidthPercent(80);
             table1.SetHorizontalAlignment(HorizontalAlignment.CENTER);
             table1.AddCell(new Cell(1, 3).Add("Cell with colspan 3").SetPadding(10).SetMargin(5).SetBorder(new DashedBorder
@@ -76,7 +76,7 @@ namespace iText.Highlevel.Chapter05 {
             table1.AddCell(new Cell().Add("row 2; cell 1").SetMargin(10).SetBorderBottom(new SolidBorder(2)));
             table1.AddCell(new Cell().Add("row 2; cell 2").SetPadding(10).SetBorderBottom(new SolidBorder(2)));
             document.Add(table1);
-            Table table2 = new Table(new float[] { 2, 1, 1 });
+            Table table2 = new Table(UnitValue.CreatePercentArray(new float[] { 2, 1, 1 }));
             table2.SetMarginTop(10);
             table2.SetBorder(new SolidBorder(1));
             table2.SetWidthPercent(80);
@@ -88,7 +88,7 @@ namespace iText.Highlevel.Chapter05 {
             table2.AddCell(new Cell().Add("row 2; cell 1").SetBorder(Border.NO_BORDER));
             table2.AddCell(new Cell().Add("row 2; cell 2").SetBorder(Border.NO_BORDER));
             document.Add(table2);
-            Table table3 = new Table(new float[] { 2, 1, 1 });
+            Table table3 = new Table(UnitValue.CreatePercentArray(new float[] { 2, 1, 1 }));
             table3.SetMarginTop(10);
             table3.SetWidthPercent(80);
             table3.SetHorizontalAlignment(HorizontalAlignment.CENTER);

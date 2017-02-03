@@ -30,7 +30,7 @@ namespace iText.Highlevel.Chapter05 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             // Initialize document
             Document document = new Document(pdf);
-            Table table = new Table(new float[] { 2, 1, 1 });
+            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 2, 1, 1 }));
             table.SetBackgroundColor(Color.ORANGE);
             table.SetWidthPercent(80);
             table.SetHorizontalAlignment(HorizontalAlignment.CENTER);

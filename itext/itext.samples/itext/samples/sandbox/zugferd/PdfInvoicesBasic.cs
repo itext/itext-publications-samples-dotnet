@@ -135,7 +135,7 @@ namespace iText.Samples.Sandbox.Zugferd
             table.AddCell(buyer);
             document.Add(table);
             // line items
-            table = new Table(new float[] { 7, 2, 1, 2, 2, 2 });
+            table = new Table(UnitValue.CreatePercentArray(new float[] { 7, 2, 1, 2, 2, 2 }));
             table.SetWidthPercent(100);
             table.SetMarginTop(10);
             table.SetMarginBottom(10);
