@@ -223,8 +223,7 @@ namespace iText.Samples.Sandbox.Zugferd
 
         public virtual Table GetTotalsTable(String tBase, String tTax, String tTotal, String tCurrency, String[] type
             , String[] percentage, String[] @base, String[] tax, String[] currency) {
-            Table table = new Table(new float[] { 1, 1, 3, 3, 3, 1 });
-            table.SetWidthPercent(100);
+            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 1, 1, 3, 3, 3, 1 }));
             table.AddCell(GetCell("TAX", TextAlignment.LEFT, fontb, 12));
             table.AddCell(GetCell("%", TextAlignment.RIGHT, fontb, 12));
             table.AddCell(GetCell("Base amount:", TextAlignment.LEFT, fontb, 12));

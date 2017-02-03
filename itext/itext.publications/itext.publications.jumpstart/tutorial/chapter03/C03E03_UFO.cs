@@ -48,8 +48,7 @@ namespace Tutorial.Chapter03 {
             Paragraph p = new Paragraph("List of reported UFO sightings in 20th century").SetTextAlignment(TextAlignment
                 .CENTER).SetFont(helveticaBold).SetFontSize(14);
             document.Add(p);
-            Table table = new Table(new float[] { 3, 5, 7, 4 });
-            table.SetWidthPercent(100);
+            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 3, 5, 7, 4 }));
             StreamReader sr = File.OpenText(DATA);
             String line = sr.ReadLine();
             Process(table, line, helveticaBold, true);

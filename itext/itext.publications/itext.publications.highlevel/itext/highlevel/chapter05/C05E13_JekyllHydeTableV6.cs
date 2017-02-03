@@ -12,6 +12,7 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Layout.Properties;
 using iText.Layout.Renderer;
 using iText.Test.Attributes;
 
@@ -39,7 +40,7 @@ namespace iText.Highlevel.Chapter05 {
             IList<IList<String>> resultSet = CsvTo2DList.Convert(SRC, "|");
             IList<String> header = resultSet[0];
             resultSet.RemoveAt(0);
-            Table table = new Table(new float[] { 3, 2, 14, 9, 4, 3 });
+            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 3, 2, 14, 9, 4, 3 }));
             int nRows = resultSet.Count;
             table.SetNextRenderer(new AlternatingBackgroundTableRenderer(table, new Table.RowRange(0, nRows - 1)));
             table.SetWidthPercent(100);

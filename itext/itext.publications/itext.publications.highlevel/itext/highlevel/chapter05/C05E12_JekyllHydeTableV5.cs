@@ -10,6 +10,7 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Layout.Properties;
 using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter05 {
@@ -33,8 +34,7 @@ namespace iText.Highlevel.Chapter05 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             // Initialize document
             Document document = new Document(pdf, PageSize.A4.Rotate());
-            Table table = new Table(new float[] { 3, 32 });
-            table.SetWidthPercent(100);
+            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 3, 32 }));
             IList<IList<String>> resultSet = CsvTo2DList.Convert(SRC, "|");
             resultSet.RemoveAt(0);
             table.AddHeaderCell("imdb").AddHeaderCell("Information about the movie");
