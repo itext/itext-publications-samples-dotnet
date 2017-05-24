@@ -62,7 +62,8 @@ namespace Tutorial.Chapter07 {
             PdfFont font = PdfFontFactory.CreateFont(FONT, true);
             PdfFont bold = PdfFontFactory.CreateFont(BOLD_FONT, true);
             // Create content
-            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 4, 1, 3, 4, 3, 3, 3, 3, 1 }));
+            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 4, 1, 3, 4, 3, 3, 3, 3, 1 }))
+                .UseAllAvailableWidth();
             table.SetWidthPercent(100);
             StreamReader sr = File.OpenText(DATA);
             String line = sr.ReadLine();

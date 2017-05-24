@@ -39,7 +39,8 @@ namespace Tutorial.Chapter01 {
             document.SetMargins(20, 20, 20, 20);
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.HELVETICA);
             PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
-            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 4, 1, 3, 4, 3, 3, 3, 3, 1 }));
+            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 4, 1, 3, 4, 3, 3, 3, 3, 1 }))
+                .UseAllAvailableWidth();
             StreamReader sr = File.OpenText(DATA);
             String line = sr.ReadLine();
             Process(table, line, bold, true);
