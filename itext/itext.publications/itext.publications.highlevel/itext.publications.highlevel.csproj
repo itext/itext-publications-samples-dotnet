@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itext.licensekey, Version=2.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\itext7.licensekey.2.0.3\lib\net40\itext.licensekey.dll</HintPath>
+    <Reference Include="itext.licensekey, Version=2.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\itext7.licensekey.2.0.4\lib\net40\itext.licensekey.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
