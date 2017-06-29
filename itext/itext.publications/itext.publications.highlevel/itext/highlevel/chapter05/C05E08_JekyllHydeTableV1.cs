@@ -34,7 +34,7 @@ namespace iText.Highlevel.Chapter05 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             // Initialize document
             Document document = new Document(pdf, PageSize.A4.Rotate());
-            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 3, 2, 14, 9, 4, 3 }));
+            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 3, 2, 14, 9, 4, 3 })).UseAllAvailableWidth();
             IList<IList<String>> resultSet = CsvTo2DList.Convert(SRC, "|");
 
             IList<String> header = resultSet[0];
