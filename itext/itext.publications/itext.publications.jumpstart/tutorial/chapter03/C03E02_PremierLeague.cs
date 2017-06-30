@@ -50,7 +50,7 @@ namespace Tutorial.Chapter03 {
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.HELVETICA);
             PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
             Table table = new Table(UnitValue.CreatePercentArray(new float[] { 1.5f, 7, 2, 2, 2, 2, 3, 4, 4, 2 }));
-            table.SetWidthPercent(100).SetTextAlignment(TextAlignment.CENTER).SetHorizontalAlignment(HorizontalAlignment
+            table.SetTextAlignment(TextAlignment.CENTER).SetHorizontalAlignment(HorizontalAlignment
                 .CENTER);
             StreamReader sr = File.OpenText(DATA);
             String line = sr.ReadLine();
