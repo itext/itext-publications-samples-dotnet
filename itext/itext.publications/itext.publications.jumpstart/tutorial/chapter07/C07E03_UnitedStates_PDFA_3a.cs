@@ -51,8 +51,7 @@ namespace Tutorial.Chapter07 {
             PdfDictionary parameters = new PdfDictionary();
             parameters.Put(PdfName.ModDate, new PdfDate().GetPdfObject());
             PdfFileSpec fileSpec = PdfFileSpec.CreateEmbeddedFileSpec(pdf, File.ReadAllBytes(System.IO.Path.Combine(DATA
-                )), "united_states.csv", "united_states.csv", new PdfName("text/csv"), parameters, PdfName.Data, false
-                );
+                )), "united_states.csv", "united_states.csv", new PdfName("text/csv"), parameters, PdfName.Data);
             fileSpec.Put(new PdfName("AFRelationship"), new PdfName("Data"));
             pdf.AddFileAttachment("united_states.csv", fileSpec);
             PdfArray array = new PdfArray();

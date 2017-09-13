@@ -174,7 +174,7 @@ namespace iText.Samples.Sandbox.Zugferd
             // platform-independent newlines
             byte[] xml = Encoding.UTF8.GetBytes(JavaUtil.GetStringForBytes(dom.ToXML()).Replace("\r\n", "\n"));
             PdfFileSpec fileSpec = PdfFileSpec.CreateEmbeddedFileSpec(pdfDoc, xml, "ZUGFeRD invoice", "ZUGFeRD-invoice.xml"
-                , new PdfName("application/xml"), parameters, PdfName.Alternative, false);
+                , new PdfName("application/xml"), parameters, PdfName.Alternative);
             pdfDoc.AddFileAttachment("ZUGFeRD invoice", fileSpec);
             PdfArray array = new PdfArray();
             array.Add(fileSpec.GetPdfObject().GetIndirectReference());

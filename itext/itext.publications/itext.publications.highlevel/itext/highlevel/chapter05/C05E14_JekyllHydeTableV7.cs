@@ -48,7 +48,7 @@ namespace iText.Highlevel.Chapter05 {
             foreach (IList<String> record in resultSet) {
                 table.AddCell(record[0]);
                 table.AddCell(record[1]);
-                Cell cell = new Cell().Add(record[2]);
+                Cell cell = new Cell().Add(new Paragraph(record[2]));
                 cell.SetNextRenderer(new C05E14_JekyllHydeTableV7.RunlengthRenderer(cell, record[5]));
                 table.AddCell(cell);
                 table.AddCell(record[3]);

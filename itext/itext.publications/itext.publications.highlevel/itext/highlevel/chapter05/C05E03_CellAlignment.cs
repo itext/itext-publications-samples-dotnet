@@ -33,8 +33,8 @@ namespace iText.Highlevel.Chapter05 {
             table.SetWidthPercent(80);
             table.SetHorizontalAlignment(HorizontalAlignment.CENTER);
             table.SetTextAlignment(TextAlignment.CENTER);
-            table.AddCell(new Cell(1, 3).Add("Cell with colspan 3"));
-            table.AddCell(new Cell(2, 1).Add("Cell with rowspan 2").SetTextAlignment(TextAlignment.RIGHT));
+            table.AddCell(new Cell(1, 3).Add(new Paragraph("Cell with colspan 3")));
+            table.AddCell(new Cell(2, 1).Add(new Paragraph("Cell with rowspan 2")).SetTextAlignment(TextAlignment.RIGHT));
             table.AddCell("row 1; cell 1");
             table.AddCell("row 1; cell 2");
             table.AddCell("row 2; cell 1");
@@ -42,9 +42,9 @@ namespace iText.Highlevel.Chapter05 {
             Cell cell = new Cell().Add(new Paragraph("Left").SetTextAlignment(TextAlignment.LEFT)).Add(new Paragraph("Center"
                 )).Add(new Paragraph("Right").SetTextAlignment(TextAlignment.RIGHT));
             table.AddCell(cell);
-            cell = new Cell().Add("Middle").SetVerticalAlignment(VerticalAlignment.MIDDLE);
+            cell = new Cell().Add(new Paragraph("Middle")).SetVerticalAlignment(VerticalAlignment.MIDDLE);
             table.AddCell(cell);
-            cell = new Cell().Add("Bottom").SetVerticalAlignment(VerticalAlignment.BOTTOM);
+            cell = new Cell().Add(new Paragraph("Bottom")).SetVerticalAlignment(VerticalAlignment.BOTTOM);
             table.AddCell(cell);
             document.Add(table);
             document.Close();

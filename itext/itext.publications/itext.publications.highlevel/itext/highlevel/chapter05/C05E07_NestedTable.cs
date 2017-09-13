@@ -32,8 +32,8 @@ namespace iText.Highlevel.Chapter05 {
             Table table = new Table(2);
             table.SetWidthPercent(80);
             table.SetHorizontalAlignment(HorizontalAlignment.CENTER);
-            table.AddCell(new Cell(1, 2).Add("Cell with colspan 2"));
-            table.AddCell(new Cell().Add("Cell with rowspan 1"));
+            table.AddCell(new Cell(1, 2).Add(new Paragraph("Cell with colspan 2")));
+            table.AddCell(new Cell().Add(new Paragraph("Cell with rowspan 1")));
             Table inner = new Table(2);
             inner.AddCell("row 1; cell 1");
             inner.AddCell("row 1; cell 2");
@@ -45,8 +45,8 @@ namespace iText.Highlevel.Chapter05 {
             table.SetMarginTop(10);
             table.SetWidthPercent(80);
             table.SetHorizontalAlignment(HorizontalAlignment.CENTER);
-            table.AddCell(new Cell(1, 2).Add("Cell with colspan 2"));
-            table.AddCell(new Cell().Add("Cell with rowspan 1"));
+            table.AddCell(new Cell(1, 2).Add(new Paragraph("Cell with colspan 2")));
+            table.AddCell(new Cell().Add(new Paragraph("Cell with rowspan 1")));
             inner = new Table(2);
             inner.AddCell("row 1; cell 1");
             inner.AddCell("row 1; cell 2");

@@ -79,17 +79,17 @@ namespace iText.Samples.Signatures.Chapter02
 			table.AddCell(CreateSignatureFieldCell("sig1", null));
 			table.AddCell("For approval by Bob");
 			table.AddCell(CreateTextFieldCell("approved_bob"));
-			PdfSigFieldLockDictionary Lock = new PdfSigFieldLockDictionary().SetFieldLock(PdfSigFieldLockDictionary.LockAction
+			PdfSigFieldLock Lock = new PdfSigFieldLock().SetFieldLock(PdfSigFieldLock.LockAction
 				.INCLUDE, "sig1", "approved_bob", "sig2");
 			table.AddCell(CreateSignatureFieldCell("sig2", Lock));
 			table.AddCell("For approval by Carol");
 			table.AddCell(CreateTextFieldCell("approved_carol"));
-			Lock = new PdfSigFieldLockDictionary().SetFieldLock(PdfSigFieldLockDictionary.LockAction
+			Lock = new PdfSigFieldLock().SetFieldLock(PdfSigFieldLock.LockAction
 				.EXCLUDE, "approved_dave", "sig4");
 			table.AddCell(CreateSignatureFieldCell("sig3", Lock));
 			table.AddCell("For approval by Dave");
 			table.AddCell(CreateTextFieldCell("approved_dave"));
-			Lock = new PdfSigFieldLockDictionary().SetDocumentPermissions(PdfSigFieldLockDictionary.LockPermissions
+			Lock = new PdfSigFieldLock().SetDocumentPermissions(PdfSigFieldLock.LockPermissions
 				.NO_CHANGES_ALLOWED);
 			table.AddCell(CreateSignatureFieldCell("sig4", Lock));
 			doc.Add(table);
@@ -223,7 +223,7 @@ namespace iText.Samples.Signatures.Chapter02
 		}
 
 		/// <exception cref="System.IO.IOException"/>
-		protected internal virtual Cell CreateSignatureFieldCell(String name, PdfSigFieldLockDictionary
+		protected internal virtual Cell CreateSignatureFieldCell(String name, PdfSigFieldLock
 			 Lock)
 		{
 			Cell cell = new Cell();
@@ -260,10 +260,10 @@ namespace iText.Samples.Signatures.Chapter02
 		{
 			public String name;
 
-			public PdfSigFieldLockDictionary Lock;
+			public PdfSigFieldLock Lock;
 
 			public SignatureFieldCellRenderer(C2_12_LockFields _enclosing, Cell modelElement, 
-				String name, PdfSigFieldLockDictionary Lock)
+				String name, PdfSigFieldLock Lock)
 				: base(modelElement)
 			{
 				this._enclosing = _enclosing;

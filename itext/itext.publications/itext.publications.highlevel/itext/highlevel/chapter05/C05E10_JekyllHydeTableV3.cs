@@ -52,7 +52,7 @@ namespace iText.Highlevel.Chapter05 {
                     cell.Add(img);
                 }
                 else {
-                    cell.Add(record[0]);
+                    cell.Add(new Paragraph(record[0]));
                 }
                 table.AddCell(cell);
                 table.AddCell(record[1]);
