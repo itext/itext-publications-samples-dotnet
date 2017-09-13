@@ -39,7 +39,7 @@ namespace iText.Highlevel.Chapter07 {
             pdf.GetCatalog().SetPageLayout(PdfName.TwoColumnRight);
             pdf.GetCatalog().SetPageMode(PdfName.UseThumbs);
             PdfPage page = pdf.AddNewPage();
-            page.SetPageLabel(PageLabelNumberingStyleConstants.LOWERCASE_ROMAN_NUMERALS, null);
+            page.SetPageLabel(PageLabelNumberingStyle.LOWERCASE_ROMAN_NUMERALS, null);
             Document document = new Document(pdf);
             document.Add(new Paragraph().Add("Page left blank intentionally"));
             document.Add(new AreaBreak());
@@ -48,7 +48,7 @@ namespace iText.Highlevel.Chapter07 {
             document.Add(new Paragraph().Add("Page left blank intentionally"));
             document.Add(new AreaBreak());
             page = pdf.GetLastPage();
-            page.SetPageLabel(PageLabelNumberingStyleConstants.DECIMAL_ARABIC_NUMERALS, null, 1);
+            page.SetPageLabel(PageLabelNumberingStyle.DECIMAL_ARABIC_NUMERALS, null, 1);
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
             PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
             document.SetTextAlignment(TextAlignment.JUSTIFIED).SetHyphenation(new HyphenationConfig("en", "uk", 3, 3))
