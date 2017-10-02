@@ -62,7 +62,7 @@ namespace iText.Highlevel.Notused.Appendix {
         }
 
         public virtual Table CreateNewTable() {
-            Table table = new Table(2);
+            Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
             table.AddCell("test1");
             table.AddCell("test2");
             table.AddCell("test3");

@@ -121,7 +121,7 @@ namespace iText.Samples.Sandbox.Zugferd
             p.SetTextAlignment(TextAlignment.RIGHT);
             document.Add(p);
             // Address seller / buyer
-            Table table = new Table(2);
+            Table table = new Table(UnitValue.CreatePercentArray(2));
             table.SetWidthPercent(100);
             Cell seller = GetPartyAddress("From:", basic.GetSellerName(), basic.GetSellerLineOne(), basic.GetSellerLineTwo
                 (), basic.GetSellerCountryID(), basic.GetSellerPostcode(), basic.GetSellerCityName());

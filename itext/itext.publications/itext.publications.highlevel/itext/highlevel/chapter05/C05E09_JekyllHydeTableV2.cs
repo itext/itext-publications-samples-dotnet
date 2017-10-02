@@ -45,8 +45,9 @@ namespace iText.Highlevel.Chapter05 {
                     table.AddCell(field_1);
                 }
             }
-            Table outerTable = new Table(1).AddHeaderCell("Continued from previous page:").SetSkipFirstHeader(true).AddCell
-                (new Cell().Add(table).SetPadding(0));
+            Table outerTable = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth()
+                .AddHeaderCell("Continued from previous page:").SetSkipFirstHeader(true)
+                .AddCell(new Cell().Add(table).SetPadding(0));
             document.Add(outerTable);
             document.Close();
         }

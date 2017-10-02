@@ -33,7 +33,7 @@ namespace iText.Highlevel.Notused.Appendix {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             // Initialize document
             Document document = new Document(pdf);
-            Table table = new Table(2);
+            Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
             table.AddCell(new Cell().Add(new Paragraph("Test 1")).SetHeight(50).SetDestination("Top"));
             Style style = new Style();
