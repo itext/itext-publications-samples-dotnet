@@ -123,7 +123,6 @@ namespace iText.Samples.Signatures.Chapter02
 			PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), true
 				);
 			signer.SetFieldName(name);
-			// TODO DEVSIX-488
 			signer.SetCertificationLevel(PdfSigner.CERTIFIED_FORM_FILLING);
 			PdfAcroForm form = PdfAcroForm.GetAcroForm(signer.GetDocument(), true);
 			form.GetField(name).SetReadOnly(true);
@@ -294,22 +293,28 @@ namespace iText.Samples.Signatures.Chapter02
 		/// <exception cref="System.Exception"/>
 		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
-        [Ignore("DEVSIX-488")]
 		public virtual void RunTest()
 		{
             Directory.CreateDirectory(NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/");
 			C2_12_LockFields.Main(null);
-			String[] resultFiles = new String[] { "step_1_signed_by_alice.pdf", "step_2_signed_by_alice_and_bob.pdf"
-				, "step_3_signed_by_alice_bob_and_carol.pdf", "step_4_signed_by_alice_bob_carol_and_dave.pdf"
-				, "step_5_signed_by_alice_and_bob_broken_by_chuck.pdf", "step_6_signed_by_dave_broken_by_chuck.pdf"
-				 };
+			String[] resultFiles = new String[] {"step_1_signed_by_alice.pdf", "step_2_signed_by_alice_and_bob.pdf", "step_3_signed_by_alice_bob_and_carol.pdf",
+
+                // TODO: DEVSIX-1623 for some reason Acrobat recognizes last signature in this document as invalid,
+                // it happens only if LockPermissions is set to NO_CHANGES_ALLOWED for the last signature form field.
+                // It's still unclear, whether it's iText messes up the document or it's Acrobat bug.
+                "step_4_signed_by_alice_bob_carol_and_dave.pdf",
+
+                // TODO: iText doesn't recognize invalidated signatures in those files,
+                // because we don't check changes in new revisions against old signatures (permissions, certifications, content changes),
+                // however signatures themselves are not broken.
+                "step_5_signed_by_alice_and_bob_broken_by_chuck.pdf", "step_6_signed_by_dave_broken_by_chuck.pdf"
+                 };
 			String destPath = String.Format(outPath, "chapter02");
 			String comparePath = String.Format(cmpPath, "chapter02");
 			String[] errors = new String[resultFiles.Length];
 			bool error = false;
-            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(new Rectangle(38f, 743f, 215f, 
-						759f), new Rectangle(38f, 676f, 215f, 692f), new Rectangle(38f, 611f, 215f, 627f
-						)) } };
+            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(new Rectangle(55, 425, 287, 380
+                        )) } };
 			for (int i = 0; i < resultFiles.Length; i++)
 			{
 				String resultFile = resultFiles[i];
@@ -325,6 +330,13 @@ namespace iText.Samples.Signatures.Chapter02
 			{
 				NUnit.Framework.Assert.Fail(AccumulateErrors(errors));
 			}
-		}
-	}
+        }
+
+        protected internal override void InitKeyStoreForVerification(List<X509Certificate> ks) {
+            base.InitKeyStoreForVerification(ks);
+            ks.Add(LoadCertificateFromKeyStore(ALICE, PASSWORD));
+            ks.Add(LoadCertificateFromKeyStore(BOB, PASSWORD));
+            ks.Add(LoadCertificateFromKeyStore(CAROL, PASSWORD));
+        }
+    }
 }

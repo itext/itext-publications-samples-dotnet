@@ -18,6 +18,7 @@ using iText.Kernel.Pdf.Annot;
 using iText.Kernel.Utils;
 using iText.Signatures;
 using iText.Test;
+using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.Security.Certificates;
 
 namespace iText.Samples.Signatures
@@ -105,9 +106,21 @@ namespace iText.Samples.Signatures
 			ks.Add(brunoCert);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		private void VerifySignaturesForDocument(String documentPath)
+        protected static X509Certificate LoadCertificateFromKeyStore(String keystorePath, char[] ksPass) {
+            string alias = null;
+            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(keystorePath, FileMode.Open, FileAccess.Read), ksPass);
+
+            foreach (var a in pk12.Aliases) {
+                alias = ((string)a);
+                if (pk12.IsKeyEntry(alias))
+                    break;
+            }
+            return pk12.GetCertificate(alias).Certificate;
+        }
+
+        /// <exception cref="System.IO.IOException"/>
+        /// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
+        private void VerifySignaturesForDocument(String documentPath)
 		{
 			PdfReader reader = new PdfReader(documentPath);
 			PdfDocument pdfDoc = new PdfDocument(new PdfReader(documentPath));

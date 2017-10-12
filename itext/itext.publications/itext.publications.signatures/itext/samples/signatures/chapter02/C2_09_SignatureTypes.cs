@@ -106,7 +106,7 @@ namespace iText.Samples.Signatures.Chapter02
 		{
 			// Creating the reader and the signer
 			PdfReader reader = new PdfReader(src);
-			PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), false
+			PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), true
 				);
 			// Creating the appearance
 			PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
@@ -146,7 +146,6 @@ namespace iText.Samples.Signatures.Chapter02
 
 			
 			C2_09_SignatureTypes app = new C2_09_SignatureTypes();
-			// TODO DEVSIX-488
 			app.Sign(SRC, String.Format(DEST, 1), chain, pk, DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS, PdfSigner.NOT_CERTIFIED, "Test 1", "Ghent"
 				);
 			app.Sign(SRC, String.Format(DEST, 2), chain, pk, DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS, PdfSigner.CERTIFIED_FORM_FILLING_AND_ANNOTATIONS
@@ -161,7 +160,7 @@ namespace iText.Samples.Signatures.Chapter02
 			app.AddAnnotation(String.Format(DEST, 4), String.Format(DEST, "4_annotated"));
 			app.AddWrongAnnotation(String.Format(DEST, 1), String.Format(DEST, "1_annotated_wrong"
 				));
-			app.AddWrongAnnotation(SRC, String.Format(DEST, "1_annotated_wrong"));
+//			app.AddWrongAnnotation(SRC, String.Format(DEST, "1_annotated_wrong"));
 			app.AddText(String.Format(DEST, 1), String.Format(DEST, "1_text"));
 			app.SignAgain(String.Format(DEST, 1), String.Format(DEST, "1_double"), chain, pk, 
 				DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS, "Second signature test"
@@ -181,24 +180,27 @@ namespace iText.Samples.Signatures.Chapter02
 		/// <exception cref="System.Exception"/>
 		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
-        [Ignore("DEVSIX-488")]
 		public virtual void RunTest() {
             Directory.CreateDirectory(NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/");
 			C2_09_SignatureTypes.Main(null);
-			String[] resultFiles = new String[] { "hello_level_1.pdf", "hello_level_2.pdf", "hello_level_3.pdf"
-				, "hello_level_4.pdf", "hello_level_2_annotated.pdf", "hello_level_3_annotated.pdf"
-				, "hello_level_4_annotated.pdf", "hello_level_1_text.pdf", "hello_level_1_double.pdf"
-				, "hello_level_2_double.pdf", "hello_level_3_double.pdf", "hello_level_4_double.pdf"
-				 };
-			// this document's signature is not broken, that's why verifier doesn't show any errors;
-			// this document is invalid from certificate point of view, which is not checked by itext
+			String[] resultFiles = new String[] {
+                "hello_level_1.pdf", "hello_level_2.pdf", "hello_level_3.pdf", "hello_level_4.pdf",
+                        "hello_level_1_annotated.pdf", "hello_level_2_annotated.pdf",
+                        "hello_level_1_annotated_wrong.pdf",
+                        "hello_level_1_double.pdf", "hello_level_2_double.pdf", "hello_level_3_double.pdf",
+
+                        // TODO: iText doesn't recognize invalidated signatures in those files,
+                        // because we don't check changes in new revisions against old signatures (permissions, certifications, content changes),
+                        // however signatures themselves are not broken.
+                        "hello_level_3_annotated.pdf", "hello_level_4_annotated.pdf", "hello_level_1_text.pdf", "hello_level_4_double.pdf",
+                 };
 			String destPath = String.Format(outPath, "chapter02");
 			String comparePath = String.Format(cmpPath, "chapter02");
 			String[] errors = new String[resultFiles.Length];
 			bool error = false;
-			int indexOfInvalidFile = 4;
-            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(new Rectangle(38f, 758f, 110f, 
-						763f), new Rectangle(38f, 710f, 110f, 715f)) } };
+			int indexOfInvalidFile = 6;
+            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(
+                new Rectangle(70f, 692f, 170f, 20f), new Rectangle(70f, 742f, 170f, 20f)) } };
 
 			for (int i = 0; i < resultFiles.Length; i++)
 			{

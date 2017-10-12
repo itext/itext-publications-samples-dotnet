@@ -120,7 +120,6 @@ namespace iText.Samples.Signatures.Chapter02
 				);
 			// Setting signer options
 			signer.SetFieldName(name);
-			// TODO DEVSIX-488
 			signer.SetCertificationLevel(PdfSigner.CERTIFIED_FORM_FILLING);
 			// Creating the signature
 			IExternalSignature pks = new PrivateKeySignature(pk, "SHA-256");
@@ -281,7 +280,6 @@ namespace iText.Samples.Signatures.Chapter02
 		/// <exception cref="System.Exception"/>
 		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
-        [Ignore("DEVSIX-488")]
 		public virtual void RunTest()
 		{
             Directory.CreateDirectory(NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/");
@@ -295,9 +293,8 @@ namespace iText.Samples.Signatures.Chapter02
 			String[] errors = new String[resultFiles.Length];
 			bool error = false;
 
-            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(new Rectangle(38f, 743f, 215f, 
-						759f), new Rectangle(38f, 676f, 215f, 692f), new Rectangle(38f, 611f, 215f, 627f
-						)) } };
+            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(new Rectangle(55, 435, 287, 370
+                        )) } };
 			for (int i = 0; i < resultFiles.Length; i++)
 			{
 				String resultFile = resultFiles[i];
@@ -313,6 +310,13 @@ namespace iText.Samples.Signatures.Chapter02
 			{
 				NUnit.Framework.Assert.Fail(AccumulateErrors(errors));
 			}
-		}
-	}
+        }
+
+        protected internal override void InitKeyStoreForVerification(List<X509Certificate> ks) {
+            base.InitKeyStoreForVerification(ks);
+            ks.Add(LoadCertificateFromKeyStore(ALICE, PASSWORD));
+            ks.Add(LoadCertificateFromKeyStore(BOB, PASSWORD));
+            ks.Add(LoadCertificateFromKeyStore(CAROL, PASSWORD));
+        }
+    }
 }
