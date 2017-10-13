@@ -79,9 +79,11 @@ namespace iText.Samples.Signatures.Chapter02
 			PdfReader reader = new PdfReader(src);
 			PdfDocument pdfDoc = new PdfDocument(reader, new PdfWriter(dest), new StampingProperties
 				().UseAppendMode());
-			PdfAnnotation comment = new PdfTextAnnotation(new Rectangle(200, 800, 50, 20)).SetIconName
-				(new PdfName("Comment")).SetTitle(new PdfString("Finally Signed!")).SetContents(
-				"Bruno Specimen has finally signed the document").SetOpen(true);
+			PdfAnnotation comment = new PdfTextAnnotation(new Rectangle(200, 800, 50, 20))
+				.SetOpen(true)
+				.SetIconName(new PdfName("Comment"))
+				.SetTitle(new PdfString("Finally Signed!"))
+				.SetContents("Bruno Specimen has finally signed the document");
 			pdfDoc.GetFirstPage().AddAnnotation(comment);
 			pdfDoc.Close();
 		}
@@ -91,9 +93,11 @@ namespace iText.Samples.Signatures.Chapter02
 		{
 			PdfReader reader = new PdfReader(src);
 			PdfDocument pdfDoc = new PdfDocument(reader, new PdfWriter(dest));
-			PdfAnnotation comment = new PdfTextAnnotation(new Rectangle(200, 800, 50, 20)).SetIconName
-				(new PdfName("Comment")).SetTitle(new PdfString("Finally Signed!")).SetContents(
-				"Bruno Specimen has finally signed the document").SetOpen(true);
+			PdfAnnotation comment = new PdfTextAnnotation(new Rectangle(200, 800, 50, 20))
+				.SetOpen(true)
+				.SetIconName(new PdfName("Comment"))
+				.SetTitle(new PdfString("Finally Signed!"))
+				.SetContents("Bruno Specimen has finally signed the document");
 			pdfDoc.GetFirstPage().AddAnnotation(comment);
 			pdfDoc.Close();
 		}
