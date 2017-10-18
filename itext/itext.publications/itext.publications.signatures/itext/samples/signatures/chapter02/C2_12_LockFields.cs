@@ -313,8 +313,7 @@ namespace iText.Samples.Signatures.Chapter02
 			String comparePath = String.Format(cmpPath, "chapter02");
 			String[] errors = new String[resultFiles.Length];
 			bool error = false;
-            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(new Rectangle(55, 425, 287, 380
-                        )) } };
+            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(new Rectangle(55, 425, 287, 380)) } };
 			for (int i = 0; i < resultFiles.Length; i++)
 			{
 				String resultFile = resultFiles[i];

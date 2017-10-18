@@ -204,7 +204,7 @@ namespace iText.Samples.Signatures.Chapter02
 			bool error = false;
 			int indexOfInvalidFile = 6;
             Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(
-                new Rectangle(70f, 692f, 170f, 20f), new Rectangle(70f, 742f, 170f, 20f)) } };
+                new Rectangle(72f, 675f, 170f, 20f), new Rectangle(72f, 725f, 170f, 20f)) } };
 
 			for (int i = 0; i < resultFiles.Length; i++)
 			{
