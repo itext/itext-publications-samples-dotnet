@@ -82,11 +82,11 @@ namespace iText.Highlevel.Chapter05 {
                 PdfCanvas canvas = drawContext.GetCanvas();
                 canvas.SaveState();
                 if (isOdd) {
-                    canvas.SetFillColor(Color.LIGHT_GRAY);
+                    canvas.SetFillColor(ColorConstants.LIGHT_GRAY);
                     isOdd = false;
                 }
                 else {
-                    canvas.SetFillColor(Color.YELLOW);
+                    canvas.SetFillColor(ColorConstants.YELLOW);
                     isOdd = true;
                 }
                 canvas.Rectangle(rect);

@@ -60,7 +60,7 @@ namespace Tutorial.Chapter06 {
                 pdfDoc.AddPage(page);
                 //Overwrite page number
                 Text text = new Text(String.Format("Page {0}", pdfDoc.GetNumberOfPages() - 1));
-                text.SetBackgroundColor(Color.WHITE);
+                text.SetBackgroundColor(ColorConstants.WHITE);
                 document.Add(new Paragraph(text).SetFixedPosition(pdfDoc.GetNumberOfPages(), 549, 742, 100));
                 //Add destination
                 String destinationKey = "p" + (pdfDoc.GetNumberOfPages() - 1);

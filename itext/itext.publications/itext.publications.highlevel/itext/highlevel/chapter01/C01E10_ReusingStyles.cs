@@ -35,7 +35,7 @@ namespace iText.Highlevel.Chapter01 {
             normal.SetFont(font).SetFontSize(14);
             Style code = new Style();
             PdfFont monospace = PdfFontFactory.CreateFont(FontConstants.COURIER);
-            code.SetFont(monospace).SetFontColor(Color.RED).SetBackgroundColor(Color.LIGHT_GRAY);
+            code.SetFont(monospace).SetFontColor(ColorConstants.RED).SetBackgroundColor(ColorConstants.LIGHT_GRAY);
             Paragraph p = new Paragraph();
             p.Add(new Text("The Strange Case of ").AddStyle(normal));
             p.Add(new Text("Dr. Jekyll").AddStyle(code));

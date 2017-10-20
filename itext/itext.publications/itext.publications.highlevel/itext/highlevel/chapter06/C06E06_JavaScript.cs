@@ -29,7 +29,7 @@ namespace iText.Highlevel.Chapter06 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdf);
             Link link = new Link("here", PdfAction.CreateJavaScript("app.alert('Boo!');"));
-            Paragraph p = new Paragraph().Add("Click ").Add(link.SetFontColor(Color.BLUE)).Add(" if you want to be scared."
+            Paragraph p = new Paragraph().Add("Click ").Add(link.SetFontColor(ColorConstants.BLUE)).Add(" if you want to be scared."
                 );
             document.Add(p);
             document.Close();

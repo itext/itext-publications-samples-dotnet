@@ -84,15 +84,15 @@ namespace iText.Highlevel.Chapter05 {
                 PdfCanvas canvas = drawContext.GetCanvas();
                 canvas.SaveState();
                 if (this.runlength < 90) {
-                    canvas.SetFillColor(Color.GREEN);
+                    canvas.SetFillColor(ColorConstants.GREEN);
                 }
                 else {
                     if (this.runlength > 240) {
                         this.runlength = 240;
-                        canvas.SetFillColor(Color.RED);
+                        canvas.SetFillColor(ColorConstants.RED);
                     }
                     else {
-                        canvas.SetFillColor(Color.ORANGE);
+                        canvas.SetFillColor(ColorConstants.ORANGE);
                     }
                 }
                 Rectangle rect = this.GetOccupiedAreaBBox();

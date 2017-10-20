@@ -35,10 +35,10 @@ namespace iText.Highlevel.Notused.Appendix {
             Document document = new Document(pdf);
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
             Style style = new Style();
-            style.SetBackgroundColor(Color.YELLOW).SetTextAlignment(TextAlignment.CENTER);
+            style.SetBackgroundColor(ColorConstants.YELLOW).SetTextAlignment(TextAlignment.CENTER);
             document.Add(CreateNewList().AddStyle(style).SetWidth(300).SetHorizontalAlignment(HorizontalAlignment.CENTER
                 ).SetDestination("Top"));
-            document.Add(CreateNewList().SetRotationAngle(Math.PI / 18).SetFont(font).SetFontSize(8).SetFontColor(Color
+            document.Add(CreateNewList().SetRotationAngle(Math.PI / 18).SetFont(font).SetFontSize(8).SetFontColor(ColorConstants
                 .RED));
             document.Add(CreateNewList().SetHyphenation(new HyphenationConfig("en", "uk", 3, 3)).SetBorder(new SolidBorder
                 (0.5f)).SetKeepWithNext(true));
@@ -48,14 +48,14 @@ namespace iText.Highlevel.Notused.Appendix {
             document.Add(CreateNewList());
             document.Add(new AreaBreak());
             document.Add(CreateNewList().SetFixedPosition(100, 400, 350).SetAction(PdfAction.CreateGoTo("Top")));
-            document.Add(CreateNewList().SetBackgroundColor(Color.YELLOW).SetMarginBottom(10));
-            document.Add(CreateNewList().SetBackgroundColor(Color.LIGHT_GRAY).SetPaddingLeft(20).SetPaddingRight(50));
-            document.Add(CreateNewList().SetBackgroundColor(Color.YELLOW));
-            document.Add(CreateNewList().SetBackgroundColor(Color.LIGHT_GRAY));
-            document.Add(CreateNewList().SetBackgroundColor(Color.YELLOW));
-            document.Add(CreateNewList().SetBackgroundColor(Color.LIGHT_GRAY).SetMargin(50).SetPadding(30));
-            document.Add(CreateNewList().SetBackgroundColor(Color.YELLOW));
-            document.Add(CreateNewList().SetBackgroundColor(Color.LIGHT_GRAY));
+            document.Add(CreateNewList().SetBackgroundColor(ColorConstants.YELLOW).SetMarginBottom(10));
+            document.Add(CreateNewList().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetPaddingLeft(20).SetPaddingRight(50));
+            document.Add(CreateNewList().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(CreateNewList().SetBackgroundColor(ColorConstants.LIGHT_GRAY));
+            document.Add(CreateNewList().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(CreateNewList().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetMargin(50).SetPadding(30));
+            document.Add(CreateNewList().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(CreateNewList().SetBackgroundColor(ColorConstants.LIGHT_GRAY));
             document.Close();
         }
 

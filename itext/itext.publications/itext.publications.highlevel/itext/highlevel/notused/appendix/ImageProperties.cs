@@ -49,11 +49,11 @@ namespace iText.Highlevel.Notused.Appendix {
             document.Add(img2);
             iText.Layout.Element.Image img3 = new iText.Layout.Element.Image(ImageDataFactory.Create(TEST3));
             img3.ScaleToFit(100, 100);
-            img3.SetBackgroundColor(Color.BLUE);
+            img3.SetBackgroundColor(ColorConstants.BLUE);
             document.Add(img3);
             iText.Layout.Element.Image img4 = new iText.Layout.Element.Image(ImageDataFactory.Create(TEST4));
             img4.ScaleToFit(100, 100);
-            img4.SetBackgroundColor(Color.RED);
+            img4.SetBackgroundColor(ColorConstants.RED);
             document.Add(img4);
             iText.Layout.Element.Image img5 = new iText.Layout.Element.Image(ImageDataFactory.Create(TEST5));
             img5.ScaleToFit(50, 50);

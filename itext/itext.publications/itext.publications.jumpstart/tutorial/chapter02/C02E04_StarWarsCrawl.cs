@@ -57,7 +57,7 @@ namespace Tutorial.Chapter02 {
             PdfPage page = pdf.AddNewPage(ps);
             PdfCanvas canvas = new PdfCanvas(page);
             //Set black background
-            canvas.Rectangle(0, 0, ps.GetWidth(), ps.GetHeight()).SetColor(Color.BLACK, true).Fill();
+            canvas.Rectangle(0, 0, ps.GetWidth(), ps.GetHeight()).SetColor(ColorConstants.BLACK, true).Fill();
             //Replace the origin of the coordinate system to the top left corner
             canvas.ConcatMatrix(1, 0, 0, 1, 0, ps.GetHeight());
             Color yellowColor = new DeviceCmyk(0f, 0.0537f, 0.769f, 0.051f);

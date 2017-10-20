@@ -33,7 +33,7 @@ namespace Tutorial.Chapter05 {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
             IDictionary<String, PdfFormField> fields = form.GetFormFields();
-            fields["name"].SetValue("James Bond").SetBackgroundColor(Color.ORANGE);
+            fields["name"].SetValue("James Bond").SetBackgroundColor(ColorConstants.ORANGE);
             fields["language"].SetValue("English");
             fields["experience1"].SetValue("Yes");
             fields["experience2"].SetValue("Yes");

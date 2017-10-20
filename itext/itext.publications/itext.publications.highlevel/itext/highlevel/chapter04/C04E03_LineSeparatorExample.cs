@@ -36,7 +36,7 @@ namespace iText.Highlevel.Chapter04 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdf);
             SolidLine line = new SolidLine(1f);
-            line.SetColor(Color.RED);
+            line.SetColor(ColorConstants.RED);
             LineSeparator ls = new LineSeparator(line);
             ls.SetWidthPercent(50);
             ls.SetMarginTop(5);

@@ -71,7 +71,7 @@ namespace iText.Highlevel.Chapter05 {
                 (0.5f)));
             table1.AddCell(new Cell(2, 1).Add(new Paragraph("Cell with rowspan 2")).SetMarginTop(5).SetMarginBottom(5).SetBorderBottom
                 (new DottedBorder(0.5f)).SetBorderLeft(new DottedBorder(0.5f)));
-            table1.AddCell(new Cell().Add(new Paragraph("row 1; cell 1")).SetBorder(new DottedBorder(Color.ORANGE, 0.5f)));
+            table1.AddCell(new Cell().Add(new Paragraph("row 1; cell 1")).SetBorder(new DottedBorder(ColorConstants.ORANGE, 0.5f)));
             table1.AddCell(new Cell().Add(new Paragraph("row 1; cell 2")));
             table1.AddCell(new Cell().Add(new Paragraph("row 2; cell 1")).SetMargin(10).SetBorderBottom(new SolidBorder(2)));
             table1.AddCell(new Cell().Add(new Paragraph("row 2; cell 2")).SetPadding(10).SetBorderBottom(new SolidBorder(2)));

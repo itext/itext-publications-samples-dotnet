@@ -32,7 +32,7 @@ namespace iText.Highlevel.Notused.Appendix {
             // Initialize document
             Document document = new Document(pdf);
             Style style = new Style();
-            style.SetBackgroundColor(Color.YELLOW);
+            style.SetBackgroundColor(ColorConstants.YELLOW);
             document.Add(CreateNewSeparator().AddStyle(style).SetDestination("Top"));
             document.Add(new Paragraph("test"));
             document.Add(CreateNewSeparator().SetWidth(300).SetHorizontalAlignment(HorizontalAlignment.CENTER));
@@ -44,15 +44,15 @@ namespace iText.Highlevel.Notused.Appendix {
             document.Add(CreateNewSeparator().SetMargin(10).SetWidth(50).SetAction(PdfAction.CreateGoTo("Top")));
             document.Add(CreateNewSeparator().SetFixedPosition(100, 200, 350));
             document.Add(new AreaBreak());
-            document.Add(CreateNewSeparator().SetBackgroundColor(Color.YELLOW).SetMarginBottom(10));
-            document.Add(CreateNewSeparator().SetBackgroundColor(Color.LIGHT_GRAY).SetPaddingLeft(20).SetPaddingRight(
+            document.Add(CreateNewSeparator().SetBackgroundColor(ColorConstants.YELLOW).SetMarginBottom(10));
+            document.Add(CreateNewSeparator().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetPaddingLeft(20).SetPaddingRight(
                 50));
-            document.Add(CreateNewSeparator().SetBackgroundColor(Color.YELLOW));
-            document.Add(CreateNewSeparator().SetBackgroundColor(Color.LIGHT_GRAY).SetMarginBottom(50));
-            document.Add(CreateNewSeparator().SetBackgroundColor(Color.YELLOW));
-            document.Add(CreateNewSeparator().SetBackgroundColor(Color.LIGHT_GRAY).SetMargin(50).SetPadding(30));
-            document.Add(CreateNewSeparator().SetBackgroundColor(Color.YELLOW));
-            document.Add(CreateNewSeparator().SetBackgroundColor(Color.LIGHT_GRAY));
+            document.Add(CreateNewSeparator().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(CreateNewSeparator().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetMarginBottom(50));
+            document.Add(CreateNewSeparator().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(CreateNewSeparator().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetMargin(50).SetPadding(30));
+            document.Add(CreateNewSeparator().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(CreateNewSeparator().SetBackgroundColor(ColorConstants.LIGHT_GRAY));
             document.Close();
         }
 

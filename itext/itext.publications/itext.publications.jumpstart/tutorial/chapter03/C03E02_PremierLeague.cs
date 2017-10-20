@@ -77,7 +77,7 @@ namespace Tutorial.Chapter03 {
                 else {
                     columnNumber++;
                     Cell cell = new Cell().Add(new Paragraph(tokenizer.NextToken()));
-                    cell.SetFont(font).SetBorder(new SolidBorder(Color.BLACK, 0.5f));
+                    cell.SetFont(font).SetBorder(new SolidBorder(ColorConstants.BLACK, 0.5f));
                     switch (columnNumber) {
                         case 4: {
                             cell.SetBackgroundColor(greenColor);

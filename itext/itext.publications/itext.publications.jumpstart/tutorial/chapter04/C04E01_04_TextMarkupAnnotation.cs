@@ -35,7 +35,7 @@ namespace Tutorial.Chapter04 {
             document.ShowTextAligned(p, 20, 795, 1, TextAlignment.LEFT, VerticalAlignment.MIDDLE, 0);
             //Create text markup annotation
             PdfAnnotation ann = PdfTextMarkupAnnotation.CreateHighLight(new Rectangle(105, 790, 64, 10), new float[] { 
-                169, 790, 105, 790, 169, 800, 105, 800 }).SetColor(Color.YELLOW).SetTitle(new PdfString("Hello!")).SetContents
+                169, 790, 105, 790, 169, 800, 105, 800 }).SetColor(ColorConstants.YELLOW).SetTitle(new PdfString("Hello!")).SetContents
                 (new PdfString("I'm a popup.")).SetTitle(new PdfString("iText")).SetRectangle(new PdfArray
                 (new float[] { 100, 600, 200, 100 }));
             pdf.GetFirstPage().AddAnnotation(ann);

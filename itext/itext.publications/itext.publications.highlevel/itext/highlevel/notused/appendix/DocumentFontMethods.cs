@@ -41,7 +41,7 @@ namespace iText.Highlevel.Notused.Appendix {
             document.SetFontSize(18);
             p = new Paragraph("Testing font methods: changed font size");
             document.Add(p);
-            document.SetFontColor(Color.BLUE);
+            document.SetFontColor(ColorConstants.BLUE);
             p = new Paragraph("Testing font methods: changed color");
             document.Add(p);
             document.SetBold();
@@ -64,7 +64,7 @@ namespace iText.Highlevel.Notused.Appendix {
             document.Add(p);
             document.SetProperty(Property.UNDERLINE, null);
             document.SetUnderline(2, 4);
-            document.SetUnderline(Color.BLUE, 5, 0.1f, 2, -0.5f, PdfCanvasConstants.LineCapStyle.ROUND);
+            document.SetUnderline(ColorConstants.BLUE, 5, 0.1f, 2, -0.5f, PdfCanvasConstants.LineCapStyle.ROUND);
             p = new Paragraph("Testing font methods: underline (custom)");
             document.Add(p);
             document.SetProperty(Property.UNDERLINE, null);
@@ -72,7 +72,7 @@ namespace iText.Highlevel.Notused.Appendix {
             p = new Paragraph("Testing font methods: change text rendering mode");
             document.Add(p);
             document.SetStrokeWidth(0.1f);
-            document.SetStrokeColor(Color.BLUE);
+            document.SetStrokeColor(ColorConstants.BLUE);
             p = new Paragraph("Testing font methods: change stroke width and color");
             document.Add(p);
             //Close document

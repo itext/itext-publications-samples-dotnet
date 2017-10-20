@@ -88,7 +88,7 @@ namespace Tutorial.Chapter03 {
             Paragraph p1 = new Paragraph(title).SetFont(timesNewRomanBold).SetFontSize(14);
             doc.Add(p1);
             doc.Add(img);
-            Paragraph p2 = new Paragraph().SetFont(timesNewRoman).SetFontSize(7).SetFontColor(Color.GRAY).Add(author);
+            Paragraph p2 = new Paragraph().SetFont(timesNewRoman).SetFontSize(7).SetFontColor(ColorConstants.GRAY).Add(author);
             doc.Add(p2);
             Paragraph p3 = new Paragraph().SetFont(timesNewRoman).SetFontSize(10).Add(text);
             doc.Add(p3);

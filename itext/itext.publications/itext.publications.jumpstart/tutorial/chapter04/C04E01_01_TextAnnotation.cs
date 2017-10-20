@@ -34,7 +34,7 @@ namespace Tutorial.Chapter04 {
             //Create text annotation
             PdfAnnotation ann = new PdfTextAnnotation(new Rectangle(20, 800, 0, 0))
                 .SetOpen(true)
-                .SetColor(Color.GREEN)
+                .SetColor(ColorConstants.GREEN)
                 .SetTitle(new PdfString("iText"))
                 .SetContents("With iText, you can truly take your documentation needs to the next level.");
             pdf.GetFirstPage().AddAnnotation(ann);

@@ -37,7 +37,7 @@ namespace iText.Highlevel.Chapter06 {
             foreach (IList<String> record in resultSet) {
                 PdfOutline movie = root.AddOutline(record[2]);
                 PdfOutline imdb = movie.AddOutline("Link to IMDB");
-                imdb.SetColor(Color.BLUE);
+                imdb.SetColor(ColorConstants.BLUE);
                 imdb.SetStyle(PdfOutline.FLAG_BOLD);
                 String url = String.Format("http://www.imdb.com/title/tt{0}", record[0]);
                 imdb.AddAction(PdfAction.CreateURI(url));
@@ -45,11 +45,11 @@ namespace iText.Highlevel.Chapter06 {
                 info.SetOpen(false);
                 info.SetStyle(PdfOutline.FLAG_ITALIC);
                 PdfOutline director = info.AddOutline("Directed by " + record[3]);
-                director.SetColor(Color.RED);
+                director.SetColor(ColorConstants.RED);
                 PdfOutline place = info.AddOutline("Produced in " + record[4]);
-                place.SetColor(Color.MAGENTA);
+                place.SetColor(ColorConstants.MAGENTA);
                 PdfOutline year = info.AddOutline("Released in " + record[1]);
-                year.SetColor(Color.DARK_GRAY);
+                year.SetColor(ColorConstants.DARK_GRAY);
             }
             pdf.Close();
         }

@@ -34,28 +34,28 @@ namespace iText.Highlevel.Notused.Appendix {
             // Initialize document
             Document document = new Document(pdf);
             Style style = new Style();
-            style.SetBackgroundColor(Color.YELLOW).SetBorder(new SolidBorder(0.5f));
+            style.SetBackgroundColor(ColorConstants.YELLOW).SetBorder(new SolidBorder(0.5f));
             document.Add(CreateNewDiv().AddStyle(style).SetWidth(350).SetHorizontalAlignment(HorizontalAlignment.CENTER
                 ).SetTextAlignment(TextAlignment.CENTER).SetDestination("Top"));
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
-            document.Add(CreateNewDiv().SetRotationAngle(Math.PI / 18).SetFont(font).SetFontSize(8).SetFontColor(Color
+            document.Add(CreateNewDiv().SetRotationAngle(Math.PI / 18).SetFont(font).SetFontSize(8).SetFontColor(ColorConstants
                 .RED));
             document.Add(CreateNewDiv().SetWidth(350).SetHyphenation(new HyphenationConfig("en", "uk", 3, 3)).SetKeepWithNext
                 (true));
             document.Add(CreateNewDiv().SetWidthPercent(70).SetKeepTogether(true));
-            document.Add(CreateNewDiv().SetHeight(350).SetBackgroundColor(Color.YELLOW).SetAction(PdfAction.CreateGoTo
+            document.Add(CreateNewDiv().SetHeight(350).SetBackgroundColor(ColorConstants.YELLOW).SetAction(PdfAction.CreateGoTo
                 ("Top")).SetRelativePosition(10, 10, 50, 10));
             document.Add(new AreaBreak());
             document.Add(CreateNewDiv().SetFixedPosition(100, 400, 350));
             document.Add(new AreaBreak());
-            document.Add(CreateNewDiv().SetBackgroundColor(Color.YELLOW).SetMarginBottom(10));
-            document.Add(CreateNewDiv().SetBackgroundColor(Color.LIGHT_GRAY).SetPaddingLeft(20).SetPaddingRight(50));
-            document.Add(CreateNewDiv().SetBackgroundColor(Color.YELLOW));
-            document.Add(CreateNewDiv().SetBackgroundColor(Color.LIGHT_GRAY));
-            document.Add(CreateNewDiv().SetBackgroundColor(Color.YELLOW));
-            document.Add(CreateNewDiv().SetBackgroundColor(Color.LIGHT_GRAY).SetMargin(50).SetPadding(30));
-            document.Add(CreateNewDiv().SetBackgroundColor(Color.YELLOW));
-            document.Add(CreateNewDiv().SetBackgroundColor(Color.LIGHT_GRAY));
+            document.Add(CreateNewDiv().SetBackgroundColor(ColorConstants.YELLOW).SetMarginBottom(10));
+            document.Add(CreateNewDiv().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetPaddingLeft(20).SetPaddingRight(50));
+            document.Add(CreateNewDiv().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(CreateNewDiv().SetBackgroundColor(ColorConstants.LIGHT_GRAY));
+            document.Add(CreateNewDiv().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(CreateNewDiv().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetMargin(50).SetPadding(30));
+            document.Add(CreateNewDiv().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(CreateNewDiv().SetBackgroundColor(ColorConstants.LIGHT_GRAY));
             document.Close();
         }
 

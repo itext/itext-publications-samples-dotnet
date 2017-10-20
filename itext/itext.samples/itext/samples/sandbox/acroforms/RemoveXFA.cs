@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Acroforms {
             {
                 if (name.Key.IndexOf("Total") > 0)
                 {
-                    name.Value.GetWidgets()[0].SetColor(Color.RED);
+                    name.Value.GetWidgets()[0].SetColor(ColorConstants.RED);
                 }
                 name.Value.SetValue("X");
             }

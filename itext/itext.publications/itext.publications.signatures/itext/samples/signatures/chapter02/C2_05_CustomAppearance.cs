@@ -59,7 +59,7 @@ namespace iText.Samples.Signatures.Chapter02
 			float width = n0.GetBBox().ToRectangle().GetWidth();
 			float height = n0.GetBBox().ToRectangle().GetHeight();
 			PdfCanvas canvas = new PdfCanvas(n0, signer.GetDocument());
-			canvas.SetFillColor(Color.LIGHT_GRAY);
+			canvas.SetFillColor(ColorConstants.LIGHT_GRAY);
 			canvas.Rectangle(x, y, width, height);
 			canvas.Fill();
 			// Creating the appearance for layer 2
