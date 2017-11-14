@@ -40,13 +40,35 @@ namespace iText.Highlevel.Chapter05 {
             }
         }
 
+        private class RoundedCornersTableRenderer : TableRenderer
+        {
+            public RoundedCornersTableRenderer(Table modelElement)
+                : base(modelElement) {}
+
+            public override void DrawBorder(DrawContext drawContext)
+            {
+                Rectangle occupiedAreaBBox = this.GetOccupiedAreaBBox();
+                UnitValue[] margins = this.GetMargins();
+                Rectangle rectangle = this.ApplyMargins(occupiedAreaBBox, margins, false);
+                PdfCanvas canvas = drawContext.GetCanvas();
+                canvas.RoundRectangle(rectangle.GetX() + 1, rectangle.GetY() + 1, rectangle.GetWidth() - 2, rectangle.GetHeight
+                                                                                                                () - 2, 5).Stroke();
+                base.DrawBorder(drawContext);
+            }
+        }
+
         private class RoundedCornersCell : Cell {
             public RoundedCornersCell()
                 : base() {
+                SetBorder(Border.NO_BORDER);
+                SetMargin(2);
             }
 
             public RoundedCornersCell(int rowspan, int colspan)
                 : base(rowspan, colspan) {
+                SetBorder(Border.NO_BORDER);
+                SetMargin(2);
+                SetVerticalAlignment(VerticalAlignment.MIDDLE);
             }
 
             protected override IRenderer MakeNewRenderer() {
@@ -97,20 +119,19 @@ namespace iText.Highlevel.Chapter05 {
             table3.SetMarginTop(10);
             table3.SetWidth(UnitValue.CreatePercentValue(80));
             table3.SetHorizontalAlignment(HorizontalAlignment.CENTER);
-            Cell cell = new C05E06_CellBorders.RoundedCornersCell(1, 3).Add(new Paragraph("Cell with colspan 3")).SetPadding(10
-                ).SetMargin(5).SetBorder(Border.NO_BORDER);
+            Cell cell = new C05E06_CellBorders.RoundedCornersCell(1, 3).Add(new Paragraph("Cell with colspan 3"));
             table3.AddCell(cell);
-            cell = new C05E06_CellBorders.RoundedCornersCell(2, 1).Add(new Paragraph("Cell with rowspan 2")).SetMarginTop(5).SetMarginBottom
-                (5);
+            cell = new C05E06_CellBorders.RoundedCornersCell(2, 1).Add(new Paragraph("Cell with rowspan 2"));
             table3.AddCell(cell);
             cell = new C05E06_CellBorders.RoundedCornersCell().Add(new Paragraph("row 1; cell 1"));
             table3.AddCell(cell);
             cell = new C05E06_CellBorders.RoundedCornersCell().Add(new Paragraph("row 1; cell 2"));
             table3.AddCell(cell);
-            cell = new C05E06_CellBorders.RoundedCornersCell().Add(new Paragraph("row 2; cell 1")).SetMargin(10);
+            cell = new C05E06_CellBorders.RoundedCornersCell().Add(new Paragraph("row 2; cell 1"));
             table3.AddCell(cell);
-            cell = new C05E06_CellBorders.RoundedCornersCell().Add(new Paragraph("row 2; cell 2")).SetPadding(10);
+            cell = new C05E06_CellBorders.RoundedCornersCell().Add(new Paragraph("row 2; cell 2"));
             table3.AddCell(cell);
+            table3.SetNextRenderer(new RoundedCornersTableRenderer(table3));
             document.Add(table3);
             document.Close();
         }
