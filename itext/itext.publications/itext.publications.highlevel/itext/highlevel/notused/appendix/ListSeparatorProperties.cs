@@ -40,7 +40,7 @@ namespace iText.Highlevel.Notused.Appendix {
                 SolidBorder(0.5f)));
             document.Add(CreateNewSeparator().SetMargin(10).SetWidth(300));
             document.Add(CreateNewSeparator().SetMargin(10).SetRelativePosition(10, 10, 50, 10));
-            document.Add(CreateNewSeparator().SetMargin(10).SetWidthPercent(50));
+            document.Add(CreateNewSeparator().SetMargin(10).SetWidth(UnitValue.CreatePercentValue(50)));
             document.Add(CreateNewSeparator().SetMargin(10).SetWidth(50).SetAction(PdfAction.CreateGoTo("Top")));
             document.Add(CreateNewSeparator().SetFixedPosition(100, 200, 350));
             document.Add(new AreaBreak());

@@ -42,7 +42,7 @@ namespace iText.Highlevel.Notused.Appendix {
                 .RED));
             document.Add(CreateNewDiv().SetWidth(350).SetHyphenation(new HyphenationConfig("en", "uk", 3, 3)).SetKeepWithNext
                 (true));
-            document.Add(CreateNewDiv().SetWidthPercent(70).SetKeepTogether(true));
+            document.Add(CreateNewDiv().SetWidth(UnitValue.CreatePercentValue(70)).SetKeepTogether(true));
             document.Add(CreateNewDiv().SetHeight(350).SetBackgroundColor(ColorConstants.YELLOW).SetAction(PdfAction.CreateGoTo
                 ("Top")).SetRelativePosition(10, 10, 50, 10));
             document.Add(new AreaBreak());

@@ -26,12 +26,17 @@ namespace iText.Highlevel.Chapter05 {
 
             public override void DrawBorder(DrawContext drawContext) {
                 Rectangle occupiedAreaBBox = this.GetOccupiedAreaBBox();
-                float[] margins = this.GetMargins();
+                UnitValue[] margins = this.GetMargins();
                 Rectangle rectangle = this.ApplyMargins(occupiedAreaBBox, margins, false);
                 PdfCanvas canvas = drawContext.GetCanvas();
                 canvas.RoundRectangle(rectangle.GetX() + 1, rectangle.GetY() + 1, rectangle.GetWidth() - 2, rectangle.GetHeight
                     () - 2, 5).Stroke();
                 base.DrawBorder(drawContext);
+            }
+
+            protected override Rectangle ApplyMargins(Rectangle rect, UnitValue[] margins, bool reverse) {
+                return rect.ApplyMargins(margins[0].GetValue(), margins[1].GetValue(), margins[2].GetValue(),
+                    margins[3].GetValue(), reverse);
             }
         }
 
@@ -65,7 +70,7 @@ namespace iText.Highlevel.Chapter05 {
             // Initialize document
             Document document = new Document(pdf);
             Table table1 = new Table(UnitValue.CreatePercentArray(new float[] { 2, 1, 1 }));
-            table1.SetWidthPercent(80);
+            table1.SetWidth(UnitValue.CreatePercentValue(80));
             table1.SetHorizontalAlignment(HorizontalAlignment.CENTER);
             table1.AddCell(new Cell(1, 3).Add(new Paragraph("Cell with colspan 3")).SetPadding(10).SetMargin(5).SetBorder(new DashedBorder
                 (0.5f)));
@@ -79,7 +84,7 @@ namespace iText.Highlevel.Chapter05 {
             Table table2 = new Table(UnitValue.CreatePercentArray(new float[] { 2, 1, 1 }));
             table2.SetMarginTop(10);
             table2.SetBorder(new SolidBorder(1));
-            table2.SetWidthPercent(80);
+            table2.SetWidth(UnitValue.CreatePercentValue(80));
             table2.SetHorizontalAlignment(HorizontalAlignment.CENTER);
             table2.AddCell(new Cell(1, 3).Add(new Paragraph("Cell with colspan 3")).SetBorder(Border.NO_BORDER));
             table2.AddCell(new Cell(2, 1).Add(new Paragraph("Cell with rowspan 2")).SetBorder(Border.NO_BORDER));
@@ -90,7 +95,7 @@ namespace iText.Highlevel.Chapter05 {
             document.Add(table2);
             Table table3 = new Table(UnitValue.CreatePercentArray(new float[] { 2, 1, 1 }));
             table3.SetMarginTop(10);
-            table3.SetWidthPercent(80);
+            table3.SetWidth(UnitValue.CreatePercentValue(80));
             table3.SetHorizontalAlignment(HorizontalAlignment.CENTER);
             Cell cell = new C05E06_CellBorders.RoundedCornersCell(1, 3).Add(new Paragraph("Cell with colspan 3")).SetPadding(10
                 ).SetMargin(5).SetBorder(Border.NO_BORDER);

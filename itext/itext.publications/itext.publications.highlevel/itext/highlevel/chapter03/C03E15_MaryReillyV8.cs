@@ -33,7 +33,7 @@ namespace iText.Highlevel.Chapter03 {
             document.Add(p);
             iText.Layout.Element.Image img = new Image(ImageDataFactory.Create(MARY));
             img.SetHorizontalAlignment(HorizontalAlignment.CENTER);
-            img.SetWidthPercent(80);
+            img.SetWidth(UnitValue.CreatePercentValue(80));
             document.Add(img);
             document.Close();
         }

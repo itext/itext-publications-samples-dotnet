@@ -94,7 +94,7 @@ namespace Tutorial.Chapter03 {
                 //Add watermark
                 iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdfDoc, page.GetPageSize());
                 canvas.SetFontColor(ColorConstants.WHITE);
-                canvas.SetProperty(Property.FONT_SIZE, 60);
+                canvas.SetProperty(Property.FONT_SIZE, UnitValue.CreatePointValue(60));
                 canvas.SetProperty(Property.FONT, C03E03_UFO.helveticaBold);
                 canvas.ShowTextAligned(new Paragraph("CONFIDENTIAL"), 298, 421, pdfDoc.GetPageNumber(page), TextAlignment.
                     CENTER, VerticalAlignment.MIDDLE, 45);

@@ -43,7 +43,7 @@ namespace iText.Highlevel.Notused.Appendix {
             document.Add(CreateNewList().SetHyphenation(new HyphenationConfig("en", "uk", 3, 3)).SetBorder(new SolidBorder
                 (0.5f)).SetKeepWithNext(true));
             document.Add(CreateNewList().SetKeepTogether(true).SetHeight(200));
-            document.Add(CreateNewList().SetWidthPercent(50));
+            document.Add(CreateNewList().SetWidth(UnitValue.CreatePercentValue(50)));
             document.Add(CreateNewList().SetRelativePosition(10, 10, 50, 10));
             document.Add(CreateNewList());
             document.Add(new AreaBreak());

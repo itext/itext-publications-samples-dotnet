@@ -122,7 +122,7 @@ namespace iText.Samples.Sandbox.Zugferd
             document.Add(p);
             // Address seller / buyer
             Table table = new Table(UnitValue.CreatePercentArray(2));
-            table.SetWidthPercent(100);
+            table.SetWidth(UnitValue.CreatePercentValue(100));
             Cell seller = GetPartyAddress("From:", basic.GetSellerName(), basic.GetSellerLineOne(), basic.GetSellerLineTwo
                 (), basic.GetSellerCountryID(), basic.GetSellerPostcode(), basic.GetSellerCityName());
             table.AddCell(seller);
@@ -136,7 +136,7 @@ namespace iText.Samples.Sandbox.Zugferd
             document.Add(table);
             // line items
             table = new Table(UnitValue.CreatePercentArray(new float[] { 7, 2, 1, 2, 2, 2 }));
-            table.SetWidthPercent(100);
+            table.SetWidth(UnitValue.CreatePercentValue(100));
             table.SetMarginTop(10);
             table.SetMarginBottom(10);
             table.AddCell(GetCell("Item:", TextAlignment.LEFT, fontb, 12));

@@ -30,7 +30,7 @@ namespace iText.Highlevel.Chapter05 {
             // Initialize document
             Document document = new Document(pdf);
             Table table = new Table(UnitValue.CreatePercentArray(2));
-            table.SetWidthPercent(80);
+            table.SetWidth(UnitValue.CreatePercentValue(80));
             table.SetHorizontalAlignment(HorizontalAlignment.CENTER);
             table.AddCell(new Cell(1, 2).Add(new Paragraph("Cell with colspan 2")));
             table.AddCell(new Cell().Add(new Paragraph("Cell with rowspan 1")));
@@ -43,7 +43,7 @@ namespace iText.Highlevel.Chapter05 {
             document.Add(table);
             table = new Table(UnitValue.CreatePercentArray(2));
             table.SetMarginTop(10);
-            table.SetWidthPercent(80);
+            table.SetWidth(UnitValue.CreatePercentValue(80));
             table.SetHorizontalAlignment(HorizontalAlignment.CENTER);
             table.AddCell(new Cell(1, 2).Add(new Paragraph("Cell with colspan 2")));
             table.AddCell(new Cell().Add(new Paragraph("Cell with rowspan 1")));

@@ -48,7 +48,7 @@ namespace iText.Highlevel.Notused.Appendix {
                 )));
             document.Add(GetNewParagraphInstance().SetHeight(120).SetVerticalAlignment(VerticalAlignment.BOTTOM).SetBackgroundColor
                 (ColorConstants.YELLOW).SetRelativePosition(10, 10, 50, 10));
-            document.Add(GetNewParagraphInstance().SetWidthPercent(80).SetFont(font).SetFontSize(8).SetFontColor(ColorConstants
+            document.Add(GetNewParagraphInstance().SetWidth(UnitValue.CreatePercentValue(80)).SetFont(font).SetFontSize(8).SetFontColor(ColorConstants
                 .RED));
             document.Add(new AreaBreak());
             document.Add(GetNewParagraphInstance().SetFixedPosition(100, 400, 350).SetAction(PdfAction.CreateGoTo("Top"

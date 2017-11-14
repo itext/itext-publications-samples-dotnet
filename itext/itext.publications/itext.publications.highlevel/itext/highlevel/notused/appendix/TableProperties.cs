@@ -43,7 +43,7 @@ namespace iText.Highlevel.Notused.Appendix {
             document.Add(CreateNewTable().SetTextAlignment(TextAlignment.CENTER));
             document.Add(ListSeparatorProperties.CreateNewSeparator().SetMargin(10).SetWidth(300).SetKeepWithNext(true
                 ));
-            document.Add(CreateNewTable().SetKeepTogether(true).SetWidthPercent(90));
+            document.Add(CreateNewTable().SetKeepTogether(true).SetWidth(UnitValue.CreatePercentValue(90)));
             document.Add(CreateNewTable());
             document.Add(CreateNewTable().SetRelativePosition(10, 10, 50, 10));
             document.Add(CreateNewTable());

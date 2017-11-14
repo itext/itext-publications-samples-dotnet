@@ -30,7 +30,7 @@ namespace iText.Highlevel.Chapter05 {
             // Initialize document
             Document document = new Document(pdf);
             Table table = new Table(UnitValue.CreatePercentArray(new float[] { 2, 1, 1 }));
-            table.SetWidthPercent(80);
+            table.SetWidth(UnitValue.CreatePercentValue(80));
             table.SetHorizontalAlignment(HorizontalAlignment.CENTER);
             table.SetTextAlignment(TextAlignment.CENTER);
             table.AddCell(new Cell(1, 3).Add(new Paragraph("Cell with colspan 3")));
