@@ -28,7 +28,7 @@ namespace iText.Highlevel.Chapter04 {
                 Background background = this.GetProperty<Background>(Property.BACKGROUND);
                 if (background != null) {
                     Rectangle bBox = this.GetOccupiedAreaBBox();
-                    bool isTagged = drawContext.IsTaggingEnabled() && this.GetModelElement() is IAccessibleElement;
+                    bool isTagged = drawContext.IsTaggingEnabled();
                     if (isTagged) {
                         drawContext.GetCanvas().OpenTag(new CanvasArtifact());
                     }
