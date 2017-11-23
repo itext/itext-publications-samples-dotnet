@@ -14,6 +14,7 @@ using iText.Kernel.Pdf.Canvas.Draw;
 using iText.Layout;
 using iText.Layout.Borders;
 using iText.Layout.Element;
+using iText.Layout.Properties;
 using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter04 {
@@ -36,9 +37,9 @@ namespace iText.Highlevel.Chapter04 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdf);
             SolidLine line = new SolidLine(1f);
-            line.SetColor(Color.RED);
+            line.SetColor(ColorConstants.RED);
             LineSeparator ls = new LineSeparator(line);
-            ls.SetWidthPercent(50);
+            ls.SetWidth(UnitValue.CreatePercentValue(50));
             ls.SetMarginTop(5);
             IList<IList<String>> resultSet = CsvTo2DList.Convert(SRC, "|");
             resultSet.RemoveAt(0);

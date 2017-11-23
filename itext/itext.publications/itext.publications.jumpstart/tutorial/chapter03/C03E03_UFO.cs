@@ -65,11 +65,11 @@ namespace Tutorial.Chapter03 {
             while (tokenizer.HasMoreTokens()) {
                 if (isHeader) {
                     table.AddHeaderCell(new Cell().Add(new Paragraph(tokenizer.NextToken()).SetFont(font)).SetFontSize(9).SetBorder
-                        (new SolidBorder(Color.BLACK, 0.5f)));
+                        (new SolidBorder(ColorConstants.BLACK, 0.5f)));
                 }
                 else {
                     table.AddCell(new Cell().Add(new Paragraph(tokenizer.NextToken()).SetFont(font)).SetFontSize(9).SetBorder(
-                        new SolidBorder(Color.BLACK, 0.5f)));
+                        new SolidBorder(ColorConstants.BLACK, 0.5f)));
                 }
             }
         }
@@ -93,8 +93,8 @@ namespace Tutorial.Chapter03 {
                     .ToString()).EndText();
                 //Add watermark
                 iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdfDoc, page.GetPageSize());
-                canvas.SetFontColor(Color.WHITE);
-                canvas.SetProperty(Property.FONT_SIZE, 60);
+                canvas.SetFontColor(ColorConstants.WHITE);
+                canvas.SetProperty(Property.FONT_SIZE, UnitValue.CreatePointValue(60));
                 canvas.SetProperty(Property.FONT, C03E03_UFO.helveticaBold);
                 canvas.ShowTextAligned(new Paragraph("CONFIDENTIAL"), 298, 421, pdfDoc.GetPageNumber(page), TextAlignment.
                     CENTER, VerticalAlignment.MIDDLE, 45);

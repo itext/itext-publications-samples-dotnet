@@ -32,9 +32,11 @@ namespace Tutorial.Chapter04 {
             Document document = new Document(pdf);
             document.Add(new Paragraph("The example of text annotation."));
             //Create text annotation
-            PdfAnnotation ann = new PdfTextAnnotation(new Rectangle(20, 800, 0, 0)).SetColor(Color.GREEN).SetTitle(new 
-                PdfString("iText")).SetContents("With iText, you can truly take your documentation needs to the next level."
-                ).SetOpen(true);
+            PdfAnnotation ann = new PdfTextAnnotation(new Rectangle(20, 800, 0, 0))
+                .SetOpen(true)
+                .SetColor(ColorConstants.GREEN)
+                .SetTitle(new PdfString("iText"))
+                .SetContents("With iText, you can truly take your documentation needs to the next level.");
             pdf.GetFirstPage().AddAnnotation(ann);
             //Close document
             document.Close();

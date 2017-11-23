@@ -34,7 +34,7 @@ namespace iText.Highlevel.Notused.Appendix {
             document.Add(new Paragraph(t1));
             Text t2 = new Text("Test").SetBorder(new SolidBorder(0.5f));
             document.Add(new Paragraph(t2));
-            Text t3 = new Text("Test").SetBorderLeft(new SolidBorder(0.5f)).SetBackgroundColor(Color.LIGHT_GRAY);
+            Text t3 = new Text("Test").SetBorderLeft(new SolidBorder(0.5f)).SetBackgroundColor(ColorConstants.LIGHT_GRAY);
             document.Add(new Paragraph(t3));
             Text t4 = new Text("AWAY AGAIN").SetCharacterSpacing(10);
             document.Add(new Paragraph(t4));

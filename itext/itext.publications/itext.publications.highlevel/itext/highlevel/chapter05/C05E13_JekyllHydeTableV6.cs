@@ -41,9 +41,9 @@ namespace iText.Highlevel.Chapter05 {
             IList<String> header = resultSet[0];
             resultSet.RemoveAt(0);
             Table table = new Table(UnitValue.CreatePercentArray(new float[] { 3, 2, 14, 9, 4, 3 }));
+            table.SetWidth(UnitValue.CreatePercentValue(100));
             int nRows = resultSet.Count;
             table.SetNextRenderer(new AlternatingBackgroundTableRenderer(table, new Table.RowRange(0, nRows - 1)));
-            table.SetWidthPercent(100);
             foreach (String field in header) {
                 table.AddHeaderCell(field);
             }
@@ -82,11 +82,11 @@ namespace iText.Highlevel.Chapter05 {
                 PdfCanvas canvas = drawContext.GetCanvas();
                 canvas.SaveState();
                 if (isOdd) {
-                    canvas.SetFillColor(Color.LIGHT_GRAY);
+                    canvas.SetFillColor(ColorConstants.LIGHT_GRAY);
                     isOdd = false;
                 }
                 else {
-                    canvas.SetFillColor(Color.YELLOW);
+                    canvas.SetFillColor(ColorConstants.YELLOW);
                     isOdd = true;
                 }
                 canvas.Rectangle(rect);

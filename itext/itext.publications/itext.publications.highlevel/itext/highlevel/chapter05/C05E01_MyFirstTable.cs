@@ -7,6 +7,7 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Layout.Properties;
 using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter05 {
@@ -28,9 +29,9 @@ namespace iText.Highlevel.Chapter05 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             // Initialize document
             Document document = new Document(pdf);
-            Table table = new Table(3);
-            table.AddCell(new Cell(1, 3).Add("Cell with colspan 3"));
-            table.AddCell(new Cell(2, 1).Add("Cell with rowspan 2"));
+            Table table = new Table(UnitValue.CreatePercentArray(3)).UseAllAvailableWidth();
+            table.AddCell(new Cell(1, 3).Add(new Paragraph("Cell with colspan 3")));
+            table.AddCell(new Cell(2, 1).Add(new Paragraph("Cell with rowspan 2")));
             table.AddCell("row 1; cell 1");
             table.AddCell("row 1; cell 2");
             table.AddCell("row 2; cell 1");

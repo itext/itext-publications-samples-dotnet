@@ -32,11 +32,11 @@ namespace iText.Highlevel.Chapter01 {
             // Initialize document
             Document document = new Document(pdf);
             // Add content
-            Text title1 = new Text("The Strange Case of ").SetFontColor(Color.BLUE);
-            Text title2 = new Text("Dr. Jekyll").SetStrokeColor(Color.GREEN).SetTextRenderingMode(PdfCanvasConstants.TextRenderingMode
+            Text title1 = new Text("The Strange Case of ").SetFontColor(ColorConstants.BLUE);
+            Text title2 = new Text("Dr. Jekyll").SetStrokeColor(ColorConstants.GREEN).SetTextRenderingMode(PdfCanvasConstants.TextRenderingMode
                 .FILL_STROKE);
             Text title3 = new Text(" and ");
-            Text title4 = new Text("Mr. Hyde").SetStrokeColor(Color.RED).SetStrokeWidth(0.5f).SetTextRenderingMode(PdfCanvasConstants.TextRenderingMode
+            Text title4 = new Text("Mr. Hyde").SetStrokeColor(ColorConstants.RED).SetStrokeWidth(0.5f).SetTextRenderingMode(PdfCanvasConstants.TextRenderingMode
                 .STROKE);
             Paragraph p = new Paragraph().SetFontSize(24).Add(title1).Add(title2).Add(title3).Add(title4);
             document.Add(p);

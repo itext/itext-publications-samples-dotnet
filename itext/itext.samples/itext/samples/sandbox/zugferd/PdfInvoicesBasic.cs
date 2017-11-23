@@ -121,8 +121,8 @@ namespace iText.Samples.Sandbox.Zugferd
             p.SetTextAlignment(TextAlignment.RIGHT);
             document.Add(p);
             // Address seller / buyer
-            Table table = new Table(2);
-            table.SetWidthPercent(100);
+            Table table = new Table(UnitValue.CreatePercentArray(2));
+            table.SetWidth(UnitValue.CreatePercentValue(100));
             Cell seller = GetPartyAddress("From:", basic.GetSellerName(), basic.GetSellerLineOne(), basic.GetSellerLineTwo
                 (), basic.GetSellerCountryID(), basic.GetSellerPostcode(), basic.GetSellerCityName());
             table.AddCell(seller);
@@ -136,7 +136,7 @@ namespace iText.Samples.Sandbox.Zugferd
             document.Add(table);
             // line items
             table = new Table(UnitValue.CreatePercentArray(new float[] { 7, 2, 1, 2, 2, 2 }));
-            table.SetWidthPercent(100);
+            table.SetWidth(UnitValue.CreatePercentValue(100));
             table.SetMarginTop(10);
             table.SetMarginBottom(10);
             table.AddCell(GetCell("Item:", TextAlignment.LEFT, fontb, 12));
@@ -174,7 +174,7 @@ namespace iText.Samples.Sandbox.Zugferd
             // platform-independent newlines
             byte[] xml = Encoding.UTF8.GetBytes(JavaUtil.GetStringForBytes(dom.ToXML()).Replace("\r\n", "\n"));
             PdfFileSpec fileSpec = PdfFileSpec.CreateEmbeddedFileSpec(pdfDoc, xml, "ZUGFeRD invoice", "ZUGFeRD-invoice.xml"
-                , new PdfName("application/xml"), parameters, PdfName.Alternative, false);
+                , new PdfName("application/xml"), parameters, PdfName.Alternative);
             pdfDoc.AddFileAttachment("ZUGFeRD invoice", fileSpec);
             PdfArray array = new PdfArray();
             array.Add(fileSpec.GetPdfObject().GetIndirectReference());

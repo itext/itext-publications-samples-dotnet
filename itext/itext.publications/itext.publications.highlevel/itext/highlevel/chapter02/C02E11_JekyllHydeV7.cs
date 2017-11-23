@@ -45,7 +45,7 @@ namespace iText.Highlevel.Chapter02 {
                     base.UpdateCurrentArea(overflowResult);
                 }
                 this.currentAreaNumber = this.nextAreaNumber + 1;
-                return (this.currentArea = new LayoutArea(this.currentPageNumber, this.columns[this.nextAreaNumber++ % this
+                return (this.currentArea = new RootLayoutArea(this.currentPageNumber, this.columns[this.nextAreaNumber++ % this
                     .columns.Length].Clone()));
             }
 

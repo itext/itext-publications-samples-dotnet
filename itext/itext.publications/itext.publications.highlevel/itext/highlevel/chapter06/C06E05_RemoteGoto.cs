@@ -32,8 +32,8 @@ namespace iText.Highlevel.Chapter06 {
                 .DEST).Name, 1, true));
             Link link2 = new Link("table of contents", PdfAction.CreateGoToR(new FileInfo(C06E04_TOC_GoToNamed.DEST).Name
                 , "toc", false));
-            Paragraph p = new Paragraph().Add("Read the amazing horror story ").Add(link1.SetFontColor(Color.BLUE)).Add
-                (" or, if you're too afraid to start reading the story, read the ").Add(link2.SetFontColor(Color.BLUE)
+            Paragraph p = new Paragraph().Add("Read the amazing horror story ").Add(link1.SetFontColor(ColorConstants.BLUE)).Add
+                (" or, if you're too afraid to start reading the story, read the ").Add(link2.SetFontColor(ColorConstants.BLUE)
                 ).Add(".");
             document.Add(p);
             document.Close();

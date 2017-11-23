@@ -53,9 +53,6 @@ namespace iText.Samples.Sandbox.Zugferd.Chapter02 {
             pdfDoc.GetCatalog().SetViewerPreferences(new PdfViewerPreferences().SetDisplayDocTitle(true));
             pdfDoc.GetCatalog().SetLang(new PdfString("en-US"));
             PdfDocumentInfo info = pdfDoc.GetDocumentInfo();
-            if (null == info) {
-                info = new PdfDocumentInfo(pdfDoc);
-            }
             info.SetTitle("Some title");
             //=====================
             Paragraph p = new Paragraph();

@@ -8,6 +8,7 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Borders;
 using iText.Layout.Element;
+using iText.Layout.Properties;
 using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter05 {
@@ -31,7 +32,7 @@ namespace iText.Highlevel.Chapter05 {
                 ));
             // Initialize document
             Document document = new Document(pdf);
-            Table table = new Table(1);
+            Table table = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth();
             table.AddCell(p);
             Cell cell = new Cell().SetMinHeight(16).Add(p);
             table.AddCell(cell);

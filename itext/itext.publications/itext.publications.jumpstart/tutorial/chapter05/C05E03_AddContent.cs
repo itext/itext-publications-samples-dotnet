@@ -46,7 +46,7 @@ namespace Tutorial.Chapter05 {
                 canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(FontConstants.HELVETICA), 7).MoveText(pageSize
                     .GetWidth() / 2 - 24, pageSize.GetHeight() - 10).ShowText("I want to believe").EndText();
                 //Draw footer line
-                canvas.SetStrokeColor(Color.BLACK).SetLineWidth(.2f).MoveTo(pageSize.GetWidth() / 2 - 30, 20).LineTo(pageSize
+                canvas.SetStrokeColor(ColorConstants.BLACK).SetLineWidth(.2f).MoveTo(pageSize.GetWidth() / 2 - 30, 20).LineTo(pageSize
                     .GetWidth() / 2 + 30, 20).Stroke();
                 //Draw page number
                 canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(FontConstants.HELVETICA), 7).MoveText(pageSize

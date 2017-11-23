@@ -53,7 +53,7 @@ namespace iText.Highlevel.Chapter04 {
             document.Add(list);
             list = new List();
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.ZAPFDINGBATS);
-            list.SetListSymbol(new Text("*").SetFont(font).SetFontColor(Color.ORANGE));
+            list.SetListSymbol(new Text("*").SetFont(font).SetFontColor(ColorConstants.ORANGE));
             list.SetSymbolIndent(10);
             list.Add("Dr. Jekyll");
             list.Add("Mr. Hyde");

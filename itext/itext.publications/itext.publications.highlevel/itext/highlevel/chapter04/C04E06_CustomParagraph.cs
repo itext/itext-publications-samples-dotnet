@@ -28,7 +28,7 @@ namespace iText.Highlevel.Chapter04 {
                 Background background = this.GetProperty<Background>(Property.BACKGROUND);
                 if (background != null) {
                     Rectangle bBox = this.GetOccupiedAreaBBox();
-                    bool isTagged = drawContext.IsTaggingEnabled() && this.GetModelElement() is IAccessibleElement;
+                    bool isTagged = drawContext.IsTaggingEnabled();
                     if (isTagged) {
                         drawContext.GetCanvas().OpenTag(new CanvasArtifact());
                     }
@@ -63,10 +63,10 @@ namespace iText.Highlevel.Chapter04 {
             // Initialize document
             Document document = new Document(pdf);
             Paragraph p1 = new Paragraph("The Strange Case of Dr. Jekyll and Mr. Hyde");
-            p1.SetBackgroundColor(Color.ORANGE);
+            p1.SetBackgroundColor(ColorConstants.ORANGE);
             document.Add(p1);
             Paragraph p2 = new Paragraph("The Strange Case of Dr. Jekyll and Mr. Hyde");
-            p2.SetBackgroundColor(Color.ORANGE);
+            p2.SetBackgroundColor(ColorConstants.ORANGE);
             p2.SetNextRenderer(new C04E06_CustomParagraph.MyParagraphRenderer(p2));
             document.Add(p2);
             document.Close();

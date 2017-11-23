@@ -31,7 +31,7 @@ namespace iText.Highlevel.Chapter06 {
             PdfAction action = PdfAction.CreateJavaScript("app.alert('Boo');");
             action.Next(PdfAction.CreateGoToR(new FileInfo(C06E04_TOC_GoToNamed.DEST).Name, 1, true));
             Link link = new Link("here", action);
-            Paragraph p = new Paragraph().Add("Click ").Add(link.SetFontColor(Color.BLUE)).Add(" if you want to be scared."
+            Paragraph p = new Paragraph().Add("Click ").Add(link.SetFontColor(ColorConstants.BLUE)).Add(" if you want to be scared."
                 );
             document.Add(p);
             document.Close();

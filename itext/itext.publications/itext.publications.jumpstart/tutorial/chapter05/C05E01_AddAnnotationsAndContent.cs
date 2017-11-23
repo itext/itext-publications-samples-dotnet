@@ -34,8 +34,10 @@ namespace Tutorial.Chapter05 {
             //Initialize PDF document
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
             //Add text annotation
-            PdfAnnotation ann = new PdfTextAnnotation(new Rectangle(400, 795, 0, 0)).SetTitle(new PdfString("iText")).
-                SetContents("Please, fill out the form.").SetOpen(true);
+            PdfAnnotation ann = new PdfTextAnnotation(new Rectangle(400, 795, 0, 0))
+                .SetOpen(true)
+                .SetTitle(new PdfString("iText"))
+                .SetContents("Please, fill out the form.");
             pdfDoc.GetFirstPage().AddAnnotation(ann);
             PdfCanvas canvas = new PdfCanvas(pdfDoc.GetFirstPage());
             canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(FontConstants.HELVETICA), 12).MoveText(265, 597

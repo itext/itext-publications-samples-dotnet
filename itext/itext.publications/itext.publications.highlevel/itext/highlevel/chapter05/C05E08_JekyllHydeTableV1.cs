@@ -42,7 +42,7 @@ namespace iText.Highlevel.Chapter05 {
             foreach (String field in header) {
                 table.AddHeaderCell(field);
             }
-            Cell cell = new Cell(1, 6).Add("Continued on next page...");
+            Cell cell = new Cell(1, 6).Add(new Paragraph("Continued on next page..."));
             table.AddFooterCell(cell).SetSkipLastFooter(true);
             foreach (IList<String> record in resultSet) {
                 foreach (String field_1 in record) {

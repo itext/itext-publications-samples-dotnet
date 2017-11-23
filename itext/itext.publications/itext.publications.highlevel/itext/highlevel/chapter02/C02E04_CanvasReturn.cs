@@ -50,7 +50,7 @@ namespace iText.Highlevel.Chapter02 {
             PdfPage page1 = pdf.GetFirstPage();
             PdfCanvas pdfCanvas1 = new PdfCanvas(page1.NewContentStreamBefore(), page1.GetResources(), pdf);
             rectangle = new Rectangle(100, 700, 100, 100);
-            pdfCanvas1.SaveState().SetFillColor(Color.CYAN).Rectangle(rectangle).Fill().RestoreState();
+            pdfCanvas1.SaveState().SetFillColor(ColorConstants.CYAN).Rectangle(rectangle).Fill().RestoreState();
             iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas1, pdf, rectangle);
             canvas.Add(new Paragraph("Dr. Jekyll and Mr. Hyde"));
             //Close document

@@ -293,8 +293,7 @@ namespace iText.Samples.Signatures.Chapter02
 			String[] errors = new String[resultFiles.Length];
 			bool error = false;
 
-            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(new Rectangle(55, 435, 287, 370
-                        )) } };
+            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, iText.IO.Util.JavaUtil.ArraysAsList(new Rectangle(55, 440, 287, 365)) } };
 			for (int i = 0; i < resultFiles.Length; i++)
 			{
 				String resultFile = resultFiles[i];

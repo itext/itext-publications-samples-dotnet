@@ -33,7 +33,7 @@ namespace Tutorial.Chapter04 {
             //Create line annotation with inside caption
             PdfAnnotation annotation = new PdfLineAnnotation(new Rectangle(0, 0), new float[] { 20, 790, page.GetPageSize
                 ().GetWidth() - 20, 790 }).SetLineEndingStyles((lineEndings)).SetContentsAsCaption(true).SetTitle(new 
-                PdfString("iText")).SetContents("The example of line annotation").SetColor(Color.BLUE);
+                PdfString("iText")).SetContents("The example of line annotation").SetColor(ColorConstants.BLUE);
             page.AddAnnotation(annotation);
             //Close document
             pdf.Close();

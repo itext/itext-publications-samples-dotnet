@@ -68,14 +68,14 @@ namespace iText.Samples.Signatures.Chapter02
 				mkDictionary = new PdfDictionary();
 			}
 			PdfArray black = new PdfArray();
-			black.Add(new PdfNumber(Color.BLACK.GetColorValue()[0]));
-			black.Add(new PdfNumber(Color.BLACK.GetColorValue()[1]));
-			black.Add(new PdfNumber(Color.BLACK.GetColorValue()[2]));
+			black.Add(new PdfNumber(ColorConstants.BLACK.GetColorValue()[0]));
+			black.Add(new PdfNumber(ColorConstants.BLACK.GetColorValue()[1]));
+			black.Add(new PdfNumber(ColorConstants.BLACK.GetColorValue()[2]));
 			mkDictionary.Put(PdfName.BC, black);
 			PdfArray white = new PdfArray();
-			black.Add(new PdfNumber(Color.WHITE.GetColorValue()[0]));
-			black.Add(new PdfNumber(Color.WHITE.GetColorValue()[1]));
-			black.Add(new PdfNumber(Color.WHITE.GetColorValue()[2]));
+			black.Add(new PdfNumber(ColorConstants.WHITE.GetColorValue()[0]));
+			black.Add(new PdfNumber(ColorConstants.WHITE.GetColorValue()[1]));
+			black.Add(new PdfNumber(ColorConstants.WHITE.GetColorValue()[2]));
 			mkDictionary.Put(PdfName.BG, white);
 			field.GetWidgets()[0].SetAppearanceCharacteristics(mkDictionary);
 			// add the field
@@ -85,11 +85,11 @@ namespace iText.Samples.Signatures.Chapter02
 			PdfFormXObject xObject = new PdfFormXObject(rect);
 			PdfCanvas canvas = new PdfCanvas(xObject, pdfDoc);
 			canvas
-                .SetStrokeColor(Color.BLUE)
-                .SetFillColor(Color.LIGHT_GRAY)
+                .SetStrokeColor(ColorConstants.BLUE)
+                .SetFillColor(ColorConstants.LIGHT_GRAY)
                 .Rectangle(0.5f, 0.5f, 199.5f, 99.5f)
                 .FillStroke()
-                .SetFillColor(Color.BLUE);
+                .SetFillColor(ColorConstants.BLUE);
 			new iText.Layout.Canvas(canvas, pdfDoc, rect).ShowTextAligned("SIGN HERE", 100
 				, 50, TextAlignment.CENTER, (float)(Math.PI / 180) * 25);
 			// TODO Acrobat does not render new appearance (Foxit however does)

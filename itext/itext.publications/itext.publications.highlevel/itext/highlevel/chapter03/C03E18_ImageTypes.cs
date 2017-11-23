@@ -72,7 +72,7 @@ namespace iText.Highlevel.Chapter03 {
             document.Add(img4);
             // GIF
             iText.Layout.Element.Image img5 = new iText.Layout.Element.Image(ImageDataFactory.Create(TEST5));
-            img5.SetBackgroundColor(Color.LIGHT_GRAY);
+            img5.SetBackgroundColor(ColorConstants.LIGHT_GRAY);
             document.Add(img5);
             
             // System.Drawing.Image

@@ -27,11 +27,11 @@ namespace iText.Highlevel.Notused.Appendix {
         public virtual void CreatePdf(String dest) {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdf);
-            document.Add(new Paragraph("Paragraph with orange border").SetBorder(new SolidBorder(Color.ORANGE, 5)));
-            Text text = new Text("Text with orange border").SetBorder(new SolidBorder(Color.ORANGE, 5));
+            document.Add(new Paragraph("Paragraph with orange border").SetBorder(new SolidBorder(ColorConstants.ORANGE, 5)));
+            Text text = new Text("Text with orange border").SetBorder(new SolidBorder(ColorConstants.ORANGE, 5));
             document.Add(new Paragraph(text));
             Link link = new Link("Link with orange border", PdfAction.CreateURI("http://itextpdf.com"));
-            link.SetBorder(new SolidBorder(Color.ORANGE, 5));
+            link.SetBorder(new SolidBorder(ColorConstants.ORANGE, 5));
             document.Add(new Paragraph(link));
             document.Close();
         }

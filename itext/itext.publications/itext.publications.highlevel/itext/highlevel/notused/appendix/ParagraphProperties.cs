@@ -36,33 +36,33 @@ namespace iText.Highlevel.Notused.Appendix {
             Paragraph p;
             PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
             Style style = new Style();
-            style.SetBackgroundColor(Color.YELLOW);
+            style.SetBackgroundColor(ColorConstants.YELLOW);
             p = GetNewParagraphInstance().AddStyle(style).SetBorder(new SolidBorder(0.5f)).SetDestination("Top");
             document.Add(p);
             p = GetNewParagraphInstance();
-            p.SetBackgroundColor(Color.GRAY).SetWidth(150).SetHorizontalAlignment(HorizontalAlignment.CENTER).SetTextAlignment
+            p.SetBackgroundColor(ColorConstants.GRAY).SetWidth(150).SetHorizontalAlignment(HorizontalAlignment.CENTER).SetTextAlignment
                 (TextAlignment.CENTER);
             document.Add(p);
             document.Add(GetNewParagraphInstance().SetRotationAngle(Math.PI / 18));
             document.Add(GetNewParagraphInstance().SetWidth(150).SetHyphenation(new HyphenationConfig("en", "uk", 3, 3
                 )));
             document.Add(GetNewParagraphInstance().SetHeight(120).SetVerticalAlignment(VerticalAlignment.BOTTOM).SetBackgroundColor
-                (Color.YELLOW).SetRelativePosition(10, 10, 50, 10));
-            document.Add(GetNewParagraphInstance().SetWidthPercent(80).SetFont(font).SetFontSize(8).SetFontColor(Color
+                (ColorConstants.YELLOW).SetRelativePosition(10, 10, 50, 10));
+            document.Add(GetNewParagraphInstance().SetWidth(UnitValue.CreatePercentValue(80)).SetFont(font).SetFontSize(8).SetFontColor(ColorConstants
                 .RED));
             document.Add(new AreaBreak());
             document.Add(GetNewParagraphInstance().SetFixedPosition(100, 400, 350).SetAction(PdfAction.CreateGoTo("Top"
                 )));
             document.Add(new AreaBreak());
-            document.Add(GetNewParagraphInstance().SetBackgroundColor(Color.YELLOW).SetMarginBottom(10));
-            document.Add(GetNewParagraphInstance().SetBackgroundColor(Color.LIGHT_GRAY).SetPaddingLeft(20).SetPaddingRight
+            document.Add(GetNewParagraphInstance().SetBackgroundColor(ColorConstants.YELLOW).SetMarginBottom(10));
+            document.Add(GetNewParagraphInstance().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetPaddingLeft(20).SetPaddingRight
                 (50));
-            document.Add(GetNewParagraphInstance().SetBackgroundColor(Color.YELLOW));
-            document.Add(GetNewParagraphInstance().SetBackgroundColor(Color.LIGHT_GRAY));
-            document.Add(GetNewParagraphInstance().SetBackgroundColor(Color.YELLOW));
-            document.Add(GetNewParagraphInstance().SetBackgroundColor(Color.LIGHT_GRAY).SetMargin(50).SetPadding(30));
-            document.Add(GetNewParagraphInstance().SetBackgroundColor(Color.YELLOW));
-            document.Add(GetNewParagraphInstance().SetBackgroundColor(Color.LIGHT_GRAY));
+            document.Add(GetNewParagraphInstance().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(GetNewParagraphInstance().SetBackgroundColor(ColorConstants.LIGHT_GRAY));
+            document.Add(GetNewParagraphInstance().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(GetNewParagraphInstance().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetMargin(50).SetPadding(30));
+            document.Add(GetNewParagraphInstance().SetBackgroundColor(ColorConstants.YELLOW));
+            document.Add(GetNewParagraphInstance().SetBackgroundColor(ColorConstants.LIGHT_GRAY));
             document.Close();
         }
 

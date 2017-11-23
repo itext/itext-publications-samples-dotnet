@@ -38,7 +38,7 @@ namespace Tutorial.Chapter05 {
                 page.SetMediaBox(newMediaBox);
                 // add border
                 PdfCanvas over = new PdfCanvas(page);
-                over.SetStrokeColor(Color.GRAY);
+                over.SetStrokeColor(ColorConstants.GRAY);
                 over.Rectangle(mediaBox.GetLeft(), mediaBox.GetBottom(), mediaBox.GetWidth(), mediaBox.GetHeight());
                 over.Stroke();
                 // change rotation of the even pages

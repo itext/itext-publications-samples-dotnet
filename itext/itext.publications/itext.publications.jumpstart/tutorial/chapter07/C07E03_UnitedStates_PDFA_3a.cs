@@ -51,8 +51,7 @@ namespace Tutorial.Chapter07 {
             PdfDictionary parameters = new PdfDictionary();
             parameters.Put(PdfName.ModDate, new PdfDate().GetPdfObject());
             PdfFileSpec fileSpec = PdfFileSpec.CreateEmbeddedFileSpec(pdf, File.ReadAllBytes(System.IO.Path.Combine(DATA
-                )), "united_states.csv", "united_states.csv", new PdfName("text/csv"), parameters, PdfName.Data, false
-                );
+                )), "united_states.csv", "united_states.csv", new PdfName("text/csv"), parameters, PdfName.Data);
             fileSpec.Put(new PdfName("AFRelationship"), new PdfName("Data"));
             pdf.AddFileAttachment("united_states.csv", fileSpec);
             PdfArray array = new PdfArray();
@@ -64,7 +63,6 @@ namespace Tutorial.Chapter07 {
             // Create content
             Table table = new Table(UnitValue.CreatePercentArray(new float[] { 4, 1, 3, 4, 3, 3, 3, 3, 1 }))
                 .UseAllAvailableWidth();
-            table.SetWidthPercent(100);
             StreamReader sr = File.OpenText(DATA);
             String line = sr.ReadLine();
             Process(table, line, bold, true);
