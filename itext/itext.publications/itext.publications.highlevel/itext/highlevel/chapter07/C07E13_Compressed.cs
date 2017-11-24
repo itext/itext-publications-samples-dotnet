@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.IO.Image;
 using iText.Kernel.Events;
 using iText.Kernel.Font;
@@ -50,7 +50,7 @@ namespace iText.Highlevel.Chapter07 {
             pdf.AddEventHandler(PdfDocumentEvent.START_PAGE, handler);
             // Initialize document
             Document document = new Document(pdf);
-            PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
+            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             document.SetTextAlignment(TextAlignment.JUSTIFIED).SetHyphenation(new HyphenationConfig("en", "uk", 3, 3));
             StreamReader sr = File.OpenText(SRC);
             String name;

@@ -5,7 +5,7 @@
 using System;
 using System.IO;
 
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Draw;
@@ -34,8 +34,8 @@ namespace iText.Highlevel.Notused {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             // Initialize document
             Document document = new Document(pdf);
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
-            PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
+            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             document.SetTextAlignment(TextAlignment.JUSTIFIED).SetHyphenation(new HyphenationConfig("en", "uk", 3, 3));
             StreamReader sr = File.OpenText(SRC);
             LineSeparator separator = new LineSeparator(new DottedLine(2f, 5f));

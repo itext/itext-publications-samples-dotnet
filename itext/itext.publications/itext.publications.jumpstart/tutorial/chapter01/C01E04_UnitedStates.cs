@@ -3,7 +3,7 @@
 */
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.IO.Util;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
@@ -37,8 +37,8 @@ namespace Tutorial.Chapter01 {
             // Initialize document
             Document document = new Document(pdf, PageSize.A4.Rotate());
             document.SetMargins(20, 20, 20, 20);
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.HELVETICA);
-            PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             Table table = new Table(UnitValue.CreatePercentArray(new float[] { 4, 1, 3, 4, 3, 3, 3, 3, 1 }))
                 .UseAllAvailableWidth();
             StreamReader sr = File.OpenText(DATA);

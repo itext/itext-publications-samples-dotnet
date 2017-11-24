@@ -17,14 +17,10 @@ using System.IO;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.X509;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.IO.Image;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
-using iText.Kernel.Pdf.Xobject;
-using iText.Layout;
-using iText.Layout.Element;
-using iText.Samples.Signatures;
 using iText.Signatures;
 using Org.BouncyCastle.Pkcs;
 
@@ -60,7 +56,7 @@ namespace iText.Samples.Signatures.Chapter02
 			signer.SetFieldName(name);
 			// Custom text and custom font
 			appearance.SetLayer2Text("This document was signed by Bruno Specimen");
-			appearance.SetLayer2Font(PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN));
+			appearance.SetLayer2Font(PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN));
 			// Creating the signature
 			IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
 			signer.SignDetached(pks, chain, null, null, null, 0, subfilter);

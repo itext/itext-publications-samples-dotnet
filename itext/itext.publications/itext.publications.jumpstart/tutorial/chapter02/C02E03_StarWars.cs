@@ -5,7 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -51,7 +51,7 @@ namespace Tutorial.Chapter02 {
             text.Add("of Hoth...");
             //Replace the origin of the coordinate system to the top left corner
             canvas.ConcatMatrix(1, 0, 0, 1, 0, ps.GetHeight());
-            canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(FontConstants.COURIER_BOLD), 14).SetLeading(14
+            canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(StandardFonts.COURIER_BOLD), 14).SetLeading(14
                  * 1.2f).MoveText(70, -40);
             foreach (String s in text) {
                 //Add text and move to the next line

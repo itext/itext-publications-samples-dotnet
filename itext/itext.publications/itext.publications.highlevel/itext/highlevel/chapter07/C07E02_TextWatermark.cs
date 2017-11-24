@@ -6,6 +6,7 @@ using System;
 using System.IO;
 
 using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Events;
 using iText.Kernel.Font;
@@ -40,8 +41,8 @@ namespace iText.Highlevel.Chapter07 {
             pdf.AddEventHandler(PdfDocumentEvent.END_PAGE, new TextWatermark());
             // Initialize document
             Document document = new Document(pdf);
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
-            PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
+            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             document.SetTextAlignment(TextAlignment.JUSTIFIED).SetHyphenation(new HyphenationConfig("en", "uk", 3, 3));
             StreamReader sr = File.OpenText(SRC);
             String line;
@@ -71,7 +72,7 @@ namespace iText.Highlevel.Chapter07 {
 
             /// <exception cref="System.IO.IOException"/>
             protected internal TextWatermark() {
-                this.helvetica = PdfFontFactory.CreateFont(FontConstants.HELVETICA);
+                this.helvetica = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
                 this.lime = new DeviceCmyk(0.208f, 0, 0.584f, 0);
                 this.blue = new DeviceCmyk(0.445f, 0.0546f, 0, 0.0667f);
             }

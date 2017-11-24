@@ -5,7 +5,7 @@
 
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
@@ -40,7 +40,7 @@ namespace iText.Highlevel.Chapter01 {
             // Initialize document
             Document document = new Document(pdf);
             // Add content
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             document.Add(new Paragraph().SetFont(font).Add(CZECH).Add(" by Robert Louis Stevenson"));
             document.Add(new Paragraph().SetFont(font).Add(RUSSIAN).Add(" by Robert Louis Stevenson"));
             document.Add(new Paragraph().SetFont(font).Add(KOREAN).Add(" by Robert Louis Stevenson"));

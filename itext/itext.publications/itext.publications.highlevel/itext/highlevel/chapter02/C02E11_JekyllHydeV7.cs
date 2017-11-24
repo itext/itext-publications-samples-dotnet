@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -92,8 +92,8 @@ namespace iText.Highlevel.Chapter02 {
                 (offSet + columnWidth + gutter, offSet, columnWidth, columnHeight) };
             DocumentRenderer renderer = new C02E11_JekyllHydeV7.MyColumnRenderer(document, columns);
             document.SetRenderer(renderer);
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
-            PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
+            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             document.SetTextAlignment(TextAlignment.JUSTIFIED).SetFont(font).SetHyphenation(new HyphenationConfig("en"
                 , "uk", 3, 3));
             StreamReader sr = File.OpenText(SRC);

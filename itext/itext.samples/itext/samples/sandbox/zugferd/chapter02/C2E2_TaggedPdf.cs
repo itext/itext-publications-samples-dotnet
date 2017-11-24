@@ -10,6 +10,7 @@ Copyright (c) 1998-2017 iText Group NV
 */
 using System;
 using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.IO.Image;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
@@ -38,7 +39,7 @@ namespace iText.Samples.Sandbox.Zugferd.Chapter02 {
             pdfDoc.SetTagged();
             //==========
             Paragraph p = new Paragraph();
-            p.SetFont(PdfFontFactory.CreateFont(FontConstants.HELVETICA)).SetFontSize(20);
+            p.SetFont(PdfFontFactory.CreateFont(StandardFonts.HELVETICA)).SetFontSize(20);
             Text text = new Text("The quick brown ");
             p.Add(text);
             iText.Layout.Element.Image image = new Image(ImageDataFactory.Create(FOX));

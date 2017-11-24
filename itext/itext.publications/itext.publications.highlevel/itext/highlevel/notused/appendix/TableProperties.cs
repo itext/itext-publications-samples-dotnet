@@ -4,7 +4,7 @@
 */
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
@@ -33,7 +33,7 @@ namespace iText.Highlevel.Notused.Appendix {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             // Initialize document
             Document document = new Document(pdf);
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             Style style = new Style();
             style.SetBackgroundColor(ColorConstants.YELLOW);
             document.Add(CreateNewTable().AddStyle(style).SetDestination("Top").SetWidth(300).SetHorizontalAlignment(HorizontalAlignment

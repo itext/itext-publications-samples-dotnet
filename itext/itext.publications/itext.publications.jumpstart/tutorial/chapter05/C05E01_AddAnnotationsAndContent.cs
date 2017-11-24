@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -40,7 +40,7 @@ namespace Tutorial.Chapter05 {
                 .SetContents("Please, fill out the form.");
             pdfDoc.GetFirstPage().AddAnnotation(ann);
             PdfCanvas canvas = new PdfCanvas(pdfDoc.GetFirstPage());
-            canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(FontConstants.HELVETICA), 12).MoveText(265, 597
+            canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(StandardFonts.HELVETICA), 12).MoveText(265, 597
                 ).ShowText("I agree to the terms and conditions.").EndText();
             //Add form field
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);

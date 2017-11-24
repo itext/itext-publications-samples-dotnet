@@ -6,7 +6,7 @@
 
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -59,8 +59,8 @@ namespace iText.Highlevel.Chapter02 {
             iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, rectangle);
             MyCanvasRenderer renderer = new MyCanvasRenderer(canvas);
             canvas.SetRenderer(renderer);
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
-            PdfFont bold = PdfFontFactory.CreateFont(FontConstants.TIMES_BOLD);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
+            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.TIMES_BOLD);
             Text title = new Text("The Strange Case of Dr. Jekyll and Mr. Hyde").SetFont(bold);
             Text author = new Text("Robert Louis Stevenson").SetFont(font);
             Paragraph p = new Paragraph().Add(title).Add(" by ").Add(author);

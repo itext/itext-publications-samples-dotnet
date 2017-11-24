@@ -3,7 +3,7 @@
 */
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.IO.Util;
 using iText.Kernel.Colors;
 using iText.Kernel.Events;
@@ -31,8 +31,8 @@ namespace Tutorial.Chapter03 {
 
         /// <exception cref="System.Exception"/>
         public static void Main(String[] args) {
-            helvetica = PdfFontFactory.CreateFont(FontConstants.HELVETICA);
-            helveticaBold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
+            helvetica = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+            helveticaBold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C03E03_UFO().CreatePdf(DEST);

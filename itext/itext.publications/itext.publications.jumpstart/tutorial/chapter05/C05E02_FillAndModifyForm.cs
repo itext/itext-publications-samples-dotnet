@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
@@ -49,7 +49,7 @@ namespace Tutorial.Chapter05 {
             PdfArray arr = new PdfArray(options);
             fields["shift"].SetOptions(arr);
             fields["shift"].SetValue("Any");
-            PdfFont courier = PdfFontFactory.CreateFont(FontConstants.COURIER);
+            PdfFont courier = PdfFontFactory.CreateFont(StandardFonts.COURIER);
             fields["info"].SetValue("I was 38 years old when I became an MI6 agent.", courier, 7f);
             pdfDoc.Close();
         }

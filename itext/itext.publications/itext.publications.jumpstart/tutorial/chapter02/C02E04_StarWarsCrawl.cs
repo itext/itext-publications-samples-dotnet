@@ -5,7 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
@@ -63,7 +63,7 @@ namespace Tutorial.Chapter02 {
             Color yellowColor = new DeviceCmyk(0f, 0.0537f, 0.769f, 0.051f);
             float lineHeight = 5;
             float yOffset = -40;
-            canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(FontConstants.COURIER_BOLD), 1).SetColor(yellowColor
+            canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(StandardFonts.COURIER_BOLD), 1).SetColor(yellowColor
                 , true);
             for (int j = 0; j < text.Count; j++) {
                 String line = text[j];

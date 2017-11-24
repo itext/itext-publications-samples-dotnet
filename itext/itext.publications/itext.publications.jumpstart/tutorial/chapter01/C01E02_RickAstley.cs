@@ -3,7 +3,7 @@
 */
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
@@ -32,7 +32,7 @@ namespace Tutorial.Chapter01 {
             // Initialize document
             Document document = new Document(pdf);
             // Create a PdfFont
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             // Add a Paragraph
             document.Add(new Paragraph("iText is:").SetFont(font));
             // Create a List

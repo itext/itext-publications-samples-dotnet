@@ -5,7 +5,7 @@
 using System;
 using System.IO;
 
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Navigation;
@@ -37,8 +37,8 @@ namespace iText.Highlevel.Chapter06 {
             pdf.GetCatalog().SetPageMode(PdfName.UseOutlines);
             // Initialize document
             Document document = new Document(pdf);
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
-            PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
+            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             document.SetTextAlignment(TextAlignment.JUSTIFIED).SetHyphenation(new HyphenationConfig("en", "uk", 3, 3))
                 .SetFont(font).SetFontSize(11);
             StreamReader sr = File.OpenText(SRC);

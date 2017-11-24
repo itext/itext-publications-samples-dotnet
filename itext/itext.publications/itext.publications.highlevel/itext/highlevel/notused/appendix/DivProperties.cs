@@ -4,7 +4,7 @@
 */
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
@@ -37,7 +37,7 @@ namespace iText.Highlevel.Notused.Appendix {
             style.SetBackgroundColor(ColorConstants.YELLOW).SetBorder(new SolidBorder(0.5f));
             document.Add(CreateNewDiv().AddStyle(style).SetWidth(350).SetHorizontalAlignment(HorizontalAlignment.CENTER
                 ).SetTextAlignment(TextAlignment.CENTER).SetDestination("Top"));
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             document.Add(CreateNewDiv().SetRotationAngle(Math.PI / 18).SetFont(font).SetFontSize(8).SetFontColor(ColorConstants
                 .RED));
             document.Add(CreateNewDiv().SetWidth(350).SetHyphenation(new HyphenationConfig("en", "uk", 3, 3)).SetKeepWithNext

@@ -4,7 +4,7 @@
 */
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
@@ -37,7 +37,7 @@ namespace iText.Highlevel.Notused.Appendix {
             Paragraph p;
             p = new Paragraph("Testing font methods");
             canvas.Add(p);
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             canvas.SetFont(font);
             p = new Paragraph("Testing font methods: changed font");
             canvas.Add(p);

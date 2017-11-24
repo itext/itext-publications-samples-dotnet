@@ -4,7 +4,7 @@
 */
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.IO.Image;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
@@ -52,7 +52,7 @@ namespace iText.Highlevel.Chapter04 {
             list.Add("Mr. Hyde");
             document.Add(list);
             list = new List();
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.ZAPFDINGBATS);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.ZAPFDINGBATS);
             list.SetListSymbol(new Text("*").SetFont(font).SetFontColor(ColorConstants.ORANGE));
             list.SetSymbolIndent(10);
             list.Add("Dr. Jekyll");

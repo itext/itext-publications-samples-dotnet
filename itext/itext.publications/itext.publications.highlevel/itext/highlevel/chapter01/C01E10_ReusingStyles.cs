@@ -5,7 +5,7 @@
 
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
@@ -31,10 +31,10 @@ namespace iText.Highlevel.Chapter01 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdf);
             Style normal = new Style();
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             normal.SetFont(font).SetFontSize(14);
             Style code = new Style();
-            PdfFont monospace = PdfFontFactory.CreateFont(FontConstants.COURIER);
+            PdfFont monospace = PdfFontFactory.CreateFont(StandardFonts.COURIER);
             code.SetFont(monospace).SetFontColor(ColorConstants.RED).SetBackgroundColor(ColorConstants.LIGHT_GRAY);
             Paragraph p = new Paragraph();
             p.Add(new Text("The Strange Case of ").AddStyle(normal));

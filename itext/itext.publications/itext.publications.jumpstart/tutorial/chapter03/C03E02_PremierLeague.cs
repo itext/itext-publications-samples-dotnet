@@ -3,7 +3,7 @@
 */
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.IO.Util;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
@@ -47,8 +47,8 @@ namespace Tutorial.Chapter03 {
             PageSize ps = new PageSize(842, 680);
             // Initialize document
             Document document = new Document(pdf, ps);
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.HELVETICA);
-            PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             Table table = new Table(UnitValue.CreatePercentArray(new float[] { 1.5f, 7, 2, 2, 2, 2, 3, 4, 4, 2 }));
             table.SetTextAlignment(TextAlignment.CENTER).SetHorizontalAlignment(HorizontalAlignment
                 .CENTER);

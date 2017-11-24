@@ -3,7 +3,7 @@
 */
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
@@ -43,13 +43,13 @@ namespace Tutorial.Chapter05 {
                 pageSize = page.GetPageSize();
                 canvas = new PdfCanvas(page);
                 //Draw header text
-                canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(FontConstants.HELVETICA), 7).MoveText(pageSize
+                canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(StandardFonts.HELVETICA), 7).MoveText(pageSize
                     .GetWidth() / 2 - 24, pageSize.GetHeight() - 10).ShowText("I want to believe").EndText();
                 //Draw footer line
                 canvas.SetStrokeColor(ColorConstants.BLACK).SetLineWidth(.2f).MoveTo(pageSize.GetWidth() / 2 - 30, 20).LineTo(pageSize
                     .GetWidth() / 2 + 30, 20).Stroke();
                 //Draw page number
-                canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(FontConstants.HELVETICA), 7).MoveText(pageSize
+                canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(StandardFonts.HELVETICA), 7).MoveText(pageSize
                     .GetWidth() / 2 - 7, 10).ShowText(i.ToString()).ShowText(" of ").ShowText(n.ToString()).EndText();
                 //Draw watermark
                 Paragraph p = new Paragraph("CONFIDENTIAL").SetFontSize(60);

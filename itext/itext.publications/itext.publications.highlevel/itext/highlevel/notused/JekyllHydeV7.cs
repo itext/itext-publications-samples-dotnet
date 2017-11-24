@@ -4,7 +4,7 @@
 */
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -43,8 +43,8 @@ namespace iText.Highlevel.Notused {
                 ), new Rectangle(offSet + columnWidth + gutter * 1.5f, offSet, columnWidth, columnHeight), new Rectangle
                 (offSet + columnWidth * 2 + gutter * 2.5f, offSet, columnWidth, columnHeight) };
             document.SetRenderer(new ColumnDocumentRenderer(document, columns));
-            PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
-            PdfFont bold = PdfFontFactory.CreateFont(FontConstants.HELVETICA_BOLD);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
+            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             document.SetTextAlignment(TextAlignment.JUSTIFIED).SetHyphenation(new HyphenationConfig("en", "uk", 3, 3));
             StreamReader sr = File.OpenText(SRC);
             bool chapter = false;

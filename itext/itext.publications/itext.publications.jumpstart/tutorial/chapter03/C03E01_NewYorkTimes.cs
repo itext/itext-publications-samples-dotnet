@@ -4,7 +4,7 @@
 using System;
 using System.IO;
 using System.Text;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.IO.Image;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
@@ -38,8 +38,8 @@ namespace Tutorial.Chapter03 {
 
         /// <exception cref="System.Exception"/>
         public static void Main(String[] args) {
-            timesNewRoman = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
-            timesNewRomanBold = PdfFontFactory.CreateFont(FontConstants.TIMES_BOLD);
+            timesNewRoman = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
+            timesNewRomanBold = PdfFontFactory.CreateFont(StandardFonts.TIMES_BOLD);
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C03E01_NewYorkTimes().CreatePdf(DEST);
