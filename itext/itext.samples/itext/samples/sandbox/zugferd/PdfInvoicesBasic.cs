@@ -28,7 +28,12 @@ using iText.Samples.Sandbox.Zugferd.Pojo;
 using iText.Test.Attributes;
 using iText.Zugferd;
 using iText.Zugferd.Profiles;
+using java.sql;
+using java.text;
+using javax.xml.parsers;
+using javax.xml.transform;
 using NUnit.Framework;
+using org.xml.sax;
 
 namespace iText.Samples.Sandbox.Zugferd
 {
@@ -279,7 +284,7 @@ namespace iText.Samples.Sandbox.Zugferd
             return d.ToString(newFormat);
         }
 
-        [LogMessage(LogMessageConstant.FONT_HAS_INVALID_GLYPH, Ignore = true)]
+        [LogMessage(IO.LogMessageConstant.FONT_HAS_INVALID_GLYPH, Ignore = true)]
         [LogMessage(ZugferdLogMessageConstant.WRONG_OR_NO_CONFORMANCE_LEVEL, Ignore = true)]
         [LogMessage(ZugferdLogMessageConstant.NO_ZUGFERD_PROFILE_TYPE_SPECIFIED, Ignore = true)]
         [Test]
