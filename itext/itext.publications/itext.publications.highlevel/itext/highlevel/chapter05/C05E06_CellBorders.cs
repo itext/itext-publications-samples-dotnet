@@ -45,7 +45,7 @@ namespace iText.Highlevel.Chapter05 {
             public RoundedCornersTableRenderer(Table modelElement)
                 : base(modelElement) {}
 
-            public override void DrawBorder(DrawContext drawContext)
+            protected override void DrawBorders(DrawContext drawContext)
             {
                 Rectangle occupiedAreaBBox = this.GetOccupiedAreaBBox();
                 UnitValue[] margins = this.GetMargins();
