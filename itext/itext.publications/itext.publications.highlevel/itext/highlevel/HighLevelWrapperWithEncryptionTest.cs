@@ -4,6 +4,7 @@ using iText.Kernel.Utils;
 using iText.Test;
 using iText.Kernel.XMP.Impl;
 using System.Reflection;
+using iText.License;
 using NUnit.Framework;
 
 namespace iText.Highlevel
@@ -26,6 +27,7 @@ namespace iText.Highlevel
         [NUnit.Framework.Timeout(60000)]
         [NUnit.Framework.Test]
         public virtual void Test() {
+            ResetLicense();
             RunSamples();
         }
 
@@ -47,6 +49,16 @@ namespace iText.Highlevel
             }
             //System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
             return bytes;
+        }
+
+        private void ResetLicense() {
+            try {
+                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators", BindingFlags.NonPublic | BindingFlags.Static);
+                validatorsField.SetValue(null, null);
+                FieldInfo versionField = typeof(iText.Kernel.Version).GetField("version", BindingFlags.NonPublic | BindingFlags.Static);
+                versionField.SetValue(null, null);
+            } catch {
+            }
         }
 
 

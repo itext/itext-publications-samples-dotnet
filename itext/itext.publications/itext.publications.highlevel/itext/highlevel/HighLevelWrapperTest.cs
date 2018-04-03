@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using iText.IO.Util;
 using iText.Kernel.Utils;
+using iText.License;
 using iText.Test;
 using NUnit.Framework;
 
@@ -24,6 +25,7 @@ namespace iText.Highlevel {
         [NUnit.Framework.Timeout(60000)]
         [NUnit.Framework.Test, Description("{0}")]
         public virtual void Test() {
+            ResetLicense();
             RunSamples();
         }
 
@@ -32,6 +34,16 @@ namespace iText.Highlevel {
             CompareTool compareTool = new CompareTool();
             AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));
             AddError(compareTool.CompareDocumentInfo(dest, cmp));
+        }
+
+        private void ResetLicense() {
+            try {
+                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators", BindingFlags.NonPublic | BindingFlags.Static);
+                validatorsField.SetValue(null, null);
+                FieldInfo versionField = typeof(iText.Kernel.Version).GetField("version", BindingFlags.NonPublic | BindingFlags.Static);
+                versionField.SetValue(null, null);
+            } catch {
+            }
         }
     }
 }
