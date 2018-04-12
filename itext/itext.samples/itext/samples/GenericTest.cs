@@ -3,6 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using iText.Kernel.Utils;
+using iText.License;
 using iText.Test;
 using NUnit.Framework;
 
@@ -36,6 +37,7 @@ namespace iText.Samples {
         [Test]
         [Timeout(120000)]
         public virtual void Test() {
+            ResetLicense();
             if (GetType() == typeof (GenericTest)) {
                 return;
             }
@@ -150,6 +152,16 @@ namespace iText.Samples {
                     errorMessage += "\n";
 
                 errorMessage += error;
+            }
+        }
+
+        private void ResetLicense() {
+            try {
+                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators", BindingFlags.NonPublic | BindingFlags.Static);
+                validatorsField.SetValue(null, null);
+                FieldInfo versionField = typeof(Kernel.Version).GetField("version", BindingFlags.NonPublic | BindingFlags.Static);
+                versionField.SetValue(null, null);
+            } catch {
             }
         }
     }

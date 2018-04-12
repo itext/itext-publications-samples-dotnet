@@ -5,6 +5,7 @@ using NUnit.Framework;
 using iText.Kernel.Utils;
 using iText.Layout.Element;
 using iText.Layout.Properties;
+using iText.License;
 using iText.Test;
 
 namespace iText.Highlevel {
@@ -28,6 +29,7 @@ namespace iText.Highlevel {
         [NUnit.Framework.Timeout(60000)]
         [NUnit.Framework.Test]
         public virtual void Test() {
+            ResetLicense();
             this.InitClass();
             sampleClass.GetField("KEY").SetValue(null, Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
             RunSamples();
@@ -54,6 +56,16 @@ namespace iText.Highlevel {
                     throw new TypeLoadException(sampleClassParams.GetType().ToString());
 
                 }
+            }
+        }
+
+        private void ResetLicense() {
+            try {
+                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators", BindingFlags.NonPublic | BindingFlags.Static);
+                validatorsField.SetValue(null, null);
+                FieldInfo versionField = typeof(iText.Kernel.Version).GetField("version", BindingFlags.NonPublic | BindingFlags.Static);
+                versionField.SetValue(null, null);
+            } catch {
             }
         }
     }
