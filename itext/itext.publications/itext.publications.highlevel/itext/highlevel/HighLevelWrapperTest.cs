@@ -16,6 +16,8 @@ namespace iText.Highlevel {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddPackageToRunnerSearchPath("iText.Highlevel");
             
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E05_Czech_Russian_Korean_Right");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E06_Czech_Russian_Korean_Unicode");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter02.C02E15_ShowTextAlignedKerned");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter07.C07E14_Encrypted");
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
