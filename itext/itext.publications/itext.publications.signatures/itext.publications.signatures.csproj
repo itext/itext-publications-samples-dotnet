@@ -58,7 +58,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj">
       <Project>{0f10190c-7611-4378-a157-03bf2ed78e30}</Project>
-      <Name>itext.font-asian</Name>
+      <Name>itext.font_asian</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.csproj">
       <Project>{e2828ac4-3c63-4b2a-b5ad-5f98862775be}</Project>
