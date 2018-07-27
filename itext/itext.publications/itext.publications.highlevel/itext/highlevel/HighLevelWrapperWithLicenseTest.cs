@@ -22,6 +22,8 @@ namespace iText.Highlevel {
         public static ICollection<TestFixtureData> Data() {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter02.C02E15_ShowTextAlignedKerned");
+            searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter01.C01E05_Czech_Russian_Korean_Right");
+            searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter01.C01E06_Czech_Russian_Korean_Unicode");
             return GenerateTestsList(Assembly.GetExecutingAssembly(),searchConfig);
         }
 

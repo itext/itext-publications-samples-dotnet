@@ -10,12 +10,15 @@ using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.License;
 using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     [WrapToTest]
     public class C01E06_Czech_Russian_Korean_Unicode {
+        public static String KEY = "../../resources/license/itextkey-typography.xml";
+
         public const String DEST = "../../results/chapter01/czech_russian_korean_unicode.pdf";
 
         public const String FONT = "../../resources/fonts/FreeSans.ttf";
@@ -34,6 +37,7 @@ namespace iText.Highlevel.Chapter01 {
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
+            LicenseKey.LoadLicenseFile(new FileStream(KEY, FileMode.Open, FileAccess.Read));
             new C01E06_Czech_Russian_Korean_Unicode().CreatePdf(DEST);
         }
 
