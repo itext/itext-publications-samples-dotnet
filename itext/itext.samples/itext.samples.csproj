@@ -82,8 +82,8 @@
       <HintPath>$(SolutionDir)\packages\IKVM.Runtime.7.2.4630.5\lib\IKVM.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="itext.licensekey, Version=3.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\itext7.licensekey.3.0.2\lib\net40\itext.licensekey.dll</HintPath>
+    <Reference Include="itext.licensekey, Version=3.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\itext7.licensekey.3.0.3\lib\net40\itext.licensekey.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
