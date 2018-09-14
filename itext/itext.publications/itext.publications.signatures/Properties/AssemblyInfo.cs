@@ -18,4 +18,3 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("7.1.4.0")]
 [assembly: AssemblyFileVersion("7.1.4.0")]
 [assembly: AssemblyInformationalVersion("7.1.4-SNAPSHOT")]
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
