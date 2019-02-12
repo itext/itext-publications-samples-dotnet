@@ -127,13 +127,6 @@
     <Reference Include="itext.sign, Version=7.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.sign\itext.sign.csproj')">
       <HintPath>$(SolutionDir)\packages\itext7.7.1.6-SNAPSHOT\lib\net40\itext.sign.dll</HintPath>
     </Reference>
-    <ProjectReference Include="..\..\..\..\zugferd\itext\itext.zugferd\itext.zugferd.csproj" Condition="Exists('..\..\..\..\zugferd\itext\itext.zugferd\itext.zugferd.csproj')">
-      <Project>{CF45E61E-A3BC-4B64-AA92-5814AF726286}</Project>
-      <Name>itext.zugferd</Name>
-    </ProjectReference>
-    <Reference Include="itext.zugferd, Version=2.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\zugferd\itext\itext.zugferd\itext.zugferd.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.pdfinvoice.2.0.2-SNAPSHOT\lib\net40\itext.zugferd.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
