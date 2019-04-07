@@ -50,8 +50,8 @@ namespace iText.Samples.Signatures.Chapter05
 				(name));
 			System.Console.Out.WriteLine("Document revision: " + signUtil.GetRevision(name) +
 				 " of " + signUtil.GetTotalRevisions());
-			PdfPKCS7 pkcs7 = signUtil.VerifySignature(name);
-			System.Console.Out.WriteLine("Integrity check OK? " + pkcs7.Verify());
+			PdfPKCS7 pkcs7 = signUtil.ReadSignatureData(name);
+			System.Console.Out.WriteLine("Integrity check OK? " + pkcs7.VerifySignatureIntegrityAndAuthenticity());
 			return pkcs7;
 		}
 
