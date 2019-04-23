@@ -136,9 +136,9 @@ namespace iText.Samples.Signatures
 		{
 			foreach (String name in names)
 			{
-				PdfPKCS7 pkcs7 = signUtil.VerifySignature(name);
+				PdfPKCS7 pkcs7 = signUtil.ReadSignatureData(name);
 				// verify signature integrity
-				if (!pkcs7.Verify())
+				if (!pkcs7.VerifySignatureIntegrityAndAuthenticity())
 				{
 					AddError(String.Format("\"{0}\" signature integrity is invalid\n", name));
 				}
@@ -264,7 +264,7 @@ namespace iText.Samples.Signatures
 					sigInfo.SetSignaturePosition(widgetAnnotationsList[0].GetRectangle().ToRectangle(
 						));
 				}
-				PdfPKCS7 pkcs7 = signUtil.VerifySignature(name);
+				PdfPKCS7 pkcs7 = signUtil.ReadSignatureData(name);
 				sigInfo.SetDigestAlgorithm(pkcs7.GetHashAlgorithm());
 				sigInfo.SetEncryptionAlgorithm(pkcs7.GetEncryptionAlgorithm());
 				PdfName filterSubtype = pkcs7.GetFilterSubtype();
