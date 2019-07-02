@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+This file is part of the iText (R) project.
+Copyright (c) 1998-2019 iText Group NV
+Authors: iText Software.
+
+For more information, please contact iText Software at this address:
+sales@itextpdf.com
+*/
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
@@ -29,25 +38,31 @@ namespace iText.Samples.Sandbox.Acroforms {
 
             XElement node = xfa.GetDatasetsNode();
             IEnumerable<XNode> list = node.Nodes();
-            foreach (XNode item in list) {
-                if (item is XElement && "data".Equals(((XElement) item).Name.LocalName)) {
-                    node = (XElement) item;
-                    break;
-                }
-            }
-            list = node.Nodes();
-            foreach (XNode item in list) {
-                if (item is XElement && "movies".Equals(((XElement) item).Name.LocalName)) {
+            foreach (XNode item in list)
+            {
+                if (item is XElement && "data".Equals(((XElement) item).Name.LocalName))
+                {
                     node = (XElement) item;
                     break;
                 }
             }
 
-            XmlWriterSettings settings = new XmlWriterSettings {
+            list = node.Nodes();
+            foreach (XNode item in list)
+            {
+                if (item is XElement && "movies".Equals(((XElement) item).Name.LocalName))
+                {
+                    node = (XElement) item;
+                    break;
+                }
+            }
+
+            XmlWriterSettings settings = new XmlWriterSettings
+            {
                 Indent = true,
                 IndentChars = "    "
             };
-            XmlWriter writer = XmlWriter.Create(DEST, settings);
+            XmlWriter writer = XmlWriter.Create(dest, settings);
             node.WriteTo(writer);
             writer.Close();
 

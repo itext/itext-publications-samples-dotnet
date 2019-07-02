@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+This file is part of the iText (R) project.
+Copyright (c) 1998-2019 iText Group NV
+Authors: iText Software.
+
+For more information, please contact iText Software at this address:
+sales@itextpdf.com
+*/
+
+using System;
 using System.IO;
 using iText.Forms;
 using iText.Forms.Xfa;

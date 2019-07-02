@@ -69,7 +69,22 @@ namespace iText.Samples
         {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox");
+
+            // TODO DEVSIX-3189
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.TableBorder");
             
+            // TODO DEVSIX-3188
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.SplitRowAtEndOfPage");
+            
+            // TODO DEVSIX-3188
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.SplitRowAtSpecificRow");
+            
+            // TODO DEVSIX-3189
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.RepeatLastRows");
+            
+            // TODO DEVSIX-3187
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.RepeatLastRows2");
+
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 
@@ -94,12 +109,14 @@ namespace iText.Samples
                 {
                     AddError("The XML structures are different.");
                 }
-            } else if (renderCompareList.Contains(sampleClass.FullName))
+            } 
+            else if (renderCompareList.Contains(sampleClass.FullName))
             {
                     AddError(compareTool.CompareVisually(dest, cmp, outPath, "diff_"));
                     AddError(compareTool.CompareLinkAnnotations(dest, cmp));
                     AddError(compareTool.CompareDocumentInfo(dest, cmp));
-            } else if (ignoredClassesMap.Keys.Contains(sampleClass.FullName)) 
+            } 
+            else if (ignoredClassesMap.Keys.Contains(sampleClass.FullName)) 
             {
                     AddError(compareTool.CompareVisually(dest, cmp, outPath, "diff_", 
                         ignoredClassesMap[sampleClass.FullName]));
