@@ -12,6 +12,7 @@ using System.Reflection;
 using iText.Kernel.Utils;
 using iText.License;
 using iText.Test;
+using iText.Utils;
 using NUnit.Framework;
 
 namespace iText.Samples
@@ -20,7 +21,7 @@ namespace iText.Samples
     public class SamplesWrapperTest : WrappedSamplesRunner
     {
         private string errorMessage;
-        
+
         /**
          * List of samples, which should be validated visually and by links annotations on corresponding pages
          */
@@ -31,6 +32,18 @@ namespace iText.Samples
          */
         private List<string> xmlCompareList = new List<string>(new[] {"iText.Samples.Sandbox.Acroforms.ReadXFA"});
 
+        /**
+         * List of samples, which require VeraPDF file comparison
+         */
+        private List<string> veraPdfValidateList = new List<string>(
+            new[]
+            {
+                "iText.Samples.Sandbox.Pdfa.HelloPdfA2a",
+                "iText.Samples.Sandbox.Pdfa.PdfA1a",
+                "iText.Samples.Sandbox.Pdfa.PdfA1a_images",
+                "iText.Samples.Sandbox.Pdfa.PdfA3"
+            });
+        
         public SamplesWrapperTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
@@ -38,7 +51,8 @@ namespace iText.Samples
         public static ICollection<TestFixtureData> Data()
         {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox.Acroforms");
+            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox");
+            
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 
@@ -46,7 +60,7 @@ namespace iText.Samples
         [Test, Description("{0}")]
         public virtual void Test()
         {
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
+            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.xml");
             RunSamples();
             ResetLicense();
         }
@@ -61,34 +75,39 @@ namespace iText.Samples
                 {
                     AddError("The XML structures are different.");
                 }
-            }
-            else if (renderCompareList.Contains(sampleClass.FullName))
+            } else if (renderCompareList.Contains(sampleClass.FullName))
             {
-                AddError(compareTool.CompareVisually(dest, cmp, outPath, "diff_"));
-                AddError(compareTool.CompareLinkAnnotations(dest, cmp));
-                AddError(compareTool.CompareDocumentInfo(dest, cmp));
-            }
-            else
+                    AddError(compareTool.CompareVisually(dest, cmp, outPath, "diff_"));
+                    AddError(compareTool.CompareLinkAnnotations(dest, cmp));
+                    AddError(compareTool.CompareDocumentInfo(dest, cmp));
+            } else 
             {
-                AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));
-                AddError(compareTool.CompareDocumentInfo(dest, cmp));
+                    AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));
+            }
+
+            if (veraPdfValidateList.Contains(sampleClass.FullName))
+            {
+                AddError(new VeraPdfValidator().Validate(dest));
             }
         }
 
-        protected override String GetCmpPdf(String dest) 
+        protected override String GetCmpPdf(String dest)
         {
-            if (dest == null) {
+            if (dest == null)
+            {
                 return null;
             }
+
             int i = dest.LastIndexOf("/", StringComparison.Ordinal);
             int j = dest.LastIndexOf("/results", StringComparison.Ordinal) + 9;
             return "../../resources/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
         }
-
+        
         private void ResetLicense()
         {
-            try {
-                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators", 
+            try
+            {
+                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators",
                     BindingFlags.NonPublic | BindingFlags.Static);
                 validatorsField.SetValue(null, null);
                 FieldInfo versionField = typeof(Kernel.Version).GetField("version",
@@ -98,8 +117,7 @@ namespace iText.Samples
             catch
             {
                 
-                // It does nothing, because there can be no loaded license,
-                // so no exception handling required
+                // No exception handling required, because there can be no license loaded
             }
         }
     }
