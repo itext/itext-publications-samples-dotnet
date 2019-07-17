@@ -12,11 +12,9 @@ using iText.Kernel.Pdf.Navigation;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter06 {
     /// <author>iText</author>
-    [WrapToTest]
     public class C06E09_Annotation {
         public const String DEST = "../../results/chapter06/jekyll_hyde_annotation.pdf";
 

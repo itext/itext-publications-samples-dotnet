@@ -10,10 +10,8 @@ using iText.IO.Source;
 using iText.IO.Util;
 using iText.Kernel.Pdf;
 using System.Diagnostics;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter06 {
-    [WrapToTest]
     public class C06E09_FillOutFlattenAndMergeForms {
         public const String DEST1 = "../../results/chapter06/fill_out_flatten_forms_merge.pdf";
 

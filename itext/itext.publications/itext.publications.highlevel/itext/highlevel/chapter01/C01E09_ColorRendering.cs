@@ -10,11 +10,9 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C01E09_ColorRendering {
         public const String DEST = "../../results/chapter01/color_rendermode.pdf";
 

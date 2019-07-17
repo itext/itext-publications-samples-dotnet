@@ -10,11 +10,9 @@ using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter02 {
     /// <summary>Simple drawing text example.</summary>
-    [WrapToTest]
     public class C02E03_StarWars {
         public const String DEST = "../../results/chapter02/star_wars.pdf";
 

@@ -16,11 +16,9 @@ using iText.Layout.Hyphenation;
 using iText.Layout.Layout;
 using iText.Layout.Properties;
 using iText.Layout.Renderer;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter02 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C02E11_JekyllHydeV7 {
         internal class MyColumnRenderer : DocumentRenderer {
             protected internal int nextAreaNumber;

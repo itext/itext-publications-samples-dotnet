@@ -11,11 +11,9 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter01 {
     /// <summary>Simple table example.</summary>
-    [WrapToTest]
     public class C01E04_UnitedStates {
         public const String DATA = "../../resources/data/united_states.csv";
 

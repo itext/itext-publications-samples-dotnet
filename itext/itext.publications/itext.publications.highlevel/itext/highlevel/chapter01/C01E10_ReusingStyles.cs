@@ -11,11 +11,9 @@ using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C01E10_ReusingStyles {
         public const String DEST = "../../results/chapter01/style_example.pdf";
 

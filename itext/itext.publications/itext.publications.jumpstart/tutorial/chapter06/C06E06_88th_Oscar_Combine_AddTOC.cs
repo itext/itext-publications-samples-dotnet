@@ -11,10 +11,8 @@ using iText.Kernel.Pdf.Canvas.Draw;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter06 {
-    [WrapToTest]
     public class C06E06_88th_Oscar_Combine_AddTOC {
         public const String SRC1 = "../../resources/pdf/88th_noms_announcement.pdf";
 

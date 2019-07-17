@@ -11,11 +11,9 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.License;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C01E06_Czech_Russian_Korean_Unicode {
         public static String KEY = "../../resources/license/itextkey-typography.xml";
 

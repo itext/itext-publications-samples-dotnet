@@ -9,11 +9,9 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Action;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter06 {
     /// <author>iText</author>
-    [WrapToTest]
     public class C06E07_ChainedActions {
         public const String DEST = "../../results/chapter06/jekyll_hyde_chained.pdf";
 

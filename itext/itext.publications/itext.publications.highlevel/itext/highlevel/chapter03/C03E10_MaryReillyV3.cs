@@ -8,10 +8,8 @@ using iText.IO.Image;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter03 {
-    [WrapToTest]
     public class C03E10_MaryReillyV3 {
         public const String MARY = "../../resources/img/0117002.jpg";
 

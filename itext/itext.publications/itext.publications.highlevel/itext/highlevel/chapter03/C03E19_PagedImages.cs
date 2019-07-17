@@ -11,11 +11,9 @@ using iText.IO.Util;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter03 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C03E19_PagedImages {
         public const String TEST1 = "../../resources/img/test/animated_fox_dog.gif";
 

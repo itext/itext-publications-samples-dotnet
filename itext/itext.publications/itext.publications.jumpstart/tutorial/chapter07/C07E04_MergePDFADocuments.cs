@@ -3,10 +3,8 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Kernel.Utils;
 using iText.Pdfa;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter07 {
-    [WrapToTest]
     public class C07E04_MergePDFADocuments {
         public const String INTENT = "../../resources/color/sRGB_CS_profile.icm";
 

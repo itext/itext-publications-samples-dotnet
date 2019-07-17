@@ -12,10 +12,8 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Pdfa;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter07 {
-    [WrapToTest]
     public class C07E03_UnitedStates_PDFA_3a {
         public const String DATA = "../../resources/data/united_states.csv";
 

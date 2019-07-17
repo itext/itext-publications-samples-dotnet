@@ -10,11 +10,9 @@ using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter05 {
     /// <summary>Simple filling out form example.</summary>
-    [WrapToTest]
     public class C05E02_FillAndModifyForm {
         public const String SRC = "../../resources/pdf/job_application.pdf";
 

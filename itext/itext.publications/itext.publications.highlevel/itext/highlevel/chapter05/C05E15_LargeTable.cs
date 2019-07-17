@@ -7,12 +7,10 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
 
-    [WrapToTest]
     public class C05E15_LargeTable {
         public const String DEST = "../../results/chapter05/large_table.pdf";
 

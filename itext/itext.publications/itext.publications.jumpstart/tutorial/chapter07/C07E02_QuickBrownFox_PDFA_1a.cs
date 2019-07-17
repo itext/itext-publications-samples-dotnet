@@ -10,10 +10,8 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Pdfa;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter07 {
-    [WrapToTest]
     public class C07E02_QuickBrownFox_PDFA_1a {
         public const String DOG = "../../resources/img/dog.bmp";
 

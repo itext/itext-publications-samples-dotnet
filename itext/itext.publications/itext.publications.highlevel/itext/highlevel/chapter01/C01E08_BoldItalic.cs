@@ -8,11 +8,9 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C01E08_BoldItalic {
         public const String DEST = "../../results/chapter01/bold_italic.pdf";
 

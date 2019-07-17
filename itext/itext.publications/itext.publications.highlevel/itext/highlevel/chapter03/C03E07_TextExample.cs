@@ -7,10 +7,8 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter03 {
-    [WrapToTest]
     public class C03E07_TextExample {
         public const String DEST = "../../results/chapter03/jekyll_hyde_text.pdf";
 

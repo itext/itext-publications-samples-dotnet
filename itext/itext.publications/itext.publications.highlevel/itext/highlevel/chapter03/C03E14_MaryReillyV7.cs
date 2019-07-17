@@ -9,11 +9,9 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter03 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C03E14_MaryReillyV7 {
         public const String SRC = "../../resources/pdfs/jekyll_hyde.pdf";
 

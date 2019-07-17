@@ -15,11 +15,9 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Layout.Renderer;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter02 {
     /// <author>iText</author>
-    [WrapToTest]
     public class C02E03_CanvasRepeat {
         internal class MyCanvasRenderer : CanvasRenderer {
             protected internal bool full = false;

@@ -12,11 +12,9 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Hyphenation;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter02 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C02E07_JekyllHydeV3 {
         public const String SRC = "../../resources/txt/jekyll_hyde.txt";
 

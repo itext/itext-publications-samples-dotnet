@@ -9,11 +9,9 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Properties;
 using iText.License;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter02 {
     /// <author>iText</author>
-    [WrapToTest]
     public class C02E15_ShowTextAlignedKerned {
         public static String KEY = "../../resources/license/itextkey-typography.xml";
 

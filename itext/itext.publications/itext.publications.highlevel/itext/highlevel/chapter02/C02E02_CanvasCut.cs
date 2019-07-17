@@ -11,11 +11,9 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter02 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest] 
     public class C02E02_CanvasCut {
         public const String DEST = "../../results/chapter02/canvas_cut.pdf";
 

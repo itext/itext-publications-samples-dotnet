@@ -10,11 +10,9 @@ using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace itext.highlevel.chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C01E01_Text_Paragraph {
         public const String DEST = "../../results/chapter01/text_paragraph.pdf";
 

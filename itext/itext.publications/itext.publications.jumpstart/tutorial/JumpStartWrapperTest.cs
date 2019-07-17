@@ -17,6 +17,8 @@ namespace Tutorial {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddPackageToRunnerSearchPath("Tutorial");
             searchConfig.IgnorePackageOrClass("Tutorial.Chapter06.C06E09_FillOutFlattenAndMergeForms");
+            searchConfig.IgnorePackageOrClass("Tutorial.JumpStartWrapperTest");
+            searchConfig.IgnorePackageOrClass("Tutorial.C06E09_FillOutFlattenAndMergeFormsWrapperTest");
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 

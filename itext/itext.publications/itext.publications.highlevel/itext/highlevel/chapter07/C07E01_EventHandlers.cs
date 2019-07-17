@@ -9,11 +9,9 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter07 {
     /// <author>iText</author>
-    [WrapToTest]
     public class C07E01_EventHandlers {
         public const String DEST = "../../results/chapter07/jekyll_hyde_page_orientation.pdf";
 

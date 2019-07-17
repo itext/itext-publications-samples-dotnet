@@ -12,11 +12,9 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter03 {
     /// <summary>Simple column renderer example.</summary>
-    [WrapToTest]
     public class C03E01_NewYorkTimes {
         public const String DEST = "../../results/chapter03/new_york_times.pdf";
 

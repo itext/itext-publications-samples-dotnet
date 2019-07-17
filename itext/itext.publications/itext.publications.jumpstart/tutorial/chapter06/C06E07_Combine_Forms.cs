@@ -5,10 +5,8 @@ using System;
 using System.IO;
 using iText.Forms;
 using iText.Kernel.Pdf;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter06 {
-    [WrapToTest]
     public class C06E07_Combine_Forms {
         public const String DEST = "../../results/chapter06/combined_forms.pdf";
 

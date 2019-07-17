@@ -15,11 +15,9 @@ using iText.Layout;
 using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter04 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C04E03_LineSeparatorExample {
         public const String SRC = "../../resources/data/jekyll_hyde.csv";
 

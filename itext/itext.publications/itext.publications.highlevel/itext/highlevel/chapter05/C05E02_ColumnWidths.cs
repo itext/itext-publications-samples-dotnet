@@ -8,13 +8,11 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 using NUnit.Framework.Constraints;
 
 namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
 
-    [WrapToTest]
     public class C05E02_ColumnWidths {
         public const String DEST = "../../results/chapter05/column_widths.pdf";
 

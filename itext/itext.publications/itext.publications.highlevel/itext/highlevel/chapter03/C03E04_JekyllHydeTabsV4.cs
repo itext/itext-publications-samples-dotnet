@@ -14,11 +14,9 @@ using iText.Kernel.Pdf.Canvas.Draw;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter03 {
     /// <author>iText</author>
-    [WrapToTest]
     public class C03E04_JekyllHydeTabsV4 {
         public const String SRC = "../../resources/data/jekyll_hyde.csv";
 

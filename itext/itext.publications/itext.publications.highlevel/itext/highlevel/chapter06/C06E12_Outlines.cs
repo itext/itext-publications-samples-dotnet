@@ -9,11 +9,9 @@ using iText.Highlevel.Util;
 using iText.Kernel.Colors;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Action;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter06 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C06E12_Outlines {
         public const String SRC = "../../resources/data/jekyll_hyde.csv";
 

@@ -7,11 +7,9 @@ using iText.IO.Image;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter01 {
     /// <summary>Simple image example.</summary>
-    [WrapToTest]
     public class C01E03_QuickBrownFox {
         public const String DOG = "../../resources/img/dog.bmp";
 

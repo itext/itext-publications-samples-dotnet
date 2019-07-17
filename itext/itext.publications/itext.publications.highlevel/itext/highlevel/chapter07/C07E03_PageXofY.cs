@@ -16,11 +16,9 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Hyphenation;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter07 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C07E03_PageXofY {
         public const String SRC = "../../resources/txt/jekyll_hyde.txt";
 

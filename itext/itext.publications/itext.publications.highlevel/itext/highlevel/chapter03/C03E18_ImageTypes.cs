@@ -10,11 +10,9 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Borders;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter03 {
     /// <author>iText</author>
-    [WrapToTest]
     public class C03E18_ImageTypes {
         public const String TEST1 = "../../resources/img/test/map.jp2";
 

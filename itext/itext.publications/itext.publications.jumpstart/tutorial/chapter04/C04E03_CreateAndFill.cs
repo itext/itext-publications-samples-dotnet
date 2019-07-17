@@ -8,11 +8,9 @@ using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Pdf;
 using iText.Layout;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter04 {
     /// <summary>Simple filling out form example.</summary>
-    [WrapToTest]
     public class C04E03_CreateAndFill {
         public const String DEST = "../../results/chapter04/create_and_fill.pdf";
 

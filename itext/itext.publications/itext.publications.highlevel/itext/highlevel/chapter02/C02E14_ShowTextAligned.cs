@@ -9,11 +9,9 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter02 {
     /// <author>iText</author>
-    [WrapToTest]
     public class C02E14_ShowTextAligned {
         public const String DEST = "../../results/chapter02/showtextaligned.pdf";
 

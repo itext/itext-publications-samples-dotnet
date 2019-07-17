@@ -9,11 +9,9 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter04 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C04E07_ListTypes {
         public const String DEST = "../../results/chapter04/list_types.pdf";
 

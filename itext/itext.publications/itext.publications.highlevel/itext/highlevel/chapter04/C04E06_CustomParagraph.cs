@@ -13,11 +13,9 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Layout.Renderer;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter04 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C04E06_CustomParagraph {
         internal class MyParagraphRenderer : ParagraphRenderer {
             public MyParagraphRenderer(Paragraph modelElement)

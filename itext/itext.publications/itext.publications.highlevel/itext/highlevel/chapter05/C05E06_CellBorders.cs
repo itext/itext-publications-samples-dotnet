@@ -13,11 +13,9 @@ using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Layout.Renderer;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C05E06_CellBorders {
         private class RoundedCornersCellRenderer : CellRenderer {
             public RoundedCornersCellRenderer(Cell modelElement)

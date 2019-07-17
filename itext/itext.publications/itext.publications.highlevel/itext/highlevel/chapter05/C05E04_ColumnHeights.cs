@@ -9,11 +9,9 @@ using iText.Layout;
 using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C05E04_ColumnHeights {
         public const String DEST = "../../results/chapter05/column_heights.pdf";
 

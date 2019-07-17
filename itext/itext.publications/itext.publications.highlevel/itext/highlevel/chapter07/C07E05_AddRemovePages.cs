@@ -10,11 +10,9 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter07 {
     /// <author>iText</author>
-    [WrapToTest]
     public class C07E05_AddRemovePages {
         public const String SRC = "../../resources/pdfs/jekyll_hyde_bookmarked.pdf";
 

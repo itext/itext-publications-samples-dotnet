@@ -20,6 +20,11 @@ namespace iText.Highlevel {
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E06_Czech_Russian_Korean_Unicode");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter02.C02E15_ShowTextAlignedKerned");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter07.C07E14_Encrypted");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.Notused");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.Util");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.HighLevelWrapperTest");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.HighLevelWrapperWithEncryptionTest");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.HighLevelWrapperWithLicenseTest");
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 

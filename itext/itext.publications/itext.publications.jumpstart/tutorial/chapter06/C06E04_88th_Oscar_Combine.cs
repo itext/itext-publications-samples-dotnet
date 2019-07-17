@@ -5,10 +5,8 @@ using System;
 using System.IO;
 using iText.Kernel.Pdf;
 using iText.Kernel.Utils;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter06 {
-    [WrapToTest]
     public class C06E04_88th_Oscar_Combine {
         public const String SRC1 = "../../resources/pdf/88th_reminder_list.pdf";
 

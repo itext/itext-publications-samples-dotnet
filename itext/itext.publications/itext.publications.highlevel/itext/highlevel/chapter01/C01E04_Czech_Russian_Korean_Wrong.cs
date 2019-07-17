@@ -10,11 +10,9 @@ using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C01E04_Czech_Russian_Korean_Wrong {
         public const String DEST = "../../results/chapter01/czech_russian_korean_wrong.pdf";
 

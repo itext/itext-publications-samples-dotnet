@@ -7,11 +7,9 @@ using iText.Kernel.Colors;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter05 {
     /// <summary>Simple changing page properties example.</summary>
-    [WrapToTest]
     public class C05E04_ChangePage {
         public const String SRC = "../../resources/pdf/ufo.pdf";
 

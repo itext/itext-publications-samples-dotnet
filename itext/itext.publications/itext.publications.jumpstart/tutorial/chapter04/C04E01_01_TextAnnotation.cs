@@ -9,11 +9,9 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter04 {
     /// <summary>Simple text annotation example.</summary>
-    [WrapToTest]
     public class C04E01_01_TextAnnotation {
         public const String DEST = "../../results/chapter04/text_annotation.pdf";
 

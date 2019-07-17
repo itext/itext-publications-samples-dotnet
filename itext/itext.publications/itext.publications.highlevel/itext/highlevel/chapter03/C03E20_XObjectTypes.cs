@@ -9,11 +9,9 @@ using iText.Kernel.Pdf.Canvas.Wmf;
 using iText.Kernel.Pdf.Xobject;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter03 {
     /// <author>iText</author>
-    [WrapToTest]
     public class C03E20_XObjectTypes {
         public const String WMF = "../../resources/img/test/butterfly.wmf";
 

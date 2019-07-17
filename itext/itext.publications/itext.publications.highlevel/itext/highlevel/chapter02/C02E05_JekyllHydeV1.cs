@@ -8,11 +8,9 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter02 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C02E05_JekyllHydeV1 {
         public const String SRC = "../../resources/txt/jekyll_hyde.txt";
 

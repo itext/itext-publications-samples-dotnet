@@ -15,11 +15,9 @@ using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Layout.Renderer;
-using iText.Test.Attributes;
 
 namespace Tutorial.Chapter03 {
     /// <summary>Simple table renderer example.</summary>
-    [WrapToTest]
     public class C03E02_PremierLeague {
         public const String DATA = "../../resources/data/premier_league.csv";
 

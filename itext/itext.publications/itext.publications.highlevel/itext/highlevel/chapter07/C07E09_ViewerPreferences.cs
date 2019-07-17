@@ -8,11 +8,9 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Test.Attributes;
 
 namespace iText.Highlevel.Chapter07 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    [WrapToTest]
     public class C07E09_ViewerPreferences {
         public const String DEST = "../../results/chapter07/viewerpreferences.pdf";
 
