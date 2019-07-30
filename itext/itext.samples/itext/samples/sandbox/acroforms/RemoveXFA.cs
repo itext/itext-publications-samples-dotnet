@@ -1,16 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Colors;
 using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms {
-    public class RemoveXFA : GenericTest {
-        public static readonly String DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/sandbox/acroforms/remove_xfa.pdf";
-        public static readonly String SRC = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/pdfs/reportcardinitial.pdf";
+    public class RemoveXFA {
+        public static readonly String DEST = "../../results/sandbox/acroforms/remove_xfa.pdf";
+        
+        public static readonly String SRC = "../../resources/pdfs/reportcardinitial.pdf";
 
-        protected override void ManipulatePdf(String dest)
+        public static void Main(String[] args)
+        {
+            FileInfo file = new FileInfo(DEST);
+            file.Directory.Create();
+            
+            new RemoveXFA().ManipulatePdf(DEST);
+        }
+        
+        protected void ManipulatePdf(String dest)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);

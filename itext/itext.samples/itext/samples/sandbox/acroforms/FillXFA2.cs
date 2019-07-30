@@ -6,17 +6,22 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
-    public class FillXFA2 : GenericTest
+    public class FillXFA2
     {
-        public static readonly String DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory +
-                                             "/test/resources/sandbox/acroforms/xfa_form_poland_filled.pdf";
+        public static readonly String DEST = "../../results/sandbox/acroforms/xfa_form_poland_filled.pdf";
 
-        public static readonly String SRC = NUnit.Framework.TestContext.CurrentContext.TestDirectory +
-                                            "/../../resources/pdfs/xfa_form_poland.pdf";
-        public static readonly String XML = NUnit.Framework.TestContext.CurrentContext.TestDirectory +
-                                            "/../../resources/xml/xfa_form_poland.xml";
+        public static readonly String SRC = "../../resources/pdfs/xfa_form_poland.pdf";
+        public static readonly String XML = "../../resources/xml/xfa_form_poland.xml";
 
-        protected override void ManipulatePdf(string dest) {
+        public static void Main(String[] args)
+        {
+            FileInfo file = new FileInfo(DEST);
+            file.Directory.Create();
+            
+            new FillXFA2().ManipulatePdf(DEST);
+        }
+        
+        protected void ManipulatePdf(string dest) {
             PdfReader reader = new PdfReader(SRC);
             reader.SetUnethicalReading(true);
             PdfDocument pdfDoc = new PdfDocument(reader, new PdfWriter(DEST));
