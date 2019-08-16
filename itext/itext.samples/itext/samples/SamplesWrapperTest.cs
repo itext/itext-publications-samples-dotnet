@@ -15,7 +15,7 @@ using iText.Kernel.Geom;
 using iText.Kernel.Utils;
 using iText.License;
 using iText.Test;
-using iText.Utils;
+using iText.Test.Pdfa;
 using NUnit.Framework;
 
 namespace iText.Samples
