@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using iText.IO.Font;
 using iText.Kernel.Utils;
 using iText.License;
 using iText.Test;
@@ -60,6 +61,8 @@ namespace iText.Samples
         [Test, Description("{0}")]
         public virtual void Test()
         {
+            FontCache.ClearSavedFonts();
+            FontProgramFactory.ClearRegisteredFonts();
             LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.xml");
             RunSamples();
             ResetLicense();
