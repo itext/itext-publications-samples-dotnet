@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using iText.IO.Font;
+using iText.IO.Util;
+using iText.Kernel.Geom;
 using iText.Kernel.Utils;
 using iText.License;
 using iText.Test;
@@ -44,6 +46,20 @@ namespace iText.Samples
                 "iText.Samples.Sandbox.Pdfa.PdfA1a_images",
                 "iText.Samples.Sandbox.Pdfa.PdfA3"
             });
+        
+        /**
+         * Global map of classes with ignored areas
+         */
+        private static IDictionary<String, IDictionary<int, IList<Rectangle>>> ignoredClassesMap;
+        
+        static  SamplesWrapperTest() {
+            Rectangle latinClassIgnoredArea = new Rectangle(30, 539, 250, 13);
+            IList<Rectangle> rectangles = JavaUtil.ArraysAsList(latinClassIgnoredArea);
+            IDictionary<int, IList<Rectangle>> ignoredAreasMap = new Dictionary<int, IList<Rectangle>>();
+            ignoredAreasMap.Add(1, rectangles);
+            ignoredClassesMap = new Dictionary<String, IDictionary<int, IList<Rectangle>>>();
+            ignoredClassesMap.Add("iText.Samples.Sandbox.Typography.Latin.LatinSignature", ignoredAreasMap);
+        }
         
         public SamplesWrapperTest(RunnerParams runnerParams) : base(runnerParams)
         {
@@ -83,10 +99,16 @@ namespace iText.Samples
                     AddError(compareTool.CompareVisually(dest, cmp, outPath, "diff_"));
                     AddError(compareTool.CompareLinkAnnotations(dest, cmp));
                     AddError(compareTool.CompareDocumentInfo(dest, cmp));
-            } else 
+            } else if (ignoredClassesMap.Keys.Contains(sampleClass.FullName)) 
             {
-                    AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));
+                    AddError(compareTool.CompareVisually(dest, cmp, outPath, "diff_", 
+                        ignoredClassesMap[sampleClass.FullName]));
             }
+            else
+            {
+                AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));
+            }
+            
 
             if (veraPdfValidateList.Contains(sampleClass.FullName))
             {
