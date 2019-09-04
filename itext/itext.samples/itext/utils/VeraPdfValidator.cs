@@ -18,16 +18,15 @@ namespace iText.Utils
 {
     public class VeraPdfValidator
     {
-        private String cliCommand = "java -classpath \"<projectPath>\\etc;<libPath>\\*\" -Dfile.encoding=UTF8 " +
+        private String cliCommand = "java -classpath \"<libPath>\\*\" -Dfile.encoding=UTF8 " +
                                     "-XX:+IgnoreUnrecognizedVMOptions -Dapp.name=\"VeraPDF validation GUI\" " +
-                                    "-Dapp.repo=\"<libPath>\" -Dapp.home=\"<projectPath>\\\" " +
-                                    "-Dbasedir=\"<projectPath>\\\" org.verapdf.apps.GreenfieldCliWrapper ";
+                                    "-Dapp.repo=\"<libPath>\" -Dapp.home=\"\" " +
+                                    "-Dbasedir=\"\" org.verapdf.apps.GreenfieldCliWrapper ";
         
         public String Validate(String dest)
         {
             Process p = new Process();
-            String currentCommand = cliCommand.Replace("<projectPath>", "..\\..\\")
-                              .Replace("<libPath>", "..\\..\\lib\\VeraPdf");
+            String currentCommand = cliCommand.Replace("<libPath>", "..\\..\\lib\\VeraPdf");
             
             String currentDest = Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory + "\\" + dest);
             
