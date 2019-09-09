@@ -33,7 +33,7 @@ namespace iText.Samples
         /**
          * List of samples, which require xml files comparison
          */
-        private List<string> xmlCompareList = new List<string>(new[] {"iText.Samples.Sandbox.Acroforms.ReadXFA"});
+        private List<string> xmlCompareList = new List<string>(new[] {"iText.Samples.Sandbox.Acroforms.ReadXFA", "iText.Samples.Sandbox.Acroforms.CreateXfdf"});
 
         /**
          * List of samples, which require VeraPDF file comparison
@@ -68,7 +68,7 @@ namespace iText.Samples
         public static ICollection<TestFixtureData> Data()
         {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox");
+            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox.Acroforms");
             
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
