@@ -10,7 +10,11 @@ namespace iText.Samples.Sandbox.Acroforms
     {
         public static readonly String sourceFolder = "../../resources/pdfs/";
 
+<<<<<<< HEAD
         public static readonly String DEST = "../../results/sandbox/acroforms/subscribe.xfdf";
+=======
+        public static readonly String DEST = "../../results/sandbox/acroforms/createXfdf.xfdf";
+>>>>>>> DEVSIX-3209
 
 
         public static void Main(String[] args)
@@ -25,7 +29,11 @@ namespace iText.Samples.Sandbox.Acroforms
         // data from Pdf form could be received as file with the XFDF file extension.
         public void createXfdf(String dest)
         {
+<<<<<<< HEAD
             String pdfDocumentName = "subscribe.pdf";
+=======
+            String pdfDocumentName = "createXfdf.pdf";
+>>>>>>> DEVSIX-3209
             PdfDocument pdfDocument = new PdfDocument(new PdfReader(new FileStream
                 (sourceFolder + pdfDocumentName, FileMode.Open, FileAccess.Read)));
 
