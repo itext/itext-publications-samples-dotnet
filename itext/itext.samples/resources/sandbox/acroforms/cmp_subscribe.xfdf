@@ -1,25 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xfdf>
-  <fields>
-    <field name="personal">
-      <field name="name">
-        <value>
-        </value>
-      </field>
-      <field name="loginname">
-        <value>
-        </value>
-      </field>
-      <field name="password">
-        <value>
-        </value>
-      </field>
-      <field name="reason">
-        <value>
-        </value>
-      </field>
-    </field>
-  </fields>
-  <annots />
-  <f href="subscribe.pdf" />
-  <ids original="29C5DD788A56A0BECA91D23F9CE171E6" modified="68F3C22BD41EFC5A411A5720FDC27EBF" />
-</xfdf>
+<fields>
+<field name="personal">
+<field name="name">
+<value>Kate</value>
+</field>
+<field name="loginname">
+<value>katerina</value>
+</field><field name="reason">
+<value>life</value></field>
+</field></fields><annots/>
+<f href="subscribe.pdf"/>
+<ids modified="E74BA9DAF7D08A4F91CBF7F6DFE81DD" original="29C5DD788A56A0BECA91D23F9CE171E6"/></xfdf>
