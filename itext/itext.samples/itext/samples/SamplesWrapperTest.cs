@@ -68,7 +68,7 @@ namespace iText.Samples
         public static ICollection<TestFixtureData> Data()
         {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox.Acroforms");
+            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox");
             
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
