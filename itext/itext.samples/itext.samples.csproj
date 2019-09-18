@@ -65,6 +65,9 @@
       <Project>{dcae8241-e391-418d-ba36-c7c064d7c413}</Project>
       <Name>itext.barcodes</Name>
     </ProjectReference>
+    <Reference Include="itext.barcodes, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')">
+      <HintPath>$(SolutionDir)\packages\itext7.7.1.9-SNAPSHOT\lib\net40\itext.barcodes.dll</HintPath>
+    </Reference>
     <ProjectReference Include="..\..\..\typography\itext.tests\itext.typography.tests\itext.typography.tests.csproj">
       <Project>{c4c6fb25-8845-4dfb-a58c-f6f804d17645}</Project>
       <Name>itext.typography.tests</Name>
@@ -73,8 +76,8 @@
       <Project>{cfe438d3-b3ae-4596-8410-3d9bbc39a05a}</Project>
       <Name>itext.typography</Name>
     </ProjectReference>
-    <Reference Include="itext.barcodes, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.7.1.9-SNAPSHOT\lib\net40\itext.barcodes.dll</HintPath>
+	<Reference Include="itext.typography, Version=2.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')">
+      <HintPath>$(SolutionDir)\packages\itext7.pdfcalligraph.2.0.5-SNAPSHOT\lib\net40\itext.typography.dll</HintPath>
     </Reference>
     <ProjectReference Include="..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj')">
       <Project>{0f10190c-7611-4378-a157-03bf2ed78e30}</Project>
