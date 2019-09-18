@@ -65,7 +65,7 @@ namespace iText.Samples.Signatures.Chapter03
 		/// <exception cref="System.Exception"/>
 		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
-        [Ignore("Put property file with valid data")]
+        [Ignore("requires a valid certificate which is issued by the service that provides CRL access point")]
 		public virtual void RunTest()
 		{
 			SetupSystemOutput();
