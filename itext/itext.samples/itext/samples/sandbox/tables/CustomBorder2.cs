@@ -13,7 +13,6 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Layout;
-using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Layout.Renderer;
@@ -40,15 +39,18 @@ namespace iText.Samples.Sandbox.Tables
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
+            // By default column width is calculated automatically for the best fit.
+            // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
             Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
-            table.SetWidth(500);
-            table.SetNextRenderer(new CustomBorder2TableRenderer(table, new Table.RowRange(0, 60)));
-            
-            for (int i = 1; i < 60; i++)
+
+            for (int i = 1; i < 60; i++) 
             {
-                table.AddCell(new Cell().Add(new Paragraph("Cell " + i)).SetBorder(Border.NO_BORDER));
-                table.AddCell(new Cell().Add(new Paragraph(TEXT)).SetBorder(Border.NO_BORDER));
+                table.AddCell(new Cell().Add(new Paragraph("Cell " + i)));
+                table.AddCell(new Cell().Add(new Paragraph(TEXT)));
             }
+
+            // Use a custom renderer in which borders drawing is overridden
+            table.SetNextRenderer(new CustomBorder2TableRenderer(table));
 
             doc.Add(table);
 
@@ -57,15 +59,10 @@ namespace iText.Samples.Sandbox.Tables
 
         private class CustomBorder2TableRenderer : TableRenderer
         {
-            bool wasSplitted;
+            private bool top = true;
+            private bool bottom = true;
 
-            public CustomBorder2TableRenderer(Table modelElement)
-                : base(modelElement)
-            {
-            }
-
-            public CustomBorder2TableRenderer(Table modelElement, Table.RowRange rowRange)
-                : base(modelElement, rowRange)
+            public CustomBorder2TableRenderer(Table modelElement) : base(modelElement)
             {
             }
 
@@ -74,11 +71,27 @@ namespace iText.Samples.Sandbox.Tables
                 return new CustomBorder2TableRenderer((Table) modelElement);
             }
 
-            protected override TableRenderer[] Split(int row, bool hasContent)
+            protected override TableRenderer[] Split(int row, bool hasContent, bool cellWithBigRowspanAdded)
             {
-                TableRenderer[] results = base.Split(row, hasContent);
-                CustomBorder2TableRenderer splitRenderer = (CustomBorder2TableRenderer) results[0];
-                splitRenderer.wasSplitted = true;
+                // Being inside this method implies that split has occurred
+
+                TableRenderer[] results = base.Split(row, hasContent, cellWithBigRowspanAdded);
+
+                CustomBorder2TableRenderer splitRenderer = (CustomBorder2TableRenderer)results[0];
+
+                // iText shouldn't draw the bottom split renderer's border,
+                // because there is an overflow renderer
+                splitRenderer.bottom = false;
+
+                // If top is true, the split renderer is the first renderer of the document,
+                // if false, iText has already processed the first renderer
+                splitRenderer.top = this.top;
+
+                CustomBorder2TableRenderer overflowRenderer = (CustomBorder2TableRenderer)results[1];
+
+                // iText shouldn't draw the top overflow renderer's border
+                overflowRenderer.top = false;
+
                 return results;
             }
 
@@ -93,17 +106,15 @@ namespace iText.Samples.Sandbox.Tables
                     .LineTo(area.GetLeft(), area.GetTop())
                     .MoveTo(area.GetRight(), area.GetTop())
                     .LineTo(area.GetRight(), area.GetBottom());
-                
-                if (wasSplitted)
+
+                if (top) 
                 {
-                    if (1 == drawContext.GetDocument().GetNumberOfPages())
-                    {
-                        canvas
-                            .MoveTo(area.GetLeft(), area.GetTop())
-                            .LineTo(area.GetRight(), area.GetTop());
-                    }
+                    canvas
+                        .MoveTo(area.GetLeft(), area.GetTop())
+                        .LineTo(area.GetRight(), area.GetTop());
                 }
-                else
+
+                if (bottom) 
                 {
                     canvas
                         .MoveTo(area.GetLeft(), area.GetBottom())
