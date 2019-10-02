@@ -26,16 +26,21 @@ namespace iText.Samples.Sandbox.Acroforms
         {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
-            
+
             new FillXFA().ManipulatePdf(DEST);
         }
-        
-        protected void ManipulatePdf(string dest) {
-            PdfDocument pdfdoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+
+        protected void ManipulatePdf(string dest)
+        {
+            PdfDocument pdfdoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfdoc, true);
+
             XfaForm xfa = form.GetXfaForm();
+
+            // Method fills this object with XFA data under datasets/data.
             xfa.FillXfaForm(new FileStream(XML, FileMode.Open, FileAccess.Read));
             xfa.Write(pdfdoc);
+
             pdfdoc.Close();
         }
     }
