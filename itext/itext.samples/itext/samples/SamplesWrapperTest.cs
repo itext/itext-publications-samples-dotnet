@@ -28,7 +28,10 @@ namespace iText.Samples
         /**
          * List of samples, which should be validated visually and by links annotations on corresponding pages
          */
-        private List<string> renderCompareList = new List<string>();
+        private List<string> renderCompareList = new List<string>()
+        {
+            "iText.Samples.Sandbox.Signatures.SignatureExample"
+        };
 
         /**
          * List of samples, which require xml files comparison
