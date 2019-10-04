@@ -88,6 +88,9 @@ namespace iText.Samples
             // TODO DEVSIX-3187
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.RepeatLastRows2");
 
+            // TODO DEVSIX-3326
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.SplittingNestedTable2");
+
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 
