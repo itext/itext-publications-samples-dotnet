@@ -1,4 +1,4 @@
-﻿/*
+/*
 This file is part of the iText (R) project.
 Copyright (c) 1998-2019 iText Group NV
 Authors: iText Software.
@@ -12,42 +12,41 @@ using System.Collections.Generic;
 using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
-using iText.Kernel.Colors;
 using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
-    public class RemoveXFA
+    public class RenameField
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/remove_xfa.pdf";
+        public static readonly String DEST = "../../results/sandbox/acroforms/rename_field.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/reportcardinitial.pdf";
+        public static readonly String SRC = "../../resources/pdfs/subscribe.pdf";
 
         public static void Main(String[] args)
         {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
 
-            new RemoveXFA().ManipulatePdf(DEST);
+            new RenameField().ManipulatePdf(DEST);
         }
 
-        protected void ManipulatePdf(String dest)
+        public void ManipulatePdf(String dest)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
 
-            // Method removes the XFA stream from the document.
-            form.RemoveXfaForm();
+            form.RenameField("personal.loginname", "login");
 
+            pdfDoc.Close();
+
+            pdfDoc = new PdfDocument(new PdfReader(dest));
+            form = PdfAcroForm.GetAcroForm(pdfDoc, true);
             IDictionary<String, PdfFormField> fields = form.GetFormFields();
-            foreach (KeyValuePair<String, PdfFormField> name in fields)
-            {
-                if (name.Key.IndexOf("Total") > 0)
-                {
-                    name.Value.SetColor(ColorConstants.RED);
-                }
 
-                name.Value.SetValue("X");
+            // See the renamed field in the console
+            foreach (String name in fields.Keys)
+            {
+                Console.WriteLine(name);
             }
 
             pdfDoc.Close();
