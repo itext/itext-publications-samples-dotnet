@@ -17,14 +17,12 @@ namespace Tutorial.Chapter02 {
     public class C02E04_StarWarsCrawl {
         public const String DEST = "../../results/chapter02/star_wars_crawl.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C02E04_StarWarsCrawl().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             IList<String> text = new List<String>();
             text.Add("            Episode V      ");

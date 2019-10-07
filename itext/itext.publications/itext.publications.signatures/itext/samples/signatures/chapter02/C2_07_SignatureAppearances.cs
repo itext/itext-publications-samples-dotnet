@@ -38,8 +38,6 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly string IMG = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/img/1t3xt.gif";
 
-	    /// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void Sign(String src, String name, String dest, X509Certificate[] 
 			chain, ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard
 			 subfilter, String reason, String location, PdfSignatureAppearance.RenderingMode
@@ -63,8 +61,6 @@ namespace iText.Samples.Signatures.Chapter02
 			signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
 
@@ -103,9 +99,6 @@ namespace iText.Samples.Signatures.Chapter02
 				.GRAPHIC, image);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
 		public virtual void RunTest()
 		{

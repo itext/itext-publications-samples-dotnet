@@ -50,8 +50,7 @@ namespace iText.Samples.Signatures.Chapter05
 		// public static final String EXAMPLE1 = "results/chapter3/hello_cacert_ocsp_ts.pdf";
 		// public static final String EXAMPLE2 = "results/chapter3/hello_token.pdf";
 		// public static final String EXAMPLE4 = "results/chapter4/hello_smartcard_Signature.pdf";
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
+
 		public override PdfPKCS7 VerifySignature(SignatureUtil signUtil, String name)
 		{
 			PdfPKCS7 pkcs7 = base.VerifySignature(signUtil, name);
@@ -83,8 +82,6 @@ namespace iText.Samples.Signatures.Chapter05
 			return pkcs7;
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		private static void CheckRevocation(PdfPKCS7 pkcs7, X509Certificate signCert, X509Certificate
 			 issuerCert, DateTime date)
 		{
@@ -163,8 +160,6 @@ namespace iText.Samples.Signatures.Chapter05
 			}
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
 			C5_03_CertificateValidation app = new C5_03_CertificateValidation();
@@ -186,10 +181,7 @@ namespace iText.Samples.Signatures.Chapter05
 		}
 
 		// app.verifySignatures(EXAMPLE4);
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Javax.Smartcardio.CardException"/>
+
 		[NUnit.Framework.Test]
 		public override void RunTest()
 		{

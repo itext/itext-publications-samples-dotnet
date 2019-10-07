@@ -13,14 +13,12 @@ namespace Tutorial.Chapter04 {
     public class C04E01_03_LineAnnotation {
         public const String DEST = "../../results/chapter04/line_annotation.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C04E01_03_LineAnnotation().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

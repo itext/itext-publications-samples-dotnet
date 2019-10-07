@@ -17,14 +17,12 @@ namespace iText.Highlevel.Chapter02 {
     public class C02E01_CanvasExample {
         public const String DEST = "../../results/chapter02/canvas_example.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C02E01_CanvasExample().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

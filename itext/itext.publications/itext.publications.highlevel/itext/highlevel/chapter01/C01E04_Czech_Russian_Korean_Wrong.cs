@@ -24,14 +24,12 @@ namespace iText.Highlevel.Chapter01 {
 
         public const String KOREAN = "\ud558\uc774\ub4dc, \uc9c0\ud0ac, \ub098";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C01E04_Czech_Russian_Korean_Wrong().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             // Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

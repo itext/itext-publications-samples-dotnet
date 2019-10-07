@@ -18,14 +18,12 @@ namespace iText.Highlevel.Notused.Appendix {
     public class ListSeparatorProperties {
         public const String DEST = "results/appendix/separator_properties.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new ListSeparatorProperties().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             // Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

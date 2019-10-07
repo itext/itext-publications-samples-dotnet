@@ -14,14 +14,12 @@ namespace iText.Highlevel.Chapter05 {
     public class C05E07_NestedTable {
         public const String DEST = "../../results/chapter05/nested_tables.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C05E07_NestedTable().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

@@ -35,8 +35,6 @@ namespace iText.Samples.Signatures.Chapter02
 
 	    public static readonly string DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/hello_signed_with_temp.pdf";
 
-	    /// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void Sign(String src, String tmp, String dest, X509Certificate[] chain
 			, ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard
 			 subfilter, String reason, String location)
@@ -56,8 +54,6 @@ namespace iText.Samples.Signatures.Chapter02
 			signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public static void Main(String[] args)
 		{
             string alias = null;
@@ -79,9 +75,6 @@ namespace iText.Samples.Signatures.Chapter02
 			app.Sign(SRC, TEMP, DEST, chain, pk, DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS, "Temp test", "Ghent");
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
 		public virtual void RunTest()
 		{

@@ -18,14 +18,12 @@ namespace iText.Highlevel.Chapter07 {
 
         public const String DEST = "../../results/chapter07/jekyll_hyde_updated.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C07E05_AddRemovePages().ManipulatePdf(SRC, DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void ManipulatePdf(String src, String dest) {
             PdfReader reader = new PdfReader(src);
             PdfWriter writer = new PdfWriter(dest);

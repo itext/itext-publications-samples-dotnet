@@ -19,14 +19,12 @@ namespace Tutorial.Chapter01 {
 
         public const String DEST = "../../results/chapter01/united_states.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C01E04_UnitedStates().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF writer
             PdfWriter writer = new PdfWriter(dest);

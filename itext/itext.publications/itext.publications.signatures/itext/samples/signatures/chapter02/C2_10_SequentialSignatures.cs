@@ -53,7 +53,6 @@ namespace iText.Samples.Signatures.Chapter02 {
         public static readonly string DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory +
                                              "/test/resources/signatures/chapter02/signed_by_{0}.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreateForm() {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(FORM));
             Document doc = new Document(pdfDoc);
@@ -99,8 +98,6 @@ namespace iText.Samples.Signatures.Chapter02 {
             private readonly C2_10_SequentialSignatures _enclosing;
         }
 
-        /// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-        /// <exception cref="System.IO.IOException"/>
         public virtual void Sign(String keystore, int level, String src, String name, String
             dest) {
             string alias = null;
@@ -134,8 +131,6 @@ namespace iText.Samples.Signatures.Chapter02 {
             );
         }
 
-        /// <exception cref="System.IO.IOException"/>
-        /// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
         public static void Main(String[] args) {
             C2_10_SequentialSignatures app = new C2_10_SequentialSignatures();
             app.CreateForm();
@@ -161,9 +156,6 @@ namespace iText.Samples.Signatures.Chapter02 {
 
         }
 
-        /// <exception cref="System.IO.IOException"/>
-        /// <exception cref="System.Exception"/>
-        /// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
         [NUnit.Framework.Test]
         public virtual void RunTest() {
             Directory.CreateDirectory(NUnit.Framework.TestContext.CurrentContext.TestDirectory +

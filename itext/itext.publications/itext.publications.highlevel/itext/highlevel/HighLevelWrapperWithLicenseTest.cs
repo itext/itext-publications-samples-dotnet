@@ -27,7 +27,6 @@ namespace iText.Highlevel {
             return GenerateTestsList(Assembly.GetExecutingAssembly(),searchConfig);
         }
 
-        /// <exception cref="System.Exception"/>
         [NUnit.Framework.Timeout(60000)]
         [NUnit.Framework.Test]
         public virtual void Test() {
@@ -37,7 +36,6 @@ namespace iText.Highlevel {
             RunSamples();
         }
 
-        /// <exception cref="System.Exception"/>
         protected override void ComparePdf(String outPath, String dest, String cmp) {
             CompareTool compareTool = new CompareTool();
             AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));

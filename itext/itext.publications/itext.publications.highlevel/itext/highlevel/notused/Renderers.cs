@@ -20,14 +20,12 @@ namespace iText.Highlevel.Notused {
              + "This is some more text to make the paragraph longer. We want it " + "to span multiple lines. An example with a short paragraph isn't "
              + "useful for us.";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new Renderers().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

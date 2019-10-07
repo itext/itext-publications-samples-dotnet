@@ -38,14 +38,12 @@ namespace Tutorial.Chapter06 {
             TheRevenantNominations["Achievement in visual effects"] = 10;
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C06E06_88th_Oscar_Combine_AddTOC().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdfDoc);

@@ -21,14 +21,12 @@ namespace iText.Highlevel.Chapter01 {
 
         public const String ITALIC = "../../resources/fonts/Cardo-Italic.ttf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C01E03_Text_Paragraph_NoCardo().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             // Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

@@ -12,14 +12,12 @@ namespace Tutorial.Chapter01 {
     public class C01E01_HelloWorld {
         public const String DEST = "../../results/chapter01/hello_world.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C01E01_HelloWorld().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF writer
             PdfWriter writer = new PdfWriter(dest);

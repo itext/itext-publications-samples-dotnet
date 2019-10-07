@@ -34,8 +34,6 @@ namespace iText.Samples.Signatures.Chapter03
 
 	    public const String expectedOutput = "";
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
             Properties properties = new Properties();
@@ -84,9 +82,6 @@ namespace iText.Samples.Signatures.Chapter03
 			}
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
         [Ignore("requires a valid certificate which is issued by the service that provides OCSP and TSA access point")]
 		public override void RunTest()

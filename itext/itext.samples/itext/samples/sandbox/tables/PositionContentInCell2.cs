@@ -32,7 +32,6 @@ namespace iText.Samples.Sandbox.Tables
             new PositionContentInCell2().ManipulatePdf(DEST);
         }
 
-        /// <exception cref="System.Exception"/>
         private void ManipulatePdf(String dest)
         {
             // 1. Create a Document which contains a table:

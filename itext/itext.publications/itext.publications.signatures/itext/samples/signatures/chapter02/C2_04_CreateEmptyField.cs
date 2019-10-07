@@ -48,7 +48,6 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly string UNSIGNED2 = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/hello_empty2.pdf";
 
-	    /// <exception cref="System.IO.IOException"/>
 		public virtual void CreatePdf(String filename)
 		{
 			PdfDocument pdfDoc = new PdfDocument(new PdfWriter(filename));
@@ -98,7 +97,6 @@ namespace iText.Samples.Signatures.Chapter02
 			doc.Close();
 		}
 
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void AddField(String src, String dest)
 		{
 			PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
@@ -115,8 +113,6 @@ namespace iText.Samples.Signatures.Chapter02
 			pdfDoc.Close();
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
             Directory.CreateDirectory(NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/");
@@ -145,9 +141,6 @@ namespace iText.Samples.Signatures.Chapter02
 			appSign.Sign(UNSIGNED, SIGNAME, DEST, chain, pk, DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS, "Test", "Ghent");
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
 		public virtual void RunTest()
 		{

@@ -49,8 +49,6 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly string DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/step_{0}_signed_by_{1}.pdf";
 
-	    /// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
 			C2_12_LockFields app = new C2_12_LockFields();
@@ -69,7 +67,6 @@ namespace iText.Samples.Signatures.Chapter02
 				, 6, "dave_broken_by_chuck"), "approved_carol", "Changed by Chuck");
 		}
 
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void CreateForm()
 		{
 			PdfDocument pdfDoc = new PdfDocument(new PdfWriter(FORM));
@@ -96,8 +93,6 @@ namespace iText.Samples.Signatures.Chapter02
 			doc.Close();
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void Certify(String keystore, String src, String name, String dest
 			)
 		{
@@ -131,8 +126,6 @@ namespace iText.Samples.Signatures.Chapter02
 				);
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void FillOutAndSign(String keystore, String src, String name, String
 			 fname, String value, String dest)
 		{
@@ -169,7 +162,6 @@ namespace iText.Samples.Signatures.Chapter02
 				);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void FillOut(String src, String dest, String name, String value)
 		{
 			PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest), new 
@@ -179,8 +171,6 @@ namespace iText.Samples.Signatures.Chapter02
 			pdfDoc.Close();
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void Sign(String keystore, String src, String name, String dest)
         {
             string alias = null;
@@ -221,7 +211,6 @@ namespace iText.Samples.Signatures.Chapter02
 			return cell;
 		}
 
-		/// <exception cref="System.IO.IOException"/>
 		protected internal virtual Cell CreateSignatureFieldCell(String name, PdfSigFieldLock
 			 Lock)
 		{
@@ -289,9 +278,6 @@ namespace iText.Samples.Signatures.Chapter02
 			private readonly C2_12_LockFields _enclosing;
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
 		public virtual void RunTest()
 		{

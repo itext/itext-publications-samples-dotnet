@@ -35,8 +35,6 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly string DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/field_metadata.pdf";
 
-	    /// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void Sign(String src, String name, String dest, X509Certificate[] 
 			chain, ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard
 			 subfilter, String reason, String location, String contact, DateTime signDate, String
@@ -76,8 +74,6 @@ namespace iText.Samples.Signatures.Chapter02
 			private readonly String fullName;
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
 
@@ -106,9 +102,6 @@ namespace iText.Samples.Signatures.Chapter02
 				, new DateTime(2012, 8, 5) , "Bruno L. Specimen");
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
 		public virtual void RunTest()
 		{

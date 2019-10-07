@@ -18,14 +18,12 @@ namespace iText.Highlevel.Notused.Appendix {
     public class CanvasFontMethods {
         public const String DEST = "results/appendix/canvas_font_methods.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new CanvasFontMethods().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             // Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

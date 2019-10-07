@@ -15,14 +15,12 @@ namespace iText.Highlevel.Chapter06 {
     public class C06E07_ChainedActions {
         public const String DEST = "../../results/chapter06/jekyll_hyde_chained.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C06E07_ChainedActions().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdf);

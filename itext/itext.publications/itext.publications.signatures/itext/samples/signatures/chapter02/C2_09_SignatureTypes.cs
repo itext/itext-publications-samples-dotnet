@@ -38,8 +38,6 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly string DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/hello_level_{0}.pdf";
 
-	    /// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void Sign(String src, String dest, X509Certificate[] chain, ICipherParameters
 			 pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter
 			, int certificationLevel, String reason, String location)
@@ -62,7 +60,6 @@ namespace iText.Samples.Signatures.Chapter02
 			signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void AddText(String src, String dest)
 		{
 			PdfReader reader = new PdfReader(src);
@@ -73,7 +70,6 @@ namespace iText.Samples.Signatures.Chapter02
 			pdfDoc.Close();
 		}
 
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void AddAnnotation(String src, String dest)
 		{
 			PdfReader reader = new PdfReader(src);
@@ -88,7 +84,6 @@ namespace iText.Samples.Signatures.Chapter02
 			pdfDoc.Close();
 		}
 
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void AddWrongAnnotation(String src, String dest)
 		{
 			PdfReader reader = new PdfReader(src);
@@ -102,8 +97,6 @@ namespace iText.Samples.Signatures.Chapter02
 			pdfDoc.Close();
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void SignAgain(String src, String dest, X509Certificate[] chain, ICipherParameters
 			 pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter
 			, String reason, String location)
@@ -125,8 +118,6 @@ namespace iText.Samples.Signatures.Chapter02
 			signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public static void Main(String[] args)
 		{
 
@@ -180,9 +171,6 @@ namespace iText.Samples.Signatures.Chapter02
 				, "Gent");
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
 		public virtual void RunTest() {
             Directory.CreateDirectory(NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/");

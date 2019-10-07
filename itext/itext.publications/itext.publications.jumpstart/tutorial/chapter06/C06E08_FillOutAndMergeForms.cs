@@ -18,14 +18,12 @@ namespace Tutorial.Chapter06 {
 
         public const String DATA = "../../resources/data/united_states.csv";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C06E08_FillOutAndMergeForms().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             PdfDocument pdfDocument = new PdfDocument(new PdfWriter(dest));
             PdfPageFormCopier formCopier = new PdfPageFormCopier();

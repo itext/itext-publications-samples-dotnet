@@ -14,14 +14,12 @@ namespace Tutorial.Chapter06 {
 
         public const String DEST = "../../results/chapter06/88th_oscar_combined_documents_xy_pages.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C06E05_88th_Oscar_CombineXofY().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document with output intent
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

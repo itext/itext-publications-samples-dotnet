@@ -42,8 +42,6 @@ namespace iText.Samples.Signatures.Chapter05
 			"Integrity check OK? True\r\n" + "===== sig4 =====\r\n" + "Signature covers whole document: False\r\n"
 			 + "Document revision: 4 of 5\r\n" + "Integrity check OK? True\r\n" + "\r\n";
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual PdfPKCS7 VerifySignature(SignatureUtil signUtil, String name)
 		{
 			System.Console.Out.WriteLine("Signature covers whole document: " + signUtil.SignatureCoversWholeDocument
@@ -55,8 +53,6 @@ namespace iText.Samples.Signatures.Chapter05
 			return pkcs7;
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public virtual void VerifySignatures(String path)
 		{
 			// System.out.println(path);
@@ -71,8 +67,6 @@ namespace iText.Samples.Signatures.Chapter05
 			System.Console.Out.WriteLine();
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
 			C5_01_SignatureIntegrity app = new C5_01_SignatureIntegrity();
@@ -81,10 +75,6 @@ namespace iText.Samples.Signatures.Chapter05
 			app.VerifySignatures(EXAMPLE3);
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Javax.Smartcardio.CardException"/>
 		[NUnit.Framework.Test]
 		public virtual void RunTest()
 		{

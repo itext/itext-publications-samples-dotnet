@@ -50,8 +50,6 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly string DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter02/step{0}_signed_by_{1}.pdf";
 
-	    /// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
 			C2_11_SignatureWorkflow app = new C2_11_SignatureWorkflow();
@@ -70,7 +68,6 @@ namespace iText.Samples.Signatures.Chapter02
 				));
 		}
 
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void CreateForm()
 		{
 			PdfDocument pdfDoc = new PdfDocument(new PdfWriter(FORM));
@@ -91,8 +88,6 @@ namespace iText.Samples.Signatures.Chapter02
 			doc.Close();
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void Certify(String keystore, String src, String name, String dest
 			)
 		{
@@ -127,7 +122,6 @@ namespace iText.Samples.Signatures.Chapter02
 				);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void FillOut(String src, String dest, String name, String value)
 		{
 			PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest), new 
@@ -138,8 +132,6 @@ namespace iText.Samples.Signatures.Chapter02
 			pdfDoc.Close();
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void Sign(String keystore, String src, String name, String dest)
 		{
             string alias = null;
@@ -171,8 +163,6 @@ namespace iText.Samples.Signatures.Chapter02
 				);
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void FillOutAndSign(String keystore, String src, String name, String
 			 fname, String value, String dest)
 		{
@@ -276,9 +266,6 @@ namespace iText.Samples.Signatures.Chapter02
 			private readonly C2_11_SignatureWorkflow _enclosing;
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
 		public virtual void RunTest()
 		{
