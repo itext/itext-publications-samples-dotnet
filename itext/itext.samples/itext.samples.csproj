@@ -64,6 +64,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj">
+      <Project>{2f9b8138-96d5-4df7-a011-61fe24900987}</Project>
+      <Name>itext.cleanup</Name>
+    </ProjectReference>
+    <Reference Include="itext.cleanup, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')">
+      <HintPath>$(SolutionDir)\packages\itext7.7.1.9-SNAPSHOT\lib\net40\itext.cleanup.dll</HintPath>
+    </Reference>
     <ProjectReference Include="..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')">
       <Project>{dcae8241-e391-418d-ba36-c7c064d7c413}</Project>
       <Name>itext.barcodes</Name>

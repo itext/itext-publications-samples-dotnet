@@ -25,12 +25,11 @@ namespace iText.Samples
     [TestFixtureSource("Data")]
     public class SamplesWrapperTest : WrappedSamplesRunner
     {
-        private string errorMessage;
-
+        
         /**
          * List of samples, which should be validated visually and by links annotations on corresponding pages
          */
-        private static List<string> renderCompareList = new List<string>()
+        private static readonly List<string> renderCompareList = new List<string>()
         {
             "iText.Samples.Sandbox.Signatures.SignatureExample"
         };
@@ -38,19 +37,24 @@ namespace iText.Samples
         /**
          * List of samples, which require xml files comparison
          */
-        private static List<string> xmlCompareList = new List<string>(new[]
+        private static readonly List<string> xmlCompareList = new List<string>(new[]
             {"iText.Samples.Sandbox.Acroforms.ReadXFA", "iText.Samples.Sandbox.Acroforms.CreateXfdf"});
-        
+
         /**
          * List of samples, which require txt files comparison
          */
-        private static List<string> txtCompareList = new List<string>(new[]
-            {"iText.Samples.Sandbox.Interactive.FetchBookmarkTitles"});
+        private static readonly List<string> txtCompareList = new List<string>(
+            new[]
+            {
+                "iText.Samples.Sandbox.Interactive.FetchBookmarkTitles",
+                "iText.Samples.Sandbox.Parse.ParseCustom",
+                "iText.Samples.Sandbox.Parse.ParseCzech"
+            });
 
         /**
          * List of samples, which require VeraPDF file comparison
          */
-        private static List<string> veraPdfValidateList = new List<string>(
+        private static readonly List<string> veraPdfValidateList = new List<string>(
             new[]
             {
                 "iText.Samples.Sandbox.Pdfa.HelloPdfA2a",
@@ -62,7 +66,7 @@ namespace iText.Samples
         /**
          * Global map of classes with ignored areas
          */
-        private static IDictionary<String, IDictionary<int, IList<Rectangle>>> ignoredClassesMap;
+        private static readonly IDictionary<String, IDictionary<int, IList<Rectangle>>> ignoredClassesMap;
 
         static SamplesWrapperTest()
         {
@@ -85,6 +89,7 @@ namespace iText.Samples
 
             // Samples are run by separate samples runner
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Fonts.MergeAndAddFont");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Parse.ExtractStreams");
 
             // TODO DEVSIX-3189
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.TableBorder");
