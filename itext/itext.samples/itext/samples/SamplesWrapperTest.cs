@@ -73,6 +73,9 @@ namespace iText.Samples
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox");
 
+            // Samples are run by separate samples runner
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Fonts.MergeAndAddFont");
+            
             // TODO DEVSIX-3189
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.TableBorder");
             
