@@ -58,6 +58,14 @@ namespace iText.Samples.Sandbox.Tables
                 : base(modelElement)
             {
                 this.title = title;
+            }            
+            
+            // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+            // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+            // renderer will be created
+            public override IRenderer GetNextRenderer()
+            {
+                return new CellTitleRenderer((Cell) modelElement, title);
             }
 
             public override void DrawBorder(DrawContext drawContext)
