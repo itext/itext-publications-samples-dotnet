@@ -69,7 +69,7 @@
       <Name>itext.cleanup</Name>
     </ProjectReference>
     <Reference Include="itext.cleanup, Version=2.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.pdfSweep.2.0.5-SNAPSHOT\lib\net40\itext.cleanup.dll</HintPath>
+      <HintPath>$(SolutionDir)\packages\itext7.pdfsweep.2.0.5-SNAPSHOT\lib\net40\itext.cleanup.dll</HintPath>
     </Reference>
     <ProjectReference Include="..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')">
       <Project>{dcae8241-e391-418d-ba36-c7c064d7c413}</Project>
