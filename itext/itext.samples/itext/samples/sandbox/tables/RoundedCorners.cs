@@ -10,11 +10,9 @@ sales@itextpdf.com
 using System;
 using System.IO;
 using iText.Kernel.Pdf;
-using iText.Kernel.Pdf.Canvas;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
@@ -36,6 +34,15 @@ namespace iText.Samples.Sandbox.Tables
             Document doc = new Document(pdfDoc);
 
             Table table = new Table(UnitValue.CreatePercentArray(3)).UseAllAvailableWidth();
+
+            // By default iText collapses borders and draws them on table level.
+            // In this sample, however, we want each cell to draw its borders separately,
+            // that's why we need to override border collapse.
+            table.SetBorderCollapse(BorderCollapsePropertyValue.SEPARATE);
+
+            // Sets horizontal spacing between all the table's cells. See css's border-spacing for more information.
+            table.SetHorizontalBorderSpacing(5);
+
             Cell cell = GetCell("These cells have rounded borders at the top.");
             table.AddCell(cell);
 
@@ -50,51 +57,12 @@ namespace iText.Samples.Sandbox.Tables
             doc.Close();
         }
 
-        private Cell GetCell(String content)
+        private static Cell GetCell(String content)
         {
             Cell cell = new Cell().Add(new Paragraph(content));
-            cell.SetNextRenderer(new RoundedCornersCellRenderer(cell));
-            cell.SetPadding(5);
-            cell.SetBorder(null);
+            cell.SetBorderTopRightRadius(new BorderRadius(4));
+            cell.SetBorderTopLeftRadius(new BorderRadius(4));
             return cell;
-        }
-
-        private class RoundedCornersCellRenderer : CellRenderer
-        {
-            public RoundedCornersCellRenderer(Cell modelElement)
-                : base(modelElement)
-            {
-            }            
-            
-            // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
-            // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
-            // renderer will be created
-            public override IRenderer GetNextRenderer()
-            {
-                return new RoundedCornersCellRenderer((Cell) modelElement);
-            }
-
-            public override void Draw(DrawContext drawContext)
-            {
-                float llx = GetOccupiedAreaBBox().GetX() + 2;
-                float lly = GetOccupiedAreaBBox().GetY() + 2;
-                float urx = GetOccupiedAreaBBox().GetX() + GetOccupiedAreaBBox().GetWidth() - 2;
-                float ury = GetOccupiedAreaBBox().GetY() + GetOccupiedAreaBBox().GetHeight() - 2;
-                
-                float r = 4;
-                float b = 0.4477f;
-                
-                PdfCanvas canvas = drawContext.GetCanvas();
-                canvas.MoveTo(llx, lly);
-                canvas.LineTo(urx, lly);
-                canvas.LineTo(urx, ury - r);
-                canvas.CurveTo(urx, ury - r * b, urx - r * b, ury, urx - r, ury);
-                canvas.LineTo(llx + r, ury);
-                canvas.CurveTo(llx + r * b, ury, llx, ury - r * b, llx, ury - r);
-                canvas.LineTo(llx, lly);
-                canvas.Stroke();
-                base.Draw(drawContext);
-            }
         }
     }
 }
