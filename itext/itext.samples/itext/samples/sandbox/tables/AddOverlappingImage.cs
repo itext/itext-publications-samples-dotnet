@@ -10,6 +10,7 @@
 using System;
 using System.IO;
 using iText.IO.Image;
+using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
@@ -38,10 +39,6 @@ namespace iText.Samples.Sandbox.Tables
             // By default column width is calculated automatically for the best fit.
             // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
             Table table = new Table(UnitValue.CreatePercentArray(5)).UseAllAvailableWidth();
-            
-            // Adds drawn on a canvas image to the table
-            table.SetNextRenderer(new OverlappingImageTableRenderer(table, new Table.RowRange(0, 25),
-                ImageDataFactory.Create("../../resources/img/hero.jpg")));
 
             for (int r = 'A'; r <= 'Z'; r++) 
             {
@@ -53,6 +50,10 @@ namespace iText.Samples.Sandbox.Tables
                 }
             }
 
+            // Adds drawn on a canvas image to the table
+            table.SetNextRenderer(new OverlappingImageTableRenderer(table,
+                ImageDataFactory.Create("../../resources/img/hero.jpg")));
+
             doc.Add(table);
 
             doc.Close();
@@ -61,12 +62,6 @@ namespace iText.Samples.Sandbox.Tables
         private class OverlappingImageTableRenderer : TableRenderer
         {
             private ImageData image;
-
-            public OverlappingImageTableRenderer(Table modelElement, Table.RowRange rowRange, ImageData img)
-                : base(modelElement, rowRange)
-            {
-                image = img;
-            }
 
             public OverlappingImageTableRenderer(Table modelElement, ImageData img)
                 : base(modelElement)
@@ -77,14 +72,12 @@ namespace iText.Samples.Sandbox.Tables
         
         public override void DrawChildren(DrawContext drawContext)
         {
-            base.DrawChildren(drawContext);
-            
-            float x = Math.Max(GetOccupiedAreaBBox().GetX() +
-                    GetOccupiedAreaBBox().GetWidth() / 3 - image.GetWidth(), 0);
-            float y = Math.Max(GetOccupiedAreaBBox().GetY() +
-                    GetOccupiedAreaBBox().GetHeight() / 3 - image.GetHeight(), 0);
-            
-            drawContext.GetCanvas().AddImage(image, x, y, false);
+
+            // Use the coordinates of the cell in the fourth row and the second column to draw the image
+            Rectangle rect = rows[3][1].GetOccupiedAreaBBox();
+                base.DrawChildren(drawContext);
+
+            drawContext.GetCanvas().AddImage(image, rect.GetLeft() + 10, rect.GetTop() - image.GetHeight(), false);
         }            
         
             // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
