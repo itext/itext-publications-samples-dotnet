@@ -44,7 +44,7 @@ namespace iText.Samples.Sandbox.Tables
             doc.Close();
         }
 
-        private void BuildNestedTables(Table outerTable)
+        private static void BuildNestedTables(Table outerTable)
         {
             Table innerTable1 = new Table(UnitValue.CreatePercentArray(1));
             innerTable1.SetWidth(100f);

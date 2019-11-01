@@ -54,6 +54,7 @@ namespace iText.Samples.Sandbox.Tables
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
+            // Fictitiously layout the element to find out, how much space it takes
             IRenderer tableRenderer = table.CreateRendererSubTree().SetParent(doc.GetRenderer());
             LayoutResult tableLayoutResult = tableRenderer.Layout(new LayoutContext(
                 new LayoutArea(0, new Rectangle(550 + 72, 1000))));

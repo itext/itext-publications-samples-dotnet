@@ -102,7 +102,7 @@ namespace iText.Samples
             // TODO DEVSIX-3188
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.SplitRowAtSpecificRow");
 
-            // TODO DEVSIX-3189
+            // TODO DEVSIX-3187
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.RepeatLastRows");
 
             // TODO DEVSIX-3187

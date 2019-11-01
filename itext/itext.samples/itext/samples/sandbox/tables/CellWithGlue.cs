@@ -35,25 +35,23 @@ namespace iText.Samples.Sandbox.Tables
             Document doc = new Document(pdfDoc);
 
             // By default column width is calculated automatically for the best fit.
-            // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
-            Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
+            // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
+            Table table = new Table(UnitValue.CreatePercentArray(2));
             table.SetHorizontalAlignment(HorizontalAlignment.LEFT);
             table.SetWidth(UnitValue.CreatePercentValue(60));
             table.SetMarginBottom(20);
 
             Cell cell = new Cell().Add(new Paragraph("Received Rs (in Words):"));
-            cell.SetBorder(Border.NO_BORDER);
-            cell.SetBorderLeft(new SolidBorder(1));
-            cell.SetBorderTop(new SolidBorder(1));
-            cell.SetBorderBottom(new SolidBorder(1));
+
+            // Set all the cell's borders except for the right one to have black color and width of 1 point
+            cell.SetBorder(new SolidBorder(1));
+            cell.SetBorderRight(Border.NO_BORDER);
             table.AddCell(cell);
 
             cell = new Cell().Add(new Paragraph("Priceless"));
             cell.SetTextAlignment(TextAlignment.RIGHT);
-            cell.SetBorder(Border.NO_BORDER);
-            cell.SetBorderRight(new SolidBorder(1));
-            cell.SetBorderTop(new SolidBorder(1));
-            cell.SetBorderBottom(new SolidBorder(1));
+            cell.SetBorder(new SolidBorder(1));
+            cell.SetBorderLeft(Border.NO_BORDER);
             table.AddCell(cell);
 
             doc.Add(table);
@@ -62,7 +60,7 @@ namespace iText.Samples.Sandbox.Tables
 
             doc.Add(table);
 
-            table = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth();
+            table = new Table(UnitValue.CreatePercentArray(1));
             table.SetHorizontalAlignment(HorizontalAlignment.LEFT);
             table.SetWidth(UnitValue.CreatePercentValue(50));
 

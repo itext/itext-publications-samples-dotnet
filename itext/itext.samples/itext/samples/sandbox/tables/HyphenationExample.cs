@@ -32,8 +32,8 @@ namespace iText.Samples.Sandbox.Tables
         private void ManipulatePdf(string dest)
         {
             // See hyphenation example of specified word in console
-            // For the correct run of sample, please, add itext.hyph dependency 
-            // which could be found on the following web-page https://mvnrepository.com/artifact/com.itextpdf/hyph
+            // For the correct run of sample, please, add an itext.hyph dependency,
+            // which could be found on the following web-page: https://mvnrepository.com/artifact/com.itextpdf/hyph
             Hyphenation s = Hyphenator.Hyphenate("de", "DE", "Leistungsscheinziffer", 2, 2);
             Console.Out.WriteLine(s);
 
@@ -41,7 +41,7 @@ namespace iText.Samples.Sandbox.Tables
             Document doc = new Document(pdfDoc);
             doc.SetMargins(0, 0, 0, 0);
 
-            Table table = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth().SetFixedLayout();
+            Table table = new Table(UnitValue.CreatePercentArray(1)).SetFixedLayout();
             table.SetWidth(UnitValue.CreatePercentValue(10));
 
             Text text = new Text("Leistungsscheinziffer");

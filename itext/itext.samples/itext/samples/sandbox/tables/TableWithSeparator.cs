@@ -45,7 +45,7 @@ namespace iText.Samples.Sandbox.Tables
             doc.Close();
         }
 
-        private Cell GetCell1()
+        private static Cell GetCell1()
         {
             Cell cell = new Cell();
             
@@ -59,7 +59,7 @@ namespace iText.Samples.Sandbox.Tables
             return cell;
         }
 
-        private Cell GetCell2()
+        private static Cell GetCell2()
         {
             Cell cell = new Cell();
             
@@ -75,7 +75,7 @@ namespace iText.Samples.Sandbox.Tables
             return cell;
         }
 
-        private Cell GetCell3()
+        private static Cell GetCell3()
         {
             Cell cell = new Cell();
             
@@ -92,7 +92,7 @@ namespace iText.Samples.Sandbox.Tables
             return cell;
         }
 
-        private Cell GetCell4()
+        private static Cell GetCell4()
         {
             Cell cell = new Cell();
             

@@ -35,7 +35,7 @@ namespace iText.Samples.Sandbox.Tables
             Document doc = new Document(pdfDoc, PageSize.A5.Rotate());
 
             // By default column width is calculated automatically for the best fit.
-            // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+            // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
             Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
 
             // A long phrase with newlines
@@ -45,6 +45,9 @@ namespace iText.Samples.Sandbox.Tables
             // The phrase fits the fixed height
             table.AddCell("set height (more than sufficient)");
             cell.SetHeight(172);
+
+            // In iText7 a cell is meant to be used only once in the table.
+            // If you want to reuse it, please clone it (either including the content or not)
             table.AddCell(cell.Clone(true));
 
             // the phrase doesn't fit the fixed height

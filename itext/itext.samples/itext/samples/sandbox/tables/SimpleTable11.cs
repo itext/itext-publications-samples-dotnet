@@ -70,7 +70,7 @@ namespace iText.Samples.Sandbox.Tables
             doc.Close();
         }
 
-        private Cell CreateCell(String content, float borderWidth, int colspan, TextAlignment? alignment)
+        private static Cell CreateCell(String content, float borderWidth, int colspan, TextAlignment? alignment)
         {
             Cell cell = new Cell(1, colspan).Add(new Paragraph(content));
             cell.SetTextAlignment(alignment);

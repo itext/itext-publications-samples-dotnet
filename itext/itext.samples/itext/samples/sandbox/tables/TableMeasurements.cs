@@ -33,7 +33,7 @@ namespace iText.Samples.Sandbox.Tables
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
-            Table table = new Table(UnitValue.CreatePercentArray(10)).UseAllAvailableWidth();
+            Table table = new Table(UnitValue.CreatePercentArray(10));
             table.SetWidth(MillimetersToPoints(100));
             table.AddCell(GetCell(10));
             table.AddCell(GetCell(5));
@@ -53,7 +53,7 @@ namespace iText.Samples.Sandbox.Tables
             return (value / 25.4f) * 72f;
         }
 
-        private Cell GetCell(int cm)
+        private static Cell GetCell(int cm)
         {
             Cell cell = new Cell(1, cm);
             Paragraph p = new Paragraph(String.Format("{0}mm", 10 * cm)).SetFontSize(8);

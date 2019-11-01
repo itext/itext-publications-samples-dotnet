@@ -71,8 +71,9 @@ namespace iText.Samples.Sandbox.Tables
             public override void DrawBorder(DrawContext drawContext)
             {
                 PdfPage currentPage = drawContext.GetDocument().GetPage(GetOccupiedArea().GetPageNumber());
-                
-                // create above canvas in order to draw above borders (notice that iText draws borders using TableRenderer)
+
+                // Create an above canvas in order to draw above borders.
+                // Notice: bear in mind that iText draws cell borders on its TableRenderer level.
                 PdfCanvas aboveCanvas = new PdfCanvas(currentPage.NewContentStreamAfter(), currentPage.GetResources(), 
                     drawContext.GetDocument());
                 new Canvas(aboveCanvas, drawContext.GetDocument(), GetOccupiedAreaBBox())
@@ -80,11 +81,12 @@ namespace iText.Samples.Sandbox.Tables
                         .SetMultipliedLeading(1)
                         .SetMargin(0)
                         .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-                        .SetFixedPosition(GetOccupiedAreaBBox().GetLeft() + 5, GetOccupiedAreaBBox().GetTop() - 8, 30));
+                        .SetFixedPosition(GetOccupiedAreaBBox().GetLeft() + 5, 
+                            GetOccupiedAreaBBox().GetTop() - 8, 30));
             }
         }
 
-        private Cell GetCell(string content, string title)
+        private static Cell GetCell(string content, string title)
         {
             Cell cell = new Cell().Add(new Paragraph(content));
             cell.SetNextRenderer(new CellTitleRenderer(cell, title));

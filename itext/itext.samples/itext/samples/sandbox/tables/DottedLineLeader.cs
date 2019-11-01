@@ -67,7 +67,7 @@ namespace iText.Samples.Sandbox.Tables
             doc.Close();
         }
 
-        private Cell GetCell(Paragraph p, VerticalAlignment? verticalAlignment)
+        private static Cell GetCell(Paragraph p, VerticalAlignment? verticalAlignment)
         {
             Cell cell = new Cell();
             cell.SetVerticalAlignment(verticalAlignment);

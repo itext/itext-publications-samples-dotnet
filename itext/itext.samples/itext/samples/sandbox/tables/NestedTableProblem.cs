@@ -39,11 +39,11 @@ namespace iText.Samples.Sandbox.Tables
             doc.SetMargins(30, 21, 35, 21);
 
             // inner table
-            Table innerTable = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth();
+            Table innerTable = new Table(UnitValue.CreatePercentArray(1));
+            innerTable.SetWidth(UnitValue.CreatePercentValue(80));
             innerTable.SetHorizontalAlignment(HorizontalAlignment.LEFT);
             innerTable.AddCell(new Cell().SetBorder(new SolidBorder(ColorConstants.RED, 1))
                 .Add(new Paragraph("Goodbye World")));
-            innerTable.SetWidth(UnitValue.CreatePercentValue(80));
 
             // outer table
             Table outerTable = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth();

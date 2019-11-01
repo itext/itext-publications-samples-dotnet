@@ -42,7 +42,9 @@ namespace iText.Samples.Sandbox.Tables
             
             for (int aw = 0; aw < 16; aw++)
             {
-                Cell cell = new Cell().Add(new Paragraph("hi").SetFont(font).SetFontColor(ColorConstants.WHITE));
+                Cell cell = new Cell().Add(new Paragraph("hi")
+                    .SetFont(font)
+                    .SetFontColor(ColorConstants.WHITE));
                 cell.SetBackgroundColor(ColorConstants.BLUE);
                 cell.SetBorder(Border.NO_BORDER);
                 cell.SetTextAlignment(TextAlignment.CENTER);

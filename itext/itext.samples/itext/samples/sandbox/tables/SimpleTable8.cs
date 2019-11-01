@@ -36,13 +36,10 @@ namespace iText.Samples.Sandbox.Tables
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
-            Table table = new Table(UnitValue.CreatePercentArray(3)).UseAllAvailableWidth();
-
-            PdfReader reader = new PdfReader(SRC + "header_test_file.pdf");
-            PdfDocument srcDoc = new PdfDocument(reader);
-            
+            PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC + "header_test_file.pdf"));
             PdfFormXObject header = srcDoc.GetFirstPage().CopyAsFormXObject(pdfDoc);
 
+            Table table = new Table(UnitValue.CreatePercentArray(3)).UseAllAvailableWidth();
             Cell cell = new Cell(1, 3).Add(new Image(header).SetWidth(UnitValue.CreatePercentValue(100))
                 .SetAutoScale(true));
             table.AddCell(cell);
@@ -55,8 +52,7 @@ namespace iText.Samples.Sandbox.Tables
                 }
             }
 
-            reader = new PdfReader(SRC + "footer_test_file.pdf");
-            srcDoc = new PdfDocument(reader);
+            srcDoc = new PdfDocument(new PdfReader(SRC + "footer_test_file.pdf"));
            
             PdfFormXObject footer = srcDoc.GetFirstPage().CopyAsFormXObject(pdfDoc);
 

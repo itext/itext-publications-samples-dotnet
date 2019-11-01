@@ -67,7 +67,11 @@ namespace iText.Samples.Sandbox.Tables
 
             Cell cell = new Cell().Add(table);
             cell.SetBorder(Border.NO_BORDER);
-            nesting.AddCell(cell.SetKeepTogether(true));
+
+            // iText will make its best to process this cell on a single area
+            cell.SetKeepTogether(true);
+
+            nesting.AddCell(cell);
 
             doc.Add(nesting);
 

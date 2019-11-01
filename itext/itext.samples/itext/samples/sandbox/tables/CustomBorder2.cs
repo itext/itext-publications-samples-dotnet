@@ -40,7 +40,7 @@ namespace iText.Samples.Sandbox.Tables
             Document doc = new Document(pdfDoc);
 
             // By default column width is calculated automatically for the best fit.
-            // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+            // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
             Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
 
             for (int i = 1; i < 60; i++) 
@@ -86,8 +86,8 @@ namespace iText.Samples.Sandbox.Tables
                 // because there is an overflow renderer
                 splitRenderer.bottom = false;
 
-                // If top is true, the split renderer is the first renderer of the document,
-                // if false, iText has already processed the first renderer
+                // If top is true, the split renderer is the first renderer of the document.
+                // If false, iText has already processed the first renderer
                 splitRenderer.top = this.top;
 
                 CustomBorder2TableRenderer overflowRenderer = (CustomBorder2TableRenderer)results[1];

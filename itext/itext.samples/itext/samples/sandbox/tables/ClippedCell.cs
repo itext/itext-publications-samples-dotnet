@@ -76,9 +76,10 @@ namespace iText.Samples.Sandbox.Tables
                     new Rectangle(area.GetLeft(), area.GetTop() - (float) RetrieveHeight(), area.GetWidth(),
                         (float) RetrieveHeight())));
 
-                // If content doesn't fit the size of cell,
-                // it returns layout result with cell size optimized for the current clipped context
                 LayoutResult result = base.Layout(context);
+                // If content doesn't fit the size of a cell,
+                // iTest will still return layout result full as if everything is OK.
+                // As a result, the cell's content will be clipped.
                 if (LayoutResult.FULL != result.GetStatus())
                 {
                     return new LayoutResult(LayoutResult.FULL, result.GetOccupiedArea(), null, null);

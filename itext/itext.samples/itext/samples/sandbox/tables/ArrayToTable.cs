@@ -36,10 +36,10 @@ namespace iText.Samples.Sandbox.Tables
             Document doc = new Document(pdfDoc);
 
             // By default column width is calculated automatically for the best fit.
-            // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+            // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
             Table table = new Table(UnitValue.CreatePercentArray(8)).UseAllAvailableWidth();
 
-            List<List<string>> dataset = getData();
+            List<List<string>> dataset = GetData();
             foreach (List<string> record in dataset)
             {
                 foreach (string field in record)
@@ -53,19 +53,18 @@ namespace iText.Samples.Sandbox.Tables
             doc.Close();
         }
 
-        public List<List<string>> getData()
+        private static List<List<string>> GetData()
         {
             List<List<string>> data = new List<List<string>>();
             String[] tableTitleList = {" Title", " (Re)set", " Obs", " Mean", " Std.Dev", " Min", " Max", "Unit"};
             data.Add(tableTitleList.ToList());
 
-            for (int i = 0; i < 10;)
+            for (int i = 0; i < 10; i++)
             {
                 List<string> dataLine = new List<string>();
-                i++;
                 for (int j = 0; j < tableTitleList.Length; j++)
                 {
-                    dataLine.Add(tableTitleList[j] + " " + i);
+                    dataLine.Add(tableTitleList[j] + " " + (i + 1));
                 }
 
                 data.Add(dataLine);

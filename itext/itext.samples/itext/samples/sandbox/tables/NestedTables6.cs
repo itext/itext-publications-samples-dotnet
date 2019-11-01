@@ -35,7 +35,7 @@ namespace iText.Samples.Sandbox.Tables
             Document doc = new Document(pdfDoc, new PageSize(1200, 800));
 
             // Header part
-            Table mainTable = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth();
+            Table mainTable = new Table(UnitValue.CreatePercentArray(1));
             mainTable.SetWidth(1000);
 
             // Notice that in itext7 there is no getDefaultCell method

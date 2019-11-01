@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Tables
             new KeyValueTable().ManipulatePdf(DEST);
         }
 
-        public void ManipulatePdf(string dest)
+        private void ManipulatePdf(string dest)
         {
             UserObject rohit = new UserObject();
             rohit.Name = "Rohit";
@@ -55,9 +55,9 @@ namespace iText.Samples.Sandbox.Tables
             document.Close();
         }
 
-        private Table CreateTable(UserObject user, PdfFont titleFont, PdfFont defaultFont)
+        private static Table CreateTable(UserObject user, PdfFont titleFont, PdfFont defaultFont)
         {
-            Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
+            Table table = new Table(UnitValue.CreatePercentArray(2));
             table.SetWidth(UnitValue.CreatePercentValue(30)).SetMarginBottom(10);
             table.AddHeaderCell(new Cell().SetFont(titleFont).Add(new Paragraph("Key")));
             table.AddHeaderCell(new Cell().SetFont(titleFont).Add(new Paragraph("Value")));

@@ -23,10 +23,6 @@ namespace iText.Samples.Sandbox.Tables
     {
         public static readonly string DEST = "../../results/sandbox/tables/key_value_table2.pdf";
 
-        protected PdfFont regular;
-
-        protected PdfFont bold;
-
         public static void Main(String[] args)
         {
             FileInfo file = new FileInfo(DEST);
@@ -37,8 +33,8 @@ namespace iText.Samples.Sandbox.Tables
 
         private void ManipulatePdf(string dest)
         {
-            regular = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
-            bold = PdfFontFactory.CreateFont(StandardFonts.TIMES_BOLD);
+            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.TIMES_BOLD);
+            PdfFont regular = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
 
             UserObject rohit = new UserObject();
             rohit.Name = "Rohit";
@@ -55,12 +51,12 @@ namespace iText.Samples.Sandbox.Tables
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdf);
 
-            document.Add(CreateTable(rohit, bruno));
+            document.Add(CreateTable(rohit, bruno, bold, regular));
 
             document.Close();
         }
 
-        private Table CreateTable(UserObject user1, UserObject user2)
+        private static Table CreateTable(UserObject user1, UserObject user2, PdfFont bold, PdfFont regular)
         {
             Table table = new Table(UnitValue.CreatePercentArray(3)).UseAllAvailableWidth();
 

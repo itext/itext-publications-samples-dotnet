@@ -37,7 +37,7 @@ namespace iText.Samples.Sandbox.Tables
             Document doc = new Document(pdfDoc);
 
             // By default column width is calculated automatically for the best fit.
-            // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+            // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
             Table table = new Table(UnitValue.CreatePercentArray(5)).UseAllAvailableWidth();
 
             for (int r = 'A'; r <= 'Z'; r++) 

@@ -86,6 +86,7 @@ namespace iText.Samples.Sandbox.Tables
             public override void Draw(DrawContext drawContext)
             {
                 base.Draw(drawContext);
+
                 PdfLinkAnnotation linkAnnotation = new PdfLinkAnnotation(GetOccupiedAreaBBox());
                 linkAnnotation.SetHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT);
                 linkAnnotation.SetAction(PdfAction.CreateURI(url));

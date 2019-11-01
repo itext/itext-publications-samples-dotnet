@@ -47,7 +47,7 @@ namespace iText.Samples.Sandbox.Tables {
         ///          the second consists of an inner table.</summary>
         /// <param name="keepFirstCellTogether">bool value which defines whether to keep the first cell together or not</param>
         /// <returns><see cref="Table"/> with the format specified above</returns>
-        private Table CreateTable(bool keepFirstCellTogether) {
+        private static Table CreateTable(bool keepFirstCellTogether) {
             Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
             table.SetMarginTop(10);
 

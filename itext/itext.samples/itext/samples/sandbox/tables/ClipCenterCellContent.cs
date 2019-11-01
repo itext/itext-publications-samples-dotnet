@@ -85,14 +85,16 @@ namespace iText.Samples.Sandbox.Tables
 
             public override void Draw(DrawContext drawContext)
             {
+
+                // Fictitiously layout the renderer and find out, how much space does it require
                 IRenderer pr = content.CreateRendererSubTree().SetParent(this);
 
                 LayoutResult textArea = pr.Layout(new LayoutContext(
                     new LayoutArea(0, new Rectangle(GetOccupiedAreaBBox().GetWidth(), 1000))));
 
-                float spaceneeded = textArea.GetOccupiedArea().GetBBox().GetHeight();
+                float spaceNeeded = textArea.GetOccupiedArea().GetBBox().GetHeight();
                 Console.WriteLine("The content requires {0} pt whereas the height is {1} pt.",
-                    spaceneeded, GetOccupiedAreaBBox().GetHeight());
+                    spaceNeeded, GetOccupiedAreaBBox().GetHeight());
 
                 float offset = (GetOccupiedAreaBBox().GetHeight() - textArea.GetOccupiedArea()
                                     .GetBBox().GetHeight()) / 2;
@@ -104,7 +106,7 @@ namespace iText.Samples.Sandbox.Tables
 
                 Canvas layoutCanvas = new Canvas(new PdfCanvas(xObject, drawContext.GetDocument()),
                     drawContext.GetDocument(),
-                    new Rectangle(0, offset, GetOccupiedAreaBBox().GetWidth(), spaceneeded));
+                    new Rectangle(0, offset, GetOccupiedAreaBBox().GetWidth(), spaceNeeded));
                 layoutCanvas.Add(content);
 
                 drawContext.GetCanvas().AddXObject(xObject, occupiedArea.GetBBox().GetLeft(),

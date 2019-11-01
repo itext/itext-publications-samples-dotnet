@@ -43,7 +43,7 @@ namespace iText.Samples.Sandbox.Tables
                 table.AddCell(new Cell().Add(new Paragraph("hi")).SetBorder(Border.NO_BORDER));
             }
 
-            // Notice that one should set renderer after table completion
+            // Notice that one should set renderer after cells are added to the table
             table.SetNextRenderer(new TableBorderRenderer(table));
 
             doc.Add(table);

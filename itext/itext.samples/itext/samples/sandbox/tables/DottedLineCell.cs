@@ -40,7 +40,8 @@ namespace iText.Samples.Sandbox.Tables
 
             Table table = new Table(UnitValue.CreatePercentArray(3)).UseAllAvailableWidth();
 
-            // Draws dotted line borders
+            // Draws dotted line borders.
+            // Bear in mind that now one needs to disable the default border-drawing
             table.SetNextRenderer(new DottedLineTableRenderer(table, new Table.RowRange(0, 2)));
             table.AddCell(new Cell().Add(new Paragraph("A1")).SetBorder(Border.NO_BORDER));
             table.AddCell(new Cell().Add(new Paragraph("A2")).SetBorder(Border.NO_BORDER));
@@ -60,7 +61,7 @@ namespace iText.Samples.Sandbox.Tables
             Cell cell = new Cell().Add(new Paragraph("Test"));
             cell.SetNextRenderer(new DottedLineCellRenderer(cell));
             cell.SetBorder(Border.NO_BORDER);
-            table.AddCell(cell.SetBorder(Border.NO_BORDER));
+            table.AddCell(cell);
 
             doc.Add(table);
 

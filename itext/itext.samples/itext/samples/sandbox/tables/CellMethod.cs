@@ -45,7 +45,7 @@ namespace iText.Samples.Sandbox.Tables
             Document doc = new Document(pdfDoc);
 
             // By default column width is calculated automatically for the best fit.
-            // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+            // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
             Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
             
             table.AddCell("Winansi");
@@ -76,8 +76,9 @@ namespace iText.Samples.Sandbox.Tables
             }
 
             PdfFont f = GetFontForThisLanguage(language);
+            Paragraph paragraph = new Paragraph(line).SetFont(f);
 
-            Cell cell = new Cell().Add(new Paragraph(line).SetFont(f));
+            Cell cell = new Cell().Add(paragraph);
             cell.SetHorizontalAlignment(HorizontalAlignment.LEFT);
 
             if (size < 0)

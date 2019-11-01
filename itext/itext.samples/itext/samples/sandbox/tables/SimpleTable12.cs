@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Tables
     {
         public static readonly string DEST = "../../results/sandbox/tables/simple_table12.pdf";
 
-        private PdfFont font;
+        private static PdfFont font;
 
         public static void Main(String[] args)
         {
@@ -67,7 +67,7 @@ namespace iText.Samples.Sandbox.Tables
             doc.Close();
         }
 
-        private Cell CreateCell(String content, int colspan, int rowspan, int border)
+        private static Cell CreateCell(String content, int colspan, int rowspan, int border)
         {
             Cell cell = new Cell(rowspan, colspan).Add(new Paragraph(content).SetFont(font).SetFontSize(10));
             cell

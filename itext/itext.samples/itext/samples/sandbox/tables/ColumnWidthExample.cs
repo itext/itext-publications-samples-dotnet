@@ -39,6 +39,7 @@ namespace iText.Samples.Sandbox.Tables
 
             float[] columnWidths = {1, 5, 5};
             Table table = new Table(UnitValue.CreatePercentArray(columnWidths));
+
             PdfFont f = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
             Cell cell = new Cell(1, 3)
                 .Add(new Paragraph("This is a header"))
@@ -72,11 +73,11 @@ namespace iText.Samples.Sandbox.Tables
                 }
             }
 
-            for (int counter = 1; counter < 101; counter++)
+            for (int counter = 0; counter < 100; counter++)
             {
-                table.AddCell(new Cell().SetTextAlignment(TextAlignment.CENTER).Add(new Paragraph(counter.ToString())));
-                table.AddCell(new Cell().SetTextAlignment(TextAlignment.CENTER).Add(new Paragraph("key " + counter)));
-                table.AddCell(new Cell().SetTextAlignment(TextAlignment.CENTER).Add(new Paragraph("value " + counter)));
+                table.AddCell(new Cell().SetTextAlignment(TextAlignment.CENTER).Add(new Paragraph((counter + 1).ToString())));
+                table.AddCell(new Cell().SetTextAlignment(TextAlignment.CENTER).Add(new Paragraph("key " + (counter + 1))));
+                table.AddCell(new Cell().SetTextAlignment(TextAlignment.CENTER).Add(new Paragraph("value " + (counter + 1))));
             }
 
             doc.Add(table);

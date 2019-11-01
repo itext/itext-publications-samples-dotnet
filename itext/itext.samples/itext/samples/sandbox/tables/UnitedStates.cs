@@ -61,7 +61,7 @@ namespace iText.Samples.Sandbox.Tables
         }
 
 
-        private void AddRowToTable(Table table, String line, PdfFont font, bool isHeader)
+        private static void AddRowToTable(Table table, String line, PdfFont font, bool isHeader)
         {
             // Parses string line with specified delimiter 
             StringTokenizer tokenizer = new StringTokenizer(line, ";");

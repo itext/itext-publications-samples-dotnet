@@ -58,7 +58,7 @@ namespace iText.Samples.Sandbox.Tables
             doc.Add(importantNotice);
 
             Table table = new Table(UnitValue.CreatePercentArray(10))
-                .UseAllAvailableWidth().SetFixedLayout().SetWidth(UnitValue.CreatePercentValue(80));
+                .SetFixedLayout().SetWidth(UnitValue.CreatePercentValue(80));
 
             Cell cell = new Cell(1, 3).Add(docTitle);
             cell.SetBorder(Border.NO_BORDER);

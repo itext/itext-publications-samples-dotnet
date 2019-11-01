@@ -74,16 +74,6 @@ namespace iText.Samples.Sandbox.Tables
                 this.img = img;
             }
 
-            public void ColorRectangle(PdfCanvas canvas, Color color, float x, float y, float width, float height)
-            {
-                canvas
-                    .SaveState()
-                    .SetFillColor(color)
-                    .Rectangle(x, y, width, height)
-                    .FillStroke()
-                    .RestoreState();
-            }            
-            
             // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
             // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
             // renderer will be created
@@ -109,7 +99,17 @@ namespace iText.Samples.Sandbox.Tables
 
                 canvas.SetFillColor(new PatternColor(imgPattern));
                 canvas.Stroke();
+
                 canvas.RestoreState();
+            }
+
+            private static void ColorRectangle(PdfCanvas canvas, Color color, float x, float y, float width, float height) {
+                canvas
+                    .SaveState()
+                    .SetFillColor(color)
+                    .Rectangle(x, y, width, height)
+                    .FillStroke()
+                    .RestoreState();
             }
         }
     }

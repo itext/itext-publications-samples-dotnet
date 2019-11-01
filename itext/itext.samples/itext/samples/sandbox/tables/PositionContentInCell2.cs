@@ -137,7 +137,8 @@ namespace iText.Samples.Sandbox.Tables
                           (GetOccupiedAreaBBox().GetHeight() - (fontSizeUv.IsPointValue()
                                ? fontSizeUv.GetValue()
                                : 12f) * 1.5f);
-                new Document(drawContext.GetDocument()).ShowTextAligned(content, x, y, alignment);
+                new Canvas(drawContext.GetDocument().GetFirstPage(), drawContext.GetDocument().GetDefaultPageSize())
+                    .ShowTextAligned(content, x, y, alignment);
             }
         }
     }

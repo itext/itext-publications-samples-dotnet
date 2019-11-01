@@ -42,14 +42,14 @@ namespace iText.Samples.Sandbox.Tables
             ILineDash dashed = new Dashed();
 
             // By default column width is calculated automatically for the best fit.
-            // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+            // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
             Table table = new Table(UnitValue.CreatePercentArray(4)).UseAllAvailableWidth();
             table.SetMarginBottom(30);
             
             Cell cell = new Cell().Add(new Paragraph("dotted left border"));
             cell.SetBorder(Border.NO_BORDER);
             
-            //Draws custom borders to current cell
+            // Draws custom borders to current cell
             cell.SetNextRenderer(new CustomBorder3Renderer(cell,
                 new[] {null, dotted, null, null}));
             table.AddCell(cell);

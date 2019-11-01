@@ -44,7 +44,7 @@ namespace iText.Samples.Sandbox.Tables
             Image img2 = new Image(ImageDataFactory.Create(IMG2));
             Image img3 = new Image(ImageDataFactory.Create(IMG3));
 
-            Table table = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth();
+            Table table = new Table(UnitValue.CreatePercentArray(1));
             table.SetWidth(UnitValue.CreatePercentValue(50));
             table.AddCell("Different images, one after the other vertically:");
 

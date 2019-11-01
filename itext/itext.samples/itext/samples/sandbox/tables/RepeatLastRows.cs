@@ -36,7 +36,6 @@ namespace iText.Samples.Sandbox.Tables
             Document doc = new Document(pdfDoc);
 
             Table table = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth();
-            table.SetWidth(523);
             table.SetNextRenderer(new RepeatTableRenderer(table, new Table.RowRange(0, 113)));
 
             for (int i = 1; i < 115; i++)

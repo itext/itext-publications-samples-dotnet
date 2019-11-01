@@ -40,7 +40,7 @@ namespace iText.Samples.Sandbox.Tables
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
-            Table table = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth();
+            Table table = new Table(UnitValue.CreatePercentArray(1));
             table.SetWidth(400);
 
             Cell cell = new Cell();

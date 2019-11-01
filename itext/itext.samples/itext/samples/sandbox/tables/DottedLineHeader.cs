@@ -133,12 +133,13 @@ namespace iText.Samples.Sandbox.Tables
             {
                 base.Draw(drawContext);
                 PdfCanvas canvas = drawContext.GetCanvas();
-                
+                Rectangle bbox = GetOccupiedArea().GetBBox();
+
                 canvas.SetLineDash(3f, 3f);
-                canvas.MoveTo(GetOccupiedArea().GetBBox().GetLeft(), GetOccupiedArea().GetBBox().GetBottom());
-                canvas.LineTo(GetOccupiedArea().GetBBox().GetRight(), GetOccupiedArea().GetBBox().GetBottom());
-                canvas.MoveTo(GetOccupiedArea().GetBBox().GetLeft(), GetOccupiedArea().GetBBox().GetTop());
-                canvas.LineTo(GetOccupiedArea().GetBBox().GetRight(), GetOccupiedArea().GetBBox().GetTop());
+                canvas.MoveTo(bbox.GetLeft(), bbox.GetBottom());
+                canvas.LineTo(bbox.GetRight(), bbox.GetBottom());
+                canvas.MoveTo(bbox.GetLeft(), bbox.GetTop());
+                canvas.LineTo(bbox.GetRight(), bbox.GetTop());
                 canvas.Stroke();
             }
         }
