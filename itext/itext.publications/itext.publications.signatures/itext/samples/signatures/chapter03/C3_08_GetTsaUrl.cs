@@ -11,6 +11,7 @@ Copyright (c) 1998-2019 iText Group NV
 *
 * For more info, go to: http://itextpdf.com/learn
 */
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,52 +24,39 @@ using Org.BouncyCastle.Pkcs;
 
 namespace iText.Samples.Signatures.Chapter03
 {
-	public class C3_08_GetTsaUrl : SignatureTest
-	{
-        public const String expectedOutput = "";
-
-	    public static readonly string PROPERTIES = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/encryption/signkey.properties";
-
-		public static void Main(String[] args)
-		{
+    public class C3_08_GetTsaUrl
+    {
+        public static void Main(String[] args)
+        {
             Properties properties = new Properties();
-            properties.Load(new FileStream(PROPERTIES, FileMode.Open, FileAccess.Read));
-            String path = NUnit.Framework.TestContext.CurrentContext.TestDirectory + properties.GetProperty("PRIVATE");
-            char[] pass = properties.GetProperty("PASSWORD").ToCharArray();
-            string alias = null;
-            Pkcs12Store pk12;
 
-            pk12 = new Pkcs12Store(new FileStream(path, FileMode.Open, FileAccess.Read), pass);
+            // Specify the correct path to the certificate
+            properties.Load(new FileStream("c:/home/blowagie/key.properties", FileMode.Open, FileAccess.Read));
+            String path = properties.GetProperty("PRIVATE");
+            char[] pass = properties.GetProperty("PASSWORD").ToCharArray();
+
+            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(path, FileMode.Open, FileAccess.Read), pass);
+            string alias = null;
             foreach (var a in pk12.Aliases)
             {
-                alias = ((string)a);
+                alias = ((string) a);
                 if (pk12.IsKeyEntry(alias))
                     break;
             }
-            ICipherParameters pk = pk12.GetKey(alias).Key;
+
             X509CertificateEntry[] ce = pk12.GetCertificateChain(alias);
             X509Certificate[] chain = new X509Certificate[ce.Length];
             for (int k = 0; k < ce.Length; ++k)
+            {
                 chain[k] = ce[k].Certificate;
-			for (int i = 0; i < chain.Length; i++)
-			{
-				X509Certificate cert = (X509Certificate)chain[i];
-				System.Console.Out.WriteLine(String.Format("[{0}] {1}", i, cert.SubjectDN));
-				System.Console.Out.WriteLine(CertificateUtil.GetTSAURL(cert));
-			}
-		}
+            }
 
-		[NUnit.Framework.Test]
-        [Ignore("requires a valid certificate which is issued by the service that provides TSA access point")]
-		public virtual void RunTest()
-		{
-			SetupSystemOutput();
-			C3_08_GetTsaUrl.Main(null);
-			String sysOut = GetSystemOutput();
-			if (!sysOut.Equals(expectedOutput))
-			{
-				NUnit.Framework.Assert.Fail("Unexpected output.");
-			}
-		}
-	}
+            for (int i = 0; i < chain.Length; i++)
+            {
+                X509Certificate cert = chain[i];
+                Console.WriteLine("[{0}] {1}", i, cert.SubjectDN);
+                Console.WriteLine(CertificateUtil.GetTSAURL(cert));
+            }
+        }
+    }
 }

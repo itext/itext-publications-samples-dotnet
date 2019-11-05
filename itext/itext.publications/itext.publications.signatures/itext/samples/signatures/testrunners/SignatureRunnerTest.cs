@@ -19,11 +19,11 @@ using NUnit.Framework;
 namespace iText.Samples.Signatures.Testrunners
 {
     [TestFixtureSource("Data")]
-    public class Chapter02Test : WrappedSamplesRunner
+    public class SignatureRunnerTest : WrappedSamplesRunner
     {
         private static readonly IDictionary<String, IList<Rectangle>> classAreaMap;
 
-        static Chapter02Test()
+        static SignatureRunnerTest()
         {
             classAreaMap = new Dictionary<string, IList<Rectangle>>();
             classAreaMap.Add("iText.Samples.Signatures.Chapter02.C2_01_SignHelloWorld",
@@ -42,9 +42,11 @@ namespace iText.Samples.Signatures.Testrunners
                 new List<Rectangle>(new[] {new Rectangle(46, 472, 287, 255)}));
             classAreaMap.Add("iText.Samples.Signatures.Chapter02.C2_08_SignatureMetadata",
                 new List<Rectangle>(new[] {new Rectangle(46, 472, 287, 255)}));
+            classAreaMap.Add("iText.Samples.Signatures.Chapter03.C3_01_SignWithCAcert",
+                new List<Rectangle>(new[] {new Rectangle(36, 648, 200, 100)}));
         }
 
-        public Chapter02Test(RunnerParams runnerParams) : base(runnerParams)
+        public SignatureRunnerTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 
@@ -52,6 +54,7 @@ namespace iText.Samples.Signatures.Testrunners
         {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Signatures.Chapter02");
+            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Signatures.Chapter03");
 
             // Samples are run by separate samples runner
             searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter02.C2_12_LockFields");
@@ -59,6 +62,22 @@ namespace iText.Samples.Signatures.Testrunners
             searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter02.C2_09_SignatureTypes");
             searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter02.C2_11_SignatureWorkflow");
 
+            // Samples require a valid certificate which is issued by the service that provides CRL access point
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_02_GetCrlUrl");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_03_SignWithCRLDefaultImp");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_04_SignWithCRLOnline");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_05_SignWithCRLOffline");
+
+            // Samples require a valid certificate which is issued by the service that provides OCSP
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_06_GetOcspUrl");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_07_SignWithOCSP");
+
+            // Samples require a valid certificate which is issued by the service that provides TSA access point
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_08_GetTsaUrl");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_09_SignWithTSA");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_10_SignWithTSAEvent");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_12_SignWithEstimatedSize");
+            
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 

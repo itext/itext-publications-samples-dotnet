@@ -11,6 +11,7 @@ Copyright (c) 1998-2019 iText Group NV
 *
 * For more info, go to: http://itextpdf.com/learn
 */
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,88 +25,84 @@ using Org.BouncyCastle.Pkcs;
 
 namespace iText.Samples.Signatures.Chapter03
 {
-	public class C3_01_SignWithCAcert : SignatureTest
-	{
-	    public static readonly string SRC = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/pdfs/hello.pdf";
+    public class C3_01_SignWithCAcert
+    {
+        public static readonly string DEST = "../../results/signatures/chapter03/";
+        
+        public static readonly string SRC = "../../resources/pdfs/hello.pdf";
 
-	    public static readonly string DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter03/hello_cacert.pdf";
+        public static readonly String[] RESULT_FILES =
+        {
+            "hello_cacert.pdf"
+        };
 
-	    public static readonly string PROPERTIES = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/encryption/signkey.properties";
+        public void Sign(String src, String dest, X509Certificate[] chain, ICipherParameters pk,
+            String digestAlgorithm, PdfSigner.CryptoStandard subfilter, String reason, String location,
+            ICollection<ICrlClient> crlList, IOcspClient ocspClient, ITSAClient tsaClient, int estimatedSize)
+        {
+            PdfReader reader = new PdfReader(src);
+            PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
-		public virtual void Sign(String src, String dest, X509Certificate[] chain, ICipherParameters
-			 pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter
-			, String reason, String location, ICollection<ICrlClient> crlList, IOcspClient ocspClient
-			, ITSAClient tsaClient, int estimatedSize)
-		{
-			// Creating the reader and the signer
-			PdfReader reader = new PdfReader(src);
-			PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), false
-				);
-			// Creating the appearance
-			PdfSignatureAppearance appearance = signer.GetSignatureAppearance().SetReason(reason
-				).SetLocation(location).SetReuseAppearance(false);
-			Rectangle rect = new Rectangle(36, 648, 200, 100);
-			appearance.SetPageRect(rect).SetPageNumber(1);
-			signer.SetFieldName("sig");
-			// Creating the signature
-			IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
-			signer.SignDetached(pks, chain, crlList, ocspClient, tsaClient, estimatedSize, subfilter
-				);
-		}
+            // Create the signature appearance
+            Rectangle rect = new Rectangle(36, 648, 200, 100);
+            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
+            appearance
+                .SetReason(reason)
+                .SetLocation(location)
 
-		public static void Main(String[] args)
-		{
-			Properties properties = new Properties();
-			properties.Load(new FileStream(PROPERTIES, FileMode.Open, FileAccess.Read));
-            String path = NUnit.Framework.TestContext.CurrentContext.TestDirectory + properties.GetProperty("PRIVATE");
-			char[] pass = properties.GetProperty("PASSWORD").ToCharArray();
-			string alias = null;
-            Pkcs12Store pk12;
-            
-            pk12 = new Pkcs12Store(new FileStream(path, FileMode.Open, FileAccess.Read), pass);
+                // Specify if the appearance before field is signed will be used
+                // as a background for the signed field. The "false" value is the default value.
+                .SetReuseAppearance(false)
+                .SetPageRect(rect)
+                .SetPageNumber(1);
+            signer.SetFieldName("sig");
+
+            IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
+
+            // Sign the document using the detached mode, CMS or CAdES equivalent.
+            signer.SignDetached(pks, chain, crlList, ocspClient, tsaClient, estimatedSize, subfilter);
+        }
+
+        public static void Main(String[] args)
+        {
+            DirectoryInfo directory = new DirectoryInfo(DEST);
+            directory.Create();
+
+            Properties properties = new Properties();
+
+            /* This properties file should contain a CAcert certificate that belongs to the user,
+             * according to the original sample purpose. However right now it contains a simple
+             * self-signed certificate in p12 format, which serves as a stub.
+             */
+            properties.Load(new FileStream("../../resources/encryption/signkey.properties",
+                FileMode.Open, FileAccess.Read));
+
+            // Get path to the p12 file
+            String path = properties.GetProperty("PRIVATE");
+
+            // Get a password
+            char[] pass = properties.GetProperty("PASSWORD").ToCharArray();
+
+            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(path, FileMode.Open, FileAccess.Read), pass);
+            string alias = null;
             foreach (var a in pk12.Aliases)
             {
-                alias = ((string)a);
+                alias = ((string) a);
                 if (pk12.IsKeyEntry(alias))
                     break;
             }
+
             ICipherParameters pk = pk12.GetKey(alias).Key;
             X509CertificateEntry[] ce = pk12.GetCertificateChain(alias);
             X509Certificate[] chain = new X509Certificate[ce.Length];
             for (int k = 0; k < ce.Length; ++k)
+            {
                 chain[k] = ce[k].Certificate;
+            }
 
-			C3_01_SignWithCAcert app = new C3_01_SignWithCAcert();
-			app.Sign(SRC, DEST, chain, pk, DigestAlgorithms.SHA256, PdfSigner.CryptoStandard
-				.CMS, "Test", "Ghent", null, null, null, 0);
-		}
-
-		[NUnit.Framework.Test]
-		public virtual void RunTest()
-		{
-            Directory.CreateDirectory(NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter03/");
-			C3_01_SignWithCAcert.Main(null);
-			String[] resultFiles = new String[] { "hello_cacert.pdf" };
-			String destPath = String.Format(outPath, "chapter03");
-			String comparePath = String.Format(cmpPath, "chapter03");
-			String[] errors = new String[resultFiles.Length];
-			bool error = false;
-            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> {{1, JavaUtil.ArraysAsList(new Rectangle(36, 648, 200, 100))}};
-			for (int i = 0; i < resultFiles.Length; i++)
-			{
-				String resultFile = resultFiles[i];
-				String fileErrors = CheckForErrors(destPath + resultFile, comparePath + "cmp_" + 
-					resultFile, destPath, ignoredAreas);
-				if (fileErrors != null)
-				{
-					errors[i] = fileErrors;
-					error = true;
-				}
-			}
-			if (error)
-			{
-				NUnit.Framework.Assert.Fail(AccumulateErrors(errors));
-			}
-		}
-	}
+            new C3_01_SignWithCAcert().Sign(SRC, DEST + RESULT_FILES[0], chain, pk,
+                DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS,
+                "Test", "Ghent", null, null, null, 0);
+        }
+    }
 }

@@ -11,6 +11,7 @@ Copyright (c) 1998-2019 iText Group NV
 *
 * For more info, go to: http://itextpdf.com/learn
 */
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,78 +19,91 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.IO.Util;
 using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
 using iText.Signatures;
-using NUnit.Framework;
 using Org.BouncyCastle.Pkcs;
 
 namespace iText.Samples.Signatures.Chapter03
 {
-	public class C3_04_SignWithCRLOnline : C3_01_SignWithCAcert
-	{
-	    public static readonly string SRC = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/pdfs/hello.pdf";
+    public class C3_04_SignWithCRLOnline
+    {
+        public static readonly string DEST = "../../results/signatures/chapter03/";
 
-	    public static readonly string DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter03/hello_cacert_crl.pdf";
+        public static readonly string SRC = "../../resources/pdfs/hello.pdf";
 
-	    public static readonly string PROPERTIES = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/encryption/signkey.properties";
+        public static readonly String[] RESULT_FILES =
+        {
+            "hello_cacert_crl.pdf"
+        };
 
-		public static void Main(String[] args)
-		{
+        public static void Main(String[] args)
+        {
+            DirectoryInfo directory = new DirectoryInfo(DEST);
+            directory.Create();
+
             Properties properties = new Properties();
-            properties.Load(new FileStream(PROPERTIES, FileMode.Open, FileAccess.Read));
-            String path = NUnit.Framework.TestContext.CurrentContext.TestDirectory + properties.GetProperty("PRIVATE");
-            char[] pass = properties.GetProperty("PASSWORD").ToCharArray();
-            string alias = null;
-            Pkcs12Store pk12;
 
-            pk12 = new Pkcs12Store(new FileStream(path, FileMode.Open, FileAccess.Read), pass);
+            // Specify the correct path to the certificate
+            properties.Load(new FileStream("c:/home/blowagie/key.properties", FileMode.Open, FileAccess.Read));
+            String path = properties.GetProperty("PRIVATE");
+            char[] pass = properties.GetProperty("PASSWORD").ToCharArray();
+
+            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(path, FileMode.Open, FileAccess.Read), pass);
+            string alias = null;
             foreach (var a in pk12.Aliases)
             {
-                alias = ((string)a);
+                alias = ((string) a);
                 if (pk12.IsKeyEntry(alias))
                     break;
             }
+
             ICipherParameters pk = pk12.GetKey(alias).Key;
             X509CertificateEntry[] ce = pk12.GetCertificateChain(alias);
             X509Certificate[] chain = new X509Certificate[ce.Length];
             for (int k = 0; k < ce.Length; ++k)
+            {
                 chain[k] = ce[k].Certificate;
-			ICrlClient crlClient = new CrlClientOnline("https://crl.cacert.org/revoke.crl");
-			IList<ICrlClient> crlList = new List<ICrlClient>();
-			crlList.Add(crlClient);
-			C3_04_SignWithCRLOnline app = new C3_04_SignWithCRLOnline();
-			app.Sign(SRC, DEST, chain, pk, DigestAlgorithms.SHA256, PdfSigner.CryptoStandard
-				.CMS, "Test", "Ghent", crlList, null, null, 0);
-		}
+            }
 
-		[NUnit.Framework.Test]
-        [Ignore("requires a valid certificate which is issued by the service that provides" +
-                " CRL access point, test takes over 24 minutes to run")]
-		public override void RunTest()
-		{
-            Directory.CreateDirectory(NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter03/");
-			C3_04_SignWithCRLOnline.Main(null);
-			String[] resultFiles = new String[] { "hello_cacert_crl.pdf" };
-			String destPath = String.Format(outPath, "chapter03");
-			String comparePath = String.Format(cmpPath, "chapter03");
-			String[] errors = new String[resultFiles.Length];
-			bool error = false;
-            Dictionary<int, IList<Rectangle>> ignoredAreas = new Dictionary<int, IList<Rectangle>> { { 1, JavaUtil.ArraysAsList(new Rectangle(36, 648, 200, 100)) } };
+            /* Create a CrlClientOnline instance with specified Certificate Revocation List's URL.
+             * The exact URL for the CRL access point is specific for every CA provider.
+             * This one is specific for CAcert certificates.
+             */
+            ICrlClient crlClient = new CrlClientOnline("https://crl.cacert.org/revoke.crl");
+            IList<ICrlClient> crlList = new List<ICrlClient>();
+            crlList.Add(crlClient);
 
-			for (int i = 0; i < resultFiles.Length; i++)
-			{
-				String resultFile = resultFiles[i];
-				String fileErrors = CheckForErrors(destPath + resultFile, comparePath + "cmp_" + 
-					resultFile, destPath, ignoredAreas);
-				if (fileErrors != null)
-				{
-					errors[i] = fileErrors;
-					error = true;
-				}
-			}
-			if (error)
-			{
-				NUnit.Framework.Assert.Fail(AccumulateErrors(errors));
-			}
-		}
-	}
+            new C3_04_SignWithCRLOnline().Sign(SRC, DEST + RESULT_FILES[0], chain, pk,
+                DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS,
+                "Test", "Ghent", crlList, null, null, 0);
+        }
+
+        public void Sign(String src, String dest, X509Certificate[] chain, ICipherParameters pk,
+            String digestAlgorithm, PdfSigner.CryptoStandard subfilter, String reason, String location,
+            ICollection<ICrlClient> crlList, IOcspClient ocspClient, ITSAClient tsaClient, int estimatedSize)
+        {
+            PdfReader reader = new PdfReader(src);
+            PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
+
+            // Create the signature appearance
+            Rectangle rect = new Rectangle(36, 648, 200, 100);
+            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
+            appearance
+                .SetReason(reason)
+                .SetLocation(location)
+
+                // Specify if the appearance before field is signed will be used
+                // as a background for the signed field. The "false" value is the default value.
+                .SetReuseAppearance(false)
+                .SetPageRect(rect)
+                .SetPageNumber(1);
+            signer.SetFieldName("sig");
+
+            IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
+
+            // Sign the document using the detached mode, CMS or CAdES equivalent.
+            // Pass the created CRL to the signing method.
+            signer.SignDetached(pks, chain, crlList, ocspClient, tsaClient, estimatedSize, subfilter);
+        }
+    }
 }
