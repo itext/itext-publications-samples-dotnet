@@ -35,7 +35,8 @@
       <HintPath>$(SolutionDir)\packages\Portable.BouncyCastle.1.8.1.3\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="itext.licensekey, Version=3.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
-      <HintPath>..\..\..\..\packages\itext7.licensekey.3.0.5\lib\net40\itext.licensekey.dll</HintPath>
+      <HintPath>$(SolutionDir)\packages\itext7.licensekey.3.0.5\lib\net40\itext.licensekey.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)\packages\NUnit.3.7.1\lib\net40\nunit.framework.dll</HintPath>
