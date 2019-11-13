@@ -12,7 +12,7 @@
     </RootNamespace>
     <AssemblyName>itext.samples</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-	<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -73,6 +73,13 @@
     <Reference Include="itext.cleanup, Version=2.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')">
       <HintPath>$(SolutionDir)\packages\itext7.pdfsweep.2.0.5-SNAPSHOT\lib\net40\itext.cleanup.dll</HintPath>
     </Reference>
+    <ProjectReference Include="..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj">
+      <Project>{ff6ba09d-3655-466a-8c17-a7bfd3479ca1}</Project>
+      <Name>itext.html2pdf</Name>
+    </ProjectReference>
+    <Reference Include="itext.html2pdf, Version=2.1.7.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')">
+      <HintPath>$(SolutionDir)\packages\itext7.pdfhtml.2.1.7-SNAPSHOT\lib\net40\itext.html2pdf.dll</HintPath>
+    </Reference>
     <ProjectReference Include="..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')">
       <Project>{dcae8241-e391-418d-ba36-c7c064d7c413}</Project>
       <Name>itext.barcodes</Name>
@@ -88,7 +95,7 @@
       <Project>{cfe438d3-b3ae-4596-8410-3d9bbc39a05a}</Project>
       <Name>itext.typography</Name>
     </ProjectReference>
-	<Reference Include="itext.typography, Version=2.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')">
+    <Reference Include="itext.typography, Version=2.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')">
       <HintPath>$(SolutionDir)\packages\itext7.pdfcalligraph.2.0.5-SNAPSHOT\lib\net40\itext.typography.dll</HintPath>
     </Reference>
     <ProjectReference Include="..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj')">
@@ -132,6 +139,13 @@
     </ProjectReference>
     <Reference Include="itext.layout, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\itextcore\itext\itext.layout\itext.layout.csproj')">
       <HintPath>$(SolutionDir)\packages\itext7.7.1.10-SNAPSHOT\lib\net40\itext.layout.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="..\..\..\itextcore\itext\itext.styledxmlparser\itext.styledxmlparser.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.styledxmlparser\itext.styledxmlparser.csproj')">
+      <Project>{8636f290-00df-403e-b841-e4bfd6d9ce7a}</Project>
+      <Name>itext.styledxmlparser</Name>
+    </ProjectReference>
+    <Reference Include="itext.styledxmlparser, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\itextcore\itext\itext.styledxmlparser\itext.styledxmlparser.csproj')">
+      <HintPath>$(SolutionDir)\packages\itext7.7.1.10-SNAPSHOT\lib\net40\itext.styledxmlparser.dll</HintPath>
     </Reference>
     <ProjectReference Include="..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj')">
       <Project>{9fc2f0b3-a8d2-46da-8724-72e00e67a8fa}</Project>
