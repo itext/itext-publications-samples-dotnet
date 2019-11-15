@@ -31,14 +31,12 @@ namespace Tutorial.Chapter03 {
 
         internal Color blueColor = new DeviceCmyk(0.28f, 0.11f, 0, 0);
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C03E02_PremierLeague().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

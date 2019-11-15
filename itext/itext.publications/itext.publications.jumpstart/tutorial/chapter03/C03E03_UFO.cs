@@ -27,7 +27,6 @@ namespace Tutorial.Chapter03 {
 
         internal static PdfFont helveticaBold = null;
 
-        /// <exception cref="System.Exception"/>
         public static void Main(String[] args) {
             helvetica = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
             helveticaBold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
@@ -36,7 +35,6 @@ namespace Tutorial.Chapter03 {
             new C03E03_UFO().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.Exception"/>
         protected internal virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

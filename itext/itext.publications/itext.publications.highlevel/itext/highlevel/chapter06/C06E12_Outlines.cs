@@ -17,14 +17,12 @@ namespace iText.Highlevel.Chapter06 {
 
         public const String DEST = "../../results/chapter06/jekyll_hyde_outlines.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C06E12_Outlines().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             pdf.AddNewPage();

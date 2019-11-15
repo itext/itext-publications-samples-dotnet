@@ -12,7 +12,6 @@ using iText.IO.Util;
 namespace iText.Highlevel.Util {
     /// <author>iText</author>
     public class CsvTo2DList {
-        /// <exception cref="System.IO.IOException"/>
         public static IList<IList<String>> Convert(String src, String separator) {
             IList<IList<String>> resultSet = new List<IList<String>>();
             StreamReader sr = File.OpenText(src);

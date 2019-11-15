@@ -16,14 +16,12 @@ namespace iText.Highlevel.Chapter03 {
 
         public const String DEST = "../../results/chapter03/mary_reilly_V5.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C03E12_MaryReillyV5().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdf);

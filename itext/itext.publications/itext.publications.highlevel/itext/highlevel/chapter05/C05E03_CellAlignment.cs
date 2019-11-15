@@ -14,14 +14,12 @@ namespace iText.Highlevel.Chapter05 {
     public class C05E03_CellAlignment {
         public const String DEST = "../../results/chapter05/cell_alignment.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C05E03_CellAlignment().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

@@ -13,14 +13,12 @@ namespace iText.Highlevel.Chapter07 {
     public class C07E14_Encrypted {
         public const String DEST = "../../results/chapter07/encrypted.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C07E14_Encrypted().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             byte[] user = GetBytes("It's Hyde");
             string test = "test";

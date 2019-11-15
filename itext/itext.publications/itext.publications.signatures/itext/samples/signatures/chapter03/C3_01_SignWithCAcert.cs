@@ -32,8 +32,6 @@ namespace iText.Samples.Signatures.Chapter03
 
 	    public static readonly string PROPERTIES = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/encryption/signkey.properties";
 
-	    /// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		public virtual void Sign(String src, String dest, X509Certificate[] chain, ICipherParameters
 			 pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter
 			, String reason, String location, ICollection<ICrlClient> crlList, IOcspClient ocspClient
@@ -55,8 +53,6 @@ namespace iText.Samples.Signatures.Chapter03
 				);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
 			Properties properties = new Properties();
@@ -84,9 +80,6 @@ namespace iText.Samples.Signatures.Chapter03
 				.CMS, "Test", "Ghent", null, null, null, 0);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
 		public virtual void RunTest()
 		{

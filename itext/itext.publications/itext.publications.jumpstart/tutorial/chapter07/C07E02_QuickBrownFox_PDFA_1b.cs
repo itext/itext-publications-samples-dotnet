@@ -23,14 +23,12 @@ namespace Tutorial.Chapter07 {
 
         public const String DEST = "../../results/chapter07/quick_brown_fox_PDFA-1b.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C07E02_QuickBrownFox_PDFA_1b().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDFA document with output intent
             PdfADocument pdf = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_1B, new PdfOutputIntent

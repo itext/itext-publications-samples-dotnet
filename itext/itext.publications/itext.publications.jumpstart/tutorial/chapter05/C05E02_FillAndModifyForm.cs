@@ -18,14 +18,12 @@ namespace Tutorial.Chapter05 {
 
         public const String DEST = "../../results/chapter05/filled_out_job_application.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C05E02_FillAndModifyForm().ManipulatePdf(SRC, DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void ManipulatePdf(String src, String dest) {
             //Initialize PDF document
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));

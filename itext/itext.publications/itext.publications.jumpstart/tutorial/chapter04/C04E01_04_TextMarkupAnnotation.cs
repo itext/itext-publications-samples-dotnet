@@ -16,14 +16,12 @@ namespace Tutorial.Chapter04 {
     public class C04E01_04_TextMarkupAnnotation {
         public const String DEST = "../../results/chapter04/textmarkup_annotation.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C04E01_04_TextMarkupAnnotation().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

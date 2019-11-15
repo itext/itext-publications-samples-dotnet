@@ -60,9 +60,6 @@ namespace iText.Samples.Signatures
             return sr.ReadToEnd();
 		}
 
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		protected internal virtual String CheckForErrors(String outFile, String cmpFile, 
 			String destPath, IDictionary<int, IList<Rectangle>> ignoredAreas)
 		{
@@ -88,10 +85,6 @@ namespace iText.Samples.Signatures
 		/// If document signatures certificates doesn't contain certificates that are added in this method, verification will fail.
 		/// NOTE: Override this method to add additional certificates.
 		/// </remarks>
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.SecurityUtilityException"/>
-		/// <exception cref="CertificateException"/>
-		/// <exception cref="Java.Security.KeyStoreException"/>
 		protected internal virtual void InitKeyStoreForVerification(List<X509Certificate>
 			 ks) {
 		    var parser = new X509CertificateParser();
@@ -118,8 +111,6 @@ namespace iText.Samples.Signatures
             return pk12.GetCertificate(alias).Certificate;
         }
 
-        /// <exception cref="System.IO.IOException"/>
-        /// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
         private void VerifySignaturesForDocument(String documentPath)
 		{
 			PdfReader reader = new PdfReader(documentPath);
@@ -130,8 +121,6 @@ namespace iText.Samples.Signatures
 			reader.Close();
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		private void VerifySignatures(SignatureUtil signUtil, IList<String> names)
 		{
 			foreach (String name in names)
@@ -146,8 +135,6 @@ namespace iText.Samples.Signatures
 			}
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		private void VerifyCertificates(PdfPKCS7 pkcs7) {
 		    List<X509Certificate> ks = new List<X509Certificate>();
 			InitKeyStoreForVerification(ks);
@@ -174,7 +161,6 @@ namespace iText.Samples.Signatures
 			CheckRevocation(pkcs7, signCert, issuerCert, cal.ToUniversalTime());
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		private void CheckCertificateInfo(X509Certificate cert, DateTime signDate, PdfPKCS7
 			 pkcs7)
 		{
@@ -199,8 +185,6 @@ namespace iText.Samples.Signatures
 			}
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
 		private void CheckRevocation(PdfPKCS7 pkcs7, X509Certificate signCert, X509Certificate
 			 issuerCert, DateTime date)
 		{
@@ -231,7 +215,6 @@ namespace iText.Samples.Signatures
 		}
 
 		//if exception was not thrown document is not revoked or it couldn't be verified
-		/// <exception cref="System.IO.IOException"/>
 		protected internal virtual void CompareSignatures(String outFile, String cmpFile)
 		{
 			SignedDocumentInfo outInfo = CollectInfo(outFile);
@@ -239,7 +222,6 @@ namespace iText.Samples.Signatures
 			CompareSignedDocumentsInfo(outInfo, cmpInfo);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
 		private SignedDocumentInfo CollectInfo(String documentPath)
 		{
 			SignedDocumentInfo docInfo = new SignedDocumentInfo();

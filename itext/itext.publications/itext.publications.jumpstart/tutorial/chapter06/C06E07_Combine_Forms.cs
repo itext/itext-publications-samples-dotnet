@@ -14,14 +14,12 @@ namespace Tutorial.Chapter06 {
 
         public const String SRC2 = "../../resources/pdf/state.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C06E07_Combine_Forms().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             PdfDocument destPdfDocument = new PdfDocument(new PdfWriter(dest));
             PdfDocument[] sources = new PdfDocument[] { new PdfDocument(new PdfReader(SRC1)), new PdfDocument(new PdfReader

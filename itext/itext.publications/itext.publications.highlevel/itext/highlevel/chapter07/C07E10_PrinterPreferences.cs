@@ -14,14 +14,12 @@ namespace iText.Highlevel.Chapter07 {
     public class C07E10_PrinterPreferences {
         public const String DEST = "../../results/chapter07/printerpreferences.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C07E10_PrinterPreferences().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             PdfViewerPreferences preferences = new PdfViewerPreferences();

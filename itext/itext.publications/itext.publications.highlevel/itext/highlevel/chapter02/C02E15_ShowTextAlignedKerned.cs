@@ -17,14 +17,12 @@ namespace iText.Highlevel.Chapter02 {
 
         public const String DEST = "../../results/chapter02/showtextalignedkerned.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C02E15_ShowTextAlignedKerned().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             LicenseKey.LoadLicenseFile(new FileStream(KEY, FileMode.Open, FileAccess.Read));
             //Initialize PDF document

@@ -76,8 +76,7 @@ namespace iText.Samples.Signatures.Chapter05
 		// public static final String EXAMPLE2 = "results/chapter3/hello_cacert_ocsp_ts.pdf";
 		// public static final String EXAMPLE3 = "results/chapter3/hello_token.pdf";
 		// public static final String EXAMPLE5 = "results/chapter4/hello_smartcard_Signature.pdf";
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
+
 		public virtual SignaturePermissions InspectSignature(PdfDocument pdfDoc, SignatureUtil
 			 signUtil, PdfAcroForm form, String name, SignaturePermissions perms)
 		{
@@ -155,8 +154,6 @@ namespace iText.Samples.Signatures.Chapter05
 			return perms;
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public virtual void InspectSignatures(String path)
 		{
 			// System.out.println(path);
@@ -173,8 +170,6 @@ namespace iText.Samples.Signatures.Chapter05
 			System.Console.Out.WriteLine();
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
 			C5_02_SignatureInfo app = new C5_02_SignatureInfo();
@@ -186,10 +181,6 @@ namespace iText.Samples.Signatures.Chapter05
 			app.InspectSignatures(EXAMPLE6);
 		}
 
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Javax.Smartcardio.CardException"/>
 		[NUnit.Framework.Test]
 		public override void RunTest()
 		{

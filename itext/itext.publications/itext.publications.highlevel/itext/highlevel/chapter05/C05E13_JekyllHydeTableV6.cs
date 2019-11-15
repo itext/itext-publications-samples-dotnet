@@ -25,7 +25,6 @@ namespace iText.Highlevel.Chapter05
 
         public const String DEST = "../../results/chapter05/jekyll_hyde_table6" + ".pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args)
         {
             FileInfo file = new FileInfo(DEST);
@@ -33,7 +32,6 @@ namespace iText.Highlevel.Chapter05
             new C05E13_JekyllHydeTableV6().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest)
         {
             //Initialize PDF document

@@ -31,8 +31,6 @@ namespace iText.Samples.Signatures.Chapter03
 
 	    public static readonly string PROPERTIES = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/encryption/signkey.properties";
 
-	    /// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
             Properties properties = new Properties();
@@ -65,11 +63,8 @@ namespace iText.Samples.Signatures.Chapter03
 				.CMS, "Test", "Ghent", null, ocspClient, tsaClient, 0);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
-        [Ignore("Put property file with valid data")]
+        [Ignore("requires a valid certificate which is issued by the service that provides TSA access point")]
         public override void RunTest()
 		{
             Directory.CreateDirectory(NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter03/");

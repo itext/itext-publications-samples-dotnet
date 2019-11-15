@@ -17,14 +17,12 @@ namespace iText.Highlevel.Notused {
 
         public const String DEST = "../../results/chapter03/mary_reilly_V3.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C04E10_MaryReillyV3().ManipulatePdf(SRC, DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void ManipulatePdf(String src, String dest) {
             PdfReader reader = new PdfReader(src);
             PdfWriter writer = new PdfWriter(dest);

@@ -16,14 +16,12 @@ namespace iText.Highlevel.Notused.Appendix {
     public class TextWithColoredBorder {
         public const String DEST = "results/appendix/jekyll_hyde_text.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new TextWithColoredBorder().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdf);

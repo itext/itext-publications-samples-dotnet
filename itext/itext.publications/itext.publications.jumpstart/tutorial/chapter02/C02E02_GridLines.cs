@@ -13,14 +13,12 @@ namespace Tutorial.Chapter02 {
     public class C02E02_GridLines {
         public const String DEST = "../../results/chapter02/grid_lines.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C02E02_GridLines().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

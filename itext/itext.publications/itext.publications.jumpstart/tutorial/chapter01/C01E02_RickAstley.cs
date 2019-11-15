@@ -14,14 +14,12 @@ namespace Tutorial.Chapter01 {
     public class C01E02_RickAstley {
         public const String DEST = "../../results/chapter01/rick_astley.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             if (!file.Directory.Exists) file.Directory.Create();
             new C01E02_RickAstley().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF writer
             PdfWriter writer = new PdfWriter(dest);

@@ -17,14 +17,12 @@ namespace Tutorial.Chapter01 {
 
         public const String DEST = "../../results/chapter01/quick_brown_fox.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C01E03_QuickBrownFox().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             //Initialize PDF writer
             PdfWriter writer = new PdfWriter(dest);

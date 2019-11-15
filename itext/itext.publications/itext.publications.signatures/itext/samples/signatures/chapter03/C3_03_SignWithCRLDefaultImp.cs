@@ -31,8 +31,6 @@ namespace iText.Samples.Signatures.Chapter03
 
 	    public static readonly string PROPERTIES = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/encryption/signkey.properties";
 
-	    /// <exception cref="System.IO.IOException"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		public static void Main(String[] args)
 		{
             Properties properties = new Properties();
@@ -62,9 +60,6 @@ namespace iText.Samples.Signatures.Chapter03
 				.CMS, "Test", "Ghent", crlList, null, null, 0);
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		/// <exception cref="System.Exception"/>
-		/// <exception cref="Org.BouncyCastle.Security.GeneralSecurityException"/>
 		[NUnit.Framework.Test]
 		public override void RunTest()
 		{

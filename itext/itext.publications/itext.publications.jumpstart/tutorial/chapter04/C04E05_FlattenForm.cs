@@ -15,14 +15,12 @@ namespace Tutorial.Chapter04 {
 
         public const String DEST = "../../results/chapter04/flatten_form.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C04E05_FlattenForm().ManipulatePdf(SRC, DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void ManipulatePdf(String src, String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfReader(src), new PdfWriter(dest));

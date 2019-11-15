@@ -19,14 +19,12 @@ namespace iText.Highlevel.Chapter03 {
 
         public const String DEST = "../../results/chapter03/mary_reilly_V7.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C03E14_MaryReillyV7().ManipulatePdf(SRC, DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void ManipulatePdf(String src, String dest) {
             PdfReader reader = new PdfReader(src);
             PdfWriter writer = new PdfWriter(dest);

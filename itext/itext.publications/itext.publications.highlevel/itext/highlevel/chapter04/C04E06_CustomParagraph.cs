@@ -47,14 +47,12 @@ namespace iText.Highlevel.Chapter04 {
 
         public const String DEST = "../../results/chapter04/custom_paragraph.pdf";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             new C04E06_CustomParagraph().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest) {
             // Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));

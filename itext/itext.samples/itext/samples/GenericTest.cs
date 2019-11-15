@@ -9,7 +9,7 @@ using NUnit.Framework;
 
 namespace iText.Samples {
     [TestFixture]
-    [LogListener]
+//    [LogListener]
     public class GenericTest {
         
         protected bool compareRenders = false;
@@ -92,7 +92,7 @@ namespace iText.Samples {
                     return null;
                 Object obj = field.GetValue(null);
                 return obj as String;
-            } catch (Exception e) {
+            } catch (Exception) {
                 return null;
             }
         }

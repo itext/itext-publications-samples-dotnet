@@ -21,7 +21,6 @@ namespace Tutorial.Chapter06 {
 
         public const String DATA = "../../resources/data/united_states.csv";
 
-        /// <exception cref="System.IO.IOException"/>
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST1);
             file.Directory.Create();
@@ -30,7 +29,6 @@ namespace Tutorial.Chapter06 {
             new C06E09_FillOutFlattenAndMergeForms().CreatePdf(DEST1, DEST2);
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public virtual void CreatePdf(String dest1, String dest2) {
             PdfDocument destPdfDocument = new PdfDocument(new PdfWriter(dest1));
             //Smart mode

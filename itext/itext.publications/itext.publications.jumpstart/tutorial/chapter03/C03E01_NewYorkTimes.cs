@@ -34,7 +34,6 @@ namespace Tutorial.Chapter03 {
 
         internal static PdfFont timesNewRomanBold = null;
 
-        /// <exception cref="System.Exception"/>
         public static void Main(String[] args) {
             timesNewRoman = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             timesNewRomanBold = PdfFontFactory.CreateFont(StandardFonts.TIMES_BOLD);
@@ -43,7 +42,6 @@ namespace Tutorial.Chapter03 {
             new C03E01_NewYorkTimes().CreatePdf(DEST);
         }
 
-        /// <exception cref="System.Exception"/>
         protected internal virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
@@ -81,7 +79,6 @@ namespace Tutorial.Chapter03 {
             document.Close();
         }
 
-        /// <exception cref="System.IO.IOException"/>
         public static void AddArticle(Document doc, String title, String author, iText.Layout.Element.Image img, String text) {
             Paragraph p1 = new Paragraph(title).SetFont(timesNewRomanBold).SetFontSize(14);
             doc.Add(p1);
