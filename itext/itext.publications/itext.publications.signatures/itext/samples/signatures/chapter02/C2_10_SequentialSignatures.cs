@@ -30,8 +30,8 @@ namespace iText.Samples.Signatures.Chapter02
 {
     public class C2_10_SequentialSignatures
     {
-        public static readonly string DEST = "../../results/signatures/chapter02/";
-        public static readonly string FORM = "../../results/signatures/chapter02/multiple_signatures.pdf";
+        public static readonly string DEST = "results/signatures/chapter02/";
+        public static readonly string FORM = "results/signatures/chapter02/multiple_signatures.pdf";
 
         public static readonly string ALICE = "../../resources/encryption/alice";
         public static readonly string BOB = "../../resources/encryption/bob";

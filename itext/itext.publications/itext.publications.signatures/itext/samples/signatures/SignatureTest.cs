@@ -85,15 +85,19 @@ namespace iText.Samples.Signatures
 		/// If document signatures certificates doesn't contain certificates that are added in this method, verification will fail.
 		/// NOTE: Override this method to add additional certificates.
 		/// </remarks>
-		protected internal virtual void InitKeyStoreForVerification(List<X509Certificate>
-			 ks) {
-		    var parser = new X509CertificateParser();
-			X509Certificate adobeCert = parser.ReadCertificate(new FileStream(ADOBE, FileMode
-				.Open, FileAccess.Read));
-			X509Certificate cacertCert = parser.ReadCertificate(new FileStream(CACERT, FileMode
-				.Open, FileAccess.Read));
-			X509Certificate brunoCert = parser.ReadCertificate(new FileStream(BRUNO, FileMode
-				.Open, FileAccess.Read));
+		protected internal virtual void InitKeyStoreForVerification(List<X509Certificate> ks) {
+			var parser = new X509CertificateParser();
+			X509Certificate adobeCert;
+			X509Certificate cacertCert;
+			X509Certificate brunoCert;
+			using (FileStream adobeStream = new FileStream(ADOBE, FileMode.Open, FileAccess.Read), 
+				cacertStream = new FileStream(CACERT, FileMode.Open, FileAccess.Read), 
+				brunoStream = new FileStream(BRUNO, FileMode.Open, FileAccess.Read)) {
+				adobeCert = parser.ReadCertificate(adobeStream);
+				cacertCert = parser.ReadCertificate(cacertStream);
+				brunoCert = parser.ReadCertificate(brunoStream);
+			}
+
 			ks.Add(adobeCert);
 			ks.Add(cacertCert);
 			ks.Add(brunoCert);

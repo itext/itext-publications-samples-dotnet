@@ -23,7 +23,7 @@ namespace iText.Samples.Signatures.Testrunners
         private static readonly IDictionary<int, IList<Rectangle>> ignoredAreaMap;
 
         private static readonly String EXPECTED_ERROR_TEXT =
-            "\n../../results/signatures/chapter02/hello_level_1_annotated_wrong.pdf:"
+            "\nresults/signatures/chapter02/hello_level_1_annotated_wrong.pdf:"
             + "\n\"sig\" signature integrity is invalid\n\n";
 
         static SignatureTypesTest()

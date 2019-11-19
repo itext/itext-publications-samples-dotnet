@@ -34,7 +34,7 @@ namespace iText.Samples.Signatures.Chapter02
 {
     public class C2_04_CreateEmptyField
     {
-        public static readonly string DEST = "../../results/signatures/chapter02/";
+        public static readonly string DEST = "results/signatures/chapter02/";
 
         public static readonly string KEYSTORE = "../../resources/encryption/ks";
         public static readonly string SRC = "../../resources/pdfs/hello.pdf";

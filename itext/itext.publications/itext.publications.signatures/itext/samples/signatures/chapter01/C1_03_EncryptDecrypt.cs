@@ -28,7 +28,7 @@ namespace iText.Samples.Signatures.Chapter01
 {
     public class C1_03_EncryptDecrypt
     {
-        public static readonly String DEST = "../../results/signatures/chapter01/";
+        public static readonly String DEST = "results/signatures/chapter01/";
 
         protected static readonly String KEYSTORE = "../../resources/encryption/ks";
 

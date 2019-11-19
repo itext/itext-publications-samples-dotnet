@@ -28,7 +28,7 @@ namespace iText.Samples.Signatures.Chapter03
 {
     public class C3_10_SignWithTSAEvent
     {
-        public static readonly string DEST = "../../results/signatures/chapter03/";
+        public static readonly string DEST = "results/signatures/chapter03/";
 
         public static readonly string SRC = "../../resources/pdfs/hello.pdf";
 

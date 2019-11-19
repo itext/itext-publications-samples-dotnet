@@ -44,6 +44,10 @@ namespace iText.Samples.Signatures.Testrunners
                 new List<Rectangle>(new[] {new Rectangle(46, 472, 287, 255)}));
             classAreaMap.Add("iText.Samples.Signatures.Chapter03.C3_01_SignWithCAcert",
                 new List<Rectangle>(new[] {new Rectangle(36, 648, 200, 100)}));
+            classAreaMap.Add("iText.Samples.Signatures.Chapter04.C4_09_DeferredSigning",
+                new List<Rectangle>(new[] {new Rectangle(36, 748, 200, 100)}));
+            classAreaMap.Add("iText.Samples.Signatures.Chapter04.C4_08_ServerClientSigning",
+                new List<Rectangle>(new[] {new Rectangle(36, 748, 200, 100)}));
         }
 
         public SignatureRunnerTest(RunnerParams runnerParams) : base(runnerParams)
@@ -55,12 +59,14 @@ namespace iText.Samples.Signatures.Testrunners
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Signatures.Chapter02");
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Signatures.Chapter03");
+            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Signatures.Chapter04");
 
             // Samples are run by separate samples runner
             searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter02.C2_12_LockFields");
             searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter02.C2_10_SequentialSignatures");
             searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter02.C2_09_SignatureTypes");
             searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter02.C2_11_SignatureWorkflow");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter04.C4_07_ClientServerSigning");
 
             // Samples require a valid certificate which is issued by the service that provides CRL access point
             searchConfig.IgnorePackageOrClass("iText.Samples.Signatures.Chapter03.C3_02_GetCrlUrl");

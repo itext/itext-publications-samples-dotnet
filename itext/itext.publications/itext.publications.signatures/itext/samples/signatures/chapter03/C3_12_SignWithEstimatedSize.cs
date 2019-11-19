@@ -27,7 +27,7 @@ namespace iText.Samples.Signatures.Chapter03
 {
     public class C3_12_SignWithEstimatedSize
     {
-        public static readonly string DEST = "../../results/signatures/chapter03/";
+        public static readonly string DEST = "results/signatures/chapter03/";
 
         public static readonly string SRC = "../../resources/pdfs/hello.pdf";
 

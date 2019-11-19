@@ -27,7 +27,7 @@ namespace iText.Samples.Signatures.Chapter03
 {
     public class C3_05_SignWithCRLOffline
     {
-        public static readonly string DEST = "../../results/signatures/chapter03/";
+        public static readonly string DEST = "results/signatures/chapter03/";
 
         public static readonly string CRLURL = "../../resources/encryption/revoke.crl";
         public static readonly string SRC = "../../resources/pdfs/hello.pdf";
