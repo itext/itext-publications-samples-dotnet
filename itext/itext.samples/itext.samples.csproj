@@ -70,6 +70,9 @@
       <Project>{2f9b8138-96d5-4df7-a011-61fe24900987}</Project>
       <Name>itext.cleanup</Name>
     </ProjectReference>
+    <Reference Include="itext.pdfxfa, Version=2.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\pdfxfa\itext\itext.pdfxfa\itext.pdfxfa.csproj')">
+      <HintPath>$(SolutionDir)\packages\itext7.pdfxfa.2.0.5-SNAPSHOT\lib\net40\itext.pdfxfa.dll</HintPath>
+    </Reference>
     <Reference Include="itext.cleanup, Version=2.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')">
       <HintPath>$(SolutionDir)\packages\itext7.pdfsweep.2.0.5-SNAPSHOT\lib\net40\itext.cleanup.dll</HintPath>
     </Reference>
