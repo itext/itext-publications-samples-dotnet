@@ -38,7 +38,10 @@ namespace iText.Samples
          * List of samples, which require xml files comparison
          */
         private static readonly List<string> xmlCompareList = new List<string>(new[]
-            {"iText.Samples.Sandbox.Acroforms.ReadXFA", "iText.Samples.Sandbox.Acroforms.CreateXfdf"});
+            {
+                    "iText.Samples.Sandbox.Acroforms.ReadXFA",
+                    "iText.Samples.Sandbox.Acroforms.CreateXfdf"
+            });
 
         /**
          * List of samples, which require txt files comparison
