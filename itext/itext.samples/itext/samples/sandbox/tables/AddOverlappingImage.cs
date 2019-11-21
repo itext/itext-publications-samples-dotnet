@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class AddOverlappingImage
     {
-        public static readonly string DEST = "../../results/sandbox/tables/add_overlapping_image.pdf";
+        public static readonly string DEST = "results/sandbox/tables/add_overlapping_image.pdf";
         
         public static void Main(String[] args) 
         {

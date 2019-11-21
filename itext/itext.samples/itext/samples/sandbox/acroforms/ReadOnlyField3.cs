@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class ReadOnlyField3
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/read_only_field3.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/read_only_field3.pdf";
 
         public static void Main(String[] args)
         {

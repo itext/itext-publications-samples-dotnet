@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Barcodes
 {
     public class BarcodeInTable
     {
-        public static readonly String DEST = "../../results/sandbox/barcodes/barcode_in_table.pdf";
+        public static readonly String DEST = "results/sandbox/barcodes/barcode_in_table.pdf";
 
         public static void Main(String[] args)
         {

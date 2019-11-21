@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class CustomBorder2
     {
-        public static readonly string DEST = "../../results/sandbox/tables/custom_border2.pdf";
+        public static readonly string DEST = "results/sandbox/tables/custom_border2.pdf";
 
         public static readonly string TEXT = "This is some long paragraph that will be added over and over " +
                                              "again to prove a point. It should result in rows that are split and rows that aren't.";

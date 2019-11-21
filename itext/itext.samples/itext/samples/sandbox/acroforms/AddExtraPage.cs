@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class AddExtraPage
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/add_extra_page.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/add_extra_page.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/stationery.pdf";
 

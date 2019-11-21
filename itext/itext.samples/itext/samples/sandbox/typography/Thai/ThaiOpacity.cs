@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Typography.Thai
 {
     public class ThaiOpacity
     {
-        public const String DEST = "../../results/sandbox/typography/ThaiOpacity.pdf";
+        public const String DEST = "results/sandbox/typography/ThaiOpacity.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/thai/resources/";
 
         public static void Main(String[] args)

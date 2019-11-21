@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class CenteredTextInCell
     {
-        public static readonly string DEST = "../../results/sandbox/tables/centered_text_in_cell.pdf";
+        public static readonly string DEST = "results/sandbox/tables/centered_text_in_cell.pdf";
 
         public static void Main(String[] args)
         {

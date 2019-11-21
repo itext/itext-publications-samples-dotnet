@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Typography.Latin
 {
     public class LatinSignature
     {
-        public const String DEST = "../../results/sandbox/typography/LatinSignature.pdf";
+        public const String DEST = "results/sandbox/typography/LatinSignature.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/latin/resources/";
         public const String RESOURCE_FOLDER = "../../itext/samples/sandbox/typography/latin/resources/";
         public const String CERTIFICATE_FOLDER = "../../itext/samples/sandbox/typography/latin/resources/";

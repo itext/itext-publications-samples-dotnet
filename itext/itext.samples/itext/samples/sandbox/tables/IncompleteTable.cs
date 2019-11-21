@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class IncompleteTable
     {
-        public static readonly string DEST = "../../results/sandbox/tables/incomplete_table.pdf";
+        public static readonly string DEST = "results/sandbox/tables/incomplete_table.pdf";
 
         public static void Main(String[] args)
         {

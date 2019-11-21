@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class RowspanAbsolutePosition
     {
-        public static readonly string DEST = "../../results/sandbox/tables/rowspan_absolute_position.pdf";
+        public static readonly string DEST = "results/sandbox/tables/rowspan_absolute_position.pdf";
 
         public static readonly String IMG = "../../resources/img/berlin2013.jpg";
 

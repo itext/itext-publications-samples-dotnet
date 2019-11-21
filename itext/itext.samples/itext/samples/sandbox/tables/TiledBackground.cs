@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class TiledBackground
     {
-        public static readonly string DEST = "../../results/sandbox/tables/tiled_background.pdf";
+        public static readonly string DEST = "results/sandbox/tables/tiled_background.pdf";
 
         public static readonly String IMG1 = "../../resources/img/ALxRF.png";
 

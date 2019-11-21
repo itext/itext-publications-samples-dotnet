@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class ImagesInChunkInCell
     {
-        public static readonly string DEST = "../../results/sandbox/tables/images_in_chunk_in_cell.pdf";
+        public static readonly string DEST = "results/sandbox/tables/images_in_chunk_in_cell.pdf";
 
         public static readonly string IMG = "../../resources/img/bulb.gif";
 

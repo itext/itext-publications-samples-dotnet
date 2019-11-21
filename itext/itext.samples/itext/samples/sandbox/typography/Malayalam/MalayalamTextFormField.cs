@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Malayalam
 {
     public class MalayalamTextFormField
     {
-        public const String DEST = "../../results/sandbox/typography/MalayalamTextFormField.pdf";
+        public const String DEST = "results/sandbox/typography/MalayalamTextFormField.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/malayalam/resources/";
 
         public static void Main(String[] args)

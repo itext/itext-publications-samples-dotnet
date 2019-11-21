@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class AddPolygonLink
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/add_polygon_link.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/add_polygon_link.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/hello.pdf";
 

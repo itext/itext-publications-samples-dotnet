@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class FullPageTable
     {
-        public static readonly string DEST = "../../results/sandbox/tables/full_page_table.pdf";
+        public static readonly string DEST = "results/sandbox/tables/full_page_table.pdf";
 
         public static void Main(String[] args)
         {

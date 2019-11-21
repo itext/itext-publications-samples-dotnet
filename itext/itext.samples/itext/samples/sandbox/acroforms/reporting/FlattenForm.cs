@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Acroforms.Reporting
 {
     public class FlattenForm
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/reporting/flatten_form.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/reporting/flatten_form.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/state.pdf";
 

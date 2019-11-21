@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class ChangeFieldPosition
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/change_field_position.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/change_field_position.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/state.pdf";
 

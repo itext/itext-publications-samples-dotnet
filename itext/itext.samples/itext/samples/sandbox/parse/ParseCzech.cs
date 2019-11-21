@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Parse
 {
     public class ParseCzech
     {
-        public static readonly String DEST = "../../results/txt/czech.txt";
+        public static readonly String DEST = "results/txt/czech.txt";
 
         public static readonly String SRC = "../../resources/pdfs/czech.pdf";
 

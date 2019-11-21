@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class TableSplitTest
     {
-        public static readonly string DEST = "../../results/sandbox/tables/tables_split_test.pdf";
+        public static readonly string DEST = "results/sandbox/tables/tables_split_test.pdf";
 
         public static void Main(String[] args)
         {

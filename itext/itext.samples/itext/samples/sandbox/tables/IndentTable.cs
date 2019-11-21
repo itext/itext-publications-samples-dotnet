@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class IndentTable
     {
-        public static readonly string DEST = "../../results/sandbox/tables/indent_table.pdf";
+        public static readonly string DEST = "results/sandbox/tables/indent_table.pdf";
 
         public static void Main(String[] args)
         {

@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Typography.Khmer
 {
     public class KhmerList
     {
-        public const String DEST = "../../results/sandbox/typography/KhmerList.pdf";
+        public const String DEST = "results/sandbox/typography/KhmerList.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/khmer/resources/";
 
         public static void Main(String[] args)

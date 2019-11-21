@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Kannada
 {
     public class KannadaDropDownBox
     {
-        public const String DEST = "../../results/sandbox/typography/KannadaDropDownBox.pdf";
+        public const String DEST = "results/sandbox/typography/KannadaDropDownBox.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/kannada/resources/";
 
         public static void Main(String[] args)

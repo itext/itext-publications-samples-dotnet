@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FillFormSpecialChars2
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/fill_form_special_chars2.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/fill_form_special_chars2.pdf";
 
         public static readonly String FONT = "../../resources/font/FreeSans.ttf";
         public static readonly String SRC = "../../resources/pdfs/form.pdf";

@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Telugu
 {
     public class TeluguTextFormField
     {
-        public const String DEST = "../../results/sandbox/typography/TeluguTextFormField.pdf";
+        public const String DEST = "results/sandbox/typography/TeluguTextFormField.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/telugu/resources/";
 
         public static void Main(String[] args)

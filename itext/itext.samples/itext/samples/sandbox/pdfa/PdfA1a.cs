@@ -27,7 +27,7 @@ namespace iText.Samples.Sandbox.Pdfa
 {
     public class PdfA1a
     {
-        public static readonly string DEST = "../../results/sandbox//pdfa/pdf_a_1a.pdf";
+        public static readonly string DEST = "results/sandbox//pdfa/pdf_a_1a.pdf";
 
         public static readonly String BOLD = "../../resources/font/OpenSans-Bold.ttf";
 

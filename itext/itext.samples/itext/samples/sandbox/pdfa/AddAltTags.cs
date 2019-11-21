@@ -15,7 +15,7 @@ namespace iText.Samples.Sandbox.Pdfa
 {
     public class AddAltTags
     {
-        public static readonly string DEST = "../../results/sandbox/pdfa/add_alt_tags.pdf";
+        public static readonly string DEST = "results/sandbox/pdfa/add_alt_tags.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/no_alt_attribute.pdf";
 

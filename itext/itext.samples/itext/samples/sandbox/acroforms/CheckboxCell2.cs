@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class CheckboxCell2
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/checkbox_cell2.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/checkbox_cell2.pdf";
 
         public static void Main(String[] args)
         {

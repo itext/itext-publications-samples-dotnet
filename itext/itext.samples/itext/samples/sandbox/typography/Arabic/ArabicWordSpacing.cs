@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
 {
     public class ArabicWordSpacing
     {
-        public const String DEST = "../../results/sandbox/typography/ArabicWordSpacing.pdf";
+        public const String DEST = "results/sandbox/typography/ArabicWordSpacing.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/arabic/resources/";
 
         public static void Main(String[] args)

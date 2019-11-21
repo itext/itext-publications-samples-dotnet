@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class ReuseFont
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/reuse_font.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/reuse_font.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/form.pdf";
 

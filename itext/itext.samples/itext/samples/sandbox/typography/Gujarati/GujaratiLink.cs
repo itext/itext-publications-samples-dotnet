@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
 {
     public class GujaratiLink
     {
-        public const String DEST = "../../results/sandbox/typography/GujaratiLink.pdf";
+        public const String DEST = "results/sandbox/typography/GujaratiLink.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/gujarati/resources/";
 
         public static void Main(String[] args)

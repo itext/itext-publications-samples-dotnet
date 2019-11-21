@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
 {
     public class ArabicStampAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/ArabicStampAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/ArabicStampAnnotation.pdf";
 
         public static void Main(String[] args)
         {

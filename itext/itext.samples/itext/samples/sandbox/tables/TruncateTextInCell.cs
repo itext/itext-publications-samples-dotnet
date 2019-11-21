@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class TruncateTextInCell
     {
-        public static readonly string DEST = "../../results/sandbox/tables/truncate_text_in_cell.pdf";
+        public static readonly string DEST = "results/sandbox/tables/truncate_text_in_cell.pdf";
 
         public static void Main(String[] args)
         {

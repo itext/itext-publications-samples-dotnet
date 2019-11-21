@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class SplitRowAtSpecificRow
     {
-        public static readonly string DEST = "../../results/sandbox/tables/split_row_at_specific_row.pdf";
+        public static readonly string DEST = "results/sandbox/tables/split_row_at_specific_row.pdf";
 
         public static void Main(String[] args)
         {

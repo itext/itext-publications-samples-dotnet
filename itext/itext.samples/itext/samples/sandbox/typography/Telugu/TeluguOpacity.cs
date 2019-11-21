@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Typography.Telugu
 {
     public class TeluguOpacity
     {
-        public const String DEST = "../../results/sandbox/typography/TeluguOpacity.pdf";
+        public const String DEST = "results/sandbox/typography/TeluguOpacity.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/telugu/resources/";
 
         public static void Main(String[] args)

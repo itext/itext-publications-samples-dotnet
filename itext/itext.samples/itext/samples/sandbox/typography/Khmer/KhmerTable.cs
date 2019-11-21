@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Khmer
 {
     public class KhmerTable
     {
-        public const String DEST = "../../results/sandbox/typography/KhmerTable.pdf";
+        public const String DEST = "results/sandbox/typography/KhmerTable.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/khmer/resources/";
 
         public static void Main(String[] args)

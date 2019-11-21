@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Bengali
 {
     public class BengaliStampAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/BengaliStampAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/BengaliStampAnnotation.pdf";
 
         public static void Main(String[] args)
         {

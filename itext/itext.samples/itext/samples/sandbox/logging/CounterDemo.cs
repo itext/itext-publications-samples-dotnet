@@ -20,8 +20,8 @@ namespace iText.Samples.Sandbox.Logging
 {
     public class CounterDemo
     {
-        public const String DEST_PDF = "../../results/sandbox/logging/helloCounterDemo.pdf";
-        public const String DEST = "../../results/sandbox/logging/CounterDemo.txt";
+        public const String DEST_PDF = "results/sandbox/logging/helloCounterDemo.pdf";
+        public const String DEST = "results/sandbox/logging/CounterDemo.txt";
         
         public static void Main(String[] args) 
         {

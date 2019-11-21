@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class ImageRowspan
     {
-        public static readonly string DEST = "../../results/sandbox/tables/image_rowspan.pdf";
+        public static readonly string DEST = "results/sandbox/tables/image_rowspan.pdf";
 
         public static readonly string IMG = "../../resources/img/bruno.jpg";
 

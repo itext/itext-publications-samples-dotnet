@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class CellWithGlue
     {
-        public static readonly string DEST = "../../results/sandbox/tables/cell_with_glue.pdf";
+        public static readonly string DEST = "results/sandbox/tables/cell_with_glue.pdf";
 
         public static void Main(String[] args)
         {

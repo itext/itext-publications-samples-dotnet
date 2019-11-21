@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class ClippedCell
     {
-        public static readonly string DEST = "../../results/sandbox/tables/clipped_cell.pdf";
+        public static readonly string DEST = "results/sandbox/tables/clipped_cell.pdf";
 
         public static void Main(String[] args)
         {

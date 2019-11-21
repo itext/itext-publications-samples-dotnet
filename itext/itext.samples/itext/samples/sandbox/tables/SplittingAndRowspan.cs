@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class SplittingAndRowspan
     {
-        public static readonly string DEST = "../../results/sandbox/tables/splitting_and_rowspan.pdf";
+        public static readonly string DEST = "results/sandbox/tables/splitting_and_rowspan.pdf";
 
         public static void Main(String[] args)
         {

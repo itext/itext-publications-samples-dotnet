@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class NestedTableProblem
     {
-        public static readonly string DEST = "../../results/sandbox/tables/nested_table_problem.pdf";
+        public static readonly string DEST = "results/sandbox/tables/nested_table_problem.pdf";
 
         public static void Main(String[] args)
         {

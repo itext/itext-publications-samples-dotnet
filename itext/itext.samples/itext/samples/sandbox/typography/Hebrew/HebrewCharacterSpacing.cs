@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
 {
     public class HebrewCharacterSpacing
     {
-        public const String DEST = "../../results/sandbox/typography/HebrewCharacterSpacing.pdf";
+        public const String DEST = "results/sandbox/typography/HebrewCharacterSpacing.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/hebrew/resources/";
 
         public static void Main(String[] args)

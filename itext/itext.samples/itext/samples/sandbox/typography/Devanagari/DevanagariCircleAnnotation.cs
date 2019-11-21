@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Devanagari
 {
     public class DevanagariCircleAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/DevanagariCircleAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/DevanagariCircleAnnotation.pdf";
 
         public static void Main(String[] args)
         {

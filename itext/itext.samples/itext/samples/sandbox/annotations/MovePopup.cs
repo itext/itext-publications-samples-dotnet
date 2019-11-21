@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class MovePopup
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/move_popup.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/move_popup.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/hello_sticky_note.pdf";
 

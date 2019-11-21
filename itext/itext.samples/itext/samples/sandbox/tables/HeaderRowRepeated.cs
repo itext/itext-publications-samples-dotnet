@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class HeaderRowRepeated
     {
-        public static readonly string DEST = "../../results/sandbox/tables/header_row_repeated.pdf";
+        public static readonly string DEST = "results/sandbox/tables/header_row_repeated.pdf";
 
         public static void Main(String[] args)
         {

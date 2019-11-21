@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class CreateJapaneseButton
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/create_japanese_button.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/create_japanese_button.pdf";
 
         public static readonly String FONT = "../../resources/font/FreeSans.ttf";
 

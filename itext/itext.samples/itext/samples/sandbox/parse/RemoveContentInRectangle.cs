@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Parse
 {
     public class RemoveContentInRectangle
     {
-        public static readonly String DEST = "../../results/sandbox/parse/remove_content_in_rectangle.pdf";
+        public static readonly String DEST = "results/sandbox/parse/remove_content_in_rectangle.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/page229.pdf";
 

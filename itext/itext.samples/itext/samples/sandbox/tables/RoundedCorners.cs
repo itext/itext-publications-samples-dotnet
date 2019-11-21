@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class RoundedCorners
     {
-        public static readonly string DEST = "../../results/sandbox/tables/rounded_corners.pdf";
+        public static readonly string DEST = "results/sandbox/tables/rounded_corners.pdf";
 
         public static void Main(String[] args)
         {

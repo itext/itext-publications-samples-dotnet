@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class MergeForms
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/merge_forms.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/merge_forms.pdf";
 
         public static readonly String SRC1 = "../../resources/pdfs/subscribe.pdf";
         public static readonly String SRC2 = "../../resources/pdfs/state.pdf";

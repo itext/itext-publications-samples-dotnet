@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Tamil
 {
     public class TamilDropDownBox
     {
-        public const String DEST = "../../results/sandbox/typography/TamilDropDownBox.pdf";
+        public const String DEST = "results/sandbox/typography/TamilDropDownBox.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/tamil/resources/";
 
         public static void Main(String[] args)

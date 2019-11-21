@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class CreateRadioInTable
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/create_radio_in_table.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/create_radio_in_table.pdf";
         
         public static void Main(String[] args)
         {

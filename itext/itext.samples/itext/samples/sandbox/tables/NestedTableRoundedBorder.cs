@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class NestedTableRoundedBorder
     {
-        public static readonly String DEST = "../../results/sandbox/tables/nested_table_rounded_border.pdf";
+        public static readonly String DEST = "results/sandbox/tables/nested_table_rounded_border.pdf";
 
         public static void Main(String[] args)
         {

@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
     public class GurmukhiCircleAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/GurmukhiCircleAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/GurmukhiCircleAnnotation.pdf";
 
         public static void Main(String[] args)
         {

@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FillWithUnderline
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/fill_with_underline.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/fill_with_underline.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/form.pdf";
 

@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class ListInCell
     {
-        public static readonly string DEST = "../../results/sandbox/tables/list_in_cell.pdf";
+        public static readonly string DEST = "results/sandbox/tables/list_in_cell.pdf";
 
         public static void Main(String[] args)
         {

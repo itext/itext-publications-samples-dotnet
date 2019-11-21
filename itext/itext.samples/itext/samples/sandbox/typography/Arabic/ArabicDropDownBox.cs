@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
 {
     public class ArabicDropDownBox
     {
-        public const String DEST = "../../results/sandbox/typography/ArabicDropDownBox.pdf";
+        public const String DEST = "results/sandbox/typography/ArabicDropDownBox.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/arabic/resources/";
 
         public static void Main(String[] args)

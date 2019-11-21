@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Thai
 {
     public class ThaiDropDownBox
     {
-        public const String DEST = "../../results/sandbox/typography/ThaiDropDownBox.pdf";
+        public const String DEST = "results/sandbox/typography/ThaiDropDownBox.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/thai/resources/";
 
         public static void Main(String[] args)

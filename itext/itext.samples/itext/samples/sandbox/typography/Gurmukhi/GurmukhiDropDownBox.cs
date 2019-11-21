@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
     public class GurmukhiDropDownBox
     {
-        public const String DEST = "../../results/sandbox/typography/GurmukhiDropDownBox.pdf";
+        public const String DEST = "results/sandbox/typography/GurmukhiDropDownBox.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/gurmukhi/resources/";
 
         public static void Main(String[] args)

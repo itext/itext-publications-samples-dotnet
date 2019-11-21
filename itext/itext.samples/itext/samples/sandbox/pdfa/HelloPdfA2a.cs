@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Pdfa
 {
     public class HelloPdfA2a
     {
-        public static readonly string DEST = "../../results/sandbox/pdfa/hello_pdf_a_2a.pdf";
+        public static readonly string DEST = "results/sandbox/pdfa/hello_pdf_a_2a.pdf";
 
         public static readonly String FONT = "../../resources/font/OpenSans-Regular.ttf";
 

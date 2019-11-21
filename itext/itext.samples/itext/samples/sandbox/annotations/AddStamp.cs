@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class AddStamp
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/add_stamp.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/add_stamp.pdf";
 
         public static readonly String IMG = "../../resources/img/itext.png";
         public static readonly String SRC = "../../resources/pdfs/hello.pdf";

@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class NestedTables6
     {
-        public static readonly string DEST = "../../results/sandbox/tables/nested_tables6.pdf";
+        public static readonly string DEST = "results/sandbox/tables/nested_tables6.pdf";
 
         public static void Main(String[] args)
         {

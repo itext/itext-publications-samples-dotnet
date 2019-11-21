@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
     public class F06_Different_encodings
     {
-        public static readonly String DEST = "../../results/sandbox/fonts/tutorial/f06_different_encodings.pdf";
+        public static readonly String DEST = "results/sandbox/fonts/tutorial/f06_different_encodings.pdf";
 
         public static readonly String FONT = "../../resources/font/FreeSans.ttf";
 

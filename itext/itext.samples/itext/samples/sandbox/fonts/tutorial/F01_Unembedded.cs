@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
     public class F01_Unembedded
     {
-        public static readonly String DEST = "../../results/sandbox/fonts/tutorial/f01_unembedded.pdf";
+        public static readonly String DEST = "results/sandbox/fonts/tutorial/f01_unembedded.pdf";
 
         public static void Main(String[] args)
         {

@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class CustomBorder3
     {
-        public static readonly string DEST = "../../results/sandbox/tables/custom_border3.pdf";
+        public static readonly string DEST = "results/sandbox/tables/custom_border3.pdf";
 
         public static void Main(String[] args)
         {

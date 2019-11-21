@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class ImageBackground
     {
-        public static readonly string DEST = "../../results/sandbox/tables/image_background.pdf";
+        public static readonly string DEST = "results/sandbox/tables/image_background.pdf";
 
         public static readonly string IMG = "../../resources/img/bruno.jpg";
 

@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
 {
     public class GujaratiCircleAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/GujaratiCircleAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/GujaratiCircleAnnotation.pdf";
 
         public static void Main(String[] args)
         {

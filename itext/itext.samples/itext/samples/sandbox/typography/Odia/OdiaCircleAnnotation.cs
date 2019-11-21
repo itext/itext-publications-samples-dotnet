@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Odia
 {
     public class OdiaCircleAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/OdiaCircleAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/OdiaCircleAnnotation.pdf";
 
         public static void Main(String[] args)
         {

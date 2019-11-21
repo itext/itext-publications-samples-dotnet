@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Acroforms.Reporting
 {
     public class FillForm
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/reporting/fill_form.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/reporting/fill_form.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/state.pdf";
 

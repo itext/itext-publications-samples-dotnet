@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class DottedLineHeader
     {
-        public static readonly string DEST = "../../results/sandbox/tables/dotted_line_header.pdf";
+        public static readonly string DEST = "results/sandbox/tables/dotted_line_header.pdf";
 
         public static void Main(String[] args)
         {

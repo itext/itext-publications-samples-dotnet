@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Pdfa
 {
     public class PdfUA
     {
-        public static readonly string DEST = "../../results/sandbox/pdfa/pdf_ua.pdf";
+        public static readonly string DEST = "results/sandbox/pdfa/pdf_ua.pdf";
 
         public static readonly String DOG = "../../resources/img/dog.bmp";
 

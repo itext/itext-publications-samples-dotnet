@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class ReadXFA
     {
-        public static readonly String DEST = "../../results/xml/xfa_example.xml";
+        public static readonly String DEST = "results/xml/xfa_example.xml";
 
         public static readonly String SRC = "../../resources/pdfs/xfa_invoice_example.pdf";
 

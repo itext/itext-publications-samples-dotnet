@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FormatFields
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/format_fields.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/format_fields.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/form.pdf";
 

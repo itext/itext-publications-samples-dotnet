@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class PositionContentInCell
     {
-        public static readonly string DEST = "../../results/sandbox/tables/position_content_in_cell.pdf";
+        public static readonly string DEST = "results/sandbox/tables/position_content_in_cell.pdf";
 
         public static readonly string IMG = "../../resources/img/info.png";
 

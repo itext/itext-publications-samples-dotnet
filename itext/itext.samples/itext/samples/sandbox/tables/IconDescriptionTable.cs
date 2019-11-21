@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class IconDescriptionTable
     {
-        public static readonly string DEST = "../../results/sandbox/tables/icon_description_table.pdf";
+        public static readonly string DEST = "results/sandbox/tables/icon_description_table.pdf";
 
         public static readonly string IMG = "../../resources/img/bulb.gif";
 

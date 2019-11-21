@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FlattenSignature
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/flatten_signature.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/flatten_signature.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/input_signed.pdf";
 

@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class CellMethod
     {
-        public static readonly string DEST = "../../results/sandbox/tables/cell_method.pdf";
+        public static readonly string DEST = "results/sandbox/tables/cell_method.pdf";
         public static readonly string FONT = "../../resources/font/FreeSans.ttf";
 
         private static PdfFont czechFont;

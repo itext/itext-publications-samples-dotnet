@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class RenameDestinations
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/rename_destinations.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/rename_destinations.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/nameddestinations.pdf";
 

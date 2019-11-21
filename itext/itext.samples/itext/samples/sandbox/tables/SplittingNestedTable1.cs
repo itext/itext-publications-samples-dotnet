@@ -17,7 +17,7 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables {
     public class SplittingNestedTable1 {
-        public static readonly string DEST = "../../results/sandbox/tables/splitting_nested_table1.pdf";
+        public static readonly string DEST = "results/sandbox/tables/splitting_nested_table1.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

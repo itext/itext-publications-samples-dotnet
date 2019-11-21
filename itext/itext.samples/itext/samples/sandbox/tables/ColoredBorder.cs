@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class ColoredBorder
     {
-        public static readonly string DEST = "../../results/sandbox/tables/colored_border.pdf";
+        public static readonly string DEST = "results/sandbox/tables/colored_border.pdf";
 
         public static void Main(String[] args)
         {

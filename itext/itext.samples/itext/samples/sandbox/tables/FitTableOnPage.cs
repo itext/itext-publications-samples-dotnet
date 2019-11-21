@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class FitTableOnPage
     {
-        public static readonly string DEST = "../../results/sandbox/tables/fit_table_on_page.pdf";
+        public static readonly string DEST = "results/sandbox/tables/fit_table_on_page.pdf";
 
         public static void Main(String[] args)
         {

@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class KeyValueTable
     {
-        public static readonly string DEST = "../../results/sandbox/tables/key_value_table.pdf";
+        public static readonly string DEST = "results/sandbox/tables/key_value_table.pdf";
 
         public static void Main(String[] args)
         {

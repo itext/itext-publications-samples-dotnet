@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class DottedLineLeader
     {
-        public static readonly string DEST = "../../results/sandbox/tables/dotted_line_leader.pdf";
+        public static readonly string DEST = "results/sandbox/tables/dotted_line_leader.pdf";
 
         public static void Main(String[] args)
         {

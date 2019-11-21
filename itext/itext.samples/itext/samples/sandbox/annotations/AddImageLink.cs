@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class AddImageLink
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/add_image_link.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/add_image_link.pdf";
 
         public static readonly String IMG = "../../resources/img/info.png";
         public static readonly String SRC = "../../resources/pdfs/primes.pdf";

@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
     public class F05_Russian_correct_encoding
     {
-        public static readonly String DEST = "../../results/sandbox/fonts/tutorial/f05_russian_encoding.pdf";
+        public static readonly String DEST = "results/sandbox/fonts/tutorial/f05_russian_encoding.pdf";
 
         public static readonly String FONT = "../../resources/font/FreeSans.ttf";
 

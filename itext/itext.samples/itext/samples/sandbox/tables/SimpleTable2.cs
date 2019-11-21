@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class SimpleTable2
     {
-        public static readonly string DEST = "../../results/sandbox/tables/simple_table2.pdf";
+        public static readonly string DEST = "results/sandbox/tables/simple_table2.pdf";
 
         public static void Main(String[] args)
         {

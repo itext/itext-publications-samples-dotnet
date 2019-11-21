@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class ColspanRowspan
     {
-        public static readonly string DEST = "../../results/sandbox/tables/colspan_rowspan.pdf";
+        public static readonly string DEST = "results/sandbox/tables/colspan_rowspan.pdf";
 
         public static void Main(String[] args)
         {

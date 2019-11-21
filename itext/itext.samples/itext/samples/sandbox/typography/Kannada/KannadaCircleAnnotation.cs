@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Kannada
 {
     public class KannadaCircleAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/KannadaCircleAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/KannadaCircleAnnotation.pdf";
 
         public static void Main(String[] args)
         {

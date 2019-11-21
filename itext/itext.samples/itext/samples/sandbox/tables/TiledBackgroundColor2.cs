@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class TiledBackgroundColor2
     {
-        public static readonly string DEST = "../../results/sandbox/tables/tiled_background_color2.pdf";
+        public static readonly string DEST = "results/sandbox/tables/tiled_background_color2.pdf";
 
         public static readonly String IMG = "../../resources/img/bulb.gif";
 

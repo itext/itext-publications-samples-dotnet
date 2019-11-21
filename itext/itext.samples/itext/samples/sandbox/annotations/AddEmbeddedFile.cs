@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class AddEmbeddedFile
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/add_embedded_file.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/add_embedded_file.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/hello.pdf";
 

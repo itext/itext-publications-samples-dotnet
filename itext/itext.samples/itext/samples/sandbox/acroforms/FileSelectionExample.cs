@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FileSelectionExample
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/file_selection_example.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/file_selection_example.pdf";
 
         public static void Main(String[] args)
         {

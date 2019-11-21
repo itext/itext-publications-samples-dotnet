@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Khmer
 {
     public class KhmerDropDownBox
     {
-        public const String DEST = "../../results/sandbox/typography/KhmerDropDownBox.pdf";
+        public const String DEST = "results/sandbox/typography/KhmerDropDownBox.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/khmer/resources/";
 
         public static void Main(String[] args)

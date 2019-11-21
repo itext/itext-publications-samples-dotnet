@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class SimpleTable12
     {
-        public static readonly string DEST = "../../results/sandbox/tables/simple_table12.pdf";
+        public static readonly string DEST = "results/sandbox/tables/simple_table12.pdf";
 
         private static PdfFont font;
 

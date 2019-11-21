@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class HyphenationExample
     {
-        public static readonly string DEST = "../../results/sandbox/tables/hyphenation_example.pdf";
+        public static readonly string DEST = "results/sandbox/tables/hyphenation_example.pdf";
 
         public static void Main(String[] args)
         {

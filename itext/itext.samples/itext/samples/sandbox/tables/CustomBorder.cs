@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class CustomBorder
     {
-        public static readonly string DEST = "../../results/sandbox/tables/custom_border.pdf";
+        public static readonly string DEST = "results/sandbox/tables/custom_border.pdf";
 
         public static readonly string TEXT = "This is some long paragraph\n" +
                                              "that will be added over and over\n" +

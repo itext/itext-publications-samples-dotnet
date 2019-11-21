@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class AddLinkImages
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/add_link_images.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/add_link_images.pdf";
 
         public static readonly String sourceFolder = "../../resources/img/";
         public static readonly String BUTTERFLY = sourceFolder + "butterfly.wmf";

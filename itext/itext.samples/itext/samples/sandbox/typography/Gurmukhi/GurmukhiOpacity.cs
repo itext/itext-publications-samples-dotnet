@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
     public class GurmukhiOpacity
     {
-        public const String DEST = "../../results/sandbox/typography/GurmukhiOpacity.pdf";
+        public const String DEST = "results/sandbox/typography/GurmukhiOpacity.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/gurmukhi/resources/";
 
         public static void Main(String[] args)

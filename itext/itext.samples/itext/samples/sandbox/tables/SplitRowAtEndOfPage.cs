@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class SplitRowAtEndOfPage
     {
-        public static readonly string DEST = "../../results/sandbox/tables/split_row_at_end_of_page.pdf";
+        public static readonly string DEST = "results/sandbox/tables/split_row_at_end_of_page.pdf";
 
         public static void Main(String[] args)
         {

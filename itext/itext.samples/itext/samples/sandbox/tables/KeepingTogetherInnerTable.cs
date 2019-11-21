@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class KeepingTogetherInnerTable
     {
-        public static readonly string DEST = "../../results/sandbox/tables/keeping_together_inner_table.pdf";
+        public static readonly string DEST = "results/sandbox/tables/keeping_together_inner_table.pdf";
 
         public static void Main(String[] args)
         {

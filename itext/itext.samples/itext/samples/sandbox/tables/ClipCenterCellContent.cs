@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class ClipCenterCellContent
     {
-        public static readonly string DEST = "../../results/sandbox/tables/clip_center_cell_content.pdf";
+        public static readonly string DEST = "results/sandbox/tables/clip_center_cell_content.pdf";
 
         public static void Main(String[] args)
         {

@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class AddExtraTable
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/add_extra_table.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/add_extra_table.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/form.pdf";
 

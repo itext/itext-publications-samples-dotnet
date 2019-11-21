@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
     public class F03_Embedded
     {
-        public static readonly String DEST = "../../results/sandbox/fonts/tutorial/f03_embedded.pdf";
+        public static readonly String DEST = "results/sandbox/fonts/tutorial/f03_embedded.pdf";
 
         public static readonly String FONT = "../../resources/font/FreeSans.ttf";
 

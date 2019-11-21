@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class AddRotatedAnnotation
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/add_rotated_annotation.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/add_rotated_annotation.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/hello.pdf";
 

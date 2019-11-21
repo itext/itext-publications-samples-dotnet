@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class TableWithSeparator
     {
-        public static readonly string DEST = "../../results/sandbox/tables/table_with_separator.pdf";
+        public static readonly string DEST = "results/sandbox/tables/table_with_separator.pdf";
 
         public static void Main(String[] args)
         {

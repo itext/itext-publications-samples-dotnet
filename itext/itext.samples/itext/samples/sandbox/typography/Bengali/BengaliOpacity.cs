@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Typography.Bengali
 {
     public class BengaliOpacity
     {
-        public const String DEST = "../../results/sandbox/typography/BengaliOpacity.pdf";
+        public const String DEST = "results/sandbox/typography/BengaliOpacity.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/bengali/resources/";
 
         public static void Main(String[] args)

@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class RadioGroupMultiPage1
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/radio_group_multi_page1.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/radio_group_multi_page1.pdf";
 
         public static readonly String[] LANGUAGES = {"English", "German", "French", "Spanish", "Dutch"};
 

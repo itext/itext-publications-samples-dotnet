@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
     public class GurmukhiCharacterSpacing
     {
-        public const String DEST = "../../results/sandbox/typography/GurmukhiCharacterSpacing.pdf";
+        public const String DEST = "results/sandbox/typography/GurmukhiCharacterSpacing.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/gurmukhi/resources/";
 
         public static void Main(String[] args)

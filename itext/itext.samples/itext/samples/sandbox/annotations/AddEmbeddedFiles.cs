@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Annotations
             "hello", "world", "what", "is", "up"
         };
 
-        public static readonly String DEST = "../../results/sandbox/annotations/add_embedded_files.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/add_embedded_files.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/hello.pdf";
 

@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class RemoteGoto
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/";
+        public static readonly String DEST = "results/sandbox/annotations/";
 
         public static readonly String[] DEST_NAMES =
         {

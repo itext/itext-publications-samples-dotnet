@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class DottedLineCell2
     {
-        public static readonly string DEST = "../../results/sandbox/tables/dotted_line_cell2.pdf";
+        public static readonly string DEST = "results/sandbox/tables/dotted_line_cell2.pdf";
 
         public static void Main(String[] args)
         {

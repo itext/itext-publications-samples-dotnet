@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class DiagonalCell
     {
-        public static readonly string DEST = "../../results/sandbox/tables/diagonal_cell.pdf";
+        public static readonly string DEST = "results/sandbox/tables/diagonal_cell.pdf";
 
         public static void Main(String[] args)
         {

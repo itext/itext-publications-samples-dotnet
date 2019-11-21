@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class LinkInPositionedTable
     {
-        public static readonly string DEST = "../../results/sandbox/tables/link_in_positioned_table.pdf";
+        public static readonly string DEST = "results/sandbox/tables/link_in_positioned_table.pdf";
 
         public static void Main(String[] args)
         {

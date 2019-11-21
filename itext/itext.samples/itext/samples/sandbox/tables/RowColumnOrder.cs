@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class RowColumnOrder
     {
-        public static readonly string DEST = "../../results/sandbox/tables/row_column_order.pdf";
+        public static readonly string DEST = "results/sandbox/tables/row_column_order.pdf";
 
         public static void Main(String[] args)
         {

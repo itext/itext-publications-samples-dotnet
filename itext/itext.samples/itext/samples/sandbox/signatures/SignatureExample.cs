@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Signatures
 {
     public class SignatureExample
     {
-        public static readonly String DEST = "../../results/sandbox/signatures/signExample.pdf";
+        public static readonly String DEST = "results/sandbox/signatures/signExample.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/signExample.pdf";
         public static readonly String CERT_PATH = "../../resources/cert/signCertRsa01.p12";

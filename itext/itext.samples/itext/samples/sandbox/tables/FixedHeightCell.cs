@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class FixedHeightCell
     {
-        public static readonly string DEST = "../../results/sandbox/tables/fixed_height_cell.pdf";
+        public static readonly string DEST = "results/sandbox/tables/fixed_height_cell.pdf";
 
         public static void Main(String[] args)
         {

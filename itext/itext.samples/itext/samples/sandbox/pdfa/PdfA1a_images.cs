@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Pdfa
     {
         public const float MARGIN_OF_ONE_CM = 28.8f;
 
-        public static readonly string DEST = "../../results/sandbox/pdfa/pdf_a1a_images.pdf";
+        public static readonly string DEST = "results/sandbox/pdfa/pdf_a1a_images.pdf";
 
         public static readonly String FONT = "../../resources/font/OpenSans-Regular.ttf";
 

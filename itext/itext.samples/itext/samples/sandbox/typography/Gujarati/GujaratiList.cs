@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
 {
     public class GujaratiList
     {
-        public const String DEST = "../../results/sandbox/typography/GujaratiList.pdf";
+        public const String DEST = "results/sandbox/typography/GujaratiList.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/gujarati/resources/";
 
         public static void Main(String[] args)

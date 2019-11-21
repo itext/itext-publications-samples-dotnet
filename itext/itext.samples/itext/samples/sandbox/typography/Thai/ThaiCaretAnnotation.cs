@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Thai
 {
     public class ThaiCaretAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/ThaiCaretAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/ThaiCaretAnnotation.pdf";
 
         public static void Main(String[] args)
         {

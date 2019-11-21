@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class AddMarked
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/add_marked.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/add_marked.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/hello_sticky_note.pdf";
 

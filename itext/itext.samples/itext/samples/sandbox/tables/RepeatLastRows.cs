@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class RepeatLastRows
     {
-        public static readonly string DEST = "../../results/sandbox/tables/repeat_last_rows.pdf";
+        public static readonly string DEST = "results/sandbox/tables/repeat_last_rows.pdf";
 
         public static void Main(String[] args)
         {

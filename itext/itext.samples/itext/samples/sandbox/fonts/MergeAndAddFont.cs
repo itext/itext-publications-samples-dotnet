@@ -24,23 +24,23 @@ namespace iText.Samples.Sandbox.Fonts
 
         public static readonly String[] FILE_A =
         {
-            "../../results/sandbox/fonts/testA1.pdf",
-            "../../results/sandbox/fonts/testA2.pdf",
-            "../../results/sandbox/fonts/testA3.pdf"
+            "results/sandbox/fonts/testA1.pdf",
+            "results/sandbox/fonts/testA2.pdf",
+            "results/sandbox/fonts/testA3.pdf"
         };
 
         public static readonly String[] FILE_B =
         {
-            "../../results/sandbox/fonts/testB1.pdf",
-            "../../results/sandbox/fonts/testB2.pdf",
-            "../../results/sandbox/fonts/testB3.pdf"
+            "results/sandbox/fonts/testB1.pdf",
+            "results/sandbox/fonts/testB2.pdf",
+            "results/sandbox/fonts/testB3.pdf"
         };
 
         public static readonly String[] FILE_C =
         {
-            "../../results/sandbox/fonts/testC1.pdf",
-            "../../results/sandbox/fonts/testC2.pdf",
-            "../../results/sandbox/fonts/testC3.pdf"
+            "results/sandbox/fonts/testC1.pdf",
+            "results/sandbox/fonts/testC2.pdf",
+            "results/sandbox/fonts/testC3.pdf"
         };
 
         public static readonly String[] CONTENT =
@@ -60,7 +60,7 @@ namespace iText.Samples.Sandbox.Fonts
             DEST_NAMES.Add("C2", "testC_merged2.pdf");
         }
 
-        public static readonly String DEST = "../../results/sandbox/fonts/";
+        public static readonly String DEST = "results/sandbox/fonts/";
 
         public static void Main(String[] args)
         {

@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Logging
 {
     public class CounterDemoSystemOut
     {
-        public const String DEST = "../../results/sandbox/logging/CounterDemoSystemOut.pdf";
+        public const String DEST = "results/sandbox/logging/CounterDemoSystemOut.pdf";
         
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

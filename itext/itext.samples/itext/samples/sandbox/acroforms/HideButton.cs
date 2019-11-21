@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class HideButton
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/hide_button.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/hide_button.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/hello_button.pdf";
 

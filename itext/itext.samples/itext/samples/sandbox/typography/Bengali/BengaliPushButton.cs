@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Bengali
 {
     public class BengaliPushButton
     {
-        public const String DEST = "../../results/sandbox/typography/BengaliPushButton.pdf";
+        public const String DEST = "results/sandbox/typography/BengaliPushButton.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/bengali/resources/";
 
         public static void Main(String[] args)

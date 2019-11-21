@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class OpenAt100pct
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/open_at_100pct.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/open_at_100pct.pdf";
 
         public static void Main(String[] args)
         {

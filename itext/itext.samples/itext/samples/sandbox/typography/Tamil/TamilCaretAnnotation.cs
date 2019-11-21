@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Tamil
 {
     public class TamilCaretAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/TamilCaretAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/TamilCaretAnnotation.pdf";
 
         public static void Main(String[] args)
         {

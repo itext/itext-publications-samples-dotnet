@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
 {
     public class HebrewLink
     {
-        public const String DEST = "../../results/sandbox/typography/HebrewLink.pdf";
+        public const String DEST = "results/sandbox/typography/HebrewLink.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/hebrew/resources/";
 
         public static void Main(String[] args)

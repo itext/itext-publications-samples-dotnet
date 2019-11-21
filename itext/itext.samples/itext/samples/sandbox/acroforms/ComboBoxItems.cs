@@ -27,7 +27,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class ComboBoxItems
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/combo_box_items.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/combo_box_items.pdf";
 
         public static void Main(String[] args)
         {

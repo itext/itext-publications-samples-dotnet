@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class AddFieldAfterParagraph
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/add_field_after_paragraph.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/add_field_after_paragraph.pdf";
 
         public static void Main(String[] args)
         {

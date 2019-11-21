@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class CheckBoxFlatten
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/checkbox_flatten.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/checkbox_flatten.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/checkboxes.pdf";
 

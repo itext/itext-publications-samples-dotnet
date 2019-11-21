@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class ImageNextToText
     {
-        public static readonly string DEST = "../../results/sandbox/tables/image_next_to_text.pdf";
+        public static readonly string DEST = "results/sandbox/tables/image_next_to_text.pdf";
 
         public static readonly string IMG1 = "../../resources/img/javaone2013.jpg";
 

@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
 {
     public class ArabicBookmark
     {
-        public const String DEST = "../../results/sandbox/typography/ArabicBookmark.pdf";
+        public const String DEST = "results/sandbox/typography/ArabicBookmark.pdf";
 
         public static void Main(String[] args)
         {

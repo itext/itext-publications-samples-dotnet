@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class ImagesNextToEachOther
     {
-        public static readonly string DEST = "../../results/sandbox/tables/image_next_to_each_other.pdf";
+        public static readonly string DEST = "results/sandbox/tables/image_next_to_each_other.pdf";
 
         public static readonly string IMG1 = "../../resources/img/javaone2013.jpg";
         public static readonly string IMG2 = "../../resources/img/berlin2013.jpg";

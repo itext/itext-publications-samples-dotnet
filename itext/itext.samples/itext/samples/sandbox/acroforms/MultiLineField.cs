@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class MultiLineField
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/multi_line_field.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/multi_line_field.pdf";
 
         public static readonly String FIELD_NAME = "text";
 

@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Typography.Telugu
 {
     public class TeluguWordSpacing
     {
-        public const String DEST = "../../results/sandbox/typography/TeluguWordSpacing.pdf";
+        public const String DEST = "results/sandbox/typography/TeluguWordSpacing.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/telugu/resources/";
 
         public static void Main(String[] args)

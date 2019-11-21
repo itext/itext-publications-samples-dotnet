@@ -28,7 +28,7 @@ namespace iText.Samples.Sandbox.Acroforms.Reporting
 {
     public class FillFlattenMerge3
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/reporting/fill_flatten_merge3.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/reporting/fill_flatten_merge3.pdf";
 
         public static readonly String DATA = "../../resources/data/united_states.csv";
         public static readonly String SRC = "../../resources/pdfs/state.pdf";

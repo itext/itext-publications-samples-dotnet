@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Malayalam
 {
     public class MalayalamCircleAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/MalayalamCircleAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/MalayalamCircleAnnotation.pdf";
 
         public static void Main(String[] args)
         {

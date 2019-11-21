@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class CellHeights
     {
-        public static readonly string DEST = "../../results/sandbox/tables/cell_heights.pdf";
+        public static readonly string DEST = "results/sandbox/tables/cell_heights.pdf";
 
         public static void Main(String[] args)
         {

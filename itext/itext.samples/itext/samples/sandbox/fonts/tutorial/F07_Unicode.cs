@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
     public class F07_Unicode
     {
-        public static readonly String DEST = "../../results/sandbox/fonts/tutorial/f07_unicode.pdf";
+        public static readonly String DEST = "results/sandbox/fonts/tutorial/f07_unicode.pdf";
 
         public static readonly String FONT = "../../resources/font/FreeSans.ttf";
 

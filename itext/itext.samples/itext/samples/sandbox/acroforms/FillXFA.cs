@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FillXFA
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/purchase_order_filled.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/purchase_order_filled.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/purchase_order.pdf";
         public static readonly String XML = "../../resources/xml/data.xml";

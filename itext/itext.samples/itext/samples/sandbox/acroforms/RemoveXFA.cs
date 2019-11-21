@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class RemoveXFA
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/remove_xfa.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/remove_xfa.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/reportcardinitial.pdf";
 

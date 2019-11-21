@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class TableTemplate
     {
-        public static readonly string DEST = "../../results/sandbox/tables/table_template.pdf";
+        public static readonly string DEST = "results/sandbox/tables/table_template.pdf";
 
         public static void Main(String[] args)
         {

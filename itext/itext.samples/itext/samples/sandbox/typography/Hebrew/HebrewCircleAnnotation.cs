@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
 {
     public class HebrewCircleAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/HebrewCircleAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/HebrewCircleAnnotation.pdf";
 
         public static void Main(String[] args)
         {

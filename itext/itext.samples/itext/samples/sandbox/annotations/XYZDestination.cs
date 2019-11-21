@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class XYZDestination
     {
-        public static readonly String DEST = "./target/sandbox/annotations/xyz_destination.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/xyz_destination.pdf";
 
         public static void Main(String[] args)
         {

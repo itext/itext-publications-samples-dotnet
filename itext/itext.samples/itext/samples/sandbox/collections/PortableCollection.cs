@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Collections
 {
     public class PortableCollection
     {
-        public static readonly String DEST = "../../results/sandbox/collections/portable_collection.pdf";
+        public static readonly String DEST = "results/sandbox/collections/portable_collection.pdf";
 
         public static readonly String DATA = "../../resources/data/united_states.csv";
         public static readonly String HELLO = "../../resources/pdfs/hello.pdf";

@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Annotations
 {
     public class RelativeLink
     {
-        public static readonly String DEST = "../../results/sandbox/annotations/relative_link.pdf";
+        public static readonly String DEST = "results/sandbox/annotations/relative_link.pdf";
 
         public static readonly String XML = "../../../resources/xml/data.xml";
 

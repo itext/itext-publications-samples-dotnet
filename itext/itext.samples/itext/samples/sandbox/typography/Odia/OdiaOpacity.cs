@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Typography.Odia
 {
     public class OdiaOpacity
     {
-        public const String DEST = "../../results/sandbox/typography/OdiaOpacity.pdf";
+        public const String DEST = "results/sandbox/typography/OdiaOpacity.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/odia/resources/";
 
         public static void Main(String[] args)

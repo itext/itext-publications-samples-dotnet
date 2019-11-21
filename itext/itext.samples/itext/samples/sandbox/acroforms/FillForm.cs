@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FillForm
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/fill_form.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/fill_form.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/CertificateOfExcellence.pdf";
 

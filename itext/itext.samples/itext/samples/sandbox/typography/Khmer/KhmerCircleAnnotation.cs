@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Typography.Khmer
 {
     public class KhmerCircleAnnotation
     {
-        public const String DEST = "../../results/sandbox/typography/KhmerCircleAnnotation.pdf";
+        public const String DEST = "results/sandbox/typography/KhmerCircleAnnotation.pdf";
 
         public static void Main(String[] args)
         {

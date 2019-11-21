@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class MultipleImagesInTable
     {
-        public static readonly string DEST = "../../results/sandbox/tables/multiple_images_in_table.pdf";
+        public static readonly string DEST = "results/sandbox/tables/multiple_images_in_table.pdf";
 
         public static readonly string IMG1 = "../../resources/img/brasil.png";
 

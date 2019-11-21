@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Interactive
 {
     public class FetchBookmarkTitles
     {
-        public static readonly String DEST = "../../results/txt/bookmarks.txt";
+        public static readonly String DEST = "results/txt/bookmarks.txt";
 
         public static readonly String SRC = "../../resources/pdfs/bookmarks.pdf";
 

@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class RightCornerTable
     {
-        public static readonly string DEST = "../../results/sandbox/tables/right_corner_table.pdf";
+        public static readonly string DEST = "results/sandbox/tables/right_corner_table.pdf";
 
         public static void Main(String[] args)
         {

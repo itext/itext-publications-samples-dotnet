@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FillFormFieldOrder
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/fill_form_field_order.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/fill_form_field_order.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/calendar_example.pdf";
 

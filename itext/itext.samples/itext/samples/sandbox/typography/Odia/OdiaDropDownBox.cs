@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Odia
 {
     public class OdiaDropDownBox
     {
-        public const String DEST = "../../results/sandbox/typography/OdiaDropDownBox.pdf";
+        public const String DEST = "results/sandbox/typography/OdiaDropDownBox.pdf";
         public const String FONTS_FOLDER = "../../itext/samples/sandbox/typography/odia/resources/";
 
         public static void Main(String[] args)

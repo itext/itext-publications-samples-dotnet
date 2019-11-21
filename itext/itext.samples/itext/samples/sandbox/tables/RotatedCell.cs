@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class RotatedCell
     {
-        public static readonly string DEST = "../../results/sandbox/tables/rotated_cell.pdf";
+        public static readonly string DEST = "results/sandbox/tables/rotated_cell.pdf";
 
         public static void Main(String[] args)
         {

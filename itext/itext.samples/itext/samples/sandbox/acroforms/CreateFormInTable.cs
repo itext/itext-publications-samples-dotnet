@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class CreateFormInTable
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/create_form_in_table.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/create_form_in_table.pdf";
 
         public static void Main(String[] args)
         {
