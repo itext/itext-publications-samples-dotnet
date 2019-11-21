@@ -39,8 +39,10 @@ namespace iText.Samples
          */
         private static readonly List<string> xmlCompareList = new List<string>(new[]
             {
-                    "iText.Samples.Sandbox.Acroforms.ReadXFA",
-                    "iText.Samples.Sandbox.Acroforms.CreateXfdf"
+                    "iText.Samples.Sandbox.Acroforms.ReadXFA", 
+                    "iText.Samples.Sandbox.Acroforms.CreateXfdf",
+                    "iText.Samples.Sandbox.Stamper.AddNamedDestinations"
+
             });
 
         /**
