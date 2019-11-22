@@ -109,7 +109,7 @@ namespace iText.Samples.Signatures.Testrunners
             }
         }
 
-        private class CustomSignatureTest : SignatureTest
+        private class CustomSignatureTest : SignatureTestHelper
         {
             protected internal override void InitKeyStoreForVerification(List<X509Certificate> ks)
             {

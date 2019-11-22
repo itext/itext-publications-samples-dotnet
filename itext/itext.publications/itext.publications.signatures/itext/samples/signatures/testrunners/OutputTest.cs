@@ -18,12 +18,12 @@ using NUnit.Framework;
 namespace iText.Samples.Signatures.Testrunners
 {
     [TestFixtureSource("Data")]
-    public class DigestTest : WrappedSamplesRunner
+    public class OutputTest : WrappedSamplesRunner
     {
         private TextWriter oldSysOut;
         private TextWriter newSysOut;
 
-        public DigestTest(RunnerParams runnerParams) : base(runnerParams)
+        public OutputTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 
@@ -32,6 +32,8 @@ namespace iText.Samples.Signatures.Testrunners
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddClassToRunnerSearchPath("iText.Samples.Signatures.Chapter01.C1_01_DigestDefault");
             searchConfig.AddClassToRunnerSearchPath("iText.Samples.Signatures.Chapter01.C1_02_DigestBC");
+            searchConfig.AddClassToRunnerSearchPath("iText.Samples.Signatures.Chapter05.C5_01_SignatureIntegrity");
+            searchConfig.AddClassToRunnerSearchPath("iText.Samples.Signatures.Chapter05.C5_02_SignatureInfo");
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }

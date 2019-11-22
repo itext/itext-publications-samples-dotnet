@@ -71,7 +71,7 @@ namespace iText.Samples.Signatures.Testrunners
                      * (permissions, certifications, content changes),
                      *  however signatures themselves are not broken.
                      */
-                    String result = new SignatureTest()
+                    String result = new SignatureTestHelper()
                         .CheckForErrors(currentDest, currentCmp, outPath, ignoredAreaMap);
 
                     if (result != null)

@@ -111,7 +111,7 @@ namespace iText.Samples.Signatures.Testrunners
                 String currentCmp = cmp + resultFiles[i];
                 try
                 {
-                    AddError(new SignatureTest().CheckForErrors(currentDest, currentCmp, outPath, ignoredAreasMap));
+                    AddError(new SignatureTestHelper().CheckForErrors(currentDest, currentCmp, outPath, ignoredAreasMap));
                 }
                 catch (Exception exc)
                 {
