@@ -95,6 +95,10 @@ namespace iText.Samples
 
             // Samples are run by separate samples runner
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Fonts.MergeAndAddFont");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Security.DecryptPdf");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Security.DecryptPdf2");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Security.EncryptPdf");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Security.EncryptWithCertificate");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Parse.ExtractStreams");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoto");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoToPage");
