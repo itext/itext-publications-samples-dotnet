@@ -93,10 +93,6 @@
     <Reference Include="itext.barcodes, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')">
       <HintPath>$(SolutionDir)\packages\itext7.7.1.10-SNAPSHOT\lib\net40\itext.barcodes.dll</HintPath>
     </Reference>
-    <ProjectReference Include="..\..\..\typography\itext.tests\itext.typography.tests\itext.typography.tests.csproj">
-      <Project>{c4c6fb25-8845-4dfb-a58c-f6f804d17645}</Project>
-      <Name>itext.typography.tests</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\typography\itext\itext.typography\itext.typography.csproj">
       <Project>{cfe438d3-b3ae-4596-8410-3d9bbc39a05a}</Project>
       <Name>itext.typography</Name>
