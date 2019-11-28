@@ -42,6 +42,9 @@
       <HintPath>$(SolutionDir)\packages\itext7.licensekey.3.0.5\lib\net40\itext.licensekey.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Antlr4.Runtime, Version=4.5.0.0, Culture=neutral, PublicKeyToken=09abb75b9ed49849, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\Antlr4.Runtime.4.5.3\lib\net40-client\Antlr4.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)\packages\NUnit.3.7.1\lib\net40\nunit.framework.dll</HintPath>
       <Private>True</Private>
