@@ -14,6 +14,7 @@ using iText.IO.Util;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Layer;
+using iText.Layout;
 using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
@@ -44,7 +45,7 @@ namespace iText.Samples.Sandbox.Stamper
             nested.AddChild(nested2);
             
             canvas.BeginLayer(nested);
-            Layout.Canvas canvasModel = new iText.Layout.Canvas(canvas, pdfDoc, pdfDoc.GetDefaultPageSize());
+            Canvas canvasModel = new Canvas(canvas, pdfDoc, pdfDoc.GetDefaultPageSize());
             canvasModel.ShowTextAligned("nested layers", 50, 765, TextAlignment.LEFT, 0);
             canvas.EndLayer();
             

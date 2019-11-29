@@ -16,6 +16,7 @@ using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Extgstate;
+using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 
@@ -43,7 +44,7 @@ namespace iText.Samples.Sandbox.Stamper
                     .SetFont(font)
                     .SetFontSize(15);
             
-            Layout.Canvas canvasWatermark1 = new iText.Layout.Canvas(under, pdfDoc, pdfDoc.GetDefaultPageSize())
+            Canvas canvasWatermark1 = new Canvas(under, pdfDoc, pdfDoc.GetDefaultPageSize())
                     .ShowTextAligned(paragraph, 297, 550, 1, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
             canvasWatermark1.Close();
             PdfCanvas over = new PdfCanvas(pdfDoc.GetFirstPage());
@@ -52,7 +53,7 @@ namespace iText.Samples.Sandbox.Stamper
                     .SetFont(font)
                     .SetFontSize(15);
             
-            Layout.Canvas canvasWatermark2 = new iText.Layout.Canvas(over, pdfDoc, pdfDoc.GetDefaultPageSize())
+            Canvas canvasWatermark2 = new Canvas(over, pdfDoc, pdfDoc.GetDefaultPageSize())
                     .ShowTextAligned(paragraph, 297, 500, 1, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
             canvasWatermark2.Close();
             paragraph = new Paragraph("This TRANSPARENT watermark is added ON TOP OF the existing content")
@@ -64,7 +65,7 @@ namespace iText.Samples.Sandbox.Stamper
             PdfExtGState gs1 = new PdfExtGState();
             gs1.SetFillOpacity(0.5f);
             over.SetExtGState(gs1);
-            Layout.Canvas canvasWatermark3 = new Layout.Canvas(over, pdfDoc, pdfDoc.GetDefaultPageSize())
+            Canvas canvasWatermark3 = new Canvas(over, pdfDoc, pdfDoc.GetDefaultPageSize())
                     .ShowTextAligned(paragraph, 297, 450, 1, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
             canvasWatermark3.Close();
             over.RestoreState();

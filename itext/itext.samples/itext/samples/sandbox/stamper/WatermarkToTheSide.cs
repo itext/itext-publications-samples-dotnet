@@ -13,6 +13,7 @@ using iText.IO.Util;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Layout;
 using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
@@ -64,7 +65,7 @@ namespace iText.Samples.Sandbox.Stamper
 
         private static void DrawText(PdfCanvas canvas, PdfDocument pdfDoc, Rectangle pageSize, float x, float y, double rotation) 
         {
-            Layout.Canvas canvasDrawText = new Layout.Canvas(canvas, pdfDoc, pageSize)
+            Canvas canvasDrawText = new Canvas(canvas, pdfDoc, pageSize)
                     .ShowTextAligned("This is some extra text added to the left of the page",
                             x, y, TextAlignment.CENTER, (float) MathUtil.ToRadians(rotation));
             canvasDrawText.Close();
