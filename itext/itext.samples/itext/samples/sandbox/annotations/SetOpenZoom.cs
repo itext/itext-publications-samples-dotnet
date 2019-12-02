@@ -17,7 +17,7 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Annotations
 {
-    public class OpenAt100pct
+    public class SetOpenZoom
     {
         public static readonly String DEST = "results/sandbox/annotations/open_at_100pct.pdf";
 
@@ -26,7 +26,7 @@ namespace iText.Samples.Sandbox.Annotations
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
 
-            new OpenAt100pct().ManipulatePdf(DEST);
+            new SetOpenZoom().ManipulatePdf(DEST);
         }
 
         protected void ManipulatePdf(String dest)
