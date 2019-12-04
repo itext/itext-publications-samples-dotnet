@@ -44,6 +44,7 @@ Support for Simplified Chinese, Traditional Chinese, Japanese, and Korean has be
 
 SIL OPEN FONT LICENSE Version 1.1: OFL.txt
 
+Greifswalder Tengwar.ttf
 AbrilFatface-Regular.ttf
 Cardo-Regular.ttf
 Cardo-Italic.ttf

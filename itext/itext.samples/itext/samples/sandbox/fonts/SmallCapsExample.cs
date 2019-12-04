@@ -6,10 +6,6 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
-/**
- * This example was written by Bruno Lowagie in answer to the following question:
- * http://stackoverflow.com/questions/31268867/
- */
 
 using System;
 using System.IO;
@@ -19,35 +15,32 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 
-
 namespace iText.Samples.Sandbox.Fonts
 {
-    public class MathSymbols
+    public class SmallCapsExample
     {
-        public static readonly String DEST = "results/sandbox/fonts/math_symbols.pdf";
-        
-        public static readonly String FONT = "../../resources/font/FreeSans.ttf";
-        
+        public static readonly String DEST = "results/sandbox/fonts/small_caps_example.pdf";
+
+        public static readonly String FONT = "../../resources/font/Delicious-SmallCaps.otf";
+
         public static void Main(String[] args)
         {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
-            
-            new MathSymbols().ManipulatePdf(DEST);
+
+            new SmallCapsExample().ManipulatePdf(DEST);
         }
 
         protected void ManipulatePdf(String dest)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
-            
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H, true);
-            
-            // "Testing math symbols ∈, ∩, ∑, ∫, ∆"
-            Paragraph p = new Paragraph("Testing math symbols \u2208, \u2229, \u2211, \u222b, \u2206")
-                .SetFont(font);
 
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H);
+            Paragraph p = new Paragraph("This is some text displayed using a Small Caps font.")
+                .SetFont(font);
             doc.Add(p);
+
             doc.Close();
         }
     }

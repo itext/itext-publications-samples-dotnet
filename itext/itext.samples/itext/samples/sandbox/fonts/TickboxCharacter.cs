@@ -6,48 +6,44 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
-/**
- * This example was written by Bruno Lowagie in answer to the following question:
- * http://stackoverflow.com/questions/31268867/
- */
 
 using System;
 using System.IO;
-using iText.IO.Font;
+using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 
-
 namespace iText.Samples.Sandbox.Fonts
 {
-    public class MathSymbols
+    public class TickboxCharacter
     {
-        public static readonly String DEST = "results/sandbox/fonts/math_symbols.pdf";
-        
-        public static readonly String FONT = "../../resources/font/FreeSans.ttf";
-        
+        public static readonly String DEST = "results/sandbox/fonts/tickbox_character.pdf";
+
         public static void Main(String[] args)
         {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
-            
-            new MathSymbols().ManipulatePdf(DEST);
+
+            new TickboxCharacter().ManipulatePdf(DEST);
         }
 
         protected void ManipulatePdf(String dest)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
-            
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H, true);
-            
-            // "Testing math symbols ∈, ∩, ∑, ∫, ∆"
-            Paragraph p = new Paragraph("Testing math symbols \u2208, \u2229, \u2211, \u222b, \u2206")
-                .SetFont(font);
+
+            Paragraph p = new Paragraph("This is a tick box character: ");
+
+            Text text = new Text("o");
+            PdfFont zapfdingbats = PdfFontFactory.CreateFont(StandardFonts.ZAPFDINGBATS);
+            text.SetFont(zapfdingbats);
+            text.SetFontSize(14);
+            p.Add(text);
 
             doc.Add(p);
+
             doc.Close();
         }
     }
