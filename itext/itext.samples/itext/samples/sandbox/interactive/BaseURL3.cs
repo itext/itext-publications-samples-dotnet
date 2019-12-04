@@ -1,0 +1,42 @@
+/*
+This file is part of the iText (R) project.
+Copyright (c) 1998-2019 iText Group NV
+Authors: iText Software.
+
+For more information, please contact iText Software at this address:
+sales@itextpdf.com
+*/
+
+using System;
+using System.IO;
+using iText.Kernel.Pdf;
+
+namespace iText.Samples.Sandbox.Interactive
+{
+    public class BaseURL3
+    {
+        public static readonly String DEST = "results/sandbox/interactive/base_url3.pdf";
+
+        public static readonly String SRC = "../../resources/pdfs/base_url.pdf";
+
+        public static void Main(String[] args)
+        {
+            FileInfo file = new FileInfo(DEST);
+            file.Directory.Create();
+
+            new BaseURL3().ManipulatePdf(DEST);
+        }
+
+        protected void ManipulatePdf(String dest)
+        {
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
+
+            PdfDictionary uri = new PdfDictionary();
+            uri.Put(PdfName.Type, PdfName.URI);
+            uri.Put(new PdfName("Base"), new PdfString("http://itextpdf.com/"));
+            pdfDoc.GetCatalog().Put(PdfName.URI, uri);
+
+            pdfDoc.Close();
+        }
+    }
+}
