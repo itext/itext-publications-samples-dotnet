@@ -12,7 +12,7 @@ using iText.Html2pdf;
 using iText.Html2pdf.Attach.Impl;
 using iText.Kernel.Pdf;
 using iText.Layout.Font;
-using iText.Samples.Pdfhtml.Accessiblepdf.Headertagging;
+using iText.Samples.Sandbox.Pdfhtml.Headertagging;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {

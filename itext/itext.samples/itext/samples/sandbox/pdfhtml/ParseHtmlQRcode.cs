@@ -11,7 +11,7 @@ using System.IO;
 using iText.Html2pdf;
 using iText.Html2pdf.Attach.Impl;
 using iText.Html2pdf.Css.Apply.Impl;
-using iText.Samples.Pdfhtml;
+using iText.Samples.Sandbox.Pdfhtml.Qrcodetag;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {

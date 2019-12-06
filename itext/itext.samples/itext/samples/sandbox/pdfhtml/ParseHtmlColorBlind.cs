@@ -10,7 +10,7 @@ sales@itextpdf.com
 using System.IO;
 using iText.Html2pdf;
 using iText.Html2pdf.Css.Apply.Impl;
-using iText.Samples.Pdfhtml.Colorblindness;
+using iText.Samples.Sandbox.Pdfhtml.Colorblindness;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {

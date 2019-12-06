@@ -104,6 +104,11 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoto");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoToPage");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Logging.CounterDemoSystemOut");
+            
+            // Not a sample classes
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfhtml.Colorblindness");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfhtml.Qrcodetag");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfhtml.Headertagging");
 
             // TODO DEVSIX-3189
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.TableBorder");
