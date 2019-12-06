@@ -1,34 +1,25 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using iText.IO.Font;
-using iText.Kernel.Utils;
 using iText.License;
-using iText.Samples.Sandbox.Fonts;
 using iText.Test;
 using NUnit.Framework;
 
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    public class MergeAndAddFontTest : WrappedSamplesRunner
+    public class ExtractStreamsSampleTest : WrappedSamplesRunner
     {
-        public MergeAndAddFontTest(RunnerParams runnerParams) : base(runnerParams)
+        public ExtractStreamsSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 
         public static ICollection<TestFixtureData> Data()
         {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddClassToRunnerSearchPath("iText.Samples.Sandbox.Fonts.MergeAndAddFont");
+            searchConfig.AddClassToRunnerSearchPath("iText.Samples.Sandbox.Parse.ExtractStreams");
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
@@ -37,24 +28,21 @@ namespace iText.Samples
         [Test, Description("{0}")]
         public virtual void Test()
         {
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.xml");
             FontCache.ClearSavedFonts();
             FontProgramFactory.ClearRegisteredFonts();
-            
+            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.xml");
             RunSamples();
             ResetLicense();
         }
 
         protected override void ComparePdf(string outPath, string dest, string cmp)
         {
-            CompareTool compareTool = new CompareTool();
-            
-            foreach (String fileName in MergeAndAddFont.DEST_NAMES.Values) {
-                String currentDest = dest + fileName;
-                String currentCmp = cmp + "cmp_" + fileName;
+            for (int i = 1; i < 3; i++)
+            {
+                String currentDest = String.Format(dest + "/extract_streams{0}.dat", i);
+                String currentCmp = String.Format(cmp + "/cmp_extract_streams{0}.dat", i);
 
-                AddError(compareTool.CompareByContent(currentDest, currentCmp, outPath, "diff_"));
-                AddError(compareTool.CompareDocumentInfo(currentDest, currentCmp));
+                AddError(CompareFiles(currentDest, currentCmp));
             }
         }
 
@@ -67,6 +55,32 @@ namespace iText.Samples
 
             int j = dest.LastIndexOf("/results", StringComparison.Ordinal) + 9;
             return "../../resources/" + dest.Substring(j);
+        }
+
+        private String CompareFiles(String dest, String cmp)
+        {
+            String errorMessage = null;
+
+            FileStream raf = new FileStream(dest, FileMode.Open, FileAccess.Read);
+            byte[] destBytes = new byte[(int) raf.Length];
+            raf.Read(destBytes, 0, destBytes.Length);
+            raf.Close();
+
+            raf = new FileStream(cmp, FileMode.Open, FileAccess.Read);
+            byte[] cmpBytes = new byte[(int) raf.Length];
+            raf.Read(cmpBytes, 0, cmpBytes.Length);
+            raf.Close();
+
+            try
+            {
+                CollectionAssert.AreEqual(cmpBytes, destBytes);
+            }
+            catch (AssertionException exc)
+            {
+                errorMessage = "Files are not equal:\n " + exc;
+            }
+
+            return errorMessage;
         }
 
         private void ResetLicense()

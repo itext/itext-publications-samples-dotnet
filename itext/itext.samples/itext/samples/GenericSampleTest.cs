@@ -23,7 +23,7 @@ using NUnit.Framework;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    public class SamplesWrapperTest : WrappedSamplesRunner
+    public class GenericSampleTest : WrappedSamplesRunner
     {
         
         /**
@@ -74,7 +74,7 @@ namespace iText.Samples
          */
         private static readonly IDictionary<String, IDictionary<int, IList<Rectangle>>> ignoredClassesMap;
 
-        static SamplesWrapperTest()
+        static GenericSampleTest()
         {
             Rectangle latinClassIgnoredArea = new Rectangle(30, 539, 250, 13);
             IList<Rectangle> rectangles = JavaUtil.ArraysAsList(latinClassIgnoredArea);
@@ -84,7 +84,7 @@ namespace iText.Samples
             ignoredClassesMap.Add("iText.Samples.Sandbox.Typography.Latin.LatinSignature", ignoredAreasMap);
         }
 
-        public SamplesWrapperTest(RunnerParams runnerParams) : base(runnerParams)
+        public GenericSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 

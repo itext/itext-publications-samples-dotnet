@@ -19,10 +19,10 @@ using NUnit.Framework;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    public class PdfWithEncryptionTestRunner : WrappedSamplesRunner
+    public class PdfWithEncryptionSampleTest : WrappedSamplesRunner
     {
 
-        public PdfWithEncryptionTestRunner(RunnerParams runnerParams) : base(runnerParams)
+        public PdfWithEncryptionSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 

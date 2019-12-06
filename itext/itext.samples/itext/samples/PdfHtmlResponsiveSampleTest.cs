@@ -14,9 +14,9 @@ using NUnit.Framework;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    public class PdfHtmlResponsiveTest : WrappedSamplesRunner
+    public class PdfHtmlResponsiveSampleTest : WrappedSamplesRunner
     {
-        public PdfHtmlResponsiveTest(RunnerParams runnerParams) : base(runnerParams)
+        public PdfHtmlResponsiveSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 

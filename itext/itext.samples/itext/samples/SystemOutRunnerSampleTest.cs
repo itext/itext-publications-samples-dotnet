@@ -20,12 +20,12 @@ using NUnit.Framework;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    public class SystemOutRunnerTest : WrappedSamplesRunner
+    public class SystemOutRunnerSampleTest : WrappedSamplesRunner
     {
         private TextWriter storedSystemOut;
         private FileStream stream;
 
-        public SystemOutRunnerTest(RunnerParams runnerParams) : base(runnerParams)
+        public SystemOutRunnerSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 

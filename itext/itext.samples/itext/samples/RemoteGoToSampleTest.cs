@@ -19,9 +19,9 @@ using NUnit.Framework;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    public class RemoteGoToTest : WrappedSamplesRunner
+    public class RemoteGoToSampleTest : WrappedSamplesRunner
     {
-        public RemoteGoToTest(RunnerParams runnerParams) : base(runnerParams)
+        public RemoteGoToSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 

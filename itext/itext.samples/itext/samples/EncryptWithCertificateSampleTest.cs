@@ -23,11 +23,11 @@ using Org.BouncyCastle.X509;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    public class EncryptWithCertificateTest : WrappedSamplesRunner
+    public class EncryptWithCertificateSampleTest : WrappedSamplesRunner
     {
         public static readonly String PRIVATE = "../../resources/encryption/test.p12";
 
-        public EncryptWithCertificateTest(RunnerParams runnerParams) : base(runnerParams)
+        public EncryptWithCertificateSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 
