@@ -54,7 +54,8 @@ namespace iText.Samples
                 "iText.Samples.Sandbox.Interactive.FetchBookmarkTitles",
                 "iText.Samples.Sandbox.Parse.ParseCustom",
                 "iText.Samples.Sandbox.Parse.ParseCzech",
-                "iText.Samples.Sandbox.Logging.CounterDemo"
+                "iText.Samples.Sandbox.Logging.CounterDemo",
+                "iText.Samples.Sandbox.Tagging.WalkTheTree"
             });
 
         /**
