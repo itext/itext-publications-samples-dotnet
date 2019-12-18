@@ -17,16 +17,16 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables 
 {
-    public class CustomBorder3 
+    public class CustomBorder4 
     {
-        public static readonly String DEST = "results/sandbox/tables/custom_border3.pdf";
+        public static readonly String DEST = "results/sandbox/tables/custom_border4.pdf";
 
         public static void Main(String[] args) 
         {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             
-            new CustomBorder3().ManipulatePdf(DEST);
+            new CustomBorder4().ManipulatePdf(DEST);
         }
 
         protected void ManipulatePdf(String dest) 
@@ -52,14 +52,14 @@ namespace iText.Samples.Sandbox.Tables
             cell.SetBorderRight(new SolidBorder(0.5f));
             table.AddCell(cell);
             
-            cell = new Cell().Add(new Paragraph("dashed top border"));
+            cell = new Cell().Add(new Paragraph("solid top border"));
             cell.SetBorder(Border.NO_BORDER);
-            cell.SetBorderTop(new DashedBorder(1f));
+            cell.SetBorderTop(new SolidBorder(1.5f));
             table.AddCell(cell);
             
-            cell = new Cell().Add(new Paragraph("bottom border"));
+            cell = new Cell().Add(new Paragraph("dashed bottom border"));
             cell.SetBorder(Border.NO_BORDER);
-            cell.SetBorderBottom(new SolidBorder(1f));
+            cell.SetBorderBottom(new DashedBorder(1f));
             table.AddCell(cell);
             
             document.Add(table);
@@ -67,23 +67,26 @@ namespace iText.Samples.Sandbox.Tables
             table = new Table(UnitValue.CreatePercentArray(4)).UseAllAvailableWidth();
             table.SetMarginBottom(30);
             
-            cell = new Cell().Add(new Paragraph("dotted left and solid top border"));
+            cell = new Cell().Add(new Paragraph("dotted left and dashed top border"));
             cell.SetBorder(Border.NO_BORDER);
-            cell.SetBorderTop(new SolidBorder(1f));
             cell.SetBorderLeft(new DottedBorder(0.5f));
+            cell.SetBorderTop(new DashedBorder(1f));
             table.AddCell(cell);
             
-            cell = new Cell().Add(new Paragraph("dashed right and dashed bottom border"));
+            cell = new Cell().Add(new Paragraph("solid right and dotted bottom border"));
             cell.SetBorder(Border.NO_BORDER);
-            cell.SetBorderBottom(new DashedBorder(1f));
-            cell.SetBorderRight(new DashedBorder(0.5f));
+            cell.SetBorderBottom(new DottedBorder(0.5f));
+            cell.SetBorderRight(new SolidBorder(1f));
             table.AddCell(cell);
             
             cell = new Cell().Add(new Paragraph("no border"));
             cell.SetBorder(Border.NO_BORDER);
             table.AddCell(cell);
             
-            cell = new Cell().Add(new Paragraph("full solid border"));
+            cell = new Cell().Add(new Paragraph("full border"));
+            cell.SetBorder(new DottedBorder(0.5f));
+            cell.SetBorderTop(new SolidBorder(1f));
+            cell.SetBorderBottom(new DashedBorder(1f));
             table.AddCell(cell);
             
             document.Add(table);
