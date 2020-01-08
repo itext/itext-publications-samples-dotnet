@@ -22,11 +22,11 @@ using iText.Layout.Layout;
 using iText.Layout.Properties;
 using iText.Layout.Renderer;
 
-namespace iText.Samples.Sandbox.Tagging
+namespace iText.Samples.Sandbox.Bookmarks
 {
     public class TableOfContents
     {
-        public static readonly String DEST = "results/sandbox/tagging/table_of_contents.pdf";
+        public static readonly String DEST = "results/sandbox/bookmarks/table_of_contents.pdf";
 
         public static readonly String SRC = "../../resources/text/tree.txt";
 
