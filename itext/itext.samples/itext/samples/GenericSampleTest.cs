@@ -92,6 +92,7 @@ namespace iText.Samples
         public static ICollection<TestFixtureData> Data()
         {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
+            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Htmlsamples");
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox");
 
             // Samples are run by separate samples runner
