@@ -10,6 +10,7 @@ sales@itextpdf.com
 using System;
 using System.IO;
 using iText.Kernel.Font;
+using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
@@ -90,13 +91,26 @@ namespace iText.Samples.Sandbox.Tables
                 int contentLength = content.Length;
                 int leftCharIndex = 0;
                 int rightCharIndex = contentLength - 1;
-                float availableWidth = layoutContext.GetArea().GetBBox().GetWidth();
 
-                availableWidth -= bf.GetWidth("...", 12);
+                Rectangle rect = layoutContext.GetArea().GetBBox().Clone();
+
+                // Cell's margins, borders and paddings should be extracted from the available width as well.
+                // Note that this part of the sample was introduced specifically for iText7.
+                // since in iText5 the approach of processing cells was different
+                ApplyBordersPaddingsMargins(rect, GetBorders(), GetPaddings());
+                float availableWidth = rect.GetWidth();
+
+                UnitValue fontSizeUV = this.GetPropertyAsUnitValue(Property.FONT_SIZE);
+
+                // Unit values can be of POINT or PERCENT type. In this particular sample
+                // the font size value is expected to be of POINT type.
+                float fontSize = fontSizeUV.GetValue();
+
+                availableWidth -= bf.GetWidth("...", fontSize);
 
                 while (leftCharIndex < contentLength && rightCharIndex != leftCharIndex)
                 {
-                    availableWidth -= bf.GetWidth(content[leftCharIndex], 12);
+                    availableWidth -= bf.GetWidth(content[leftCharIndex], fontSize);
                     if (availableWidth > 0)
                     {
                         leftCharIndex++;
@@ -106,7 +120,7 @@ namespace iText.Samples.Sandbox.Tables
                         break;
                     }
 
-                    availableWidth -= bf.GetWidth(content[rightCharIndex], 12);
+                    availableWidth -= bf.GetWidth(content[rightCharIndex], fontSize);
 
                     if (availableWidth > 0)
                     {
@@ -118,7 +132,9 @@ namespace iText.Samples.Sandbox.Tables
                     }
                 }
 
-                String newContent = content.Substring(0, leftCharIndex) + "..." + content.Substring(rightCharIndex);
+                // left char is the first char which should not be added
+                // right char is the last char which should not be added
+                String newContent = content.Substring(0, leftCharIndex) + "..." + content.Substring(rightCharIndex + 1);
                 Paragraph p = new Paragraph(newContent);
                 
                 // We're operating on a Renderer level here, that's why we need to process a renderer,
