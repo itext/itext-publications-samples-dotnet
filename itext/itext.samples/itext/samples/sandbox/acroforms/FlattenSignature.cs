@@ -1,6 +1,6 @@
 /*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this address:
@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FlattenSignature
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/flatten_signature.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/flatten_signature.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/input_signed.pdf";
 

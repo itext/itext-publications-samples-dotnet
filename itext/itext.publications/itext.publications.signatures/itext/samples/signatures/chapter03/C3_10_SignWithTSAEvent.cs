@@ -1,7 +1,7 @@
 /*
 
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 
 */
 /*
@@ -11,6 +11,7 @@ Copyright (c) 1998-2019 iText Group NV
 *
 * For more info, go to: http://itextpdf.com/learn
 */
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,96 +19,102 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Tsp;
 using Org.BouncyCastle.X509;
 using iText.IO.Util;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
 using iText.Signatures;
-using NUnit.Framework;
 using Org.BouncyCastle.Pkcs;
 
 namespace iText.Samples.Signatures.Chapter03
 {
-	public class C3_10_SignWithTSAEvent : C3_01_SignWithCAcert
-	{
-	    public static readonly string SRC = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/pdfs/hello.pdf";
+    public class C3_10_SignWithTSAEvent
+    {
+        public static readonly string DEST = "results/signatures/chapter03/";
 
-	    public static readonly string DEST = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter03/hello_cacert_ocsp_ts.pdf";
+        public static readonly string SRC = "../../resources/pdfs/hello.pdf";
 
-	    public static readonly string PROPERTIES = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/encryption/signkey.properties";
+        public static readonly String[] RESULT_FILES =
+        {
+            "hello_cacert_ocsp_ts.pdf"
+        };
 
-		public static void Main(String[] args)
-		{
+        public static void Main(String[] args)
+        {
+            DirectoryInfo directory = new DirectoryInfo(DEST);
+            directory.Create();
+
             Properties properties = new Properties();
-            properties.Load(new FileStream(PROPERTIES, FileMode.Open, FileAccess.Read));
-            String path = NUnit.Framework.TestContext.CurrentContext.TestDirectory + properties.GetProperty("PRIVATE");
+
+            // Specify the correct path to the certificate
+            properties.Load(new FileStream("c:/home/blowagie/key.properties", FileMode.Open, FileAccess.Read));
+            String path = properties.GetProperty("PRIVATE");
             char[] pass = properties.GetProperty("PASSWORD").ToCharArray();
             String tsaUrl = properties.GetProperty("TSAURL");
             String tsaUser = properties.GetProperty("TSAUSERNAME");
             String tsaPass = properties.GetProperty("TSAPASSWORD");
-            string alias = null;
-            Pkcs12Store pk12;
 
-            pk12 = new Pkcs12Store(new FileStream(path, FileMode.Open, FileAccess.Read), pass);
+            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(path, FileMode.Open, FileAccess.Read), pass);
+            string alias = null;
             foreach (var a in pk12.Aliases)
             {
-                alias = ((string)a);
+                alias = ((string) a);
                 if (pk12.IsKeyEntry(alias))
                     break;
             }
+
             ICipherParameters pk = pk12.GetKey(alias).Key;
             X509CertificateEntry[] ce = pk12.GetCertificateChain(alias);
             X509Certificate[] chain = new X509Certificate[ce.Length];
             for (int k = 0; k < ce.Length; ++k)
+            {
                 chain[k] = ce[k].Certificate;
+            }
 
-			IOcspClient ocspClient = new OcspClientBouncyCastle(null);
-			TSAClientBouncyCastle tsaClient = new TSAClientBouncyCastle(tsaUrl, tsaUser, tsaPass
-				);
-			tsaClient.SetTSAInfo(new _ITSAInfoBouncyCastle_66());
-			C3_09_SignWithTSA app = new C3_09_SignWithTSA();
-			app.Sign(SRC, DEST, chain, pk, DigestAlgorithms.SHA256, PdfSigner.CryptoStandard
-				.CMS, "Test", "Ghent", null, ocspClient, tsaClient, 0);
-		}
+            IOcspClient ocspClient = new OcspClientBouncyCastle(null);
+            TSAClientBouncyCastle tsaClient = new TSAClientBouncyCastle(tsaUrl, tsaUser, tsaPass);
+            tsaClient.SetTSAInfo(new CustomITSAInfoBouncyCastle());
 
-		private sealed class _ITSAInfoBouncyCastle_66 : ITSAInfoBouncyCastle
-		{
-			public _ITSAInfoBouncyCastle_66()
-			{
-			}
+            new C3_10_SignWithTSAEvent().Sign(SRC, DEST + RESULT_FILES[0], chain, pk,
+                DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS,
+                "Test", "Ghent", null, ocspClient, tsaClient, 0);
+        }
 
-			public void InspectTimeStampTokenInfo(TimeStampTokenInfo info)
-			{
-				System.Console.Out.WriteLine(info.GenTime);
-			}
-		}
-
-		[NUnit.Framework.Test]
-        [Ignore("requires a valid certificate which is issued by the service that provides TSA access point")]
-        public override void RunTest()
+        public void Sign(String src, String dest, X509Certificate[] chain, ICipherParameters pk,
+            String digestAlgorithm, PdfSigner.CryptoStandard subfilter, String reason, String location,
+            ICollection<ICrlClient> crlList, IOcspClient ocspClient, ITSAClient tsaClient, int estimatedSize)
         {
-            Directory.CreateDirectory(NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/test/resources/signatures/chapter03/");
-			C3_10_SignWithTSAEvent.Main(null);
-			String[] resultFiles = new String[] { "hello_cacert_ocsp_ts.pdf" };
-			String destPath = String.Format(outPath, "chapter03");
-			String comparePath = String.Format(cmpPath, "chapter03");
-			String[] errors = new String[resultFiles.Length];
-			bool error = false;
-			//        HashMap<Integer, List<Rectangle>> ignoredAreas = new HashMap<Integer, List<Rectangle>>() { {
-			//            put(1, Arrays.asList(new Rectangle(36, 648, 200, 100)));
-			//        }};
-			for (int i = 0; i < resultFiles.Length; i++)
-			{
-				String resultFile = resultFiles[i];
-				String fileErrors = CheckForErrors(destPath + resultFile, comparePath + "cmp_" + 
-					resultFile, destPath, null);
-				/*ignoredAreas*/
-				if (fileErrors != null)
-				{
-					errors[i] = fileErrors;
-					error = true;
-				}
-			}
-			if (error)
-			{
-				NUnit.Framework.Assert.Fail(AccumulateErrors(errors));
-			}
-		}
-	}
+            PdfReader reader = new PdfReader(src);
+            PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
+
+            // Create the signature appearance
+            Rectangle rect = new Rectangle(36, 648, 200, 100);
+            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
+            appearance
+                .SetReason(reason)
+                .SetLocation(location)
+
+                // Specify if the appearance before field is signed will be used
+                // as a background for the signed field. The "false" value is the default value.
+                .SetReuseAppearance(false)
+                .SetPageRect(rect)
+                .SetPageNumber(1);
+            signer.SetFieldName("sig");
+
+            IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
+
+            // Sign the document using the detached mode, CMS or CAdES equivalent.
+            // Pass the created TSAClient to the signing method.
+            signer.SignDetached(pks, chain, crlList, ocspClient, tsaClient, estimatedSize, subfilter);
+        }
+
+        private class CustomITSAInfoBouncyCastle : ITSAInfoBouncyCastle
+        {
+            
+            // TimeStampTokenInfo object contains much more information about the timestamp token,
+            // like serial number, TST hash algorithm, etc.
+            public void InspectTimeStampTokenInfo(TimeStampTokenInfo info)
+            {
+                Console.WriteLine(info.GenTime);
+            }
+        }
+    }
 }

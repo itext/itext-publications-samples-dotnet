@@ -1,6 +1,6 @@
 /*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this address:
@@ -27,7 +27,7 @@ namespace iText.Samples.Sandbox.Pdfa
 {
     public class PdfA1a
     {
-        public static readonly string DEST = "../../results/sandbox//pdfa/pdf_a_1a.pdf";
+        public static readonly string DEST = "results/sandbox//pdfa/pdf_a_1a.pdf";
 
         public static readonly String BOLD = "../../resources/font/OpenSans-Bold.ttf";
 

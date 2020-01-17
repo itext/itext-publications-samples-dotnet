@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -19,7 +19,7 @@ namespace iText.Samples.Signatures.Chapter01
 {
     public class C1_02_DigestBC
     {
-        public static readonly String DEST = "../../results/signatures/chapter01/";
+        public static readonly String DEST = "results/signatures/chapter01/";
 
         public static readonly String EXPECTED_OUTPUT = "Digest using MD5: 16\n" +
                                                         "Digest: 5f4dcc3b5aa765d61d8327deb882cf99\n" +

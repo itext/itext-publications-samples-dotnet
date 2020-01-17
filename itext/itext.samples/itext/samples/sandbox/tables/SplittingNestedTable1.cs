@@ -1,6 +1,6 @@
 /*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this Address:
@@ -17,7 +17,7 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables {
     public class SplittingNestedTable1 {
-        public static readonly string DEST = "../../results/sandbox/tables/splitting_nested_table1.pdf";
+        public static readonly string DEST = "results/sandbox/tables/splitting_nested_table1.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

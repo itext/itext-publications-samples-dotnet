@@ -1,6 +1,6 @@
 /*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this address:
@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class HideButton
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/hide_button.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/hide_button.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/hello_button.pdf";
 

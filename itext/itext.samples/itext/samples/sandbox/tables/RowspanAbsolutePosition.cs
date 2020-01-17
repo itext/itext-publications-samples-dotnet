@@ -1,6 +1,6 @@
 /*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this address:
@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class RowspanAbsolutePosition
     {
-        public static readonly string DEST = "../../results/sandbox/tables/rowspan_absolute_position.pdf";
+        public static readonly string DEST = "results/sandbox/tables/rowspan_absolute_position.pdf";
 
         public static readonly String IMG = "../../resources/img/berlin2013.jpg";
 

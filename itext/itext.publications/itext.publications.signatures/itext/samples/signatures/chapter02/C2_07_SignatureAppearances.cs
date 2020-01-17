@@ -1,7 +1,7 @@
 /*
 
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 
 */
 /*
@@ -25,7 +25,7 @@ namespace iText.Samples.Signatures.Chapter02
 {
     public class C2_07_SignatureAppearances
     {
-        public static readonly string DEST = "../../results/signatures/chapter02/";
+        public static readonly string DEST = "results/signatures/chapter02/";
 
         public static readonly string KEYSTORE = "../../resources/encryption/ks";
         public static readonly string SRC = "../../resources/pdfs/hello_to_sign.pdf";

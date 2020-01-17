@@ -10,7 +10,7 @@ namespace iText.Samples.Sandbox.Acroforms
     {
         public static readonly String sourceFolder = "../../resources/pdfs/";
         
-        public static readonly String DEST = "../../results/sandbox/acroforms/createXfdf.xfdf";
+        public static readonly String DEST = "results/sandbox/acroforms/createXfdf.xfdf";
 
 
         public static void Main(String[] args)

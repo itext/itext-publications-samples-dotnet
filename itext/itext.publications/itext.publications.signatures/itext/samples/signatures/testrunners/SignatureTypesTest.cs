@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -23,7 +23,7 @@ namespace iText.Samples.Signatures.Testrunners
         private static readonly IDictionary<int, IList<Rectangle>> ignoredAreaMap;
 
         private static readonly String EXPECTED_ERROR_TEXT =
-            "\n../../results/signatures/chapter02/hello_level_1_annotated_wrong.pdf:"
+            "\nresults/signatures/chapter02/hello_level_1_annotated_wrong.pdf:"
             + "\n\"sig\" signature integrity is invalid\n\n";
 
         static SignatureTypesTest()
@@ -71,7 +71,7 @@ namespace iText.Samples.Signatures.Testrunners
                      * (permissions, certifications, content changes),
                      *  however signatures themselves are not broken.
                      */
-                    String result = new SignatureTest()
+                    String result = new SignatureTestHelper()
                         .CheckForErrors(currentDest, currentCmp, outPath, ignoredAreaMap);
 
                     if (result != null)

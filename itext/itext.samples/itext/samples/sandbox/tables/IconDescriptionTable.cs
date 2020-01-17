@@ -1,6 +1,6 @@
 /*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this address:
@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class IconDescriptionTable
     {
-        public static readonly string DEST = "../../results/sandbox/tables/icon_description_table.pdf";
+        public static readonly string DEST = "results/sandbox/tables/icon_description_table.pdf";
 
         public static readonly string IMG = "../../resources/img/bulb.gif";
 

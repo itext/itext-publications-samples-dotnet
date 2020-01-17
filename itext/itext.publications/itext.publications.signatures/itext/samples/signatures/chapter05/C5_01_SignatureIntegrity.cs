@@ -1,7 +1,7 @@
 /*
 
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 
 */
 /*
@@ -11,77 +11,97 @@ Copyright (c) 1998-2019 iText Group NV
 *
 * For more info, go to: http://itextpdf.com/learn
 */
+
 using System;
 using System.Collections.Generic;
-using System.IO;
 using iText.Kernel.Pdf;
 using iText.Signatures;
 
 namespace iText.Samples.Signatures.Chapter05
 {
-	public class C5_01_SignatureIntegrity : SignatureTest
-	{
-        public static readonly string EXAMPLE1 = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/pdfs/hello_level_1_annotated.pdf";
+    public class C5_01_SignatureIntegrity
+    {
+        public static readonly string DEST = "signatures/chapter05/";
+        
+        public static readonly string EXAMPLE1 = "../../resources/pdfs/hello_level_1_annotated.pdf";
 
-        public static readonly string EXAMPLE2 = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf";
+        public static readonly string EXAMPLE2 = "../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf";
 
-        public static readonly string EXAMPLE3 = NUnit.Framework.TestContext.CurrentContext.TestDirectory + "/../../resources/pdfs/step_6_signed_by_dave_broken_by_chuck.pdf";
+        public static readonly string EXAMPLE3 = "../../resources/pdfs/step_6_signed_by_dave_broken_by_chuck.pdf";
 
-	    public const String expectedOutput = "===== sig =====\r\n" + "Signature covers whole document: False\r\n"
-			 + "Document revision: 1 of 2\r\n" + "Integrity check OK? True\r\n" + "\r\n" + "===== sig1 =====\r\n"
-			 + "Signature covers whole document: False\r\n" + "Document revision: 1 of 4\r\n" + 
-			"Integrity check OK? True\r\n" + "===== sig2 =====\r\n" + "Signature covers whole document: False\r\n"
-			 + "Document revision: 2 of 4\r\n" + "Integrity check OK? True\r\n" + "===== sig3 =====\r\n"
-			 + "Signature covers whole document: False\r\n" + "Document revision: 3 of 4\r\n" + 
-			"Integrity check OK? True\r\n" + "===== sig4 =====\r\n" + "Signature covers whole document: True\r\n"
-			 + "Document revision: 4 of 4\r\n" + "Integrity check OK? True\r\n" + "\r\n" + "===== sig1 =====\r\n"
-			 + "Signature covers whole document: False\r\n" + "Document revision: 1 of 5\r\n" + 
-			"Integrity check OK? True\r\n" + "===== sig2 =====\r\n" + "Signature covers whole document: False\r\n"
-			 + "Document revision: 2 of 5\r\n" + "Integrity check OK? True\r\n" + "===== sig3 =====\r\n"
-			 + "Signature covers whole document: False\r\n" + "Document revision: 3 of 5\r\n" + 
-			"Integrity check OK? True\r\n" + "===== sig4 =====\r\n" + "Signature covers whole document: False\r\n"
-			 + "Document revision: 4 of 5\r\n" + "Integrity check OK? True\r\n" + "\r\n";
+        public const String EXPECTED_OUTPUT = "../../resources/pdfs/hello_level_1_annotated.pdf\n"
+                                             + "===== sig =====\n"
+                                             + "Signature covers whole document: False\n"
+                                             + "Document revision: 1 of 2\n"
+                                             + "Integrity check OK? True\n"
+                                             + "../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf\n"
+                                             + "===== sig1 =====\n"
+                                             + "Signature covers whole document: False\n"
+                                             + "Document revision: 1 of 4\n"
+                                             + "Integrity check OK? True\n"
+                                             + "===== sig2 =====\n"
+                                             + "Signature covers whole document: False\n"
+                                             + "Document revision: 2 of 4\n"
+                                             + "Integrity check OK? True\n"
+                                             + "===== sig3 =====\n"
+                                             + "Signature covers whole document: False\n"
+                                             + "Document revision: 3 of 4\n"
+                                             + "Integrity check OK? True\n"
+                                             + "===== sig4 =====\n"
+                                             + "Signature covers whole document: True\n"
+                                             + "Document revision: 4 of 4\n"
+                                             + "Integrity check OK? True\n"
+                                             + "../../resources/pdfs/step_6_signed_by_dave_broken_by_chuck.pdf\n"
+                                             + "===== sig1 =====\n"
+                                             + "Signature covers whole document: False\n"
+                                             + "Document revision: 1 of 5\n"
+                                             + "Integrity check OK? True\n"
+                                             + "===== sig2 =====\n"
+                                             + "Signature covers whole document: False\n"
+                                             + "Document revision: 2 of 5\n"
+                                             + "Integrity check OK? True\n"
+                                             + "===== sig3 =====\n"
+                                             + "Signature covers whole document: False\n"
+                                             + "Document revision: 3 of 5\n"
+                                             + "Integrity check OK? True\n"
+                                             + "===== sig4 =====\n"
+                                             + "Signature covers whole document: False\n"
+                                             + "Document revision: 4 of 5\n"
+                                             + "Integrity check OK? True\n";
 
-		public virtual PdfPKCS7 VerifySignature(SignatureUtil signUtil, String name)
-		{
-			System.Console.Out.WriteLine("Signature covers whole document: " + signUtil.SignatureCoversWholeDocument
-				(name));
-			System.Console.Out.WriteLine("Document revision: " + signUtil.GetRevision(name) +
-				 " of " + signUtil.GetTotalRevisions());
-			PdfPKCS7 pkcs7 = signUtil.ReadSignatureData(name);
-			System.Console.Out.WriteLine("Integrity check OK? " + pkcs7.VerifySignatureIntegrityAndAuthenticity());
-			return pkcs7;
-		}
+        public void VerifySignatures(String path)
+        {
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader(path));
+            SignatureUtil signUtil = new SignatureUtil(pdfDoc);
+            IList<String> names = signUtil.GetSignatureNames();
 
-		public virtual void VerifySignatures(String path)
-		{
-			// System.out.println(path);
-			PdfDocument pdfDoc = new PdfDocument(new PdfReader(path));
-			SignatureUtil signUtil = new SignatureUtil(pdfDoc);
-			IList<String> names = signUtil.GetSignatureNames();
-			foreach (String name in names)
-			{
-				System.Console.Out.WriteLine("===== " + name + " =====");
-				VerifySignature(signUtil, name);
-			}
-			System.Console.Out.WriteLine();
-		}
+            Console.WriteLine(path);
+            foreach (String name in names)
+            {
+                Console.Out.WriteLine("===== " + name + " =====");
+                VerifySignature(signUtil, name);
+            }
+            
+            pdfDoc.Close();
+        }
 
-		public static void Main(String[] args)
-		{
-			C5_01_SignatureIntegrity app = new C5_01_SignatureIntegrity();
-			app.VerifySignatures(EXAMPLE1);
-			app.VerifySignatures(EXAMPLE2);
-			app.VerifySignatures(EXAMPLE3);
-		}
+        public PdfPKCS7 VerifySignature(SignatureUtil signUtil, String name)
+        {
+            PdfPKCS7 pkcs7 = signUtil.ReadSignatureData(name);
 
-		[NUnit.Framework.Test]
-		public virtual void RunTest()
-		{
-			SetupSystemOutput();
-			C5_01_SignatureIntegrity.Main(null);
-			String sysOut = GetSystemOutput();
-			NUnit.Framework.Assert.AreEqual(expectedOutput, sysOut, "Unexpected output");
-		}
-	}
+            Console.Out.WriteLine("Signature covers whole document: " + signUtil.SignatureCoversWholeDocument(name));
+            Console.Out.WriteLine("Document revision: " + signUtil.GetRevision(name) + " of "
+                                  + signUtil.GetTotalRevisions());
+            Console.Out.WriteLine("Integrity check OK? " + pkcs7.VerifySignatureIntegrityAndAuthenticity());
+            return pkcs7;
+        }
+
+        public static void Main(String[] args)
+        {
+            C5_01_SignatureIntegrity app = new C5_01_SignatureIntegrity();
+            app.VerifySignatures(EXAMPLE1);
+            app.VerifySignatures(EXAMPLE2);
+            app.VerifySignatures(EXAMPLE3);
+        }
+    }
 }

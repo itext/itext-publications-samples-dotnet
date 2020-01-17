@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
 {
     public class CustomBorder2
     {
-        public static readonly string DEST = "../../results/sandbox/tables/custom_border2.pdf";
+        public static readonly string DEST = "results/sandbox/tables/custom_border2.pdf";
 
         public static readonly string TEXT = "This is some long paragraph that will be added over and over " +
                                              "again to prove a point. It should result in rows that are split and rows that aren't.";

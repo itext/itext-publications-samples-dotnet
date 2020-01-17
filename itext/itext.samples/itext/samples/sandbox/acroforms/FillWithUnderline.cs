@@ -1,6 +1,6 @@
 /*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this address:
@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FillWithUnderline
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/fill_with_underline.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/fill_with_underline.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/form.pdf";
 

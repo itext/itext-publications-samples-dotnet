@@ -1,6 +1,6 @@
 ﻿/*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this address:
@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FillXFA2
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/xfa_example_filled.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/xfa_example_filled.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/xfa_invoice_example.pdf";
         public static readonly String XML = "../../resources/xml/xfa_example.xml";

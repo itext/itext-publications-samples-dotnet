@@ -1,6 +1,6 @@
 /*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this address:
@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class ChangeFieldPosition
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/change_field_position.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/change_field_position.pdf";
 
         public static readonly String SRC = "../../resources/pdfs/state.pdf";
 

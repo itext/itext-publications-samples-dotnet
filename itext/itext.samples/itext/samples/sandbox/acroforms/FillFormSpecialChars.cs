@@ -1,6 +1,6 @@
 /*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this address:
@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FillFormSpecialChars
     {
-        public static readonly String DEST = "../../results/sandbox/acroforms/fill_form_special_chars.pdf";
+        public static readonly String DEST = "results/sandbox/acroforms/fill_form_special_chars.pdf";
 
         public static readonly String FONT = "../../resources/font/FreeSans.ttf";
         public static readonly String SRC = "../../resources/pdfs/test.pdf";

@@ -1,6 +1,6 @@
 /*
 This file is part of the iText (R) project.
-Copyright (c) 1998-2019 iText Group NV
+Copyright (c) 1998-2020 iText Group NV
 Authors: iText Software.
 
 For more information, please contact iText Software at this address:
@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Pdfa
     {
         public const float MARGIN_OF_ONE_CM = 28.8f;
 
-        public static readonly string DEST = "../../results/sandbox/pdfa/pdf_a1a_images.pdf";
+        public static readonly string DEST = "results/sandbox/pdfa/pdf_a1a_images.pdf";
 
         public static readonly String FONT = "../../resources/font/OpenSans-Regular.ttf";
 
