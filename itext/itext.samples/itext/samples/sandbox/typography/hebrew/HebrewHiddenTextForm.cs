@@ -22,8 +22,8 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
     public class HebrewHiddenTextForm
     {
         public const String DEST = "results/sandbox/typography/HebrewHiddenTextForm.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
-        public const String RESOURCE_FOLDER = "../../resources/pdfs/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
+        public const String RESOURCE_FOLDER = "../../../resources/pdfs/";
         public const String INPUT_FILE = "hebrewAppearance.pdf";
 
         public static void Main(String[] args)

@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Stamper
 {
     public class AddRotatedTemplate 
     {
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
         public static readonly String DEST = "results/sandbox/stamper/add_rotated_template.pdf";
 
         public static void Main(String[] args) 

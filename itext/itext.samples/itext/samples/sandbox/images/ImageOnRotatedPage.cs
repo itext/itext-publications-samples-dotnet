@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Images
     {
         public static readonly String DEST = "results/sandbox/images/image_on_rotated_page.pdf";
 
-        public static readonly String IMAGE = "../../resources/img/cardiogram.png";
+        public static readonly String IMAGE = "../../../resources/img/cardiogram.png";
 
         public static void Main(String[] args)
         {

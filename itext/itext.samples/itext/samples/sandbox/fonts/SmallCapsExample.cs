@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Fonts
     {
         public static readonly String DEST = "results/sandbox/fonts/small_caps_example.pdf";
 
-        public static readonly String FONT = "../../resources/font/Delicious-SmallCaps.otf";
+        public static readonly String FONT = "../../../resources/font/Delicious-SmallCaps.otf";
 
         public static void Main(String[] args)
         {

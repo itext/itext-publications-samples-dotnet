@@ -12,7 +12,7 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C05E07_NestedTable {
-        public const String DEST = "../../results/chapter05/nested_tables.pdf";
+        public const String DEST = "../../../results/chapter05/nested_tables.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

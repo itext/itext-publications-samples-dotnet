@@ -26,9 +26,9 @@ namespace iText.Samples.Sandbox.Tables
     {
         public static readonly string DEST = "results/sandbox/tables/tiled_background.pdf";
 
-        public static readonly String IMG1 = "../../resources/img/ALxRF.png";
+        public static readonly String IMG1 = "../../../resources/img/ALxRF.png";
 
-        public static readonly String IMG2 = "../../resources/img/bulb.gif";
+        public static readonly String IMG2 = "../../../resources/img/bulb.gif";
 
         public static void Main(String[] args)
         {

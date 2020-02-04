@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Tamil
     public class TamilOpacity
     {
         public const String DEST = "results/sandbox/typography/TamilOpacity.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

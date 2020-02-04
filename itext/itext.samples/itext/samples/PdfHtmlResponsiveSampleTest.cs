@@ -77,7 +77,7 @@ namespace iText.Samples
             }
 
             int i = dest.LastIndexOf("/");
-            return "../../resources/" + dest.Substring(8, 16) + "cmp_" + dest.Substring(i + 1);
+            return "../../../resources/" + dest.Substring(8, 16) + "cmp_" + dest.Substring(i + 1);
         }
 
         private void ResetLicense()

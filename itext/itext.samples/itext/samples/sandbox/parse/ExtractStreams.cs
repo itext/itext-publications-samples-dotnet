@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Parse
     {
         public static readonly String DEST = "results/sandbox/parse";
 
-        public static readonly String SRC = "../../resources/pdfs/image.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/image.pdf";
 
         public static void Main(String[] args)
         {

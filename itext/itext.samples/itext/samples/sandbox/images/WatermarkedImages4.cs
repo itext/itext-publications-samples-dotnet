@@ -24,10 +24,10 @@ namespace iText.Samples.Sandbox.Images
     {
         public static readonly String DEST = "results/sandbox/images/watermarked_images4.pdf";
 
-        public static readonly String IMAGE1 = "../../resources/img/bruno.jpg";
-        public static readonly String IMAGE2 = "../../resources/img/dog.bmp";
-        public static readonly String IMAGE3 = "../../resources/img/fox.bmp";
-        public static readonly String IMAGE4 = "../../resources/img/bruno_ingeborg.jpg";
+        public static readonly String IMAGE1 = "../../../resources/img/bruno.jpg";
+        public static readonly String IMAGE2 = "../../../resources/img/dog.bmp";
+        public static readonly String IMAGE3 = "../../../resources/img/fox.bmp";
+        public static readonly String IMAGE4 = "../../../resources/img/bruno_ingeborg.jpg";
 
         public static void Main(String[] args)
         {

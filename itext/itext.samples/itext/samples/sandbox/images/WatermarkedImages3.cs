@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Images
     {
         public static readonly String DEST = "results/sandbox/images/watermarked_images3.pdf";
 
-        public static readonly String IMAGE1 = "../../resources/img/bruno.jpg";
+        public static readonly String IMAGE1 = "../../../resources/img/bruno.jpg";
 
         public static void Main(String[] args)
         {

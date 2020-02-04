@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Merge
     {
         public static readonly String DEST = "results/sandbox/merge/tiling_hero.pdf";
 
-        public static readonly String RESOURCE = "../../resources/pdfs/hero.pdf";
+        public static readonly String RESOURCE = "../../../resources/pdfs/hero.pdf";
 
         public static void Main(String[] args)
         {

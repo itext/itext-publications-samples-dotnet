@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tagging
     public class AddArtifactTable
     {
         public static readonly String DEST = "results/sandbox/tagging/88th_Academy_Awards_artifact_table.pdf";
-        public static readonly String SRC = "../../resources/tagging/88th_Academy_Awards.pdf";
+        public static readonly String SRC = "../../../resources/tagging/88th_Academy_Awards.pdf";
 
         public static void Main(String[] args)
         {

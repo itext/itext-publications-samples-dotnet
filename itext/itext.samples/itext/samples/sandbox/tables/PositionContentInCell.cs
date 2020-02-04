@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Tables
     {
         public static readonly string DEST = "results/sandbox/tables/position_content_in_cell.pdf";
 
-        public static readonly string IMG = "../../resources/img/info.png";
+        public static readonly string IMG = "../../../resources/img/info.png";
 
         private enum POSITION
         {

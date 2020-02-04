@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class AddLongTable 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_long_table.pdf";
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
 
         public static void Main(String[] args) 
         {

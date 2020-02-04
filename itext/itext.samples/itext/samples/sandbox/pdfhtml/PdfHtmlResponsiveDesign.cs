@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
 {
     public class PdfHtmlResponsiveDesign
     {
-        public static readonly string SRC = "../../resources/pdfhtml/ResponsiveDesign/responsive/";
+        public static readonly string SRC = "../../../resources/pdfhtml/ResponsiveDesign/responsive/";
         public static readonly string DEST = "results/sandbox/pdfhtml/<filename>";
 
         public static readonly PageSize[] pageSizes =

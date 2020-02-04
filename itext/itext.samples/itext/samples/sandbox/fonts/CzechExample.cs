@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Fonts
     public class CzechExample
     {
         public static readonly String DEST = "results/sandbox/fonts/czech_example.pdf";
-        public static readonly String FONT = "../../resources/font/FreeSans.ttf";
+        public static readonly String FONT = "../../../resources/font/FreeSans.ttf";
 
         public static void Main(String[] args)
         {

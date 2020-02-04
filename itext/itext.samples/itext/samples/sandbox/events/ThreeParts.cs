@@ -26,9 +26,9 @@ namespace iText.Samples.Sandbox.Events
     {
         public static readonly String DEST = "results/sandbox/events/three_parts.pdf";
 
-        public static readonly String SRC_LA = "../../resources/txt/liber1_{0}_la.txt";
-        public static readonly String SRC_EN = "../../resources/txt/liber1_{0}_en.txt";
-        public static readonly String SRC_FR = "../../resources/txt/liber1_{0}_fr.txt";
+        public static readonly String SRC_LA = "../../../resources/txt/liber1_{0}_la.txt";
+        public static readonly String SRC_EN = "../../../resources/txt/liber1_{0}_en.txt";
+        public static readonly String SRC_FR = "../../../resources/txt/liber1_{0}_fr.txt";
 
         public static void Main(String[] args)
         {

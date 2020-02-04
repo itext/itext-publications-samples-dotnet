@@ -74,7 +74,7 @@ namespace iText.Samples
                                                                        + "\nActual: " + currentNumberOfPages);
             }
 
-            String compareFilePath = "../../resources/htmlsamples/txt/cmp_" + sampleClass.Name + "_keywords.txt";
+            String compareFilePath = "../../../resources/htmlsamples/txt/cmp_" + sampleClass.Name + "_keywords.txt";
             String compareContent = ReadFile(compareFilePath);
             String[] comparePagesContent = compareContent.Split(';');
 

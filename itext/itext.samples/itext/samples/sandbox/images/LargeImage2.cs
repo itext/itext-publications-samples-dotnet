@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Images
     {
         public static readonly String DEST = "results/sandbox/images/large_image2.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/large_image.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/large_image.pdf";
 
         public static void Main(String[] args)
         {

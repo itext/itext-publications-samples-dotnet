@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Khmer
     public class KhmerOpacity
     {
         public const String DEST = "results/sandbox/typography/KhmerOpacity.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

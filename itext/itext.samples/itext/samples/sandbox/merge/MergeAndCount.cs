@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Merge
     {
         public static readonly String DEST = "results/sandbox/merge/splitDocument1_{0}.pdf";
 
-        public static readonly String RESOURCE = "../../resources/pdfs/Wrong.pdf";
+        public static readonly String RESOURCE = "../../../resources/pdfs/Wrong.pdf";
 
         public static void Main(String[] args)
         {

@@ -14,7 +14,7 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C01E09_ColorRendering {
-        public const String DEST = "../../results/chapter01/color_rendermode.pdf";
+        public const String DEST = "../../../results/chapter01/color_rendermode.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

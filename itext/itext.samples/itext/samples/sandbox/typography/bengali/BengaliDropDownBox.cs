@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Typography.Bengali
     public class BengaliDropDownBox
     {
         public const String DEST = "results/sandbox/typography/BengaliDropDownBox.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

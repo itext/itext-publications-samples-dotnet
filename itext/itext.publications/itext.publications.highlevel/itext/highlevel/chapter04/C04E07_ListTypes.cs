@@ -13,7 +13,7 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter04 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C04E07_ListTypes {
-        public const String DEST = "../../results/chapter04/list_types.pdf";
+        public const String DEST = "../../../results/chapter04/list_types.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

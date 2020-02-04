@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Annotations
     {
         public static readonly String DEST = "results/sandbox/annotations/add_pointer_annotation.pdf";
 
-        public static readonly String IMG = "../../resources/img/map_cic.png";
+        public static readonly String IMG = "../../../resources/img/map_cic.png";
 
         public static void Main(String[] args)
         {

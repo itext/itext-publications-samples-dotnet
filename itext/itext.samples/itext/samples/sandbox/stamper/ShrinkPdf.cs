@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class ShrinkPdf 
     {
         public static readonly String DEST = "results/sandbox/stamper/shrink_pdf.pdf";
-        public static readonly String SRC = "../../resources/pdfs/hero.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hero.pdf";
 
         public static void Main(String[] args) 
         {

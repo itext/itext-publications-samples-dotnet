@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Fonts
     {
         public static readonly String DEST = "results/sandbox/fonts/sun_character.pdf";
 
-        public static readonly String FONT = "../../resources/font/Cardo-Regular.ttf";
+        public static readonly String FONT = "../../../resources/font/Cardo-Regular.ttf";
 
         // "The Cardo family of fonts supports this character: ☉"
         public static readonly String TEXT = "The Cardo family of fonts supports this character: \u2609";

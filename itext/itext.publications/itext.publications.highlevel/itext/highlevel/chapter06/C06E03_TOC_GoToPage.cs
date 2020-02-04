@@ -21,9 +21,9 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter06 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C06E03_TOC_GoToPage {
-        public const String SRC = "../../resources/txt/jekyll_hyde.txt";
+        public const String SRC = "../../../resources/txt/jekyll_hyde.txt";
 
-        public const String DEST = "../../results/chapter06/jekyll_hyde_toc1.pdf";
+        public const String DEST = "../../../results/chapter06/jekyll_hyde_toc1.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

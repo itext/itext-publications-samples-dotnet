@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Typography.Thai
     public class ThaiTextFormField
     {
         public const String DEST = "results/sandbox/typography/ThaiTextFormField.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

@@ -10,9 +10,9 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace Tutorial.Chapter06 {
     public class C06E02_TheGoldenGateBridge_Tiles {
-        public const String SRC = "../../resources/pdf/the_golden_gate_bridge.pdf";
+        public const String SRC = "../../../resources/pdf/the_golden_gate_bridge.pdf";
 
-        public const String DEST = "../../results/chapter06/the_golden_gate_bridge_tiles.pdf";
+        public const String DEST = "../../../results/chapter06/the_golden_gate_bridge_tiles.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

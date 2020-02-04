@@ -52,7 +52,7 @@ namespace iText.Samples.Sandbox.Tables
 
             // Adds drawn on a canvas image to the table
             table.SetNextRenderer(new OverlappingImageTableRenderer(table,
-                ImageDataFactory.Create("../../resources/img/hero.jpg")));
+                ImageDataFactory.Create("../../../resources/img/hero.jpg")));
 
             doc.Add(table);
 

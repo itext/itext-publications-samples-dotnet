@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class ChangeBookmarks 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_bookmarks.pdf";
-        public static readonly String SRC = "../../resources/pdfs/bookmarks.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/bookmarks.pdf";
 
         public static void Main(String[] args) 
         {

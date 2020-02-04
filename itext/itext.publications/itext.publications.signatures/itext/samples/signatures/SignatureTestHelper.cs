@@ -24,11 +24,11 @@ namespace iText.Samples.Signatures
 {
     public class SignatureTestHelper
     {
-        public static readonly string ADOBE = "../../resources/encryption/adobeRootCA.cer";
+        public static readonly string ADOBE = "../../../resources/encryption/adobeRootCA.cer";
 
-        public static readonly string CACERT = "../../resources/encryption/CACertSigningAuthority.crt";
+        public static readonly string CACERT = "../../../resources/encryption/CACertSigningAuthority.crt";
 
-        public static readonly string BRUNO = "../../resources/encryption/bruno.crt";
+        public static readonly string BRUNO = "../../../resources/encryption/bruno.crt";
 
         private String errorMessage;
 

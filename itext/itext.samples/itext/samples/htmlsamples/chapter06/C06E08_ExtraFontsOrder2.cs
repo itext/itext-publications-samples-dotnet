@@ -29,8 +29,8 @@ namespace iText.Samples.Htmlsamples.Chapter06
         /// </summary>
         public static readonly String[] FONTS =
         {
-            "../../resources/htmlsamples/fonts/cardo/Cardo-Regular.ttf",
-            "../../resources/htmlsamples/fonts/noto/NotoSans-Regular.ttf"
+            "../../../resources/htmlsamples/fonts/cardo/Cardo-Regular.ttf",
+            "../../../resources/htmlsamples/fonts/noto/NotoSans-Regular.ttf"
         };
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace iText.Samples.Htmlsamples.Chapter06
         /// <summary>
         /// The path to the source HTML file.
         /// </summary>
-        public static readonly String SRC = "../../resources/htmlsamples/html/hello.html";
+        public static readonly String SRC = "../../../resources/htmlsamples/html/hello.html";
 
         /// <summary>
         /// The main method of this example.

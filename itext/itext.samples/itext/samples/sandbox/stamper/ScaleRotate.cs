@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class ScaleRotate 
     {
         public static readonly String DEST = "results/sandbox/stamper/scale_rotate.pdf";
-        public static readonly String SRC = "../../resources/pdfs/pages.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/pages.pdf";
 
         public static void Main(String[] args) 
         {

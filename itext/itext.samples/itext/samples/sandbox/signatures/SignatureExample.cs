@@ -24,9 +24,9 @@ namespace iText.Samples.Sandbox.Signatures
     {
         public static readonly String DEST = "results/sandbox/signatures/signExample.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/signExample.pdf";
-        public static readonly String CERT_PATH = "../../resources/cert/signCertRsa01.p12";
-        public static readonly String IMAGE_PATH = "../../resources/img/sign.jpg";
+        public static readonly String SRC = "../../../resources/pdfs/signExample.pdf";
+        public static readonly String CERT_PATH = "../../../resources/cert/signCertRsa01.p12";
+        public static readonly String IMAGE_PATH = "../../../resources/img/sign.jpg";
 
         public static void Main(String[] args)
         {

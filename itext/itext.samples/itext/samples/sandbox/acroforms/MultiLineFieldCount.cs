@@ -27,7 +27,7 @@ namespace iText.Samples.Sandbox.Acroforms
     public class MultiLineFieldCount 
     {
         public static readonly string DEST = "results/sandbox/acroforms/multiLineFieldCount.pdf";
-        public static readonly string SRC = "../../resources/pdfs/multiline.pdf";
+        public static readonly string SRC = "../../../resources/pdfs/multiline.pdf";
 
         public static void Main(String[] args) 
         {

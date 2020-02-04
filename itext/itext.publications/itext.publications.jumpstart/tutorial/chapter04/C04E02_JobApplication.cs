@@ -15,7 +15,7 @@ using iText.Layout.Properties;
 namespace Tutorial.Chapter04 {
     /// <summary>Simple widget annotation example.</summary>
     public class C04E02_JobApplication {
-        public const String DEST = "../../results/chapter04/job_application.pdf";
+        public const String DEST = "../../../results/chapter04/job_application.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

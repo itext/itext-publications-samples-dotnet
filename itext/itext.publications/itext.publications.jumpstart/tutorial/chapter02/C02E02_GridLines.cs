@@ -11,7 +11,7 @@ using iText.Kernel.Pdf.Canvas;
 namespace Tutorial.Chapter02 {
     /// <summary>Simple changing graphics state example.</summary>
     public class C02E02_GridLines {
-        public const String DEST = "../../results/chapter02/grid_lines.pdf";
+        public const String DEST = "../../../results/chapter02/grid_lines.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

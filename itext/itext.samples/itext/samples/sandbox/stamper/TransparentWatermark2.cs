@@ -25,8 +25,8 @@ namespace iText.Samples.Sandbox.Stamper
     public class TransparentWatermark2 
     {
         public static readonly String DEST = "results/sandbox/stamper/transparent_watermark2.pdf";
-        public static readonly String IMG = "../../resources/img/itext.png";
-        public static readonly String SRC = "../../resources/pdfs/pages.pdf";
+        public static readonly String IMG = "../../../resources/img/itext.png";
+        public static readonly String SRC = "../../../resources/pdfs/pages.pdf";
 
         public static void Main(String[] args) 
         {

@@ -11,9 +11,9 @@ using iText.Layout.Element;
 
 namespace iText.Highlevel.Chapter03 {
     public class C03E08_MaryReillyV1 {
-        public const String MARY = "../../resources/img/0117002.jpg";
+        public const String MARY = "../../../resources/img/0117002.jpg";
 
-        public const String DEST = "../../results/chapter03/mary_reilly_V1.pdf";
+        public const String DEST = "../../../results/chapter03/mary_reilly_V1.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

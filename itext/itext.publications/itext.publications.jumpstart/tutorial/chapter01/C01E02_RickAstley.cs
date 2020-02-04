@@ -12,7 +12,7 @@ using iText.Layout.Element;
 namespace Tutorial.Chapter01 {
     /// <summary>Simple List example.</summary>
     public class C01E02_RickAstley {
-        public const String DEST = "../../results/chapter01/rick_astley.pdf";
+        public const String DEST = "../../../results/chapter01/rick_astley.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

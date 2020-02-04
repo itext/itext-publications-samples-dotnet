@@ -41,6 +41,11 @@ namespace iText.Highlevel {
             AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));
             AddError(compareTool.CompareDocumentInfo(dest, cmp));
         }
+        
+        protected override string GetCmpPdf(String dest)
+        {
+            return "../" + base.GetCmpPdf(dest);
+        }
 
         protected void InitClass()
         {

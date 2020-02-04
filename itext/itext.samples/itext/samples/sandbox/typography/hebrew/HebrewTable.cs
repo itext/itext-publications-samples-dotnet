@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
     public class HebrewTable
     {
         public const String DEST = "results/sandbox/typography/HebrewTable.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

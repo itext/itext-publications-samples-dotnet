@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Annotations
     {
         public static readonly String DEST = "results/sandbox/annotations/remove_embedded_files.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/hello_with_attachment.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello_with_attachment.pdf";
 
         public static void Main(String[] args)
         {

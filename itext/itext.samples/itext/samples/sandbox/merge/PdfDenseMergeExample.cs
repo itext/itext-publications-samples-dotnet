@@ -20,10 +20,10 @@ namespace iText.Samples.Sandbox.Merge
     {
         public static readonly String DEST = "results/sandbox/merge/denseMergeExample.pdf";
 
-        public static readonly String SRC1 = "../../resources/pdfs/merge1.pdf";
-        public static readonly String SRC2 = "../../resources/pdfs/merge2.pdf";
-        public static readonly String SRC3 = "../../resources/pdfs/merge3.pdf";
-        public static readonly String SRC4 = "../../resources/pdfs/merge4.pdf";
+        public static readonly String SRC1 = "../../../resources/pdfs/merge1.pdf";
+        public static readonly String SRC2 = "../../../resources/pdfs/merge2.pdf";
+        public static readonly String SRC3 = "../../../resources/pdfs/merge3.pdf";
+        public static readonly String SRC4 = "../../../resources/pdfs/merge4.pdf";
 
         public static void Main(string[] args)
         {

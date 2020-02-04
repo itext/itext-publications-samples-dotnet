@@ -11,11 +11,11 @@ using iText.Layout.Element;
 namespace Tutorial.Chapter01 {
     /// <summary>Simple image example.</summary>
     public class C01E03_QuickBrownFox {
-        public const String DOG = "../../resources/img/dog.bmp";
+        public const String DOG = "../../../resources/img/dog.bmp";
 
-        public const String FOX = "../../resources/img/fox.bmp";
+        public const String FOX = "../../../resources/img/fox.bmp";
 
-        public const String DEST = "../../results/chapter01/quick_brown_fox.pdf";
+        public const String DEST = "../../../results/chapter01/quick_brown_fox.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

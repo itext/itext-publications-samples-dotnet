@@ -32,12 +32,12 @@ namespace iText.Samples.Htmlsamples.Chapter06
         /// <summary>
         /// The path to the source HTML file.
         /// </summary>
-        public static readonly String SRC = "../../resources/htmlsamples/html/hello.html";
+        public static readonly String SRC = "../../../resources/htmlsamples/html/hello.html";
 
         /// <summary>
         /// The path to an extra font.
         /// </summary>
-        public static readonly String FONT = "../../resources/htmlsamples/fonts/cardo/Cardo-Regular.ttf";
+        public static readonly String FONT = "../../../resources/htmlsamples/fonts/cardo/Cardo-Regular.ttf";
 
         /// <summary>
         /// The main method of this example.

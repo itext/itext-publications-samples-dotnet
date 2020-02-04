@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Merge
     {
         public static readonly String DEST = "results/sandbox/merge/incorrect_example.pdf";
 
-        public static readonly String SOURCE = "../../resources/pdfs/pages.pdf";
+        public static readonly String SOURCE = "../../../resources/pdfs/pages.pdf";
 
         public static void Main(String[] args)
         {

@@ -16,9 +16,9 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter03 {
     /// <author>iText</author>
     public class C03E02_JekyllHydeTabsV2 {
-        public const String SRC = "../../resources/data/jekyll_hyde.csv";
+        public const String SRC = "../../../resources/data/jekyll_hyde.csv";
 
-        public const String DEST = "../../results/chapter03/jekyll_hyde_tabs2.pdf";
+        public const String DEST = "../../../results/chapter03/jekyll_hyde_tabs2.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

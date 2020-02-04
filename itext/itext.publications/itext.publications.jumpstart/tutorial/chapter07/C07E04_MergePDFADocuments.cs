@@ -6,13 +6,13 @@ using iText.Pdfa;
 
 namespace Tutorial.Chapter07 {
     public class C07E04_MergePDFADocuments {
-        public const String INTENT = "../../resources/color/sRGB_CS_profile.icm";
+        public const String INTENT = "../../../resources/color/sRGB_CS_profile.icm";
 
-        public const String SRC1 = "../../resources/pdf/quick_brown_fox_PDFA-1a.pdf";
+        public const String SRC1 = "../../../resources/pdf/quick_brown_fox_PDFA-1a.pdf";
 
-        public const String SRC2 = "../../resources/pdf/united_states_PDFA-1a.pdf";
+        public const String SRC2 = "../../../resources/pdf/united_states_PDFA-1a.pdf";
 
-        public const String DEST = "../../results/chapter07/merged_PDFA-1a_documents.pdf";
+        public const String DEST = "../../../results/chapter07/merged_PDFA-1a_documents.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

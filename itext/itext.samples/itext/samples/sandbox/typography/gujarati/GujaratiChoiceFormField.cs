@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
     public class GujaratiChoiceFormField
     {
         public const String DEST = "results/sandbox/typography/GujaratiChoiceFormField.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

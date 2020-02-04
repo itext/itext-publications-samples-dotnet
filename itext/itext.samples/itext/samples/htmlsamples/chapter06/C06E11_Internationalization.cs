@@ -29,13 +29,13 @@ namespace iText.Samples.Htmlsamples.Chapter06
         /// </summary>
         public static readonly String[] FONTS =
         {
-            "../../resources/htmlsamples/fonts/noto/NotoSans-Regular.ttf",
-            "../../resources/htmlsamples/fonts/noto/NotoSans-Bold.ttf",
-            "../../resources/htmlsamples/fonts/noto/NotoSansCJKsc-Regular.otf",
-            "../../resources/htmlsamples/fonts/noto/NotoSansCJKjp-Regular.otf",
-            "../../resources/htmlsamples/fonts/noto/NotoSansCJKkr-Regular.otf",
-            "../../resources/htmlsamples/fonts/noto/NotoNaskhArabic-Regular.ttf",
-            "../../resources/htmlsamples/fonts/noto/NotoSansHebrew-Regular.ttf"
+            "../../../resources/htmlsamples/fonts/noto/NotoSans-Regular.ttf",
+            "../../../resources/htmlsamples/fonts/noto/NotoSans-Bold.ttf",
+            "../../../resources/htmlsamples/fonts/noto/NotoSansCJKsc-Regular.otf",
+            "../../../resources/htmlsamples/fonts/noto/NotoSansCJKjp-Regular.otf",
+            "../../../resources/htmlsamples/fonts/noto/NotoSansCJKkr-Regular.otf",
+            "../../../resources/htmlsamples/fonts/noto/NotoNaskhArabic-Regular.ttf",
+            "../../../resources/htmlsamples/fonts/noto/NotoSansHebrew-Regular.ttf"
         };
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace iText.Samples.Htmlsamples.Chapter06
         /// <summary>
         /// The path to the source HTML file.
         /// </summary>
-        public static readonly String SRC = "../../resources/htmlsamples/html/fonts_i18n.html";
+        public static readonly String SRC = "../../../resources/htmlsamples/html/fonts_i18n.html";
 
         /// <summary>
         /// The main method of this example.

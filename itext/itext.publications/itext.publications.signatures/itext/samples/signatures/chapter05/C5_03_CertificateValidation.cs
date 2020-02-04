@@ -29,11 +29,11 @@ namespace iText.Samples.Signatures.Chapter05
     {
         public static readonly string DEST = "signatures/chapter05/";
 
-        public static readonly string ROOT = "../../resources/encryption/rootRsa.cer";
+        public static readonly string ROOT = "../../../resources/encryption/rootRsa.cer";
 
-        public static readonly string EXAMPLE = "../../resources/pdfs/signedPAdES-LT.pdf";
+        public static readonly string EXAMPLE = "../../../resources/pdfs/signedPAdES-LT.pdf";
 
-        public const String EXPECTED_OUTPUT = "../../resources/pdfs/signedPAdES-LT.pdf\n"
+        public const String EXPECTED_OUTPUT = "../../../resources/pdfs/signedPAdES-LT.pdf\n"
                                               + "===== Signature1 =====\n"
                                               + "Signature covers whole document: False\n"
                                               + "Document revision: 1 of 2\n"

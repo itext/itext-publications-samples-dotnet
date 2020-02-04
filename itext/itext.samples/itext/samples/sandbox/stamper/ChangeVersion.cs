@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class ChangeVersion 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_version.pdf";
-        public static readonly String SRC = "../../resources/pdfs/OCR.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/OCR.pdf";
 
         public static void Main(String[] args) 
         {

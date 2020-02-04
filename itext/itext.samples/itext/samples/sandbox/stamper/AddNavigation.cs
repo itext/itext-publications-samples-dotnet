@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class AddNavigation 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_navigation.pdf";
-        public static readonly String SRC = "../../resources/pdfs/primes.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/primes.pdf";
 
         public static void Main(String[] args)
         {

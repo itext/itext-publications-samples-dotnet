@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Bengali
     public class BengaliBoldText
     {
         public const String DEST = "results/sandbox/typography/BengaliBoldText.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

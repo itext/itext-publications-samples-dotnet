@@ -29,8 +29,8 @@ namespace iText.Samples.Signatures.Chapter03
     {
         public static readonly string DEST = "results/signatures/chapter03/";
 
-        public static readonly string CRLURL = "../../resources/encryption/revoke.crl";
-        public static readonly string SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly string CRLURL = "../../../resources/encryption/revoke.crl";
+        public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
 
         public static readonly String[] RESULT_FILES =
         {

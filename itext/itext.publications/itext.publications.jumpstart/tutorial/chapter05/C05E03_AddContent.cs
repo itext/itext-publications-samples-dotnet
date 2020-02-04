@@ -17,9 +17,9 @@ using iText.Layout.Properties;
 namespace Tutorial.Chapter05 {
     /// <summary>Simple adding content example.</summary>
     public class C05E03_AddContent {
-        public const String SRC = "../../resources/pdf/ufo.pdf";
+        public const String SRC = "../../../resources/pdf/ufo.pdf";
 
-        public const String DEST = "../../results/chapter05/add_content.pdf";
+        public const String DEST = "../../../results/chapter05/add_content.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

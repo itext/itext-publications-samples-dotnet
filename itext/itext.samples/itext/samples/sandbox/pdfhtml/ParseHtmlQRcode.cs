@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
 {
     public class ParseHtmlQRcode
     {
-        public static readonly string SRC = "../../resources/pdfhtml/qrcode/";
+        public static readonly string SRC = "../../../resources/pdfhtml/qrcode/";
         public static readonly string DEST = "results/sandbox/pdfhtml/qrcode.pdf";
 
         public static void Main(string[] args)

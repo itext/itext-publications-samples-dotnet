@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
     {
         public static readonly string DEST = "results/sandbox/tables/image_rowspan.pdf";
 
-        public static readonly string IMG = "../../resources/img/bruno.jpg";
+        public static readonly string IMG = "../../../resources/img/bruno.jpg";
 
         public static void Main(String[] args)
         {

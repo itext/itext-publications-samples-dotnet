@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Gurmukhi
     public class GurmukhiList
     {
         public const String DEST = "results/sandbox/typography/GurmukhiList.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

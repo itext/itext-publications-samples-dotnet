@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Kannada
     public class KannadaList
     {
         public const String DEST = "results/sandbox/typography/KannadaList.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
     {
         public static readonly string DEST = "results/sandbox/tables/rowspan_absolute_position.pdf";
 
-        public static readonly String IMG = "../../resources/img/berlin2013.jpg";
+        public static readonly String IMG = "../../../resources/img/berlin2013.jpg";
 
         public static void Main(String[] args)
         {

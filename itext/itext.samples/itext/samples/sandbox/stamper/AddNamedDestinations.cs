@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class AddNamedDestinations
     {
         public static readonly String PDF = "results/sandbox/stamper/add_named_destinations.pdf";
-        public static readonly String SRC = "../../resources/pdfs/primes.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/primes.pdf";
         public static readonly String DEST = "results/xml/primes_with_destination.xml";
 
         public static void Main(String[] args) 

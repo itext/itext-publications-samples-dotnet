@@ -15,7 +15,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
 {
     public class ParseHtmlAsPrint
     {
-        public static readonly string SRC = "../../resources/pdfhtml/media/";
+        public static readonly string SRC = "../../../resources/pdfhtml/media/";
         public static readonly string DEST = "results/sandbox/pdfhtml/rainbow_asPrint.pdf";
 
         public static void Main(string[] args)

@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Objects
     public class AddPointer
     {
         public static readonly string DEST = "results/sandbox/objects/add_pointer.pdf";
-        public static readonly string IMG = "../../resources/img/map_cic.png";
+        public static readonly string IMG = "../../../resources/img/map_cic.png";
 
         public static void Main(string[] args)
         {

@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Annotations
     {
         public static readonly String DEST = "results/sandbox/annotations/add_in_reply_to.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/hello_sticky_note.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello_sticky_note.pdf";
 
         public static void Main(String[] args)
         {

@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Interactive
     {
         public static readonly String DEST = "results/sandbox/interactive/base_url3.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/base_url.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/base_url.pdf";
 
         public static void Main(String[] args)
         {

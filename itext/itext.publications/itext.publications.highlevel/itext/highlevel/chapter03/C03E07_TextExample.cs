@@ -10,7 +10,7 @@ using iText.Layout.Element;
 
 namespace iText.Highlevel.Chapter03 {
     public class C03E07_TextExample {
-        public const String DEST = "../../results/chapter03/jekyll_hyde_text.pdf";
+        public const String DEST = "../../../results/chapter03/jekyll_hyde_text.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

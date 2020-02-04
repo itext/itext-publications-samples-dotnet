@@ -38,22 +38,22 @@ namespace iText.Samples.Htmlsamples.Chapter04
         /// The Base URI of the HTML page.
         /// </summary>
         /// <returns></returns>
-        public static readonly String BASEURI = "../../resources/htmlsamples/html/";
+        public static readonly String BASEURI = "../../../resources/htmlsamples/html/";
 
         /// <summary>
         /// The XML containing all the data.
         /// </summary>
-        public static readonly String XML = "../../resources/htmlsamples/xml/movies.xml";
+        public static readonly String XML = "../../../resources/htmlsamples/xml/movies.xml";
 
         /// <summary>
         /// The XSLT needed to transform the XML to HTML.
         /// </summary>
-        public static readonly String XSL = "../../resources/htmlsamples/xml/movies_invoice.xsl";
+        public static readonly String XSL = "../../../resources/htmlsamples/xml/movies_invoice.xsl";
 
         /// <summary>
         /// The path to the output intent file.
         /// </summary>
-        public static readonly String INTENT = "../../resources/htmlsamples/color/sRGB_CS_profile.icm";
+        public static readonly String INTENT = "../../../resources/htmlsamples/color/sRGB_CS_profile.icm";
 
         /// <summary>
         /// The main method of this example.

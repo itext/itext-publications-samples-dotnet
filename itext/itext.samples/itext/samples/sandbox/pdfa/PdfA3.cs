@@ -27,11 +27,11 @@ namespace iText.Samples.Sandbox.Pdfa
     {
         public static readonly string DEST = "results/sandbox/pdfa/pdf_a3.pdf";
 
-        public static readonly String BOLD = "../../resources/font/OpenSans-Bold.ttf";
+        public static readonly String BOLD = "../../../resources/font/OpenSans-Bold.ttf";
 
-        public static readonly String DATA = "../../resources/data/united_states.csv";
+        public static readonly String DATA = "../../../resources/data/united_states.csv";
 
-        public static readonly String FONT = "../../resources/font/OpenSans-Regular.ttf";
+        public static readonly String FONT = "../../../resources/font/OpenSans-Regular.ttf";
 
         public static void Main(String[] args)
         {
@@ -47,7 +47,7 @@ namespace iText.Samples.Sandbox.Pdfa
             PdfFont bold = PdfFontFactory.CreateFont(BOLD, PdfEncodings.IDENTITY_H);
 
             Stream fileStream =
-                new FileStream("../../resources/data/sRGB_CS_profile.icm", FileMode.Open, FileAccess.Read);
+                new FileStream("../../../resources/data/sRGB_CS_profile.icm", FileMode.Open, FileAccess.Read);
             PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_3B,
                 new PdfOutputIntent("Custom", "",
                     null, "sRGB IEC61966-2.1", fileStream));

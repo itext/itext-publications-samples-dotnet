@@ -29,7 +29,7 @@ namespace iText.Samples.Signatures.Chapter03
     {
         public static readonly string DEST = "results/signatures/chapter03/";
         
-        public static readonly string SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
 
         public static readonly String[] RESULT_FILES =
         {
@@ -74,7 +74,7 @@ namespace iText.Samples.Signatures.Chapter03
              * according to the original sample purpose. However right now it contains a simple
              * self-signed certificate in p12 format, which serves as a stub.
              */
-            properties.Load(new FileStream("../../resources/encryption/signkey.properties",
+            properties.Load(new FileStream("../../../resources/encryption/signkey.properties",
                 FileMode.Open, FileAccess.Read));
 
             // Get path to the p12 file

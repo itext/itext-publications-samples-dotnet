@@ -13,7 +13,7 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter02 {
     /// <author>iText</author>
     public class C02E14_ShowTextAligned {
-        public const String DEST = "../../results/chapter02/showtextaligned.pdf";
+        public const String DEST = "../../../results/chapter02/showtextaligned.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Tables
     {
         public static readonly string DEST = "results/sandbox/tables/position_content_in_cell2.pdf";
 
-        public static readonly String IMG = "../../resources/img/info.png";
+        public static readonly String IMG = "../../../resources/img/info.png";
 
         public static void Main(String[] args)
         {

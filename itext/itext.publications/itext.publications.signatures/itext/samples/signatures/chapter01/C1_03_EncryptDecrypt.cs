@@ -30,7 +30,7 @@ namespace iText.Samples.Signatures.Chapter01
     {
         public static readonly String DEST = "results/signatures/chapter01/";
 
-        protected static readonly String KEYSTORE = "../../resources/encryption/ks";
+        protected static readonly String KEYSTORE = "../../../resources/encryption/ks";
 
         protected static readonly String PASSWORD = "password";
         protected Pkcs12Store ks;

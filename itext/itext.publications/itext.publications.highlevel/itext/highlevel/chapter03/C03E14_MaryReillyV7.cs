@@ -13,11 +13,11 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter03 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C03E14_MaryReillyV7 {
-        public const String SRC = "../../resources/pdfs/jekyll_hyde.pdf";
+        public const String SRC = "../../../resources/pdfs/jekyll_hyde.pdf";
 
-        public const String MARY = "../../resources/img/0117002.jpg";
+        public const String MARY = "../../../resources/img/0117002.jpg";
 
-        public const String DEST = "../../results/chapter03/mary_reilly_V7.pdf";
+        public const String DEST = "../../../results/chapter03/mary_reilly_V7.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

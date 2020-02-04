@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class StampHeader3 
     {
         public static readonly String DEST = "results/sandbox/stamper/stamp_header3.pdf";
-        public static readonly String SRC = "../../resources/pdfs/Wrong.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/Wrong.pdf";
 
         public static void Main(String[] args) 
         {

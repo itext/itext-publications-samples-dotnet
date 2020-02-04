@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
 {
     public class PdfHtmlHeaderAndFooter
     {
-        public static readonly string SRC = "../../resources/pdfhtml/";
+        public static readonly string SRC = "../../../resources/pdfhtml/";
         public static readonly string DEST = "results/sandbox/pdfhtml/ipsum.pdf";
 
         public static void Main(string[] args)

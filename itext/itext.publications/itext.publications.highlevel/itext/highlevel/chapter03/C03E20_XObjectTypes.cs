@@ -13,11 +13,11 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter03 {
     /// <author>iText</author>
     public class C03E20_XObjectTypes {
-        public const String WMF = "../../resources/img/test/butterfly.wmf";
+        public const String WMF = "../../../resources/img/test/butterfly.wmf";
 
-        public const String SRC = "../../resources/pdfs/jekyll_hyde.pdf";
+        public const String SRC = "../../../resources/pdfs/jekyll_hyde.pdf";
 
-        public const String DEST = "../../results/chapter03/xobject_types.pdf";
+        public const String DEST = "../../../results/chapter03/xobject_types.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

@@ -14,7 +14,7 @@ using iText.Layout.Properties;
 namespace Tutorial.Chapter04 {
     /// <summary>Simple text markup annotation example.</summary>
     public class C04E01_04_TextMarkupAnnotation {
-        public const String DEST = "../../results/chapter04/textmarkup_annotation.pdf";
+        public const String DEST = "../../../results/chapter04/textmarkup_annotation.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

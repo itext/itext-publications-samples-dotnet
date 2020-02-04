@@ -33,10 +33,10 @@ namespace iText.Samples.Signatures.Chapter02
         public static readonly string DEST = "results/signatures/chapter02/";
         public static readonly string FORM = "results/signatures/chapter02/multiple_signatures.pdf";
 
-        public static readonly string ALICE = "../../resources/encryption/alice";
-        public static readonly string BOB = "../../resources/encryption/bob";
-        public static readonly string CAROL = "../../resources/encryption/carol";
-        public static readonly string KEYSTORE = "../../resources/encryption/ks";
+        public static readonly string ALICE = "../../../resources/encryption/alice";
+        public static readonly string BOB = "../../../resources/encryption/bob";
+        public static readonly string CAROL = "../../../resources/encryption/carol";
+        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 

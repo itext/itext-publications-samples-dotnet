@@ -21,11 +21,11 @@ namespace iText.Samples.Sandbox.Tables
     {
         public static readonly string DEST = "results/sandbox/tables/multiple_images_in_table.pdf";
 
-        public static readonly string IMG1 = "../../resources/img/brasil.png";
+        public static readonly string IMG1 = "../../../resources/img/brasil.png";
 
-        public static readonly string IMG2 = "../../resources/img/dog.bmp";
+        public static readonly string IMG2 = "../../../resources/img/dog.bmp";
 
-        public static readonly string IMG3 = "../../resources/img/fox.bmp";
+        public static readonly string IMG3 = "../../../resources/img/fox.bmp";
 
         public static void Main(String[] args)
         {

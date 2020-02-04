@@ -28,11 +28,11 @@ namespace iText.Samples.Signatures.Chapter05
     {
         public static readonly string DEST = "signatures/chapter05/";
 
-        public static readonly string EXAMPLE1 = "../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf";
-        public static readonly string EXAMPLE2 = "../../resources/pdfs/hello_signed4.pdf";
-        public static readonly string EXAMPLE3 = "../../resources/pdfs/field_metadata.pdf";
+        public static readonly string EXAMPLE1 = "../../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf";
+        public static readonly string EXAMPLE2 = "../../../resources/pdfs/hello_signed4.pdf";
+        public static readonly string EXAMPLE3 = "../../../resources/pdfs/field_metadata.pdf";
 
-        public const String EXPECTED_OUTPUT = "../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf\n"
+        public const String EXPECTED_OUTPUT = "../../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf\n"
                                               + "===== sig1 =====\n"
                                               + "Field on page 1; llx: 36, lly: 728.02, urx: 559; ury: 779.02\n"
                                               + "Signature covers whole document: False\n"
@@ -102,7 +102,7 @@ namespace iText.Samples.Signatures.Chapter05
                                               + "Adding annotations allowed: False\n"
                                               + "Lock: /Include[sig1 approved_bob sig2 ]\n"
                                               + "Lock: /Exclude[approved_dave sig4 ]\n"
-                                              + "../../resources/pdfs/hello_signed4.pdf\n"
+                                              + "../../../resources/pdfs/hello_signed4.pdf\n"
                                               + "===== sig =====\n"
                                               + "Field on page 1; llx: 36, lly: 648, urx: 236; ury: 748\n"
                                               + "Signature covers whole document: True\n"
@@ -119,7 +119,7 @@ namespace iText.Samples.Signatures.Chapter05
                                               + "Signature type: approval\n"
                                               + "Filling out fields allowed: True\n"
                                               + "Adding annotations allowed: True\n"
-                                              + "../../resources/pdfs/field_metadata.pdf\n"
+                                              + "../../../resources/pdfs/field_metadata.pdf\n"
                                               + "===== Signature1 =====\n"
                                               + "Field on page 1; llx: 46.0674, lly: 472.172, urx: 332.563; ury: 726.831\n"
                                               + "Signature covers whole document: True\n"

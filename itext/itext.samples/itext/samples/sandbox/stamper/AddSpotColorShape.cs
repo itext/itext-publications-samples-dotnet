@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class AddSpotColorShape 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_spot_color_shape.pdf";
-        public static readonly String SRC = "../../resources/pdfs/image.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/image.pdf";
 
         public static void Main(String[] args) 
         {

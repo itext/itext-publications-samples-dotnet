@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
     {
         public static readonly String DEST = "results/sandbox/fonts/tutorial/f06_different_encodings.pdf";
 
-        public static readonly String FONT = "../../resources/font/FreeSans.ttf";
+        public static readonly String FONT = "../../../resources/font/FreeSans.ttf";
 
         public static void Main(String[] args)
         {

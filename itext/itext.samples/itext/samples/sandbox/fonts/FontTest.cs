@@ -48,18 +48,18 @@ namespace iText.Samples.Sandbox.Fonts
 
         public static readonly String[] FONTS =
         {
-            "../../resources/font/cmr10.afm",
-            "../../resources/font/cmr10.pfb",
-            "../../resources/font/cmr10.pfm",
-            "../../resources/font/EBGaramond12-Italic.ttf",
-            "../../resources/font/EBGaramond12-Regular.ttf",
-            "../../resources/font/FreeSans.ttf",
-            "../../resources/font/FreeSansBold.ttf",
-            "../../resources/font/NotoSans-Bold.ttf",
-            "../../resources/font/NotoSans-BoldItalic.ttf",
-            "../../resources/font/NotoSansCJKjp-Regular.otf",
-            "../../resources/font/NotoSansCJKkr-Regular.otf",
-            "../../resources/font/NotoSansCJKsc-Regular.otf"
+            "../../../resources/font/cmr10.afm",
+            "../../../resources/font/cmr10.pfb",
+            "../../../resources/font/cmr10.pfm",
+            "../../../resources/font/EBGaramond12-Italic.ttf",
+            "../../../resources/font/EBGaramond12-Regular.ttf",
+            "../../../resources/font/FreeSans.ttf",
+            "../../../resources/font/FreeSansBold.ttf",
+            "../../../resources/font/NotoSans-Bold.ttf",
+            "../../../resources/font/NotoSans-BoldItalic.ttf",
+            "../../../resources/font/NotoSansCJKjp-Regular.otf",
+            "../../../resources/font/NotoSansCJKkr-Regular.otf",
+            "../../../resources/font/NotoSansCJKsc-Regular.otf"
         };
 
         public static void Main(String[] args)

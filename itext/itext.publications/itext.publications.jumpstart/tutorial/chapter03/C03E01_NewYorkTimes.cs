@@ -16,19 +16,19 @@ using iText.Layout.Element;
 namespace Tutorial.Chapter03 {
     /// <summary>Simple column renderer example.</summary>
     public class C03E01_NewYorkTimes {
-        public const String DEST = "../../results/chapter03/new_york_times.pdf";
+        public const String DEST = "../../../results/chapter03/new_york_times.pdf";
 
-        public const String APPLE_IMG = "../../resources/img/ny_times_apple.jpg";
+        public const String APPLE_IMG = "../../../resources/img/ny_times_apple.jpg";
 
-        public const String APPLE_TXT = "../../resources/data/ny_times_apple.txt";
+        public const String APPLE_TXT = "../../../resources/data/ny_times_apple.txt";
 
-        public const String FACEBOOK_IMG = "../../resources/img/ny_times_fb.jpg";
+        public const String FACEBOOK_IMG = "../../../resources/img/ny_times_fb.jpg";
 
-        public const String FACEBOOK_TXT = "../../resources/data/ny_times_fb.txt";
+        public const String FACEBOOK_TXT = "../../../resources/data/ny_times_fb.txt";
 
-        public const String INST_IMG = "../../resources/img/ny_times_inst.jpg";
+        public const String INST_IMG = "../../../resources/img/ny_times_inst.jpg";
 
-        public const String INST_TXT = "../../resources/data/ny_times_inst.txt";
+        public const String INST_TXT = "../../../resources/data/ny_times_inst.txt";
 
         internal static PdfFont timesNewRoman = null;
 

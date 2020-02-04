@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class AddLanguage 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_language.pdf";
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
 
         public static void Main(String[] args) 
         {

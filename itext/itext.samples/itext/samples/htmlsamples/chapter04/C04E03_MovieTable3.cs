@@ -40,17 +40,17 @@ namespace iText.Samples.Htmlsamples.Chapter04
         /// <summary>
         /// The Base URI of the HTML page.
         /// </summary>
-        public static readonly String BASEURI = "../../resources/htmlsamples/html/";
+        public static readonly String BASEURI = "../../../resources/htmlsamples/html/";
 
         /// <summary>
         /// The XML containing all the data.
         /// </summary>
-        public static readonly String XML = "../../resources/htmlsamples/xml/movies.xml";
+        public static readonly String XML = "../../../resources/htmlsamples/xml/movies.xml";
 
         /// <summary>
         /// The XSLT needed to transform the XML to HTML.
         /// </summary>
-        public static readonly String XSL = "../../resources/htmlsamples/xml/movies_table.xsl";
+        public static readonly String XSL = "../../../resources/htmlsamples/xml/movies_table.xsl";
 
         /// <summary>
         /// The main method of this example.

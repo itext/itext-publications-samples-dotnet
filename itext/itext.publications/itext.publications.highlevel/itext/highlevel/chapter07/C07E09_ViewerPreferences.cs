@@ -12,7 +12,7 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter07 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C07E09_ViewerPreferences {
-        public const String DEST = "../../results/chapter07/viewerpreferences.pdf";
+        public const String DEST = "../../../results/chapter07/viewerpreferences.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

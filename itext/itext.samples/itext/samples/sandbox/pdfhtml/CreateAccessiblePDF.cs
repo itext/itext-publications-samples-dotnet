@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
 {
     public class CreateAccessiblePDF
     {
-        public static readonly string SRC = "../../resources/pdfhtml/AccessiblePDF/";
+        public static readonly string SRC = "../../../resources/pdfhtml/AccessiblePDF/";
         public static readonly string DEST = "results/sandbox/pdfhtml/Accessibility.pdf";
 
         public static void Main(string[] args)

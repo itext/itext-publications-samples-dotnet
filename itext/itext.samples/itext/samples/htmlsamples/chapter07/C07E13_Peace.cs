@@ -28,7 +28,7 @@ namespace iText.Samples.Htmlsamples.Chapter07
         /// <summary>
         /// The path to a folder containing extra fonts.
         /// </summary>
-        public static readonly String FONTS = "../../resources/htmlsamples/fonts/noto/";
+        public static readonly String FONTS = "../../../resources/htmlsamples/fonts/noto/";
 
         /// <summary>
         /// The path to the resulting PDF file.
@@ -38,7 +38,7 @@ namespace iText.Samples.Htmlsamples.Chapter07
         /// <summary>
         /// The path to the source HTML file.
         /// </summary>
-        public static readonly String SRC = "../../resources/htmlsamples/html/peace.html";
+        public static readonly String SRC = "../../../resources/htmlsamples/html/peace.html";
 
         /// <summary>
         /// The main method of this example.

@@ -27,9 +27,9 @@ namespace iText.Samples.Signatures.Chapter02
     {
         public static readonly string DEST = "results/signatures/chapter02/";
 
-        public static readonly string KEYSTORE = "../../resources/encryption/ks";
-        public static readonly string SRC = "../../resources/pdfs/hello_to_sign.pdf";
-        public static readonly string IMG = "../../resources/img/1t3xt.gif";
+        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly string SRC = "../../../resources/pdfs/hello_to_sign.pdf";
+        public static readonly string IMG = "../../../resources/img/1t3xt.gif";
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 

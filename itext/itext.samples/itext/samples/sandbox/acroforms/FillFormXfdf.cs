@@ -7,7 +7,7 @@ namespace iText.Samples.Sandbox.Acroforms
 {
     public class FillFormXfdf
     {
-        public static readonly String sourceFolder = "../../resources/pdfs/";
+        public static readonly String sourceFolder = "../../../resources/pdfs/";
 
         public static readonly String DEST = "results/sandbox/acroforms/setFields.pdf";
 

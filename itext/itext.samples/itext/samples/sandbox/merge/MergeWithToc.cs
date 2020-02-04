@@ -24,9 +24,9 @@ namespace iText.Samples.Sandbox.Merge
     {
         public static readonly String DEST = "results/sandbox/merge/merge_with_toc.pdf";
 
-        public static readonly String SRC1 = "../../resources/pdfs/united_states.pdf";
-        public static readonly String SRC2 = "../../resources/pdfs/hello.pdf";
-        public static readonly String SRC3 = "../../resources/pdfs/toc.pdf";
+        public static readonly String SRC1 = "../../../resources/pdfs/united_states.pdf";
+        public static readonly String SRC2 = "../../../resources/pdfs/hello.pdf";
+        public static readonly String SRC3 = "../../../resources/pdfs/toc.pdf";
 
         public static void Main(String[] args)
         {

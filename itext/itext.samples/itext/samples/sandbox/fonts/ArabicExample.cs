@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Fonts
     public class ArabicExample
     {
         public static readonly String DEST = "results/sandbox/fonts/arabic_example.pdf";
-        public static readonly String FONT = "../../resources/font/NotoNaskhArabic-Regular.ttf"; 
+        public static readonly String FONT = "../../../resources/font/NotoNaskhArabic-Regular.ttf"; 
         
         // السعر الاجمالي 
         public static readonly String ARABIC =

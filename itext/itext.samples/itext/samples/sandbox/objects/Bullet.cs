@@ -68,7 +68,7 @@ namespace iText.Samples.Sandbox.Objects
             doc.Add(new Paragraph("\n"));
 
             PdfFont freeSansFont =
-                PdfFontFactory.CreateFont("../../resources/font/FreeSans.ttf", PdfEncodings.IDENTITY_H);
+                PdfFontFactory.CreateFont("../../../resources/font/FreeSans.ttf", PdfEncodings.IDENTITY_H);
             p = new Paragraph("Items can't be split if they don't fit at the end: ").SetFont(freeSansFont);
             foreach (string item in ITEMS)
             {

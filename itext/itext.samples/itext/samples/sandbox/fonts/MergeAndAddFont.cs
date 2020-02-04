@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Fonts
 {
     public class MergeAndAddFont
     {
-        public static readonly String FONT = "../../resources/font/GravitasOne.ttf";
+        public static readonly String FONT = "../../../resources/font/GravitasOne.ttf";
 
         public static readonly String[] FILE_A =
         {

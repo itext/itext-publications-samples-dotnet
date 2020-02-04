@@ -29,9 +29,9 @@ namespace iText.Samples.Htmlsamples.Chapter07
         /// </summary>
         public static readonly String[] FONTS =
         {
-            "../../resources/htmlsamples/fonts/noto/NotoSans-Regular.ttf",
-            "../../resources/htmlsamples/fonts/noto/NotoNaskhArabic-Regular.ttf",
-            "../../resources/htmlsamples/fonts/noto/NotoSansHebrew-Regular.ttf"
+            "../../../resources/htmlsamples/fonts/noto/NotoSans-Regular.ttf",
+            "../../../resources/htmlsamples/fonts/noto/NotoNaskhArabic-Regular.ttf",
+            "../../../resources/htmlsamples/fonts/noto/NotoSansHebrew-Regular.ttf"
         };
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace iText.Samples.Htmlsamples.Chapter07
         /// <summary>
         /// The path to the source HTML file.
         /// </summary>
-        public static readonly String SRC = "../../resources/htmlsamples/html/say_peace.html";
+        public static readonly String SRC = "../../../resources/htmlsamples/html/say_peace.html";
 
         /// <summary>
         /// The main method of this example.

@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Latin
     public class LatinBreveDiacritic
     {
         public const String DEST = "results/sandbox/typography/LatinBreveDiacritic.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

@@ -20,8 +20,8 @@ namespace iText.Samples.Sandbox.Acroforms
     {
         public static readonly String DEST = "results/sandbox/acroforms/fill_form_special_chars.pdf";
 
-        public static readonly String FONT = "../../resources/font/FreeSans.ttf";
-        public static readonly String SRC = "../../resources/pdfs/test.pdf";
+        public static readonly String FONT = "../../../resources/font/FreeSans.ttf";
+        public static readonly String SRC = "../../../resources/pdfs/test.pdf";
 
         // ěščřžýáíé characters
         public const String VALUE = "\u011b\u0161\u010d\u0159\u017e\u00fd\u00e1\u00ed\u00e9";

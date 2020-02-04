@@ -10,7 +10,7 @@ using iText.Layout.Element;
 namespace Tutorial.Chapter01 {
     /// <summary>Simple Hello World example.</summary>
     public class C01E01_HelloWorld {
-        public const String DEST = "../../results/chapter01/hello_world.pdf";
+        public const String DEST = "../../../results/chapter01/hello_world.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

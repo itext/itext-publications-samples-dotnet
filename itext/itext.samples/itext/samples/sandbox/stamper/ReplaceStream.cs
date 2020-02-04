@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class ReplaceStream 
     {
         public static readonly String DEST = "results/sandbox/stamper/replace_stream.pdf";
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
 
         public static void Main(String[] args) 
         {

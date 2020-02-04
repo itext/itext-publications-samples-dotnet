@@ -13,15 +13,15 @@ using iText.Pdfa;
 
 namespace Tutorial.Chapter07 {
     public class C07E02_QuickBrownFox_PDFA_1a {
-        public const String DOG = "../../resources/img/dog.bmp";
+        public const String DOG = "../../../resources/img/dog.bmp";
 
-        public const String FOX = "../../resources/img/fox.bmp";
+        public const String FOX = "../../../resources/img/fox.bmp";
 
-        public const String FONT = "../../resources/font/FreeSans.ttf";
+        public const String FONT = "../../../resources/font/FreeSans.ttf";
 
-        public const String INTENT = "../../resources/color/sRGB_CS_profile.icm";
+        public const String INTENT = "../../../resources/color/sRGB_CS_profile.icm";
 
-        public const String DEST = "../../results/chapter07/quick_brown_fox_PDFA-1a.pdf";
+        public const String DEST = "../../../results/chapter07/quick_brown_fox_PDFA-1a.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

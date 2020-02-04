@@ -19,8 +19,8 @@ namespace iText.Samples.Sandbox.Merge
     {
         public static readonly String DEST = "results/sandbox/merge/insert_and_adapt_outlines.pdf";
 
-        public static readonly String INSERT = "../../resources/pdfs/hello.pdf";
-        public static readonly String SRC = "../../resources/pdfs/bookmarks.pdf";
+        public static readonly String INSERT = "../../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/bookmarks.pdf";
 
         public static void Main(String[] args)
         {

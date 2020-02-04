@@ -14,7 +14,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
 {
     public class ParseHtmlSimple
     {
-        public static readonly string SRC = "../../resources/pdfhtml/rainbow/";
+        public static readonly string SRC = "../../../resources/pdfhtml/rainbow/";
         public static readonly string DEST = "results/sandbox/pdfhtml/rainbow_simple.pdf";
 
         public static void Main(string[] args)

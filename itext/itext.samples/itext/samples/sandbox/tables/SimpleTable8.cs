@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Tables
     {
         public static readonly string DEST = "results/sandbox/tables/simple_table8.pdf";
 
-        public static String SRC = "../../resources/pdfs/";
+        public static String SRC = "../../../resources/pdfs/";
 
         public static void Main(String[] args)
         {

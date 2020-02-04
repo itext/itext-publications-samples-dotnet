@@ -19,9 +19,9 @@ namespace iText.Samples.Sandbox.Merge
     {
         public static readonly String DEST = "results/sandbox/merge/merge_with_outlines.pdf";
 
-        public static readonly String SRC1 = "../../resources/pdfs/hello.pdf";
-        public static readonly String SRC2 = "../../resources/pdfs/links1.pdf";
-        public static readonly String SRC3 = "../../resources/pdfs/links2.pdf";
+        public static readonly String SRC1 = "../../../resources/pdfs/hello.pdf";
+        public static readonly String SRC2 = "../../../resources/pdfs/links1.pdf";
+        public static readonly String SRC3 = "../../../resources/pdfs/links2.pdf";
 
         public static void Main(String[] args)
         {

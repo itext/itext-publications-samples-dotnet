@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Kannada
     public class KannadaWordSpacing
     {
         public const String DEST = "results/sandbox/typography/KannadaWordSpacing.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

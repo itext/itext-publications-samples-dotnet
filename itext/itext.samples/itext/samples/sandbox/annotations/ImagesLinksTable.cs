@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Annotations
     {
         public static readonly String DEST = "results/sandbox/annotations/images_links_table.pdf";
 
-        public static readonly String IMG = "../../resources/img/info.png";
+        public static readonly String IMG = "../../../resources/img/info.png";
 
         public static void Main(String[] args)
         {

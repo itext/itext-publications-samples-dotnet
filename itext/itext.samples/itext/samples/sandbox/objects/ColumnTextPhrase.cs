@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Objects
     public class ColumnTextPhrase
     {
         public static readonly string DEST = "results/sandbox/objects/column_text_phrase.pdf";
-        public static readonly string SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
 
         public static void Main(string[] args)
         {

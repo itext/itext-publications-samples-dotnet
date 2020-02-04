@@ -14,7 +14,7 @@ using iText.Kernel.Pdf.Canvas;
 namespace Tutorial.Chapter02 {
     /// <summary>Simple drawing text example.</summary>
     public class C02E03_StarWars {
-        public const String DEST = "../../results/chapter02/star_wars.pdf";
+        public const String DEST = "../../../results/chapter02/star_wars.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

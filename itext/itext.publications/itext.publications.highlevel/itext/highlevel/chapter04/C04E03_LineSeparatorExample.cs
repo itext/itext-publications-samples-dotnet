@@ -19,9 +19,9 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter04 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C04E03_LineSeparatorExample {
-        public const String SRC = "../../resources/data/jekyll_hyde.csv";
+        public const String SRC = "../../../resources/data/jekyll_hyde.csv";
 
-        public const String DEST = "../../results/chapter04/jekyll_hyde_overviewV3.pdf";
+        public const String DEST = "../../../results/chapter04/jekyll_hyde_overviewV3.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
@@ -45,7 +45,7 @@ namespace iText.Highlevel.Chapter04 {
                 Div div = new Div().SetKeepTogether(true).SetBorderLeft(new SolidBorder(2)).SetPaddingLeft(3).SetMarginBottom
                     (10).Add(new Paragraph(movie.SetFontSize(14f))).Add(new Paragraph(String.Format("Directed by {0} ({1}, {2})"
                     , record[3], record[4], record[1])));
-                FileInfo file = new FileInfo(String.Format("../../resources/img/{0}.jpg", record[0]));
+                FileInfo file = new FileInfo(String.Format("../../../resources/img/{0}.jpg", record[0]));
                 if (file.Exists) {
                     iText.Layout.Element.Image img = new Image(ImageDataFactory.Create(file.FullName));
                     img.ScaleToFit(10000, 120);

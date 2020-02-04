@@ -74,7 +74,7 @@ namespace iText.Highlevel.Chapter05 {
             }
         }
 
-        public const String DEST = "../../results/chapter05/cell_borders.pdf";
+        public const String DEST = "../../../results/chapter05/cell_borders.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

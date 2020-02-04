@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class WatermarkToTheSide 
     {
         public static readonly String DEST = "results/sandbox/stamper/watermark_to_the_side.pdf";
-        public static readonly String SRC = "../../resources/pdfs/pages.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/pages.pdf";
 
         public static void Main(String[] args) 
         {

@@ -17,8 +17,8 @@ namespace iText.Samples.Sandbox.Security
     public class EncryptWithCertificate
     {
         public static readonly String DEST = "results/sandbox/security/encrypt_with_certificate.pdf";
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
-        public static readonly String PUBLIC = "../../resources/encryption/test.cer";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
+        public static readonly String PUBLIC = "../../../resources/encryption/test.cer";
 
         public static void Main(String[] args)
         {

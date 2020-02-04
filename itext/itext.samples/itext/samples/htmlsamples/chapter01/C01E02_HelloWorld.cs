@@ -32,7 +32,7 @@ namespace iText.Samples.Htmlsamples.Chapter01
         /// <summary>
         /// The Base URI of the HTML page.
         /// </summary>
-        public static readonly String BASEURI = "../../resources/htmlsamples/html";
+        public static readonly String BASEURI = "../../../resources/htmlsamples/html";
 
         /// <summary>
         /// The HTML-string that we are going to convert to PDF.

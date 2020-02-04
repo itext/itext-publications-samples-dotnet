@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Fonts
     {
         public static readonly String DEST = "results/sandbox/fonts/liberation_sans.pdf";
 
-        public static readonly String FONT = "../../resources/font/LiberationSans-Regular.ttf";
+        public static readonly String FONT = "../../../resources/font/LiberationSans-Regular.ttf";
 
         public static void Main(String[] args)
         {

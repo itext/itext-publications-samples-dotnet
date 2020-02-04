@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Images
     {
         public static readonly String DEST = "results/sandbox/images/flate_compress_jpeg_2passes.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/image.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/image.pdf";
 
         public static void Main(String[] args)
         {
