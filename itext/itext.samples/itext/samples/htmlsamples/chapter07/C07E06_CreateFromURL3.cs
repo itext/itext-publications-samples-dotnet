@@ -61,6 +61,7 @@ namespace iText.Samples.Htmlsamples.Chapter07
             ConverterProperties properties = new ConverterProperties();
             MediaDeviceDescription mediaDeviceDescription = new MediaDeviceDescription(MediaType.PRINT);
             properties.SetMediaDeviceDescription(mediaDeviceDescription);
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType) 3072;
             var httpWebRequest = (HttpWebRequest) WebRequest.Create(url);
             var httpResponse = (HttpWebResponse) httpWebRequest.GetResponse();
             HtmlConverter.ConvertToPdf(httpResponse.GetResponseStream(),

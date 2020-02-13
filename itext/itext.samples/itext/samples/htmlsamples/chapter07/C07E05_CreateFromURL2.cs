@@ -68,6 +68,7 @@ namespace iText.Samples.Htmlsamples.Chapter07
             MediaDeviceDescription mediaDeviceDescription = new MediaDeviceDescription(MediaType.SCREEN);
             mediaDeviceDescription.SetWidth(pageSize.GetWidth());
             properties.SetMediaDeviceDescription(mediaDeviceDescription);
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType) 3072;
             var httpWebRequest = (HttpWebRequest) WebRequest.Create(url);
             var httpResponse = (HttpWebResponse) httpWebRequest.GetResponse();
             HtmlConverter.ConvertToPdf(httpResponse.GetResponseStream(), pdf, properties);
