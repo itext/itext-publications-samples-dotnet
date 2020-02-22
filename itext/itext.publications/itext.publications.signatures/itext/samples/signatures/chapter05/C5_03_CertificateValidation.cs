@@ -90,11 +90,9 @@ namespace iText.Samples.Signatures.Chapter05
             // because it's based on Time Stamping Authority service.
             DateTime cal = pkcs7.GetTimeStampDate();
             
-            // The value, which is returned if there is no timestamp
-            DateTime noTimestampValue = DateTime.MaxValue;
             
             // If there is no timestamp, use the current date
-            if (cal.Equals(noTimestampValue)) {
+            if (TimestampConstants.UNDEFINED_TIMESTAMP_DATE == cal) {
                 cal = new DateTime();
             }
 
