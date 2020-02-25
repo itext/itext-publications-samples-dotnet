@@ -189,7 +189,7 @@ namespace iText.Samples.Signatures.Chapter05
              * Timestamp is a secure source of signature creation time,
              * because it's based on Time Stamping Authority service.
              */
-            if (TimestampConstants.UNDEFINED_TIMESTAMP_DATE != pkcs7.getTimeStampDate()) {
+            if (TimestampConstants.UNDEFINED_TIMESTAMP_DATE != pkcs7.GetTimeStampDate())
             {
                 Console.Out.WriteLine("TimeStamp: " +
                                       pkcs7.GetTimeStampDate().ToUniversalTime().ToString("yyyy-MM-dd"));
