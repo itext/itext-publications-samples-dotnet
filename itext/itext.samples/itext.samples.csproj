@@ -50,7 +50,7 @@
     <ProjectReference Include="..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj" Condition="Exists('..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
     <PackageReference Include="itext7.pdfcalligraph" Version="2.0.6-SNAPSHOT" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.netstandard.csproj" Condition="Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.netstandard.csproj')" />
-    <PackageReference Include="itext7.pdfhtml" Version="2.1.8-SNAPSHOT" Condition="!Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.netstandard.csproj')" />
+    <PackageReference Include="itext7.pdfhtml" Version="3.0.0-SNAPSHOT" Condition="!Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj" Condition="Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')" />
     <PackageReference Include="itext7.pdfsweep" Version="2.0.6-SNAPSHOT" Condition="!Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')" />
   </ItemGroup>
