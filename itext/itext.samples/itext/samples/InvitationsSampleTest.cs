@@ -54,7 +54,7 @@ namespace iText.Samples
                 String currentDest = String.Format(dest, i);
                 String currentCmp = String.Format(cmp, i);
 
-                Rectangle ignoredArea = new Rectangle(30, 689, 120, 18);
+                Rectangle ignoredArea = new Rectangle(30, 700, 120, 18);
                 IList<Rectangle> rectangles = JavaUtil.ArraysAsList(ignoredArea);
                 Dictionary<int, IList<Rectangle>> ignoredAreasMap = new Dictionary<int, IList<Rectangle>>();
                 ignoredAreasMap.Add(1, rectangles);
