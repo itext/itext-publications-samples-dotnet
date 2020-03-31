@@ -64,18 +64,6 @@ namespace iText.Samples
             }
         }
 
-        protected override String GetCmpPdf(String dest)
-        {
-            if (dest == null)
-            {
-                return null;
-            }
-
-            int i = dest.LastIndexOf("/", StringComparison.Ordinal);
-            int j = dest.LastIndexOf("/results", StringComparison.Ordinal) + 9;
-            return "../../../resources/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
-        }
-
         private void ResetLicense()
         {
             try

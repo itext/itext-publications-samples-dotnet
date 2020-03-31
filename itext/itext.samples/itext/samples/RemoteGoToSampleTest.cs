@@ -71,7 +71,7 @@ namespace iText.Samples
             }
 
             int j = dest.LastIndexOf("/results", StringComparison.Ordinal) + 9;
-            return "../../../resources/" + dest.Substring(j);
+            return "../../../cmpfiles/" + dest.Substring(j);
         }
 
         private static String[] GetDestNames(Type c)

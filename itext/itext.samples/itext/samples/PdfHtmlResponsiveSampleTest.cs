@@ -69,17 +69,6 @@ namespace iText.Samples
             return "./target/" + (Path.GetDirectoryName(dest.Replace("<filename>", "")));
         }
 
-        protected override String GetCmpPdf(String dest)
-        {
-            if (dest == null)
-            {
-                return null;
-            }
-
-            int i = dest.LastIndexOf("/");
-            return "../../../resources/" + dest.Substring(8, 16) + "cmp_" + dest.Substring(i + 1);
-        }
-
         private void ResetLicense()
         {
             try

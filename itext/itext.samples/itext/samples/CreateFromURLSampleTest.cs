@@ -74,7 +74,7 @@ namespace iText.Samples
                                                                        + "\nActual: " + currentNumberOfPages);
             }
 
-            String compareFilePath = "../../../resources/htmlsamples/txt/cmp_" + sampleClass.Name + "_keywords.txt";
+            String compareFilePath = "../../../cmpfiles/htmlsamples/txt/cmp_" + sampleClass.Name + "_keywords.txt";
             String compareContent = ReadFile(compareFilePath);
             String[] comparePagesContent = compareContent.Split(';');
 
@@ -119,18 +119,6 @@ namespace iText.Samples
             }
 
             return contentString.ToString();
-        }
-
-        protected override String GetCmpPdf(String dest)
-        {
-            if (dest == null)
-            {
-                return null;
-            }
-
-            int i = dest.LastIndexOf("/", StringComparison.Ordinal);
-            int j = dest.LastIndexOf("/results", StringComparison.Ordinal) + 9;
-            return "../../resources/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
         }
 
         private void ResetLicense()

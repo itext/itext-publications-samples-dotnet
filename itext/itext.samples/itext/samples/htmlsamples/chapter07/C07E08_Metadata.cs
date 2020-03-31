@@ -25,7 +25,7 @@ namespace iText.Samples.Htmlsamples.Chapter07
         /// <summary>
         /// The path to the resulting PDF file.
         /// </summary>
-        public static readonly String DEST = "./target/htmlsamples/ch07/metadata.pdf";
+        public static readonly String DEST = "results/htmlsamples/ch07/metadata.pdf";
 
         /// <summary>
         /// The path to the source HTML file.

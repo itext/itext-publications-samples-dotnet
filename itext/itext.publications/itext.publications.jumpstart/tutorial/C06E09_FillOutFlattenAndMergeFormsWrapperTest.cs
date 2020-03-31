@@ -50,7 +50,13 @@ namespace Tutorial {
         
         protected override string GetCmpPdf(String dest)
         {
-            return "../" + base.GetCmpPdf(dest);
+            if (dest == null)
+            {
+                return null;
+            }
+            int i = dest.LastIndexOf("/");
+            int j = dest.IndexOf("results") + 8;
+            return "../../../cmpfiles/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
         }
         
         private void ResetLicense() {
