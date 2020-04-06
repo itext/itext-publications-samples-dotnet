@@ -26,7 +26,7 @@
         <PackageReference Include="TeamCity.VSTest.TestAdapter" Version="1.0.0"/>
         <PackageReference Include="NUnit" Version="3.7.1"/>
         <PackageReference Include="NUnit3TestAdapter" Version="3.8.0"/>
-        <PackageReference Include="itext7.licensekey" Version="3.0.6"/>
+        <PackageReference Include="itext7.licensekey" Version="3.1.0"/>
         <PackageReference Include="Portable.BouncyCastle" Version="1.8.5.0"/>
     </ItemGroup>
     <ItemGroup>
@@ -38,7 +38,7 @@
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj')"/>
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')"/>
-        <PackageReference Include="itext7" Version="7.1.11-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
-        <PackageReference Include="itext7.pdftest" Version="7.1.11-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')"/>
+        <PackageReference Include="itext7" Version="7.1.11" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+        <PackageReference Include="itext7.pdftest" Version="7.1.11" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')"/>
     </ItemGroup>
 </Project>
