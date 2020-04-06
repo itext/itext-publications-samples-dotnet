@@ -23,9 +23,9 @@ namespace iText.Samples.Sandbox.Images
 
         public static readonly String[] IMAGES =
         {
-            "../../resources/img/berlin2013.jpg",
-            "../../resources/img/javaone2013.jpg",
-            "../../resources/img/map_cic.png"
+            "../../../resources/img/berlin2013.jpg",
+            "../../../resources/img/javaone2013.jpg",
+            "../../../resources/img/map_cic.png"
         };
 
         public static void Main(String[] args)

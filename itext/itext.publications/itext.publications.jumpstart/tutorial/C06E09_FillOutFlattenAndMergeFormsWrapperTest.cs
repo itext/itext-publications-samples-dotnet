@@ -20,10 +20,13 @@ namespace Tutorial {
         public static ICollection<TestFixtureData> Data() {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddClassToRunnerSearchPath("Tutorial.Chapter06.C06E09_FillOutFlattenAndMergeForms");
+#if !NETSTANDARD1_6
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
+#else
+            return GenerateTestsList(typeof(C06E09_FillOutFlattenAndMergeFormsWrapperTest).GetTypeInfo().Assembly, searchConfig);
+#endif
         }
-
-        [NUnit.Framework.Timeout(60000)]
+        
         [NUnit.Framework.Test]
         public virtual void Test() {
             ResetLicense();
@@ -44,7 +47,12 @@ namespace Tutorial {
         protected override String GetDest() {
             return GetStringField(sampleClass, "DEST1");
         }
-
+        
+        protected override string GetCmpPdf(String dest)
+        {
+            return "../" + base.GetCmpPdf(dest);
+        }
+        
         private void ResetLicense() {
             try {
                 FieldInfo validatorsField = typeof(LicenseKey).GetField("validators", BindingFlags.NonPublic | BindingFlags.Static);

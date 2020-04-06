@@ -11,9 +11,9 @@ using iText.Kernel.Pdf.Canvas;
 namespace Tutorial.Chapter05 {
     /// <summary>Simple changing page properties example.</summary>
     public class C05E04_ChangePage {
-        public const String SRC = "../../resources/pdf/ufo.pdf";
+        public const String SRC = "../../../resources/pdf/ufo.pdf";
 
-        public const String DEST = "../../results/chapter05/change_page.pdf";
+        public const String DEST = "../../../results/chapter05/change_page.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

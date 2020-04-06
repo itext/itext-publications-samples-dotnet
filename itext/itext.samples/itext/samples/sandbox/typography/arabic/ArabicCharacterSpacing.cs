@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
     public class ArabicCharacterSpacing
     {
         public const String DEST = "results/sandbox/typography/ArabicCharacterSpacing.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

@@ -79,7 +79,7 @@ namespace iText.Samples
             
             int i = dest.LastIndexOf("/");
             int j = dest.LastIndexOf("/results", StringComparison.Ordinal) + 9;
-            return "../../resources/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
+            return "../../../resources/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
         }
 
         private String CompareTxt(String dest, String cmp)

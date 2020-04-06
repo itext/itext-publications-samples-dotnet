@@ -25,7 +25,7 @@ namespace iText.Samples
     [TestFixtureSource("Data")]
     public class EncryptWithCertificateSampleTest : WrappedSamplesRunner
     {
-        public static readonly String PRIVATE = "../../resources/encryption/test.p12";
+        public static readonly String PRIVATE = "../../../resources/encryption/test.p12";
 
         public EncryptWithCertificateSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
@@ -90,7 +90,7 @@ namespace iText.Samples
 
             int i = dest.LastIndexOf("/");
             int j = dest.LastIndexOf("/results", StringComparison.Ordinal) + 9;
-            return "../../resources/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
+            return "../../../resources/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Objects
     public class ListWithImageAsBullet
     {
         public static readonly string DEST = "results/sandbox/objects/list_with_image_bullet.pdf";
-        public static readonly string IMG = "../../resources/img/bulb.gif";
+        public static readonly string IMG = "../../../resources/img/bulb.gif";
 
         public static void Main(string[] args)
         {

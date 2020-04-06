@@ -16,9 +16,9 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter04 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C04E05_ParagraphAndDiv2 {
-        public const String SRC = "../../resources/txt/jekyll_hyde.txt";
+        public const String SRC = "../../../resources/txt/jekyll_hyde.txt";
 
-        public const String DEST = "../../results/chapter04/jekyll_hydeV2.pdf";
+        public const String DEST = "../../../results/chapter04/jekyll_hydeV2.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

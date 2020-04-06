@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     
 	<xsl:output method="xml" indent="yes" encoding="UTF-8" />
 	
@@ -9,7 +9,7 @@
 			<title>Movies</title>
 			<meta name="description" content="Invoice" />
 		</head>
-		<body style="font-family: FreeSans">
+		<body style="font-family: 'Noto Sans'">
 			<h1>INVOICE #I/2017-0456</h1>
 			<h2>August 20, 2017</h2>
 			<table width="100%">

@@ -13,7 +13,7 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C05E05_CellMarginPadding {
-        public const String DEST = "../../results/chapter05/cell_margin_padding.pdf";
+        public const String DEST = "../../../results/chapter05/cell_margin_padding.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

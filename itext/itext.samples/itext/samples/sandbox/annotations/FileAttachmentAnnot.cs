@@ -23,8 +23,8 @@ namespace iText.Samples.Sandbox.Annotations
     {
         public static readonly String DEST = "results/sandbox/annotations/file_attachment_annot.pdf";
 
-        public static readonly String IMG = "../../resources/img/info.png";
-        public static readonly String PATH = "../../resources/text/test.docx";
+        public static readonly String IMG = "../../../resources/img/info.png";
+        public static readonly String PATH = "../../../resources/text/test.docx";
 
         public static void Main(String[] args)
         {

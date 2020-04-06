@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class ChangeMetadata 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_meta_data.pdf";
-        public static readonly String SRC = "../../resources/pdfs/state.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/state.pdf";
 
         public static void Main(String[] args) 
         {

@@ -15,13 +15,13 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter03 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C03E19_PagedImages {
-        public const String TEST1 = "../../resources/img/test/animated_fox_dog.gif";
+        public const String TEST1 = "../../../resources/img/test/animated_fox_dog.gif";
 
-        public const String TEST2 = "../../resources/img/test/amb.jb2";
+        public const String TEST2 = "../../../resources/img/test/amb.jb2";
 
-        public const String TEST3 = "../../resources/img/test/marbles.tif";
+        public const String TEST3 = "../../../resources/img/test/marbles.tif";
 
-        public const String DEST = "../../results/chapter03/paged_images.pdf";
+        public const String DEST = "../../../results/chapter03/paged_images.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

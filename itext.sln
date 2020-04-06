@@ -3,31 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.samples", "itext\itext.samples\itext.samples.csproj", "{C0E65B6F-D2E0-4AE3-BAC2-0CD8C9F58A45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.barcodes", "..\itextcore\itext\itext.barcodes\itext.barcodes.csproj", "{DCAE8241-E391-418D-BA36-C7C064D7C413}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.barcodes", "..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj", "{DCAE8241-E391-418D-BA36-C7C064D7C413}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.font-asian", "..\itextcore\itext\itext.font-asian\itext.font-asian.csproj", "{0F10190C-7611-4378-A157-03BF2ED78E30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.font-asian", "..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj", "{0F10190C-7611-4378-A157-03BF2ED78E30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.forms", "..\itextcore\itext\itext.forms\itext.forms.csproj", "{E2828AC4-3C63-4B2A-B5AD-5F98862775BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.forms", "..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj", "{E2828AC4-3C63-4B2A-B5AD-5F98862775BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.hyph", "..\itextcore\itext\itext.hyph\itext.hyph.csproj", "{56137079-541A-425A-AB97-43AF63793C97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.hyph", "..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj", "{56137079-541A-425A-AB97-43AF63793C97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.io", "..\itextcore\itext\itext.io\itext.io.csproj", "{CEE5E7E1-1BF0-4BE1-9941-903262CE2F83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.io", "..\itextcore\itext\itext.io\itext.io.netstandard.csproj", "{CEE5E7E1-1BF0-4BE1-9941-903262CE2F83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.kernel", "..\itextcore\itext\itext.kernel\itext.kernel.csproj", "{4E7819E8-7555-4E2E-9A01-D8718A2CFDDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.kernel", "..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj", "{4E7819E8-7555-4E2E-9A01-D8718A2CFDDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.layout", "..\itextcore\itext\itext.layout\itext.layout.csproj", "{42173642-DB52-44D3-9883-3E34C65C53BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.layout", "..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj", "{42173642-DB52-44D3-9883-3E34C65C53BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.pdfa", "..\itextcore\itext\itext.pdfa\itext.pdfa.csproj", "{9FC2F0B3-A8D2-46DA-8724-72E00E67A8FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.pdfa", "..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj", "{9FC2F0B3-A8D2-46DA-8724-72E00E67A8FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.pdftest", "..\itextcore\itext\itext.pdftest\itext.pdftest.csproj", "{F9880DC4-F015-4413-AF86-66D0E9512774}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.pdftest", "..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj", "{F9880DC4-F015-4413-AF86-66D0E9512774}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.sign", "..\itextcore\itext\itext.sign\itext.sign.csproj", "{14A163C0-0054-480D-A096-EDA51DD933EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.sign", "..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj", "{14A163C0-0054-480D-A096-EDA51DD933EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.cleanup", "..\cleanup\itext\itext.cleanup\itext.cleanup.csproj", "{2F9B8138-96D5-4DF7-A011-61FE24900987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.typography", "..\typography\itext\itext.typography\itext.typography.csproj", "{CFE438D3-B3AE-4596-8410-3D9BBC39A05A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.typography", "..\typography\itext\itext.typography\itext.typography.netstandard.csproj", "{CFE438D3-B3AE-4596-8410-3D9BBC39A05A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.licensekey", "..\licensekey\itext\itext.license\itext.licensekey.csproj", "{48A742FF-BF78-402F-AC44-184BD2734634}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext.licensekey", "..\licensekey\itext\itext.license\itext.licensekey.netstandard.csproj", "{48A742FF-BF78-402F-AC44-184BD2734634}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "itext.sources", "itext.sources", "{CAB872A1-EBE8-4A69-8950-EC7B1DFCFB10}"
 EndProject

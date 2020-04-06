@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class ChangeOCGOrder 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_ocg_order.pdf";
-        public static readonly String SRC = "../../resources/pdfs/ocg.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/ocg.pdf";
 
         public static void Main(String[] args) 
         {

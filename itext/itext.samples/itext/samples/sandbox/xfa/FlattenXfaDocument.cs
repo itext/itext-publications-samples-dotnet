@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Xfa
     {
         public static readonly String DEST = "results/sandbox/xfa/flattened.pdf";
 
-        public static readonly String XFA = "../../resources/xfa/xfa.pdf";
+        public static readonly String XFA = "../../../resources/xfa/xfa.pdf";
 
         public static void Main(String[] args)
         {

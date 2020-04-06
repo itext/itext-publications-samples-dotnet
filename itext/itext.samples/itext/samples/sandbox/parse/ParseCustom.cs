@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Parse
     {
         public static readonly String DEST = "results/txt/parse_custom.txt";
 
-        public static readonly String SRC = "../../resources/pdfs/nameddestinations.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/nameddestinations.pdf";
 
         public static void Main(String[] args)
         {

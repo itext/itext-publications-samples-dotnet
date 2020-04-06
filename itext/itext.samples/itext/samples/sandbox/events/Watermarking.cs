@@ -26,7 +26,7 @@ namespace iText.Samples.Sandbox.Events
     {
         public static readonly String DEST = "results/sandbox/events/watermarkings.pdf";
 
-        public static readonly String DATA = "../../resources/data/united_states.csv";
+        public static readonly String DATA = "../../../resources/data/united_states.csv";
 
         public static void Main(String[] args)
         {

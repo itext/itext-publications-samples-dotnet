@@ -24,11 +24,11 @@ namespace iText.Samples.Signatures
 {
     public class SignatureTestHelper
     {
-        public static readonly string ADOBE = "../../resources/encryption/adobeRootCA.cer";
+        public static readonly string ADOBE = "../../../resources/encryption/adobeRootCA.cer";
 
-        public static readonly string CACERT = "../../resources/encryption/CACertSigningAuthority.crt";
+        public static readonly string CACERT = "../../../resources/encryption/CACertSigningAuthority.crt";
 
-        public static readonly string BRUNO = "../../resources/encryption/bruno.crt";
+        public static readonly string BRUNO = "../../../resources/encryption/bruno.crt";
 
         private String errorMessage;
 
@@ -167,7 +167,7 @@ namespace iText.Samples.Signatures
                 AddError("The certificate wasn't valid yet at the time of signing.");
             }
 
-            if (pkcs7.GetTimeStampDate() != DateTime.MaxValue)
+		    if (TimestampConstants.UNDEFINED_TIMESTAMP_DATE != pkcs7.GetTimeStampDate())
             {
                 if (!pkcs7.VerifyTimestampImprint())
                 {
@@ -250,7 +250,7 @@ namespace iText.Samples.Signatures
                 sigInfo.SetSignerName(iText.Signatures.CertificateInfo.GetSubjectFields(signCert).GetField("CN"));
                 sigInfo.SetAlternativeSignerName(pkcs7.GetSignName());
                 sigInfo.SetSignDate(pkcs7.GetSignDate().ToUniversalTime());
-                if (pkcs7.GetTimeStampDate() != DateTime.MaxValue)
+		        if (TimestampConstants.UNDEFINED_TIMESTAMP_DATE != pkcs7.GetTimeStampDate())
                 {
                     sigInfo.SetTimeStamp(pkcs7.GetTimeStampDate().ToUniversalTime());
                     TimeStampToken ts = pkcs7.GetTimeStampToken();

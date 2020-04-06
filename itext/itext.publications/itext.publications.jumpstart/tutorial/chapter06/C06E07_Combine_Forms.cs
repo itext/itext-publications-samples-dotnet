@@ -8,11 +8,11 @@ using iText.Kernel.Pdf;
 
 namespace Tutorial.Chapter06 {
     public class C06E07_Combine_Forms {
-        public const String DEST = "../../results/chapter06/combined_forms.pdf";
+        public const String DEST = "../../../results/chapter06/combined_forms.pdf";
 
-        public const String SRC1 = "../../resources/pdf/subscribe.pdf";
+        public const String SRC1 = "../../../resources/pdf/subscribe.pdf";
 
-        public const String SRC2 = "../../resources/pdf/state.pdf";
+        public const String SRC2 = "../../../resources/pdf/state.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

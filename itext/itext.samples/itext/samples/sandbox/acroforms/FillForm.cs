@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Acroforms
     {
         public static readonly String DEST = "results/sandbox/acroforms/fill_form.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/CertificateOfExcellence.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/CertificateOfExcellence.pdf";
 
         public static void Main(String[] args)
         {

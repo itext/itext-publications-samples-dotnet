@@ -19,9 +19,9 @@ using iText.Layout.Renderer;
 namespace iText.Highlevel.Chapter06 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C06E11_TOC_OutlinesDestinations {
-        public const String SRC = "../../resources/txt/jekyll_hyde.txt";
+        public const String SRC = "../../../resources/txt/jekyll_hyde.txt";
 
-        public const String DEST = "../../results/chapter06/jekyll_hyde_outline2.pdf";
+        public const String DEST = "../../../results/chapter06/jekyll_hyde_outline2.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

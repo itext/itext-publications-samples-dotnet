@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Images
     {
         public static readonly String DEST = "results/sandbox/images/flate_compress_jpeg_1pass.pdf";
 
-        public static readonly String IMAGE = "../../resources/img/berlin2013.jpg";
+        public static readonly String IMAGE = "../../../resources/img/berlin2013.jpg";
 
         public static void Main(String[] args)
         {

@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class ChangeViewerPreference 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_viewer_preference.pdf";
-        public static readonly String SRC = "../../resources/pdfs/united_states.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/united_states.pdf";
 
         public static void Main(String[] args) 
         {

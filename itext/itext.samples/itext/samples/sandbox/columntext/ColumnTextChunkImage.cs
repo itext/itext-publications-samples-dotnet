@@ -21,8 +21,8 @@ namespace iText.Samples.Sandbox.Columntext
     {
         public static readonly String DEST = "results/sandbox/columntext/column_text_chunk_image.pdf";
 
-        public static readonly String DOG = "../../resources/img/dog.bmp";
-        public static readonly String FOX = "../../resources/img/fox.bmp";
+        public static readonly String DOG = "../../../resources/img/dog.bmp";
+        public static readonly String FOX = "../../../resources/img/fox.bmp";
 
         public static void Main(String[] args)
         {

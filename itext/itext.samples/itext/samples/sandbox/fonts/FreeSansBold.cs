@@ -21,8 +21,8 @@ namespace iText.Samples.Sandbox.Fonts
     {
         public static readonly String DEST = "results/sandbox/fonts/free_sans_bold.pdf";
 
-        public static readonly String FONT = "../../resources/font/FreeSans.ttf";
-        public static readonly String FONTBOLD = "../../resources/font/FreeSansBold.ttf";
+        public static readonly String FONT = "../../../resources/font/FreeSans.ttf";
+        public static readonly String FONTBOLD = "../../../resources/font/FreeSansBold.ttf";
 
         public static void Main(String[] args)
         {

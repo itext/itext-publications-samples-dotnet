@@ -19,8 +19,8 @@ namespace iText.Samples.Sandbox.Stamper
     public class AddImageAffineTransform 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_image_affine_transform.pdf";
-        public static readonly String IMG = "../../resources/img/bruno.jpg";
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String IMG = "../../../resources/img/bruno.jpg";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
 
         public static void Main(String[] args) 
         {

@@ -15,13 +15,13 @@ using iText.License;
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C01E06_Czech_Russian_Korean_Unicode {
-        public static String KEY = "../../resources/license/itextkey-typography.xml";
+        public static String KEY = "../../../resources/license/itextkey-typography.xml";
 
-        public const String DEST = "../../results/chapter01/czech_russian_korean_unicode.pdf";
+        public const String DEST = "../../../results/chapter01/czech_russian_korean_unicode.pdf";
 
-        public const String FONT = "../../resources/fonts/FreeSans.ttf";
+        public const String FONT = "../../../resources/fonts/FreeSans.ttf";
 
-        public const String HCRBATANG = "../../resources/fonts/HANBatang.ttf";
+        public const String HCRBATANG = "../../../resources/fonts/HANBatang.ttf";
 
         public const String CZECH = "Podivn\u00fd p\u0159\u00edpad Dr. Jekylla a pana Hyda";
 

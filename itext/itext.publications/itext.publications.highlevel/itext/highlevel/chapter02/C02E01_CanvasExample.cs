@@ -15,7 +15,7 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter02 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C02E01_CanvasExample {
-        public const String DEST = "../../results/chapter02/canvas_example.pdf";
+        public const String DEST = "../../../results/chapter02/canvas_example.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

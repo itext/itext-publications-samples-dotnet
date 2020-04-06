@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Barcodes
     public class StampBarcode 
     {
         public static readonly String DEST = "results/sandbox/barcodes/stamp_barcode.pdf";
-        public static readonly String SRC = "../../resources/pdfs/superman.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/superman.pdf";
 
         public static void Main(String[] args) 
         {

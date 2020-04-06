@@ -17,11 +17,11 @@ namespace iText.Samples.Sandbox.Pdfhtml
 {
     public class UsingCustomFonts
     {
-        public static readonly string SRC = "../../resources/pdfhtml/FontExample/";
+        public static readonly string SRC = "../../../resources/pdfhtml/FontExample/";
         public static readonly string DEST = "results/sandbox/pdfhtml/FontExample.pdf";
-        public static readonly string FONT_FOLDER = "../../resources/pdfhtml/FontExample/font/";
-        public static readonly string FONT1 = "../../resources/font/New Walt Disney.ttf";
-        public static readonly string FONT2 = "../../resources/font/Greifswalder Tengwar.ttf";
+        public static readonly string FONT_FOLDER = "../../../resources/pdfhtml/FontExample/font/";
+        public static readonly string FONT1 = "../../../resources/font/New Walt Disney.ttf";
+        public static readonly string FONT2 = "../../../resources/font/Greifswalder Tengwar.ttf";
 
         public static void Main(string[] args)
         {

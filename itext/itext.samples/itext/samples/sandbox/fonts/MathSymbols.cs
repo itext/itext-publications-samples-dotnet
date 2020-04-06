@@ -26,7 +26,7 @@ namespace iText.Samples.Sandbox.Fonts
     {
         public static readonly String DEST = "results/sandbox/fonts/math_symbols.pdf";
         
-        public static readonly String FONT = "../../resources/font/FreeSans.ttf";
+        public static readonly String FONT = "../../../resources/font/FreeSans.ttf";
         
         public static void Main(String[] args)
         {

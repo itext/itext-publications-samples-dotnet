@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Interactive
     {
         public static readonly String DEST = "results/sandbox/interactive/change_author.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/page229_annotations.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/page229_annotations.pdf";
 
         public static void Main(String[] args)
         {

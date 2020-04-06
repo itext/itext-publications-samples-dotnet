@@ -35,7 +35,7 @@ namespace iText.Samples.Htmlsamples.Chapter03
         /// <summary>
         /// The Base URI of the HTML page.
         /// </summary>
-        public static readonly String BASEURI = "../../resources/htmlsamples/html/";
+        public static readonly String BASEURI = "../../../resources/htmlsamples/html/";
 
         /// <summary>
         /// The path to the source HTML file.

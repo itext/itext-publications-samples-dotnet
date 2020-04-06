@@ -23,11 +23,11 @@ namespace iText.Samples.Sandbox.Pdfua
     {
         public static readonly string DEST = "results/sandbox/pdfua/pdf_ua.pdf";
 
-        public static readonly String DOG = "../../resources/img/dog.bmp";
+        public static readonly String DOG = "../../../resources/img/dog.bmp";
 
-        public static readonly String FONT = "../../resources/font/FreeSans.ttf";
+        public static readonly String FONT = "../../../resources/font/FreeSans.ttf";
 
-        public static readonly String FOX = "../../resources/img/fox.bmp";
+        public static readonly String FOX = "../../../resources/img/fox.bmp";
 
         public static void Main(String[] args)
         {

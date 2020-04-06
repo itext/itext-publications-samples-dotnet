@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Stamper
 {
     public class AddFieldAndKids {
         public static readonly String DEST = "results/sandbox/stamper/add_field_and_kids.pdf";
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
 
         public static void Main(String[] args) 
         {

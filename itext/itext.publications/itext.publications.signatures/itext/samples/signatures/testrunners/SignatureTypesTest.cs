@@ -47,8 +47,7 @@ namespace iText.Samples.Signatures.Testrunners
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
-
-        [Timeout(60000)]
+        
         [Test, Description("{0}")]
         public virtual void Test()
         {
@@ -110,7 +109,7 @@ namespace iText.Samples.Signatures.Testrunners
 
             int i = dest.LastIndexOf("/", StringComparison.Ordinal);
             int j = dest.LastIndexOf("/results", StringComparison.Ordinal) + 9;
-            return "../../resources/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
+            return "../../../resources/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
         }
 
         private static String[] GetResultFiles(Type c)

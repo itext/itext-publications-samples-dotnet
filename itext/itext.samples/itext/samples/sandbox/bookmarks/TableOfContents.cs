@@ -28,7 +28,7 @@ namespace iText.Samples.Sandbox.Bookmarks
     {
         public static readonly String DEST = "results/sandbox/bookmarks/table_of_contents.pdf";
 
-        public static readonly String SRC = "../../resources/text/tree.txt";
+        public static readonly String SRC = "../../../resources/text/tree.txt";
 
         public static void Main(string[] args)
         {

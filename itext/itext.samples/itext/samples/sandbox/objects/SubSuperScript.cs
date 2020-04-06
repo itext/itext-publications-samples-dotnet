@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Objects
     public class SubSuperScript
     {
         public static readonly string DEST = "results/sandbox/objects/sub_super_script.pdf";
-        public static readonly string FONT = "../../resources/font/Cardo-Regular.ttf";
+        public static readonly string FONT = "../../../resources/font/Cardo-Regular.ttf";
 
         public static void Main(string[] args)
         {

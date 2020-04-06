@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Security
     public class EncryptPdf
     {
         public static readonly String DEST = "results/sandbox/security/encrypt_pdf.pdf";
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
 
         public static readonly String OWNER_PASSWORD = "World";
         public static readonly String USER_PASSWORD = "Hello";

@@ -13,9 +13,9 @@ using iText.License;
 namespace iText.Highlevel.Chapter02 {
     /// <author>iText</author>
     public class C02E15_ShowTextAlignedKerned {
-        public static String KEY = "../../resources/license/itextkey-typography.xml";
+        public static String KEY = "../../../resources/license/itextkey-typography.xml";
 
-        public const String DEST = "../../results/chapter02/showtextalignedkerned.pdf";
+        public const String DEST = "../../../results/chapter02/showtextalignedkerned.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

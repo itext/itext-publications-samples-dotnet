@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Tagging
     {
         public static readonly string DEST = "results/sandbox/tagging/add_alt_tags.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/no_alt_attribute.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/no_alt_attribute.pdf";
 
         public static void Main(String[] args)
         {

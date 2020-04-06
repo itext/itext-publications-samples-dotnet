@@ -8,11 +8,11 @@ using iText.Kernel.Utils;
 
 namespace Tutorial.Chapter06 {
     public class C06E04_88th_Oscar_Combine {
-        public const String SRC1 = "../../resources/pdf/88th_reminder_list.pdf";
+        public const String SRC1 = "../../../resources/pdf/88th_reminder_list.pdf";
 
-        public const String SRC2 = "../../resources/pdf/88th_noms_announcement.pdf";
+        public const String SRC2 = "../../../resources/pdf/88th_noms_announcement.pdf";
 
-        public const String DEST = "../../results/chapter06/88th_oscar_combined_documents.pdf";
+        public const String DEST = "../../../results/chapter06/88th_oscar_combined_documents.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

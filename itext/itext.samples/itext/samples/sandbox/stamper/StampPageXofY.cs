@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class StampPageXofY 
     {
         public static readonly String DEST = "results/sandbox/stamper/stamp_page_x_of_y.pdf";
-        public static readonly String SRC = "../../resources/pdfs/nameddestinations.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/nameddestinations.pdf";
 
         public static void Main(String[] args) 
         {

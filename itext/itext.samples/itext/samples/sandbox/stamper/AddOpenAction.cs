@@ -14,7 +14,7 @@ using iText.Kernel.Pdf.Navigation;
 namespace iText.Samples.Sandbox.Stamper 
 {
     public class AddOpenAction {
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
         public static readonly String DEST = "results/sandbox/stamper/add_open_action.pdf";
 
         public static void Main(String[] args) 

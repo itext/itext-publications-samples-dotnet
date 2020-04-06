@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Telugu
     public class TeluguWordSpacing
     {
         public const String DEST = "results/sandbox/typography/TeluguWordSpacing.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

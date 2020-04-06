@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
     {
         public static readonly String DEST = "results/sandbox/pdfhtml/velocity-test.pdf";
 
-        public static readonly String SRC = "../../resources/pdfhtml/templates/velocity-test.vm";
+        public static readonly String SRC = "../../../resources/pdfhtml/templates/velocity-test.vm";
 
         public static void Main(String[] args)
         {

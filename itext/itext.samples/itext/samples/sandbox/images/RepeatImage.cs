@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Images
     {
         public static readonly String DEST = "results/sandbox/images/repeat_image.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/chinese.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/chinese.pdf";
 
         public static void Main(String[] args)
         {

@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Annotations
     {
         public static readonly String DEST = "results/sandbox/annotations/change_zoom_xyz_destination.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/xyz_destination.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/xyz_destination.pdf";
 
         public static void Main(String[] args)
         {

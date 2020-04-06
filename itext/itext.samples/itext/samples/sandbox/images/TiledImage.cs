@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Images
     {
         public static readonly String DEST = "results/sandbox/images/tiled_image.pdf";
 
-        public static readonly String IMAGE = "../../resources/img/bruno_ingeborg.jpg";
+        public static readonly String IMAGE = "../../../resources/img/bruno_ingeborg.jpg";
 
         public static void Main(String[] args)
         {

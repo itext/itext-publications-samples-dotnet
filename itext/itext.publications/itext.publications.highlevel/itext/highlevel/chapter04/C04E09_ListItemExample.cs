@@ -16,9 +16,9 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter04 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C04E09_ListItemExample {
-        public const String SRC = "../../resources/data/jekyll_hyde.csv";
+        public const String SRC = "../../../resources/data/jekyll_hyde.csv";
 
-        public const String DEST = "../../results/chapter04/jekyll_hyde_overviewV4.pdf";
+        public const String DEST = "../../../results/chapter04/jekyll_hyde_overviewV4.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
@@ -39,7 +39,7 @@ namespace iText.Highlevel.Chapter04 {
                 Link movie = new Link(record[2], PdfAction.CreateURI(url));
                 li.Add(new Paragraph(movie.SetFontSize(14))).Add(new Paragraph(String.Format("Directed by {0} ({1}, {2})", record
                     [3], record[4], record[1])));
-                FileInfo file = new FileInfo(String.Format("../../resources/img/{0}.jpg", record[0]));
+                FileInfo file = new FileInfo(String.Format("../../../resources/img/{0}.jpg", record[0]));
                 if (file.Exists) {
                     iText.Layout.Element.Image img = new Image(ImageDataFactory.Create(file.FullName));
                     img.ScaleToFit(10000, 120);

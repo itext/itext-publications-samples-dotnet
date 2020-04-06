@@ -11,11 +11,11 @@ using iText.Layout.Element;
 
 namespace iText.Highlevel.Notused {
     public class C04E10_MaryReillyV3 {
-        public const String SRC = "../../resources/pdfs/jekyll_hyde.pdf";
+        public const String SRC = "../../../resources/pdfs/jekyll_hyde.pdf";
 
-        public const String MARY = "../../resources/img/0117002.jpg";
+        public const String MARY = "../../../resources/img/0117002.jpg";
 
-        public const String DEST = "../../results/chapter03/mary_reilly_V3.pdf";
+        public const String DEST = "../../../results/chapter03/mary_reilly_V3.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

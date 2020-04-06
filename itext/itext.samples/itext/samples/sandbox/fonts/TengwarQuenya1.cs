@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Fonts
     {
         public static readonly String DEST = "results/sandbox/fonts/tengwar_quenya1.pdf";
 
-        public static readonly String FONT = "../../resources/font/Greifswalder Tengwar.ttf";
+        public static readonly String FONT = "../../../resources/font/Greifswalder Tengwar.ttf";
 
         public static void Main(String[] args)
         {

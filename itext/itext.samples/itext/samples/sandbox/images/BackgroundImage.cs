@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Images
     {
         public static readonly String DEST = "results/sandbox/images/background_image.pdf";
 
-        public static readonly String IMAGE = "../../resources/img/berlin2013.jpg";
+        public static readonly String IMAGE = "../../../resources/img/berlin2013.jpg";
 
         public static void Main(String[] args)
         {

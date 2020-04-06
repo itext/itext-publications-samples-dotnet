@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Kannada
     public class KannadaPushButton
     {
         public const String DEST = "results/sandbox/typography/KannadaPushButton.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

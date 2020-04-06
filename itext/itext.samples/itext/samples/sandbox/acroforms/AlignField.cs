@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Acroforms
     {
         public static readonly String DEST = "results/sandbox/acroforms/align_field.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/subscribe.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/subscribe.pdf";
 
         public static void Main(String[] args)
         {

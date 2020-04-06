@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Acroforms
     {
         public static readonly String DEST = "results/sandbox/acroforms/check_box_values.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/checkboxExample.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/checkboxExample.pdf";
 
         public static readonly String CHECKED_FIELD_NAME = "checked";
         public static readonly String UNCHECKED_FIELD_NAME = "unchecked";

@@ -19,9 +19,9 @@ using iText.Layout.Renderer;
 namespace Tutorial.Chapter03 {
     /// <summary>Simple table renderer example.</summary>
     public class C03E02_PremierLeague {
-        public const String DATA = "../../resources/data/premier_league.csv";
+        public const String DATA = "../../../resources/data/premier_league.csv";
 
-        public const String DEST = "../../results/chapter03/premier_league.pdf";
+        public const String DEST = "../../../results/chapter03/premier_league.pdf";
 
         internal Color greenColor = new DeviceCmyk(0.78f, 0, 0.81f, 0.21f);
 
@@ -48,13 +48,16 @@ namespace Tutorial.Chapter03 {
             Table table = new Table(UnitValue.CreatePercentArray(new float[] { 1.5f, 7, 2, 2, 2, 2, 3, 4, 4, 2 }));
             table.SetTextAlignment(TextAlignment.CENTER).SetHorizontalAlignment(HorizontalAlignment
                 .CENTER);
-            StreamReader sr = File.OpenText(DATA);
-            String line = sr.ReadLine();
-            Process(table, line, bold, true);
-            while ((line = sr.ReadLine()) != null) {
-                Process(table, line, font, false);
+            using (StreamReader sr = File.OpenText(DATA))
+            {
+                String line = sr.ReadLine();
+                Process(table, line, bold, true);
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Process(table, line, font, false);
+                }
             }
-            sr.Close();
+
             document.Add(table);
             //Close document
             document.Close();

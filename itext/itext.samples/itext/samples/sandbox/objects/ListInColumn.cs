@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Objects
     public class ListInColumn
     {
         public static readonly string DEST = "results/sandbox/objects/list_in_column.pdf";
-        public static readonly string SRC = "../../resources/pdfs/pages.pdf";
+        public static readonly string SRC = "../../../resources/pdfs/pages.pdf";
 
         public static void Main(string[] args)
         {

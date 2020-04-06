@@ -10,7 +10,7 @@ using iText.Kernel.Pdf.Canvas;
 namespace Tutorial.Chapter02 {
     /// <summary>Simple drawing lines example.</summary>
     public class C02E01_Axes {
-        public const String DEST = "../../results/chapter02/axes.pdf";
+        public const String DEST = "../../../results/chapter02/axes.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

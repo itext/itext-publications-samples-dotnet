@@ -65,8 +65,7 @@ namespace iText.Samples.Signatures.Testrunners
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
-
-        [Timeout(60000)]
+        
         [Test, Description("{0}")]
         public virtual void Test()
         {

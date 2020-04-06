@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Acroforms
     {
         public static readonly String DEST = "results/sandbox/acroforms/change_field_size.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/form.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/form.pdf";
 
         public static void Main(String[] args)
         {

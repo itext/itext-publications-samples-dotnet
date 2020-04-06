@@ -16,9 +16,9 @@ using iText.Kernel.Pdf.Canvas;
 namespace Tutorial.Chapter05 {
     /// <summary>Simple adding annotations example.</summary>
     public class C05E01_AddAnnotationsAndContent {
-        public const String SRC = "../../resources/pdf/job_application.pdf";
+        public const String SRC = "../../../resources/pdf/job_application.pdf";
 
-        public const String DEST = "../../results/chapter05/edited_job_application.pdf";
+        public const String DEST = "../../../results/chapter05/edited_job_application.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

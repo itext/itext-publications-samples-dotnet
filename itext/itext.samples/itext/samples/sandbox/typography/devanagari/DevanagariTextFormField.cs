@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Typography.Devanagari
     public class DevanagariTextFormField
     {
         public const String DEST = "results/sandbox/typography/DevanagariTextFormField.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

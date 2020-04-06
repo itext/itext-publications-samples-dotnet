@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Tagging
     public class TagStructureManipulations
     {
         public static readonly String DEST = "results/sandbox/tagging/88th_Academy_Awards_with_stars.pdf";
-        public static readonly String SRC = "../../resources/tagging/88th_Academy_Awards.pdf";
+        public static readonly String SRC = "../../../resources/tagging/88th_Academy_Awards.pdf";
 
         public static void Main(String[] args)
         {

@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Fonts
         public static readonly String DEST = "results/sandbox/fonts/unembed_font.pdf";
 
         public static readonly String SRC = "results/sandbox/fonts/withSerifFont.pdf";
-        public static readonly String FONT = "../../resources/font/PT_Serif-Web-Regular.ttf";
+        public static readonly String FONT = "../../../resources/font/PT_Serif-Web-Regular.ttf";
 
         public static void Main(String[] args)
         {

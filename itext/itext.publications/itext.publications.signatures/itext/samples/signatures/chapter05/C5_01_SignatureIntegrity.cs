@@ -23,18 +23,18 @@ namespace iText.Samples.Signatures.Chapter05
     {
         public static readonly string DEST = "signatures/chapter05/";
         
-        public static readonly string EXAMPLE1 = "../../resources/pdfs/hello_level_1_annotated.pdf";
+        public static readonly string EXAMPLE1 = "../../../resources/pdfs/hello_level_1_annotated.pdf";
 
-        public static readonly string EXAMPLE2 = "../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf";
+        public static readonly string EXAMPLE2 = "../../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf";
 
-        public static readonly string EXAMPLE3 = "../../resources/pdfs/step_6_signed_by_dave_broken_by_chuck.pdf";
+        public static readonly string EXAMPLE3 = "../../../resources/pdfs/step_6_signed_by_dave_broken_by_chuck.pdf";
 
-        public const String EXPECTED_OUTPUT = "../../resources/pdfs/hello_level_1_annotated.pdf\n"
+        public const String EXPECTED_OUTPUT = "../../../resources/pdfs/hello_level_1_annotated.pdf\n"
                                              + "===== sig =====\n"
                                              + "Signature covers whole document: False\n"
                                              + "Document revision: 1 of 2\n"
                                              + "Integrity check OK? True\n"
-                                             + "../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf\n"
+                                             + "../../../resources/pdfs/step_4_signed_by_alice_bob_carol_and_dave.pdf\n"
                                              + "===== sig1 =====\n"
                                              + "Signature covers whole document: False\n"
                                              + "Document revision: 1 of 4\n"
@@ -51,7 +51,7 @@ namespace iText.Samples.Signatures.Chapter05
                                              + "Signature covers whole document: True\n"
                                              + "Document revision: 4 of 4\n"
                                              + "Integrity check OK? True\n"
-                                             + "../../resources/pdfs/step_6_signed_by_dave_broken_by_chuck.pdf\n"
+                                             + "../../../resources/pdfs/step_6_signed_by_dave_broken_by_chuck.pdf\n"
                                              + "===== sig1 =====\n"
                                              + "Signature covers whole document: False\n"
                                              + "Document revision: 1 of 5\n"

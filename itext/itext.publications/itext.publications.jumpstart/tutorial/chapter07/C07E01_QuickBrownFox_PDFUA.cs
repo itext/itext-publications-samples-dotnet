@@ -12,13 +12,13 @@ using iText.Layout.Element;
 
 namespace Tutorial.Chapter07 {
     public class C07E01_QuickBrownFox_PDFUA {
-        public const String DOG = "../../resources/img/dog.bmp";
+        public const String DOG = "../../../resources/img/dog.bmp";
 
-        public const String FOX = "../../resources/img/fox.bmp";
+        public const String FOX = "../../../resources/img/fox.bmp";
 
-        public const String FONT = "../../resources/font/FreeSans.ttf";
+        public const String FONT = "../../../resources/font/FreeSans.ttf";
 
-        public const String DEST = "../../results/chapter07/quick_brown_fox_PDFUA.pdf";
+        public const String DEST = "../../../results/chapter07/quick_brown_fox_PDFUA.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

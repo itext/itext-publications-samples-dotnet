@@ -12,7 +12,7 @@ using iText.Layout;
 namespace Tutorial.Chapter04 {
     /// <summary>Simple filling out form example.</summary>
     public class C04E03_CreateAndFill {
-        public const String DEST = "../../results/chapter04/create_and_fill.pdf";
+        public const String DEST = "../../../results/chapter04/create_and_fill.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

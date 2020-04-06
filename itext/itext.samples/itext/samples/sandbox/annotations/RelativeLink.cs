@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Annotations
     {
         public static readonly String DEST = "results/sandbox/annotations/relative_link.pdf";
 
-        public static readonly String XML = "../../../resources/xml/data.xml";
+        public static readonly String XML = "../../../../../../resources/xml/data.xml";
 
         public static void Main(String[] args)
         {

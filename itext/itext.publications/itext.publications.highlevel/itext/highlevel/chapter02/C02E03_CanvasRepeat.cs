@@ -36,7 +36,7 @@ namespace iText.Highlevel.Chapter02 {
             }
         }
 
-        public const String DEST = "../../results/chapter02/canvas_repeat.pdf";
+        public const String DEST = "../../../results/chapter02/canvas_repeat.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

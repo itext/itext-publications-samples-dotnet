@@ -15,17 +15,17 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Notused.Appendix {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class ImageProperties {
-        public const String TEST1 = "../../resources/img/test/amb.jb2";
+        public const String TEST1 = "../../../resources/img/test/amb.jb2";
 
-        public const String TEST2 = "../../resources/img/test/butterfly.bmp";
+        public const String TEST2 = "../../../resources/img/test/butterfly.bmp";
 
-        public const String TEST3 = "../../resources/img/test/hitchcock.gif";
+        public const String TEST3 = "../../../resources/img/test/hitchcock.gif";
 
-        public const String TEST4 = "../../resources/img/test/hitchcock.png";
+        public const String TEST4 = "../../../resources/img/test/hitchcock.png";
 
-        public const String TEST5 = "../../resources/img/test/info.png";
+        public const String TEST5 = "../../../resources/img/test/info.png";
 
-        public const String TEST6 = "../../resources/img/test/marbles.tif";
+        public const String TEST6 = "../../../resources/img/test/marbles.tif";
 
         public const String DEST = "results/appendix/image_properties.pdf";
 

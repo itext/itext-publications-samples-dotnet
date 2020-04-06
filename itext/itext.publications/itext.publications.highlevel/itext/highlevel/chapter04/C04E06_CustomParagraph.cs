@@ -45,7 +45,7 @@ namespace iText.Highlevel.Chapter04 {
             }
         }
 
-        public const String DEST = "../../results/chapter04/custom_paragraph.pdf";
+        public const String DEST = "../../../results/chapter04/custom_paragraph.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

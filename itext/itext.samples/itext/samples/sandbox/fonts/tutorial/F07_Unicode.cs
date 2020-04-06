@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
     {
         public static readonly String DEST = "results/sandbox/fonts/tutorial/f07_unicode.pdf";
 
-        public static readonly String FONT = "../../resources/font/FreeSans.ttf";
+        public static readonly String FONT = "../../../resources/font/FreeSans.ttf";
 
         public static void Main(String[] args)
         {

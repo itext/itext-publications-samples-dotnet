@@ -14,9 +14,9 @@ using iText.Kernel.Pdf;
 namespace Tutorial.Chapter05 {
     /// <summary>Simple filling out form example.</summary>
     public class C05E02_FillAndModifyForm {
-        public const String SRC = "../../resources/pdf/job_application.pdf";
+        public const String SRC = "../../../resources/pdf/job_application.pdf";
 
-        public const String DEST = "../../results/chapter05/filled_out_job_application.pdf";
+        public const String DEST = "../../../results/chapter05/filled_out_job_application.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

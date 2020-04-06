@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Typography.Tamil
     public class TamilTextFormField
     {
         public const String DEST = "results/sandbox/typography/TamilTextFormField.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

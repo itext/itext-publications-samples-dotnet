@@ -13,7 +13,7 @@ using iText.Layout.Element;
 namespace Tutorial.Chapter04 {
     /// <summary>Simple link annotation example.</summary>
     public class C04E01_02_LinkAnnotation {
-        public const String DEST = "../../results/chapter04/link_annotation.pdf";
+        public const String DEST = "../../../results/chapter04/link_annotation.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

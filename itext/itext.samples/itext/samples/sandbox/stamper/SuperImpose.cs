@@ -18,11 +18,11 @@ namespace iText.Samples.Sandbox.Stamper
     public class SuperImpose 
     {
         public static readonly String DEST = "results/sandbox/stamper/super_impose.pdf";
-        public static readonly String SRC = "../../resources/pdfs/primes.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/primes.pdf";
         public static readonly String[] EXTRA =
-        {       "../../resources/pdfs/hello.pdf", 
-                "../../resources/pdfs/base_url.pdf", 
-                "../../resources/pdfs/state.pdf"
+        {       "../../../resources/pdfs/hello.pdf", 
+                "../../../resources/pdfs/base_url.pdf", 
+                "../../../resources/pdfs/state.pdf"
                 
         };
         

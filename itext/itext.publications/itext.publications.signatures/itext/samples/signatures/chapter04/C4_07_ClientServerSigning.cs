@@ -29,7 +29,7 @@ namespace iText.Samples.Signatures.Chapter04
     {
         public static readonly string DEST = "results/signatures/chapter04/";
 
-        public static readonly string SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
         public static readonly string CERT = "https://demo.itextsupport.com/SigningApp/itextpdf.cer";
 
         public static readonly String[] RESULT_FILES =

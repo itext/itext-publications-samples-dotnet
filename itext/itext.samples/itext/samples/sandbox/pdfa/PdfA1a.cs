@@ -29,11 +29,11 @@ namespace iText.Samples.Sandbox.Pdfa
     {
         public static readonly string DEST = "results/sandbox//pdfa/pdf_a_1a.pdf";
 
-        public static readonly String BOLD = "../../resources/font/OpenSans-Bold.ttf";
+        public static readonly String BOLD = "../../../resources/font/OpenSans-Bold.ttf";
 
-        public static readonly String DATA = "../../resources/data/united_states.csv";
+        public static readonly String DATA = "../../../resources/data/united_states.csv";
 
-        public static readonly String FONT = "../../resources/font/OpenSans-Regular.ttf";
+        public static readonly String FONT = "../../../resources/font/OpenSans-Regular.ttf";
 
         private PdfFormXObject template;
 
@@ -57,7 +57,7 @@ namespace iText.Samples.Sandbox.Pdfa
             bold = PdfFontFactory.CreateFont(BOLD, PdfEncodings.IDENTITY_H);
 
             FileStream fileStream =
-                new FileStream("../../resources/data/sRGB_CS_profile.icm", FileMode.Open, FileAccess.Read);
+                new FileStream("../../../resources/data/sRGB_CS_profile.icm", FileMode.Open, FileAccess.Read);
 
             PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_1A,
                 new PdfOutputIntent("Custom", "",

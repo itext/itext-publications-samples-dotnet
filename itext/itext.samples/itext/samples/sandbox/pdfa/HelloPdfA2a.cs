@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Pdfa
     {
         public static readonly string DEST = "results/sandbox/pdfa/hello_pdf_a_2a.pdf";
 
-        public static readonly String FONT = "../../resources/font/OpenSans-Regular.ttf";
+        public static readonly String FONT = "../../../resources/font/OpenSans-Regular.ttf";
 
         public static void Main(String[] args)
         {
@@ -36,7 +36,7 @@ namespace iText.Samples.Sandbox.Pdfa
         {
             PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H);
 
-            FileStream fileStream = new FileStream("../../resources/data/sRGB_CS_profile.icm",
+            FileStream fileStream = new FileStream("../../../resources/data/sRGB_CS_profile.icm",
                 FileMode.Open, FileAccess.Read);
 
             PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_2A,

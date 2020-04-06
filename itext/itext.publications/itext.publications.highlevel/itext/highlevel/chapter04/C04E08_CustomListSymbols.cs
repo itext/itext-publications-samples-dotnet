@@ -17,9 +17,9 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter04 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C04E08_CustomListSymbols {
-        public const String DEST = "../../results/chapter04/custom_list_symbols.pdf";
+        public const String DEST = "../../../results/chapter04/custom_list_symbols.pdf";
 
-        public const String INFO = "../../resources/img/test/info.png";
+        public const String INFO = "../../../resources/img/test/info.png";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

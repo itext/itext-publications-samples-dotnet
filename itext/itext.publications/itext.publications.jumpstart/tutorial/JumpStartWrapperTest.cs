@@ -19,10 +19,13 @@ namespace Tutorial {
             searchConfig.IgnorePackageOrClass("Tutorial.Chapter06.C06E09_FillOutFlattenAndMergeForms");
             searchConfig.IgnorePackageOrClass("Tutorial.JumpStartWrapperTest");
             searchConfig.IgnorePackageOrClass("Tutorial.C06E09_FillOutFlattenAndMergeFormsWrapperTest");
+#if !NETSTANDARD1_6
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
+#else
+            return GenerateTestsList(typeof(JumpStartWrapperTest).GetTypeInfo().Assembly, searchConfig);
+#endif
         }
-
-        [NUnit.Framework.Timeout(120000)]
+        
         [NUnit.Framework.Test]
         public virtual void Test() {
             ResetLicense();
@@ -33,6 +36,11 @@ namespace Tutorial {
             CompareTool compareTool = new CompareTool();
             AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));
             AddError(compareTool.CompareDocumentInfo(dest, cmp));
+        }
+        
+        protected override string GetCmpPdf(String dest)
+        {
+            return "../" + base.GetCmpPdf(dest);
         }
 
         private void ResetLicense() {

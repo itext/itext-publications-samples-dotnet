@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Devanagari
     public class DevanagariTable
     {
         public const String DEST = "results/sandbox/typography/DevanagariTable.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Typography.Latin
     public class LatinKerning
     {
         public const String DEST = "results/sandbox/typography/LatinKerning.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

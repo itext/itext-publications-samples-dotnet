@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Tagging
     {
         public static readonly String DEST = "results/txt/walk_the_tree.txt";
 
-        public static readonly String SRC = "../../resources/pdfs/tree_test.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/tree_test.pdf";
 
         public static void Main(string[] args)
         {

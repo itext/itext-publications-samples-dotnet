@@ -12,7 +12,7 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter07 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C07E08_FullScreen {
-        public const String DEST = "../../results/chapter07/fullscreen.pdf";
+        public const String DEST = "../../../results/chapter07/fullscreen.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class HighLightByAddingContent 
     {
         public static readonly String DEST = "results/sandbox/stamper/high_light_by_adding_content.pdf";
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
 
         public static void Main(String[] args) 
         {

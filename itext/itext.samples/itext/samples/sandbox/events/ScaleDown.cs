@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Events
     {
         public static readonly String DEST = "results/sandbox/events/scale_down.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/orientations.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/orientations.pdf";
 
         public static void Main(String[] args)
         {

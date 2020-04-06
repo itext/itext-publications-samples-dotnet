@@ -14,7 +14,7 @@ namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
 
     public class C05E02_ColumnWidths {
-        public const String DEST = "../../results/chapter05/column_widths.pdf";
+        public const String DEST = "../../../results/chapter05/column_widths.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

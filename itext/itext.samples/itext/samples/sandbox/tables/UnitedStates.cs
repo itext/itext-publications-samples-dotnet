@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Tables
     {
         public static readonly string DEST = "results/sandbox/tables/united_states.pdf";
 
-        public static readonly String DATA = "../../resources/data/united_states.csv";
+        public static readonly String DATA = "../../../resources/data/united_states.csv";
 
         public static void Main(String[] args)
         {

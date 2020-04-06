@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Fonts
     {
         public static readonly String DEST = "results/sandbox/fonts/chinese.pdf";
 
-        public static readonly String FONT = "../../resources/font/NotoSansCJKsc-Regular.otf";
+        public static readonly String FONT = "../../../resources/font/NotoSansCJKsc-Regular.otf";
 
         /*
          * "These are the protagonists in 'Hero', a movie by Zhang Yimou:

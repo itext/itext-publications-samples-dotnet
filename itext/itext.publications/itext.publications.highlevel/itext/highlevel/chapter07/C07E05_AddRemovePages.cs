@@ -14,9 +14,9 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter07 {
     /// <author>iText</author>
     public class C07E05_AddRemovePages {
-        public const String SRC = "../../resources/pdfs/jekyll_hyde_bookmarked.pdf";
+        public const String SRC = "../../../resources/pdfs/jekyll_hyde_bookmarked.pdf";
 
-        public const String DEST = "../../results/chapter07/jekyll_hyde_updated.pdf";
+        public const String DEST = "../../../results/chapter07/jekyll_hyde_updated.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Acroforms
     {
         public static readonly String DEST = "results/sandbox/acroforms/hide_button.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/hello_button.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello_button.pdf";
 
         public static void Main(String[] args)
         {

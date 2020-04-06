@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Objects
     public class TableSpace
     {
         public static readonly string DEST = "results/sandbox/objects/table_space.pdf";
-        public static readonly string FONT = "../../resources/font/PTM55FT.ttf";
+        public static readonly string FONT = "../../../resources/font/PTM55FT.ttf";
         public static readonly string[][] DATA =
         {
             new string[] {"John Edward Jr.", "AAA"},

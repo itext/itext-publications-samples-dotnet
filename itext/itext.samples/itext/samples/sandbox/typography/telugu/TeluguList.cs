@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Typography.Telugu
     public class TeluguList
     {
         public const String DEST = "results/sandbox/typography/TeluguList.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

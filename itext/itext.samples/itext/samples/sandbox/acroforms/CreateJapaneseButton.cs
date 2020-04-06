@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Acroforms
     {
         public static readonly String DEST = "results/sandbox/acroforms/create_japanese_button.pdf";
 
-        public static readonly String FONT = "../../resources/font/FreeSans.ttf";
+        public static readonly String FONT = "../../../resources/font/FreeSans.ttf";
 
         // あ き ら characters
         public const String JAPANESE_TEXT = "\u3042\u304d\u3089";

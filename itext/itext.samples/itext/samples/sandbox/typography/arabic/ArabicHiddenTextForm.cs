@@ -22,8 +22,8 @@ namespace iText.Samples.Sandbox.Typography.Arabic
     public class ArabicHiddenTextForm
     {
         public const String DEST = "results/sandbox/typography/ArabicHiddenTextForm.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
-        public const String RESOURCE_FOLDER = "../../resources/pdfs/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
+        public const String RESOURCE_FOLDER = "../../../resources/pdfs/";
         public const String INPUT_FILE = "arabicAppearance.pdf";
 
         public static void Main(String[] args)

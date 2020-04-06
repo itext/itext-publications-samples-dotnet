@@ -19,9 +19,9 @@ using iText.Layout.Properties;
 namespace Tutorial.Chapter03 {
     /// <summary>Simple event handler example.</summary>
     public class C03E03_UFO {
-        public const String DATA = "../../resources/data/ufo.csv";
+        public const String DATA = "../../../resources/data/ufo.csv";
 
-        public const String DEST = "../../results/chapter03/ufo.pdf";
+        public const String DEST = "../../../results/chapter03/ufo.pdf";
 
         internal static PdfFont helvetica = null;
 
@@ -45,13 +45,16 @@ namespace Tutorial.Chapter03 {
                 .CENTER).SetFont(helveticaBold).SetFontSize(14);
             document.Add(p);
             Table table = new Table(UnitValue.CreatePercentArray(new float[] { 3, 5, 7, 4 }));
-            StreamReader sr = File.OpenText(DATA);
-            String line = sr.ReadLine();
-            Process(table, line, helveticaBold, true);
-            while ((line = sr.ReadLine()) != null) {
-                Process(table, line, helvetica, false);
+            using (StreamReader sr = File.OpenText(DATA))
+            {
+                String line = sr.ReadLine();
+                Process(table, line, helveticaBold, true);
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Process(table, line, helvetica, false);
+                }
             }
-            sr.Close();
+
             document.Add(table);
             document.Close();
         }

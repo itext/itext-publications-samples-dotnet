@@ -14,21 +14,21 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter03 {
     /// <author>iText</author>
     public class C03E18_ImageTypes {
-        public const String TEST1 = "../../resources/img/test/map.jp2";
+        public const String TEST1 = "../../../resources/img/test/map.jp2";
 
-        public const String TEST2 = "../../resources/img/test/butterfly.bmp";
+        public const String TEST2 = "../../../resources/img/test/butterfly.bmp";
 
-        public const String TEST3 = "../../resources/img/test/hitchcock.png";
+        public const String TEST3 = "../../../resources/img/test/hitchcock.png";
 
-        public const String TEST4 = "../../resources/img/test/info.png";
+        public const String TEST4 = "../../../resources/img/test/info.png";
 
-        public const String TEST5 = "../../resources/img/test/hitchcock.gif";
+        public const String TEST5 = "../../../resources/img/test/hitchcock.gif";
 
-        public const String TEST6 = "../../resources/img/test/amb.jb2";
+        public const String TEST6 = "../../../resources/img/test/amb.jb2";
 
-        public const String TEST7 = "../../resources/img/test/marbles.tif";
+        public const String TEST7 = "../../../resources/img/test/marbles.tif";
 
-        public const String DEST = "../../results/chapter03/image_types.pdf";
+        public const String DEST = "../../../results/chapter03/image_types.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

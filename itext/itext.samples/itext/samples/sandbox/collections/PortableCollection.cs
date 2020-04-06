@@ -21,9 +21,9 @@ namespace iText.Samples.Sandbox.Collections
     {
         public static readonly String DEST = "results/sandbox/collections/portable_collection.pdf";
 
-        public static readonly String DATA = "../../resources/data/united_states.csv";
-        public static readonly String HELLO = "../../resources/pdfs/hello.pdf";
-        public static readonly String IMG = "../../resources/img/berlin2013.jpg";
+        public static readonly String DATA = "../../../resources/data/united_states.csv";
+        public static readonly String HELLO = "../../../resources/pdfs/hello.pdf";
+        public static readonly String IMG = "../../../resources/img/berlin2013.jpg";
 
         public static void Main(String[] args)
         {

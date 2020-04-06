@@ -16,7 +16,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
 {
     public class ParseHtmlColorBlind
     {
-        public static readonly string SRC = "../../resources/pdfhtml/rainbow/";
+        public static readonly string SRC = "../../../resources/pdfhtml/rainbow/";
         public static readonly string DEST = "results/sandbox/pdfhtml/rainbow_colourBlind.pdf";
 
         public static void Main(string[] args)

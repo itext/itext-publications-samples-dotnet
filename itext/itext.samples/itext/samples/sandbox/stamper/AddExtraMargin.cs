@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class AddExtraMargin 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_extra_margin.pdf";
-        public static readonly String SRC = "../../resources/pdfs/primes.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/primes.pdf";
 
         public static void Main(String[] args) 
         {

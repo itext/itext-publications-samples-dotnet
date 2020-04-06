@@ -16,9 +16,9 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter05 {
     /// <author>iText</author>
     public class C05E10_JekyllHydeTableV3 {
-        public const String SRC = "../../resources/data/jekyll_hyde.csv";
+        public const String SRC = "../../../resources/data/jekyll_hyde.csv";
 
-        public const String DEST = "../../results/chapter05/jekyll_hyde_table3.pdf";
+        public const String DEST = "../../../results/chapter05/jekyll_hyde_table3.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
@@ -41,7 +41,7 @@ namespace iText.Highlevel.Chapter05 {
             Cell cell;
             foreach (IList<String> record in resultSet) {
                 cell = new Cell();
-                FileInfo file = new FileInfo(String.Format("../../resources/img/{0}.jpg", record[0]));
+                FileInfo file = new FileInfo(String.Format("../../../resources/img/{0}.jpg", record[0]));
                 if (file.Exists) {
                     iText.Layout.Element.Image img = new Image(ImageDataFactory.Create(file.FullName));
                     img.SetAutoScaleWidth(true);

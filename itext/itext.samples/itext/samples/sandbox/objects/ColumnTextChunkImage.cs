@@ -18,8 +18,8 @@ namespace iText.Samples.Sandbox.Objects
 {
     public class ColumnTextChunkImage
     {
-        public static readonly string DOG = "../../resources/img/dog.bmp";
-        public static readonly string FOX = "../../resources/img/fox.bmp";
+        public static readonly string DOG = "../../../resources/img/dog.bmp";
+        public static readonly string FOX = "../../../resources/img/fox.bmp";
         public static readonly string DEST = "results/sandbox/objects/column_text_chunk_image.pdf";
 
         public static void Main(string[] args)

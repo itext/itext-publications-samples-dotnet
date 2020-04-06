@@ -15,15 +15,15 @@ using iText.Pdfa;
 
 namespace Tutorial.Chapter07 {
     public class C07E03_UnitedStates_PDFA_3a {
-        public const String DATA = "../../resources/data/united_states.csv";
+        public const String DATA = "../../../resources/data/united_states.csv";
 
-        public const String FONT = "../../resources/font/FreeSans.ttf";
+        public const String FONT = "../../../resources/font/FreeSans.ttf";
 
-        public const String BOLD_FONT = "../../resources/font/FreeSansBold.ttf";
+        public const String BOLD_FONT = "../../../resources/font/FreeSansBold.ttf";
 
-        public const String INTENT = "../../resources/color/sRGB_CS_profile.icm";
+        public const String INTENT = "../../../resources/color/sRGB_CS_profile.icm";
 
-        public const String DEST = "../../results/chapter07/united_states_PDFA-3a.pdf";
+        public const String DEST = "../../../results/chapter07/united_states_PDFA-3a.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
@@ -59,13 +59,16 @@ namespace Tutorial.Chapter07 {
             // Create content
             Table table = new Table(UnitValue.CreatePercentArray(new float[] { 4, 1, 3, 4, 3, 3, 3, 3, 1 }))
                 .UseAllAvailableWidth();
-            StreamReader sr = File.OpenText(DATA);
-            String line = sr.ReadLine();
-            Process(table, line, bold, true);
-            while ((line = sr.ReadLine()) != null) {
-                Process(table, line, font, false);
+            using (StreamReader sr = File.OpenText(DATA))
+            {
+                String line = sr.ReadLine();
+                Process(table, line, bold, true);
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Process(table, line, font, false);
+                }
             }
-            sr.Close();
+
             document.Add(table);
             //Close document
             document.Close();

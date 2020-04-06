@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Events
     {
         public static readonly String DEST = "results/sandbox/events/every25words.pdf";
 
-        public static readonly String SRC = "../../resources/text/liber1_1_la.txt";
+        public static readonly String SRC = "../../../resources/text/liber1_1_la.txt";
 
         public static void Main(String[] args)
         {

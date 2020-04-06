@@ -19,7 +19,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class TileClipped 
     {
         public static readonly String DEST = "results/sandbox/stamper/tile_clipped.pdf";
-        public static readonly String SRC = "../../resources/pdfs/hero.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hero.pdf";
 
         public static void Main(String[] args) 
         {

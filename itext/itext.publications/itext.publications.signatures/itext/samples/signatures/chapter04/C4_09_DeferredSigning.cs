@@ -29,9 +29,9 @@ namespace iText.Samples.Signatures.Chapter04
     {
         public static readonly String DEST = "results/signatures/chapter04/";
 
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
         public static readonly String TEMP = "results/signatures/chapter04/hello_empty_sig.pdf";
-        public static readonly String KEYSTORE = "../../resources/encryption/ks";
+        public static readonly String KEYSTORE = "../../../resources/encryption/ks";
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 

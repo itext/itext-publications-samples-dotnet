@@ -11,7 +11,7 @@ using iText.Kernel.Pdf.Annot;
 namespace Tutorial.Chapter04 {
     /// <summary>Simple line annotation example.</summary>
     public class C04E01_03_LineAnnotation {
-        public const String DEST = "../../results/chapter04/line_annotation.pdf";
+        public const String DEST = "../../../results/chapter04/line_annotation.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

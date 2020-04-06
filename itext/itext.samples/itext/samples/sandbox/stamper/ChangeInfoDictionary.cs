@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Stamper
     public class ChangeInfoDictionary 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_info_dictionary.pdf";
-        public static readonly String SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
 
         public static void Main(String[] args) 
         {

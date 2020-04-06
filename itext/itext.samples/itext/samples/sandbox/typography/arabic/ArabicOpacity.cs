@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
     public class ArabicOpacity
     {
         public const String DEST = "results/sandbox/typography/ArabicOpacity.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
 
         public static void Main(String[] args)
         {

@@ -21,7 +21,7 @@ namespace iText.Samples.Sandbox.Objects
     public class DrawRectangleAroundText
     {
         public static readonly string DEST = "results/sandbox/objects/draw_rectangle_around_text.pdf";
-        public static readonly string SRC = "../../resources/pdfs/hello.pdf";
+        public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
 
         public static void Main(string[] args)
         {

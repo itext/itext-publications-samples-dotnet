@@ -27,8 +27,8 @@ namespace iText.Samples.Signatures.Chapter04
     {
         public static readonly String DEST = "results/signatures/chapter04/";
 
-        public static readonly String KEYSTORE = "../../resources/encryption/ks";
-        public static readonly String CERT = "../../resources/encryption/bruno.crt";
+        public static readonly String KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly String CERT = "../../../resources/encryption/bruno.crt";
         public static readonly String PRE = "http://demo.itextsupport.com/SigningApp/presign";
         public static readonly String POST = "http://demo.itextsupport.com/SigningApp/postsign";
 

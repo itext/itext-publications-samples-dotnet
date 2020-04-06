@@ -21,9 +21,9 @@ namespace iText.Samples.Sandbox.Fonts
     {
         public static readonly String DEST = "results/sandbox/fonts/rupee_symbol.pdf";
 
-        public static readonly String FONT1 = "../../resources/font/PlayfairDisplay-Regular.ttf";
-        public static readonly String FONT2 = "../../resources/font/PT_Sans-Web-Regular.ttf";
-        public static readonly String FONT3 = "../../resources/font/FreeSans.ttf";
+        public static readonly String FONT1 = "../../../resources/font/PlayfairDisplay-Regular.ttf";
+        public static readonly String FONT2 = "../../../resources/font/PT_Sans-Web-Regular.ttf";
+        public static readonly String FONT3 = "../../../resources/font/FreeSans.ttf";
 
         // "The Rupee character ₹ and the Rupee symbol ₨"
         public static readonly String RUPEE = "The Rupee character \u20B9 and the Rupee symbol \u20A8";

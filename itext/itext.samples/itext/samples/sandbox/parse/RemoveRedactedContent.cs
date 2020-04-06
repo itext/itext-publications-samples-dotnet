@@ -18,7 +18,7 @@ namespace iText.Samples.Sandbox.Parse
     {
         public static readonly String DEST = "results/sandbox/parse/remove_redacted_content.pdf";
 
-        public static readonly String SRC = "../../resources/pdfs/page229_redacted.pdf";
+        public static readonly String SRC = "../../../resources/pdfs/page229_redacted.pdf";
 
         public static void Main(String[] args)
         {

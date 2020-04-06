@@ -16,7 +16,7 @@ using iText.Layout.Properties;
 namespace iText.Highlevel.Chapter06 {
     /// <author>iText</author>
     public class C06E09_Annotation {
-        public const String DEST = "../../results/chapter06/jekyll_hyde_annotation.pdf";
+        public const String DEST = "../../../results/chapter06/jekyll_hyde_annotation.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

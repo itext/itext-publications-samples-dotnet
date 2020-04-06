@@ -35,6 +35,11 @@ namespace iText.Highlevel {
             RunSamples();
         }
 
+        protected override string GetCmpPdf(String dest)
+        {
+            return "../" + base.GetCmpPdf(dest);
+        }
+        
         protected override void ComparePdf(String outPath, String dest, String cmp) {
             CompareTool compareTool = new CompareTool();
             AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));

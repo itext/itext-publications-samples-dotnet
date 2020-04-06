@@ -13,7 +13,7 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter06 {
     /// <author>iText</author>
     public class C06E05_RemoteGoto {
-        public const String DEST = "../../results/chapter06/jekyll_hyde_remote.pdf";
+        public const String DEST = "../../../results/chapter06/jekyll_hyde_remote.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

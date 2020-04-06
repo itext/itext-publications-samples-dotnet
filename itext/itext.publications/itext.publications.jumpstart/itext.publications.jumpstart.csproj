@@ -1,145 +1,59 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="$(SolutionDir)\packages\itext7.pdftest.7.1.10\build\itext7.pdftest.props" Condition="Exists('$(SolutionDir)\packages\itext7.pdftest.7.1.10\build\itext7.pdftest.props')" />
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EEE84512-F6A8-4CD0-946B-6513D33FDEA1}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace></RootNamespace>
-    <AssemblyName>itext.publications.jumpstart</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworks>netcoreapp1.0;net40</TargetFrameworks>
 	<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <OutputType>library</OutputType>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
+    <OutputType>Library</OutputType>
+    <!--Entry point is explicitly set up to avoid the compilation error when the 
+    program has more than one entry point-->
+    <StartupObject>Tutorial.Chapter01.C01E01_HelloWorld</StartupObject>
+    <DefineConstants>NETSTANDARD1_6</DefineConstants>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="itext.licensekey, Version=3.0.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\itext7.licensekey.3.0.6\lib\net40\itext.licensekey.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\NUnit.3.7.1\lib\net40\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
-    </Reference>
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<OutputTypeEx>library</OutputTypeEx>
+    <AssemblyName>itext.publications.jumpstart</AssemblyName>
+    <RootNamespace />
+  </PropertyGroup>
+<ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="tutorial\**\*.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="Common.Logging" Version="3.4.1" />
+    <PackageReference Include="TeamCity.VSTest.TestAdapter" Version="1.0.0" />
+    <PackageReference Include="NUnit" Version="3.7.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
+    <PackageReference Include="itext7.licensekey" Version="3.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')">
-      <Project>{dcae8241-e391-418d-ba36-c7c064d7c413}</Project>
-      <Name>itext.barcodes</Name>
-    </ProjectReference>
-    <Reference Include="itext.barcodes, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.7.1.10\lib\net40\itext.barcodes.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj')">
-      <Project>{0f10190c-7611-4378-a157-03bf2ed78e30}</Project>
-      <Name>itext.font_asian</Name>
-    </ProjectReference>
-    <Reference Include="itext.font_asian, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.font-asian.7.1.10\lib\net40\itext.font_asian.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.csproj')">
-      <Project>{e2828ac4-3c63-4b2a-b5ad-5f98862775be}</Project>
-      <Name>itext.forms</Name>
-    </ProjectReference>
-    <Reference Include="itext.forms, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.7.1.10\lib\net40\itext.forms.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj')">
-      <Project>{56137079-541a-425a-ab97-43af63793c97}</Project>
-      <Name>itext.hyph</Name>
-    </ProjectReference>
-    <Reference Include="itext.hyph, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.hyph.7.1.10\lib\net40\itext.hyph.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.csproj')">
-      <Project>{cee5e7e1-1bf0-4be1-9941-903262ce2f83}</Project>
-      <Name>itext.io</Name>
-    </ProjectReference>
-    <Reference Include="itext.io, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.7.1.10\lib\net40\itext.io.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj')">
-      <Project>{4e7819e8-7555-4e2e-9a01-d8718a2cfdda}</Project>
-      <Name>itext.kernel</Name>
-    </ProjectReference>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942" Condition="!Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj')">
-      <HintPath>$(SolutionDir)\packages\Portable.BouncyCastle.1.8.5\lib\net40\BouncyCastle.Crypto.dll</HintPath>
-    </Reference>
-    <Reference Include="itext.kernel, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.7.1.10\lib\net40\itext.kernel.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.layout\itext.layout.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.layout\itext.layout.csproj')">
-      <Project>{42173642-db52-44d3-9883-3e34c65c53bc}</Project>
-      <Name>itext.layout</Name>
-    </ProjectReference>
-    <Reference Include="itext.layout, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.layout\itext.layout.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.7.1.10\lib\net40\itext.layout.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj')">
-      <Project>{9fc2f0b3-a8d2-46da-8724-72e00e67a8fa}</Project>
-      <Name>itext.pdfa</Name>
-    </ProjectReference>
-    <Reference Include="itext.pdfa, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.7.1.10\lib\net40\itext.pdfa.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')">
-      <Project>{f9880dc4-f015-4413-af86-66d0e9512774}</Project>
-      <Name>itext.pdftest</Name>
-    </ProjectReference>
-    <Reference Include="itext.pdftest, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.pdftest.7.1.10\lib\net40\itext.pdftest.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.sign\itext.sign.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.sign\itext.sign.csproj')">
-      <Project>{14A163C0-0054-480D-A096-EDA51DD933EA}</Project>
-      <Name>itext.sign</Name>
-    </ProjectReference>
-    <Reference Include="itext.sign, Version=7.1.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Condition="!Exists('..\..\..\..\itextcore\itext\itext.sign\itext.sign.csproj')">
-      <HintPath>$(SolutionDir)\packages\itext7.7.1.10\lib\net40\itext.sign.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+    <PackageReference Include="itext7" Version="7.1.11" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
+    <PackageReference Include="itext7.hyph" Version="7.1.11" Condition="!Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
+    <PackageReference Include="itext7.pdftest" Version="7.1.11" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj')" />
+    <PackageReference Include="itext7.font-asian" Version="7.1.11" Condition="!Exists('..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj')" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp1.0'">
+    <PackageReference Include="Microsoft.NET.Test.Sdk">
+      <Version>15.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <Version>4.3.0</Version>
+    </PackageReference>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

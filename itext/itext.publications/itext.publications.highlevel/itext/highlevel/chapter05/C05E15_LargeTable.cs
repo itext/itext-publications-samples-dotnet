@@ -12,7 +12,7 @@ namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
 
     public class C05E15_LargeTable {
-        public const String DEST = "../../results/chapter05/large_table.pdf";
+        public const String DEST = "../../../results/chapter05/large_table.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

@@ -11,7 +11,7 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter07 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C07E14_Encrypted {
-        public const String DEST = "../../results/chapter07/encrypted.pdf";
+        public const String DEST = "../../../results/chapter07/encrypted.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

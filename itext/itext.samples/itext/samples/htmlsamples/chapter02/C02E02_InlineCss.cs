@@ -32,7 +32,7 @@ namespace iText.Samples.Htmlsamples.Chapter02
         /// <summary>
         /// The path to the source HTML file.
         /// </summary>
-        public static readonly String SRC = "../../resources/htmlsamples/html/2_inline_css.html";
+        public static readonly String SRC = "../../../resources/htmlsamples/html/2_inline_css.html";
 
         /// <summary>
         /// The main method of this example.

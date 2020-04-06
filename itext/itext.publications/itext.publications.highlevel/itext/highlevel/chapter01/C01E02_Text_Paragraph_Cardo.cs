@@ -13,13 +13,13 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C01E02_Text_Paragraph_Cardo {
-        public const String DEST = "../../results/chapter01/text_paragraph_cardo.pdf";
+        public const String DEST = "../../../results/chapter01/text_paragraph_cardo.pdf";
 
-        public const String REGULAR = "../../resources/fonts/Cardo-Regular.ttf";
+        public const String REGULAR = "../../../resources/fonts/Cardo-Regular.ttf";
 
-        public const String BOLD = "../../resources/fonts/Cardo-Bold.ttf";
+        public const String BOLD = "../../../resources/fonts/Cardo-Bold.ttf";
 
-        public const String ITALIC = "../../resources/fonts/Cardo-Italic.ttf";
+        public const String ITALIC = "../../../resources/fonts/Cardo-Italic.ttf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

@@ -12,7 +12,7 @@ using iText.Layout.Element;
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C01E07_FontSize {
-        public const String DEST = "../../results/chapter01/font_size.pdf";
+        public const String DEST = "../../../results/chapter01/font_size.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);

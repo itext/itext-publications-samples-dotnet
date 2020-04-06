@@ -24,9 +24,9 @@ namespace iText.Samples.Sandbox.Typography.Latin
     public class LatinSignature
     {
         public const String DEST = "results/sandbox/typography/LatinSignature.pdf";
-        public const String FONTS_FOLDER = "../../resources/font/";
-        public const String RESOURCE_FOLDER = "../../resources/pdfs/";
-        public const String CERTIFICATE_FOLDER = "../../resources/cert/";
+        public const String FONTS_FOLDER = "../../../resources/font/";
+        public const String RESOURCE_FOLDER = "../../../resources/pdfs/";
+        public const String CERTIFICATE_FOLDER = "../../../resources/cert/";
         private static readonly char[] PASSWORD = "testpass".ToCharArray();
 
         public static void Main(String[] args)

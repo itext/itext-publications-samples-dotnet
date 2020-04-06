@@ -18,8 +18,8 @@ namespace iText.Samples.Sandbox.Merge
     {
         public static readonly String DEST = "results/sandbox/merge/add_cover.pdf";
 
-        public static readonly String COVER = "../../resources/pdfs/hero.pdf";
-        public static readonly String RESOURCE = "../../resources/pdfs/pages.pdf";
+        public static readonly String COVER = "../../../resources/pdfs/hero.pdf";
+        public static readonly String RESOURCE = "../../../resources/pdfs/pages.pdf";
 
         public static void Main(String[] args)
         {
