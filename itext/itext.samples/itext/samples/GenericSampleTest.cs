@@ -92,7 +92,6 @@ namespace iText.Samples
         public static ICollection<TestFixtureData> Data()
         {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Htmlsamples");
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox");
 
             // Samples are run by separate samples runner
@@ -107,10 +106,6 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoToPage");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Logging.CounterDemoSystemOut");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.MergeAndCount");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Htmlsamples.Chapter05.C05E03_Invitations");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Htmlsamples.Chapter07.C07E04_CreateFromURL");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Htmlsamples.Chapter07.C07E05_CreateFromURL2");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Htmlsamples.Chapter07.C07E06_CreateFromURL3");
 
             // Not a sample classes
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfhtml.Colorblindness");
@@ -118,9 +113,6 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfhtml.Headertagging");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.Densemerger.PageVerticalAnalyzer");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.Densemerger.PdfDenseMerger");
-            
-            // Should not be run due to falling on different systems with different system fonts
-            searchConfig.IgnorePackageOrClass("iText.Samples.Htmlsamples.Chapter06.C06E03_SystemFonts");
 
             // TODO DEVSIX-3189
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.TableBorder");

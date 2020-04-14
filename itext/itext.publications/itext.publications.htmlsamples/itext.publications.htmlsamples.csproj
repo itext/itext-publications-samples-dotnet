@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
+    <TargetFrameworks>net40</TargetFrameworks>
+	<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>library</OutputType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<OutputTypeEx>library</OutputTypeEx>
+    <AssemblyName>itext.publications.htmlsamples</AssemblyName>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Common.Logging" Version="3.4.1" />
+    <PackageReference Include="TeamCity.VSTest.TestAdapter" Version="1.0.0" />
+    <PackageReference Include="NUnit" Version="3.7.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
+	<PackageReference Include="itext7.licensekey" Version="3.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+	<PackageReference Include="itext7" Version="7.1.12-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+	<ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+	<ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj')" />
+	<ProjectReference Include="..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj')" />
+	<ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj')" />
+	<ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj')" />
+	<ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj')" />
+	<PackageReference Include="itext7.pdftest" Version="7.1.12-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
+	<ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
+	<ProjectReference Include="..\..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.netstandard.csproj" Condition="Exists('..\..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.netstandard.csproj')" />
+	<PackageReference Include="itext7.pdfhtml" Version="3.0.1-SNAPSHOT" Condition="!Exists('..\..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.netstandard.csproj')" />
+	<ProjectReference Include="..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj" Condition="Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
+	<PackageReference Include="itext7.pdfcalligraph" Version="2.0.7-SNAPSHOT" Condition="!Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
+  </ItemGroup>
+</Project>
