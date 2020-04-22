@@ -1,17 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/*
- * This example was written in the context of the following book:
- * https://leanpub.com/itext7_pdfHTML
- * Go to http://developers.itextpdf.com for more info.
- */
-
 using System;
 using System.Collections.Generic;
 using System.IO;

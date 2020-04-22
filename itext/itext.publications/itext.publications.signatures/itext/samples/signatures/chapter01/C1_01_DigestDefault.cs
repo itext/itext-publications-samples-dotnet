@@ -1,19 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/*
-* This class is part of the white paper entitled
-* "Digital Signatures for PDF documents"
-* written by Bruno Lowagie
-*
-* For more info, go to: http://itextpdf.com/learn
-*/
-
 using System;
 using System.IO;
 using System.Linq;

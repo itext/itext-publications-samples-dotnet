@@ -1,6 +1,3 @@
-/*
-* This example is part of the iText 7 tutorial.
-*/
 using System;
 using System.IO;
 using iText.Kernel.Geom;

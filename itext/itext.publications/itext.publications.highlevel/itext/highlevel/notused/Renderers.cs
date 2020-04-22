@@ -1,7 +1,3 @@
-/*
-* This example was written by Bruno Lowagie
-* in the context of the book: iText 7 layout objects
-*/
 using System;
 using System.IO;
 using iText.Kernel.Geom;
