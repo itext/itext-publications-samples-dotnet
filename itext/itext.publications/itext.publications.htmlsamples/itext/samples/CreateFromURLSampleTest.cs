@@ -10,6 +10,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using iText.IO.Font;
@@ -26,15 +27,15 @@ namespace iText.Samples
     [TestFixtureSource("Data")]
     public class CreateFromURLSampleTest : WrappedSamplesRunner
     {
-        private static readonly Dictionary<String, int> expectedNumbersOfPages;
+        private static readonly Dictionary<String, int[]> expectedNumbersOfPages;
 
         static CreateFromURLSampleTest()
         {
-            expectedNumbersOfPages = new Dictionary<string, int>();
+            expectedNumbersOfPages = new Dictionary<string, int[]>();
 
-            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E04_CreateFromURL", 4);
-            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E05_CreateFromURL2", 2);
-            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E06_CreateFromURL3", 2);
+            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E04_CreateFromURL", new int[] {4, 5});
+            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E05_CreateFromURL2", new int[] {2, 3});
+            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E06_CreateFromURL3", new int[] {2, 3});
         }
 
         public CreateFromURLSampleTest(RunnerParams runnerParams) : base(runnerParams)
@@ -67,11 +68,10 @@ namespace iText.Samples
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(dest));
 
             int currentNumberOfPages = pdfDoc.GetNumberOfPages();
-            int expectedNumberOfPages = expectedNumbersOfPages[sampleClass.FullName];
-            if (currentNumberOfPages != expectedNumberOfPages)
+            List<int> expectedNumberOfPages = expectedNumbersOfPages[sampleClass.FullName].ToList();
+            if (!expectedNumberOfPages.Contains(currentNumberOfPages))
             {
-                AddError("Numbers of pages are not equal.\nExpected: " + expectedNumberOfPages
-                                                                       + "\nActual: " + currentNumberOfPages);
+                AddError("Number of pages is out of expected range.\nActual: " + currentNumberOfPages);
             }
 
             String compareFilePath = "../../../cmpfiles/htmlsamples/txt/cmp_" + sampleClass.Name + "_keywords.txt";
