@@ -64,7 +64,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
                 PdfPage page = docEvent.GetPage();
                 Rectangle pageSize = page.GetPageSize();
 
-                Canvas canvas = new Canvas(new PdfCanvas(page), pdf, pageSize);
+                Canvas canvas = new Canvas(new PdfCanvas(page), pageSize);
                 canvas.SetFontSize(18);
 
                 // Write text at position
@@ -100,7 +100,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
 
                 // Creates drawing canvas
                 PdfCanvas pdfCanvas = new PdfCanvas(page);
-                Canvas canvas = new Canvas(pdfCanvas, pdf, pageSize);
+                Canvas canvas = new Canvas(pdfCanvas, pageSize);
 
                 Paragraph p = new Paragraph()
                     .Add("Page ")

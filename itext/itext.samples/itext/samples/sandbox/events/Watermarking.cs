@@ -92,7 +92,7 @@ namespace iText.Samples.Sandbox.Events
                 }
 
                 PdfCanvas canvas = new PdfCanvas(page.NewContentStreamBefore(), page.GetResources(), pdfDoc);
-                new Canvas(canvas, pdfDoc, page.GetPageSize())
+                new Canvas(canvas, page.GetPageSize())
                     .SetFontColor(ColorConstants.LIGHT_GRAY)
                     .SetFontSize(60)
                     

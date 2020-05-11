@@ -36,7 +36,7 @@ namespace iText.Samples.Sandbox.Stamper
             nested.AddChild(nested2);
             
             canvas.BeginLayer(nested);
-            Canvas canvasModel = new Canvas(canvas, pdfDoc, pdfDoc.GetDefaultPageSize());
+            Canvas canvasModel = new Canvas(canvas, pdfDoc.GetDefaultPageSize());
             canvasModel.ShowTextAligned("nested layers", 50, 765, TextAlignment.LEFT, 0);
             canvas.EndLayer();
             

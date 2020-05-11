@@ -28,13 +28,13 @@ namespace iText.Samples.Sandbox.Objects
 
             PdfFont font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD, PdfEncodings.CP1252, true);
             Paragraph pz = new Paragraph("Hello World!").SetFont(font).SetFontSize(13);
-            new Canvas(new PdfCanvas(pdfDoc.GetFirstPage()), pdfDoc, new Rectangle(120, 48, 80, 580))
+            new Canvas(new PdfCanvas(pdfDoc.GetFirstPage()), new Rectangle(120, 48, 80, 580))
                 .Add(pz);
 
             // The Leading is used in this paragraph, the Leading is a spacing between lines of text
             font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
             pz = new Paragraph("Hello World!").SetFont(font).SetFixedLeading(20);
-            new Canvas(new PdfCanvas(pdfDoc.GetFirstPage()), pdfDoc, new Rectangle(120, 48, 80, 480))
+            new Canvas(new PdfCanvas(pdfDoc.GetFirstPage()), new Rectangle(120, 48, 80, 480))
                 .Add(pz);
 
             pdfDoc.Close();

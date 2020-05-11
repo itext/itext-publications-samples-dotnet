@@ -117,7 +117,7 @@ namespace iText.Samples.Sandbox.Tables
                 Paragraph p = new Paragraph(footer.AddRow(pageNumber).ToString());
                 float coordX = (rect.GetLeft() + rect.GetRight()) / 2;
                 float coordY = (rect.GetBottom() + rect.GetTop()) / 2;
-                Canvas canvas = new Canvas(drawContext.GetCanvas(), drawContext.GetDocument(), rect);
+                Canvas canvas = new Canvas(drawContext.GetCanvas(), rect);
                 canvas
                     .ShowTextAligned(p, coordX, coordY, TextAlignment.CENTER, VerticalAlignment.MIDDLE)
                     .Close();

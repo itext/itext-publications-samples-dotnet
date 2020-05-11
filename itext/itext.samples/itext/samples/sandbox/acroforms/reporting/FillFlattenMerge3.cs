@@ -115,7 +115,7 @@ namespace iText.Samples.Sandbox.Acroforms.Reporting
                     .AddXObject(background, 0, 0);
 
                 // Add the page number
-                new Canvas(canvas, pdfDoc, ((PdfDocumentEvent) currentEvent).GetPage().GetPageSize())
+                new Canvas(canvas, ((PdfDocumentEvent) currentEvent).GetPage().GetPageSize())
                     .ShowTextAligned("page " + pageNum, 550, 800, TextAlignment.RIGHT);
             }
         }

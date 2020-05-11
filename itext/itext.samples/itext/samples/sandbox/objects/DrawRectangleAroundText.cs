@@ -33,7 +33,7 @@ namespace iText.Samples.Sandbox.Objects
                                         + "lines (and we don't know in advance how many).");
 
             Rectangle firstRect = new Rectangle(120, 500, 130, 280);
-            new Canvas(canvas, pdfDoc, firstRect)
+            new Canvas(canvas, firstRect)
                 .Add(p);
             canvas.Rectangle(firstRect);
             canvas.Stroke();
@@ -48,7 +48,7 @@ namespace iText.Samples.Sandbox.Objects
             float height = renderer.Layout(new LayoutContext(new LayoutArea(0, secRect)))
                 .GetOccupiedArea().GetBBox().GetHeight();
 
-            new Canvas(canvas, pdfDoc, secRect)
+            new Canvas(canvas, secRect)
                 .Add(p);
             canvas.Rectangle(secRect.GetX(), secRect.GetY() + secRect.GetHeight() - height, secRect.GetWidth(), height);
             canvas.Stroke();

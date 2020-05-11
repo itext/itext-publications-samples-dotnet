@@ -96,7 +96,6 @@ namespace iText.Samples.Sandbox.Tables
                     GetOccupiedAreaBBox().GetHeight()));
 
                 Canvas layoutCanvas = new Canvas(new PdfCanvas(xObject, drawContext.GetDocument()),
-                    drawContext.GetDocument(),
                     new Rectangle(0, offset, GetOccupiedAreaBBox().GetWidth(), spaceNeeded));
                 layoutCanvas.Add(content);
 

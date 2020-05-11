@@ -50,7 +50,7 @@ namespace iText.Samples.Sandbox.Objects
             Rectangle rect = barcode.GetBarcodeSize();
             PdfFormXObject formXObject = new PdfFormXObject(new Rectangle(rect.GetWidth(), rect.GetHeight() + 10));
             PdfCanvas pdfCanvas = new PdfCanvas(formXObject, pdfDoc);
-            new Canvas(pdfCanvas, pdfDoc, new Rectangle(rect.GetWidth(), rect.GetHeight() + 10))
+            new Canvas(pdfCanvas, new Rectangle(rect.GetWidth(), rect.GetHeight() + 10))
                 .ShowTextAligned(new Paragraph("DARK GRAY").SetFont(regularFont).SetFontSize(6), 0,
                     rect.GetHeight() + 2, TextAlignment.LEFT);
             barcode.PlaceBarcode(pdfCanvas, ColorConstants.BLACK, ColorConstants.BLACK);

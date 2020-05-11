@@ -87,7 +87,7 @@ namespace iText.Samples.Sandbox.Tables
                     .Stroke()
                     .RestoreState();
                 
-                new Canvas(canvas, drawContext.GetDocument(), GetOccupiedAreaBBox())
+                new Canvas(canvas, GetOccupiedAreaBBox())
                     .ShowTextAligned(textTopRight,rect.GetRight() - 2, rect.GetTop() - 2, 
                         TextAlignment.RIGHT, VerticalAlignment.TOP, 0)
                     .ShowTextAligned(textBottomLeft, rect.GetLeft() + 2, rect.GetBottom() + 2, TextAlignment.LEFT);

@@ -69,7 +69,7 @@ namespace iText.Samples.Sandbox.Events
                 PdfPage page = docEvent.GetPage();
                 PdfCanvas canvas = new PdfCanvas(page.NewContentStreamBefore(), page.GetResources(), pdfDoc);
 
-                new Canvas(canvas, pdfDoc, new Rectangle(36, 20, page.GetPageSize().GetWidth() - 72, 50))
+                new Canvas(canvas, new Rectangle(36, 20, page.GetPageSize().GetWidth() - 72, 50))
                     .Add(table)
                     .Close();
             }

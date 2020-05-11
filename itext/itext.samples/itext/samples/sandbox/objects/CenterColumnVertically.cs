@@ -36,7 +36,7 @@ namespace iText.Samples.Sandbox.Objects
                 .Stroke();
 
             Paragraph p = new Paragraph("This text is displayed above the vertical middle of the red rectangle.");
-            new Canvas(canvas, pdfDoc, rect)
+            new Canvas(canvas, rect)
                 .Add(p.SetFixedPosition(llx, (ury + lly) / 2, urx - llx).SetMargin(0));
 
             pdfDoc.Close();

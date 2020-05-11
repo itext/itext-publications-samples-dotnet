@@ -67,7 +67,7 @@ namespace iText.Samples.Sandbox.Tables
                 // Notice: bear in mind that iText draws cell borders on its TableRenderer level.
                 PdfCanvas aboveCanvas = new PdfCanvas(currentPage.NewContentStreamAfter(), currentPage.GetResources(), 
                     drawContext.GetDocument());
-                new Canvas(aboveCanvas, drawContext.GetDocument(), GetOccupiedAreaBBox())
+                new Canvas(aboveCanvas, GetOccupiedAreaBBox())
                     .Add(new Paragraph(title)
                         .SetMultipliedLeading(1)
                         .SetMargin(0)

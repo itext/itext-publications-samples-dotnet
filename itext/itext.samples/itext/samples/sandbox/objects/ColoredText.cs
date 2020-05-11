@@ -43,7 +43,7 @@ namespace iText.Samples.Sandbox.Objects
             p2.Add(greenText);
             doc.Add(p2);
 
-            new Canvas(new PdfCanvas(pdfDoc.GetLastPage()), pdfDoc, new Rectangle(36, 600, 108, 160))
+            new Canvas(new PdfCanvas(pdfDoc.GetLastPage()), new Rectangle(36, 600, 108, 160))
                 .Add(p1)
                 .Add(p2);
 

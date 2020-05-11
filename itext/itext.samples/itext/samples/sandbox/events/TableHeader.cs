@@ -80,7 +80,7 @@ namespace iText.Samples.Sandbox.Events
                 float height = GetTableHeight();
                 Rectangle rect = new Rectangle(coordX, coordY, width, height);
 
-                new Canvas(canvas, pdfDoc, rect)
+                new Canvas(canvas, rect)
                     .Add(table)
                     .Close();
             }

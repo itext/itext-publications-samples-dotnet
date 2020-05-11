@@ -85,7 +85,7 @@ namespace iText.Samples.Sandbox.Images
                 float coordX = (rect.GetLeft() + rect.GetRight()) / 2;
                 float coordY = (rect.GetBottom() + rect.GetTop()) / 2;
                 float angle = (float) Math.PI / 6;
-                new Canvas(drawContext.GetCanvas(), drawContext.GetDocument(), rect)
+                new Canvas(drawContext.GetCanvas(), rect)
                     .ShowTextAligned(p, coordX, coordY, GetOccupiedArea().GetPageNumber(),
                         TextAlignment.CENTER, VerticalAlignment.MIDDLE, angle)
                     .Close();

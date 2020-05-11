@@ -88,7 +88,7 @@ namespace Tutorial.Chapter03 {
                     .GetTop() - 20).ShowText("THE TRUTH IS OUT THERE").MoveText(60, -pageSize.GetTop() + 30).ShowText(pageNumber
                     .ToString()).EndText();
                 //Add watermark
-                iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdfDoc, page.GetPageSize());
+                iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, page.GetPageSize());
                 canvas.SetFontColor(ColorConstants.WHITE);
                 canvas.SetProperty(Property.FONT_SIZE, UnitValue.CreatePointValue(60));
                 canvas.SetProperty(Property.FONT, C03E03_UFO.helveticaBold);

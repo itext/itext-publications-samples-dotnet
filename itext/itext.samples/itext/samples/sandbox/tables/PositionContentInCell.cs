@@ -162,7 +162,7 @@ namespace iText.Samples.Sandbox.Tables
                     }
                 }
 
-                new Canvas(drawContext.GetCanvas(), drawContext.GetDocument(), area).ShowTextAligned(p, x, y, alignment);
+                new Canvas(drawContext.GetCanvas(), area).ShowTextAligned(p, x, y, alignment);
             }
         }
     }
