@@ -130,7 +130,7 @@ namespace iText.Highlevel.Chapter07 {
                 Rectangle pageSize = page.GetPageSize();
                 PdfCanvas pdfCanvas = new PdfCanvas(page.GetLastContentStream(), page.GetResources(), pdf);
                 pdfCanvas.SaveState().SetExtGState(this.gState);
-                iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, page.GetPageSize());
+                iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, page.GetPageSize());
                 canvas.Add(this.img.ScaleAbsolute(pageSize.GetWidth(), pageSize.GetHeight()));
                 pdfCanvas.RestoreState();
                 pdfCanvas.Release();

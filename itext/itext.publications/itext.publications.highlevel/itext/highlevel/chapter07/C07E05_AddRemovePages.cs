@@ -42,7 +42,7 @@ namespace iText.Highlevel.Chapter07 {
                 PdfDocument pdf = docEvent.GetDocument();
                 PdfPage page = docEvent.GetPage();
                 PdfCanvas pdfCanvas = new PdfCanvas(page);
-                iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, page.GetPageSize());
+                iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, page.GetPageSize());
                 canvas.Add(new Paragraph().Add(docEvent.GetEventType()));
             }
 

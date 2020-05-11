@@ -27,7 +27,7 @@ namespace iText.Highlevel.Notused.Appendix {
             PdfPage page = pdf.AddNewPage();
             PdfCanvas pdfCanvas = new PdfCanvas(page);
             Rectangle rectangle = new Rectangle(36, 36, 523, 770);
-            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, rectangle);
+            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, rectangle);
             Paragraph p;
             p = new Paragraph("Testing font methods");
             canvas.Add(p);

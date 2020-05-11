@@ -27,7 +27,7 @@ namespace iText.Highlevel.Chapter02 {
             Rectangle rectangle = new Rectangle(36, 650, 100, 100);
             pdfCanvas.Rectangle(rectangle);
             pdfCanvas.Stroke();
-            iText.Layout.Canvas canvas1 = new iText.Layout.Canvas(pdfCanvas, pdf, rectangle);
+            iText.Layout.Canvas canvas1 = new iText.Layout.Canvas(pdfCanvas, rectangle);
             PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.TIMES_BOLD);
             Text title = new Text("The Strange Case of Dr. Jekyll and Mr. Hyde").SetFont(bold);
@@ -36,13 +36,13 @@ namespace iText.Highlevel.Chapter02 {
             canvas1.Add(p);
             PdfPage page2 = pdf.AddNewPage();
             PdfCanvas pdfCanvas2 = new PdfCanvas(page2);
-            iText.Layout.Canvas canvas2 = new iText.Layout.Canvas(pdfCanvas2, pdf, rectangle);
+            iText.Layout.Canvas canvas2 = new iText.Layout.Canvas(pdfCanvas2, rectangle);
             canvas2.Add(new Paragraph("Dr. Jekyll and Mr. Hyde"));
             PdfPage page1 = pdf.GetFirstPage();
             PdfCanvas pdfCanvas1 = new PdfCanvas(page1.NewContentStreamBefore(), page1.GetResources(), pdf);
             rectangle = new Rectangle(100, 700, 100, 100);
             pdfCanvas1.SaveState().SetFillColor(ColorConstants.CYAN).Rectangle(rectangle).Fill().RestoreState();
-            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas1, pdf, rectangle);
+            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas1, rectangle);
             canvas.Add(new Paragraph("Dr. Jekyll and Mr. Hyde"));
             //Close document
             pdf.Close();

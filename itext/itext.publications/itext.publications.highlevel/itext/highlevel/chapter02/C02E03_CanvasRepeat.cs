@@ -46,7 +46,7 @@ namespace iText.Highlevel.Chapter02 {
             Rectangle rectangle = new Rectangle(36, 500, 100, 250);
             pdfCanvas.Rectangle(rectangle);
             pdfCanvas.Stroke();
-            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, rectangle);
+            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, rectangle);
             MyCanvasRenderer renderer = new MyCanvasRenderer(canvas);
             canvas.SetRenderer(renderer);
             PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
