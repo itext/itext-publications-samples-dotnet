@@ -74,34 +74,34 @@ namespace iText.Samples
                 AddError("Number of pages is out of expected range.\nActual: " + currentNumberOfPages);
             }
 
+            // Get words to check the resultant pdf file
             String compareFilePath = "../../../cmpfiles/htmlsamples/txt/cmp_" + sampleClass.Name + "_keywords.txt";
             String compareContent = ReadFile(compareFilePath);
-            String[] comparePagesContent = compareContent.Split(';');
+            List<String> cmpPdfWords = new List<String>(compareContent.Split('|'));
 
-            // Get the content words of the first page and compare it with expected content words
-            String firstPageContentString = PdfTextExtractor.GetTextFromPage(pdfDoc.GetFirstPage(),
-                new LocationTextExtractionStrategy());
-            IList<String> firstPageWords = JavaUtil.ArraysAsList(firstPageContentString.Split('\n'));
-            IList<String> firstPageWordsToCompare = JavaUtil.ArraysAsList(comparePagesContent[0].Split('|'));
-            foreach (String word in firstPageWordsToCompare)
+            // Get all words from all pages of the resultant pdf file
+            List<String> destPdfWords = new List<String>();
+            for (int i = 1; i <= pdfDoc.GetNumberOfPages(); i++)
             {
-                if (!firstPageWords.Contains(word))
-                {
-                    AddError("Some of the expected words do not present on the first page");
-                }
+                String pageContentString = PdfTextExtractor.GetTextFromPage(pdfDoc.GetPage(i),
+                    new LocationTextExtractionStrategy());
+                List<String> pageWords = new List<String>(pageContentString.Split('\n'));
+                destPdfWords.AddRange(pageWords);
             }
 
-            // Get the content words of the last page and compare it with expected content words
-            String lastPageContentString = PdfTextExtractor.GetTextFromPage(pdfDoc.GetLastPage(),
-                new LocationTextExtractionStrategy());
-            IList<String> lastPageWords = JavaUtil.ArraysAsList(lastPageContentString.Split('\n'));
-            IList<String> lastPageWordsToCompare = JavaUtil.ArraysAsList(comparePagesContent[1].Split('|'));
-            foreach (String word in lastPageWordsToCompare)
+            HashSet<String> origCmpPdfWordsHashSet = new HashSet<String>(cmpPdfWords);
+            HashSet<String> cmpPdfWordsHashSet = new HashSet<String>(cmpPdfWords);
+            cmpPdfWordsHashSet.IntersectWith(destPdfWords);
+            if (cmpPdfWordsHashSet.Count != cmpPdfWords.Count)
             {
-                if (!lastPageWords.Contains(word))
+                origCmpPdfWordsHashSet.ExceptWith(cmpPdfWordsHashSet);
+                StringBuilder errorMessage = new StringBuilder().Append("Some words are missing in the result pdf: ");
+                foreach (String missingWord in origCmpPdfWordsHashSet)
                 {
-                    AddError("Some of the expected words do not present on the last page");
+                    errorMessage.Append(missingWord).Append(",");
                 }
+
+                AddError(errorMessage.ToString());
             }
         }
 
