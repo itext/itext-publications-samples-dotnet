@@ -24,7 +24,7 @@
     <PackageReference Include="TeamCity.VSTest.TestAdapter" Version="1.0.0" />
     <PackageReference Include="NUnit" Version="3.7.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
-	<PackageReference Include="itext7.licensekey" Version="3.1.0" />
+	<PackageReference Include="itext7.licensekey" Version="3.1.1" />
   </ItemGroup>
   <ItemGroup>
 	<PackageReference Include="itext7" Version="7.1.12-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
