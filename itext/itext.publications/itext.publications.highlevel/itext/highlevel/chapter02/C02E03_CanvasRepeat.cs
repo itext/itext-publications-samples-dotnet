@@ -1,9 +1,3 @@
-/*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
-
 using System;
 using System.IO;
 using iText.IO.Font.Constants;
@@ -52,7 +46,7 @@ namespace iText.Highlevel.Chapter02 {
             Rectangle rectangle = new Rectangle(36, 500, 100, 250);
             pdfCanvas.Rectangle(rectangle);
             pdfCanvas.Stroke();
-            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, rectangle);
+            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, rectangle);
             MyCanvasRenderer renderer = new MyCanvasRenderer(canvas);
             canvas.SetRenderer(renderer);
             PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);

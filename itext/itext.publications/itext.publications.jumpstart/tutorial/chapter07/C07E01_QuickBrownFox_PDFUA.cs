@@ -1,6 +1,3 @@
-/*
-* PDF/UA example
-*/
 using System;
 using System.IO;
 using iText.IO.Font;

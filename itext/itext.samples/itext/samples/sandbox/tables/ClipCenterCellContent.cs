@@ -1,12 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-
 using System;
 using System.IO;
 using iText.Kernel.Geom;
@@ -105,7 +96,6 @@ namespace iText.Samples.Sandbox.Tables
                     GetOccupiedAreaBBox().GetHeight()));
 
                 Canvas layoutCanvas = new Canvas(new PdfCanvas(xObject, drawContext.GetDocument()),
-                    drawContext.GetDocument(),
                     new Rectangle(0, offset, GetOccupiedAreaBBox().GetWidth(), spaceNeeded));
                 layoutCanvas.Add(content);
 

@@ -1,12 +1,3 @@
-/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -45,7 +36,7 @@ namespace iText.Samples.Sandbox.Stamper
             nested.AddChild(nested2);
             
             canvas.BeginLayer(nested);
-            Canvas canvasModel = new Canvas(canvas, pdfDoc, pdfDoc.GetDefaultPageSize());
+            Canvas canvasModel = new Canvas(canvas, pdfDoc.GetDefaultPageSize());
             canvasModel.ShowTextAligned("nested layers", 50, 765, TextAlignment.LEFT, 0);
             canvas.EndLayer();
             

@@ -1,6 +1,3 @@
-/*
-* PDF/A-3a example
-*/
 using System;
 using System.IO;
 using iText.IO.Util;

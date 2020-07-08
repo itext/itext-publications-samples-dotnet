@@ -1,8 +1,3 @@
-/*
-* This example was written by Bruno Lowagie
-* in the context of the book: iText 7 building blocks
-*/
-
 using System;
 using System.IO;
 using iText.IO.Font.Constants;
@@ -31,7 +26,7 @@ namespace iText.Highlevel.Chapter02 {
             Rectangle rectangle = new Rectangle(36, 750, 100, 50);
             pdfCanvas.Rectangle(rectangle);
             pdfCanvas.Stroke();
-            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, rectangle);
+            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, rectangle);
             PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.TIMES_BOLD);
             Text title = new Text("The Strange Case of Dr. Jekyll and Mr. Hyde").SetFont(bold);

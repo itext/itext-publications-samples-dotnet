@@ -8,6 +8,8 @@ Project("{A7EB3C1F-3F65-480D-A709-DC41A4AA7709}") = "itext.publications.jumpstar
 EndProject
 Project("{A7EB3C1F-3F65-480D-A709-DC41A4AA7709}") = "itext.publications.signatures", "itext\itext.publications\itext.publications.signatures\itext.publications.signatures.csproj", "{1AB95867-356A-4665-BBD6-B7E97F993970}"
 EndProject
+Project("{A7EB3C1F-3F65-480D-A709-DC41A4AA7709}") = "itext.publications.htmlsamples", "itext\itext.publications\itext.publications.htmlsamples\itext.publications.htmlsamples.csproj", "{68C80008-E363-466A-A5D3-1B870AB9B6D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{1AB95867-356A-4665-BBD6-B7E97F993970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AB95867-356A-4665-BBD6-B7E97F993970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AB95867-356A-4665-BBD6-B7E97F993970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C80008-E363-466A-A5D3-1B870AB9B6D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C80008-E363-466A-A5D3-1B870AB9B6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C80008-E363-466A-A5D3-1B870AB9B6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C80008-E363-466A-A5D3-1B870AB9B6D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

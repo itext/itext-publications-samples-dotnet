@@ -1,12 +1,3 @@
-/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
-
 using System;
 using System.IO;
 using iText.Kernel.Geom;
@@ -96,7 +87,7 @@ namespace iText.Samples.Sandbox.Tables
                     .Stroke()
                     .RestoreState();
                 
-                new Canvas(canvas, drawContext.GetDocument(), GetOccupiedAreaBBox())
+                new Canvas(canvas, GetOccupiedAreaBBox())
                     .ShowTextAligned(textTopRight,rect.GetRight() - 2, rect.GetTop() - 2, 
                         TextAlignment.RIGHT, VerticalAlignment.TOP, 0)
                     .ShowTextAligned(textBottomLeft, rect.GetLeft() + 2, rect.GetBottom() + 2, TextAlignment.LEFT);

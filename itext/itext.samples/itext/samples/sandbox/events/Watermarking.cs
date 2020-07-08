@@ -1,12 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-
 using System;
 using System.IO;
 using iText.IO.Font.Constants;
@@ -101,7 +92,7 @@ namespace iText.Samples.Sandbox.Events
                 }
 
                 PdfCanvas canvas = new PdfCanvas(page.NewContentStreamBefore(), page.GetResources(), pdfDoc);
-                new Canvas(canvas, pdfDoc, page.GetPageSize())
+                new Canvas(canvas, page.GetPageSize())
                     .SetFontColor(ColorConstants.LIGHT_GRAY)
                     .SetFontSize(60)
                     

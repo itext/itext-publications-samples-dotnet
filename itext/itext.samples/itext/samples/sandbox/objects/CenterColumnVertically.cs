@@ -1,13 +1,4 @@
-﻿/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
-
-using System.IO;
+﻿using System.IO;
 using iText.Kernel.Colors;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -45,7 +36,7 @@ namespace iText.Samples.Sandbox.Objects
                 .Stroke();
 
             Paragraph p = new Paragraph("This text is displayed above the vertical middle of the red rectangle.");
-            new Canvas(canvas, pdfDoc, rect)
+            new Canvas(canvas, rect)
                 .Add(p.SetFixedPosition(llx, (ury + lly) / 2, urx - llx).SetMargin(0));
 
             pdfDoc.Close();

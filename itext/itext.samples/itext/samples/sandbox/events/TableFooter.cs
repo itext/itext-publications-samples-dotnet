@@ -1,12 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-
 using System;
 using System.IO;
 using iText.Kernel.Colors;
@@ -78,7 +69,7 @@ namespace iText.Samples.Sandbox.Events
                 PdfPage page = docEvent.GetPage();
                 PdfCanvas canvas = new PdfCanvas(page.NewContentStreamBefore(), page.GetResources(), pdfDoc);
 
-                new Canvas(canvas, pdfDoc, new Rectangle(36, 20, page.GetPageSize().GetWidth() - 72, 50))
+                new Canvas(canvas, new Rectangle(36, 20, page.GetPageSize().GetWidth() - 72, 50))
                     .Add(table)
                     .Close();
             }

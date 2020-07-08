@@ -1,3 +1,11 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2020 iText Group NV
+    Authors: iText Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -34,10 +42,14 @@ namespace iText.Highlevel {
             ResetLicense();
             RunSamples();
         }
-
-        protected override string GetCmpPdf(String dest)
-        {
-            return "../" + base.GetCmpPdf(dest);
+		
+		protected override string GetCmpPdf(String dest) {
+            if (dest == null) {
+                return null;
+            }
+            int i = dest.LastIndexOf("/");
+            int j = dest.IndexOf("results") + 8;
+            return "../../../cmpfiles/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
         }
         
         protected override void ComparePdf(String outPath, String dest, String cmp) {

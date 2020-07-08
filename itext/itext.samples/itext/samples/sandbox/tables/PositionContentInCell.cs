@@ -1,12 +1,3 @@
-/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
-
 using System;
 using System.IO;
 using iText.IO.Image;
@@ -171,7 +162,7 @@ namespace iText.Samples.Sandbox.Tables
                     }
                 }
 
-                new Canvas(drawContext.GetCanvas(), drawContext.GetDocument(), area).ShowTextAligned(p, x, y, alignment);
+                new Canvas(drawContext.GetCanvas(), area).ShowTextAligned(p, x, y, alignment);
             }
         }
     }

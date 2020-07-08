@@ -1,13 +1,4 @@
-﻿/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
-
-using System.IO;
+﻿using System.IO;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;

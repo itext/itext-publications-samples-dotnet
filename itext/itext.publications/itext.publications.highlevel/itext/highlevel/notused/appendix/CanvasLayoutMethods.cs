@@ -1,8 +1,3 @@
-/*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
 using System;
 using System.IO;
 using iText.IO.Font.Otf;
@@ -31,7 +26,7 @@ namespace iText.Highlevel.Notused.Appendix {
             PdfPage page = pdf.AddNewPage();
             PdfCanvas pdfCanvas = new PdfCanvas(page);
             Rectangle rectangle = new Rectangle(36, 36, 523, 770);
-            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, rectangle);
+            iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, rectangle);
             Paragraph p;
             p = new Paragraph("Testing layout methods");
             canvas.Add(p);

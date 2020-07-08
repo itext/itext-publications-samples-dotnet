@@ -1,7 +1,3 @@
-/*
-* This example was written by Bruno Lowagie
-* in the context of the book: iText 7 building blocks
-*/
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -112,7 +108,7 @@ namespace iText.Highlevel.Chapter07 {
                 Rectangle pageSize = page.GetPageSize();
                 PdfCanvas pdfCanvas = new PdfCanvas(page.NewContentStreamBefore(), page.GetResources(), pdf);
                 pdfCanvas.SaveState().SetExtGState(this.gState);
-                iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pdf, page.GetPageSize());
+                iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, page.GetPageSize());
                 canvas.Add(this.img.ScaleAbsolute(pageSize.GetWidth(), pageSize.GetHeight()));
                 pdfCanvas.RestoreState();
                 pdfCanvas.Release();

@@ -1,13 +1,4 @@
-﻿/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
-
-using System.IO;
+﻿using System.IO;
 using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
@@ -52,7 +43,7 @@ namespace iText.Samples.Sandbox.Objects
             p2.Add(greenText);
             doc.Add(p2);
 
-            new Canvas(new PdfCanvas(pdfDoc.GetLastPage()), pdfDoc, new Rectangle(36, 600, 108, 160))
+            new Canvas(new PdfCanvas(pdfDoc.GetLastPage()), new Rectangle(36, 600, 108, 160))
                 .Add(p1)
                 .Add(p2);
 

@@ -1,12 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -126,7 +117,7 @@ namespace iText.Samples.Sandbox.Tables
                 Paragraph p = new Paragraph(footer.AddRow(pageNumber).ToString());
                 float coordX = (rect.GetLeft() + rect.GetRight()) / 2;
                 float coordY = (rect.GetBottom() + rect.GetTop()) / 2;
-                Canvas canvas = new Canvas(drawContext.GetCanvas(), drawContext.GetDocument(), rect);
+                Canvas canvas = new Canvas(drawContext.GetCanvas(), rect);
                 canvas
                     .ShowTextAligned(p, coordX, coordY, TextAlignment.CENTER, VerticalAlignment.MIDDLE)
                     .Close();

@@ -1,12 +1,3 @@
-/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
-
 using System;
 using System.IO;
 using iText.IO.Util;
@@ -65,7 +56,7 @@ namespace iText.Samples.Sandbox.Stamper
 
         private static void DrawText(PdfCanvas canvas, PdfDocument pdfDoc, Rectangle pageSize, float x, float y, double rotation) 
         {
-            Canvas canvasDrawText = new Canvas(canvas, pdfDoc, pageSize)
+            Canvas canvasDrawText = new Canvas(canvas, pageSize)
                     .ShowTextAligned("This is some extra text added to the left of the page",
                             x, y, TextAlignment.CENTER, (float) MathUtil.ToRadians(rotation));
             canvasDrawText.Close();

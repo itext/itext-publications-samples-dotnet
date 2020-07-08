@@ -1,12 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-
 using System;
 using System.IO;
 using iText.Kernel.Events;
@@ -89,7 +80,7 @@ namespace iText.Samples.Sandbox.Events
                 float height = GetTableHeight();
                 Rectangle rect = new Rectangle(coordX, coordY, width, height);
 
-                new Canvas(canvas, pdfDoc, rect)
+                new Canvas(canvas, rect)
                     .Add(table)
                     .Close();
             }

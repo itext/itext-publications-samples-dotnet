@@ -1,17 +1,3 @@
-/*
-
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-
-*/
-/*
-* This class is part of the white paper entitled
-* "Digital Signatures for PDF documents"
-* written by Bruno Lowagie
-*
-* For more info, go to: http://itextpdf.com/learn
-*/
-
 using System;
 using System.IO;
 using Org.BouncyCastle.Crypto;
@@ -96,7 +82,7 @@ namespace iText.Samples.Signatures.Chapter02
                 .Rectangle(0 + 0.5, 0 + 0.5, 200 - 0.5, 100 - 0.5)
                 .FillStroke()
                 .SetFillColor(ColorConstants.BLUE);
-            new Canvas(canvas, pdfDoc, rect).ShowTextAligned("SIGN HERE", 100, 50,
+            new Canvas(canvas, rect).ShowTextAligned("SIGN HERE", 100, 50,
                 TextAlignment.CENTER, (float) (Math.PI / 180) * 25);
 
             // Note that Acrobat doesn't show normal appearance in the highlight mode.

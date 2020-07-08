@@ -1,13 +1,4 @@
-﻿/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
-
-using System;
+﻿using System;
 using System.IO;
 using iText.Barcodes;
 using iText.IO.Font.Constants;
@@ -59,7 +50,7 @@ namespace iText.Samples.Sandbox.Objects
             Rectangle rect = barcode.GetBarcodeSize();
             PdfFormXObject formXObject = new PdfFormXObject(new Rectangle(rect.GetWidth(), rect.GetHeight() + 10));
             PdfCanvas pdfCanvas = new PdfCanvas(formXObject, pdfDoc);
-            new Canvas(pdfCanvas, pdfDoc, new Rectangle(rect.GetWidth(), rect.GetHeight() + 10))
+            new Canvas(pdfCanvas, new Rectangle(rect.GetWidth(), rect.GetHeight() + 10))
                 .ShowTextAligned(new Paragraph("DARK GRAY").SetFont(regularFont).SetFontSize(6), 0,
                     rect.GetHeight() + 2, TextAlignment.LEFT);
             barcode.PlaceBarcode(pdfCanvas, ColorConstants.BLACK, ColorConstants.BLACK);

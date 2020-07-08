@@ -1,12 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-
 using System;
 using System.IO;
 using iText.Kernel.Colors;
@@ -76,7 +67,7 @@ namespace iText.Samples.Sandbox.Tables
                 // Notice: bear in mind that iText draws cell borders on its TableRenderer level.
                 PdfCanvas aboveCanvas = new PdfCanvas(currentPage.NewContentStreamAfter(), currentPage.GetResources(), 
                     drawContext.GetDocument());
-                new Canvas(aboveCanvas, drawContext.GetDocument(), GetOccupiedAreaBBox())
+                new Canvas(aboveCanvas, GetOccupiedAreaBBox())
                     .Add(new Paragraph(title)
                         .SetMultipliedLeading(1)
                         .SetMargin(0)

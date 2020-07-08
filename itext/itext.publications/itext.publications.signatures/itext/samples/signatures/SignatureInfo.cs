@@ -1,9 +1,3 @@
-/*
-
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-
-*/
 using System;
 using System.Collections.Generic;
 using iText.Kernel.Geom;

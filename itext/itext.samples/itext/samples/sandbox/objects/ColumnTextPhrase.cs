@@ -1,13 +1,4 @@
-﻿/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2020 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
-
-using System.IO;
+﻿using System.IO;
 using iText.IO.Font;
 using iText.IO.Font.Constants;
 using iText.Kernel.Font;
@@ -37,13 +28,13 @@ namespace iText.Samples.Sandbox.Objects
 
             PdfFont font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD, PdfEncodings.CP1252, true);
             Paragraph pz = new Paragraph("Hello World!").SetFont(font).SetFontSize(13);
-            new Canvas(new PdfCanvas(pdfDoc.GetFirstPage()), pdfDoc, new Rectangle(120, 48, 80, 580))
+            new Canvas(new PdfCanvas(pdfDoc.GetFirstPage()), new Rectangle(120, 48, 80, 580))
                 .Add(pz);
 
             // The Leading is used in this paragraph, the Leading is a spacing between lines of text
             font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
             pz = new Paragraph("Hello World!").SetFont(font).SetFixedLeading(20);
-            new Canvas(new PdfCanvas(pdfDoc.GetFirstPage()), pdfDoc, new Rectangle(120, 48, 80, 480))
+            new Canvas(new PdfCanvas(pdfDoc.GetFirstPage()), new Rectangle(120, 48, 80, 480))
                 .Add(pz);
 
             pdfDoc.Close();

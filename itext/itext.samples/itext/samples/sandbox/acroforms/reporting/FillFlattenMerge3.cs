@@ -1,12 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -124,7 +115,7 @@ namespace iText.Samples.Sandbox.Acroforms.Reporting
                     .AddXObject(background, 0, 0);
 
                 // Add the page number
-                new Canvas(canvas, pdfDoc, ((PdfDocumentEvent) currentEvent).GetPage().GetPageSize())
+                new Canvas(canvas, ((PdfDocumentEvent) currentEvent).GetPage().GetPageSize())
                     .ShowTextAligned("page " + pageNum, 550, 800, TextAlignment.RIGHT);
             }
         }
