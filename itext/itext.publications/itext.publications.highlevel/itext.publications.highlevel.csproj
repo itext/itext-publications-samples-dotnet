@@ -27,16 +27,16 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
-    <PackageReference Include="itext7" Version="7.1.12-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+    <PackageReference Include="itext7" Version="7.1.13-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
-    <PackageReference Include="itext7.pdftest" Version="7.1.12-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
+    <PackageReference Include="itext7.pdftest" Version="7.1.13-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
-    <PackageReference Include="itext7.hyph" Version="7.1.12-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
+    <PackageReference Include="itext7.hyph" Version="7.1.13-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj" Condition="Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
-    <PackageReference Include="itext7.pdfcalligraph" Version="2.0.7-SNAPSHOT" Condition="!Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
+    <PackageReference Include="itext7.pdfcalligraph" Version="2.0.8-SNAPSHOT" Condition="!Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
   </ItemGroup>
 </Project>
