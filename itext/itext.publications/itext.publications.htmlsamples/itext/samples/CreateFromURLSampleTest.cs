@@ -85,23 +85,20 @@ namespace iText.Samples
             {
                 String pageContentString = PdfTextExtractor.GetTextFromPage(pdfDoc.GetPage(i),
                     new LocationTextExtractionStrategy());
-                List<String> pageWords = new List<String>(pageContentString.Split('\n'));
+                List<String> pageWords = new List<String>(pageContentString.Replace("\n", " ")
+                    .Split(' '));
                 destPdfWords.AddRange(pageWords);
             }
-
-            HashSet<String> origCmpPdfWordsHashSet = new HashSet<String>(cmpPdfWords);
-            HashSet<String> cmpPdfWordsHashSet = new HashSet<String>(cmpPdfWords);
-            cmpPdfWordsHashSet.IntersectWith(destPdfWords);
-            if (cmpPdfWordsHashSet.Count != cmpPdfWords.Count)
-            {
-                origCmpPdfWordsHashSet.ExceptWith(cmpPdfWordsHashSet);
-                StringBuilder errorMessage = new StringBuilder().Append("Some words are missing in the result pdf: ");
-                foreach (String missingWord in origCmpPdfWordsHashSet)
-                {
-                    errorMessage.Append(missingWord).Append(",");
+            
+            StringBuilder errorMessage = new StringBuilder();
+            foreach (String word in cmpPdfWords) {
+                if (!destPdfWords.Contains(word)) {
+                    errorMessage.Append(word).Append(",");
                 }
-
-                AddError(errorMessage.ToString());
+            }
+            String errorText = errorMessage.ToString();
+            if (!errorText.Equals("")) {
+                AddError("Some words are missing in the result pdf: " + errorText);
             }
         }
 
