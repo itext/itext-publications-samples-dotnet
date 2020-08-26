@@ -21,19 +21,19 @@ using NUnit.Framework;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    public class SystemOutRunnerSampleTest : WrappedSamplesRunner
+    public class StandardOutRunnerSampleTest : WrappedSamplesRunner
     {
         private TextWriter storedSystemOut;
         private FileStream stream;
 
-        public SystemOutRunnerSampleTest(RunnerParams runnerParams) : base(runnerParams)
+        public StandardOutRunnerSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 
         public static ICollection<TestFixtureData> Data()
         {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddClassToRunnerSearchPath("iText.Samples.Sandbox.Logging.CounterDemoSystemOut");
+            searchConfig.AddClassToRunnerSearchPath("iText.Samples.Sandbox.Logging.CounterDemoStandardOut");
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }

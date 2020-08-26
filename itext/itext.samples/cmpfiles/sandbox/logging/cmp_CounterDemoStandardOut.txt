@@ -1,4 +1,4 @@
-Starting test iText.Samples.Sandbox.Logging.CounterDemoSystemOut
+Starting test iText.Samples.Sandbox.Logging.CounterDemoStandardOut
 [iText.Kernel.Pdf.PdfDocument] core-process event
 [iText.Kernel.Pdf.PdfDocument] core-process event
 [iText.Kernel.Pdf.PdfDocument] core-process event

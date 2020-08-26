@@ -8,22 +8,22 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Logging
 {
-    public class CounterDemoSystemOut
+    public class CounterDemoStandardOut
     {
-        public const String DEST = "results/sandbox/logging/CounterDemoSystemOut.pdf";
+        public const String DEST = "results/sandbox/logging/CounterDemoStandardOut.pdf";
         
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
             
-            new CounterDemoSystemOut().ManipulatePdf();
+            new CounterDemoStandardOut().ManipulatePdf();
         }
         
         protected virtual void ManipulatePdf() 
         {
             
             // Implement default SystemOut factory and register it
-            SystemOutEventCounterFactory counterFactory = new SystemOutEventCounterFactory();
+            StandardOutputEventCounterFactory counterFactory = new StandardOutputEventCounterFactory();
             EventCounterHandler.GetInstance().Register(counterFactory);
             
             // Generate 3 core events by creating 3 pdf documents

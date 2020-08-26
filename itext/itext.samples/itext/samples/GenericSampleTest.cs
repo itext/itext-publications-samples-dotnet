@@ -104,7 +104,7 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Parse.ExtractStreams");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoto");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoToPage");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Logging.CounterDemoSystemOut");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Logging.CounterDemoStandardOut");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.MergeAndCount");
 
             // Not a sample classes

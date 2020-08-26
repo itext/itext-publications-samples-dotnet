@@ -20,11 +20,11 @@ using NUnit.Framework;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    public class SystemOutWithPdfSampleTest : WrappedSamplesRunner
+    public class StandardOutWithPdfSampleTest : WrappedSamplesRunner
     {
         private FileStream stream;
 
-        public SystemOutWithPdfSampleTest(RunnerParams runnerParams) : base(runnerParams)
+        public StandardOutWithPdfSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 
