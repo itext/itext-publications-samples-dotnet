@@ -35,12 +35,12 @@ namespace iText.Samples.Sandbox.Merge
 
                 if (IsPortrait(srcDoc, i))
                 {
-                    canvas.AddXObject(page, 0, 0);
+                    canvas.AddXObjectAt(page, 0, 0);
                 }
                 else
                 {
                     // Add page content as formXObject, rotated counterclockwise.
-                    canvas.AddXObject(page, 0, 1, -1, 0, pageSize.GetWidth(), 0);
+                    canvas.AddXObjectWithTransformationMatrix(page, 0, 1, -1, 0, pageSize.GetWidth(), 0);
                 }
             }
 

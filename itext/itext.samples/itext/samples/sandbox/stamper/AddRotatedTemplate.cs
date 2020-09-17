@@ -33,9 +33,9 @@ namespace iText.Samples.Sandbox.Stamper
             
             // Add template to the pdf document page applying rotation
             PdfCanvas canvas = new PdfCanvas(pdfDoc.GetFirstPage());
-            canvas.AddXObject(formXObject, 36, 600);
+            canvas.AddXObjectAt(formXObject, 36, 600);
             double angle = Math.PI / 4;
-            canvas.AddXObject(formXObject, (float)Math.Cos(angle), 
+            canvas.AddXObjectWithTransformationMatrix(formXObject, (float)Math.Cos(angle), 
                     -(float)Math.Sin(angle), (float)Math.Cos(angle), (float)Math.Sin(angle), 150, 600);
             
             pdfDoc.Close();

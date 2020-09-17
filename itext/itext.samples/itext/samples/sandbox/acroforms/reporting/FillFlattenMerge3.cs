@@ -112,7 +112,7 @@ namespace iText.Samples.Sandbox.Acroforms.Reporting
                 // Add the background
                 PdfCanvas canvas = new PdfCanvas(pdfDoc.GetPage(pageNum).NewContentStreamBefore(),
                         ((PdfDocumentEvent) currentEvent).GetPage().GetResources(), pdfDoc)
-                    .AddXObject(background, 0, 0);
+                    .AddXObjectAt(background, 0, 0);
 
                 // Add the page number
                 new Canvas(canvas, ((PdfDocumentEvent) currentEvent).GetPage().GetPageSize())

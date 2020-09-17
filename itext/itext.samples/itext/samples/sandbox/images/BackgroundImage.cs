@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Images
             Document doc = new Document(pdfDoc, pageSize);
 
             PdfCanvas canvas = new PdfCanvas(pdfDoc.AddNewPage());
-            canvas.AddImage(ImageDataFactory.Create(IMAGE), pageSize, false);
+            canvas.AddImageFittedIntoRectangle(ImageDataFactory.Create(IMAGE), pageSize, false);
 
             doc.Add(new Paragraph("Berlin!"));
 

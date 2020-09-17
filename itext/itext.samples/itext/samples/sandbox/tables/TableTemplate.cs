@@ -51,10 +51,10 @@ namespace iText.Samples.Sandbox.Tables
                     PdfFormXObject clip = new PdfFormXObject(new Rectangle(500, 650));
 
                     // add xObject to another xObject of shorter sizes
-                    new PdfCanvas(clip, pdfDoc).AddXObject(tableTemplate, -j, 650 - i);
+                    new PdfCanvas(clip, pdfDoc).AddXObjectAt(tableTemplate, -j, 650 - i);
 
                     // add xObject to the document
-                    new PdfCanvas(pdfDoc.AddNewPage()).AddXObject(clip, 36, 156);
+                    new PdfCanvas(pdfDoc.AddNewPage()).AddXObjectAt(clip, 36, 156);
                 }
             }
 

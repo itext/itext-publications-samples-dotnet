@@ -37,7 +37,7 @@ namespace iText.Samples.Sandbox.Tables
                 image.GetImageScaledHeight());
 
             PdfPatternCanvas canvas = new PdfPatternCanvas(imgPattern, pdfDoc);
-            canvas.AddImage(img, 0, 0, false);
+            canvas.AddImageAt(img, 0, 0, false);
             
             Color color = new PatternColor(imgPattern);
 

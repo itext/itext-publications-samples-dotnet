@@ -119,7 +119,7 @@ namespace iText.Samples.Sandbox.Tables
             public override void Draw(DrawContext drawContext)
             {
                 base.Draw(drawContext);
-                drawContext.GetCanvas().AddXObject(img.GetXObject(), GetOccupiedAreaBBox());
+                drawContext.GetCanvas().AddXObjectFittedIntoRectangle(img.GetXObject(), GetOccupiedAreaBBox());
                 drawContext.GetCanvas().Stroke();
 
                 UnitValue fontSizeUv = GetPropertyAsUnitValue(Property.FONT_SIZE);

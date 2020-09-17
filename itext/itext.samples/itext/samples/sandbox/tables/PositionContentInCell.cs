@@ -100,12 +100,13 @@ namespace iText.Samples.Sandbox.Tables
                 Rectangle area = GetOccupiedAreaBBox();
                 img.ScaleToFit(area.GetWidth(), area.GetHeight());
 
-                drawContext.GetCanvas().AddXObject(img.GetXObject(),
+                drawContext.GetCanvas().AddXObjectFittedIntoRectangle(img.GetXObject(), new Rectangle(
                     area.GetX() + (area.GetWidth() - img.GetImageWidth() *
                                                     img.GetProperty<float>(Property.HORIZONTAL_SCALING)) / 2,
                     area.GetY() + (area.GetHeight() - img.GetImageHeight() *
                                                     img.GetProperty<float>(Property.VERTICAL_SCALING)) / 2,
-                    img.GetImageWidth() * img.GetProperty<float>(Property.HORIZONTAL_SCALING));
+                    img.GetImageWidth() * img.GetProperty<float>(Property.HORIZONTAL_SCALING),
+                    img.GetImageHeight() * img.GetProperty<float>(Property.VERTICAL_SCALING)));
 
                 drawContext.GetCanvas().Stroke();
 

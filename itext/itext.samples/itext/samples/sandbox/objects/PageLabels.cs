@@ -60,7 +60,7 @@ namespace iText.Samples.Sandbox.Objects
                 .MoveText(0, 7)
                 .ShowText("Hello People")
                 .EndText();
-            canvas.AddXObject(formXObject, 36, 763);
+            canvas.AddXObjectAt(formXObject, 36, 763);
 
             pdfDoc.SetDefaultPageSize(new PageSize(PageSize.A4).Rotate());
             doc.Add(new AreaBreak());

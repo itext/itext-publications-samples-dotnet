@@ -56,7 +56,7 @@ namespace iText.Samples.Sandbox.Stamper
                 }
                 else 
                 {
-                    over.AddImage(img, w, 0, 0, h, x - (w / 2), y - (h / 2), true);
+                    over.AddImageWithTransformationMatrix(img, w, 0, 0, h, x - (w / 2), y - (h / 2), true);
                 }
                 over.RestoreState();
             }

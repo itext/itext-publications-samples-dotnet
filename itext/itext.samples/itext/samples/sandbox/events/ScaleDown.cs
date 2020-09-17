@@ -38,7 +38,7 @@ namespace iText.Samples.Sandbox.Events
                 // Copy and paste scaled page content as formXObject
                 PdfFormXObject page = srcDoc.GetPage(p).CopyAsFormXObject(pdfDoc);
                 PdfCanvas canvas = new PdfCanvas(pdfDoc.AddNewPage());
-                canvas.AddXObject(page, scale, 0f, 0f, scale, 0f, 0f);
+                canvas.AddXObjectWithTransformationMatrix(page, scale, 0f, 0f, scale, 0f, 0f);
             }
 
             pdfDoc.Close();

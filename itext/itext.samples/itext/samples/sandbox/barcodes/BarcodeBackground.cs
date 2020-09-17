@@ -42,7 +42,7 @@ namespace iText.Samples.Sandbox.Barcodes
             canvas.Rectangle(x, y, width, height);
             canvas.Fill();
             canvas.RestoreState();
-            canvas.AddXObject(xObject, 36, 750);
+            canvas.AddXObjectAt(xObject, 36, 750);
 
             pdfDoc.Close();
         }

@@ -111,7 +111,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
                 canvas.Close();
 
                 // Create placeholder object to write number of pages
-                pdfCanvas.AddXObject(placeholder, x + space, y - descent);
+                pdfCanvas.AddXObjectAt(placeholder, x + space, y - descent);
                 pdfCanvas.Release();
             }
 

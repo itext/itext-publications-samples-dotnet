@@ -41,7 +41,7 @@ namespace iText.Samples.Sandbox.Merge
             // This method uses the even-odd rule to determine which regions lie inside the clipping path.
             canvas1.EoClip();
             canvas1.EndPath();
-            canvas1.AddXObject(pageXObject, 0, 0);
+            canvas1.AddXObjectAt(pageXObject, 0, 0);
 
             // Create a formXObject of the area to move.
             PdfFormXObject formXObject2 = new PdfFormXObject(pageSize);
@@ -51,13 +51,13 @@ namespace iText.Samples.Sandbox.Merge
             // This method uses the nonzero winding rule to determine which regions lie inside the clipping path.
             canvas2.Clip();
             canvas2.EndPath();
-            canvas2.AddXObject(pageXObject, 0, 0);
+            canvas2.AddXObjectAt(pageXObject, 0, 0);
 
             PdfCanvas canvas = new PdfCanvas(resultPdfDoc.GetFirstPage());
-            canvas.AddXObject(formXObject1, 0, 0);
+            canvas.AddXObjectAt(formXObject1, 0, 0);
 
             // Add the area to move content, shifted 10 points to the left and 2 points to the bottom.
-            canvas.AddXObject(formXObject2, -20, -2);
+            canvas.AddXObjectAt(formXObject2, -20, -2);
 
             srcDoc.Close();
             resultPdfDoc.Close();

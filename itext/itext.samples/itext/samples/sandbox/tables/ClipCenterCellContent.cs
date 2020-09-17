@@ -99,7 +99,7 @@ namespace iText.Samples.Sandbox.Tables
                     new Rectangle(0, offset, GetOccupiedAreaBBox().GetWidth(), spaceNeeded));
                 layoutCanvas.Add(content);
 
-                drawContext.GetCanvas().AddXObject(xObject, occupiedArea.GetBBox().GetLeft(),
+                drawContext.GetCanvas().AddXObjectAt(xObject, occupiedArea.GetBBox().GetLeft(),
                     occupiedArea.GetBBox().GetBottom());
             }
         }

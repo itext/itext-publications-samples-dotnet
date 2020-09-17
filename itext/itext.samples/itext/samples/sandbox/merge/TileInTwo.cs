@@ -34,10 +34,10 @@ namespace iText.Samples.Sandbox.Merge
                 PdfFormXObject page = srcDoc.GetPage(i).CopyAsFormXObject(resultDoc);
 
                 PdfCanvas canvas = new PdfCanvas(resultDoc.AddNewPage());
-                canvas.AddXObject(page, 0, -mediaBox.GetHeight());
+                canvas.AddXObjectAt(page, 0, -mediaBox.GetHeight());
 
                 canvas = new PdfCanvas(resultDoc.AddNewPage());
-                canvas.AddXObject(page, 0, 0);
+                canvas.AddXObjectAt(page, 0, 0);
             }
 
             resultDoc.Close();

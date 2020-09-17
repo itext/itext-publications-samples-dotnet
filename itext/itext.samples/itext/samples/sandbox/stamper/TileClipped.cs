@@ -43,7 +43,7 @@ namespace iText.Samples.Sandbox.Stamper
                 content.Rectangle(margin, margin, rect.GetWidth(), rect.GetHeight());
                 content.Clip();
                 content.EndPath();
-                content.AddXObject(page, 4, 0, 0, 4, x, y);
+                content.AddXObjectWithTransformationMatrix(page, 4, 0, 0, 4, x, y);
                 if (15 != i) 
                 {
                     content = new PdfCanvas(pdfDoc.AddNewPage());

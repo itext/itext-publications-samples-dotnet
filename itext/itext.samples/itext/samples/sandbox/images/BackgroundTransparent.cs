@@ -35,7 +35,8 @@ namespace iText.Samples.Sandbox.Images
             canvas.SaveState();
             PdfExtGState state = new PdfExtGState().SetFillOpacity(0.6f);
             canvas.SetExtGState(state);
-            canvas.AddImage(image, 0, 0, pageSize.GetWidth(), false);
+            Rectangle rect = new Rectangle(0, 0, pageSize.GetWidth(), pageSize.GetHeight());
+            canvas.AddImageFittedIntoRectangle(image, rect, false);
             canvas.RestoreState();
 
             doc.Add(new Paragraph("Berlin!"));

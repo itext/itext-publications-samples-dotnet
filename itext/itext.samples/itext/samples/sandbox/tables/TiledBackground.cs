@@ -79,7 +79,7 @@ namespace iText.Samples.Sandbox.Tables
                     img.GetWidth(), img.GetHeight());
 
                 PdfPatternCanvas patternCanvas = new PdfPatternCanvas(imgPattern, drawContext.GetDocument());
-                patternCanvas.AddImage(img, 0, 0, false);
+                patternCanvas.AddImageAt(img, 0, 0, false);
                 
                 PdfCanvas canvas = drawContext.GetCanvas();
                 
