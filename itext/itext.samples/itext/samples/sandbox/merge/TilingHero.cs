@@ -39,7 +39,7 @@ namespace iText.Samples.Sandbox.Merge
             for (int i = 1; i <= 16; i++)
             {
                 PdfCanvas canvas = new PdfCanvas(resultDoc.AddNewPage());
-                canvas.AddXObject(page, 4, 0, 0, 4, 0, 0);
+                canvas.AddXObjectWithTransformationMatrix(page, 4, 0, 0, 4, 0, 0);
 
                 float xCoordinate = (i % 4) * width;
                 float yCoordinate = (4 - (i / 4)) * height;

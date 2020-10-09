@@ -147,7 +147,7 @@ namespace iText.Samples.Sandbox.Pdfa
                 canvas.ShowText(String.Format("Page {0:d} of", pageNum));
                 canvas.EndText();
                 canvas.Stroke();
-                canvas.AddXObject(enclosing.template, 0, 0);
+                canvas.AddXObjectAt(enclosing.template, 0, 0);
                 canvas.EndMarkedContent();
                 canvas.Release();
             }

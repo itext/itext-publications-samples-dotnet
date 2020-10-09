@@ -73,7 +73,7 @@ namespace iText.Samples.Sandbox.Tables
             public override void Draw(DrawContext drawContext)
             {
                 img.ScaleToFit(GetOccupiedAreaBBox().GetWidth(), GetOccupiedAreaBBox().GetHeight());
-                drawContext.GetCanvas().AddXObject(img.GetXObject(), GetOccupiedAreaBBox());
+                drawContext.GetCanvas().AddXObjectFittedIntoRectangle(img.GetXObject(), GetOccupiedAreaBBox());
                 base.Draw(drawContext);
             }
         }

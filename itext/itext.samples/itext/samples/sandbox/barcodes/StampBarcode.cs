@@ -38,7 +38,7 @@ namespace iText.Samples.Sandbox.Barcodes
                 
                 PdfFormXObject barcodeXObject = barcode.CreateFormXObject(ColorConstants.BLACK, ColorConstants.BLACK, pdfDoc);
                 PdfCanvas over = new PdfCanvas(pdfPage);
-                over.AddXObject(barcodeXObject, x, y);
+                over.AddXObjectAt(barcodeXObject, x, y);
             }
             
             pdfDoc.Close();

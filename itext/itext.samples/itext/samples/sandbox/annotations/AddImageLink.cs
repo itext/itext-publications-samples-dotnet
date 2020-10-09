@@ -36,7 +36,7 @@ namespace iText.Samples.Sandbox.Annotations
             PdfPage firstPage = pdfDoc.GetFirstPage();
 
             PdfCanvas canvas = new PdfCanvas(firstPage);
-            canvas.AddImage(img, x, y, false);
+            canvas.AddImageAt(img, x, y, false);
 
             Rectangle linkLocation = new Rectangle(x, y, width, height);
 

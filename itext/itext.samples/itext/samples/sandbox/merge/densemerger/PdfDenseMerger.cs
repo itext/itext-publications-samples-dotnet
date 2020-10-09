@@ -225,7 +225,7 @@ namespace iText.Samples.Sandbox.Merge.Densemerger
                     canvas.Clip();
                     canvas.EndPath();
 
-                    canvas.AddXObject(formXObject, 0,
+                    canvas.AddXObjectAt(formXObject, 0,
                         yPosition - (verticalFlips[startFlip] - pageSizeToImport.GetBottom()));
 
                     canvas.RestoreState();

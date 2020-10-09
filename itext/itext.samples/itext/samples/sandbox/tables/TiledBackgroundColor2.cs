@@ -76,7 +76,7 @@ namespace iText.Samples.Sandbox.Tables
                 while (x + image.GetImageScaledWidth() < position.GetRight())
                 {
                     image.SetFixedPosition(x, y);
-                    canvas.AddImage(img, x, y, image.GetImageScaledWidth(), false);
+                    canvas.AddImageFittedIntoRectangle(img, new Rectangle(x, y, image.GetImageScaledWidth(), image.GetImageScaledHeight()), false);
                     x += image.GetImageScaledWidth();
                 }
             }

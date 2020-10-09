@@ -47,7 +47,7 @@ namespace iText.Samples.Sandbox.Annotations
             PdfFormXObject xObject = new PdfFormXObject(rect);
             ImageData imageData = ImageDataFactory.Create(IMG);
             PdfCanvas canvas = new PdfCanvas(xObject, pdfDoc);
-            canvas.AddImage(imageData, rect, true);
+            canvas.AddImageFittedIntoRectangle(imageData, rect, true);
             attachment.SetNormalAppearance(xObject.GetPdfObject());
 
             pdfDoc.AddNewPage().AddAnnotation(attachment);

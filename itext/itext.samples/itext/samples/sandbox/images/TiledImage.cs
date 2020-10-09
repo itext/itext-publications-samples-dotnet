@@ -31,16 +31,16 @@ namespace iText.Samples.Sandbox.Images
             pdfDoc.SetDefaultPageSize(pageSize);
             
             PdfCanvas canvas = new PdfCanvas(pdfDoc.AddNewPage());
-            canvas.AddImage(image, width, 0, 0, height, 0, -height / 2, false);
+            canvas.AddImageWithTransformationMatrix(image, width, 0, 0, height, 0, -height / 2, false);
 
             canvas = new PdfCanvas(pdfDoc.AddNewPage());
-            canvas.AddImage(image, width, 0, 0, height, 0, 0, false);
+            canvas.AddImageWithTransformationMatrix(image, width, 0, 0, height, 0, 0, false);
 
             canvas = new PdfCanvas(pdfDoc.AddNewPage());
-            canvas.AddImage(image, width, 0, 0, height, -width / 2, -height / 2, false);
+            canvas.AddImageWithTransformationMatrix(image, width, 0, 0, height, -width / 2, -height / 2, false);
 
             canvas = new PdfCanvas(pdfDoc.AddNewPage());
-            canvas.AddImage(image, width, 0, 0, height, -width / 2, 0, false);
+            canvas.AddImageWithTransformationMatrix(image, width, 0, 0, height, -width / 2, 0, false);
 
             pdfDoc.Close();
         }

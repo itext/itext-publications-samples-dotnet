@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using iText.IO.Image;
 using iText.Kernel.Colors;
+using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Colorspace;
@@ -59,7 +60,8 @@ namespace iText.Samples.Sandbox.Stamper
             PdfPage pdfPage = pdfDoc.GetFirstPage();
             pdfPage.SetIgnorePageRotationForContent(true);
             PdfCanvas canvas = new PdfCanvas(pdfPage);
-            canvas.AddXObject(imageXObject, 100, 200, 100);
+            Rectangle rect = PdfXObject.CalculateProportionallyFitRectangleWithWidth(imageXObject, 100, 200, 100);
+            canvas.AddXObjectFittedIntoRectangle(imageXObject, rect);
             
             pdfDoc.Close();
         }

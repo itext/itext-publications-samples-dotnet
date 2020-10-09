@@ -37,7 +37,7 @@ namespace iText.Samples.Sandbox.Stamper
             PdfCanvas canvas = new PdfCanvas(pdfDoc.GetFirstPage());
             float[] matrix = new float[6];
             affineTransform.GetMatrix(matrix);
-            canvas.AddImage(image, matrix[0], matrix[1], matrix[2], matrix[3], matrix[4], matrix[5]);
+            canvas.AddImageWithTransformationMatrix(image, matrix[0], matrix[1], matrix[2], matrix[3], matrix[4], matrix[5]);
             pdfDoc.Close();
         }
     }

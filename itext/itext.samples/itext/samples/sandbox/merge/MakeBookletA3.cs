@@ -63,7 +63,7 @@ namespace iText.Samples.Sandbox.Merge
             }
 
             PdfFormXObject page = srcDoc.GetPage(pageNumber).CopyAsFormXObject(pdfDoc);
-            canvas.AddXObject(page, offsetX, 0);
+            canvas.AddXObjectAt(page, offsetX, 0);
         }
     }
 }

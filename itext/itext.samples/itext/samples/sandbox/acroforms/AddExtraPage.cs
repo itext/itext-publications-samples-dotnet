@@ -79,7 +79,7 @@ namespace iText.Samples.Sandbox.Acroforms
 
                 // Add the background
                 new PdfCanvas(currentPage.NewContentStreamBefore(), currentPage.GetResources(), pdfDoc)
-                    .AddXObject(background, 0, 0);
+                    .AddXObjectAt(background, 0, 0);
             }
         }
     }

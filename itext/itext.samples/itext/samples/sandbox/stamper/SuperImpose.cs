@@ -35,7 +35,7 @@ namespace iText.Samples.Sandbox.Stamper
             {
                 PdfDocument srcDoc = new PdfDocument(new PdfReader(path));
                 PdfFormXObject page = srcDoc.GetFirstPage().CopyAsFormXObject(pdfDoc);
-                canvas.AddXObject(page, 0, 0);
+                canvas.AddXObjectAt(page, 0, 0);
                 srcDoc.Close();
             }
             

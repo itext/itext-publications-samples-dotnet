@@ -33,7 +33,7 @@ namespace iText.Samples.Sandbox.Annotations
             PdfFormXObject xObj = new PdfFormXObject(new Rectangle(width, height));
 
             PdfCanvas canvas = new PdfCanvas(xObj, pdfDoc);
-            canvas.AddImage(img, 0, 0, false);
+            canvas.AddImageAt(img, 0, 0, false);
 
             Rectangle location = new Rectangle(36, 770 - height, width, height);
             PdfStampAnnotation stamp = new PdfStampAnnotation(location);

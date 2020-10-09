@@ -68,7 +68,7 @@ namespace iText.Samples.Sandbox.Tables
             Rectangle rect = rows[3][1].GetOccupiedAreaBBox();
                 base.DrawChildren(drawContext);
 
-            drawContext.GetCanvas().AddImage(image, rect.GetLeft() + 10, rect.GetTop() - image.GetHeight(), false);
+            drawContext.GetCanvas().AddImageAt(image, rect.GetLeft() + 10, rect.GetTop() - image.GetHeight(), false);
         }            
         
             // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.

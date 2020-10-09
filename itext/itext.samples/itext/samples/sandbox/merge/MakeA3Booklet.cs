@@ -36,11 +36,11 @@ namespace iText.Samples.Sandbox.Merge
                 PdfFormXObject page = srcDoc.GetPage(i).CopyAsFormXObject(pdfDoc);
                 if (i % 2 == 1)
                 {
-                    canvas.AddXObject(page, 0, 0);
+                    canvas.AddXObjectAt(page, 0, 0);
                 }
                 else
                 {
-                    canvas.AddXObject(page, a4Width, 0);
+                    canvas.AddXObjectAt(page, a4Width, 0);
                     canvas = new PdfCanvas(pdfDoc.AddNewPage());
                 }
             }
