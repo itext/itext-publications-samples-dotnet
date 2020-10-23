@@ -41,7 +41,7 @@ namespace iText.Samples.Sandbox.Graphics
                     .AddColorStop(new GradientColorStop(ColorConstants.RED.GetColorValue()))
                     .AddColorStop(new GradientColorStop(ColorConstants.GREEN.GetColorValue()))
                     .AddColorStop(new GradientColorStop(ColorConstants.BLUE.GetColorValue()));
-            BackgroundImage backgroundImage = new BackgroundImage(gradientBuilder);
+            BackgroundImage backgroundImage = new BackgroundImage.Builder().SetLinearGradientBuilder(gradientBuilder).Build();
 
             if (backgroundImage.IsBackgroundSpecified())
             {
