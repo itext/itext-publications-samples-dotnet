@@ -28,7 +28,7 @@ namespace Tutorial {
         public static ICollection<TestFixtureData> Data() {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddClassToRunnerSearchPath("Tutorial.Chapter06.C06E09_FillOutFlattenAndMergeForms");
-#if !NETSTANDARD1_6
+#if !NETSTANDARD2_0
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
 #else
             return GenerateTestsList(typeof(C06E09_FillOutFlattenAndMergeFormsWrapperTest).GetTypeInfo().Assembly, searchConfig);
