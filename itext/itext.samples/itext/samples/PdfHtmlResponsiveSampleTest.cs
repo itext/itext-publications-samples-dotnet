@@ -53,7 +53,7 @@ namespace iText.Samples
             CompareTool compareTool = new CompareTool();
             for (int i = 0; i < PdfHtmlResponsiveDesign.pageSizes.Length; i++)
             {
-                float width = CssUtils.ParseAbsoluteLength(PdfHtmlResponsiveDesign.pageSizes[i].GetWidth().ToString());
+                float width = CssDimensionParsingUtils.ParseAbsoluteLength(PdfHtmlResponsiveDesign.pageSizes[i].GetWidth().ToString());
                 String currentDest = dest.Replace("<filename>",
                     "responsive_" + width.ToString("0.0", CultureInfo.InvariantCulture) + ".pdf");
                 String currentCmp = cmp.Replace("<filename>",

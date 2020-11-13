@@ -32,7 +32,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
             // Create a pdf for each page size
             for (int i = 0; i < pageSizes.Length; i++)
             {
-                float width = CssUtils.ParseAbsoluteLength(pageSizes[i].GetWidth().ToString(CultureInfo.InvariantCulture));
+                float width = CssDimensionParsingUtils.ParseAbsoluteLength(pageSizes[i].GetWidth().ToString(CultureInfo.InvariantCulture));
                 string dest = DEST.Replace("<filename>", 
                     "responsive_" + width.ToString("0.0", CultureInfo.InvariantCulture) + ".pdf");
 
