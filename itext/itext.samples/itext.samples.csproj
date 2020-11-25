@@ -43,7 +43,6 @@
     <PackageReference Include="itext7.hyph" Version="7.1.14-SNAPSHOT" Condition="!Exists('..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
     <PackageReference Include="itext7.pdftest" Version="7.1.14-SNAPSHOT" Condition="!Exists('..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
-    <ProjectReference Include="..\..\..\itextcore\itext\itext.svg\itext.svg.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.svg\itext.svg.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj')" />
     <PackageReference Include="itext7.font-asian" Version="7.1.14-SNAPSHOT" Condition="!Exists('..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj')" />
