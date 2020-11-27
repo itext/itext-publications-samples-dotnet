@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using iText.IO.Util;
 using iText.License;
 using iText.Test;
 
@@ -67,6 +68,10 @@ namespace iText.Samples
             Console.SetOut(storedSystemOut);
             String dest_txt = dest.Replace(".pdf", ".txt");
             String cmp_txt = cmp.Replace(".pdf", ".txt");
+            
+            Console.WriteLine("Out txt file: " + UrlUtil.GetNormalizedFileUriString(dest_txt));
+            Console.WriteLine("Cmp txt file: " + UrlUtil.GetNormalizedFileUriString(cmp_txt)+ "\n");
+            
             AddError(CompareTxt(dest_txt, cmp_txt));
         }
 
