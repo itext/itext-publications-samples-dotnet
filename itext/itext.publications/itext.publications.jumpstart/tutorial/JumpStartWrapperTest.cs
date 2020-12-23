@@ -27,7 +27,7 @@ namespace Tutorial {
             searchConfig.IgnorePackageOrClass("Tutorial.Chapter06.C06E09_FillOutFlattenAndMergeForms");
             searchConfig.IgnorePackageOrClass("Tutorial.JumpStartWrapperTest");
             searchConfig.IgnorePackageOrClass("Tutorial.C06E09_FillOutFlattenAndMergeFormsWrapperTest");
-#if !NETSTANDARD1_6
+#if !NETSTANDARD2_0
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
 #else
             return GenerateTestsList(typeof(JumpStartWrapperTest).GetTypeInfo().Assembly, searchConfig);
