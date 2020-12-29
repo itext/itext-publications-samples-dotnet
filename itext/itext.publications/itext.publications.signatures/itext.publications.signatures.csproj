@@ -38,7 +38,7 @@
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj')"/>
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')"/>
-        <PackageReference Include="itext7" Version="7.1.14-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
-        <PackageReference Include="itext7.pdftest" Version="7.1.14-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')"/>
+        <PackageReference Include="itext7" Version="7.1.15-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+        <PackageReference Include="itext7.pdftest" Version="7.1.15-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')"/>
     </ItemGroup>
 </Project>
