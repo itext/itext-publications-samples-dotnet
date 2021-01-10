@@ -52,6 +52,8 @@ namespace iText.Samples
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 
+		/// This test is expected to be flaky, because its output depends on the content of the site page, 
+		/// which could be changed at any time
         [Timeout(60000)]
         [Test, Description("{0}")]
         public virtual void Test()
