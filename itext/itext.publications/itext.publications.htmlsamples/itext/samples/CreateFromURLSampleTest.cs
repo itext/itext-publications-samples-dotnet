@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using iText.IO.Font;
@@ -58,11 +59,18 @@ namespace iText.Samples
         [Test, Description("{0}")]
         public virtual void Test()
         {
+            SecurityProtocolType defaultSecurityProtocolType = ServicePointManager.SecurityProtocol;
+            
+            // Set security protocol version to TLS 1.2 to avoid https connection issues
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType) 3072;
+            
             FontCache.ClearSavedFonts();
             FontProgramFactory.ClearRegisteredFonts();
             LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.xml");
             RunSamples();
             ResetLicense();
+
+            ServicePointManager.SecurityProtocol = defaultSecurityProtocolType;
         }
 
         protected override void ComparePdf(string outPath, string dest, string cmp)

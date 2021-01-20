@@ -48,7 +48,14 @@ namespace iText.Samples.Signatures.Testrunners
         [Test, Description("{0}")]
         public virtual void Test()
         {
+            SecurityProtocolType defaultSecurityProtocolType = ServicePointManager.SecurityProtocol;
+            
+            // Set security protocol version to TLS 1.2 to avoid https connection issues
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType) 3072;
+            
             RunSamples();
+            
+            ServicePointManager.SecurityProtocol = defaultSecurityProtocolType;
         }
 
         protected override void ComparePdf(string outPath, string dest, string cmp)

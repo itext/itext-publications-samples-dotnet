@@ -42,7 +42,6 @@ namespace iText.Samples.Htmlsamples.Chapter07
         /// <param name="dest">the path to the resulting PDF</param>
         public void CreatePdf(Uri url, String dest)
         {
-            ServicePointManager.SecurityProtocol = (SecurityProtocolType) 3072;
             var httpWebRequest = (HttpWebRequest) WebRequest.Create(url);
             var httpResponse = (HttpWebResponse) httpWebRequest.GetResponse();
             HtmlConverter.ConvertToPdf(httpResponse.GetResponseStream(),
