@@ -54,7 +54,7 @@ namespace iText.Samples.Sandbox.Graphics
                               "officia deserunt mollit anim id est laborum. ";
 
                 Div div = new Div().Add(new Paragraph(text + text + text));
-                div.SetProperty(Property.BACKGROUND_IMAGE, backgroundImage);
+                div.SetBackgroundImage(backgroundImage);
                 doc.Add(div);
 
             }
