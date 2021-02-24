@@ -79,7 +79,7 @@ namespace iText.Samples.Signatures.Chapter02
             // Characters: لورانس العرب
             Text text = new Text("\u0644\u0648\u0631\u0627\u0646\u0633 \u0627\u0644\u0639\u0631\u0628");
             text.SetFont(PdfFontFactory.CreateFont("../../../resources/font/NotoNaskhArabic-Regular.ttf",
-                PdfEncodings.IDENTITY_H, true));
+                PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED));
             text.SetBaseDirection(BaseDirection.RIGHT_TO_LEFT);
             new Canvas(n2, signer.GetDocument()).Add(new Paragraph(text).SetTextAlignment(TextAlignment.RIGHT));
 

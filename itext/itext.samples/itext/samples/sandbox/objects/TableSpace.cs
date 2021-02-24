@@ -29,7 +29,8 @@ namespace iText.Samples.Sandbox.Objects
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.CP1250, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.CP1250, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 
             doc.Add(CreateParagraphWithSpaces(font, string.Format("{0}: {1}", "Name", DATA[0][0]), DATA[0][1]));
             doc.Add(CreateParagraphWithSpaces(font, string.Format("{0}: {1}", "Surname", DATA[1][0]), DATA[1][1]));

@@ -28,9 +28,9 @@ namespace iText.Samples.Sandbox.Tables
 
         private void ManipulatePdf(String dest)
         {
-            czechFont = PdfFontFactory.CreateFont(FONT, "Cp1250", true);
-            greekFont = PdfFontFactory.CreateFont(FONT, "Cp1253", true);
-            defaultFont = PdfFontFactory.CreateFont(FONT, null, true);
+            czechFont = PdfFontFactory.CreateFont(FONT, "Cp1250", PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
+            greekFont = PdfFontFactory.CreateFont(FONT, "Cp1253", PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
+            defaultFont = PdfFontFactory.CreateFont(FONT, null, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);

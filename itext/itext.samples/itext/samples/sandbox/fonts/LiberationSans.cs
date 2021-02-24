@@ -29,7 +29,8 @@ namespace iText.Samples.Sandbox.Fonts
             
             String fontName = "Greek-Regular";
             PdfFontFactory.Register(FONT, fontName);
-            PdfFont f = PdfFontFactory.CreateRegisteredFont(fontName, PdfEncodings.CP1253, true);
+            PdfFont f = PdfFontFactory.CreateRegisteredFont(fontName, PdfEncodings.CP1253, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 
             // "Νύφες"
             Paragraph p = new Paragraph("\u039d\u03cd\u03c6\u03b5\u03c2").SetFont(f);

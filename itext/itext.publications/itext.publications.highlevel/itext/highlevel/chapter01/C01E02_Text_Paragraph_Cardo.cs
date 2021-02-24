@@ -28,9 +28,9 @@ namespace iText.Highlevel.Chapter01 {
             // Initialize document
             Document document = new Document(pdf);
             // Add content
-            PdfFont font = PdfFontFactory.CreateFont(REGULAR, true);
-            PdfFont bold = PdfFontFactory.CreateFont(BOLD, true);
-            PdfFont italic = PdfFontFactory.CreateFont(ITALIC, true);
+            PdfFont font = PdfFontFactory.CreateFont(REGULAR, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
+            PdfFont bold = PdfFontFactory.CreateFont(BOLD, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
+            PdfFont italic = PdfFontFactory.CreateFont(ITALIC, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
             Text title = new Text("The Strange Case of Dr. Jekyll and Mr. Hyde").SetFont(bold);
             Text author = new Text("Robert Louis Stevenson").SetFont(font);
             Paragraph p = new Paragraph().SetFont(italic).Add(title).Add(" by ").Add(author);

@@ -39,10 +39,10 @@ namespace iText.Highlevel.Chapter01 {
             // Initialize document
             Document document = new Document(pdf);
             // Add content
-            PdfFont freeUnicode = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H, true);
+            PdfFont freeUnicode = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H);
             document.Add(new Paragraph().SetFont(freeUnicode).Add(CZECH).Add(" by Robert Louis Stevenson"));
             document.Add(new Paragraph().SetFont(freeUnicode).Add(RUSSIAN).Add(" by Robert Louis Stevenson"));
-            PdfFont fontUnicode = PdfFontFactory.CreateFont(HCRBATANG, PdfEncodings.IDENTITY_H, true);
+            PdfFont fontUnicode = PdfFontFactory.CreateFont(HCRBATANG, PdfEncodings.IDENTITY_H);
             document.Add(new Paragraph().SetFont(fontUnicode).Add(KOREAN).Add(" by Robert Louis Stevenson"));
             //Close document
             document.Close();

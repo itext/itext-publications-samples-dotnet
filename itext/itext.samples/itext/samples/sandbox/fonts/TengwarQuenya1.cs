@@ -27,7 +27,8 @@ namespace iText.Samples.Sandbox.Fonts
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
             Paragraph p = new Paragraph("A Hello World PDF document.").SetFont(font);
             doc.Add(p);
 

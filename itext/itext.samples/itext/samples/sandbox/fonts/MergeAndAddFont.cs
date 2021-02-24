@@ -61,13 +61,14 @@ namespace iText.Samples.Sandbox.Fonts
             new MergeAndAddFont().ManipulatePdf(DEST);
         }
 
-        public void CreatePdf(String filename, String text, bool embedded, bool subset)
+        public void CreatePdf(String filename, String text, PdfFontFactory.EmbeddingStrategy embeddingStrategy,
+            bool subset)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(filename));
             Document doc = new Document(pdfDoc);
 
             // The 3rd parameter indicates whether the font is to be embedded into the target document.
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, embedded);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, embeddingStrategy);
 
             // When set to true, only the used glyphs will be included in the font.
             // When set to false, the full font will be included and all subset ranges will be removed.
@@ -107,7 +108,8 @@ namespace iText.Samples.Sandbox.Fonts
                 
                 // Create pdf files with font, which will be embedded into the target document,
                 // and only the used glyphs will be included in the font.
-                CreatePdf(FILE_A[i], CONTENT[i], true, true);
+                CreatePdf(FILE_A[i], CONTENT[i], 
+                    PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED, true);
             }
 
             MergeFiles(FILE_A, dest + DEST_NAMES["A1"], false);
@@ -118,7 +120,8 @@ namespace iText.Samples.Sandbox.Fonts
                 
                 // Create pdf files with font, which will embedded into the target document.
                 // Full font will be included and all subset ranges will be removed
-                CreatePdf(FILE_B[i], CONTENT[i], true, false);
+                CreatePdf(FILE_B[i], CONTENT[i], 
+                    PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED, false);
             }
 
             MergeFiles(FILE_B, dest + DEST_NAMES["B1"], false);
@@ -129,7 +132,8 @@ namespace iText.Samples.Sandbox.Fonts
                 
                 // Create pdf files with font, which won't be embedded into the target document.
                 // Full font will be included and all subset ranges will be removed
-                CreatePdf(FILE_C[i], CONTENT[i], false, false);
+                CreatePdf(FILE_C[i], CONTENT[i], 
+                    PdfFontFactory.EmbeddingStrategy.FORCE_NOT_EMBEDDED, false);
             }
 
             MergeFiles(FILE_C, dest + DEST_NAMES["C1"], true);

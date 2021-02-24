@@ -26,9 +26,12 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
-            PdfFont french = PdfFontFactory.CreateFont(FONT, "WINANSI", true);
-            PdfFont czech = PdfFontFactory.CreateFont(FONT, "Cp1250", true);
-            PdfFont russian = PdfFontFactory.CreateFont(FONT, "Cp1251", true);
+            PdfFont french = PdfFontFactory.CreateFont(FONT, "WINANSI",
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
+            PdfFont czech = PdfFontFactory.CreateFont(FONT, "Cp1250", 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
+            PdfFont russian = PdfFontFactory.CreateFont(FONT, "Cp1251", 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 
             // The text line is "Vous êtes d'où?"
             doc.Add(new Paragraph("Vous \u00eates d'o\u00f9?").SetFont(french));

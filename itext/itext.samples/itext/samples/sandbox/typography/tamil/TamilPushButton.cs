@@ -36,7 +36,7 @@ namespace iText.Samples.Sandbox.Typography.Tamil
             // Embedded parameter indicates whether the font is to be embedded into the target document.
             // We set it to make sure that the resultant document looks the same within different environments
             PdfFont font = PdfFontFactory.CreateFont(FONTS_FOLDER + "NotoSansTamil-Regular.ttf",
-                    PdfEncodings.IDENTITY_H, true);
+                    PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 
             // என்னை தள்ளி விடு
             String text =

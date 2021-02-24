@@ -38,7 +38,7 @@ namespace iText.Samples.Sandbox.Typography.Khmer
             // Embedded parameter indicates whether the font is to be embedded into the target document.
             // We set it to make sure that the resultant document looks the same within different environments
             PdfFont font = PdfFontFactory.CreateFont(FONTS_FOLDER + "KhmerOS.ttf",
-                    PdfEncodings.IDENTITY_H, true);
+                    PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 
             // Overwrite some default document font-related properties. From now on they will be used for all the elements
             // added to the document unless they are overwritten inside these elements

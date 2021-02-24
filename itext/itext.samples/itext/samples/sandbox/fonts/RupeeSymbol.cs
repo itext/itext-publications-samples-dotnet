@@ -35,7 +35,8 @@ namespace iText.Samples.Sandbox.Fonts
             PdfFont font1 = PdfFontFactory.CreateFont(FONT1, PdfEncodings.IDENTITY_H);
             PdfFont font2 = PdfFontFactory.CreateFont(FONT2, PdfEncodings.IDENTITY_H);
             PdfFont font3 = PdfFontFactory.CreateFont(FONT3, PdfEncodings.IDENTITY_H);
-            PdfFont font4 = PdfFontFactory.CreateFont(FONT3, PdfEncodings.WINANSI, true);
+            PdfFont font4 = PdfFontFactory.CreateFont(FONT3, PdfEncodings.WINANSI, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 
             doc.Add(new Paragraph(RUPEE).SetFont(font1));
             doc.Add(new Paragraph(RUPEE).SetFont(font2));

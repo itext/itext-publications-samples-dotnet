@@ -57,7 +57,7 @@ namespace iText.Samples.Sandbox.Fonts
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(resultFile));
             Document doc = new Document(pdfDoc);
 
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
             doc.Add(new Paragraph("This is a test with Times New Roman.").SetFont(font));
 
             doc.Close();

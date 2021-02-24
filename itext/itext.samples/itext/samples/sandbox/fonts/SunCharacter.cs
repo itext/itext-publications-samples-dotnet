@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Fonts
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H);
             Paragraph p = new Paragraph(TEXT).SetFont(font);
             doc.Add(p);
 
