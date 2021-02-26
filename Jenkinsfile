@@ -2,7 +2,7 @@
 @Library('pipeline-library')_
 
 def repoName = "samples"
-def dependencyRegex = ""
+def dependencyRegex = "(itextcore|html2pdf|typography|licensekey|cleanup)"
 def solutionFile = "itext.samples.sln"
 def csprojFramework = "netcoreapp2.0"
 
