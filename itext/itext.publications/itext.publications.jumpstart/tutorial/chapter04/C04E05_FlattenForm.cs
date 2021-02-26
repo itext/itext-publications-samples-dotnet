@@ -29,11 +29,11 @@ namespace Tutorial.Chapter04 {
             fields.TryGetValue("language", out toSet);
             toSet.SetValue("English");
             fields.TryGetValue("experience1", out toSet);
-            toSet.SetValue("Off", false);
+            toSet.SetValue("Off");
             fields.TryGetValue("experience2", out toSet);
-            toSet.SetValue("Yes", false);
+            toSet.SetValue("Yes");
             fields.TryGetValue("experience3", out toSet);
-            toSet.SetValue("Yes", false);
+            toSet.SetValue("Yes");
             fields.TryGetValue("shift", out toSet);
             toSet.SetValue("Any");
             fields.TryGetValue("info", out toSet);
