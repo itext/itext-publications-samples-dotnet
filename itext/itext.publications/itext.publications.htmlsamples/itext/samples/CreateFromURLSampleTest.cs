@@ -26,6 +26,8 @@ using NUnit.Framework;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
+    [NUnit.Framework.Ignore(
+        "DEVSIX-5137: NP exception is thrown in part of logic related to processing of margin collapses")]
     public class CreateFromURLSampleTest : WrappedSamplesRunner
     {
         private static readonly Dictionary<String, int[]> expectedNumbersOfPages;
