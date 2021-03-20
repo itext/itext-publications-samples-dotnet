@@ -26,8 +26,6 @@ using NUnit.Framework;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    [NUnit.Framework.Ignore(
-        "DEVSIX-5137: NP exception is thrown in part of logic related to processing of margin collapses")]
     public class CreateFromURLSampleTest : WrappedSamplesRunner
     {
         private static readonly Dictionary<String, int[]> expectedNumbersOfPages;
@@ -36,7 +34,7 @@ namespace iText.Samples
         {
             expectedNumbersOfPages = new Dictionary<string, int[]>();
 
-            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E04_CreateFromURL", new int[] {4, 5});
+            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E04_CreateFromURL", new int[] {3, 5});
             expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E05_CreateFromURL2", new int[] {2, 3});
             expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E06_CreateFromURL3", new int[] {2, 3});
         }
