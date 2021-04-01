@@ -50,7 +50,8 @@ namespace iText.Samples.Sandbox.Pdfua
 
             //PDF/UA
             //Embed font
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
             p.SetFont(font);
 
             p.Add("The quick brown ");

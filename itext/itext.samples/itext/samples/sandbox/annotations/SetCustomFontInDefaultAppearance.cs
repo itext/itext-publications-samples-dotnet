@@ -25,7 +25,8 @@ namespace iText.Samples.Sandbox.Annotations
         protected void ManipulatePdf(String dest)
         {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
-            PdfFont font = PdfFontFactory.CreateFont(FONT, null, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, null, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 
             // Set the full font to be included and all subset ranges to be removed.
             font.SetSubset(false);

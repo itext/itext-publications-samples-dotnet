@@ -51,8 +51,8 @@ namespace Tutorial.Chapter07 {
             array.Add(fileSpec.GetPdfObject().GetIndirectReference());
             pdf.GetCatalog().Put(new PdfName("AF"), array);
             //Embed fonts
-            PdfFont font = PdfFontFactory.CreateFont(FONT, true);
-            PdfFont bold = PdfFontFactory.CreateFont(BOLD_FONT, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
+            PdfFont bold = PdfFontFactory.CreateFont(BOLD_FONT, PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
             // Create content
             Table table = new Table(UnitValue.CreatePercentArray(new float[] { 4, 1, 3, 4, 3, 3, 3, 3, 1 }))
                 .UseAllAvailableWidth();

@@ -27,7 +27,8 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
             Document doc = new Document(pdfDoc);
 
             // CP1251 encoding type supports russian characters
-            PdfFont font = PdfFontFactory.CreateFont(FONT, "Cp1251", true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, "Cp1251", 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
             doc.SetFont(font);
 
             // The text line is "Откуда ты?"

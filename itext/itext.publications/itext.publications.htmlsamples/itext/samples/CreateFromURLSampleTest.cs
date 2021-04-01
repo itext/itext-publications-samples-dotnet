@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
+    Copyright (c) 1998-2021 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using iText.IO.Font;
@@ -33,9 +34,9 @@ namespace iText.Samples
         {
             expectedNumbersOfPages = new Dictionary<string, int[]>();
 
-            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E04_CreateFromURL", new int[] {4, 5});
+            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E04_CreateFromURL", new int[] {2, 3});
             expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E05_CreateFromURL2", new int[] {2, 3});
-            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E06_CreateFromURL3", new int[] {2, 3});
+            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E06_CreateFromURL3", new int[] {3, 4});
         }
 
         public CreateFromURLSampleTest(RunnerParams runnerParams) : base(runnerParams)
@@ -52,15 +53,24 @@ namespace iText.Samples
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 
+		/// This test is expected to be flaky, because its output depends on the content of the site page, 
+		/// which could be changed at any time
         [Timeout(60000)]
         [Test, Description("{0}")]
         public virtual void Test()
         {
+            SecurityProtocolType defaultSecurityProtocolType = ServicePointManager.SecurityProtocol;
+            
+            // Set security protocol version to TLS 1.2 to avoid https connection issues
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType) 3072;
+            
             FontCache.ClearSavedFonts();
             FontProgramFactory.ClearRegisteredFonts();
             LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.xml");
             RunSamples();
             ResetLicense();
+
+            ServicePointManager.SecurityProtocol = defaultSecurityProtocolType;
         }
 
         protected override void ComparePdf(string outPath, string dest, string cmp)

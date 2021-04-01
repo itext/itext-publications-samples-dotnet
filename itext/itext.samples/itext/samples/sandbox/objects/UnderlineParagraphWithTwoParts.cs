@@ -27,7 +27,8 @@ namespace iText.Samples.Sandbox.Objects
             Document doc = new Document(pdfDoc);
             pdfDoc.AddNewPage();
 
-            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.COURIER, PdfEncodings.WINANSI, false);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.COURIER, PdfEncodings.WINANSI, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_NOT_EMBEDDED);
             float charWidth = font.GetWidth(" ");
             int charactersPerLine = 101;
             float pageWidth = pdfDoc.GetPage(1).GetPageSize().GetWidth() - doc.GetLeftMargin() - doc.GetRightMargin();

@@ -26,7 +26,8 @@ namespace iText.Samples.Sandbox.Objects
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
 
-            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD, PdfEncodings.CP1252, true);
+            PdfFont font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD, PdfEncodings.CP1252, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
             Paragraph pz = new Paragraph("Hello World!").SetFont(font).SetFontSize(13);
             new Canvas(new PdfCanvas(pdfDoc.GetFirstPage()), new Rectangle(120, 48, 80, 580))
                 .Add(pz);

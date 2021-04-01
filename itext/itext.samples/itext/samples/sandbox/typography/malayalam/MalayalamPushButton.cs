@@ -36,7 +36,7 @@ namespace iText.Samples.Sandbox.Typography.Malayalam
             // Embedded parameter indicates whether the font is to be embedded into the target document.
             // We set it to make sure that the resultant document looks the same within different environments.
             PdfFont font = PdfFontFactory.CreateFont(FONTS_FOLDER + "NotoSansMalayalam-Regular.ttf",
-                    PdfEncodings.IDENTITY_H, true);
+                    PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 
             // എന്നെ തള്ളൂ
             String text = "\u0D0E\u0D28\u0D4D\u0D28\u0D46\u0020\u0D24\u0D33\u0D4D\u0D33\u0D42";

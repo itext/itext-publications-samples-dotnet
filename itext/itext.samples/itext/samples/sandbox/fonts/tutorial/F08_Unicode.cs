@@ -28,7 +28,8 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
             Document doc = new Document(pdfDoc);
 
             // The 3rd argument indicates whether the font is to be embedded into the target document
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H, false);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_NOT_EMBEDDED);
             doc.SetFont(font);
 
             // The text line is "Vous êtes d'où?"

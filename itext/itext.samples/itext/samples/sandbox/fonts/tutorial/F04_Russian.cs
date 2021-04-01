@@ -29,7 +29,8 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
 
             // CP1250 encoding type doesn't support russian characters,
             // and because of that the text in the resultant pdf will be incorrect.
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.CP1250, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.CP1250, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
             doc.SetFont(font);
 
             // The text line is "Откуда ты?"

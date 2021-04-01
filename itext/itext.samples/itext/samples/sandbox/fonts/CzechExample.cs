@@ -26,13 +26,13 @@ namespace iText.Samples.Sandbox.Fonts
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
-            PdfFont f1 = PdfFontFactory.CreateFont(FONT, PdfEncodings.CP1250, true);
+            PdfFont f1 = PdfFontFactory.CreateFont(FONT, PdfEncodings.CP1250, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 
             // "Č,Ć,Š,Ž,Đ"
             Paragraph p1 = new Paragraph("Testing of letters \u010c,\u0106,\u0160,\u017d,\u0110").SetFont(f1);
             doc.Add(p1);
 
-            PdfFont f2 = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H, true);
+            PdfFont f2 = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H);
 
             // "Č,Ć,Š,Ž,Đ"
             Paragraph p2 = new Paragraph("Testing of letters \u010c,\u0106,\u0160,\u017d,\u0110").SetFont(f2);

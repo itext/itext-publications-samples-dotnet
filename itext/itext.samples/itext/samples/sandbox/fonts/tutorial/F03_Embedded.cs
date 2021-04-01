@@ -27,7 +27,8 @@ namespace iText.Samples.Sandbox.Fonts.Tutorial
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.CP1250, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.CP1250, 
+                PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
             
             // Font is an inheritable property, setting it on a document implies that this font
             // will be used for document's children, unless they have this property overwritten.

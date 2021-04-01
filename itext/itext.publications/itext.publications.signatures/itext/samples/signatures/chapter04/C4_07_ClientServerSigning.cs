@@ -26,9 +26,6 @@ namespace iText.Samples.Signatures.Chapter04
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();
 
-			// Set security protocol version to TLS 1.2 to avoid https connection issues
-            ServicePointManager.SecurityProtocol = (SecurityProtocolType) 3072;
-			
             Uri certUrl = new Uri(CERT);
             HttpWebRequest request = (HttpWebRequest) WebRequest.Create(certUrl);
             request.Method = WebRequestMethods.Http.Get;

@@ -33,7 +33,8 @@ namespace Tutorial.Chapter07 {
             PdfDocumentInfo info = pdf.GetDocumentInfo();
             info.SetTitle("iText7 PDF/UA example");
             //Fonts need to be embedded
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, 
+                PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
             Paragraph p = new Paragraph();
             p.SetFont(font);
             p.Add(new Text("The quick brown "));

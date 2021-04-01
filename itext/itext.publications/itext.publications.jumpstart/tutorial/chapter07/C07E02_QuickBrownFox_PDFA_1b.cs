@@ -33,7 +33,8 @@ namespace Tutorial.Chapter07 {
                 )));
             Document document = new Document(pdf);
             //Fonts need to be embedded
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, true);
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, 
+                PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
             Paragraph p = new Paragraph();
             p.SetFont(font);
             p.Add(new Text("The quick brown "));

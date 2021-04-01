@@ -88,7 +88,9 @@ namespace iText.Samples.Sandbox.Tables
                 // Cell's margins, borders and paddings should be extracted from the available width as well.
                 // Note that this part of the sample was introduced specifically for iText7.
                 // since in iText5 the approach of processing cells was different
-                ApplyBordersPaddingsMargins(rect, GetBorders(), GetPaddings());
+                ApplyMargins(rect, false);
+                ApplyBorderBox(rect, false);
+                ApplyPaddings(rect, false);
                 float availableWidth = rect.GetWidth();
 
                 UnitValue fontSizeUV = this.GetPropertyAsUnitValue(Property.FONT_SIZE);
