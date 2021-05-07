@@ -11,8 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using iText.Commons.Utils;
 using iText.IO.Font;
-using iText.License;
+using iText.Licensing.Base;
+using iText.Licensing.Base.Reporting;
 using iText.Test;
 using NUnit.Framework;
 
@@ -39,9 +41,14 @@ namespace iText.Samples
         {
             FontCache.ClearSavedFonts();
             FontProgramFactory.ClearRegisteredFonts();
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.xml");
+            LicenseKeyReportingConfigurer.UseLocalReporting("./target/test/com/itextpdf/samples/report/");
+            using (Stream license = FileUtil.GetInputStreamForFile(
+                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.json"))
+            {
+                LicenseKey.LoadLicenseFile(license);
+            }
             RunSamples();
-            ResetLicense();
+            LicenseKey.UnloadLicenses();
         }
 
         protected override void ComparePdf(string outPath, string dest, string cmp)
@@ -90,24 +97,6 @@ namespace iText.Samples
             }
 
             return errorMessage;
-        }
-
-        private void ResetLicense()
-        {
-            try
-            {
-                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators",
-                    BindingFlags.NonPublic | BindingFlags.Static);
-                validatorsField.SetValue(null, null);
-                FieldInfo versionField = typeof(Kernel.Version).GetField("version",
-                    BindingFlags.NonPublic | BindingFlags.Static);
-                versionField.SetValue(null, null);
-            }
-            catch
-            {
-                
-                // No exception handling required, because there can be no license loaded
-            }
         }
     }
 }

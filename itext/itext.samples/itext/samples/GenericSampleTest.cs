@@ -12,10 +12,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using iText.IO.Font;
-using iText.IO.Util;
+using iText.Commons.Utils;
 using iText.Kernel.Geom;
 using iText.Kernel.Utils;
-using iText.License;
+using iText.Licensing.Base;
+using iText.Licensing.Base.Reporting;
 using iText.Test;
 using iText.Test.Pdfa;
 using NUnit.Framework;
@@ -104,7 +105,6 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Parse.ExtractStreams");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoto");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoToPage");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Logging.CounterDemoStandardOut");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.MergeAndCount");
 
             // Not a sample classes
@@ -141,9 +141,15 @@ namespace iText.Samples
         {
             FontCache.ClearSavedFonts();
             FontProgramFactory.ClearRegisteredFonts();
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.xml");
+            LicenseKeyReportingConfigurer.UseLocalReporting("./target/test/com/itextpdf/samples/report/");
+            using (Stream license = FileUtil.GetInputStreamForFile(
+                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.json"))
+            {
+                LicenseKey.LoadLicenseFile(license);
+            }
+            
             RunSamples();
-            ResetLicense();
+            LicenseKey.UnloadLicenses();
         }
 
         protected override void ComparePdf(string outPath, string dest, string cmp)
@@ -217,24 +223,6 @@ namespace iText.Samples
             }
 
             return errorMessage;
-        }
-
-        private void ResetLicense()
-        {
-            try
-            {
-                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators",
-                    BindingFlags.NonPublic | BindingFlags.Static);
-                validatorsField.SetValue(null, null);
-                FieldInfo versionField = typeof(Kernel.Version).GetField("version",
-                    BindingFlags.NonPublic | BindingFlags.Static);
-                versionField.SetValue(null, null);
-            }
-            catch
-            {
-                
-                // No exception handling required, because there can be no license loaded
-            }
         }
     }
 }

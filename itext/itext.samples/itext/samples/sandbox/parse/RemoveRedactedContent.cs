@@ -23,12 +23,9 @@ namespace iText.Samples.Sandbox.Parse
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
 
-            // If the second argument is true, then regions to be erased are extracted from the redact annotations
-            // contained inside the given document. If the second argument is false (that's default behavior),
-            // then use PdfCleanUpTool.addCleanupLocation(PdfCleanUpLocation)
-            // method to set regions to be erased from the document.
-            PdfCleanUpTool cleaner = new PdfCleanUpTool(pdfDoc, true);
-            cleaner.CleanUp();
+            // If you use CleanUpRedactAnnotations method, then regions to be erased are extracted from the redact annotations
+            // contained inside the given document.
+            PdfCleaner.CleanUpRedactAnnotations(pdfDoc);
 
             pdfDoc.Close();
         }

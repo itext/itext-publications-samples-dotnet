@@ -1,10 +1,11 @@
 using System;
 using System.IO;
+using iText.Commons.Utils;
 using iText.Kernel.Colors;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
-using iText.License;
+using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
@@ -15,8 +16,11 @@ namespace iText.Samples.Sandbox.Typography.Arabic
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") +
-                                       "/itextkey-typography.xml");
+            using (Stream license = FileUtil.GetInputStreamForFile(
+                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-typography.json"))
+            {
+                LicenseKey.LoadLicenseFile(license);
+            }
 
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();

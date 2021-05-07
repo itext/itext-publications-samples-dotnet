@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-
-using iText.IO.Util;
+using iText.Commons.Utils;
 
 namespace iText.Highlevel.Util {
     /// <author>iText</author>

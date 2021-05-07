@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Text;
+using iText.Commons.Utils;
 using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
@@ -29,7 +30,7 @@ namespace iText.Samples.Sandbox.Stamper
             {
                 PdfStream stream = (PdfStream) pdfObject;
                 byte[] data = stream.GetBytes();
-                String replacedData = IO.Util.JavaUtil.GetStringForBytes(data).Replace("Hello World", "HELLO WORLD");
+                String replacedData = JavaUtil.GetStringForBytes(data).Replace("Hello World", "HELLO WORLD");
                 stream.SetData((Encoding.UTF8.GetBytes(replacedData)));
             }
             

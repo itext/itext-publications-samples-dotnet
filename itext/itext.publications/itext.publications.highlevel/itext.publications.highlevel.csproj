@@ -22,21 +22,27 @@
     <PackageReference Include="TeamCity.VSTest.TestAdapter" Version="1.0.0" />
     <PackageReference Include="NUnit" Version="3.7.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
-    <PackageReference Include="itext7.licensekey" Version="3.1.5" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="itext.licensing.base" Version="4.0.0-SNAPSHOT" Condition="!Exists('..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')"/>
+    <ProjectReference Include="..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj" Condition="Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
+
+    <PackageReference Include="itext7" Version="7.2.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
-    <PackageReference Include="itext7" Version="7.2.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj')" />
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
     <PackageReference Include="itext7.pdftest" Version="7.2.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
-    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
     <PackageReference Include="itext7.hyph" Version="7.2.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
-    <ProjectReference Include="..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj" Condition="Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
+    <!--This reference is added to let .NET automatically resolve version's conflict, when iText project version differs from the transitive dependency iText versions-->
+    <PackageReference Include="itext7.commons" Version="7.2.0-SNAPSHOT" IncludeAssets="none" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\itextcore\itext\itext.commons\itext.commons.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.netstandard.csproj')" />
+
     <PackageReference Include="itext7.pdfcalligraph" Version="3.0.0-SNAPSHOT" Condition="!Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
+    <ProjectReference Include="..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj" Condition="Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
   </ItemGroup>
 </Project>

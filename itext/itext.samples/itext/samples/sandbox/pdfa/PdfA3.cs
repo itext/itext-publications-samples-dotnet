@@ -1,7 +1,7 @@
 using System;
 using System.IO;
+using iText.Commons.Utils;
 using iText.IO.Font;
-using iText.IO.Util;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -10,7 +10,6 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Pdfa;
-using Path = System.IO.Path;
 
 namespace iText.Samples.Sandbox.Pdfa
 {

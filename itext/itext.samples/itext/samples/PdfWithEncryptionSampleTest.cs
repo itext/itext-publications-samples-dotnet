@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using iText.Kernel.Utils;
-using iText.License;
+using iText.Licensing.Base;
 using iText.Test;
 using NUnit.Framework;
 

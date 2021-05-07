@@ -10,7 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using iText.Kernel.Utils;
-using iText.License;
+using iText.Licensing.Base;
 using iText.Test;
 using NUnit.Framework;
 
@@ -37,7 +37,7 @@ namespace Tutorial {
         
         [NUnit.Framework.Test]
         public virtual void Test() {
-            ResetLicense();
+            LicenseKey.UnloadLicenses();
             RunSamples();
         }
 
@@ -65,16 +65,6 @@ namespace Tutorial {
             int i = dest.LastIndexOf("/");
             int j = dest.IndexOf("results") + 8;
             return "../../../cmpfiles/" + dest.Substring(j, (i + 1) - j) + "cmp_" + dest.Substring(i + 1);
-        }
-        
-        private void ResetLicense() {
-            try {
-                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators", BindingFlags.NonPublic | BindingFlags.Static);
-                validatorsField.SetValue(null, null);
-                FieldInfo versionField = typeof(iText.Kernel.Version).GetField("version", BindingFlags.NonPublic | BindingFlags.Static);
-                versionField.SetValue(null, null);
-            } catch {
-            }
         }
     }
 }

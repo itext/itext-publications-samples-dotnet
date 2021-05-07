@@ -35,8 +35,7 @@ namespace iText.Samples.Sandbox.Parse
                 new Rectangle(97, 405, 383, 40), ColorConstants.GRAY);
             cleanUpLocations.Add(location);
 
-            PdfCleanUpTool cleaner = new PdfCleanUpTool(pdfDoc, cleanUpLocations);
-            cleaner.CleanUp();
+            PdfCleaner.CleanUp(pdfDoc, cleanUpLocations);
 
             pdfDoc.Close();
         }

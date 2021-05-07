@@ -4,9 +4,8 @@ using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
 using iText.IO.Source;
-using iText.IO.Util;
 using iText.Kernel.Pdf;
-using System.Diagnostics;
+using iText.Commons.Utils;
 
 namespace Tutorial.Chapter06 {
     public class C06E09_FillOutFlattenAndMergeForms {

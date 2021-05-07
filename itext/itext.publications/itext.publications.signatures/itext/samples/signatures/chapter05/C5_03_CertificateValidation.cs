@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using iText.IO;
+using iText.Commons;
 using iText.Kernel.Pdf;
 using iText.Signatures;
 using Microsoft.Extensions.Logging;

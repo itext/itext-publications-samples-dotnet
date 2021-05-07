@@ -1,7 +1,7 @@
 using System;
 using System.IO;
+using iText.Commons.Utils;
 using Org.BouncyCastle.X509;
-using iText.IO.Util;
 using iText.Signatures;
 using Org.BouncyCastle.Pkcs;
 

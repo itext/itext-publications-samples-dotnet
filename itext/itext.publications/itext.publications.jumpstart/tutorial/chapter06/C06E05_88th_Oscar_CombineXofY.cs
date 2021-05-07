@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using iText.Commons.Utils;
 using iText.Kernel.Pdf;
 using iText.Kernel.Utils;
 
@@ -23,10 +24,10 @@ namespace Tutorial.Chapter06 {
             PdfMerger merger = new PdfMerger(pdf);
             //Add pages from the first document
             PdfDocument firstSourcePdf = new PdfDocument(new PdfReader(SRC1));
-            merger.Merge(firstSourcePdf, iText.IO.Util.JavaUtil.ArraysAsList(1, 5, 7, 1));
+            merger.Merge(firstSourcePdf, JavaUtil.ArraysAsList(1, 5, 7, 1));
             //Add pages from the second pdf document
             PdfDocument secondSourcePdf = new PdfDocument(new PdfReader(SRC2));
-            merger.Merge(secondSourcePdf, iText.IO.Util.JavaUtil.ArraysAsList(1, 15));
+            merger.Merge(secondSourcePdf, JavaUtil.ArraysAsList(1, 15));
             firstSourcePdf.Close();
             secondSourcePdf.Close();
             pdf.Close();

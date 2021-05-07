@@ -5,7 +5,7 @@ using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.License;
+using iText.Licensing.Base;
 
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>

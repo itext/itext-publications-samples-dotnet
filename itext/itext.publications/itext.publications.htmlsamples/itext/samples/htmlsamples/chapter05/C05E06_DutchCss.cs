@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using iText.Commons.Utils;
 using iText.Html2pdf;
 using iText.Html2pdf.Attach;
 using iText.Html2pdf.Css;
 using iText.Html2pdf.Css.Apply;
 using iText.Html2pdf.Css.Apply.Impl;
 using iText.Html2pdf.Html;
-using iText.License;
+using iText.Licensing.Base;
 using iText.StyledXmlParser.Node;
 
 namespace iText.Samples.Htmlsamples.Chapter05
@@ -44,8 +45,11 @@ namespace iText.Samples.Htmlsamples.Chapter05
         /// <param name="args">no arguments are needed to run this example.</param>
         public static void Main(String[] args)
         {
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") +
-                                       "/itextkey-html2pdf_typography.xml");
+            using (Stream license = FileUtil.GetInputStreamForFile(
+                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.json"))
+            {
+                LicenseKey.LoadLicenseFile(license);
+            }
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
 

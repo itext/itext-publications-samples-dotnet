@@ -12,8 +12,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using iText.Commons.Utils;
 using iText.Kernel.Utils;
-using iText.License;
+using iText.Licensing.Base;
+using iText.Licensing.Base.Reporting;
 using iText.Test;
 using NUnit.Framework;
 
@@ -42,7 +44,12 @@ namespace iText.Samples
         {
             Directory.SetCurrentDirectory(TestContext.CurrentContext.TestDirectory);
 
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.xml");
+            LicenseKeyReportingConfigurer.UseLocalReporting("./target/test/com/itextpdf/samples/report/");
+            using (Stream license = FileUtil.GetInputStreamForFile(
+                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.json"))
+            {
+                LicenseKey.LoadLicenseFile(license);
+            }
 
             // By default target dir is created during runSamples method. In this particular case we need this
             // action before due to overriding system out stream

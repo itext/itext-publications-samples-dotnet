@@ -15,11 +15,11 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using iText.IO.Font;
-using iText.IO.Util;
+using iText.Commons.Utils;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf.Canvas.Parser.Listener;
-using iText.License;
+using iText.Licensing.Base;
 using iText.Test;
 using NUnit.Framework;
 
@@ -66,9 +66,14 @@ namespace iText.Samples
             
             FontCache.ClearSavedFonts();
             FontProgramFactory.ClearRegisteredFonts();
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.xml");
+            
+            using (Stream license = FileUtil.GetInputStreamForFile(
+                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.json"))
+            {
+                LicenseKey.LoadLicenseFile(license);
+            }
             RunSamples();
-            ResetLicense();
+            LicenseKey.UnloadLicenses();
 
             ServicePointManager.SecurityProtocol = defaultSecurityProtocolType;
         }
@@ -126,24 +131,6 @@ namespace iText.Samples
             }
 
             return contentString.ToString();
-        }
-
-        private void ResetLicense()
-        {
-            try
-            {
-                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators",
-                    BindingFlags.NonPublic | BindingFlags.Static);
-                validatorsField.SetValue(null, null);
-                FieldInfo versionField = typeof(Kernel.Version).GetField("version",
-                    BindingFlags.NonPublic | BindingFlags.Static);
-                versionField.SetValue(null, null);
-            }
-            catch
-            {
-                
-                // No exception handling required, because there can be no license loaded
-            }
         }
     }
 }

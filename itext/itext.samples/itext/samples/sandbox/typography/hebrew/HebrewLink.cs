@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using iText.Commons.Utils;
 using iText.IO.Font;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
@@ -7,7 +8,7 @@ using iText.Kernel.Pdf.Action;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using iText.License;
+using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
@@ -19,8 +20,11 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") +
-                                       "/itextkey-typography.xml");
+            using (Stream license = FileUtil.GetInputStreamForFile(
+                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-typography.json"))
+            {
+                LicenseKey.LoadLicenseFile(license);
+            }
 
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using iText.Commons.Utils;
 using iText.Forms;
 using iText.Forms.Xfa;
 using iText.Kernel.Pdf;
-using iText.License;
+using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Xfa
 {
@@ -18,8 +19,11 @@ namespace iText.Samples.Sandbox.Xfa
         public static void Main(String[] args)
         {
             // Load the license file to use XFA features
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") +
-                                       "/all-products.xml");
+            using (Stream license = FileUtil.GetInputStreamForFile(
+                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.json"))
+            {
+                LicenseKey.LoadLicenseFile(license);
+            }
 
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();

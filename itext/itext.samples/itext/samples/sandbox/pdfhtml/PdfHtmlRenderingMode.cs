@@ -9,7 +9,6 @@ using iText.Html2pdf.Resolver.Font;
 using iText.Layout;
 using iText.Layout.Font;
 using iText.Layout.Properties;
-using iText.License;
 using iText.StyledXmlParser.Node;
 
 namespace iText.Samples.Sandbox.Pdfhtml
