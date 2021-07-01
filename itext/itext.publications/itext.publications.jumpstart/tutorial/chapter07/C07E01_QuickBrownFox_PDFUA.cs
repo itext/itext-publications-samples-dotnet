@@ -24,7 +24,7 @@ namespace Tutorial.Chapter07 {
         }
 
         public virtual void CreatePdf(String dest) {
-            PdfDocument pdf = new PdfDocument(new PdfWriter(dest, new WriterProperties().AddXmpMetadata()));
+            PdfDocument pdf = new PdfDocument(new PdfWriter(dest, new WriterProperties().AddUAXmpMetadata()));
             Document document = new Document(pdf);
             //Setting some required parameters
             pdf.SetTagged();
