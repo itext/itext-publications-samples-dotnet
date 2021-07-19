@@ -32,6 +32,8 @@ namespace iText.Highlevel {
             searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter02.C02E15_ShowTextAlignedKerned");
             searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter01.C01E05_Czech_Russian_Korean_Right");
             searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter01.C01E06_Czech_Russian_Korean_Unicode");
+            searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter01.C01E02_Text_Paragraph_Cardo");
+            searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter01.C01E03_Text_Paragraph_NoCardo");
             return GenerateTestsList(Assembly.GetExecutingAssembly(),searchConfig);
         }
 

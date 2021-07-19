@@ -27,6 +27,8 @@ namespace iText.Highlevel {
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E05_Czech_Russian_Korean_Right");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E06_Czech_Russian_Korean_Unicode");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter02.C02E15_ShowTextAlignedKerned");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E02_Text_Paragraph_Cardo");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E03_Text_Paragraph_NoCardo");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter07.C07E14_Encrypted");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Notused");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Util");
