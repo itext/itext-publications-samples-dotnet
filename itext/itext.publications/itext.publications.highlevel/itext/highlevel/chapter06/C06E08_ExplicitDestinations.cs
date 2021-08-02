@@ -20,9 +20,13 @@ namespace iText.Highlevel.Chapter06 {
         public virtual void CreatePdf(String dest) {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdf);
-            PdfDestination jekyll = PdfExplicitDestination.CreateFitH(1, 416);
-            PdfDestination hyde = PdfExplicitDestination.CreateXYZ(1, 150, 516, 2);
-            PdfDestination jekyll2 = PdfExplicitDestination.CreateFitR(2, 50, 380, 130, 440);
+            // here we need to add pages to the document beforehand, because we'll need to get their instances for destination creation
+            pdf.AddNewPage();
+            pdf.AddNewPage();
+            
+            PdfDestination jekyll = PdfExplicitDestination.CreateFitH(pdf.GetPage(1), 416);
+            PdfDestination hyde = PdfExplicitDestination.CreateXYZ(pdf.GetPage(1), 150, 516, 2);
+            PdfDestination jekyll2 = PdfExplicitDestination.CreateFitR(pdf.GetPage(2), 50, 380, 130, 440);
             document.Add(new Paragraph().Add(new Link("Link to Dr. Jekyll", jekyll)));
             document.Add(new Paragraph().Add(new Link("Link to Mr. Hyde", hyde)));
             document.Add(new Paragraph().Add(new Link("Link to Dr. Jekyll on page 2", jekyll2)));

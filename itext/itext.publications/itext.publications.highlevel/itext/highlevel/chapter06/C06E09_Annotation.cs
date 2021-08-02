@@ -28,8 +28,11 @@ namespace iText.Highlevel.Chapter06 {
                 PdfAnnotation.HIGHLIGHT_INVERT).SetAction(js)).SetBorderStyle(PdfAnnotation.STYLE_UNDERLINE);
             Link link1 = new Link("here", (PdfLinkAnnotation)la1);
             document.Add(new Paragraph().Add("Click ").Add(link1).Add(" if you want to be scared."));
+            // here we need to add a page to the document beforehand, because we'll need to get its instance for destination creation
+            pdf.AddNewPage();
+            
             PdfAnnotation la2 = new PdfLinkAnnotation(new Rectangle(0, 0, 0, 0)).SetDestination(PdfExplicitDestination
-                .CreateFit(2)).SetHighlightMode(PdfAnnotation.HIGHLIGHT_PUSH).SetBorderStyle(PdfAnnotation.STYLE_INSET
+                .CreateFit(pdf.GetPage(2))).SetHighlightMode(PdfAnnotation.HIGHLIGHT_PUSH).SetBorderStyle(PdfAnnotation.STYLE_INSET
                 );
             Link link2 = new Link("next page", (PdfLinkAnnotation)la2);
             document.Add(new Paragraph().Add("Go to the ").Add(link2).Add(" if you're too scared."));
