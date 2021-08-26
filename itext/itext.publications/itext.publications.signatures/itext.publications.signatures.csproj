@@ -2,43 +2,43 @@
     <PropertyGroup>
         <!--System.Security.Cryptography namespace, used in the signatures samples, 
         is supported only in NETCoreApp v2.0 and higher-->
-        <TargetFrameworks>net45</TargetFrameworks>
+        <TargetFrameworks>net461</TargetFrameworks>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'net461' ">
         <OutputType>library</OutputType>
     </PropertyGroup>
     <PropertyGroup>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <OutputTypeEx>library</OutputTypeEx>
         <AssemblyName>itext.publications.signatures</AssemblyName>
-        <RootNamespace/>
+        <RootNamespace />
     </PropertyGroup>
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-        <Reference Include="System"/>
-        <Reference Include="System.Core"/>
-        <Reference Include="System.Xml"/>
-        <Reference Include="System.Xml.Linq"/>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Xml.Linq" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Common.Logging" Version="3.4.1"/>
-        <PackageReference Include="TeamCity.VSTest.TestAdapter" Version="1.0.0"/>
-        <PackageReference Include="NUnit" Version="3.7.1"/>
-        <PackageReference Include="NUnit3TestAdapter" Version="3.8.0"/>
-        <PackageReference Include="itext7.licensekey" Version="3.1.5"/>
-        <PackageReference Include="Portable.BouncyCastle" Version="1.8.9.0"/>
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+        <PackageReference Include="TeamCity.VSTest.TestAdapter" Version="1.0.0" />
+        <PackageReference Include="NUnit" Version="3.7.1" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
+        <PackageReference Include="itext7.licensekey" Version="3.1.5" />
+        <PackageReference Include="Portable.BouncyCastle" Version="1.8.9.0" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj')"/>
-        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')"/>
-        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj')"/>
-        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj')"/>
-        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj')"/>
-        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj')"/>
+        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj')" />
+        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj')" />
+        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj')" />
+        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj')" />
+        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj')" />
-        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')"/>
+        <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
         <PackageReference Include="itext7" Version="7.2.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
-        <PackageReference Include="itext7.pdftest" Version="7.2.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')"/>
+        <PackageReference Include="itext7.pdftest" Version="7.2.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
     </ItemGroup>
 </Project>

@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Common.Logging;
-using Common.Logging.Simple;
+using iText.IO;
 using iText.Kernel.Pdf;
-using Org.BouncyCastle.Ocsp;
-using Org.BouncyCastle.X509;
 using iText.Signatures;
+using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Ocsp;
 using Org.BouncyCastle.Security.Certificates;
+using Org.BouncyCastle.X509;
 
 namespace iText.Samples.Signatures.Chapter05
 {
@@ -50,7 +50,7 @@ namespace iText.Samples.Signatures.Chapter05
                                               +"\n";
 
         public static TextWriter OUT_STREAM = Console.Out;
-        private static ILoggerFactoryAdapter defaultLogAdapter;
+        private static ILoggerFactory defaultLoggerFactory;
         private List<X509Certificate> ks;
 
         public void VerifySignatures(String path)
@@ -245,32 +245,65 @@ namespace iText.Samples.Signatures.Chapter05
 
         private static void SetUpLogger()
         {
-            defaultLogAdapter = LogManager.Adapter;
-            LogManager.Adapter = new CustomMemoryAdapter(OUT_STREAM);
+            defaultLoggerFactory = ITextLogManager.GetLoggerFactory();
+            ILoggerFactory customLoggerFactory = new LoggerFactory();
+            customLoggerFactory.AddProvider(new CustomLoggerProvider(OUT_STREAM));
+            ITextLogManager.SetLoggerFactory(customLoggerFactory);
         }
 
         private static void ResetLogger()
         {
-            LogManager.Adapter = defaultLogAdapter;
+            ITextLogManager.SetLoggerFactory(defaultLoggerFactory);
         }
-
-        // Custom log adapter to write log messages to the specific text writer
-        private class CustomMemoryAdapter : CapturingLoggerFactoryAdapter
+        
+        // Custom log provider to write log messages to the specific text writer
+        private sealed class CustomLoggerProvider : ILoggerProvider
         {
-            private TextWriter writer;
+            private readonly TextWriter writer;
 
-            public CustomMemoryAdapter(TextWriter writer)
+            public CustomLoggerProvider(TextWriter writer)
             {
                 this.writer = writer;
             }
+            
+            public ILogger CreateLogger(string categoryName) => new CustomLogger(categoryName, writer);
 
-            public override void AddEvent(CapturingLoggerEvent le)
+            public void Dispose()
             {
-                writer.WriteLine(le.Source.Name + ": " + le.RenderedMessage);
-                if (le.Level >= LogLevel.Warn)
-                {
-                    base.AddEvent(le);
-                }
+                // no need to release any resources
+            }
+        }
+        
+        private class CustomLogger : ILogger
+        {
+            private readonly string _name;
+            private readonly TextWriter _writer;
+
+            public CustomLogger(
+                string name,
+                TextWriter writer) =>
+                (_name, _writer) = (name, writer);
+
+            public IDisposable BeginScope<TState>(TState state)
+            {
+                // no need to use scope logic
+                throw new NotImplementedException();
+            }
+
+            public bool IsEnabled(LogLevel logLevel)
+            {
+                // we allow all log levels in this simple example
+                return true;
+            }
+
+            public void Log<TState>(
+                LogLevel logLevel,
+                EventId eventId,
+                TState state,
+                Exception exception,
+                Func<TState, Exception, string> formatter)
+            {
+                _writer.WriteLine(_name + ": " + formatter(state, exception));
             }
         }
     }
