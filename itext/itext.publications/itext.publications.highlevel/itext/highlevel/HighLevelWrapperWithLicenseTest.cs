@@ -11,9 +11,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using NUnit.Framework;
 using iText.Kernel.Utils;
-using iText.Layout.Element;
-using iText.Layout.Properties;
-using iText.License;
+using iText.Licensing.Base;
 using iText.Test;
 
 namespace iText.Highlevel {
@@ -32,15 +30,17 @@ namespace iText.Highlevel {
             searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter02.C02E15_ShowTextAlignedKerned");
             searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter01.C01E05_Czech_Russian_Korean_Right");
             searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter01.C01E06_Czech_Russian_Korean_Unicode");
+            searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter01.C01E02_Text_Paragraph_Cardo");
+            searchConfig.AddClassToRunnerSearchPath("iText.Highlevel.Chapter01.C01E03_Text_Paragraph_NoCardo");
             return GenerateTestsList(Assembly.GetExecutingAssembly(),searchConfig);
         }
 
         [NUnit.Framework.Timeout(60000)]
         [NUnit.Framework.Test]
         public virtual void Test() {
-            ResetLicense();
+            LicenseKey.UnloadLicenses();
             this.InitClass();
-            sampleClass.GetField("KEY").SetValue(null, Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
+            sampleClass.GetField("KEY").SetValue(null, Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-typography.json");
             RunSamples();
         }
 		
@@ -73,16 +73,6 @@ namespace iText.Highlevel {
                     throw new TypeLoadException(sampleClassParams.GetType().ToString());
 
                 }
-            }
-        }
-
-        private void ResetLicense() {
-            try {
-                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators", BindingFlags.NonPublic | BindingFlags.Static);
-                validatorsField.SetValue(null, null);
-                FieldInfo versionField = typeof(iText.Kernel.Version).GetField("version", BindingFlags.NonPublic | BindingFlags.Static);
-                versionField.SetValue(null, null);
-            } catch {
             }
         }
     }

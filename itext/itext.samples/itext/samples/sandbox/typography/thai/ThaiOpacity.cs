@@ -1,11 +1,12 @@
 using System;
 using System.IO;
+using iText.Commons.Utils;
 using iText.IO.Font;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.License;
+using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Thai
 {
@@ -17,8 +18,11 @@ namespace iText.Samples.Sandbox.Typography.Thai
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            LicenseKey.LoadLicenseFile(Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") +
-                                       "/itextkey-typography.xml");
+            using (Stream license = FileUtil.GetInputStreamForFile(
+                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-typography.json"))
+            {
+                LicenseKey.LoadLicenseFile(license);
+            }
 
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();

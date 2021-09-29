@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using iText.Kernel;
+using iText.Kernel.Exceptions;
 using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Parse

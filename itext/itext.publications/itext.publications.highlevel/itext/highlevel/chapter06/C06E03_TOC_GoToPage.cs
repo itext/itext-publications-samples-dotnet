@@ -74,7 +74,7 @@ namespace iText.Highlevel.Chapter06 {
             tabstops.Add(new TabStop(580, TabAlignment.RIGHT, new DottedLine()));
             foreach (Util.Pair<String, int> entry in toc) {
                 p = new Paragraph().AddTabStops(tabstops).Add(entry.Key).Add(new Tab()).Add(entry.Value.ToString()).SetAction
-                    (PdfAction.CreateGoTo(PdfExplicitDestination.CreateFit(entry.Value)));
+                    (PdfAction.CreateGoTo(PdfExplicitDestination.CreateFit(pdf.GetPage(entry.Value))));
                 document.Add(p);
             }
             //Close document

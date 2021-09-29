@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("itext.publications.signatures")]
@@ -15,6 +14,6 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("1ab95867-356a-4665-bbd6-b7e97f993970")]
 
-[assembly: AssemblyVersion("7.1.16.0")]
-[assembly: AssemblyFileVersion("7.1.16.0")]
-[assembly: AssemblyInformationalVersion("7.1.16")]
+[assembly: AssemblyVersion("7.2.0.0")]
+[assembly: AssemblyFileVersion("7.2.0.0")]
+[assembly: AssemblyInformationalVersion("7.2.0")]

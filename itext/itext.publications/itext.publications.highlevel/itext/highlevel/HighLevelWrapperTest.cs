@@ -9,9 +9,8 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using iText.IO.Util;
 using iText.Kernel.Utils;
-using iText.License;
+using iText.Licensing.Base;
 using iText.Test;
 using NUnit.Framework;
 
@@ -27,6 +26,8 @@ namespace iText.Highlevel {
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E05_Czech_Russian_Korean_Right");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E06_Czech_Russian_Korean_Unicode");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter02.C02E15_ShowTextAlignedKerned");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E02_Text_Paragraph_Cardo");
+            searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter01.C01E03_Text_Paragraph_NoCardo");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Chapter07.C07E14_Encrypted");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Notused");
             searchConfig.IgnorePackageOrClass("iText.Highlevel.Util");
@@ -39,7 +40,7 @@ namespace iText.Highlevel {
         [NUnit.Framework.Timeout(60000)]
         [NUnit.Framework.Test, Description("{0}")]
         public virtual void Test() {
-            ResetLicense();
+            LicenseKey.UnloadLicenses();
             RunSamples();
         }
 		
@@ -56,16 +57,6 @@ namespace iText.Highlevel {
             CompareTool compareTool = new CompareTool();
             AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));
             AddError(compareTool.CompareDocumentInfo(dest, cmp));
-        }
-
-        private void ResetLicense() {
-            try {
-                FieldInfo validatorsField = typeof(LicenseKey).GetField("validators", BindingFlags.NonPublic | BindingFlags.Static);
-                validatorsField.SetValue(null, null);
-                FieldInfo versionField = typeof(iText.Kernel.Version).GetField("version", BindingFlags.NonPublic | BindingFlags.Static);
-                versionField.SetValue(null, null);
-            } catch {
-            }
         }
     }
 }

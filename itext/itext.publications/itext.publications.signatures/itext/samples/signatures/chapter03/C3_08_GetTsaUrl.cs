@@ -1,11 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
+using iText.Commons.Utils;
 using Org.BouncyCastle.X509;
-using iText.IO.Util;
 using iText.Signatures;
-using NUnit.Framework;
-using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Pkcs;
 
 namespace iText.Samples.Signatures.Chapter03

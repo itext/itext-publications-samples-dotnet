@@ -1,18 +1,24 @@
 %PDF-1.7
 %‚„œ”
+7 0 obj
+<</A 8 0 R/F 4/P 4 0 R/Rect[201.4 786.35 416.14 799.67]/Subtype/Link>>
+endobj
+9 0 obj
+<</A 10 0 R/F 4/P 4 0 R/Rect[206.09 768.37 294.14 781.69]/Subtype/Link>>
+endobj
 5 0 obj
 <</Filter/FlateDecode/Length 218>>stream
 xúuœ±N√0Ö·›Oq6R©2qR≤ZUHÄ_‡Bú4%¯™7fOO‚ÅÜ!„µ¨_Áª®ùU∑≥Å≠UV`{_Í,É≠TÚÍ®B89–˝¥æ¡âEX–ñ+{V{´^‘Âcìùœ2)RH£í∑ ‰áÍ∏∆£h<πœ°Î@æ¬Ûxá -ÖsSh3/'`Y£≠1˜ç8fP-‘é´y™$ã#'Ë÷ËÏ.v˙@ #wRN‚H\«ßx/cùñ≥÷UËΩãÃˆ¡˘–/6 <∫Æ{Ùﬂ◊_oÆkœ
 endstream
 endobj
 4 0 obj
-<</Annots[7 0 R 8 0 R]/Contents 5 0 R/MediaBox[0 0 595 842]/Parent 2 0 R/Resources<</Font<</F1 6 0 R>>>>/TrimBox[0 0 595 842]/Type/Page>>
+<</Annots[7 0 R 9 0 R]/Contents 5 0 R/MediaBox[0 0 595 842]/Parent 2 0 R/Resources<</Font<</F1 6 0 R>>>>/TrimBox[0 0 595 842]/Type/Page>>
 endobj
 1 0 obj
 <</Pages 2 0 R/Type/Catalog>>
 endobj
 3 0 obj
-<</CreationDate(D:20170825090814+03'00')/ModDate(D:20170825090814+03'00')/Producer(iTextÆ 7.0.5-SNAPSHOT ©2000-2017 iText Group NV \(AGPL-version\))>>
+<</CreationDate(D:20210512143916+03'00')/ModDate(D:20210512143916+03'00')/Producer(iTextÆ Core 7.1.16-SNAPSHOT \(AGPL version\) ©1998-2021 iText Group NV)>>
 endobj
 6 0 obj
 <</BaseFont/Helvetica/Encoding/WinAnsiEncoding/Subtype/Type1/Type/Font>>
@@ -20,13 +26,7 @@ endobj
 2 0 obj
 <</Count 1/Kids[4 0 R]/Type/Pages>>
 endobj
-7 0 obj
-<</A 9 0 R/F 4/P 4 0 R/Rect[201.4 786.35 416.14 799.67]/Subtype/Link>>
-endobj
 8 0 obj
-<</A 10 0 R/F 4/P 4 0 R/Rect[206.09 768.37 294.14 781.69]/Subtype/Link>>
-endobj
-9 0 obj
 <</D[0 /FitH 10000]/F(jekyll_hyde_toc2.pdf)/NewWindow true/S/GoToR/Type/Action>>
 endobj
 10 0 obj
@@ -35,19 +35,19 @@ endobj
 xref
 0 11
 0000000000 65535 f 
-0000000453 00000 n 
-0000000752 00000 n 
-0000000498 00000 n 
-0000000300 00000 n 
+0000000627 00000 n 
+0000000932 00000 n 
+0000000672 00000 n 
+0000000474 00000 n 
+0000000189 00000 n 
+0000000844 00000 n 
 0000000015 00000 n 
-0000000664 00000 n 
-0000000803 00000 n 
-0000000889 00000 n 
-0000000977 00000 n 
-0000001073 00000 n 
+0000000983 00000 n 
+0000000101 00000 n 
+0000001079 00000 n 
 trailer
-<</ID [<8557a9575606dd894898b538122a9cb8><8557a9575606dd894898b538122a9cb8>]/Info 3 0 R/Root 1 0 R/Size 11>>
-%iText-7.0.5-SNAPSHOT
+<</ID [<e1235f23e89935deab1d305f1a840633><e1235f23e89935deab1d305f1a840633>]/Info 3 0 R/Root 1 0 R/Size 11>>
+%iText-7.1.16-SNAPSHOT
 startxref
-1161
+1167
 %%EOF

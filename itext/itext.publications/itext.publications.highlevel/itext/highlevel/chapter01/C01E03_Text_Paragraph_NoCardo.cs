@@ -4,10 +4,13 @@ using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Licensing.Base;
 
 namespace iText.Highlevel.Chapter01 {
     /// <author>Bruno Lowagie (iText Software)</author>
     public class C01E03_Text_Paragraph_NoCardo {
+        public static String KEY = "../../../resources/license/itextkey-typography.xml";
+
         public const String DEST = "../../../results/chapter01/text_paragraph_no_cardo.pdf";
 
         public const String REGULAR = "../../../resources/fonts/Cardo-Regular.ttf";
@@ -23,6 +26,7 @@ namespace iText.Highlevel.Chapter01 {
         }
 
         public virtual void CreatePdf(String dest) {
+            LicenseKey.LoadLicenseFile(new FileStream(KEY, FileMode.Open, FileAccess.Read));
             // Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             // Initialize document

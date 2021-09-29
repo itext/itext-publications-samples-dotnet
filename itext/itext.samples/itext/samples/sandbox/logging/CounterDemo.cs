@@ -1,8 +1,8 @@
 using System;
 using System.IO;
-using iText.Kernel.Counter;
-using iText.Kernel.Counter.Context;
-using iText.Kernel.Counter.Event;
+using iText.Commons.Actions;
+using iText.Commons.Actions.Confirmations;
+using iText.Commons.Actions.Contexts;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
@@ -26,9 +26,8 @@ namespace iText.Samples.Sandbox.Logging
         {
             
             // Implement and register custom factory
-            IEventCounterFactory myCounterFactory = 
-                    new SimpleEventCounterFactory(new ToLogCounter(UnknownContext.PERMISSIVE));
-            EventCounterHandler.GetInstance().Register(myCounterFactory);
+            ToLogCounter logCounter = new ToLogCounter(UnknownContext.PERMISSIVE);
+            EventManager.GetInstance().Register(logCounter);
             
             // Generate 2 events by creating 2 pdf documents
             for (int i = 0; i < 2; i++) 
@@ -36,7 +35,7 @@ namespace iText.Samples.Sandbox.Logging
                 CreatePdf();
             }
             
-            EventCounterHandler.GetInstance().Unregister(myCounterFactory);
+            EventManager.GetInstance().Unregister(logCounter);
         }
         
         private static void CreatePdf() 
@@ -46,19 +45,22 @@ namespace iText.Samples.Sandbox.Logging
             document.Close();
         }
         
-        private class ToLogCounter : EventCounter {
+        private class ToLogCounter : AbstractContextBasedEventHandler {
             public ToLogCounter(IContext fallback)
                     : base(fallback) 
             {
             }
 
             // Triggering registered factories to produce events and count them
-            protected override void OnEvent(IEvent eventType, IMetaInfo metaInfo) 
+            protected override void OnAcceptedEvent(AbstractContextBasedITextEvent iTextEvent) 
             {
                 try {
                     using (StreamWriter writer = new StreamWriter(DEST, true)) 
                     {
-                        writer.Write(eventType.GetEventType() + "\n");
+                        if (iTextEvent is ConfirmEvent) {
+                            ConfirmEvent confirmEvent = (ConfirmEvent) iTextEvent;
+                            writer.Write(String.Format("{0}\n", confirmEvent.GetEventType()));
+                        }
                     }
                 }
                 catch (IOException) 

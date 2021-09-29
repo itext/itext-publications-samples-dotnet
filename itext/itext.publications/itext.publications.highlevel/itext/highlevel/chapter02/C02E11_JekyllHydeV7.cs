@@ -38,13 +38,13 @@ namespace iText.Highlevel.Chapter02 {
                     base.UpdateCurrentArea(overflowResult);
                 }
                 this.currentAreaNumber = this.nextAreaNumber + 1;
-                return (this.currentArea = new RootLayoutArea(this.currentPageNumber, this.columns[this.nextAreaNumber++ % this
+                return (this.currentArea = new RootLayoutArea(currentArea.GetPageNumber(), this.columns[this.nextAreaNumber++ % this
                     .columns.Length].Clone()));
             }
 
             protected override PageSize AddNewPage(PageSize customPageSize) {
                 if (this.currentAreaNumber != this.nextAreaNumber && this.currentAreaNumber % this.columns.Length != 0) {
-                    this.moveColumn.Add(this.currentPageNumber - 1);
+                    this.moveColumn.Add(document.GetPdfDocument().GetNumberOfPages());
                 }
                 return base.AddNewPage(customPageSize);
             }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using iText.Kernel;
+using iText.Kernel.Exceptions;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;

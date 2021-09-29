@@ -1,7 +1,7 @@
 using System;
 using System.IO;
+using iText.Commons.Utils;
 using iText.IO.Font;
-using iText.IO.Util;
 using iText.Kernel.Events;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;

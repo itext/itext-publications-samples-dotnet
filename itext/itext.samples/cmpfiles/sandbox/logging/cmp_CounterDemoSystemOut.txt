@@ -1,7 +1,0 @@
-Starting test iText.Samples.Sandbox.Logging.CounterDemoSystemOut
-[iText.Kernel.Pdf.PdfDocument] core-process event
-[iText.Kernel.Pdf.PdfDocument] core-process event
-[iText.Kernel.Pdf.PdfDocument] core-process event
-[iText.Kernel.Pdf.PdfDocument] core-process event
-[iText.Html2pdf.Attach.Impl.DefaultHtmlProcessor] html-convert event
-Test executed successfully, comparing results...

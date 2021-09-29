@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using iText.Commons.Utils;
 using iText.Forms;
 using iText.Forms.Fields;
 using iText.IO.Source;
-using iText.IO.Util;
 using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms.Reporting

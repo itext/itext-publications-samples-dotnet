@@ -3,7 +3,7 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Properties;
-using iText.License;
+using iText.Licensing.Base;
 
 namespace iText.Highlevel.Chapter02 {
     /// <author>iText</author>

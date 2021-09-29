@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using iText.Commons.Utils;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
-using iText.IO.Util;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Signatures;

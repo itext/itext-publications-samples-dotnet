@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Net;
 using iText.Kernel;
+using iText.Kernel.Exceptions;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Signatures;
