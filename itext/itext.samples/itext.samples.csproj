@@ -33,19 +33,19 @@
     <ProjectReference Include="..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
     <!--This reference is added to let .NET automatically resolve version's conflict, when iText project version differs from the transitive dependency iText versions-->
-    <PackageReference Include="itext7" Version="7.1.16" IncludeAssets="none" Condition="Exists('..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
-    <PackageReference Include="itext7" Version="7.1.16" Condition="!Exists('..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+    <PackageReference Include="itext7" Version="7.1.17" IncludeAssets="none" Condition="Exists('..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+    <PackageReference Include="itext7" Version="7.1.17" Condition="!Exists('..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.layout\itext.layout.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
-    <PackageReference Include="itext7.hyph" Version="7.1.16" Condition="!Exists('..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
+    <PackageReference Include="itext7.hyph" Version="7.1.17" Condition="!Exists('..\..\..\itextcore\itext\itext.hyph\itext.hyph.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
-    <PackageReference Include="itext7.pdftest" Version="7.1.16" Condition="!Exists('..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
+    <PackageReference Include="itext7.pdftest" Version="7.1.17" Condition="!Exists('..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj')" />
-    <PackageReference Include="itext7.font-asian" Version="7.1.16" Condition="!Exists('..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj')" />
+    <PackageReference Include="itext7.font-asian" Version="7.1.17" Condition="!Exists('..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj" Condition="Exists('..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
     <PackageReference Include="itext7.pdfcalligraph" Version="2.0.9" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
     <ProjectReference Include="..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.netstandard.csproj" Condition="Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.netstandard.csproj')" />
