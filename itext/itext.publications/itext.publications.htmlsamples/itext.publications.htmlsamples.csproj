@@ -45,7 +45,7 @@
     <PackageReference Include="itext7.pdfhtml" Version="4.0.1-SNAPSHOT" Condition="!Exists('..\..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')" />
     <ProjectReference Include="..\..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj" Condition="Exists('..\..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')" />
     
-    <PackageReference Include="itext7.pdfcalligraph" Version="3.0.1-SNAPSHOT" Condition="!Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
-    <ProjectReference Include="..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj" Condition="Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.netstandard.csproj')" />
+    <PackageReference Include="itext7.pdfcalligraph" Version="3.0.1-SNAPSHOT" Condition="!Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
+    <ProjectReference Include="..\..\..\..\typography\itext\itext.typography\itext.typography.csproj" Condition="Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
   </ItemGroup>
 </Project>
