@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
     <PropertyGroup>
         <!--System.Security.Cryptography namespace, used in the signatures samples, 
         is supported only in NETCoreApp v2.0 and higher-->
@@ -28,10 +28,10 @@
         <PackageReference Include="Portable.BouncyCastle" Version="1.8.9.0" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="itext.licensing.base" Version="4.0.1-SNAPSHOT" Condition="!Exists('..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
+        <PackageReference Include="itext.licensing.base" Version="4.0.1" Condition="!Exists('..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
         <ProjectReference Include="..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj" Condition="Exists('..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
 
-        <PackageReference Include="itext7" Version="7.2.1-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
+        <PackageReference Include="itext7" Version="7.2.1" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.netstandard.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.netstandard.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.netstandard.csproj')" />
@@ -39,10 +39,10 @@
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.netstandard.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.netstandard.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.sign\itext.sign.netstandard.csproj')" />
-        <PackageReference Include="itext7.pdftest" Version="7.2.1-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
+        <PackageReference Include="itext7.pdftest" Version="7.2.1" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.netstandard.csproj')" />
         <!--This reference is added to let .NET automatically resolve version's conflict, when iText project version differs from the transitive dependency iText versions-->
-        <PackageReference Include="itext7.commons" Version="7.2.1-SNAPSHOT" IncludeAssets="none" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.netstandard.csproj')" />
+        <PackageReference Include="itext7.commons" Version="7.2.1" IncludeAssets="none" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.netstandard.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.commons\itext.commons.netstandard.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.netstandard.csproj')" />
     </ItemGroup>
 </Project>
