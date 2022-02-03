@@ -14,6 +14,12 @@ Project("{A7EB3C1F-3F65-480D-A709-DC41A4AA7709}") = "itext.publications.signing-
 EndProject
 Project("{A7EB3C1F-3F65-480D-A709-DC41A4AA7709}") = "itext.publications.signing-examples.aws-kms-test", "itext\itext.publications\itext.publications.signing-examples.aws-kms-test\itext.publications.signing-examples.aws-kms-test.csproj", "{4D366797-09DC-4BC8-8534-C37C6095C406}"
 EndProject
+Project("{A7EB3C1F-3F65-480D-A709-DC41A4AA7709}") = "itext.publications.signing-examples.cng-utimaco-test", "itext\itext.publications\itext.publications.signing-examples.cng-utimaco-test\itext.publications.signing-examples.cng-utimaco-test.csproj", "{4D366797-09DC-4BC8-8534-6C37C6095C40}"
+EndProject
+Project("{A7EB3C1F-3F65-480D-A709-DC41A4AA7709}") = "itext.publications.signing-examples.simple", "itext\itext.publications\itext.publications.signing-examples.simple\itext.publications.signing-examples.simple.csproj", "{4D366797-09DC-4BC8-8534-06C37C6095C4}"
+EndProject
+Project("{A7EB3C1F-3F65-480D-A709-DC41A4AA7709}") = "itext.publications.signing-examples.simple-test", "itext\itext.publications\itext.publications.signing-examples.simple-test\itext.publications.signing-examples.simple-test.csproj", "{4D366797-09DC-4BC8-8534-406C37C6095C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +54,18 @@ Global
 		{4D366797-09DC-4BC8-8534-C37C6095C406}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D366797-09DC-4BC8-8534-C37C6095C406}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D366797-09DC-4BC8-8534-C37C6095C406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D366797-09DC-4BC8-8534-6C37C6095C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D366797-09DC-4BC8-8534-6C37C6095C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D366797-09DC-4BC8-8534-6C37C6095C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D366797-09DC-4BC8-8534-6C37C6095C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D366797-09DC-4BC8-8534-06C37C6095C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D366797-09DC-4BC8-8534-06C37C6095C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D366797-09DC-4BC8-8534-06C37C6095C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D366797-09DC-4BC8-8534-06C37C6095C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D366797-09DC-4BC8-8534-406C37C6095C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D366797-09DC-4BC8-8534-406C37C6095C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D366797-09DC-4BC8-8534-406C37C6095C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D366797-09DC-4BC8-8534-406C37C6095C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
