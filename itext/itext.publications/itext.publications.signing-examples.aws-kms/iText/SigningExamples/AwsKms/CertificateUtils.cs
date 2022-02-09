@@ -10,7 +10,7 @@ namespace iText.SigningExamples.AwsKms
 {
     public class CertificateUtils
     {
-        public static X509Certificate2 generateSelfSignedCertificate(string keyId, string subjectDN, Func<List<string>, string> selector)
+        public static X509Certificate2 GenerateSelfSignedCertificate(string keyId, string subjectDN, Func<List<string>, string> selector)
         {
             string signingAlgorithm = null;
             using (var kmsClient = new AmazonKeyManagementServiceClient())
@@ -29,7 +29,7 @@ namespace iText.SigningExamples.AwsKms
                     ECDsa ecdsa = ECDsa.Create();
                     int bytesRead = 0;
                     ecdsa.ImportSubjectPublicKeyInfo(new ReadOnlySpan<byte>(spkiBytes), out bytesRead);
-                    certificateRequest = new CertificateRequest(subjectDN, ecdsa, getHashAlgorithmName(signingAlgorithm));
+                    certificateRequest = new CertificateRequest(subjectDN, ecdsa, GetHashAlgorithmName(signingAlgorithm));
                     simpleGenerator = X509SignatureGenerator.CreateForECDsa(ecdsa);
                 }
                 else if (keySpecString.StartsWith("RSA"))
@@ -37,8 +37,8 @@ namespace iText.SigningExamples.AwsKms
                     RSA rsa = RSA.Create();
                     int bytesRead = 0;
                     rsa.ImportSubjectPublicKeyInfo(new ReadOnlySpan<byte>(spkiBytes), out bytesRead);
-                    RSASignaturePadding rsaSignaturePadding = getSignaturePadding(signingAlgorithm);
-                    certificateRequest = new CertificateRequest(subjectDN, rsa, getHashAlgorithmName(signingAlgorithm), rsaSignaturePadding);
+                    RSASignaturePadding rsaSignaturePadding = GetSignaturePadding(signingAlgorithm);
+                    certificateRequest = new CertificateRequest(subjectDN, rsa, GetHashAlgorithmName(signingAlgorithm), rsaSignaturePadding);
                     simpleGenerator = X509SignatureGenerator.CreateForRSA(rsa, rsaSignaturePadding);
                 }
                 else
@@ -52,7 +52,7 @@ namespace iText.SigningExamples.AwsKms
             }
         }
 
-        public static HashAlgorithmName getHashAlgorithmName(string signingAlgorithm)
+        public static HashAlgorithmName GetHashAlgorithmName(string signingAlgorithm)
         {
             if (signingAlgorithm.Contains("SHA_256"))
             {
@@ -72,7 +72,7 @@ namespace iText.SigningExamples.AwsKms
             }
         }
 
-        public static RSASignaturePadding getSignaturePadding(string signingAlgorithm)
+        public static RSASignaturePadding GetSignaturePadding(string signingAlgorithm)
         {
             if (signingAlgorithm.StartsWith("RSASSA_PKCS1_V1_5"))
             {
@@ -99,7 +99,7 @@ namespace iText.SigningExamples.AwsKms
 
             public override byte[] GetSignatureAlgorithmIdentifier(HashAlgorithmName hashAlgorithm)
             {
-                HashAlgorithmName hashAlgorithmHere = getHashAlgorithmName(signingAlgorithm);
+                HashAlgorithmName hashAlgorithmHere = GetHashAlgorithmName(signingAlgorithm);
                 if (hashAlgorithm != hashAlgorithmHere)
                 {
                     throw new ArgumentException("Hash algorithm " + hashAlgorithm + "does not match signing algorithm " + signingAlgorithm, nameof(hashAlgorithm));
@@ -109,7 +109,7 @@ namespace iText.SigningExamples.AwsKms
 
             public override byte[] SignData(byte[] data, HashAlgorithmName hashAlgorithm)
             {
-                HashAlgorithmName hashAlgorithmHere = getHashAlgorithmName(signingAlgorithm);
+                HashAlgorithmName hashAlgorithmHere = GetHashAlgorithmName(signingAlgorithm);
                 if (hashAlgorithm != hashAlgorithmHere)
                 {
                     throw new ArgumentException("Hash algorithm " + hashAlgorithm + "does not match signing algorithm " + signingAlgorithm, nameof(hashAlgorithm));

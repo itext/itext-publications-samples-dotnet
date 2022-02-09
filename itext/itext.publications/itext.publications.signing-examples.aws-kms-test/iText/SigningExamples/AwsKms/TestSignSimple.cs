@@ -12,14 +12,14 @@ namespace iText.SigningExamples.AwsKms
     public class TestSignSimple
     {
         [Test]
-        public void testSignSimpleRsa()
+        public void TestSignSimpleRsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
 
             string keyId = "alias/SigningExamples-RSA_2048";
             Func<System.Collections.Generic.List<string>, string> selector = list => list.Find(name => name.StartsWith("RSASSA_PKCS1_V1_5"));
             AwsKmsSignature signature = new AwsKmsSignature(keyId, selector);
-            System.Security.Cryptography.X509Certificates.X509Certificate2 certificate2 = CertificateUtils.generateSelfSignedCertificate(
+            System.Security.Cryptography.X509Certificates.X509Certificate2 certificate2 = CertificateUtils.GenerateSelfSignedCertificate(
                 keyId,
                 "CN=AWS KMS PDF Signing Test RSA,OU=signing tests,O=iText",
                 selector
@@ -36,14 +36,14 @@ namespace iText.SigningExamples.AwsKms
         }
 
         [Test]
-        public void testSignSimpleEcdsa()
+        public void TestSignSimpleEcdsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
 
             string keyId = "alias/SigningExamples-ECC_NIST_P256";
             Func<System.Collections.Generic.List<string>, string> selector = list => list.Find(name => name.StartsWith("ECDSA_SHA_256"));
             AwsKmsSignature signature = new AwsKmsSignature(keyId, selector);
-            System.Security.Cryptography.X509Certificates.X509Certificate2 certificate2 = CertificateUtils.generateSelfSignedCertificate(
+            System.Security.Cryptography.X509Certificates.X509Certificate2 certificate2 = CertificateUtils.GenerateSelfSignedCertificate(
                 keyId,
                 "CN=AWS KMS PDF Signing Test ECDSA,OU=signing tests,O=iText",
                 selector
@@ -60,13 +60,13 @@ namespace iText.SigningExamples.AwsKms
         }
 
         [Test]
-        public void testSignSimpleRsaSsaPss()
+        public void TestSignSimpleRsaSsaPss()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
 
             string keyId = "alias/SigningExamples-RSA_2048";
             Func<System.Collections.Generic.List<string>, string> selector = list => list.Find(name => name.StartsWith("RSASSA_PSS"));
-            System.Security.Cryptography.X509Certificates.X509Certificate2 certificate2 = CertificateUtils.generateSelfSignedCertificate(
+            System.Security.Cryptography.X509Certificates.X509Certificate2 certificate2 = CertificateUtils.GenerateSelfSignedCertificate(
                 keyId,
                 "CN=AWS KMS PDF Signing Test RSAwithMGF1,OU=signing tests,O=iText",
                 selector
@@ -84,13 +84,13 @@ namespace iText.SigningExamples.AwsKms
         }
 
         [Test]
-        public void testSignSimpleEcdsaExternal()
+        public void TestSignSimpleEcdsaExternal()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
 
             string keyId = "alias/SigningExamples-ECC_NIST_P256";
             Func<System.Collections.Generic.List<string>, string> selector = list => list.Find(name => name.StartsWith("ECDSA_SHA_256"));
-            System.Security.Cryptography.X509Certificates.X509Certificate2 certificate2 = CertificateUtils.generateSelfSignedCertificate(
+            System.Security.Cryptography.X509Certificates.X509Certificate2 certificate2 = CertificateUtils.GenerateSelfSignedCertificate(
                 keyId,
                 "CN=AWS KMS PDF Signing Test ECDSA,OU=signing tests,O=iText",
                 selector

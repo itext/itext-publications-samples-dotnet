@@ -11,7 +11,7 @@ namespace iText.SigningExamples.Simple
     class TestSignBCSimple
     {
         [Test]
-        public void testSignSimpleRsa()
+        public void TestSignSimpleRsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";
@@ -37,7 +37,7 @@ namespace iText.SigningExamples.Simple
         }
 
         [Test]
-        public void testSignSimpleDsa()
+        public void TestSignSimpleDsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";
@@ -63,7 +63,7 @@ namespace iText.SigningExamples.Simple
         }
 
         [Test]
-        public void testSignSimpleECDsa()
+        public void TestSignSimpleECDsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";
@@ -89,7 +89,7 @@ namespace iText.SigningExamples.Simple
         }
 
         [Test]
-        public void testSignSimpleRsaSsaPss()
+        public void TestSignSimpleRsaSsaPss()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";
@@ -114,7 +114,7 @@ namespace iText.SigningExamples.Simple
         }
 
         [Test]
-        public void testSignSimpleDsaSha256()
+        public void TestSignSimpleDsaSha256()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";

@@ -13,7 +13,7 @@ namespace iText.SigningExamples.Simple
     class TestSignSimple
     {
         [Test]
-        public void testSignSimpleRsa()
+        public void TestSignSimpleRsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";
@@ -49,7 +49,7 @@ namespace iText.SigningExamples.Simple
         }
 
         [Test]
-        public void testSignSimpleDsa()
+        public void TestSignSimpleDsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";
@@ -85,7 +85,7 @@ namespace iText.SigningExamples.Simple
         }
 
         [Test]
-        public void testSignSimpleECDsa()
+        public void TestSignSimpleECDsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";
@@ -121,7 +121,7 @@ namespace iText.SigningExamples.Simple
         }
 
         [Test]
-        public void testSignSimpleContainerRsa()
+        public void TestSignSimpleContainerRsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";
@@ -153,7 +153,7 @@ namespace iText.SigningExamples.Simple
         }
 
         [Test]
-        public void testSignSimpleContainerRsaSha512()
+        public void TestSignSimpleContainerRsaSha512()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";
@@ -187,7 +187,7 @@ namespace iText.SigningExamples.Simple
         }
 
         [Test]
-        public void testSignSimpleContainerECDsa()
+        public void TestSignSimpleContainerECDsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";
             string storePath = @"..\..\..\keystore\test1234.p12";
@@ -219,6 +219,5 @@ namespace iText.SigningExamples.Simple
                 pdfSigner.SignExternalContainer(signature, 8192);
             }
         }
-
     }
 }
