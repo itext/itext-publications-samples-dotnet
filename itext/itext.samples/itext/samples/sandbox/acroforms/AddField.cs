@@ -28,8 +28,8 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
 
-            PdfButtonFormField button = PdfFormField.CreatePushButton(pdfDoc,
-                new Rectangle(36, 700, 36, 30), "post", "POST");
+            PdfButtonFormField button = new PushButtonFormFieldBuilder(pdfDoc, "post")
+                .SetWidgetRectangle(new Rectangle(36, 700, 36, 30)).SetCaption("POST").CreatePushButton();
             button.SetBackgroundColor(ColorConstants.GRAY);
             button.SetValue("POST");
 

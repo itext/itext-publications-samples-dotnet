@@ -53,14 +53,14 @@ namespace iText.Samples.Sandbox.Typography.Kannada
             font.SetSubset(false);
 
             // Create a form field and set some of the properties
-            PdfFormField formField = PdfTextFormField.CreateText(document.GetPdfDocument(), new Rectangle(50, 750, 80, 25));
+            PdfFormField formField = new TextFormFieldBuilder(document.GetPdfDocument(), fieldName)
+                .SetWidgetRectangle(new Rectangle(50, 750, 80, 25)).CreateText();
             formField
-                    .SetValue(filedValue)
-                    .SetBorderWidth(2)
-                    .SetFont(font)
-                    .SetFontSize(10)
-                    .SetJustification(1)
-                    .SetFieldName(fieldName);
+                .SetValue(filedValue)
+                .SetBorderWidth(2)
+                .SetFont(font)
+                .SetFontSize(10)
+                .SetJustification(1);
             form.AddField(formField);
 
             document.Close();

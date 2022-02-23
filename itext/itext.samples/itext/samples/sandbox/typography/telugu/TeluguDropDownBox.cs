@@ -60,8 +60,9 @@ namespace iText.Samples.Sandbox.Typography.Telugu
             String[] comboText = new String[] {line1, line2, line3};
 
             // Create a form field and apply the properties on it
-            PdfFormField formField = PdfTextFormField.CreateComboBox(document.GetPdfDocument(), new Rectangle(50, 750,
-                    75, 15), "test", line1, comboText);
+            PdfFormField formField = new ChoiceFormFieldBuilder(document.GetPdfDocument(), "test")
+                .SetWidgetRectangle(new Rectangle(50, 750, 75, 15)).SetOptions(comboText).CreateComboBox();
+            formField.SetValue(line1);
             formField
                     .SetBorderWidth(1)
                     .SetJustification(1)

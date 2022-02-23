@@ -53,15 +53,14 @@ namespace iText.Samples.Sandbox.Typography.Malayalam
             font.SetSubset(false);
 
             // Create a form field and set some of the properties
-            PdfFormField formField = PdfTextFormField.CreateText(document.GetPdfDocument(),
-                    new Rectangle(50, 750, 160, 25));
+            PdfFormField formField = new TextFormFieldBuilder(document.GetPdfDocument(), fieldName)
+                .SetWidgetRectangle(new Rectangle(50, 750, 160, 25)).CreateText();
             formField
-                    .SetValue(fieldValue)
-                    .SetBorderWidth(2)
-                    .SetFont(font)
-                    .SetFontSize(10)
-                    .SetJustification(1)
-                    .SetFieldName(fieldName);
+                .SetValue(fieldValue)
+                .SetBorderWidth(2)
+                .SetFont(font)
+                .SetFontSize(10)
+                .SetJustification(1);
 
             form.AddField(formField);
 

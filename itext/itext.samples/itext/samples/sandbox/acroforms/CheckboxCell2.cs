@@ -78,8 +78,9 @@ namespace iText.Samples.Sandbox.Acroforms
 
                 // The 4th parameter is the initial value of checkbox: 'Yes' - checked, 'Off' - unchecked
                 // By default, checkbox value type is cross.
-                PdfButtonFormField checkBox =
-                    PdfFormField.CreateCheckBox(drawContext.GetDocument(), rect, this.name, "Yes");
+                PdfButtonFormField checkBox = new CheckBoxFormFieldBuilder(drawContext.GetDocument(), this.name)
+                    .SetWidgetRectangle(rect).CreateCheckBox();
+                checkBox.SetValue("Yes");
                 switch (checkboxTypeIndex)
                 {
                     case 0:

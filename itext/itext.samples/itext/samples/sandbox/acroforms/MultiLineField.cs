@@ -48,7 +48,9 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(baos));
             Rectangle rect = new Rectangle(36, 720, 108, 86);
 
-            PdfTextFormField textFormField = PdfFormField.CreateText(pdfDoc, rect, FIELD_NAME, "text");
+            PdfTextFormField textFormField =
+                new TextFormFieldBuilder(pdfDoc, FIELD_NAME).SetWidgetRectangle(rect).CreateText();
+            textFormField.SetValue("text");
 
             // Being set as true, the field can contain multiple lines of text;
             // if false, the field's text is restricted to a single line.

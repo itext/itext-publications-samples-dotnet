@@ -54,8 +54,9 @@ namespace iText.Samples.Sandbox.Typography.Arabic
             String[] comboText = new String[] {line1, line1, line1};
 
             // Create a form field and apply the properties on it
-            PdfFormField formField = PdfTextFormField.CreateComboBox(document.GetPdfDocument(), new Rectangle(50, 750,
-                    100, 25), "test", line1, comboText);
+            PdfFormField formField = new ChoiceFormFieldBuilder(document.GetPdfDocument(), "test")
+                .SetWidgetRectangle(new Rectangle(50, 750, 100, 25)).SetOptions(comboText).CreateComboBox();
+            formField.SetValue(line1);
             formField
                     .SetBorderWidth(1)
                     .SetJustification(2)

@@ -227,8 +227,8 @@ namespace iText.Samples.Signatures.Chapter02
             public override void Draw(DrawContext drawContext)
             {
                 base.Draw(drawContext);
-                PdfFormField field = PdfFormField.CreateText(drawContext.GetDocument(),
-                    GetOccupiedAreaBBox(), name);
+                PdfFormField field = new TextFormFieldBuilder(drawContext.GetDocument(), name)
+                    .SetWidgetRectangle(GetOccupiedAreaBBox()).CreateText();
                 PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true).AddField(field);
             }
         }
@@ -248,8 +248,8 @@ namespace iText.Samples.Signatures.Chapter02
             public override void Draw(DrawContext drawContext)
             {
                 base.Draw(drawContext);
-                PdfFormField field = PdfFormField.CreateSignature(drawContext.GetDocument(), GetOccupiedAreaBBox());
-                field.SetFieldName(name);
+                PdfFormField field = new SignatureFormFieldBuilder(drawContext.GetDocument(), name)
+                    .SetWidgetRectangle(GetOccupiedAreaBBox()).CreateSignature();
                 if (Lock != null)
                 {
                     field.Put(PdfName.Lock, this.Lock.MakeIndirect(drawContext.GetDocument()).GetPdfObject());

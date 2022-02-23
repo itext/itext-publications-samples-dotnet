@@ -34,8 +34,9 @@ namespace iText.Samples.Sandbox.Acroforms
 
             // Define the position of a button that measures 108 by 26
             Rectangle rect = new Rectangle(36, 780, 108, 26);
-            PdfButtonFormField pushButton = PdfFormField.CreatePushButton(pdfDoc, rect, "japanese",
-                JAPANESE_TEXT, font, 12f);
+            PdfButtonFormField pushButton = new PushButtonFormFieldBuilder(pdfDoc, "japanese")
+                .SetWidgetRectangle(rect).SetCaption(JAPANESE_TEXT).CreatePushButton();
+            pushButton.SetFont(font).SetFontSize(12f);
             form.AddField(pushButton);
 
             pdfDoc.Close();

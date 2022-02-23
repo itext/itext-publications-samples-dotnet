@@ -60,8 +60,9 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
 
             Rectangle rect = new Rectangle(36, 770, 108, 36);
-            PdfTextFormField textField1 = PdfFormField.CreateText(pdfDoc, rect, "text1",
-                "text1", font, 18f);
+            PdfTextFormField textField1 = new TextFormFieldBuilder(pdfDoc, "text1")
+                .SetWidgetRectangle(rect).CreateText();
+            textField1.SetFont(font).SetFontSize(18f).SetValue("text1");
 
             // Being set as true, the field can contain multiple lines of text;
             // if false, the field's text is restricted to a single line.
@@ -69,20 +70,23 @@ namespace iText.Samples.Sandbox.Acroforms
             form.AddField(textField1);
 
             rect = new Rectangle(148, 770, 108, 36);
-            PdfTextFormField textField2 = PdfFormField.CreateText(pdfDoc, rect, "text2",
-                "text2", font, 18f);
+            PdfTextFormField textField2 = new TextFormFieldBuilder(pdfDoc, "text2")
+                .SetWidgetRectangle(rect).CreateText();
+            textField1.SetFont(font).SetFontSize(18f).SetValue("text2");
             textField2.SetMultiline(true);
             form.AddField(textField2);
 
             rect = new Rectangle(36, 724, 108, 36);
-            PdfTextFormField textField3 = PdfFormField.CreateText(pdfDoc, rect, "text3",
-                "text3", font, 18f);
+            PdfTextFormField textField3 = new TextFormFieldBuilder(pdfDoc, "text3")
+                .SetWidgetRectangle(rect).CreateText();
+            textField1.SetFont(font).SetFontSize(18f).SetValue("text3");
             textField3.SetMultiline(true);
             form.AddField(textField3);
 
             rect = new Rectangle(148, 727, 108, 33);
-            PdfTextFormField textField4 = PdfFormField.CreateText(pdfDoc, rect, "text4",
-                "text4", font, 18f);
+            PdfTextFormField textField4 = new TextFormFieldBuilder(pdfDoc, "text4")
+                .SetWidgetRectangle(rect).CreateText();
+            textField1.SetFont(font).SetFontSize(18f).SetValue("text4");
             textField4.SetMultiline(true);
             form.AddField(textField4);
 

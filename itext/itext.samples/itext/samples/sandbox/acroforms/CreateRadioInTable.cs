@@ -29,7 +29,8 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
             
             // Radio buttons will be added to this radio group
-            PdfButtonFormField group = PdfFormField.CreateRadioGroup(pdfDoc, "Language", "");
+            PdfButtonFormField group = new RadioFormFieldBuilder(pdfDoc, "Language").CreateRadioGroup();
+            group.SetValue("");
             
             Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
             Cell cell = new Cell().Add(new Paragraph("English"));
@@ -85,8 +86,8 @@ namespace iText.Samples.Sandbox.Acroforms
             public override void Draw(DrawContext drawContext)
             {
                 // Create a radio button that is added to a radio group.
-                PdfFormField.CreateRadioButton(drawContext.GetDocument(), GetOccupiedAreaBBox(), radioGroup,
-                    value);
+                new RadioFormFieldBuilder(drawContext.GetDocument())
+                    .SetWidgetRectangle(GetOccupiedAreaBBox()).CreateRadioButton(radioGroup, value);
             }
         }
     }

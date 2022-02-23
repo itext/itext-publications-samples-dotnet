@@ -68,8 +68,8 @@ namespace iText.Samples.Sandbox.Events
 
             public override void Draw(DrawContext drawContext)
             {
-                PdfTextFormField field = PdfTextFormField.CreateText(drawContext.GetDocument(),
-                    GetOccupiedAreaBBox(), fieldName);
+                PdfTextFormField field = new TextFormFieldBuilder(drawContext.GetDocument(), fieldName)
+                    .SetWidgetRectangle(GetOccupiedAreaBBox()).CreateText();
                 PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true)
                     .AddField(field);
             }

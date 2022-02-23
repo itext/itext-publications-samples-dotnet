@@ -97,8 +97,9 @@ namespace iText.Samples.Sandbox.Acroforms
                 PdfAcroForm form = PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true);
 
                 // The 3rd parameter is the combobox name, the 4th parameter is the combobox's initial value
-                PdfChoiceFormField choice = PdfFormField.CreateComboBox(drawContext.GetDocument(),
-                    GetOccupiedAreaBBox(), name, name, optionsArray);
+                PdfChoiceFormField choice = new ChoiceFormFieldBuilder(drawContext.GetDocument(), name)
+                    .SetWidgetRectangle(GetOccupiedAreaBBox()).SetOptions(optionsArray).CreateComboBox();
+                choice.SetValue(name);
                 choice.SetFont(font);
                 choice.GetWidgets()[0].SetBorderStyle(PdfAnnotation.STYLE_BEVELED);
                 choice.SetVisibility(PdfFormField.VISIBLE_BUT_DOES_NOT_PRINT);

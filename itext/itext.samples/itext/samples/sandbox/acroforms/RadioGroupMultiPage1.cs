@@ -36,14 +36,16 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
             
             // Radio buttons will be added to this radio group
-            PdfButtonFormField radioGroup = PdfFormField.CreateRadioGroup(pdfDoc, "Language", "");
+            PdfButtonFormField radioGroup = new RadioFormFieldBuilder(pdfDoc, "Language").CreateRadioGroup();
+            radioGroup.SetValue("");
             
             for (int page = 1; page <= LANGUAGES.Length; page++)
             {
                 pdfDoc.AddNewPage();
                 
                 // Create a radio button that is added to a radio group.
-                PdfFormField field = PdfFormField.CreateRadioButton(pdfDoc, rect, radioGroup, LANGUAGES[page - 1]);
+                PdfFormField field = new RadioFormFieldBuilder(pdfDoc)
+                    .SetWidgetRectangle(rect).CreateRadioButton(radioGroup, LANGUAGES[page - 1]);
                 field.SetBorderWidth(1);
                 field.SetBorderColor(ColorConstants.BLACK);
                 

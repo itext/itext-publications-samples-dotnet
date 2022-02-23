@@ -37,8 +37,10 @@ namespace Tutorial.Chapter05 {
                 ).ShowText("I agree to the terms and conditions.").EndText();
             //Add form field
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
-            PdfButtonFormField checkField = PdfFormField.CreateCheckBox(pdfDoc, new Rectangle(245, 594, 15, 15), "agreement"
-                , "Off", PdfFormField.TYPE_CHECK);
+            PdfButtonFormField checkField = new CheckBoxFormFieldBuilder(pdfDoc, "agreement")
+                    .SetWidgetRectangle(new Rectangle(245, 594, 15, 15))
+                    .SetCheckType(PdfFormField.TYPE_CHECK).CreateCheckBox();
+            checkField.SetValue("Off");
             checkField.SetRequired(true);
             form.AddField(checkField);
             //Update reset button
