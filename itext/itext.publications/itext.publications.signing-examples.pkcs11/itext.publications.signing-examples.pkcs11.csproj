@@ -12,7 +12,7 @@
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="itext7" Version="7.2.2-SNAPSHOT" />
+    <PackageReference Include="itext7" Version="7.2.3-SNAPSHOT" />
     <PackageReference Include="Pkcs11Interop" Version="5.1.1" />
   </ItemGroup>
 </Project>
