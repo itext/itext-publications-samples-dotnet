@@ -44,7 +44,7 @@ namespace iText.Samples.Sandbox.Acroforms.Reporting
 
             // Create a map with fields from the acroform and their names
             Dictionary<String, Rectangle> positions = new Dictionary<String, Rectangle>();
-            IDictionary<String, PdfFormField> fields = form.GetFormFields();
+            IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             foreach (PdfFormField field in fields.Values)
             {
                 positions.Add(field.GetFieldName().GetValue(), field.GetWidgets()[0].GetRectangle().ToRectangle());

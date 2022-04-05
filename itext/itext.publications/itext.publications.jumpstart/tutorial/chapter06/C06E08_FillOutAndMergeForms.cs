@@ -53,7 +53,7 @@ namespace Tutorial.Chapter06 {
                     form.RenameField("dst", "dst_" + i);
                     //Fill out fields
                     StringTokenizer tokenizer = new StringTokenizer(line, ";");
-                    IDictionary<String, PdfFormField> fields = form.GetFormFields();
+                    IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
                     PdfFormField toSet;
                     fields.TryGetValue("name_" + i, out toSet);
                     toSet.SetValue(tokenizer.NextToken());

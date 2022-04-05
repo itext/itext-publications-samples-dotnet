@@ -32,7 +32,7 @@ namespace iText.Samples.Sandbox.Acroforms
 
             pdfDoc = new PdfDocument(new PdfReader(dest));
             form = PdfAcroForm.GetAcroForm(pdfDoc, true);
-            IDictionary<String, PdfFormField> fields = form.GetFormFields();
+            IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
 
             // See the renamed field in the console
             foreach (String name in fields.Keys)

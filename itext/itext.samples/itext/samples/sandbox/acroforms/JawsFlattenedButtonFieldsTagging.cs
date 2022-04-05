@@ -31,7 +31,7 @@ namespace iText.Samples.Sandbox.Acroforms
             
             // Here we handle radio buttons and checkboxes (Button fields type) but there are also other field types
             // which can be used as well, for example they are Text fields, Choice fields, Signature fields
-            foreach (PdfFormField field in form.GetFormFields().Values) 
+            foreach (PdfFormField field in form.GetAllFormFields().Values) 
             {
                 if (field.GetFieldFlag(PdfButtonFormField.FF_RADIO)) 
                 {

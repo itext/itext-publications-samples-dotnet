@@ -38,7 +38,7 @@ namespace iText.Samples.Sandbox.Acroforms
             String character = " *";
             StringBuilder sb = new StringBuilder();
             
-            foreach (String name in acroForm.GetFormFields().Keys) 
+            foreach (String name in acroForm.GetAllFormFields().Keys) 
             {
                 for (int i = 0; i < GetInfo(character, acroForm, name); i++) 
                 {

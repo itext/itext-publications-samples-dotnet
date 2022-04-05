@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Acroforms
             // Method removes the XFA stream from the document.
             form.RemoveXfaForm();
 
-            IDictionary<String, PdfFormField> fields = form.GetFormFields();
+            IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             foreach (KeyValuePair<String, PdfFormField> name in fields)
             {
                 if (name.Key.IndexOf("Total") > 0)

@@ -23,7 +23,7 @@ namespace Tutorial.Chapter04 {
             // Initialize document
             Document doc = new Document(pdf);
             PdfAcroForm form = C04E02_JobApplication.AddAcroForm(doc);
-            IDictionary<String, PdfFormField> fields = form.GetFormFields();
+            IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             PdfFormField toSet;
             fields.TryGetValue("name", out toSet);
             toSet.SetValue("James Bond");

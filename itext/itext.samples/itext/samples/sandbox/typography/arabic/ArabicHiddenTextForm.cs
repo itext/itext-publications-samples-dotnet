@@ -55,7 +55,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
             form.SetNeedAppearances(false);
 
             // Update the value and some other properties of all the pdf document's form fields
-            foreach (KeyValuePair<String, PdfFormField> entry in form.GetFormFields())
+            foreach (KeyValuePair<String, PdfFormField> entry in form.GetAllFormFields())
             {
                 PdfFormField field = entry.Value;
                 field.SetValue(text);

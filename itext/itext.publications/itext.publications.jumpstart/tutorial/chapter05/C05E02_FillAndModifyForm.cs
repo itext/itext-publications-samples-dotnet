@@ -25,7 +25,7 @@ namespace Tutorial.Chapter05 {
             //Initialize PDF document
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
-            IDictionary<String, PdfFormField> fields = form.GetFormFields();
+            IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             fields["name"].SetValue("James Bond").SetBackgroundColor(ColorConstants.ORANGE);
             fields["language"].SetValue("English");
             fields["experience1"].SetValue("Yes");

@@ -27,7 +27,7 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
             
-            IDictionary<String, PdfFormField> fields = form.GetFormFields();
+            IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             PdfFormField field = fields["timezone2"];
             PdfWidgetAnnotation widgetAnnotation = field.GetWidgets()[0];
             PdfArray annotationRect = widgetAnnotation.GetRectangle();
