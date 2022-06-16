@@ -12,7 +12,7 @@
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="itext7" Version="7.2.3-SNAPSHOT" />
+    <PackageReference Include="itext7" Version="7.2.4-SNAPSHOT" />
     <PackageReference Include="nunit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
