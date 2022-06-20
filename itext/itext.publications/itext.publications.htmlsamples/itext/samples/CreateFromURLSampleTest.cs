@@ -35,8 +35,8 @@ namespace iText.Samples
             expectedNumbersOfPages = new Dictionary<string, int[]>();
 
             expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E04_CreateFromURL", new int[] {2, 4});
-            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E05_CreateFromURL2", new int[] {2, 4});
-            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E06_CreateFromURL3", new int[] {3, 4, 5});
+            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E05_CreateFromURL2", new int[] {3, 4});
+            expectedNumbersOfPages.Add("iText.Samples.Htmlsamples.Chapter07.C07E06_CreateFromURL3", new int[] {2, 3});
         }
 
         public CreateFromURLSampleTest(RunnerParams runnerParams) : base(runnerParams)
