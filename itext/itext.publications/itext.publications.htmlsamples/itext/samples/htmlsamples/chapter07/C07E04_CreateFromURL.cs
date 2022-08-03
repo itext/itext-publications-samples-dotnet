@@ -11,6 +11,8 @@ namespace iText.Samples.Htmlsamples.Chapter07
     /// </summary>
     public class C07E04_CreateFromURL
     {
+        const string USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
+
         /// <summary>
         /// The path to the resulting PDF file.
         /// </summary>
@@ -42,10 +44,15 @@ namespace iText.Samples.Htmlsamples.Chapter07
         /// <param name="dest">the path to the resulting PDF</param>
         public void CreatePdf(Uri url, String dest)
         {
-            var httpWebRequest = (HttpWebRequest) WebRequest.Create(url);
-            var httpResponse = (HttpWebResponse) httpWebRequest.GetResponse();
-            HtmlConverter.ConvertToPdf(httpResponse.GetResponseStream(),
-                new FileStream(dest, FileMode.Create));
+            //Some websites forbid web-page access if user-agent is not defined.
+            using (var webClient = new WebClient()) {
+                webClient.Headers.Add("user-agent", USER_AGENT);
+                byte[] website = webClient.DownloadData(url);
+                using (var fileStream = new FileStream(dest, FileMode.Create))
+                {
+                    HtmlConverter.ConvertToPdf(new MemoryStream(website), fileStream);
+                }
+            }
         }
     }
 }
