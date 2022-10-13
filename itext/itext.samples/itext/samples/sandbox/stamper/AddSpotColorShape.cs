@@ -43,10 +43,10 @@ namespace iText.Samples.Sandbox.Stamper
 
         private PdfSpecialCs.Separation CreateCmykColorSpace(float c, float m, float y, float k) 
         {
-            float[] c0 = new float[] { 0, 0, 0, 0 };
-            float[] c1 = new float[] { c, m, y, k };
-            PdfFunction pdfFunction = new PdfFunction.Type2(new PdfArray(new float[] { 0, 1 }), 
-                    null, new PdfArray(c0), new PdfArray(c1), new PdfNumber(1));
+            double[] c0 = new double[] { 0, 0, 0, 0 };
+            double[] c1 = new double[] { c, m, y, k };
+            IPdfFunction pdfFunction = new PdfType2Function(new double[] { 0, 1 }, 
+                    null, c0, c1,1);
             PdfSpecialCs.Separation cs = new PdfSpecialCs.Separation("iTextSpotColorCMYK", 
                     new DeviceCmyk(c, m, y, k).GetColorSpace(), pdfFunction);
             

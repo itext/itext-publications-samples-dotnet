@@ -32,9 +32,9 @@ namespace iText.Samples.Sandbox.Stamper
             pdfDictionary.Put(PdfName.C0, new PdfArray(new float[] { 0, 0, 0, 0 }));
             pdfDictionary.Put(PdfName.C1, new PdfArray(cmyk.GetColorValue()));
             pdfDictionary.Put(PdfName.N, new PdfNumber(1));
-            
-            PdfFunction pdfFunction = new PdfFunction.Type2(pdfDictionary);
-            
+
+            IPdfFunction pdfFunction = new PdfType2Function(pdfDictionary);
+
             return new PdfSpecialCs.Separation("mySpotColor", cmyk.GetColorSpace(), pdfFunction);
         }
 
