@@ -1,5 +1,8 @@
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Signatures;
@@ -59,7 +62,7 @@ namespace iText.Samples.Signatures.Chapter04
             appearance
                 .SetPageRect(new Rectangle(36, 748, 200, 100))
                 .SetPageNumber(1)
-                .SetCertificate(chain[0]);
+                .SetCertificate(new X509CertificateBC(chain[0]));
             signer.SetFieldName(fieldname);
 
             /* ExternalBlankSignatureContainer constructor will create the PdfDictionary for the signature
@@ -104,10 +107,14 @@ namespace iText.Samples.Signatures.Chapter04
             {
                 try
                 {
-                    PrivateKeySignature signature = new PrivateKeySignature(pk, "SHA256");
+                    PrivateKeySignature signature = new PrivateKeySignature(new PrivateKeyBC(pk), "SHA256");
                     String hashAlgorithm = signature.GetHashAlgorithm();
 
-                    PdfPKCS7 sgn = new PdfPKCS7(null, chain, hashAlgorithm, false);
+                    IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+                    for (int i = 0; i < certificateWrappers.Length; ++i) {
+                        certificateWrappers[i] = new X509CertificateBC(chain[i]);
+                    }
+                    PdfPKCS7 sgn = new PdfPKCS7(null, certificateWrappers, hashAlgorithm, false);
                     byte[] hash = DigestAlgorithms.Digest(inputStream, hashAlgorithm);
                     byte[] sh = sgn.GetAuthenticatedAttributeBytes(hash, PdfSigner.CryptoStandard.CMS,
                         null, null);

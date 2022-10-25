@@ -3,6 +3,8 @@ using iText.Signatures;
 using NUnit.Framework;
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Commons.Bouncycastle.Cert;
 using static iText.Signatures.PdfSigner;
 
 namespace iText.SigningExamples.Pkcs11
@@ -27,7 +29,11 @@ namespace iText.SigningExamples.Pkcs11
                 PdfSigner pdfSigner = new PdfSigner(pdfReader, result, new StampingProperties().UseAppendMode());
                 ITSAClient tsaClient = new TSAClientBouncyCastle("RFC3161_SERVER_URL");
 
-                pdfSigner.SignDetached(signature, signature.GetChain(), null, null, tsaClient, 0, CryptoStandard.CMS);
+                IX509Certificate[] certificateWrappers = new IX509Certificate[signature.GetChain().Length];
+                for (int i = 0; i < certificateWrappers.Length; ++i) {
+                    certificateWrappers[i] = new X509CertificateBC(signature.GetChain()[i]);
+                }
+                pdfSigner.SignDetached(signature, certificateWrappers, null, null, tsaClient, 0, CryptoStandard.CMS);
             }
         }
     }

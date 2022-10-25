@@ -1,5 +1,8 @@
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Colors;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
@@ -59,10 +62,14 @@ namespace iText.Samples.Signatures.Chapter02
             Paragraph p = new Paragraph("This document was signed by Bruno Specimen.");
             new Canvas(n2, signer.GetDocument()).Add(p);
 
-            IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
+            IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
             // Sign the document using the detached mode, CMS or CAdES equivalent.
-            signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
         public static void Main(String[] args)

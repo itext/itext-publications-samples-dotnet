@@ -11,6 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
+using iText.Commons.Bouncycastle.Crypto;
 using iText.Kernel.Utils;
 using iText.Licensing.Base;
 using iText.Samples.Sandbox.Security;
@@ -50,7 +54,7 @@ namespace iText.Samples
         protected override void ComparePdf(String outPath, String dest, String cmp)
         {
             CompareTool compareTool = new CompareTool();
-            AsymmetricKeyParameter privateKey = GetPrivateKey();
+            IPrivateKey privateKey = GetPrivateKey();
 
             compareTool.GetOutReaderProperties().SetPublicKeySecurityParams(
                 GetPublicCertificate(EncryptWithCertificate.PUBLIC), privateKey);
@@ -62,22 +66,22 @@ namespace iText.Samples
             AddError(compareTool.CompareDocumentInfo(dest, cmp));
         }
 
-        private AsymmetricKeyParameter GetPrivateKey()
+        private IPrivateKey GetPrivateKey()
         {
             using (FileStream stream = new FileStream(PRIVATE, FileMode.Open, FileAccess.Read))
             {
                 Pkcs12Store keyStore = new Pkcs12Store(stream, "kspass".ToCharArray());
-                return keyStore.GetKey("sandbox").Key;
+                return new PrivateKeyBC(keyStore.GetKey("sandbox").Key);
             }
         }
 
-        public X509Certificate GetPublicCertificate(String path)
+        public IX509Certificate GetPublicCertificate(String path)
         {
             using (FileStream stream = File.Open(path, FileMode.Open))
             {
                 X509CertificateParser parser = new X509CertificateParser();
                 X509Certificate readCertificate = parser.ReadCertificate(stream);
-                return readCertificate;
+                return new X509CertificateBC(readCertificate);
             }
         }
     }

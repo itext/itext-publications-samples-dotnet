@@ -10,11 +10,11 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Geom;
 using iText.Samples.Signatures.Chapter02;
 using iText.Test;
 using NUnit.Framework;
-using Org.BouncyCastle.X509;
 
 namespace iText.Samples.Signatures.Testrunners
 {
@@ -111,7 +111,7 @@ namespace iText.Samples.Signatures.Testrunners
 
         private class CustomSignatureTest : SignatureTestHelper
         {
-            protected internal override void InitKeyStoreForVerification(List<X509Certificate> ks)
+            protected internal override void InitKeyStoreForVerification(List<IX509Certificate> ks)
             {
                 base.InitKeyStoreForVerification(ks);
                 ks.Add(LoadCertificateFromKeyStore(C2_12_LockFields.ALICE,

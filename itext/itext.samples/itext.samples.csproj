@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
     <TargetFrameworks>net461</TargetFrameworks>
@@ -49,6 +50,8 @@
     <!--This reference is added to let .NET automatically resolve version's conflict, when iText project version differs from the transitive dependency iText versions-->
     <PackageReference Include="itext7.commons" Version="8.0.0-SNAPSHOT" IncludeAssets="none" Condition="Exists('..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.commons\itext.commons.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
+    <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.0-SNAPSHOT" Condition="!Exists('..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
+    <ProjectReference Include="..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
     
     <PackageReference Include="itext.licensing.base" Version="4.0.5-SNAPSHOT" Condition="!Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
     <ProjectReference Include="..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj" Condition="Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />

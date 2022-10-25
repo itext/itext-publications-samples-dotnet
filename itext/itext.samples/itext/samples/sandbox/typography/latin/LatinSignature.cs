@@ -1,5 +1,8 @@
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Utils;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
@@ -49,7 +52,7 @@ namespace iText.Samples.Sandbox.Typography.Latin
 
             // Prerequisite for signing
             ICipherParameters signPrivateKey = ReadFirstKey(certFileName, PASSWORD, PASSWORD);
-            IExternalSignature pks = new PrivateKeySignature(signPrivateKey, DigestAlgorithms.SHA256);
+            IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(signPrivateKey), DigestAlgorithms.SHA256);
             X509Certificate[] signChain = ReadFirstChain(certFileName, PASSWORD);
 
             PdfSigner signer = new PdfSigner(new PdfReader(RESOURCE_FOLDER + "simpleDocument.pdf"),
@@ -68,8 +71,12 @@ namespace iText.Samples.Sandbox.Typography.Latin
                     .SetReasonCaption(line3)
                     .SetLayer2Font(font);
 
+            IX509Certificate[] certificateWrappers = new IX509Certificate[signChain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(signChain[i]);
+            }
             // Sign the document
-            signer.SignDetached(pks, signChain, null, null, null, 0,
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0,
                     PdfSigner.CryptoStandard.CADES);
         }
 

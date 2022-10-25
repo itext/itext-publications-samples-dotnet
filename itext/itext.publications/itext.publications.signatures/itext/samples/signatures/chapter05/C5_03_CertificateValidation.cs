@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using iText.Bouncycastle.Cert;
 using iText.Commons;
+using iText.Commons.Bouncycastle.Asn1.Ocsp;
+using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Pdf;
 using iText.Signatures;
 using Microsoft.Extensions.Logging;
-using Org.BouncyCastle.Ocsp;
 using Org.BouncyCastle.Security.Certificates;
 using Org.BouncyCastle.X509;
 
@@ -51,7 +53,7 @@ namespace iText.Samples.Signatures.Chapter05
 
         public static TextWriter OUT_STREAM = Console.Out;
         private static ILoggerFactory defaultLoggerFactory;
-        private List<X509Certificate> ks;
+        private List<IX509Certificate> ks;
 
         public void VerifySignatures(String path)
         {
@@ -70,7 +72,7 @@ namespace iText.Samples.Signatures.Chapter05
         public PdfPKCS7 VerifySignature(SignatureUtil signUtil, String name)
         {
             PdfPKCS7 pkcs7 = GetSignatureData(signUtil, name);
-            X509Certificate[] certs = pkcs7.GetSignCertificateChain();
+            IX509Certificate[] certs = pkcs7.GetSignCertificateChain();
             
             // Timestamp is a secure source of signature creation time,
             // because it's based on Time Stamping Authority service.
@@ -97,16 +99,16 @@ namespace iText.Samples.Signatures.Chapter05
             // Find out if certificates were valid on the signing date, and if they are still valid today
             for (int i = 0; i < certs.Length; i++)
             {
-                X509Certificate cert = (X509Certificate) certs[i];
+                IX509Certificate cert = certs[i];
                 OUT_STREAM.WriteLine("=== Certificate " + i + " ===");
                 ShowCertificateInfo(cert, cal.ToUniversalTime());
             }
 
             // Take the signing certificate
-            X509Certificate signCert = (X509Certificate) certs[0];
+            IX509Certificate signCert = certs[0];
 
             // Take the certificate of the issuer of that certificate (or null if it was self-signed).
-            X509Certificate issuerCert = (certs.Length > 1 ? (X509Certificate) certs[1] : null);
+            IX509Certificate issuerCert = (certs.Length > 1 ? certs[1] : null);
 
             OUT_STREAM.WriteLine("=== Checking validity of the document at the time of signing ===");
             CheckRevocation(pkcs7, signCert, issuerCert, cal.ToUniversalTime());
@@ -128,12 +130,12 @@ namespace iText.Samples.Signatures.Chapter05
             return pkcs7;
         }
 
-        public void ShowCertificateInfo(X509Certificate cert, DateTime signDate)
+        public void ShowCertificateInfo(IX509Certificate cert, DateTime signDate)
         {
-            OUT_STREAM.WriteLine("Issuer: " + cert.IssuerDN);
-            OUT_STREAM.WriteLine("Subject: " + cert.SubjectDN);
-            OUT_STREAM.WriteLine("Valid from: " + (cert.NotBefore.ToUniversalTime().ToString("yyyy-MM-dd")));
-            OUT_STREAM.WriteLine("Valid to: " + cert.NotAfter.ToUniversalTime().ToString("yyyy-MM-dd"));
+            OUT_STREAM.WriteLine("Issuer: " + ((X509CertificateBC)cert).GetCertificate().IssuerDN);
+            OUT_STREAM.WriteLine("Subject: " + ((X509CertificateBC)cert).GetCertificate().SubjectDN);
+            OUT_STREAM.WriteLine("Valid from: " + ((X509CertificateBC)cert).GetCertificate().NotBefore.ToUniversalTime().ToString("yyyy-MM-dd"));
+            OUT_STREAM.WriteLine("Valid to: " + ((X509CertificateBC)cert).GetCertificate().NotAfter.ToUniversalTime().ToString("yyyy-MM-dd"));
 
             // Check if a certificate was valid on the signing date
             try
@@ -153,7 +155,7 @@ namespace iText.Samples.Signatures.Chapter05
             // Check if a certificate is still valid now
             try
             {
-                cert.CheckValidity();
+                ((X509CertificateBC)cert).GetCertificate().CheckValidity();
                 OUT_STREAM.WriteLine("The certificate is still valid.");
             }
             catch (CertificateExpiredException)
@@ -166,10 +168,10 @@ namespace iText.Samples.Signatures.Chapter05
             }
         }
 
-        private static void CheckRevocation(PdfPKCS7 pkcs7, X509Certificate signCert, X509Certificate issuerCert,
+        private static void CheckRevocation(PdfPKCS7 pkcs7, IX509Certificate signCert, IX509Certificate issuerCert,
             DateTime date)
         {
-            IList<BasicOcspResp> ocsps = new List<BasicOcspResp>();
+            IList<IBasicOCSPResponse> ocsps = new List<IBasicOCSPResponse>();
             if (pkcs7.GetOcsp() != null)
             {
                 ocsps.Add(pkcs7.GetOcsp());
@@ -182,12 +184,12 @@ namespace iText.Samples.Signatures.Chapter05
             // If that list is empty, we can’t verify using OCSP, and we need to look for CRLs.
             if (verification.Count == 0)
             {
-                IList<X509Crl> crls = new List<X509Crl>();
+                IList<IX509Crl> crls = new List<IX509Crl>();
                 if (pkcs7.GetCRLs() != null)
                 {
-                    foreach (X509Crl crl in pkcs7.GetCRLs())
+                    foreach (IX509Crl crl in pkcs7.GetCRLs())
                     {
-                        crls.Add((X509Crl) crl);
+                        crls.Add((IX509Crl) crl);
                     }
                 }
 
@@ -221,12 +223,12 @@ namespace iText.Samples.Signatures.Chapter05
             SetUpLogger();
 
             // Create your own root certificate store and add certificates
-            List<X509Certificate> ks = new List<X509Certificate>();
+            List<IX509Certificate> ks = new List<IX509Certificate>();
             var parser = new X509CertificateParser();
-            X509Certificate rootCert;
+            IX509Certificate rootCert;
             using (FileStream stream = new FileStream(ROOT, FileMode.Open, FileAccess.Read))
             {
-                rootCert = parser.ReadCertificate(stream);
+                rootCert = new X509CertificateBC(parser.ReadCertificate(stream));
             }
 
             ks.Add(rootCert);
@@ -238,7 +240,7 @@ namespace iText.Samples.Signatures.Chapter05
             ResetLogger();
         }
 
-        private void SetKeyStore(List<X509Certificate> ks)
+        private void SetKeyStore(List<IX509Certificate> ks)
         {
             this.ks = ks;
         }

@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
+using iText.Commons.Bouncycastle.Crypto;
 using iText.IO.Image;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -63,11 +67,12 @@ namespace iText.Samples.Sandbox.Signatures
 
             char[] password = "testpass".ToCharArray();
             IExternalSignature pks = GetPrivateKeySignature(CERT_PATH, password);
-            X509Certificate[] chain = GetCertificateChain(CERT_PATH, password);
+            IX509Certificate[] chain = GetCertificateChain(CERT_PATH, password);
             OCSPVerifier ocspVerifier = new OCSPVerifier(null, null);
             OcspClientBouncyCastle ocspClient = new OcspClientBouncyCastle(ocspVerifier);
             List<ICrlClient> crlClients = new List<ICrlClient>(new[] {new CrlClientOnline()});
 
+            
             // Sign the document using the detached mode, CMS or CAdES equivalent.
             // This method closes the underlying pdf document, so the instance
             // of PdfSigner cannot be used after this method call
@@ -92,14 +97,14 @@ namespace iText.Samples.Sandbox.Signatures
                 }
             }
 
-            ICipherParameters pk = pk12.GetKey(alias).Key;
+            IPrivateKey pk = new PrivateKeyBC(pk12.GetKey(alias).Key);
             return new PrivateKeySignature(pk, DigestAlgorithms.SHA512);
         }
 
         /// Method reads first public certificate chain
-        private X509Certificate[] GetCertificateChain(String certificatePath, char[] password)
+        private IX509Certificate[] GetCertificateChain(String certificatePath, char[] password)
         {
-            X509Certificate[] chain;
+            IX509Certificate[] chain;
             String alias = null;
             Pkcs12Store pk12 =
                 new Pkcs12Store(new FileStream(certificatePath, FileMode.Open, FileAccess.Read), password);
@@ -114,10 +119,10 @@ namespace iText.Samples.Sandbox.Signatures
             }
 
             X509CertificateEntry[] ce = pk12.GetCertificateChain(alias);
-            chain = new X509Certificate[ce.Length];
+            chain = new IX509Certificate[ce.Length];
             for (int k = 0; k < ce.Length; ++k)
             {
-                chain[k] = ce[k].Certificate;
+                chain[k] = new X509CertificateBC(ce[k].Certificate);
             }
 
             return chain;

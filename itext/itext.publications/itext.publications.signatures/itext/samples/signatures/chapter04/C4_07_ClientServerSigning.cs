@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using System.Net;
+using iText.Bouncycastle.Cert;
+using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel;
 using iText.Kernel.Exceptions;
 using iText.Kernel.Geom;
@@ -60,8 +62,12 @@ namespace iText.Samples.Signatures.Chapter04
 
             IExternalSignature pks = new ServerSignature();
 
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
             // Sign the document using the detached mode, CMS or CAdES equivalent.
-            signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
         public class ServerSignature : IExternalSignature

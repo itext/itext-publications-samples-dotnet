@@ -5,6 +5,8 @@ using Org.BouncyCastle.Asn1.X509;
 using Org.BouncyCastle.X509;
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Commons.Bouncycastle.Cert;
 using static iText.Signatures.PdfSigner;
 
 namespace iText.SigningExamples.AwsKms
@@ -31,7 +33,7 @@ namespace iText.SigningExamples.AwsKms
             {
                 PdfSigner pdfSigner = new PdfSigner(pdfReader, result, new StampingProperties().UseAppendMode());
 
-                pdfSigner.SignDetached(signature, new X509Certificate[] { certificate }, null, null, null, 0, CryptoStandard.CMS);
+                pdfSigner.SignDetached(signature, new IX509Certificate[] { new X509CertificateBC(certificate) }, null, null, null, 0, CryptoStandard.CMS);
             }
         }
 
@@ -55,7 +57,7 @@ namespace iText.SigningExamples.AwsKms
             {
                 PdfSigner pdfSigner = new PdfSigner(pdfReader, result, new StampingProperties().UseAppendMode());
 
-                pdfSigner.SignDetached(signature, new X509Certificate[] { certificate }, null, null, null, 0, CryptoStandard.CMS);
+                pdfSigner.SignDetached(signature, new IX509Certificate[] { new X509CertificateBC(certificate) }, null, null, null, 0, CryptoStandard.CMS);
             }
         }
 

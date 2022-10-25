@@ -1,5 +1,8 @@
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.Kernel.Pdf;
@@ -40,10 +43,14 @@ namespace iText.Samples.Signatures.Chapter02
             // Set the signature event to allow modification of the signature dictionary.
             signer.SetSignatureEvent(new CustomISignatureEvent(fullName));
 
-            PrivateKeySignature pks = new PrivateKeySignature(pk, digestAlgorithm);
+            PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
             // Sign the document using the detached mode, CMS or CAdES equivalent.
-            signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
         public static void Main(String[] args)

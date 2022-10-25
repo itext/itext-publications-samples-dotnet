@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Utils;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
@@ -83,11 +86,15 @@ namespace iText.Samples.Signatures.Chapter03
                 .SetPageNumber(1);
             signer.SetFieldName("sig");
 
-            IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
+            IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
             // Sign the document using the detached mode, CMS or CAdES equivalent.
             // Pass the created OcspClient to the signing method.
-            signer.SignDetached(pks, chain, crlList, ocspClient, tsaClient, estimatedSize, subfilter);
+            signer.SignDetached(pks, certificateWrappers, crlList, ocspClient, tsaClient, estimatedSize, subfilter);
         }
     }
 }

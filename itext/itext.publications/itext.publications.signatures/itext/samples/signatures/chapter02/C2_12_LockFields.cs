@@ -1,7 +1,9 @@
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
 using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.X509;
 using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Pdf;
@@ -98,10 +100,10 @@ namespace iText.Samples.Signatures.Chapter02
 
             ICipherParameters pk = pk12.GetKey(alias).Key;
             X509CertificateEntry[] ce = pk12.GetCertificateChain(alias);
-            X509Certificate[] chain = new X509Certificate[ce.Length];
+            IX509Certificate[] chain = new IX509Certificate[ce.Length];
             for (int k = 0; k < ce.Length; ++k)
             {
-                chain[k] = ce[k].Certificate;
+                chain[k] = new X509CertificateBC(ce[k].Certificate);
             }
 
             PdfReader reader = new PdfReader(src);
@@ -115,7 +117,7 @@ namespace iText.Samples.Signatures.Chapter02
             PdfAcroForm form = PdfAcroForm.GetAcroForm(signer.GetDocument(), true);
             form.GetField(name).SetReadOnly(true);
 
-            PrivateKeySignature pks = new PrivateKeySignature(pk, DigestAlgorithms.SHA256);
+            PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
 
             // Sign the document using the detached mode, CMS or CAdES equivalent.
             signer.SignDetached(pks, chain, null, null, null,
@@ -135,10 +137,10 @@ namespace iText.Samples.Signatures.Chapter02
 
             ICipherParameters pk = pk12.GetKey(alias).Key;
             X509CertificateEntry[] ce = pk12.GetCertificateChain(alias);
-            X509Certificate[] chain = new X509Certificate[ce.Length];
+            IX509Certificate[] chain = new IX509Certificate[ce.Length];
             for (int k = 0; k < ce.Length; ++k)
             {
-                chain[k] = ce[k].Certificate;
+                chain[k] = new X509CertificateBC(ce[k].Certificate);
             }
 
             PdfReader reader = new PdfReader(src);
@@ -151,7 +153,7 @@ namespace iText.Samples.Signatures.Chapter02
             form.GetField(name).SetReadOnly(true);
             form.GetField(fname).SetReadOnly(true);
 
-            PrivateKeySignature pks = new PrivateKeySignature(pk, DigestAlgorithms.SHA256);
+            PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
             signer.SignDetached(pks, chain, null, null, null,
                 0, PdfSigner.CryptoStandard.CMS);
         }
@@ -180,10 +182,10 @@ namespace iText.Samples.Signatures.Chapter02
 
             ICipherParameters pk = pk12.GetKey(alias).Key;
             X509CertificateEntry[] ce = pk12.GetCertificateChain(alias);
-            X509Certificate[] chain = new X509Certificate[ce.Length];
+            IX509Certificate[] chain = new IX509Certificate[ce.Length];
             for (int k = 0; k < ce.Length; ++k)
             {
-                chain[k] = ce[k].Certificate;
+                chain[k] = new X509CertificateBC(ce[k].Certificate);
             }
 
             PdfReader reader = new PdfReader(src);
@@ -191,7 +193,7 @@ namespace iText.Samples.Signatures.Chapter02
                 new StampingProperties().UseAppendMode());
             signer.SetFieldName(name);
 
-            PrivateKeySignature pks = new PrivateKeySignature(pk, DigestAlgorithms.SHA256);
+            PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
             signer.SignDetached(pks, chain, null, null, null,
                 0, PdfSigner.CryptoStandard.CMS);
         }

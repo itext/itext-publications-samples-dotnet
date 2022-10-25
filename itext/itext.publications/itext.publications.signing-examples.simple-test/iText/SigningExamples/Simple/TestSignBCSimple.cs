@@ -5,6 +5,9 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.X509;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
 
 namespace iText.SigningExamples.Simple
 {
@@ -21,10 +24,10 @@ namespace iText.SigningExamples.Simple
             Pkcs12Store pkcs12 = new Pkcs12Store(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
             AsymmetricKeyParameter key = pkcs12.GetKey(storeAlias).Key;
             X509CertificateEntry[] chainEntries = pkcs12.GetCertificateChain(storeAlias);
-            X509Certificate[] chain = new X509Certificate[chainEntries.Length];
+            IX509Certificate[] chain = new IX509Certificate[chainEntries.Length];
             for (int i = 0; i < chainEntries.Length; i++)
-                chain[i] = chainEntries[i].Certificate;
-            PrivateKeySignature signature = new PrivateKeySignature(key, "SHA384");
+                chain[i] = new X509CertificateBC(chainEntries[i].Certificate);
+            PrivateKeySignature signature = new PrivateKeySignature(new PrivateKeyBC(key), "SHA384");
 
             using (PdfReader pdfReader = new PdfReader(testFileName))
             using (FileStream result = File.Create("circles-RSA-BC-signed-simple.pdf"))
@@ -47,10 +50,10 @@ namespace iText.SigningExamples.Simple
             Pkcs12Store pkcs12 = new Pkcs12Store(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
             AsymmetricKeyParameter key = pkcs12.GetKey(storeAlias).Key;
             X509CertificateEntry[] chainEntries = pkcs12.GetCertificateChain(storeAlias);
-            X509Certificate[] chain = new X509Certificate[chainEntries.Length];
+            IX509Certificate[] chain = new IX509Certificate[chainEntries.Length];
             for (int i = 0; i < chainEntries.Length; i++)
-                chain[i] = chainEntries[i].Certificate;
-            PrivateKeySignature signature = new PrivateKeySignature(key, "SHA1");
+                chain[i] = new X509CertificateBC(chainEntries[i].Certificate);
+            PrivateKeySignature signature = new PrivateKeySignature(new PrivateKeyBC(key), "SHA1");
 
             using (PdfReader pdfReader = new PdfReader(testFileName))
             using (FileStream result = File.Create("circles-DSA-BC-signed-simple.pdf"))
@@ -73,10 +76,10 @@ namespace iText.SigningExamples.Simple
             Pkcs12Store pkcs12 = new Pkcs12Store(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
             AsymmetricKeyParameter key = pkcs12.GetKey(storeAlias).Key;
             X509CertificateEntry[] chainEntries = pkcs12.GetCertificateChain(storeAlias);
-            X509Certificate[] chain = new X509Certificate[chainEntries.Length];
+            IX509Certificate[] chain = new IX509Certificate[chainEntries.Length];
             for (int i = 0; i < chainEntries.Length; i++)
-                chain[i] = chainEntries[i].Certificate;
-            PrivateKeySignature signature = new PrivateKeySignature(key, "SHA512");
+                chain[i] = new X509CertificateBC(chainEntries[i].Certificate);
+            PrivateKeySignature signature = new PrivateKeySignature(new PrivateKeyBC(key), "SHA512");
 
             using (PdfReader pdfReader = new PdfReader(testFileName))
             using (FileStream result = File.Create("circles-ECDSA-BC-signed-simple.pdf"))
