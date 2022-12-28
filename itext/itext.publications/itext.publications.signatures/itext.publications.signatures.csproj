@@ -25,7 +25,7 @@
         <PackageReference Include="TeamCity.VSTest.TestAdapter" Version="1.0.0" />
         <PackageReference Include="NUnit" Version="3.7.1" />
         <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
-        <PackageReference Include="Portable.BouncyCastle" Version="1.8.9.0" />
+        <PackageReference Include="Portable.BouncyCastle" Version="1.8.10.0" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="itext.licensing.base" Version="4.0.5-SNAPSHOT" Condition="!Exists('..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
