@@ -131,12 +131,12 @@ namespace iText.SigningExamples.CngUtimaco
             return new Org.BouncyCastle.X509.X509Certificate[] { bcCertificate };
         }
 
-        public string GetEncryptionAlgorithm()
+        public string GetSignatureAlgorithmName()
         {
             return "ECDSA";
         }
 
-        public string GetHashAlgorithm()
+        public string GetDigestAlgorithmName()
         {
             return "SHA512";
         }

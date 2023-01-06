@@ -18,8 +18,8 @@ namespace iText.SigningExamples.Pkcs11
 
         string alias;
         X509Certificate[] chain;
-        string encryptionAlgorithm;
-        string hashAlgorithm;
+        string signatureAlgorithmName;
+        string digestAlgorithmName;
 
         public Pkcs11Signature (string libraryPath, ulong slotId)
         {
@@ -53,17 +53,17 @@ namespace iText.SigningExamples.Pkcs11
                 List<IObjectAttribute> keyAttributes = session.GetAttributeValue(key, pkAttributeKeys);
 
                 ulong type = keyAttributes[0].GetValueAsUlong();
-                string encryptionAlgorithm;
+                string signatureAlgorithmName;
                 switch (type)
                 {
                     case (ulong)CKK.CKK_RSA:
-                        encryptionAlgorithm = "RSA";
+                        signatureAlgorithmName = "RSA";
                         break;
                     case (ulong)CKK.CKK_DSA:
-                        encryptionAlgorithm = "DSA";
+                        signatureAlgorithmName = "DSA";
                         break;
                     case (ulong)CKK.CKK_ECDSA:
-                        encryptionAlgorithm = "ECDSA";
+                        signatureAlgorithmName = "ECDSA";
                         break;
                     default:
                         continue;
@@ -107,7 +107,7 @@ namespace iText.SigningExamples.Pkcs11
 
                 found = true;
                 this.alias = thisAlias;
-                this.encryptionAlgorithm = encryptionAlgorithm;
+                this.signatureAlgorithmName = signatureAlgorithmName;
                 this.privateKeyHandle = key;
                 this.chain = x509Certificates.ToArray();
                 break;
@@ -116,7 +116,7 @@ namespace iText.SigningExamples.Pkcs11
             if (!found)
             {
                 this.alias = null;
-                this.encryptionAlgorithm = null;
+                this.signatureAlgorithmName = null;
                 this.privateKeyHandle = null;
                 this.chain = null;
             }
@@ -152,19 +152,19 @@ namespace iText.SigningExamples.Pkcs11
             return chain;
         }
 
-        public string GetEncryptionAlgorithm()
+        public string GetSignatureAlgorithmName()
         {
-            return encryptionAlgorithm;
+            return signatureAlgorithmName;
         }
 
-        public string GetHashAlgorithm()
+        public string GetDigestAlgorithmName()
         {
-            return hashAlgorithm;
+            return digestAlgorithmName;
         }
 
-        public Pkcs11Signature SetHashAlgorithm(String hashAlgorithm)
+        public Pkcs11Signature SetDigestAlgorithmName(String digestAlgorithmName)
         {
-            this.hashAlgorithm = DigestAlgorithms.GetDigest(DigestAlgorithms.GetAllowedDigest(hashAlgorithm));
+            this.digestAlgorithmName = DigestAlgorithms.GetDigest(DigestAlgorithms.GetAllowedDigest(digestAlgorithmName));
             return this;
         }
 
@@ -173,10 +173,10 @@ namespace iText.SigningExamples.Pkcs11
             MechanismFactory mechanismFactory = new MechanismFactory();
             IMechanism mechanism;
 
-            switch(encryptionAlgorithm)
+            switch(signatureAlgorithmName)
             {
                 case "DSA":
-                    switch(hashAlgorithm)
+                    switch(digestAlgorithmName)
                     {
                         case "SHA1":
                             mechanism = mechanismFactory.Create(CKM.CKM_DSA_SHA1);
@@ -194,11 +194,11 @@ namespace iText.SigningExamples.Pkcs11
                             mechanism = mechanismFactory.Create(CKM.CKM_DSA_SHA512);
                             break;
                         default:
-                            throw new ArgumentException("Not supported: " + hashAlgorithm + "with" + encryptionAlgorithm);
+                            throw new ArgumentException("Not supported: " + digestAlgorithmName + "with" + signatureAlgorithmName);
                     }
                     break;
                 case "ECDSA":
-                    switch (hashAlgorithm)
+                    switch (digestAlgorithmName)
                     {
                         case "SHA1":
                             mechanism = mechanismFactory.Create(CKM.CKM_ECDSA_SHA1);
@@ -216,11 +216,11 @@ namespace iText.SigningExamples.Pkcs11
                             mechanism = mechanismFactory.Create(CKM.CKM_ECDSA_SHA512);
                             break;
                         default:
-                            throw new ArgumentException("Not supported: " + hashAlgorithm + "with" + encryptionAlgorithm);
+                            throw new ArgumentException("Not supported: " + digestAlgorithmName + "with" + signatureAlgorithmName);
                     }
                     break;
                 case "RSA":
-                    switch (hashAlgorithm)
+                    switch (digestAlgorithmName)
                     {
                         case "SHA1":
                             mechanism = mechanismFactory.Create(CKM.CKM_SHA1_RSA_PKCS);
@@ -238,11 +238,11 @@ namespace iText.SigningExamples.Pkcs11
                             mechanism = mechanismFactory.Create(CKM.CKM_SHA512_RSA_PKCS);
                             break;
                         default:
-                            throw new ArgumentException("Not supported: " + hashAlgorithm + "with" + encryptionAlgorithm);
+                            throw new ArgumentException("Not supported: " + digestAlgorithmName + "with" + signatureAlgorithmName);
                     }
                     break;
                 default:
-                    throw new ArgumentException("Not supported: " + hashAlgorithm + "with" + encryptionAlgorithm);
+                    throw new ArgumentException("Not supported: " + digestAlgorithmName + "with" + signatureAlgorithmName);
             }
 
             return session.Sign(mechanism, privateKeyHandle, message);

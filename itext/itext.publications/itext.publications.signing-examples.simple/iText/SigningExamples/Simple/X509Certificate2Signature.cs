@@ -18,55 +18,55 @@ namespace iText.SigningExamples.Simple
         /// </summary>
         private X509Certificate2 certificate;
         /** The hash algorithm. */
-        private string hashAlgorithm;
+        private string digestAlgorithmName;
         /** The encryption algorithm (obtained from the private key) */
-        private string encryptionAlgorithm;
+        private string signatureAlgorithmName;
 
         /// <summary>
         /// Creates a signature using a X509Certificate2. It supports smartcards without 
         /// exportable private keys.
         /// </summary>
         /// <param name="certificate">The certificate with the private key</param>
-        /// <param name="hashAlgorithm">The hash algorithm for the signature. As the Windows CAPI is used
+        /// <param name="digestAlgorithmName">The digest algorithm for the signature. As the Windows CAPI is used
         /// to do the signature the only hash guaranteed to exist is SHA-1</param>
-        public X509Certificate2Signature(X509Certificate2 certificate, string hashAlgorithm)
+        public X509Certificate2Signature(X509Certificate2 certificate, string digestAlgorithmName)
         {
             if (!certificate.HasPrivateKey)
                 throw new ArgumentException("No private key.");
             this.certificate = certificate;
-            this.hashAlgorithm = DigestAlgorithms.GetDigest(DigestAlgorithms.GetAllowedDigest(hashAlgorithm));
+            this.digestAlgorithmName = DigestAlgorithms.GetDigest(DigestAlgorithms.GetAllowedDigest(digestAlgorithmName));
             if (certificate.GetRSAPrivateKey() != null)
-                encryptionAlgorithm = "RSA";
+                signatureAlgorithmName = "RSA";
             else if (certificate.GetDSAPrivateKey() != null)
-                encryptionAlgorithm = "DSA";
+                signatureAlgorithmName = "DSA";
             else if (certificate.GetECDsaPrivateKey() != null)
-                encryptionAlgorithm = "ECDSA";
+                signatureAlgorithmName = "ECDSA";
             else
                 throw new ArgumentException("Unknown encryption algorithm " + certificate.GetKeyAlgorithm());
         }
 
-        public string GetEncryptionAlgorithm()
+        public string GetSignatureAlgorithmName()
         {
-            return encryptionAlgorithm;
+            return signatureAlgorithmName;
         }
 
-        public string GetHashAlgorithm()
+        public string GetDigestAlgorithmName()
         {
-            return hashAlgorithm;
+            return digestAlgorithmName;
         }
 
         public byte[] Sign(byte[] message)
         {
-            switch(encryptionAlgorithm)
+            switch(signatureAlgorithmName)
             {
                 case "RSA":
-                    return certificate.GetRSAPrivateKey().SignData(message, new HashAlgorithmName(hashAlgorithm), RSASignaturePadding.Pkcs1);
+                    return certificate.GetRSAPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName), RSASignaturePadding.Pkcs1);
                 case "DSA":
-                    return PlainToDer(certificate.GetDSAPrivateKey().SignData(message, new HashAlgorithmName(hashAlgorithm)));
+                    return PlainToDer(certificate.GetDSAPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName)));
                 case "ECDSA":
-                    return certificate.GetECDsaPrivateKey().SignData(message, new HashAlgorithmName(hashAlgorithm));
+                    return certificate.GetECDsaPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName));
                 default:
-                    throw new ArgumentException("Unknown encryption algorithm " + encryptionAlgorithm);
+                    throw new ArgumentException("Unknown encryption algorithm " + signatureAlgorithmName);
             }
         }
 

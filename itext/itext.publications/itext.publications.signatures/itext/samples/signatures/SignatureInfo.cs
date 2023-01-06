@@ -14,7 +14,7 @@ namespace iText.Samples.Signatures
 
 		private String digestAlgorithm;
 
-		private String encryptionAlgorithm;
+		private String signatureAlgorithmName;
 
 		private String filterSubtype;
 
@@ -87,14 +87,14 @@ namespace iText.Samples.Signatures
 			return digestAlgorithm;
 		}
 
-		public virtual void SetEncryptionAlgorithm(String encryptionAlgorithm)
+		public virtual void SetSignatureAlgorithmName(String signatureAlgorithmName)
 		{
-			this.encryptionAlgorithm = encryptionAlgorithm;
+			this.signatureAlgorithmName = signatureAlgorithmName;
 		}
 
-		public virtual String GetEncryptionAlgorithm()
+		public virtual String GetSignatureAlgorithmName()
 		{
-			return encryptionAlgorithm;
+			return signatureAlgorithmName;
 		}
 
 		public virtual void SetFilterSubtype(String filterSubtype)

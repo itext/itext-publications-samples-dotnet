@@ -108,18 +108,18 @@ namespace iText.Samples.Signatures.Chapter04
                 try
                 {
                     PrivateKeySignature signature = new PrivateKeySignature(new PrivateKeyBC(pk), "SHA256");
-                    String hashAlgorithm = signature.GetHashAlgorithm();
+                    String digestAlgorithmName = signature.GetDigestAlgorithmName();
 
                     IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
                     for (int i = 0; i < certificateWrappers.Length; ++i) {
                         certificateWrappers[i] = new X509CertificateBC(chain[i]);
                     }
-                    PdfPKCS7 sgn = new PdfPKCS7(null, certificateWrappers, hashAlgorithm, false);
-                    byte[] hash = DigestAlgorithms.Digest(inputStream, hashAlgorithm);
+                    PdfPKCS7 sgn = new PdfPKCS7(null, certificateWrappers, digestAlgorithmName, false);
+                    byte[] hash = DigestAlgorithms.Digest(inputStream, digestAlgorithmName);
                     byte[] sh = sgn.GetAuthenticatedAttributeBytes(hash, PdfSigner.CryptoStandard.CMS,
                         null, null);
                     byte[] extSignature = signature.Sign(sh);
-                    sgn.SetExternalDigest(extSignature, null, signature.GetEncryptionAlgorithm());
+                    sgn.SetExternalSignatureValue(extSignature, null, signature.GetSignatureAlgorithmName());
 
                     return sgn.GetEncodedPKCS7(hash, PdfSigner.CryptoStandard.CMS, null,
                         null, null);

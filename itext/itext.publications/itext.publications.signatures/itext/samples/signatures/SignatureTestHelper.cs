@@ -233,8 +233,8 @@ namespace iText.Samples.Signatures
                 }
 
                 PdfPKCS7 pkcs7 = signUtil.ReadSignatureData(name);
-                sigInfo.SetDigestAlgorithm(pkcs7.GetHashAlgorithm());
-                sigInfo.SetEncryptionAlgorithm(pkcs7.GetEncryptionAlgorithm());
+                sigInfo.SetDigestAlgorithm(pkcs7.GetDigestAlgorithmName());
+                sigInfo.SetSignatureAlgorithmName(pkcs7.GetSignatureAlgorithmName());
                 PdfName filterSubtype = pkcs7.GetFilterSubtype();
                 if (filterSubtype != null)
                 {
@@ -332,11 +332,11 @@ namespace iText.Samples.Signatures
                     AddComparisonError("Digest algorithm", outDigestAlg, cmpDigestAlg);
                 }
 
-                String outEncryptAlg = outSig.GetEncryptionAlgorithm();
-                String cmpEncryptAlg = cmpSig.GetEncryptionAlgorithm();
-                if (CheckIfEqual(outEncryptAlg, cmpEncryptAlg))
+                String outSignatureAlg = outSig.GetSignatureAlgorithmName();
+                String cmpSignatureAlg = cmpSig.GetSignatureAlgorithmName();
+                if (CheckIfEqual(outSignatureAlg, cmpSignatureAlg))
                 {
-                    AddComparisonError("Encryption algorithm", outEncryptAlg, cmpEncryptAlg);
+                    AddComparisonError("Signature algorithm", outSignatureAlg, cmpSignatureAlg);
                 }
 
                 String outLocation = outSig.GetLocation();

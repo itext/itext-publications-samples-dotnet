@@ -151,8 +151,8 @@ namespace iText.Samples.Signatures.Chapter05
              * and how the signed bytes are stored in the PDF
              */
             PdfPKCS7 pkcs7 = VerifySignature(signUtil, name);
-            Console.Out.WriteLine("Digest algorithm: " + pkcs7.GetHashAlgorithm());
-            Console.Out.WriteLine("Encryption algorithm: " + pkcs7.GetEncryptionAlgorithm());
+            Console.Out.WriteLine("Digest algorithm: " + pkcs7.GetDigestAlgorithmName());
+            Console.Out.WriteLine("Encryption algorithm: " + pkcs7.GetSignatureAlgorithmName());
             Console.Out.WriteLine("Filter subtype: " + pkcs7.GetFilterSubtype());
 
             // Get the signing certificate to find out the name of the signer.

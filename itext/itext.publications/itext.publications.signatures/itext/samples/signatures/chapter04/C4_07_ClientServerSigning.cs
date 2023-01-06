@@ -74,12 +74,12 @@ namespace iText.Samples.Signatures.Chapter04
         {
             public static readonly String SIGN = "http://demo.itextsupport.com/SigningApp/signbytes";
 
-            public String GetHashAlgorithm()
+            public String GetDigestAlgorithmName()
             {
                 return DigestAlgorithms.SHA256;
             }
 
-            public String GetEncryptionAlgorithm()
+            public String GetSignatureAlgorithmName()
             {
                 return "RSA";
             }
