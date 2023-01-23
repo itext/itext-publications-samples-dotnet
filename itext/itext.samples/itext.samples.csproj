@@ -53,7 +53,7 @@
     <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.0-SNAPSHOT" Condition="!Exists('..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
     
-    <PackageReference Include="itext.licensing.base" Version="4.0.5-SNAPSHOT" Condition="!Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
+    <PackageReference Include="itext.licensing.base" Version="4.1.0-SNAPSHOT" Condition="!Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
     <ProjectReference Include="..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj" Condition="Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
 
     <PackageReference Include="itext7.pdfcalligraph" Version="4.0.0-SNAPSHOT" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
