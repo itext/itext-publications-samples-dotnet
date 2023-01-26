@@ -70,12 +70,12 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
 
             IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
-            fields["sunday_1_notes"].SetValue("It's Sunday today, let's go to the sea").SetBorderWidth(0);
-            fields["sunday_2_notes"].SetValue("It's Sunday today, let's go to the park").SetBorderWidth(0);
-            fields["sunday_3_notes"].SetValue("It's Sunday today, let's go to the beach").SetBorderWidth(0);
-            fields["sunday_4_notes"].SetValue("It's Sunday today, let's go to the woods").SetBorderWidth(0);
-            fields["sunday_5_notes"].SetValue("It's Sunday today, let's go to the lake").SetBorderWidth(0);
-            fields["sunday_6_notes"].SetValue("It's Sunday today, let's go to the river").SetBorderWidth(0);
+            fields["sunday_1_notes"].SetValue("It's Sunday today, let's go to the sea").GetFirstFormAnnotation().SetBorderWidth(0);
+            fields["sunday_2_notes"].SetValue("It's Sunday today, let's go to the park").GetFirstFormAnnotation().SetBorderWidth(0);
+            fields["sunday_3_notes"].SetValue("It's Sunday today, let's go to the beach").GetFirstFormAnnotation().SetBorderWidth(0);
+            fields["sunday_4_notes"].SetValue("It's Sunday today, let's go to the woods").GetFirstFormAnnotation().SetBorderWidth(0);
+            fields["sunday_5_notes"].SetValue("It's Sunday today, let's go to the lake").GetFirstFormAnnotation().SetBorderWidth(0);
+            fields["sunday_6_notes"].SetValue("It's Sunday today, let's go to the river").GetFirstFormAnnotation().SetBorderWidth(0);
 
             // All fields will be flattened, because no fields have been explicitly included
             form.FlattenFields();

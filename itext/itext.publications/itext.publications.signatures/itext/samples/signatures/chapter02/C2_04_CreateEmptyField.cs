@@ -48,7 +48,7 @@ namespace iText.Samples.Signatures.Chapter02
             // Create a signature form field
             PdfFormField field = new SignatureFormFieldBuilder(pdfDoc, SIGNAME)
                 .SetWidgetRectangle(new Rectangle(72, 632, 200, 100)).CreateSignature();
-            field.SetPage(1);
+            field.GetFirstFormAnnotation().SetPage(1);
 
             // Set the widget properties
             field.GetWidgets()[0].SetHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT).SetFlags(PdfAnnotation.PRINT);

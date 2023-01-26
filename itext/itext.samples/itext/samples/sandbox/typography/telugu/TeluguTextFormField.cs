@@ -58,10 +58,10 @@ namespace iText.Samples.Sandbox.Typography.Telugu
                 .SetWidgetRectangle(new Rectangle(50, 750, 160, 25)).CreateText();
             formField
                 .SetValue(fieldValue)
-                .SetBorderWidth(2)
                 .SetFont(font)
                 .SetFontSize(10)
                 .SetJustification(1);
+            formField.GetFirstFormAnnotation().SetBorderWidth(2);
 
             form.AddField(formField);
 

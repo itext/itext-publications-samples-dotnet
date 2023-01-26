@@ -65,10 +65,10 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
                 .SetWidgetRectangle(new Rectangle(50, 750, 125, 15)).SetOptions(comboText).CreateComboBox();
             formField.SetValue(line1);
             formField
-                    .SetBorderWidth(1)
                     .SetJustification(2)
                     .SetFont(font)
                     .SetFontSizeAutoScale();
+            formField.GetFirstFormAnnotation().SetBorderWidth(1);
 
             form.AddField(formField);
 

@@ -46,11 +46,11 @@ namespace iText.Samples.Sandbox.Acroforms
                 // Create a radio button that is added to a radio group.
                 PdfFormField field = new RadioFormFieldBuilder(pdfDoc)
                     .SetWidgetRectangle(rect).CreateRadioButton(radioGroup, LANGUAGES[page - 1]);
-                field.SetBorderWidth(1);
-                field.SetBorderColor(ColorConstants.BLACK);
+                field.GetFirstFormAnnotation().SetBorderWidth(1);
+                field.GetFirstFormAnnotation().SetBorderColor(ColorConstants.BLACK);
                 
                 // Method specifies on which page the form field's widget must be shown.
-                field.SetPage(page);
+                field.GetFirstFormAnnotation().SetPage(page);
                 doc.ShowTextAligned(new Paragraph(LANGUAGES[page - 1]).SetFont(font).SetFontSize(18),
                     70, 786, page, TextAlignment.LEFT, VerticalAlignment.BOTTOM, 0);
             }

@@ -87,7 +87,7 @@ namespace Tutorial.Chapter04 {
             //Create push button field
             PdfButtonFormField button = new PushButtonFormFieldBuilder(doc.GetPdfDocument(), "reset")
                 .SetWidgetRectangle(new Rectangle(479, 594, 45, 15)).SetCaption("RESET").CreatePushButton();
-            button.SetAction(PdfAction.CreateResetForm(new String[] { "name", "language", "experience1", "experience2"
+            button.GetFirstFormAnnotation().SetAction(PdfAction.CreateResetForm(new String[] { "name", "language", "experience1", "experience2"
                 , "experience3", "shift", "info" }, 0));
             form.AddField(button);
             return form;

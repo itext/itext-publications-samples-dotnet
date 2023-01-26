@@ -44,7 +44,7 @@ namespace Tutorial.Chapter05 {
             checkField.SetRequired(true);
             form.AddField(checkField);
             //Update reset button
-            form.GetField("reset").SetAction(PdfAction.CreateResetForm(new String[] { "name", "language", "experience1"
+            form.GetField("reset").GetFirstFormAnnotation().SetAction(PdfAction.CreateResetForm(new String[] { "name", "language", "experience1"
                 , "experience2", "experience3", "shift", "info", "agreement" }, 0));
             pdfDoc.Close();
         }
