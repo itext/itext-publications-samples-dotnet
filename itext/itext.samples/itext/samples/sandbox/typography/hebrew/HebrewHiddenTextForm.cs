@@ -60,7 +60,7 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
             {
                 PdfFormField field = entry.Value;
                 field.SetValue(text);
-                field.SetFont(font).SetJustification(2);
+                field.SetJustification(2).SetFont(font);
             }
 
             pdfDocument.Close();

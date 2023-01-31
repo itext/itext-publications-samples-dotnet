@@ -49,7 +49,7 @@ namespace iText.Samples.Sandbox.Acroforms
 
             Rectangle rect = new Rectangle(36, 770, 104, 36);
             PdfTextFormField textField = new TextFormFieldBuilder(pdfDoc, "text").SetWidgetRectangle(rect).CreateText();
-            textField.SetFont(font).SetFontSize(20f).SetValue("text");
+            textField.SetValue("text").SetFont(font).SetFontSize(20f);
 
             // Being set as true, the field can contain multiple lines of text;
             // if false, the field's text is restricted to a single line.
