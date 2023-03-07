@@ -135,8 +135,6 @@ namespace iText.Samples
             //TODO DEVSIX-6508 remove unnecessary makeFormField calls
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Acroforms.RemoveXFA");
 
-            // TODO DEVSIX-6319 Radio buttons shall be widgets instead of form fields
-            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Acroforms.RadioGroupMultiPage2");
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }

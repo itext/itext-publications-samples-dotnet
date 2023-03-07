@@ -29,31 +29,32 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
             
             // Radio buttons will be added to this radio group
-            PdfButtonFormField group = new RadioFormFieldBuilder(pdfDoc, "Language").CreateRadioGroup();
+            RadioFormFieldBuilder builder = new RadioFormFieldBuilder(pdfDoc, "Language");
+            PdfButtonFormField group = builder.CreateRadioGroup();
             group.SetValue("");
             
             Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
             Cell cell = new Cell().Add(new Paragraph("English"));
             table.AddCell(cell);
-            
+
             cell = new Cell();
-            
+
             // The renderer creates radio button for the current radio group in the current cell
-            cell.SetNextRenderer(new AddRadioButtonRenderer(cell, group, "english"));
+            cell.SetNextRenderer(new AddRadioButtonRenderer(cell, group, "english", builder));
             table.AddCell(cell);
-            
+
             cell = new Cell().Add(new Paragraph("French"));
             table.AddCell(cell);
-            
+
             cell = new Cell();
-            cell.SetNextRenderer(new AddRadioButtonRenderer(cell, group, "french"));
+            cell.SetNextRenderer(new AddRadioButtonRenderer(cell, group, "french", builder));
             table.AddCell(cell);
-            
+
             cell = new Cell().Add(new Paragraph("Dutch"));
             table.AddCell(cell);
-            
+
             cell = new Cell();
-            cell.SetNextRenderer(new AddRadioButtonRenderer(cell, group, "dutch"));
+            cell.SetNextRenderer(new AddRadioButtonRenderer(cell, group, "dutch", builder));
             table.AddCell(cell);
             
             doc.Add(table);
@@ -67,11 +68,13 @@ namespace iText.Samples.Sandbox.Acroforms
         {
             protected String value;
             protected PdfButtonFormField radioGroup;
+            protected readonly RadioFormFieldBuilder builder;
 
             public AddRadioButtonRenderer(Cell modelElement, PdfButtonFormField radioGroup,
-                String fieldName) : base(modelElement)
+                String fieldName, RadioFormFieldBuilder builder) : base(modelElement)
             {
                 this.radioGroup = radioGroup;
+                this.builder = builder;
                 this.value = fieldName;
             }            
             
@@ -80,14 +83,14 @@ namespace iText.Samples.Sandbox.Acroforms
             // renderer will be created
             public override IRenderer GetNextRenderer()
             {
-                return new AddRadioButtonRenderer((Cell) modelElement, radioGroup, value);
+                return new AddRadioButtonRenderer((Cell) modelElement, radioGroup, value, this.builder);
             }
 
             public override void Draw(DrawContext drawContext)
             {
                 // Create a radio button that is added to a radio group.
-                new RadioFormFieldBuilder(drawContext.GetDocument())
-                    .SetWidgetRectangle(GetOccupiedAreaBBox()).CreateRadioButton(radioGroup, value);
+               radioGroup.AddKid(builder 
+                    .CreateRadioButton( value, GetOccupiedAreaBBox()));
             }
         }
     }

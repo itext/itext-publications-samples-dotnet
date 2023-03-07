@@ -29,7 +29,8 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
 
             // Radio buttons will be added to this radio group
-            PdfButtonFormField radioGroup = new RadioFormFieldBuilder(pdfDoc, "answer").CreateRadioGroup();
+            RadioFormFieldBuilder builder = new RadioFormFieldBuilder(pdfDoc, "answer");
+            PdfButtonFormField radioGroup = builder.CreateRadioGroup();
             radioGroup.SetValue("answer 1");
 
             Table table = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth();
@@ -87,12 +88,13 @@ namespace iText.Samples.Sandbox.Acroforms
                 PdfAcroForm form = PdfAcroForm.GetAcroForm(document, true);
 
                 // Create a radio button that is added to a radio group.
-                PdfFormField field = new RadioFormFieldBuilder(document)
-                    .SetWidgetRectangle(GetOccupiedAreaBBox()).CreateRadioButton(radioGroup, value);
+                PdfFormAnnotation field = new RadioFormFieldBuilder(document, null)
+                    .CreateRadioButton( value, GetOccupiedAreaBBox());
 
+                radioGroup.AddKid(field);
                 // This method merges field with its annotation and place it on the given page.
                 // This method won't work if the field has no or more than one widget annotations.
-                form.AddFieldAppearanceToPage(field, document.GetPage(GetOccupiedArea().GetPageNumber()));
+                 form.AddFieldAppearanceToPage(field.GetParentField(), document.GetPage(GetOccupiedArea().GetPageNumber()));
             }
         }
     }

@@ -51,19 +51,15 @@ namespace Tutorial.Chapter04 {
             nameField.SetValue("");
             form.AddField(nameField);
             //Create radio buttons
-            PdfButtonFormField group = new RadioFormFieldBuilder(doc.GetPdfDocument(), "language").CreateRadioGroup();
+            RadioFormFieldBuilder builder = new RadioFormFieldBuilder(doc.GetPdfDocument(), "language");
+            PdfButtonFormField group = builder.CreateRadioGroup();
             group.SetValue("");
-            new RadioFormFieldBuilder(doc.GetPdfDocument()).SetWidgetRectangle(new Rectangle(130, 728, 15, 15))
-                .CreateRadioButton(group, "English");
-            new RadioFormFieldBuilder(doc.GetPdfDocument()).SetWidgetRectangle(new Rectangle(200, 728, 15, 15))
-                .CreateRadioButton(group, "French");
-            new RadioFormFieldBuilder(doc.GetPdfDocument()).SetWidgetRectangle(new Rectangle(260, 728, 15, 15))
-                .CreateRadioButton(group, "German");
-            new RadioFormFieldBuilder(doc.GetPdfDocument()).SetWidgetRectangle(new Rectangle(330, 728, 15, 15))
-                .CreateRadioButton(group, "Russian");
-            new RadioFormFieldBuilder(doc.GetPdfDocument()).SetWidgetRectangle(new Rectangle(400, 728, 15, 15))
-                .CreateRadioButton(group, "Spanish");
-            form.AddField(group);
+            group.AddKid(builder.CreateRadioButton("English", new Rectangle(130, 728, 15, 15)));
+            group.AddKid(builder.CreateRadioButton("French", new Rectangle(200, 728, 15, 15)));
+            group.AddKid(builder.CreateRadioButton("German", new Rectangle(260, 728, 15, 15)));
+            group.AddKid(builder.CreateRadioButton("Russian", new Rectangle(330, 728, 15, 15)));
+            group.AddKid(builder.CreateRadioButton("Spanish", new Rectangle(400, 728, 15, 15)));
+            form.AddField(group);                                                
             //Create checkboxes
             for (int i = 0; i < 3; i++) {
                 PdfButtonFormField checkField = new CheckBoxFormFieldBuilder(doc.GetPdfDocument(),
