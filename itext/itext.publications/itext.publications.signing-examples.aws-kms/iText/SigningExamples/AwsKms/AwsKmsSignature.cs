@@ -86,8 +86,14 @@ namespace iText.SigningExamples.AwsKms
                 return signResponse.Signature.ToArray();
             }
         }
+        
+        public ISignatureMechanismParams GetSignatureMechanismParameters()
+        {
+            return null;
+        }
 
         string keyId;
         string signingAlgorithm;
     }
+    
 }

@@ -77,5 +77,10 @@ namespace iText.SigningExamples.Simple
             BigInteger s = new BigInteger(1, plain, valueLength, valueLength);
             return new DerSequence(new DerInteger(r), new DerInteger(s)).GetEncoded(Asn1Encodable.Der);
         }
+        
+        public ISignatureMechanismParams GetSignatureMechanismParameters()
+        {
+            return null;
+        }
     }
 }

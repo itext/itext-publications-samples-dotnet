@@ -84,6 +84,11 @@ namespace iText.Samples.Signatures.Chapter04
                 return "RSA";
             }
 
+            public ISignatureMechanismParams GetSignatureMechanismParameters()
+            {
+                return null;
+            }
+
             public byte[] Sign(byte[] message)
             {
                 try

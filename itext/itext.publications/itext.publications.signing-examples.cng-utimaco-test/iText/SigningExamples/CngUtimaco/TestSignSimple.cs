@@ -136,6 +136,11 @@ namespace iText.SigningExamples.CngUtimaco
             return "ECDSA";
         }
 
+        public ISignatureMechanismParams GetSignatureMechanismParameters()
+        {
+            return null;
+        }
+
         public string GetDigestAlgorithmName()
         {
             return "SHA512";

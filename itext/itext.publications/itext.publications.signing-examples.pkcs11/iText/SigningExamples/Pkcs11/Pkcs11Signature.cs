@@ -247,5 +247,10 @@ namespace iText.SigningExamples.Pkcs11
 
             return session.Sign(mechanism, privateKeyHandle, message);
         }
+        
+        public ISignatureMechanismParams GetSignatureMechanismParameters()
+        {
+            return null;
+        }
     }
 }
