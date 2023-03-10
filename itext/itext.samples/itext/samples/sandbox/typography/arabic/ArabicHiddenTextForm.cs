@@ -7,6 +7,7 @@ using iText.Forms.Fields;
 using iText.IO.Font;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
+using iText.Layout.Properties;
 using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
@@ -59,7 +60,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
             {
                 PdfFormField field = entry.Value;
                 field.SetValue(text);
-                field.SetJustification(2).SetFont(font);
+                field.SetJustification(HorizontalAlignment.RIGHT).SetFont(font);
             }
 
             pdfDocument.Close();

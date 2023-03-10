@@ -8,6 +8,7 @@ using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
+using iText.Layout.Properties;
 using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Thai
@@ -57,7 +58,7 @@ namespace iText.Samples.Sandbox.Typography.Thai
                 .SetWidgetRectangle(new Rectangle(50, 750, 60, 25)).CreateText();
             formField
                 .SetValue(fieldValue)
-                .SetJustification(1)
+                .SetJustification(HorizontalAlignment.CENTER)
                 .SetFont(font)
                 .SetFontSize(10);
             formField.GetFirstFormAnnotation().SetBorderWidth(2);

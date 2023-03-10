@@ -104,7 +104,7 @@ namespace iText.Samples.Sandbox.Acroforms
                 choice.GetWidgets()[0].SetBorderStyle(PdfAnnotation.STYLE_BEVELED);
                 choice.GetFirstFormAnnotation().SetVisibility(PdfFormAnnotation.VISIBLE_BUT_DOES_NOT_PRINT);
                 choice.GetFirstFormAnnotation().SetBorderColor(ColorConstants.GRAY);
-                choice.SetJustification(PdfFormField.ALIGN_CENTER);
+                choice.SetJustification(HorizontalAlignment.CENTER);
                 form.AddField(choice);
             }
         }

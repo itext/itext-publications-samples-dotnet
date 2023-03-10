@@ -8,6 +8,7 @@ using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
+using iText.Layout.Properties;
 using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
@@ -58,7 +59,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
                 .SetWidgetRectangle(new Rectangle(50, 750, 100, 25)).SetOptions(comboText).CreateComboBox();
             formField.SetValue(line1);
             formField
-                    .SetJustification(2)
+                    .SetJustification(HorizontalAlignment.RIGHT)
                     .SetFont(font)
                     .SetFontSizeAutoScale();
             formField.GetFirstFormAnnotation().SetBorderWidth(1);

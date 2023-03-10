@@ -8,6 +8,7 @@ using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
+using iText.Layout.Properties;
 using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
@@ -64,7 +65,7 @@ namespace iText.Samples.Sandbox.Typography.Gurmukhi
                 .SetWidgetRectangle(new Rectangle(50, 750, 150, 15)).SetOptions(comboText).CreateComboBox();
             formField.SetValue(line1);
             formField
-                    .SetJustification(1)
+                    .SetJustification(HorizontalAlignment.CENTER)
                     .SetFont(font)
                     .SetFontSizeAutoScale();
             formField.GetFirstFormAnnotation().SetBorderWidth(1);

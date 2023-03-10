@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
+using iText.Forms.Fields.Properties;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Action;
@@ -65,7 +66,7 @@ namespace Tutorial.Chapter04 {
                 PdfButtonFormField checkField = new CheckBoxFormFieldBuilder(doc.GetPdfDocument(),
                     String.Concat("experience", (i + 1).ToString()))
                     .SetWidgetRectangle(new Rectangle(119 + i * 69, 701, 15, 15))
-                    .SetCheckType(PdfFormField.TYPE_CHECK).CreateCheckBox();
+                    .SetCheckType(CheckBoxType.CHECK).CreateCheckBox();
                 checkField.SetValue("Off");
                 form.AddField(checkField);
             }
