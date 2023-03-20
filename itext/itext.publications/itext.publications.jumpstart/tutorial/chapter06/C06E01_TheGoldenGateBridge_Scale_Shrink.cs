@@ -32,7 +32,7 @@ namespace Tutorial.Chapter06 {
                 .GetWidth(), page.GetPageSize().GetHeight() / orig.GetHeight());
             canvas.ConcatMatrix(transformationMatrix);
             PdfFormXObject pageCopy = origPage.CopyAsFormXObject(pdf);
-            canvas.AddXObject(pageCopy, 0, 0);
+            canvas.AddXObjectAt(pageCopy, 0, 0);
             //Add page with original size
             pdf.AddPage(origPage.CopyTo(pdf));
             //Add A2 page
@@ -42,7 +42,7 @@ namespace Tutorial.Chapter06 {
             transformationMatrix = AffineTransform.GetScaleInstance(page.GetPageSize().GetWidth() / orig.GetWidth(), page
                 .GetPageSize().GetHeight() / orig.GetHeight());
             canvas.ConcatMatrix(transformationMatrix);
-            canvas.AddXObject(pageCopy, 0, 0);
+            canvas.AddXObjectAt(pageCopy, 0, 0);
             pdf.Close();
             origPdf.Close();
         }

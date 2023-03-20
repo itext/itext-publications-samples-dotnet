@@ -105,7 +105,7 @@ namespace iText.Highlevel.Chapter07 {
                 iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, pageSize);
                 Paragraph p = new Paragraph().Add("Page ").Add(pageNumber.ToString()).Add(" of");
                 canvas.ShowTextAligned(p, this.x, this.y, TextAlignment.RIGHT);
-                pdfCanvas.AddXObject(this.placeholder, this.x + this.space, this.y - this.descent);
+                pdfCanvas.AddXObjectAt(this.placeholder, this.x + this.space, this.y - this.descent);
                 pdfCanvas.Release();
             }
 

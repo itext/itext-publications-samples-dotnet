@@ -35,10 +35,10 @@ namespace Tutorial.Chapter06 {
                 () / 2f, nUpPageSize.GetHeight() / orig.GetHeight() / 2f);
             canvas.ConcatMatrix(transformationMatrix);
             //Add pages to N-up page
-            canvas.AddXObject(pageCopy, 0, orig.GetHeight());
-            canvas.AddXObject(pageCopy, orig.GetWidth(), orig.GetHeight());
-            canvas.AddXObject(pageCopy, 0, 0);
-            canvas.AddXObject(pageCopy, orig.GetWidth(), 0);
+            canvas.AddXObjectAt(pageCopy, 0, orig.GetHeight());
+            canvas.AddXObjectAt(pageCopy, orig.GetWidth(), orig.GetHeight());
+            canvas.AddXObjectAt(pageCopy, 0, 0);
+            canvas.AddXObjectAt(pageCopy, orig.GetWidth(), 0);
             pdf.Close();
             sourcePdf.Close();
         }

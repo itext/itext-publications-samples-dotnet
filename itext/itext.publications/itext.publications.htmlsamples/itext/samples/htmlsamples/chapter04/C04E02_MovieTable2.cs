@@ -132,7 +132,7 @@ namespace iText.Samples.Htmlsamples.Chapter04
                 PdfDocument pdf = docEvent.GetDocument();
                 PdfPage page = docEvent.GetPage();
                 PdfCanvas pdfCanvas = new PdfCanvas(page.NewContentStreamBefore(), page.GetResources(), pdf);
-                pdfCanvas.AddXObject(stationery, 0, 0);
+                pdfCanvas.AddXObjectAt(stationery, 0, 0);
                 Rectangle rect = new Rectangle(36, 32, 36, 64);
                 Canvas canvas = new Canvas(pdfCanvas, rect);
                 canvas.Add(new Paragraph((pdf.GetNumberOfPages().ToString())).SetFontSize(48)

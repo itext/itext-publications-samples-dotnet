@@ -35,22 +35,22 @@ namespace Tutorial.Chapter06 {
             PdfPage page = pdf.AddNewPage(PageSize.A4.Rotate());
             PdfCanvas canvas = new PdfCanvas(page);
             canvas.ConcatMatrix(transformationMatrix);
-            canvas.AddXObject(pageCopy, 0, -orig.GetHeight() / 2f);
+            canvas.AddXObjectAt(pageCopy, 0, -orig.GetHeight() / 2f);
             //The second tile
             page = pdf.AddNewPage(PageSize.A4.Rotate());
             canvas = new PdfCanvas(page);
             canvas.ConcatMatrix(transformationMatrix);
-            canvas.AddXObject(pageCopy, -orig.GetWidth() / 2f, -orig.GetHeight() / 2f);
+            canvas.AddXObjectAt(pageCopy, -orig.GetWidth() / 2f, -orig.GetHeight() / 2f);
             //The third tile
             page = pdf.AddNewPage(PageSize.A4.Rotate());
             canvas = new PdfCanvas(page);
             canvas.ConcatMatrix(transformationMatrix);
-            canvas.AddXObject(pageCopy, 0, 0);
+            canvas.AddXObjectAt(pageCopy, 0, 0);
             //The fourth tile
             page = pdf.AddNewPage(PageSize.A4.Rotate());
             canvas = new PdfCanvas(page);
             canvas.ConcatMatrix(transformationMatrix);
-            canvas.AddXObject(pageCopy, -orig.GetWidth() / 2f, 0);
+            canvas.AddXObjectAt(pageCopy, -orig.GetWidth() / 2f, 0);
             pdf.Close();
             sourcePdf.Close();
         }
