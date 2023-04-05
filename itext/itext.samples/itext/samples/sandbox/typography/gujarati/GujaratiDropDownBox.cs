@@ -65,7 +65,7 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
                 .SetWidgetRectangle(new Rectangle(50, 750,50, 15)).SetOptions(comboText).CreateComboBox();
             formField.SetValue(line1);
             formField
-                    .SetJustification(HorizontalAlignment.CENTER)
+                    .SetJustification(TextAlignment.CENTER)
                     .SetFont(font)
                     .SetFontSizeAutoScale();
             formField.GetFirstFormAnnotation().SetBorderWidth(1);

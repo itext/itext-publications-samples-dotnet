@@ -60,7 +60,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
             {
                 PdfFormField field = entry.Value;
                 field.SetValue(text);
-                field.SetJustification(HorizontalAlignment.RIGHT).SetFont(font);
+                field.SetJustification(TextAlignment.RIGHT).SetFont(font);
             }
 
             pdfDocument.Close();

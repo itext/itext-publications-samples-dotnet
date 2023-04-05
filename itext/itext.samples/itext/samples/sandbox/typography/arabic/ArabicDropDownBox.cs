@@ -59,7 +59,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
                 .SetWidgetRectangle(new Rectangle(50, 750, 100, 25)).SetOptions(comboText).CreateComboBox();
             formField.SetValue(line1);
             formField
-                    .SetJustification(HorizontalAlignment.RIGHT)
+                    .SetJustification(TextAlignment.RIGHT)
                     .SetFont(font)
                     .SetFontSizeAutoScale();
             formField.GetFirstFormAnnotation().SetBorderWidth(1);

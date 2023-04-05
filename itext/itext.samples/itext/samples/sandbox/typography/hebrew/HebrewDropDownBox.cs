@@ -66,7 +66,7 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
                 .SetWidgetRectangle(new Rectangle(50, 750, 125, 15)).SetOptions(comboText).CreateComboBox();
             formField.SetValue(line1);
             formField
-                    .SetJustification(HorizontalAlignment.RIGHT)
+                    .SetJustification(TextAlignment.RIGHT)
                     .SetFont(font)
                     .SetFontSizeAutoScale();
             formField.GetFirstFormAnnotation().SetBorderWidth(1);

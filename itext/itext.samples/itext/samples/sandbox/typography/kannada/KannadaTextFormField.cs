@@ -58,7 +58,7 @@ namespace iText.Samples.Sandbox.Typography.Kannada
                 .SetWidgetRectangle(new Rectangle(50, 750, 80, 25)).CreateText();
             formField
                 .SetValue(filedValue)
-                .SetJustification(HorizontalAlignment.CENTER)
+                .SetJustification(TextAlignment.CENTER)
                 .SetFont(font)
                 .SetFontSize(10);
             formField.GetFirstFormAnnotation().SetBorderWidth(2);

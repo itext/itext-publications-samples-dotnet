@@ -58,7 +58,7 @@ namespace iText.Samples.Sandbox.Typography.Tamil
                 .SetWidgetRectangle(new Rectangle(50, 750, 100, 25)).CreateText();
             formField
                 .SetValue(fieldValue)
-                .SetJustification(HorizontalAlignment.CENTER)
+                .SetJustification(TextAlignment.CENTER)
                 .SetFont(font)
                 .SetFontSize(10);
             formField.GetFirstFormAnnotation().SetBorderWidth(2);
