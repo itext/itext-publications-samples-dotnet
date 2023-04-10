@@ -76,21 +76,21 @@ namespace iText.Samples.Sandbox.Acroforms
             rect = new Rectangle(148, 770, 108, 36);
             PdfTextFormField textField2 = new TextFormFieldBuilder(pdfDoc, "text2")
                 .SetWidgetRectangle(rect).CreateText();
-            textField1.SetValue("text2").SetFont(font).SetFontSize(18f);
+            textField2.SetValue("text2").SetFont(font).SetFontSize(18f);
             textField2.SetMultiline(true);
             form.AddField(textField2);
 
             rect = new Rectangle(36, 724, 108, 36);
             PdfTextFormField textField3 = new TextFormFieldBuilder(pdfDoc, "text3")
                 .SetWidgetRectangle(rect).CreateText();
-            textField1.SetValue("text3").SetFont(font).SetFontSize(18f);
+            textField3.SetValue("text3").SetFont(font).SetFontSize(18f);
             textField3.SetMultiline(true);
             form.AddField(textField3);
 
             rect = new Rectangle(148, 727, 108, 33);
             PdfTextFormField textField4 = new TextFormFieldBuilder(pdfDoc, "text4")
                 .SetWidgetRectangle(rect).CreateText();
-            textField1.SetValue("text4").SetFont(font).SetFontSize(18f);
+            textField4.SetValue("text4").SetFont(font).SetFontSize(18f);
             textField4.SetMultiline(true);
             form.AddField(textField4);
 
