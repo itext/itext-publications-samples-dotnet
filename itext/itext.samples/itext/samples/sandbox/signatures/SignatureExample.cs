@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Bouncycastle.Crypto;

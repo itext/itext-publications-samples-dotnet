@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Net;
 using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel;
 using iText.Kernel.Exceptions;

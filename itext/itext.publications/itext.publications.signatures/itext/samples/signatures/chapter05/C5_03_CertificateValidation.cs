@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
 using iText.Commons;
 using iText.Commons.Bouncycastle.Asn1.Ocsp;
 using iText.Commons.Bouncycastle.Cert;
@@ -171,7 +172,7 @@ namespace iText.Samples.Signatures.Chapter05
         private static void CheckRevocation(PdfPKCS7 pkcs7, IX509Certificate signCert, IX509Certificate issuerCert,
             DateTime date)
         {
-            IList<IBasicOCSPResponse> ocsps = new List<IBasicOCSPResponse>();
+            IList<IBasicOcspResponse> ocsps = new List<IBasicOcspResponse>();
             if (pkcs7.GetOcsp() != null)
             {
                 ocsps.Add(pkcs7.GetOcsp());

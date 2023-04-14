@@ -10,6 +10,7 @@ using static iText.Signatures.PdfSigner;
 using iText.SigningExamples.Simple;
 using System.Security.Cryptography.Pkcs;
 using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
 using iText.Commons.Bouncycastle.Cert;
 
 namespace iText.SigningExamples.CngUtimaco

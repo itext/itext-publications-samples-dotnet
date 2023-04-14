@@ -52,7 +52,7 @@ namespace iText.Samples.Signatures.Chapter01
                                                         "Is the password 'secret'? False\n";
 
         protected byte[] digest;
-        protected IIDigest messageDigest;
+        protected IDigest messageDigest;
 
         protected C1_02_DigestBC(String password, String algorithm)
         {

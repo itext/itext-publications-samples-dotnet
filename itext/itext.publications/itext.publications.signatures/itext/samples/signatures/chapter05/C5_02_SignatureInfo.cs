@@ -179,7 +179,7 @@ namespace iText.Samples.Signatures.Chapter05
             {
                 Console.Out.WriteLine("TimeStamp: " +
                                       pkcs7.GetTimeStampDate().ToUniversalTime().ToString("yyyy-MM-dd"));
-                TSTInfoBC ts = (TSTInfoBC)pkcs7.GetTimeStampTokenInfo();
+                TstInfoBC ts = (TstInfoBC)pkcs7.GetTimeStampTokenInfo();
                 Console.Out.WriteLine("TimeStamp service: " + ts.GetTstInfo().Tsa);
                 Console.Out.WriteLine("Timestamp verified? " + pkcs7.VerifyTimestampImprint());
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
 using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Geom;
 using iText.Samples.Signatures.Chapter04;

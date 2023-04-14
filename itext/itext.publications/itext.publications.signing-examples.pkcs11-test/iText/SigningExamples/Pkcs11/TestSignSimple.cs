@@ -4,6 +4,7 @@ using NUnit.Framework;
 using System;
 using System.IO;
 using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
 using iText.Commons.Bouncycastle.Cert;
 using static iText.Signatures.PdfSigner;
 

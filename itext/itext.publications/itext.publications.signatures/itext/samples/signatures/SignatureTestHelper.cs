@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using iText.Bouncycastle.Asn1.Tsp;
 using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
 using iText.Commons.Bouncycastle.Asn1.Ocsp;
 using iText.Commons.Bouncycastle.Asn1.Tsp;
 using iText.Commons.Bouncycastle.Cert;
@@ -174,7 +175,7 @@ namespace iText.Samples.Signatures
         private void CheckRevocation(PdfPKCS7 pkcs7, IX509Certificate signCert, IX509Certificate issuerCert, 
             DateTime date)
         {
-            IList<IBasicOCSPResponse> ocsps = new List<IBasicOCSPResponse>();
+            IList<IBasicOcspResponse> ocsps = new List<IBasicOcspResponse>();
             if (pkcs7.GetOcsp() != null)
             {
                 ocsps.Add(pkcs7.GetOcsp());
@@ -248,8 +249,8 @@ namespace iText.Samples.Signatures
 		        if (TimestampConstants.UNDEFINED_TIMESTAMP_DATE != pkcs7.GetTimeStampDate())
                 {
                     sigInfo.SetTimeStamp(pkcs7.GetTimeStampDate().ToUniversalTime());
-                    ITSTInfo ts = pkcs7.GetTimeStampTokenInfo();
-                    sigInfo.SetTimeStampService(((TSTInfoBC)ts).GetTstInfo().Tsa.ToString());
+                    ITstInfo ts = pkcs7.GetTimeStampTokenInfo();
+                    sigInfo.SetTimeStampService(((TstInfoBC)ts).GetTstInfo().Tsa.ToString());
                 }
 
                 sigInfo.SetLocation(pkcs7.GetLocation());

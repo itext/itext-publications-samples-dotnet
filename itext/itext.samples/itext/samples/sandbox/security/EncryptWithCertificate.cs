@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
 using iText.Kernel.Pdf;
 using Org.BouncyCastle.X509;
 

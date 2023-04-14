@@ -3,6 +3,7 @@ using iText.Signatures;
 using NUnit.Framework;
 using Org.BouncyCastle.Asn1.X509;
 using Org.BouncyCastle.X509;
+using iText.Bouncycastle.X509;
 using System;
 using System.IO;
 using System.Security.Cryptography;
