@@ -8,6 +8,7 @@ using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
+using iText.Layout.Properties;
 using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
@@ -54,13 +55,14 @@ namespace iText.Samples.Sandbox.Typography.Arabic
             String[] comboText = new String[] {line1, line1, line1};
 
             // Create a form field and apply the properties on it
-            PdfFormField formField = PdfTextFormField.CreateComboBox(document.GetPdfDocument(), new Rectangle(50, 750,
-                    100, 25), "test", line1, comboText);
+            PdfFormField formField = new ChoiceFormFieldBuilder(document.GetPdfDocument(), "test")
+                .SetWidgetRectangle(new Rectangle(50, 750, 100, 25)).SetOptions(comboText).CreateComboBox();
+            formField.SetValue(line1);
             formField
-                    .SetBorderWidth(1)
-                    .SetJustification(2)
+                    .SetJustification(TextAlignment.RIGHT)
                     .SetFont(font)
                     .SetFontSizeAutoScale();
+            formField.GetFirstFormAnnotation().SetBorderWidth(1);
 
             form.AddField(formField);
 

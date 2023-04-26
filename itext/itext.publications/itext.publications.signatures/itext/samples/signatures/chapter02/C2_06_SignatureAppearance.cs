@@ -1,5 +1,9 @@
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
 using iText.IO.Font;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
@@ -54,10 +58,14 @@ namespace iText.Samples.Signatures.Chapter02
             appearance.SetLayer2Text("This document was signed by Bruno Specimen");
             appearance.SetLayer2Font(PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN));
 
-            IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
+            IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
             // Sign the document using the detached mode, CMS or CAdES equivalent.
-            signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
         public void Sign2(String src, String name, String dest, X509Certificate[] chain,
@@ -83,8 +91,12 @@ namespace iText.Samples.Signatures.Chapter02
             text.SetBaseDirection(BaseDirection.RIGHT_TO_LEFT);
             new Canvas(n2, signer.GetDocument()).Add(new Paragraph(text).SetTextAlignment(TextAlignment.RIGHT));
 
-            IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
-            signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
+            IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
         public void Sign3(String src, String name, String dest, X509Certificate[] chain,
@@ -104,8 +116,12 @@ namespace iText.Samples.Signatures.Chapter02
             appearance.SetImage(ImageDataFactory.Create(IMG));
             appearance.SetImageScale(1);
 
-            PrivateKeySignature pks = new PrivateKeySignature(pk, digestAlgorithm);
-            signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
+            PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
         public void Sign4(String src, String name, String dest, X509Certificate[] chain,
@@ -125,8 +141,12 @@ namespace iText.Samples.Signatures.Chapter02
             appearance.SetImage(ImageDataFactory.Create(IMG));
             appearance.SetImageScale(-1);
 
-            PrivateKeySignature pks = new PrivateKeySignature(pk, digestAlgorithm);
-            signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
+            PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
         public static void Main(String[] args)

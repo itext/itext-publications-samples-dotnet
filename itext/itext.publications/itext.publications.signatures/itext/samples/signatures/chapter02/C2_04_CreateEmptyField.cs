@@ -1,5 +1,9 @@
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.Forms;
@@ -43,10 +47,9 @@ namespace iText.Samples.Signatures.Chapter02
             doc.Add(new Paragraph("Hello World!"));
 
             // Create a signature form field
-            PdfFormField field = PdfFormField.CreateSignature(pdfDoc,
-                new Rectangle(72, 632, 200, 100));
-            field.SetFieldName(SIGNAME);
-            field.SetPage(1);
+            PdfFormField field = new SignatureFormFieldBuilder(pdfDoc, SIGNAME)
+                .SetWidgetRectangle(new Rectangle(72, 632, 200, 100)).CreateSignature();
+            field.GetFirstFormAnnotation().SetPage(1);
 
             // Set the widget properties
             field.GetWidgets()[0].SetHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT).SetFlags(PdfAnnotation.PRINT);
@@ -96,9 +99,8 @@ namespace iText.Samples.Signatures.Chapter02
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
 
             // Create a signature form field
-            PdfSignatureFormField field = PdfFormField.CreateSignature(pdfDoc,
-                new Rectangle(72, 632, 200, 100));
-            field.SetFieldName(SIGNAME);
+            PdfSignatureFormField field = new SignatureFormFieldBuilder(pdfDoc, SIGNAME)
+                .SetWidgetRectangle(new Rectangle(72, 632, 200, 100)).CreateSignature();
 
             field.GetWidgets()[0].SetHighlightMode(PdfAnnotation.HIGHLIGHT_OUTLINE).SetFlags(PdfAnnotation.PRINT);
 
@@ -120,10 +122,14 @@ namespace iText.Samples.Signatures.Chapter02
                 .SetLocation(location);
             signer.SetFieldName(name);
 
-            IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
+            IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
             // Sign the document using the detached mode, CMS or CAdES equivalent.
-            signer.SignDetached(pks, chain, null, null, null, 0, subfilter);
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
         public static void Main(String[] args)

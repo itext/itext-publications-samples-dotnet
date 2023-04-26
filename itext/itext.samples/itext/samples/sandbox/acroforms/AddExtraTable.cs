@@ -32,7 +32,7 @@ namespace iText.Samples.Sandbox.Acroforms
             Document doc = new Document(pdfDoc);
 
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
-            IDictionary<String, PdfFormField> fields = form.GetFormFields();
+            IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             fields["Name"].SetValue("Jeniffer");
             fields["Company"].SetValue("iText's next customer");
             fields["Country"].SetValue("No Man's Land");

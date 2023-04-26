@@ -47,7 +47,7 @@ namespace Tutorial.Chapter06 {
                     //Read fields
                     PdfAcroForm form = PdfAcroForm.GetAcroForm(sourcePdfDocument, true);
                     StringTokenizer tokenizer = new StringTokenizer(line, ";");
-                    IDictionary<String, PdfFormField> fields = form.GetFormFields();
+                    IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
                     //Fill out fields
                     PdfFormField toSet;
                     fields.TryGetValue("name", out toSet);

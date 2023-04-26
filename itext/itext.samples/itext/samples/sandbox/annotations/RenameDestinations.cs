@@ -25,17 +25,17 @@ namespace iText.Samples.Sandbox.Annotations
             Dictionary<String, PdfString> renamed = new Dictionary<String, PdfString>();
 
             PdfNameTree nameTree = pdfDoc.GetCatalog().GetNameTree(PdfName.Dests);
-            IDictionary<String, PdfObject> names = nameTree.GetNames();
-            List<String> keys = new List<string>(names.Keys);
+            IDictionary<PdfString, PdfObject> names = nameTree.GetNames();
 
             // Loop over all named destinations and rename its string values with new names
-            foreach (String key in keys)
+            foreach (PdfString key in nameTree.GetKeys())
             {
-                String newName = "new" + key;
-                
+                String oldName = key.ToUnicodeString();
+                PdfString newName = new PdfString("new" + oldName);
+
                 names.Add(newName, names[key]);
                 names.Remove(key);
-                renamed.Add(key, new PdfString(newName));
+                renamed.Add(oldName, newName);
             }
 
             // Specify that the name tree has been modified

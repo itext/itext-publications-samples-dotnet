@@ -8,6 +8,7 @@ using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
+using iText.Layout.Properties;
 using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
@@ -53,15 +54,14 @@ namespace iText.Samples.Sandbox.Typography.Gurmukhi
             font.SetSubset(false);
 
             // Create a form field and set some of the properties
-            PdfFormField formField = PdfTextFormField.CreateText(document.GetPdfDocument(),
-                    new Rectangle(50, 750, 160, 25));
+            PdfFormField formField = new TextFormFieldBuilder(document.GetPdfDocument(), fieldName)
+                .SetWidgetRectangle(new Rectangle(50, 750, 160, 25)).CreateText();
             formField
-                    .SetValue(fieldValue)
-                    .SetBorderWidth(2)
-                    .SetFont(font)
-                    .SetFontSize(10)
-                    .SetJustification(1)
-                    .SetFieldName(fieldName);
+                .SetValue(fieldValue)
+                .SetJustification(TextAlignment.CENTER)
+                .SetFont(font)
+                .SetFontSize(10);
+            formField.GetFirstFormAnnotation().SetBorderWidth(2);
 
             form.AddField(formField);
 

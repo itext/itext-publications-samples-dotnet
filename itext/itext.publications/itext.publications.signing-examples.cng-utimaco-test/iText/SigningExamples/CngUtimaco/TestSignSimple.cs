@@ -9,6 +9,9 @@ using System.Security.Cryptography.X509Certificates;
 using static iText.Signatures.PdfSigner;
 using iText.SigningExamples.Simple;
 using System.Security.Cryptography.Pkcs;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
+using iText.Commons.Bouncycastle.Cert;
 
 namespace iText.SigningExamples.CngUtimaco
 {
@@ -53,8 +56,12 @@ namespace iText.SigningExamples.CngUtimaco
             {
                 PdfSigner pdfSigner = new PdfSigner(pdfReader, result, new StampingProperties().UseAppendMode());
                 X509Certificate2ECDsaSignature signature = new X509Certificate2ECDsaSignature(certificate);
+                IX509Certificate[] certificateWrappers = new IX509Certificate[signature.GetChain().Length];
+                for (int i = 0; i < certificateWrappers.Length; ++i) {
+                    certificateWrappers[i] = new X509CertificateBC(signature.GetChain()[i]);
+                }
 
-                pdfSigner.SignDetached(signature, signature.GetChain(), null, null, null, 0, CryptoStandard.CMS);
+                pdfSigner.SignDetached(signature, certificateWrappers, null, null, null, 0, CryptoStandard.CMS);
             }
         }
 
@@ -72,7 +79,7 @@ namespace iText.SigningExamples.CngUtimaco
             }
 
             BcX509.X509Certificate bcCertificate = new BcX509.X509Certificate(X509CertificateStructure.GetInstance(certificate.RawData));
-            BcX509.X509Certificate[] chain = { bcCertificate };
+            IX509Certificate[] chain = { new X509CertificateBC(bcCertificate) };
 
             using (PdfReader pdfReader = new PdfReader(testFileName))
             using (FileStream result = File.Create("circles-cng-signed-simple-generic.pdf"))
@@ -125,12 +132,17 @@ namespace iText.SigningExamples.CngUtimaco
             return new Org.BouncyCastle.X509.X509Certificate[] { bcCertificate };
         }
 
-        public string GetEncryptionAlgorithm()
+        public string GetSignatureAlgorithmName()
         {
             return "ECDSA";
         }
 
-        public string GetHashAlgorithm()
+        public ISignatureMechanismParams GetSignatureMechanismParameters()
+        {
+            return null;
+        }
+
+        public string GetDigestAlgorithmName()
         {
             return "SHA512";
         }

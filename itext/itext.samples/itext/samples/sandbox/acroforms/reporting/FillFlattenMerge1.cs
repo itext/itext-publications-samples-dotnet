@@ -62,7 +62,7 @@ namespace iText.Samples.Sandbox.Acroforms.Reporting
         public void FillAndFlattenForm(String line, PdfAcroForm form)
         {
             StringTokenizer tokenizer = new StringTokenizer(line, ";");
-            IDictionary<String, PdfFormField> fields = form.GetFormFields();
+            IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
 
             fields["name"].SetValue(tokenizer.NextToken());
             fields["abbr"].SetValue(tokenizer.NextToken());

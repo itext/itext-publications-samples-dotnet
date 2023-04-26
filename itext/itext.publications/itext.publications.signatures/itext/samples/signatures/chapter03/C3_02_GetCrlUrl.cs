@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
 using iText.Commons.Utils;
 using Org.BouncyCastle.X509;
 using iText.Signatures;
@@ -38,7 +40,7 @@ namespace iText.Samples.Signatures.Chapter03
             {
                 X509Certificate cert = chain[i];
                 Console.WriteLine("[{0}] {1}", i, cert.SubjectDN);
-                Console.WriteLine(CertificateUtil.GetCRLURL(cert));
+                Console.WriteLine(CertificateUtil.GetCRLURL(new X509CertificateBC(cert)));
             }
         }
     }

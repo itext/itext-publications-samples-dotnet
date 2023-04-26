@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Org.BouncyCastle.Tsp;
-using Org.BouncyCastle.X509;
+using iText.Bouncycastle.Asn1.Tsp;
+using iText.Commons.Bouncycastle.Cert;
 using iText.Forms;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -151,12 +151,12 @@ namespace iText.Samples.Signatures.Chapter05
              * and how the signed bytes are stored in the PDF
              */
             PdfPKCS7 pkcs7 = VerifySignature(signUtil, name);
-            Console.Out.WriteLine("Digest algorithm: " + pkcs7.GetHashAlgorithm());
-            Console.Out.WriteLine("Encryption algorithm: " + pkcs7.GetEncryptionAlgorithm());
+            Console.Out.WriteLine("Digest algorithm: " + pkcs7.GetDigestAlgorithmName());
+            Console.Out.WriteLine("Encryption algorithm: " + pkcs7.GetSignatureAlgorithmName());
             Console.Out.WriteLine("Filter subtype: " + pkcs7.GetFilterSubtype());
 
             // Get the signing certificate to find out the name of the signer.
-            X509Certificate cert = (X509Certificate) pkcs7.GetSigningCertificate();
+            IX509Certificate cert = pkcs7.GetSigningCertificate();
             Console.Out.WriteLine("Name of the signer: "
                                   + iText.Signatures.CertificateInfo.GetSubjectFields(cert).GetField("CN"));
             if (pkcs7.GetSignName() != null)
@@ -179,8 +179,8 @@ namespace iText.Samples.Signatures.Chapter05
             {
                 Console.Out.WriteLine("TimeStamp: " +
                                       pkcs7.GetTimeStampDate().ToUniversalTime().ToString("yyyy-MM-dd"));
-                TimeStampToken ts = pkcs7.GetTimeStampToken();
-                Console.Out.WriteLine("TimeStamp service: " + ts.TimeStampInfo.Tsa);
+                TstInfoBC ts = (TstInfoBC)pkcs7.GetTimeStampTokenInfo();
+                Console.Out.WriteLine("TimeStamp service: " + ts.GetTstInfo().Tsa);
                 Console.Out.WriteLine("Timestamp verified? " + pkcs7.VerifyTimestampImprint());
             }
 

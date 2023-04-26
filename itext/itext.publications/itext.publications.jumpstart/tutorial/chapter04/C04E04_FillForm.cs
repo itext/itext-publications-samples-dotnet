@@ -22,7 +22,7 @@ namespace Tutorial.Chapter04 {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdf, true);
-            IDictionary<String, PdfFormField> fields = form.GetFormFields();
+            IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             PdfFormField toSet;
             fields.TryGetValue("name", out toSet);
             toSet.SetValue("James Bond");

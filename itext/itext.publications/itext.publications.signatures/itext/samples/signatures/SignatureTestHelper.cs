@@ -1,8 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Org.BouncyCastle.Ocsp;
-using Org.BouncyCastle.Tsp;
+using iText.Bouncycastle.Asn1.Tsp;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
+using iText.Commons.Bouncycastle.Asn1.Ocsp;
+using iText.Commons.Bouncycastle.Asn1.Tsp;
+using iText.Commons.Bouncycastle.Cert;
 using Org.BouncyCastle.X509;
 using iText.Forms;
 using iText.Kernel.Geom;
@@ -54,19 +58,19 @@ namespace iText.Samples.Signatures
         /// If document signatures certificates doesn't contain certificates that are added in this method, verification will fail.
         /// NOTE: Override this method to add additional certificates.
         /// </remarks>
-        protected internal virtual void InitKeyStoreForVerification(List<X509Certificate> ks)
+        protected internal virtual void InitKeyStoreForVerification(List<IX509Certificate> ks)
         {
             var parser = new X509CertificateParser();
-            X509Certificate adobeCert;
-            X509Certificate cacertCert;
-            X509Certificate brunoCert;
+            IX509Certificate adobeCert;
+            IX509Certificate cacertCert;
+            IX509Certificate brunoCert;
             using (FileStream adobeStream = new FileStream(ADOBE, FileMode.Open, FileAccess.Read),
                 cacertStream = new FileStream(CACERT, FileMode.Open, FileAccess.Read),
                 brunoStream = new FileStream(BRUNO, FileMode.Open, FileAccess.Read))
             {
-                adobeCert = parser.ReadCertificate(adobeStream);
-                cacertCert = parser.ReadCertificate(cacertStream);
-                brunoCert = parser.ReadCertificate(brunoStream);
+                adobeCert = new X509CertificateBC(parser.ReadCertificate(adobeStream));
+                cacertCert = new X509CertificateBC(parser.ReadCertificate(cacertStream));
+                brunoCert = new X509CertificateBC(parser.ReadCertificate(brunoStream));
             }
 
             ks.Add(adobeCert);
@@ -74,7 +78,7 @@ namespace iText.Samples.Signatures
             ks.Add(brunoCert);
         }
 
-        protected static X509Certificate LoadCertificateFromKeyStore(String keystorePath, char[] ksPass)
+        protected static IX509Certificate LoadCertificateFromKeyStore(String keystorePath, char[] ksPass)
         {
             string alias = null;
             Pkcs12Store pk12 = new Pkcs12Store(new FileStream(keystorePath, FileMode.Open, FileAccess.Read), ksPass);
@@ -86,7 +90,7 @@ namespace iText.Samples.Signatures
                     break;
             }
 
-            return pk12.GetCertificate(alias).Certificate;
+            return new X509CertificateBC(pk12.GetCertificate(alias).Certificate);
         }
 
         private void VerifySignaturesForDocument(String documentPath)
@@ -117,12 +121,11 @@ namespace iText.Samples.Signatures
 
         private void VerifyCertificates(PdfPKCS7 pkcs7)
         {
-            List<X509Certificate> ks = new List<X509Certificate>();
+            List<IX509Certificate> ks = new List<IX509Certificate>();
             InitKeyStoreForVerification(ks);
-            X509Certificate[] certs = pkcs7.GetSignCertificateChain();
+            IX509Certificate[] certs = pkcs7.GetSignCertificateChain();
             DateTime cal = pkcs7.GetSignDate();
-            IList<VerificationException> errors = CertificateVerification.VerifyCertificates(
-                certs, ks, cal);
+            IList<VerificationException> errors = CertificateVerification.VerifyCertificates(certs, ks, cal);
             if (errors.Count > 0)
             {
                 foreach (VerificationException e in errors)
@@ -133,18 +136,18 @@ namespace iText.Samples.Signatures
 
             for (int i = 0; i < certs.Length; i++)
             {
-                X509Certificate cert = (X509Certificate) certs[i];
+                IX509Certificate cert = certs[i];
                 CheckCertificateInfo(cert, cal.ToUniversalTime(), pkcs7);
             }
 
-            X509Certificate signCert = (X509Certificate) certs[0];
-            X509Certificate issuerCert = (certs.Length > 1 ? (X509Certificate) certs[1] : null);
+            IX509Certificate signCert = certs[0];
+            IX509Certificate issuerCert = (certs.Length > 1 ? certs[1] : null);
             
             //Checking validity of the document at the time of signing
             CheckRevocation(pkcs7, signCert, issuerCert, cal.ToUniversalTime());
         }
 
-        private void CheckCertificateInfo(X509Certificate cert, DateTime signDate, PdfPKCS7
+        private void CheckCertificateInfo(IX509Certificate cert, DateTime signDate, PdfPKCS7
             pkcs7)
         {
             try
@@ -169,10 +172,10 @@ namespace iText.Samples.Signatures
             }
         }
 
-        private void CheckRevocation(PdfPKCS7 pkcs7, X509Certificate signCert, X509Certificate issuerCert, 
+        private void CheckRevocation(PdfPKCS7 pkcs7, IX509Certificate signCert, IX509Certificate issuerCert, 
             DateTime date)
         {
-            IList<BasicOcspResp> ocsps = new List<BasicOcspResp>();
+            IList<IBasicOcspResponse> ocsps = new List<IBasicOcspResponse>();
             if (pkcs7.GetOcsp() != null)
             {
                 ocsps.Add(pkcs7.GetOcsp());
@@ -182,12 +185,12 @@ namespace iText.Samples.Signatures
             IList<VerificationOK> verification = ocspVerifier.Verify(signCert, issuerCert, date);
             if (verification.Count == 0)
             {
-                IList<X509Crl> crls = new List<X509Crl>();
+                IList<IX509Crl> crls = new List<IX509Crl>();
                 if (pkcs7.GetCRLs() != null)
                 {
-                    foreach (X509Crl crl in pkcs7.GetCRLs())
+                    foreach (IX509Crl crl in pkcs7.GetCRLs())
                     {
-                        crls.Add((X509Crl) crl);
+                        crls.Add((IX509Crl) crl);
                     }
                 }
 
@@ -231,23 +234,23 @@ namespace iText.Samples.Signatures
                 }
 
                 PdfPKCS7 pkcs7 = signUtil.ReadSignatureData(name);
-                sigInfo.SetDigestAlgorithm(pkcs7.GetHashAlgorithm());
-                sigInfo.SetEncryptionAlgorithm(pkcs7.GetEncryptionAlgorithm());
+                sigInfo.SetDigestAlgorithm(pkcs7.GetDigestAlgorithmName());
+                sigInfo.SetSignatureAlgorithmName(pkcs7.GetSignatureAlgorithmName());
                 PdfName filterSubtype = pkcs7.GetFilterSubtype();
                 if (filterSubtype != null)
                 {
                     sigInfo.SetFilterSubtype(filterSubtype.ToString());
                 }
 
-                X509Certificate signCert = pkcs7.GetSigningCertificate();
+                IX509Certificate signCert = pkcs7.GetSigningCertificate();
                 sigInfo.SetSignerName(iText.Signatures.CertificateInfo.GetSubjectFields(signCert).GetField("CN"));
                 sigInfo.SetAlternativeSignerName(pkcs7.GetSignName());
                 sigInfo.SetSignDate(pkcs7.GetSignDate().ToUniversalTime());
 		        if (TimestampConstants.UNDEFINED_TIMESTAMP_DATE != pkcs7.GetTimeStampDate())
                 {
                     sigInfo.SetTimeStamp(pkcs7.GetTimeStampDate().ToUniversalTime());
-                    TimeStampToken ts = pkcs7.GetTimeStampToken();
-                    sigInfo.SetTimeStampService(ts.TimeStampInfo.Tsa.ToString());
+                    ITstInfo ts = pkcs7.GetTimeStampTokenInfo();
+                    sigInfo.SetTimeStampService(((TstInfoBC)ts).GetTstInfo().Tsa.ToString());
                 }
 
                 sigInfo.SetLocation(pkcs7.GetLocation());
@@ -270,11 +273,11 @@ namespace iText.Samples.Signatures
                 }
 
                 sigInfo.SetFieldsLocks(fieldLocks);
-                X509Certificate[] certs = pkcs7.GetSignCertificateChain();
+                IX509Certificate[] certs = pkcs7.GetSignCertificateChain();
                 IList<CertificateInfo> certInfos = new List<CertificateInfo>();
                 for (int i = 0; i < certs.Length; i++)
                 {
-                    X509Certificate cert = (X509Certificate) certs[i];
+                    X509Certificate cert = ((X509CertificateBC) certs[i]).GetCertificate();
                     CertificateInfo certInfo = new CertificateInfo();
                     certInfo.SetIssuer(cert.IssuerDN);
                     certInfo.SetSubject(cert.SubjectDN);
@@ -330,11 +333,11 @@ namespace iText.Samples.Signatures
                     AddComparisonError("Digest algorithm", outDigestAlg, cmpDigestAlg);
                 }
 
-                String outEncryptAlg = outSig.GetEncryptionAlgorithm();
-                String cmpEncryptAlg = cmpSig.GetEncryptionAlgorithm();
-                if (CheckIfEqual(outEncryptAlg, cmpEncryptAlg))
+                String outSignatureAlg = outSig.GetSignatureAlgorithmName();
+                String cmpSignatureAlg = cmpSig.GetSignatureAlgorithmName();
+                if (CheckIfEqual(outSignatureAlg, cmpSignatureAlg))
                 {
-                    AddComparisonError("Encryption algorithm", outEncryptAlg, cmpEncryptAlg);
+                    AddComparisonError("Signature algorithm", outSignatureAlg, cmpSignatureAlg);
                 }
 
                 String outLocation = outSig.GetLocation();

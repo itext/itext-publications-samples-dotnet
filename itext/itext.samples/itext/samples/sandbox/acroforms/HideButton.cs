@@ -27,7 +27,7 @@ namespace iText.Samples.Sandbox.Acroforms
 
             // Set the visibility flag of the form field annotation.
             // Options are: HIDDEN, HIDDEN_BUT_PRINTABLE, VISIBLE, VISIBLE_BUT_DOES_NOT_PRINT
-            form.GetField("Test").SetVisibility(PdfFormField.HIDDEN);
+            form.GetField("Test").GetFirstFormAnnotation().SetVisibility(PdfFormAnnotation.HIDDEN);
 
             pdfDoc.Close();
         }

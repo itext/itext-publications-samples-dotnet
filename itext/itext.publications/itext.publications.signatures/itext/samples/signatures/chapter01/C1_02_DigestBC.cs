@@ -2,8 +2,8 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text;
+using iText.Commons.Bouncycastle.Crypto;
 using iText.Signatures;
-using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Math;
 
 namespace iText.Samples.Signatures.Chapter01

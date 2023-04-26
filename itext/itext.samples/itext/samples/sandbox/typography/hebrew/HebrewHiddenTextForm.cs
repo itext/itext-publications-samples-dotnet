@@ -7,6 +7,7 @@ using iText.Forms.Fields;
 using iText.IO.Font;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
+using iText.Layout.Properties;
 using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
@@ -56,11 +57,11 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
             form.SetNeedAppearances(false);
 
             // Update the value and some other properties of all the pdf document's form fields
-            foreach (KeyValuePair<String, PdfFormField> entry in form.GetFormFields())
+            foreach (KeyValuePair<String, PdfFormField> entry in form.GetAllFormFields())
             {
                 PdfFormField field = entry.Value;
                 field.SetValue(text);
-                field.SetFont(font).SetJustification(2);
+                field.SetJustification(TextAlignment.RIGHT).SetFont(font);
             }
 
             pdfDocument.Close();

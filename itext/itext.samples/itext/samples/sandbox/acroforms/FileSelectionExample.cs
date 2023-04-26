@@ -25,8 +25,9 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
 
-            PdfTextFormField field = PdfFormField.CreateText(pdfDoc,
-                new Rectangle(36, 788, 523, 18), "myfile", "");
+            PdfTextFormField field = new TextFormFieldBuilder(pdfDoc, "myfile")
+                .SetWidgetRectangle(new Rectangle(36, 788, 523, 18)).CreateText();
+            field.SetValue("");
 
             // If true is passed, then the text entered in the field will represent the pathname of a file
             // whose contents are to be submitted as the value of the field.
@@ -39,8 +40,9 @@ namespace iText.Samples.Sandbox.Acroforms
                 + "this.getField('mytitle').setFocus();"));
             form.AddField(field);
 
-            PdfTextFormField title = PdfFormField.CreateText(pdfDoc,
-                new Rectangle(36, 752, 523, 18), "mytitle", "");
+            PdfTextFormField title = new TextFormFieldBuilder(pdfDoc, "mytitle")
+                .SetWidgetRectangle(new Rectangle(36, 752, 523, 18)).CreateText();
+            title.SetValue("");
             form.AddField(title);
 
             pdfDoc.Close();

@@ -46,12 +46,12 @@ namespace iText.Samples.Sandbox.Stamper
             XmlElement root = doc.CreateElement("Destination");
             doc.AppendChild(root);
             
-            IDictionary<String, PdfObject> names = pdfDoc.GetCatalog().GetNameTree(PdfName.Dests).GetNames();
-            foreach (KeyValuePair<String, PdfObject> name in names) 
+            IDictionary<PdfString, PdfObject> names = pdfDoc.GetCatalog().GetNameTree(PdfName.Dests).GetNames();
+            foreach (KeyValuePair<PdfString, PdfObject> name in names) 
             {
                 XmlElement el = doc.CreateElement("Name");
                 el.SetAttribute("Page", name.Value.ToString());
-                el.InnerText = name.Key;
+                el.InnerText = name.Key.ToUnicodeString();
                 root.AppendChild(el);
             }
             

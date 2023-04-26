@@ -1,6 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
+using iText.Bouncycastle.Crypto;
+using iText.Commons.Bouncycastle.Cert;
+using iText.Commons.Bouncycastle.Tsp;
 using iText.Commons.Utils;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Tsp;
@@ -85,11 +90,15 @@ namespace iText.Samples.Signatures.Chapter03
                 .SetPageNumber(1);
             signer.SetFieldName("sig");
 
-            IExternalSignature pks = new PrivateKeySignature(pk, digestAlgorithm);
+            IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
             // Sign the document using the detached mode, CMS or CAdES equivalent.
             // Pass the created TSAClient to the signing method.
-            signer.SignDetached(pks, chain, crlList, ocspClient, tsaClient, estimatedSize, subfilter);
+            signer.SignDetached(pks, certificateWrappers, crlList, ocspClient, tsaClient, estimatedSize, subfilter);
         }
 
         private class CustomITSAInfoBouncyCastle : ITSAInfoBouncyCastle
@@ -97,9 +106,9 @@ namespace iText.Samples.Signatures.Chapter03
             
             // TimeStampTokenInfo object contains much more information about the timestamp token,
             // like serial number, TST hash algorithm, etc.
-            public void InspectTimeStampTokenInfo(TimeStampTokenInfo info)
+            public void InspectTimeStampTokenInfo(ITimeStampTokenInfo info)
             {
-                Console.WriteLine(info.GenTime);
+                Console.WriteLine(info.GetGenTime());
             }
         }
     }

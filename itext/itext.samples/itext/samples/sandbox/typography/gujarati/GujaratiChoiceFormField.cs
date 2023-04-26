@@ -61,7 +61,9 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
             Rectangle rect = new Rectangle(50, 650, 120, 70);
 
             // Create choice form field with parameters and set values
-            PdfChoiceFormField choice = PdfFormField.CreateList(pdfDocument, rect, "List", "Test", options);
+            PdfChoiceFormField choice = new ChoiceFormFieldBuilder(pdfDocument, "List")
+                .SetWidgetRectangle(rect).SetOptions(options).CreateList();
+            choice.SetValue("Test");
             choice
                     .SetMultiSelect(true)
                     .SetFont(font)

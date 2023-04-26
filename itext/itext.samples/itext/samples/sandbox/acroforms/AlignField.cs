@@ -4,6 +4,7 @@ using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Pdf;
+using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
@@ -25,18 +26,18 @@ namespace iText.Samples.Sandbox.Acroforms
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
-            IDictionary<String, PdfFormField> fields = form.GetFormFields();
+            IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
 
             PdfFormField field = fields["personal.name"];
-            field.SetJustification(PdfFormField.ALIGN_LEFT);
+            field.SetJustification(TextAlignment.LEFT);
             field.SetValue("Test");
 
             field = fields["personal.loginname"];
-            field.SetJustification(PdfFormField.ALIGN_CENTER);
+            field.SetJustification(TextAlignment.CENTER);
             field.SetValue("Test");
 
             field = fields["personal.password"];
-            field.SetJustification(PdfFormField.ALIGN_RIGHT);
+            field.SetJustification(TextAlignment.RIGHT);
             field.SetValue("Test");
 
             field = fields["personal.reason"];

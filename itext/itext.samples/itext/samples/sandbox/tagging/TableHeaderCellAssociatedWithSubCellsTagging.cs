@@ -41,18 +41,12 @@ namespace iText.Samples.Sandbox.Tagging
                         new PdfString("header_id_0"), new PdfString("header_id_1"), new PdfString("header_id_2") 
             };
             
-            PdfName idTreeName = new PdfName("IDTree");
-            PdfNameTree idTree = new PdfNameTree(pdfDocument.GetCatalog(), idTreeName);
             for (int i = 0; i < 3; ++i) 
             {
                 Cell c = new Cell().Add(new Paragraph("Header " + (i + 1)));
-                c.GetAccessibilityProperties().SetRole(StandardRoles.TH);
+                AccessibilityProperties ap = c.GetAccessibilityProperties();
+                ap.SetRole(StandardRoles.TH).SetStructureElementId(headersId[i].GetValueBytes());
                 table.AddHeaderCell(c);
-                PdfString headerId = headersId[i];
-                
-                // Use custom renderer for cell header element in order to add ID to its tag
-                CellRenderer renderer = new StructIdCellRenderer(c, doc, headerId, idTree);
-                c.SetNextRenderer(renderer);
             }
             
             List<TaggingHintKey> colSpanHints = new List<TaggingHintKey>();
@@ -123,56 +117,8 @@ namespace iText.Samples.Sandbox.Tagging
                     }
                 }
             }
-            
-            pdfDocument.GetStructTreeRoot().GetPdfObject().Put(idTreeName, idTree.BuildTree()
-                    .MakeIndirect(pdfDocument));
-            
+
             doc.Close();
-        }
-
-        private class StructIdCellRenderer : CellRenderer 
-        {
-            private readonly PdfDocument pdfDocument;
-            private readonly PdfNameTree idTree;
-            private readonly TagStructureContext tagContext;
-            private readonly PdfString headerId;
-
-            public StructIdCellRenderer(Cell c, Document document, PdfString headerId, PdfNameTree idTree) : base(c) 
-            {
-                this.pdfDocument = document.GetPdfDocument();
-                this.idTree = idTree;
-                this.tagContext = pdfDocument.GetTagStructureContext();
-                this.headerId = headerId;
-            }
-
-            public override void Draw(DrawContext drawContext) 
-            {
-                LayoutTaggingHelper taggingHelper = GetProperty<LayoutTaggingHelper>(Property.TAGGING_HELPER);
-                
-                // We want to reach the actual tag from logical structure tree, in order to set custom properties, for
-                // which iText doesn't provide convenient API at the moment. Specifically we are aiming at setting /ID
-                // entry in structure element dictionary corresponding to the table header cell. Here we are creating tag
-                // for the current element in logical structure tree right at the beginning of #draw method.
-                // If this particular instance of header cell is paging artifact it would be marked so by layouting
-                // engine and it would not allow to create a tag (return value of the method would be 'false').
-                // If this particular instance of header cell is the header which is to be tagged, a tag will be created.
-                // It's safe to create a tag at this moment, it will be picked up and placed at correct position in the
-                // logical structure tree later by layout engine.
-                
-                TagTreePointer p = new TagTreePointer(pdfDocument);
-                if (taggingHelper.CreateTag(this, p)) 
-                {
-                    // After the tag is created, we can fetch low level entity PdfStructElem
-                    // in order to work with it directly. These changes would be directly reflected
-                    // in the PDF file inner structure.
-                    PdfStructElem structElem = tagContext.GetPointerStructElem(p);
-                    PdfDictionary structElemDict = structElem.GetPdfObject();
-                    structElemDict.Put(PdfName.ID, headerId);
-                    idTree.AddEntry(headerId.GetValue(), structElemDict);
-                }
-                
-                base.Draw(drawContext);
-            }
         }
     }
 }

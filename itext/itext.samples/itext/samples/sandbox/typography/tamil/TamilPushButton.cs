@@ -52,7 +52,8 @@ namespace iText.Samples.Sandbox.Typography.Tamil
             Rectangle rect = new Rectangle(50, 650, 140, 30);
 
             // Create a button for the form field, set its font and size
-            PdfButtonFormField pushButton = PdfFormField.CreatePushButton(pdfDocument, rect, "Name", text);
+            PdfButtonFormField pushButton = new PushButtonFormFieldBuilder(pdfDocument, "Name")
+                .SetWidgetRectangle(rect).SetCaption(text).CreatePushButton();
             pushButton
                     .SetFont(font)
                     .SetFontSize(10);

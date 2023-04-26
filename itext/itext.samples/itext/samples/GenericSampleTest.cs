@@ -1,12 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2023 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -131,6 +122,10 @@ namespace iText.Samples
 
             // TODO DEVSIX-3326
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.SplittingNestedTable2");
+            
+            //TODO DEVSIX-6508 remove unnecessary makeFormField calls
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Acroforms.RemoveXFA");
+
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }

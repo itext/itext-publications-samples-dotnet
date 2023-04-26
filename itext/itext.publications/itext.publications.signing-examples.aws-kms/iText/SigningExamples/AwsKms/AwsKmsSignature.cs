@@ -37,7 +37,7 @@ namespace iText.SigningExamples.AwsKms
             }
         }
 
-        public string GetEncryptionAlgorithm()
+        public string GetSignatureAlgorithmName()
         {
             switch (signingAlgorithm)
             {
@@ -54,7 +54,7 @@ namespace iText.SigningExamples.AwsKms
             }
         }
 
-        public string GetHashAlgorithm()
+        public string GetDigestAlgorithmName()
         {
             switch (signingAlgorithm)
             {
@@ -86,8 +86,14 @@ namespace iText.SigningExamples.AwsKms
                 return signResponse.Signature.ToArray();
             }
         }
+        
+        public ISignatureMechanismParams GetSignatureMechanismParameters()
+        {
+            return null;
+        }
 
         string keyId;
         string signingAlgorithm;
     }
+    
 }

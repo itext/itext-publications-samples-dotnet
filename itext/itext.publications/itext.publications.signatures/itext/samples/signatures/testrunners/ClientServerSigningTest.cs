@@ -1,16 +1,10 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2023 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
+using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Geom;
 using iText.Samples.Signatures.Chapter04;
 using iText.Test;
@@ -110,13 +104,14 @@ namespace iText.Samples.Signatures.Testrunners
 
         private class CustomSignatureTest : SignatureTestHelper
         {
-            protected internal override void InitKeyStoreForVerification(List<X509Certificate> ks)
+            protected internal override void InitKeyStoreForVerification(List<IX509Certificate> ks)
             {
                 base.InitKeyStoreForVerification(ks);
                 HttpWebRequest request = (HttpWebRequest) WebRequest.Create(C4_07_ClientServerSigning.CERT);
                 request.Method = WebRequestMethods.Http.Get;
                 HttpWebResponse response = (HttpWebResponse) request.GetResponse();
-                X509Certificate chain = new X509CertificateParser().ReadCertificate(response.GetResponseStream());
+                IX509Certificate chain = new X509CertificateBC(
+                    new X509CertificateParser().ReadCertificate(response.GetResponseStream()));
                 ks.Add(chain);
             }
         }

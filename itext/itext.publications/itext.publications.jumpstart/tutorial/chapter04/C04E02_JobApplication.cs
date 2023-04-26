@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
+using iText.Forms.Fields.Properties;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Action;
@@ -46,36 +47,44 @@ namespace Tutorial.Chapter04 {
             //Add acroform
             PdfAcroForm form = PdfAcroForm.GetAcroForm(doc.GetPdfDocument(), true);
             //Create text field
-            PdfTextFormField nameField = PdfTextFormField.CreateText(doc.GetPdfDocument(), new Rectangle(99, 753, 425, 
-                15), "name", "");
+            PdfTextFormField nameField = new TextFormFieldBuilder(doc.GetPdfDocument(), "name")
+                .SetWidgetRectangle(new Rectangle(99, 753, 425, 15)).CreateText();
+            nameField.SetValue("");
             form.AddField(nameField);
             //Create radio buttons
-            PdfButtonFormField group = PdfFormField.CreateRadioGroup(doc.GetPdfDocument(), "language", "");
-            PdfFormField.CreateRadioButton(doc.GetPdfDocument(), new Rectangle(130, 728, 15, 15), group, "English");
-            PdfFormField.CreateRadioButton(doc.GetPdfDocument(), new Rectangle(200, 728, 15, 15), group, "French");
-            PdfFormField.CreateRadioButton(doc.GetPdfDocument(), new Rectangle(260, 728, 15, 15), group, "German");
-            PdfFormField.CreateRadioButton(doc.GetPdfDocument(), new Rectangle(330, 728, 15, 15), group, "Russian");
-            PdfFormField.CreateRadioButton(doc.GetPdfDocument(), new Rectangle(400, 728, 15, 15), group, "Spanish");
-            form.AddField(group);
+            RadioFormFieldBuilder builder = new RadioFormFieldBuilder(doc.GetPdfDocument(), "language");
+            PdfButtonFormField group = builder.CreateRadioGroup();
+            group.SetValue("");
+            group.AddKid(builder.CreateRadioButton("English", new Rectangle(130, 728, 15, 15)));
+            group.AddKid(builder.CreateRadioButton("French", new Rectangle(200, 728, 15, 15)));
+            group.AddKid(builder.CreateRadioButton("German", new Rectangle(260, 728, 15, 15)));
+            group.AddKid(builder.CreateRadioButton("Russian", new Rectangle(330, 728, 15, 15)));
+            group.AddKid(builder.CreateRadioButton("Spanish", new Rectangle(400, 728, 15, 15)));
+            form.AddField(group);                                                
             //Create checkboxes
             for (int i = 0; i < 3; i++) {
-                PdfButtonFormField checkField = PdfFormField.CreateCheckBox(doc.GetPdfDocument(), new Rectangle(119 + i * 
-                    69, 701, 15, 15), String.Concat("experience", (i + 1).ToString()), "Off", PdfFormField.TYPE_CHECK);
+                PdfButtonFormField checkField = new CheckBoxFormFieldBuilder(doc.GetPdfDocument(),
+                    String.Concat("experience", (i + 1).ToString()))
+                    .SetWidgetRectangle(new Rectangle(119 + i * 69, 701, 15, 15))
+                    .SetCheckType(CheckBoxType.CHECK).CreateCheckBox();
+                checkField.SetValue("Off");
                 form.AddField(checkField);
             }
             //Create combobox
             String[] options = new String[] { "Any", "6.30 am - 2.30 pm", "1.30 pm - 9.30 pm" };
-            PdfChoiceFormField choiceField = PdfFormField.CreateComboBox(doc.GetPdfDocument(), new Rectangle(163, 676, 
-                115, 15), "shift", "Any", options);
+            PdfChoiceFormField choiceField = new ChoiceFormFieldBuilder(doc.GetPdfDocument(), "shift")
+                .SetWidgetRectangle(new Rectangle(163, 676, 115, 15)).SetOptions(options).CreateComboBox();
+            choiceField.SetValue("Any");
             form.AddField(choiceField);
             //Create multiline text field
-            PdfTextFormField infoField = PdfTextFormField.CreateMultilineText(doc.GetPdfDocument(), new Rectangle(158, 
-                625, 366, 40), "info", "");
+            PdfTextFormField infoField = new TextFormFieldBuilder(doc.GetPdfDocument(), "info")
+                .SetWidgetRectangle(new Rectangle(158, 625, 366, 40)).CreateMultilineText();
+            infoField.SetValue("");
             form.AddField(infoField);
             //Create push button field
-            PdfButtonFormField button = PdfFormField.CreatePushButton(doc.GetPdfDocument(), new Rectangle(479, 594, 45
-                , 15), "reset", "RESET");
-            button.SetAction(PdfAction.CreateResetForm(new String[] { "name", "language", "experience1", "experience2"
+            PdfButtonFormField button = new PushButtonFormFieldBuilder(doc.GetPdfDocument(), "reset")
+                .SetWidgetRectangle(new Rectangle(479, 594, 45, 15)).SetCaption("RESET").CreatePushButton();
+            button.GetFirstFormAnnotation().SetAction(PdfAction.CreateResetForm(new String[] { "name", "language", "experience1", "experience2"
                 , "experience3", "shift", "info" }, 0));
             form.AddField(button);
             return form;

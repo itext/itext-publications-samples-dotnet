@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
+using iText.Forms.Fields.Properties;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
@@ -78,13 +79,14 @@ namespace iText.Samples.Sandbox.Acroforms
 
                 // The 4th parameter is the initial value of checkbox: 'Yes' - checked, 'Off' - unchecked
                 // By default, checkbox value type is cross.
-                PdfButtonFormField checkBox =
-                    PdfFormField.CreateCheckBox(drawContext.GetDocument(), rect, this.name, "Yes");
+                PdfButtonFormField checkBox = new CheckBoxFormFieldBuilder(drawContext.GetDocument(), this.name)
+                    .SetWidgetRectangle(rect).CreateCheckBox();
+                checkBox.SetValue("Yes");
                 switch (checkboxTypeIndex)
                 {
                     case 0:
                     {
-                        checkBox.SetCheckType(PdfFormField.TYPE_CHECK);
+                        checkBox.SetCheckType(CheckBoxType.CHECK);
 
                         // Use this method if you changed any field parameters and didn't use setValue
                         checkBox.RegenerateField();
@@ -93,35 +95,35 @@ namespace iText.Samples.Sandbox.Acroforms
 
                     case 1:
                     {
-                        checkBox.SetCheckType(PdfFormField.TYPE_CIRCLE);
+                        checkBox.SetCheckType(CheckBoxType.CIRCLE);
                         checkBox.RegenerateField();
                         break;
                     }
 
                     case 2:
                     {
-                        checkBox.SetCheckType(PdfFormField.TYPE_CROSS);
+                        checkBox.SetCheckType(CheckBoxType.CROSS);
                         checkBox.RegenerateField();
                         break;
                     }
 
                     case 3:
                     {
-                        checkBox.SetCheckType(PdfFormField.TYPE_DIAMOND);
+                        checkBox.SetCheckType(CheckBoxType.DIAMOND);
                         checkBox.RegenerateField();
                         break;
                     }
 
                     case 4:
                     {
-                        checkBox.SetCheckType(PdfFormField.TYPE_SQUARE);
+                        checkBox.SetCheckType(CheckBoxType.SQUARE);
                         checkBox.RegenerateField();
                         break;
                     }
 
                     case 5:
                     {
-                        checkBox.SetCheckType(PdfFormField.TYPE_STAR);
+                        checkBox.SetCheckType(CheckBoxType.STAR);
                         checkBox.RegenerateField();
                         break;
                     }

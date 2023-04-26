@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using iText.Bouncycastle.Cert;
+using iText.Bouncycastle.X509;
 using iText.Kernel.Pdf;
 using Org.BouncyCastle.X509;
 
@@ -38,7 +40,7 @@ namespace iText.Samples.Sandbox.Security
 
             PdfDocument document = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest,
                 new WriterProperties().SetPublicKeyEncryption(
-                    new[] {cert},
+                    new[] {new X509CertificateBC(cert)},
                     new[] {EncryptionConstants.ALLOW_PRINTING},
                     EncryptionConstants.ENCRYPTION_AES_256)));
             document.Close();

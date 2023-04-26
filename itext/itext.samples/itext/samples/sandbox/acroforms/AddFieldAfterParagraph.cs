@@ -36,8 +36,10 @@ namespace iText.Samples.Sandbox.Acroforms
             // 1st method: calculate position and create form field, using document's root layout area
             Rectangle freeBBox = doc.GetRenderer().GetCurrentArea().GetBBox();
             float top = freeBBox.GetTop();
-            PdfTextFormField field = PdfFormField.CreateText(pdfDoc,
-                new Rectangle(freeBBox.GetLeft(), top - fieldHeight, fieldWidth, fieldHeight), "myField", "Value");
+            PdfTextFormField field = new TextFormFieldBuilder(pdfDoc, "myField")
+                .SetWidgetRectangle(new Rectangle(freeBBox.GetLeft(), top - fieldHeight, fieldWidth, fieldHeight))
+                .CreateText();
+            field.SetValue("Value");
             form.AddField(field);
 
             doc.Add(new AreaBreak());
@@ -70,8 +72,8 @@ namespace iText.Samples.Sandbox.Acroforms
                 base.Draw(drawContext);
 
                 PdfAcroForm form = PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true);
-                PdfTextFormField field = PdfFormField.CreateText(drawContext.GetDocument(),
-                    occupiedArea.GetBBox(), "myField2", "Another Value");
+                PdfTextFormField field = new TextFormFieldBuilder(drawContext.GetDocument(), "myField2").SetWidgetRectangle(occupiedArea.GetBBox()).CreateText();
+                field.SetValue("Another Value");
                 form.AddField(field);
             }
         }

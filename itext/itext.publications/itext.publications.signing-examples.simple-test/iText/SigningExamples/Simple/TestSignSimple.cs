@@ -3,9 +3,12 @@ using iText.Signatures;
 using NUnit.Framework;
 using Org.BouncyCastle.Asn1.X509;
 using Org.BouncyCastle.X509;
+using iText.Bouncycastle.X509;
 using System;
 using System.IO;
 using System.Security.Cryptography;
+using iText.Bouncycastle.Cert;
+using iText.Commons.Bouncycastle.Cert;
 using SystemCertificates = System.Security.Cryptography.X509Certificates;
 
 namespace iText.SigningExamples.Simple
@@ -34,7 +37,7 @@ namespace iText.SigningExamples.Simple
             Assert.NotNull(certificate, "Key with alias {0} not found.", storeAlias);
 
             X509Certificate bcCertificate = new X509Certificate(X509CertificateStructure.GetInstance(certificate.RawData));
-            X509Certificate[] chain = { bcCertificate };
+            IX509Certificate[] chain = { new X509CertificateBC(bcCertificate) };
 
             X509Certificate2Signature signature = new X509Certificate2Signature(certificate, "SHA384");
 
@@ -70,7 +73,7 @@ namespace iText.SigningExamples.Simple
             Assert.NotNull(certificate, "Key with alias {0} not found.", storeAlias);
 
             X509Certificate bcCertificate = new X509Certificate(X509CertificateStructure.GetInstance(certificate.RawData));
-            X509Certificate[] chain = { bcCertificate };
+            IX509Certificate[] chain = { new X509CertificateBC(bcCertificate) };
 
             X509Certificate2Signature signature = new X509Certificate2Signature(certificate, "SHA-1");
 
@@ -106,7 +109,7 @@ namespace iText.SigningExamples.Simple
             Assert.NotNull(certificate, "Key with alias {0} not found.", storeAlias);
 
             X509Certificate bcCertificate = new X509Certificate(X509CertificateStructure.GetInstance(certificate.RawData));
-            X509Certificate[] chain = { bcCertificate };
+            IX509Certificate[] chain = { new X509CertificateBC(bcCertificate) };
 
             X509Certificate2Signature signature = new X509Certificate2Signature(certificate, "SHA512");
 
