@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using iText.Forms;
+using iText.Forms.Fields;
 using iText.Forms.Xfa;
 using iText.Kernel.Pdf;
 
@@ -24,7 +25,7 @@ namespace iText.Samples.Sandbox.Acroforms
         protected void ManipulatePdf(string dest)
         {
             PdfDocument pdfdoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfdoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfdoc, true);
 
             XfaForm xfa = form.GetXfaForm();
 

@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Acroforms
         public void ManipulatePdf(String dest)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
             IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             PdfFormField checkedField = fields[CHECKED_FIELD_NAME];
             PdfFormField uncheckedField = fields[UNCHECKED_FIELD_NAME];

@@ -26,7 +26,7 @@ namespace iText.Samples.Sandbox.Acroforms
         protected void ManipulatePdf(String dest)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
 
             PdfButtonFormField button = new PushButtonFormFieldBuilder(pdfDoc, "post")
                 .SetWidgetRectangle(new Rectangle(36, 700, 36, 30)).SetCaption("POST").CreatePushButton();

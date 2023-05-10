@@ -24,7 +24,7 @@ namespace iText.Samples.Sandbox.Acroforms
         protected void ManipulatePdf(String dest)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
             PdfFormField field = form.GetField("Name");
             PdfWidgetAnnotation widgetAnnotation = field.GetWidgets()[0];
             PdfArray annotationRect = widgetAnnotation.GetRectangle();

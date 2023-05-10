@@ -36,7 +36,7 @@ namespace iText.Samples.Sandbox.Acroforms
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(baos));
             Document doc = new Document(pdfDoc);
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, false);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, false);
 
             IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             fields["sunday_1"].SetValue("1");
@@ -67,7 +67,7 @@ namespace iText.Samples.Sandbox.Acroforms
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(new RandomAccessSourceFactory().CreateSource(src),
                 new ReaderProperties()), new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
 
             IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             fields["sunday_1_notes"].SetValue("It's Sunday today, let's go to the sea").GetFirstFormAnnotation().SetBorderWidth(0);

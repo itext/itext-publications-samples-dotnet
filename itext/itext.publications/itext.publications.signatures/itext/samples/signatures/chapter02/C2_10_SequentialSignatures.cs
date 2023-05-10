@@ -164,7 +164,7 @@ namespace iText.Samples.Signatures.Chapter02
                     .SetWidgetRectangle(GetOccupiedAreaBBox()).CreateSignature();
                 field.GetWidgets()[0].SetHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT);
                 field.GetWidgets()[0].SetFlags(PdfAnnotation.PRINT);
-                PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true).AddField(field);
+                PdfFormCreator.GetAcroForm(drawContext.GetDocument(), true).AddField(field);
             }
         }
     }

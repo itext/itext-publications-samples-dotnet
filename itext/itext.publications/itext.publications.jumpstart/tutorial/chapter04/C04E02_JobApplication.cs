@@ -45,7 +45,7 @@ namespace Tutorial.Chapter04 {
             doc.Add(new Paragraph("Preferred working shift:").SetFontSize(12));
             doc.Add(new Paragraph("Additional information:").SetFontSize(12));
             //Add acroform
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(doc.GetPdfDocument(), true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(doc.GetPdfDocument(), true);
             //Create text field
             PdfTextFormField nameField = new TextFormFieldBuilder(doc.GetPdfDocument(), "name")
                 .SetWidgetRectangle(new Rectangle(99, 753, 425, 15)).CreateText();

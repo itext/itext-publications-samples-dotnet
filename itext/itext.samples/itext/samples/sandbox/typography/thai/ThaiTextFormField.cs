@@ -44,7 +44,7 @@ namespace iText.Samples.Sandbox.Typography.Thai
 
             String fieldName = "Field name";
 
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(document.GetPdfDocument(), true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(document.GetPdfDocument(), true);
 
             PdfFont font = PdfFontFactory.CreateFont(FONTS_FOLDER + "NotoSansThai-Regular.ttf",
                     PdfEncodings.IDENTITY_H);

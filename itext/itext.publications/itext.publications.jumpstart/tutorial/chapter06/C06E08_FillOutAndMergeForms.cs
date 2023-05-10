@@ -41,7 +41,7 @@ namespace Tutorial.Chapter06 {
                     PdfDocument sourcePdfDocument = new PdfDocument(new PdfReader(SRC), new PdfWriter(baos));
                     //Rename fields
                     i++;
-                    PdfAcroForm form = PdfAcroForm.GetAcroForm(sourcePdfDocument, true);
+                    PdfAcroForm form = PdfFormCreator.GetAcroForm(sourcePdfDocument, true);
                     form.RenameField("name", "name_" + i);
                     form.RenameField("abbr", "abbr_" + i);
                     form.RenameField("capital", "capital_" + i);

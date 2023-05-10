@@ -27,7 +27,7 @@ namespace iText.Samples.Sandbox.Acroforms
         {
             PdfDocument pdfDocument = InitializeDocument(dest, SRC);
             
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDocument, false);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDocument, false);
             
             // Here we handle radio buttons and checkboxes (Button fields type) but there are also other field types
             // which can be used as well, for example they are Text fields, Choice fields, Signature fields
