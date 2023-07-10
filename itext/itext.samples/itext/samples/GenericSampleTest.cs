@@ -126,6 +126,9 @@ namespace iText.Samples
             //TODO DEVSIX-6508 remove unnecessary makeFormField calls
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Acroforms.RemoveXFA");
 
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.columncontainer");
+            searchConfig.IgnorePackageOrClass(
+                "iText.Samples.Sandbox.Pdfhtml.columncount");
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
