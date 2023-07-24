@@ -49,7 +49,7 @@ namespace iText.Samples.Sandbox.Acroforms.Reporting
                     // Сreate a PDF in memory
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     PdfDocument pdfInnerDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(baos));
-                    PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfInnerDoc, true);
+                    PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfInnerDoc, true);
 
                     // Parse text line and fill all fields of form
                     FillAndFlattenForm(line, form);

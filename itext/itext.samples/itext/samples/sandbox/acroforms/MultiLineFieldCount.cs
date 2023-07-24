@@ -26,7 +26,7 @@ namespace iText.Samples.Sandbox.Acroforms
         private void ManipulatePdf(String src, String dest) 
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
-            PdfAcroForm acroForm = PdfAcroForm.GetAcroForm(pdfDoc, false);
+            PdfAcroForm acroForm = PdfFormCreator.GetAcroForm(pdfDoc, false);
             
             PassData(acroForm);
             

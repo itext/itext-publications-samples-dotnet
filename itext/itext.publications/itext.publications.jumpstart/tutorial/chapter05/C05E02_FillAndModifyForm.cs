@@ -24,7 +24,7 @@ namespace Tutorial.Chapter05 {
         public virtual void ManipulatePdf(String src, String dest) {
             //Initialize PDF document
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
             IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             fields["name"].SetValue("James Bond").GetFirstFormAnnotation().SetBackgroundColor(ColorConstants.ORANGE);
             fields["language"].SetValue("English");

@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Acroforms
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.IDENTITY_H);
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
 
             // Define the position of a button that measures 108 by 26
             Rectangle rect = new Rectangle(36, 780, 108, 26);

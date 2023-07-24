@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using iText.Forms;
+using iText.Forms.Fields;
 using iText.IO.Font.Constants;
 using iText.Kernel.Events;
 using iText.Kernel.Font;
@@ -30,7 +31,7 @@ namespace iText.Samples.Sandbox.Acroforms
         protected void ManipulatePdf(String dest)
         {
             PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(srcDoc, false);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(srcDoc, false);
 
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 

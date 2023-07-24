@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Acroforms
             byte[] content = CreateForm();
             IRandomAccessSource source = new RandomAccessSourceFactory().CreateSource(content);
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(source, new ReaderProperties()), new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
 
             form.GetField(FIELD_NAME)
                 .SetValue("A B C D E F\nG H I J K L M N\nO P Q R S T U\r\nV W X Y Z\n\nAlphabet street");
@@ -55,7 +55,7 @@ namespace iText.Samples.Sandbox.Acroforms
             // Being set as true, the field can contain multiple lines of text;
             // if false, the field's text is restricted to a single line.
             textFormField.SetMultiline(true);
-            PdfAcroForm.GetAcroForm(pdfDoc, true).AddField(textFormField);
+            PdfFormCreator.GetAcroForm(pdfDoc, true).AddField(textFormField);
 
             pdfDoc.Close();
 

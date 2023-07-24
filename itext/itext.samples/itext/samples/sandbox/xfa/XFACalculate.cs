@@ -5,6 +5,7 @@ using System.Linq;
 using System.Xml.Linq;
 using iText.Commons.Utils;
 using iText.Forms;
+using iText.Forms.Fields;
 using iText.Forms.Xfa;
 using iText.Kernel.Pdf;
 using iText.Licensing.Base;
@@ -38,7 +39,7 @@ namespace iText.Samples.Sandbox.Xfa
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(INPUT_PDF), new PdfWriter(DEST));
 
             // Load the DOM Document
-            XfaForm xfa = PdfAcroForm.GetAcroForm(pdfDoc, false).GetXfaForm();
+            XfaForm xfa = PdfFormCreator.GetAcroForm(pdfDoc, false).GetXfaForm();
             XDocument domDoc = xfa.GetDomDocument();
 
             // This works for the specific document

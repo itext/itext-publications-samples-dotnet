@@ -73,7 +73,7 @@ namespace iText.Samples.Sandbox.Acroforms
                 PdfTextFormField field = new TextFormFieldBuilder(drawContext.GetDocument(), fieldName)
                     .SetWidgetRectangle(GetOccupiedAreaBBox()).CreateText();
                 field.SetValue("");
-                PdfAcroForm form = PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true);
+                PdfAcroForm form = PdfFormCreator.GetAcroForm(drawContext.GetDocument(), true);
                 form.AddField(field);
             }
         }

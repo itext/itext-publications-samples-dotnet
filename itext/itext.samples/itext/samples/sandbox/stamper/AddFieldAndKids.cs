@@ -33,7 +33,7 @@ namespace iText.Samples.Sandbox.Stamper
                 .SetWidgetRectangle(new Rectangle(150, 760, 300, 30)).CreateText();
             password.SetValue("");
             personal.AddKid(password);
-            PdfAcroForm.GetAcroForm(pdfDoc, true).AddField(personal, pdfDoc.GetFirstPage());
+            PdfFormCreator.GetAcroForm(pdfDoc, true).AddField(personal, pdfDoc.GetFirstPage());
             
             pdfDoc.Close();
         }

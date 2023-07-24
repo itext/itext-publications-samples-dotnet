@@ -34,7 +34,7 @@ namespace iText.Samples.Sandbox.Events
                                                         "change the line width of the border and many other things. Now let's deactivate the event.");
 
             // There were no method that allows you to create a border for a Paragraph, since iText5 is EOL.
-            // In iText 7 a border for a Paragraph can be created by calling setBorder() method.
+            // In iText a border for a Paragraph can be created by calling setBorder() method.
             paragraphWithBorder.SetBorder(new SolidBorder(1));
             doc.Add(paragraphWithBorder);
             doc.Add(new Paragraph("This paragraph no longer has a border."));

@@ -35,7 +35,7 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
         {
             PdfDocument pdfDocument = new PdfDocument(new PdfWriter(dest));
 
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDocument, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDocument, true);
 
             // Embedded parameter indicates whether the font is to be embedded into the target document.
             // We set it to make sure that the resultant document looks the same within different environments

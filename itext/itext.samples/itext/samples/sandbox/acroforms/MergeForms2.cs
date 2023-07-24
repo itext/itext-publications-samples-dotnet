@@ -52,7 +52,7 @@ namespace iText.Samples.Sandbox.Acroforms
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(baos));
 
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
             foreach (PdfFormField field in form.GetAllFormFields().Values)
             {
                 field.SetFieldName(String.Format("{0}_{1}", field.GetFieldName().ToString(), i));

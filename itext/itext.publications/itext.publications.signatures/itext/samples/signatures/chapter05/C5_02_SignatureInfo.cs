@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using iText.Bouncycastle.Asn1.Tsp;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Forms;
+using iText.Forms.Fields;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
@@ -227,7 +228,7 @@ namespace iText.Samples.Signatures.Chapter05
         public virtual void InspectSignatures(String path)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(path));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, false);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, false);
             SignaturePermissions perms = null;
             SignatureUtil signUtil = new SignatureUtil(pdfDoc);
             IList<String> names = signUtil.GetSignatureNames();

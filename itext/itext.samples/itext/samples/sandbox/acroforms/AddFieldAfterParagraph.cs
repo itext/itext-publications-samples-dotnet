@@ -25,7 +25,7 @@ namespace iText.Samples.Sandbox.Acroforms
         protected void ManipulatePdf(String dest)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
 
             Document doc = new Document(pdfDoc);
             doc.Add(new Paragraph("This is a paragraph.\nForm field will be inserted after it"));
@@ -71,7 +71,7 @@ namespace iText.Samples.Sandbox.Acroforms
             {
                 base.Draw(drawContext);
 
-                PdfAcroForm form = PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true);
+                PdfAcroForm form = PdfFormCreator.GetAcroForm(drawContext.GetDocument(), true);
                 PdfTextFormField field = new TextFormFieldBuilder(drawContext.GetDocument(), "myField2").SetWidgetRectangle(occupiedArea.GetBBox()).CreateText();
                 field.SetValue("Another Value");
                 form.AddField(field);

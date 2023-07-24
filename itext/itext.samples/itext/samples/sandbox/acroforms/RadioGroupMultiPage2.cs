@@ -26,7 +26,7 @@ namespace iText.Samples.Sandbox.Acroforms
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
 
             // Radio buttons will be added to this radio group
             RadioFormFieldBuilder builder = new RadioFormFieldBuilder(pdfDoc, "answer");
@@ -85,7 +85,7 @@ namespace iText.Samples.Sandbox.Acroforms
             public override void Draw(DrawContext drawContext)
             {
                 PdfDocument document = drawContext.GetDocument();
-                PdfAcroForm form = PdfAcroForm.GetAcroForm(document, true);
+                PdfAcroForm form = PdfFormCreator.GetAcroForm(document, true);
 
                 // Create a radio button that is added to a radio group.
                 PdfFormAnnotation field = new RadioFormFieldBuilder(document, null)

@@ -3,6 +3,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 using iText.Forms;
+using iText.Forms.Fields;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
@@ -28,7 +29,7 @@ namespace iText.Samples.Sandbox.Acroforms
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
 
             // If no fields have been explicitly included, then all fields are flattened.
             // Otherwise only the included fields are flattened.

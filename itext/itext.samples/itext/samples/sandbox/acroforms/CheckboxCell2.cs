@@ -68,7 +68,7 @@ namespace iText.Samples.Sandbox.Acroforms
             public override void Draw(DrawContext drawContext)
             {
                 Rectangle position = GetOccupiedAreaBBox();
-                PdfAcroForm form = PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true);
+                PdfAcroForm form = PdfFormCreator.GetAcroForm(drawContext.GetDocument(), true);
 
                 // Define the coordinates of the middle
                 float x = (position.GetLeft() + position.GetRight()) / 2;

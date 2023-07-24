@@ -31,7 +31,7 @@ namespace iText.Samples.Sandbox.Acroforms
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
 
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
             IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             fields["Name"].SetValue("Jeniffer");
             fields["Company"].SetValue("iText's next customer");

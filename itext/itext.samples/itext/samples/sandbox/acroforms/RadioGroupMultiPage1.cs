@@ -33,7 +33,7 @@ namespace iText.Samples.Sandbox.Acroforms
             Document doc = new Document(pdfDoc);
             PdfFont font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
             Rectangle rect = new Rectangle(40, 788, 20, 18);
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
             
             // Radio buttons will be added to this radio group
             string formfieldName = "Language";

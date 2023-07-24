@@ -35,7 +35,7 @@ namespace iText.Samples.Sandbox.Typography.Bengali
         {
             PdfDocument pdfDocument = new PdfDocument(new PdfWriter(dest));
 
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDocument, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDocument, true);
 
             PdfFont font = PdfFontFactory.CreateFont(FONTS_FOLDER + "NotoSansBengali-Regular.ttf",
                     PdfEncodings.IDENTITY_H);

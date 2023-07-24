@@ -23,7 +23,7 @@ namespace iText.Samples.Sandbox.Acroforms
         protected void ManipulatePdf(String dest)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
             PdfFormField button = form.CopyField("Test");
             PdfArray rect = button.GetWidgets()[0].GetRectangle();
 

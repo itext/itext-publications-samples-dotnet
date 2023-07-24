@@ -39,7 +39,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
             PdfDocument pdfDocument = new PdfDocument(new PdfWriter(dest));
             Document document = new Document(pdfDocument);
 
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(document.GetPdfDocument(), true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(document.GetPdfDocument(), true);
 
             PdfFont font = PdfFontFactory.CreateFont(FONTS_FOLDER + "NotoNaskhArabic-Regular.ttf",
                     PdfEncodings.IDENTITY_H);

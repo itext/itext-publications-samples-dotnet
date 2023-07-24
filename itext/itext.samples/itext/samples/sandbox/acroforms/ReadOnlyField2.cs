@@ -29,7 +29,7 @@ namespace iText.Samples.Sandbox.Acroforms
             byte[] content = CreateForm();
             IRandomAccessSource source = new RandomAccessSourceFactory().CreateSource(content);
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(source, new ReaderProperties()), new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
 
             form.GetField("text1")
 
@@ -57,7 +57,7 @@ namespace iText.Samples.Sandbox.Acroforms
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(baos));
             PdfFont font = PdfFontFactory.CreateFont();
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
 
             Rectangle rect = new Rectangle(36, 770, 108, 36);
             PdfTextFormField textField1 = new TextFormFieldBuilder(pdfDoc, "text1")

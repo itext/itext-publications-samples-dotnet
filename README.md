@@ -1,2 +1,2 @@
-[iText 7 .NET Samples](http://developers.itextpdf.com/examples-itext7)
+[iText .NET Samples](https://kb.itextpdf.com/home/it7kb/examples)
 -----

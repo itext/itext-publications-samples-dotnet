@@ -74,7 +74,7 @@ namespace iText.Samples.Signatures.Chapter02
 
             field.GetWidgets()[0].SetAppearanceCharacteristics(mkDictionary);
 
-            PdfAcroForm.GetAcroForm(pdfDoc, true).AddField(field);
+            PdfFormCreator.GetAcroForm(pdfDoc, true).AddField(field);
 
             Rectangle rect = new Rectangle(0, 0, 200, 100);
             PdfFormXObject xObject = new PdfFormXObject(rect);
@@ -104,7 +104,7 @@ namespace iText.Samples.Signatures.Chapter02
 
             field.GetWidgets()[0].SetHighlightMode(PdfAnnotation.HIGHLIGHT_OUTLINE).SetFlags(PdfAnnotation.PRINT);
 
-            PdfAcroForm.GetAcroForm(pdfDoc, true).AddField(field);
+            PdfFormCreator.GetAcroForm(pdfDoc, true).AddField(field);
 
             pdfDoc.Close();
         }

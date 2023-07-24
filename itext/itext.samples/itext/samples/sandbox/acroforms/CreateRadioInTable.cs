@@ -26,7 +26,7 @@ namespace iText.Samples.Sandbox.Acroforms
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
             Document doc = new Document(pdfDoc);
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
             
             // Radio buttons will be added to this radio group
             RadioFormFieldBuilder builder = new RadioFormFieldBuilder(pdfDoc, "Language");

@@ -94,7 +94,7 @@ namespace iText.Samples.Sandbox.Acroforms
                     optionsArray[i][1] = options[i];
                 }
 
-                PdfAcroForm form = PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true);
+                PdfAcroForm form = PdfFormCreator.GetAcroForm(drawContext.GetDocument(), true);
 
                 // The 3rd parameter is the combobox name, the 4th parameter is the combobox's initial value
                 PdfChoiceFormField choice = new ChoiceFormFieldBuilder(drawContext.GetDocument(), name)

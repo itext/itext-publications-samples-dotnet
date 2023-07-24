@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using iText.Forms;
+using iText.Forms.Fields;
 using iText.IO.Font;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
@@ -33,7 +34,7 @@ namespace iText.Samples.Sandbox.Annotations
 
             PdfResources acroResources = new PdfResources();
             PdfName fontResourceName = acroResources.AddFont(pdf, font);
-            PdfAcroForm.GetAcroForm(pdf, true).SetDefaultResources(acroResources.GetPdfObject());
+            PdfFormCreator.GetAcroForm(pdf, true).SetDefaultResources(acroResources.GetPdfObject());
 
             Rectangle rect = new Rectangle(100, 700, 200, 120);
             String annotationText = "Annotation text";

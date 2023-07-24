@@ -115,7 +115,7 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SetFieldName(name);
             signer.SetCertificationLevel(PdfSigner.CERTIFIED_FORM_FILLING);
 
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(signer.GetDocument(), true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(signer.GetDocument(), true);
             form.GetField(name).SetReadOnly(true);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
@@ -149,7 +149,7 @@ namespace iText.Samples.Signatures.Chapter02
                 new StampingProperties().UseAppendMode());
             signer.SetFieldName(name);
 
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(signer.GetDocument(), true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(signer.GetDocument(), true);
             form.GetField(fname).SetValue(value);
             form.GetField(name).SetReadOnly(true);
             form.GetField(fname).SetReadOnly(true);
@@ -164,7 +164,7 @@ namespace iText.Samples.Signatures.Chapter02
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest),
                 new StampingProperties().UseAppendMode());
 
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
             form.GetField(name).SetValue(value);
 
             pdfDoc.Close();
@@ -230,7 +230,7 @@ namespace iText.Samples.Signatures.Chapter02
                 base.Draw(drawContext);
                 PdfFormField field = new TextFormFieldBuilder(drawContext.GetDocument(), name)
                     .SetWidgetRectangle(GetOccupiedAreaBBox()).CreateText();
-                PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true).AddField(field);
+                PdfFormCreator.GetAcroForm(drawContext.GetDocument(), true).AddField(field);
             }
         }
 
@@ -258,7 +258,7 @@ namespace iText.Samples.Signatures.Chapter02
 
                 field.GetWidgets()[0].SetFlag(PdfAnnotation.PRINT);
                 field.GetWidgets()[0].SetHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT);
-                PdfAcroForm.GetAcroForm(drawContext.GetDocument(), true).AddField(field);
+                PdfFormCreator.GetAcroForm(drawContext.GetDocument(), true).AddField(field);
             }
         }
     }

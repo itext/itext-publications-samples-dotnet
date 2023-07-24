@@ -40,7 +40,7 @@ namespace iText.Samples.Sandbox.Acroforms.Reporting
         protected void ManipulatePdf(String dest)
         {
             PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(srcDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(srcDoc, true);
 
             // Create a map with fields from the acroform and their names
             Dictionary<String, Rectangle> positions = new Dictionary<String, Rectangle>();

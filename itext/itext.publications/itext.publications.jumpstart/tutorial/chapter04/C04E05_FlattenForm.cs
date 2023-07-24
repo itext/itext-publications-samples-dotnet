@@ -21,7 +21,7 @@ namespace Tutorial.Chapter04 {
         public virtual void ManipulatePdf(String src, String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdf, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdf, true);
             IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
             PdfFormField toSet;
             fields.TryGetValue("name", out toSet);

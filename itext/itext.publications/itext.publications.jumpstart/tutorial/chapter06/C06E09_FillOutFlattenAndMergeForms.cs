@@ -45,7 +45,7 @@ namespace Tutorial.Chapter06 {
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     PdfDocument sourcePdfDocument = new PdfDocument(new PdfReader(SRC), new PdfWriter(baos));
                     //Read fields
-                    PdfAcroForm form = PdfAcroForm.GetAcroForm(sourcePdfDocument, true);
+                    PdfAcroForm form = PdfFormCreator.GetAcroForm(sourcePdfDocument, true);
                     StringTokenizer tokenizer = new StringTokenizer(line, ";");
                     IDictionary<String, PdfFormField> fields = form.GetAllFormFields();
                     //Fill out fields

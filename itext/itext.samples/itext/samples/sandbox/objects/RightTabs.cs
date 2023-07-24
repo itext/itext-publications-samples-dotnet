@@ -56,7 +56,7 @@ namespace iText.Samples.Sandbox.Objects
                 .AddTabStops(tabStops)
                 .Add("iText 5 is old")
                 .Add(new Tab())
-                .Add("iText 7 is new");
+                .Add("iText is new");
             document.Add(paragraph);
 
             document.Close();

@@ -37,7 +37,7 @@ namespace Tutorial.Chapter05 {
             canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(StandardFonts.HELVETICA), 12).MoveText(265, 597
                 ).ShowText("I agree to the terms and conditions.").EndText();
             //Add form field
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDoc, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDoc, true);
             PdfButtonFormField checkField = new CheckBoxFormFieldBuilder(pdfDoc, "agreement")
                     .SetWidgetRectangle(new Rectangle(245, 594, 15, 15))
                     .SetCheckType(CheckBoxType.CHECK).CreateCheckBox();

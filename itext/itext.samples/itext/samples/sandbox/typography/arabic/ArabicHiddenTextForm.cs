@@ -50,7 +50,7 @@ namespace iText.Samples.Sandbox.Typography.Arabic
             // في القيام بنشاط
             String text = "\u0641\u064A\u0020\u0627\u0644\u0642\u064A\u0627\u0645\u0020\u0628\u0646\u0634\u0627\u0637";
 
-            PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDocument, true);
+            PdfAcroForm form = PdfFormCreator.GetAcroForm(pdfDocument, true);
 
             // Set needAppearance value to false in order to hide the text of the form fields
             form.SetNeedAppearances(false);
