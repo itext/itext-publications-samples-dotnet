@@ -1,29 +1,29 @@
-using System;
+﻿using System;
 using System.IO;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using NUnit.Framework.Constraints;
 
 namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
 
-    public class C05E02_ColumnWidths {
-        public const String DEST = "../../../results/chapter05/column_widths.pdf";
+    public class C05E02_ColumnWidths5 {
+        public const String DEST = "../../../results/chapter05/column_widths5.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
-            new C05E02_ColumnWidths().CreatePdf(DEST);
+            new C05E02_ColumnWidths5().CreatePdf(DEST);
         }
 
         public virtual void CreatePdf(String dest) {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
+            
             // Initialize document
             Document document = new Document(pdf);
-            Table table = new Table(UnitValue.CreatePercentArray(new float[] { 2, 1, 1 }));
+            Table table = new Table(new float[] { 2, 1, 1 });
             table.SetWidth(UnitValue.CreatePercentValue(80));
             table.SetHorizontalAlignment(HorizontalAlignment.CENTER);
             table.AddCell(new Cell(1, 3).Add(new Paragraph("Cell with colspan 3")));

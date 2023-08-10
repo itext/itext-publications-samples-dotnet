@@ -8,13 +8,13 @@ using iText.Layout.Properties;
 
 namespace iText.Highlevel.Chapter05 {
     /// <author>Bruno Lowagie (iText Software)</author>
-    public class C05E05_CellMarginPadding {
-        public const String DEST = "../../../results/chapter05/cell_margin_padding.pdf";
+    public class C05E05_CellPaddingMargin {
+        public const String DEST = "../../../results/chapter05/cell_padding_margin.pdf";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
-            new C05E05_CellMarginPadding().CreatePdf(DEST);
+            new C05E05_CellPaddingMargin().CreatePdf(DEST);
         }
 
         public virtual void CreatePdf(String dest) {
