@@ -86,7 +86,8 @@ namespace iText.Samples.Sandbox.Typography.Latin
         {
             X509Certificate[] chain;
             String alias = null;
-            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(p12FileName, FileMode.Open, FileAccess.Read), ksPass);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(p12FileName, FileMode.Open, FileAccess.Read), ksPass);
 
             foreach (var a in pk12.Aliases)
             {
@@ -111,7 +112,8 @@ namespace iText.Samples.Sandbox.Typography.Latin
         private static ICipherParameters ReadFirstKey(String p12FileName, char[] ksPass, char[] keyPass)
         {
             String alias = null;
-            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(p12FileName, FileMode.Open, FileAccess.Read), ksPass);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(p12FileName, FileMode.Open, FileAccess.Read), ksPass);
 
             foreach (var a in pk12.Aliases)
             {

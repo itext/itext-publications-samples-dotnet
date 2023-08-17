@@ -6,11 +6,13 @@ using Org.BouncyCastle.Asn1.X509;
 using Org.BouncyCastle.Asn1.X9;
 using Org.BouncyCastle.Cms;
 using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.X509;
 using Org.BouncyCastle.X509.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
+using Org.BouncyCastle.Utilities.Collections;
+using X509Certificate = Org.BouncyCastle.X509.X509Certificate;
 
 namespace iText.SigningExamples.AwsKms
 {
@@ -49,10 +51,9 @@ namespace iText.SigningExamples.AwsKms
                 .WithSignedAttributeGenerator(new DefaultSignedAttributeTableGenerator())
                 .Build(signatureFactory, x509Certificate);
             gen.AddSignerInfoGenerator(signerInfoGenerator);
-
-            X509CollectionStoreParameters collectionStoreParameters = new X509CollectionStoreParameters(new List<X509Certificate> { x509Certificate });
-            IX509Store collectionStore = X509StoreFactory.Create("CERTIFICATE/COLLECTION", collectionStoreParameters);
-            gen.AddCertificates(collectionStore);
+            
+            IStore<X509Certificate> store =CollectionUtilities.CreateStore(new List<X509Certificate> { x509Certificate });
+            gen.AddCertificates(store);
 
             CmsSignedData sigData = gen.Generate(msg, false);
             return sigData.GetEncoded();
@@ -95,7 +96,7 @@ namespace iText.SigningExamples.AwsKms
 
         public object AlgorithmDetails => signatureAlgorithm;
 
-        public IStreamCalculator CreateCalculator()
+        public IStreamCalculator<IBlockResult> CreateCalculator()
         {
             return new AwsKmsStreamCalculator(keyId, signingAlgorithm);
         }
@@ -114,7 +115,7 @@ namespace iText.SigningExamples.AwsKms
         };
     }
 
-    class AwsKmsStreamCalculator : IStreamCalculator
+    class AwsKmsStreamCalculator : IStreamCalculator<IBlockResult>
     {
         private string keyId;
         private string signingAlgorithm;
@@ -128,7 +129,7 @@ namespace iText.SigningExamples.AwsKms
 
         public Stream Stream => stream;
 
-        public object GetResult()
+        public IBlockResult GetResult()
         {
             try
             {

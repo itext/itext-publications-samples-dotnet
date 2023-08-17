@@ -61,7 +61,8 @@ namespace iText.Samples.Signatures.Chapter04
             byte[] hash = memoryStream.ToArray();
 
             // Load our private key from the key store
-            Pkcs12Store store = new Pkcs12Store(new FileStream(KEYSTORE, FileMode.Open, FileAccess.Read), PASSWORD);
+            Pkcs12Store store = new Pkcs12StoreBuilder().Build();
+            store.Load(new FileStream(KEYSTORE, FileMode.Open, FileAccess.Read), PASSWORD);
 
             // Searching for private key
             String alias = null;

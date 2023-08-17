@@ -43,7 +43,8 @@ namespace iText.Samples.Signatures.Chapter03
             String tsaUser = properties.GetProperty("TSAUSERNAME");
             String tsaPass = properties.GetProperty("TSAPASSWORD");
 
-            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(path, FileMode.Open, FileAccess.Read), pass);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(path, FileMode.Open, FileAccess.Read), pass);
             string alias = null;
             foreach (var a in pk12.Aliases)
             {

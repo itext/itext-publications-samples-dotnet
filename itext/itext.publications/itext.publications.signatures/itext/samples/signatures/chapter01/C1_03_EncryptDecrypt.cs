@@ -53,7 +53,9 @@ namespace iText.Samples.Signatures.Chapter01
 
         private void InitKeyStore(String keystore, String ks_pass)
         {
-            ks = new Pkcs12Store(new FileStream(keystore, FileMode.Open, FileAccess.Read),
+            
+            ks =new Pkcs12StoreBuilder().Build();
+            ks.Load(new FileStream(keystore, FileMode.Open, FileAccess.Read),
                 ks_pass.ToCharArray());
         }
 
