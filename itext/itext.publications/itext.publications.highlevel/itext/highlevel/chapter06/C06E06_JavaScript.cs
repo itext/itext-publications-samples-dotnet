@@ -7,7 +7,6 @@ using iText.Layout;
 using iText.Layout.Element;
 
 namespace iText.Highlevel.Chapter06 {
-    /// <author>iText</author>
     public class C06E06_JavaScript {
         public const String DEST = "../../../results/chapter06/jekyll_hyde_javascript.pdf";
 

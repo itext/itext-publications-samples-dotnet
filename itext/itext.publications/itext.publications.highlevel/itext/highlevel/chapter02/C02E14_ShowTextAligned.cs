@@ -6,7 +6,6 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 
 namespace iText.Highlevel.Chapter02 {
-    /// <author>iText</author>
     public class C02E14_ShowTextAligned {
         public const String DEST = "../../../results/chapter02/showtextaligned.pdf";
 

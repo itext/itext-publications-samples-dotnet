@@ -10,7 +10,6 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 
 namespace iText.Highlevel.Notused.Appendix {
-    /// <author>iText</author>
     public class ListSeparatorProperties {
         public const String DEST = "results/appendix/separator_properties.pdf";
 

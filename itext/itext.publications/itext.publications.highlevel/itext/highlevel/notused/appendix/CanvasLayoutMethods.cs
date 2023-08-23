@@ -10,7 +10,6 @@ using iText.Layout.Properties;
 using iText.Layout.Splitting;
 
 namespace iText.Highlevel.Notused.Appendix {
-    /// <author>iText</author>
     public class CanvasLayoutMethods {
         public const String DEST = "results/appendix/canvas_layout_methods.pdf";
 

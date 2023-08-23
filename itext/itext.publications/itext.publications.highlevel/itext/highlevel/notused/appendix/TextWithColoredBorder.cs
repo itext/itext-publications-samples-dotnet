@@ -8,7 +8,6 @@ using iText.Layout.Borders;
 using iText.Layout.Element;
 
 namespace iText.Highlevel.Notused.Appendix {
-    /// <author>iText</author>
     public class TextWithColoredBorder {
         public const String DEST = "results/appendix/jekyll_hyde_text.pdf";
 
