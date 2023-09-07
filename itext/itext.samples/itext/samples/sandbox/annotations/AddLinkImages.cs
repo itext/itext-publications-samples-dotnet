@@ -36,7 +36,7 @@ namespace iText.Samples.Sandbox.Annotations
 
             Paragraph p = new Paragraph("Objects with links");
             p.Add(CreateImage(INFO, "https://itextpdf.com/"));
-            p.Add(CreateImage(DOG, "https://pages.itextpdf.com/ebook-stackoverflow-questions.html"));
+            p.Add(CreateImage(DOG, "https://kb.itextpdf.com/home/it7kb/ebooks/best-itext-7-questions-on-stackoverflow"));
             p.Add(CreateImage(FOX, "https://stackoverflow.com/q/29388313/1622493"));
 
             // Create PdfFormXObject object to add .wmf format image to the document,
