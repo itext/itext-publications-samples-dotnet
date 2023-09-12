@@ -69,6 +69,30 @@ namespace iText.SigningExamples.AwsKms
 
             string keyId = "alias/SigningExamples-RSA_2048";
             Func<System.Collections.Generic.List<string>, string> selector = list => list.Find(name => name.StartsWith("RSASSA_PSS"));
+            AwsKmsSignature signature = new AwsKmsSignature(keyId, selector);
+            System.Security.Cryptography.X509Certificates.X509Certificate2 certificate2 = CertificateUtils.GenerateSelfSignedCertificate(
+                keyId,
+                "CN=AWS KMS PDF Signing Test RSAwithMGF1,OU=signing tests,O=iText",
+                selector
+            );
+            X509Certificate certificate = new X509Certificate(X509CertificateStructure.GetInstance(certificate2.RawData));
+
+            using (PdfReader pdfReader = new PdfReader(testFileName))
+            using (FileStream result = File.Create("circles-aws-kms-signed-simple-RSAwithMGF1.pdf"))
+            {
+                PdfSigner pdfSigner = new PdfSigner(pdfReader, result, new StampingProperties().UseAppendMode());
+
+                pdfSigner.SignDetached(signature, new IX509Certificate[] { new X509CertificateBC(certificate) }, null, null, null, 0, CryptoStandard.CMS);
+            }
+        }
+
+        [Test]
+        public void TestSignSimpleRsaSsaPssExternal()
+        {
+            string testFileName = @"..\..\..\resources\circles.pdf";
+
+            string keyId = "alias/SigningExamples-RSA_2048";
+            Func<System.Collections.Generic.List<string>, string> selector = list => list.Find(name => name.StartsWith("RSASSA_PSS"));
             System.Security.Cryptography.X509Certificates.X509Certificate2 certificate2 = CertificateUtils.GenerateSelfSignedCertificate(
                 keyId,
                 "CN=AWS KMS PDF Signing Test RSAwithMGF1,OU=signing tests,O=iText",
@@ -78,7 +102,7 @@ namespace iText.SigningExamples.AwsKms
             AwsKmsSignatureContainer signature = new AwsKmsSignatureContainer(certificate, keyId, selector);
 
             using (PdfReader pdfReader = new PdfReader(testFileName))
-            using (FileStream result = File.Create("circles-aws-kms-signed-simple-RSAwithMGF1.pdf"))
+            using (FileStream result = File.Create("circles-aws-kms-signed-simple-RSAwithMGF1-external.pdf"))
             {
                 PdfSigner pdfSigner = new PdfSigner(pdfReader, result, new StampingProperties().UseAppendMode());
 
