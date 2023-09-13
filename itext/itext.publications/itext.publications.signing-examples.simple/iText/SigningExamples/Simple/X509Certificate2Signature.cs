@@ -45,9 +45,16 @@ namespace iText.SigningExamples.Simple
                 throw new ArgumentException("Unknown encryption algorithm " + certificate.GetKeyAlgorithm());
         }
 
+        public bool UsePssForRsaSsa { get; set; }
+
         public string GetSignatureAlgorithmName()
         {
-            return signatureAlgorithmName;
+            return UsePssForRsaSsa && "RSA".Equals(signatureAlgorithmName) ? "RSASSA-PSS" : signatureAlgorithmName;
+        }
+
+        public ISignatureMechanismParams GetSignatureMechanismParameters()
+        {
+            return UsePssForRsaSsa && "RSA".Equals(signatureAlgorithmName) ? RSASSAPSSMechanismParams.CreateForDigestAlgorithm(digestAlgorithmName) : null;
         }
 
         public string GetDigestAlgorithmName()
@@ -60,7 +67,8 @@ namespace iText.SigningExamples.Simple
             switch(signatureAlgorithmName)
             {
                 case "RSA":
-                    return certificate.GetRSAPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName), RSASignaturePadding.Pkcs1);
+                    return certificate.GetRSAPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName),
+                        UsePssForRsaSsa ? RSASignaturePadding.Pss : RSASignaturePadding.Pkcs1);
                 case "DSA":
                     return PlainToDer(certificate.GetDSAPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName)));
                 case "ECDSA":
@@ -76,11 +84,6 @@ namespace iText.SigningExamples.Simple
             BigInteger r = new BigInteger(1, plain, 0, valueLength);
             BigInteger s = new BigInteger(1, plain, valueLength, valueLength);
             return new DerSequence(new DerInteger(r), new DerInteger(s)).GetEncoded(Asn1Encodable.Der);
-        }
-        
-        public ISignatureMechanismParams GetSignatureMechanismParameters()
-        {
-            return null;
         }
     }
 }
