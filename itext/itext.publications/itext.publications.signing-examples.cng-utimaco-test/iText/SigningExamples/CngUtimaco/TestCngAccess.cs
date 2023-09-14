@@ -13,11 +13,11 @@ namespace iText.SigningExamples.CngUtimaco
             CngProvider provider = new CngProvider("Utimaco CryptoServer Key Storage Provider");
             Assert.AreEqual("Utimaco CryptoServer Key Storage Provider", provider.Provider);
 
-            bool demoEcdsaExists = CngKey.Exists("DEMOecdsa", provider);
+            bool demoEcdsaExists = CngKey.Exists("DEMOecdsaKEY", provider);
             Assert.IsTrue(demoEcdsaExists);
             
-            CngKey key = CngKey.Open("DEMOecdsa", provider);
-            Assert.AreEqual("DEMOecdsa", key.KeyName);
+            CngKey key = CngKey.Open("DEMOecdsaKEY", provider);
+            Assert.AreEqual("DEMOecdsaKEY", key.KeyName);
             Assert.AreEqual("ECDSA_P521", key.Algorithm.Algorithm);
             Assert.AreEqual(521, key.KeySize);
 
