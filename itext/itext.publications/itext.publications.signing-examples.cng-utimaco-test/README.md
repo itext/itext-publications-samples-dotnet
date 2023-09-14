@@ -12,8 +12,10 @@ For the Utimaco CNG provider to address the correct device and group, its config
     Group = CNG
     Device = 3001@127.0.0.1
 
-An ECDSA keypair then has been generated in that group using (on a single line)
+Two keypairs then have been generated in that group using
 
-    cngtool Export=allow Name=DEMOecdsa CreateKey=ECDSA,521
+    cngtool Export=allow Name=DEMOecdsaKEY CreateKey=ECDSA,521
+    cngtool Export=allow Name=DEMOrsaKEY CreateKey=RSA,2048
 
-An associated self-signed certificate is automatically created by the tests in the Windows user certificate store.
+Associated self-signed certificates automatically are created by the tests in the Windows user certificate store.
+
