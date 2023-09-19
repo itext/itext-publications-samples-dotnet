@@ -66,12 +66,6 @@ namespace iText.Samples.Signatures.Chapter02
             black.Add(new PdfNumber(ColorConstants.BLACK.GetColorValue()[2]));
             mkDictionary.Put(PdfName.BC, black);
 
-            PdfArray white = new PdfArray();
-            white.Add(new PdfNumber(ColorConstants.WHITE.GetColorValue()[0]));
-            white.Add(new PdfNumber(ColorConstants.WHITE.GetColorValue()[1]));
-            white.Add(new PdfNumber(ColorConstants.WHITE.GetColorValue()[2]));
-            mkDictionary.Put(PdfName.BG, white);
-
             field.GetWidgets()[0].SetAppearanceCharacteristics(mkDictionary);
 
             PdfFormCreator.GetAcroForm(pdfDoc, true).AddField(field);
