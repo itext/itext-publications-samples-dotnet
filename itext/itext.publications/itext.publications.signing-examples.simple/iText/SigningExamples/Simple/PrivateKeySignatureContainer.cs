@@ -7,6 +7,7 @@ using Org.BouncyCastle.X509;
 using Org.BouncyCastle.X509.Store;
 using System.Collections.Generic;
 using System.IO;
+using Org.BouncyCastle.Utilities.Collections;
 
 namespace iText.SigningExamples.Simple
 {
@@ -35,9 +36,8 @@ namespace iText.SigningExamples.Simple
                 .Build(new Asn1SignatureFactory(algorithm, key), chain[0]);
             gen.AddSignerInfoGenerator(signerInfoGenerator);
 
-            X509CollectionStoreParameters collectionStoreParameters = new X509CollectionStoreParameters(new List<X509Certificate>(chain));
-            IX509Store collectionStore = X509StoreFactory.Create("CERTIFICATE/COLLECTION", collectionStoreParameters);
-            gen.AddCertificates(collectionStore);
+            IStore<X509Certificate> store =CollectionUtilities.CreateStore( new List<X509Certificate>(chain));
+            gen.AddCertificates(store);
 
             CmsSignedData sigData = gen.Generate(msg, false);
             return sigData.GetEncoded();

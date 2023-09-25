@@ -86,8 +86,8 @@ namespace iText.Samples.Sandbox.Signatures
         private PrivateKeySignature GetPrivateKeySignature(String certificatePath, char[] password)
         {
             String alias = null;
-            Pkcs12Store pk12 =
-                new Pkcs12Store(new FileStream(certificatePath, FileMode.Open, FileAccess.Read), password);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(certificatePath, FileMode.Open, FileAccess.Read), password);
 
             foreach (var a in pk12.Aliases)
             {
@@ -107,8 +107,8 @@ namespace iText.Samples.Sandbox.Signatures
         {
             IX509Certificate[] chain;
             String alias = null;
-            Pkcs12Store pk12 =
-                new Pkcs12Store(new FileStream(certificatePath, FileMode.Open, FileAccess.Read), password);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(certificatePath, FileMode.Open, FileAccess.Read), password);
 
             foreach (var a in pk12.Aliases)
             {
