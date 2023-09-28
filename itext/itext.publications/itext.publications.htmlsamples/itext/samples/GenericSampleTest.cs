@@ -34,9 +34,6 @@ namespace iText.Samples
 
             // Samples are run by separate samples runner
             searchConfig.IgnorePackageOrClass("iText.Samples.Htmlsamples.Chapter05.C05E03_Invitations");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Htmlsamples.Chapter07.C07E04_CreateFromURL");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Htmlsamples.Chapter07.C07E05_CreateFromURL2");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Htmlsamples.Chapter07.C07E06_CreateFromURL3");
             
             // Should not be run due to falling on different systems with different system fonts
             searchConfig.IgnorePackageOrClass("iText.Samples.Htmlsamples.Chapter06.C06E03_SystemFonts");
