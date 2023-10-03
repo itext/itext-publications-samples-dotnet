@@ -5,6 +5,7 @@ using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Utils;
+using iText.Forms.Form.Element;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.IO.Font;
@@ -65,12 +66,13 @@ namespace iText.Samples.Sandbox.Typography.Latin
             signer.SetFieldName("Field1");
 
             // Get Signature Appearance and set some of its properties
-            signer.GetSignatureAppearance()
-                    .SetPageRect(rect)
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName())
                     .SetReason(line1)
                     .SetLocation(line2)
                     .SetReasonCaption(line3)
-                    .SetLayer2Font(font);
+                    .SetFont(font);
+            signer.SetPageRect(rect)
+                    .SetSignatureAppearance(appearance);
 
             IX509Certificate[] certificateWrappers = new IX509Certificate[signChain.Length];
             for (int i = 0; i < certificateWrappers.Length; ++i) {
