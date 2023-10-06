@@ -2,6 +2,7 @@
 using Net.Pkcs11Interop.Common;
 using Net.Pkcs11Interop.HighLevelAPI;
 using Net.Pkcs11Interop.HighLevelAPI.Factories;
+using Net.Pkcs11Interop.HighLevelAPI.MechanismParams;
 using Org.BouncyCastle.Asn1.X509;
 using Org.BouncyCastle.X509;
 using System;
@@ -152,9 +153,16 @@ namespace iText.SigningExamples.Pkcs11
             return chain;
         }
 
+        public bool UsePssForRsaSsa { get; set; }
+
         public string GetSignatureAlgorithmName()
         {
-            return signatureAlgorithmName;
+            return UsePssForRsaSsa && "RSA".Equals(signatureAlgorithmName) ? "RSASSA-PSS" : signatureAlgorithmName;
+        }
+
+        public ISignatureMechanismParams GetSignatureMechanismParameters()
+        {
+            return UsePssForRsaSsa && "RSA".Equals(signatureAlgorithmName) ? RSASSAPSSMechanismParams.CreateForDigestAlgorithm(digestAlgorithmName) : null;
         }
 
         public string GetDigestAlgorithmName()
@@ -220,25 +228,58 @@ namespace iText.SigningExamples.Pkcs11
                     }
                     break;
                 case "RSA":
-                    switch (digestAlgorithmName)
+                    if (UsePssForRsaSsa)
                     {
-                        case "SHA1":
-                            mechanism = mechanismFactory.Create(CKM.CKM_SHA1_RSA_PKCS);
-                            break;
-                        case "SHA224":
-                            mechanism = mechanismFactory.Create(CKM.CKM_SHA224_RSA_PKCS);
-                            break;
-                        case "SHA256":
-                            mechanism = mechanismFactory.Create(CKM.CKM_SHA256_RSA_PKCS);
-                            break;
-                        case "SHA384":
-                            mechanism = mechanismFactory.Create(CKM.CKM_SHA384_RSA_PKCS);
-                            break;
-                        case "SHA512":
-                            mechanism = mechanismFactory.Create(CKM.CKM_SHA512_RSA_PKCS);
-                            break;
-                        default:
-                            throw new ArgumentException("Not supported: " + digestAlgorithmName + "with" + signatureAlgorithmName);
+                        MechanismParamsFactory mechanismParamsFactory = new MechanismParamsFactory();
+                        IMechanismParams pssParams = null;
+                        switch (digestAlgorithmName)
+                        {
+                            case "SHA1":
+                                pssParams = mechanismParamsFactory.CreateCkRsaPkcsPssParams((ulong)CKM.CKM_SHA_1, (ulong)CKG.CKG_MGF1_SHA1, (ulong)(DigestAlgorithms.GetOutputBitLength(digestAlgorithmName) / 8));
+                                mechanism = mechanismFactory.Create(CKM.CKM_SHA1_RSA_PKCS_PSS, pssParams);
+                                break;
+                            case "SHA224":
+                                pssParams = mechanismParamsFactory.CreateCkRsaPkcsPssParams((ulong)CKM.CKM_SHA224, (ulong)CKG.CKG_MGF1_SHA224, (ulong)(DigestAlgorithms.GetOutputBitLength(digestAlgorithmName) / 8));
+                                mechanism = mechanismFactory.Create(CKM.CKM_SHA224_RSA_PKCS_PSS, pssParams);
+                                break;
+                            case "SHA256":
+                                pssParams = mechanismParamsFactory.CreateCkRsaPkcsPssParams((ulong)CKM.CKM_SHA256, (ulong)CKG.CKG_MGF1_SHA256, (ulong)(DigestAlgorithms.GetOutputBitLength(digestAlgorithmName) / 8));
+                                mechanism = mechanismFactory.Create(CKM.CKM_SHA256_RSA_PKCS_PSS, pssParams);
+                                break;
+                            case "SHA384":
+                                pssParams = mechanismParamsFactory.CreateCkRsaPkcsPssParams((ulong)CKM.CKM_SHA384, (ulong)CKG.CKG_MGF1_SHA384, (ulong)(DigestAlgorithms.GetOutputBitLength(digestAlgorithmName) / 8));
+                                mechanism = mechanismFactory.Create(CKM.CKM_SHA384_RSA_PKCS_PSS, pssParams);
+                                break;
+                            case "SHA512":
+                                pssParams = mechanismParamsFactory.CreateCkRsaPkcsPssParams((ulong)CKM.CKM_SHA224, (ulong)CKG.CKG_MGF1_SHA224, (ulong)(DigestAlgorithms.GetOutputBitLength(digestAlgorithmName) / 8));
+                                mechanism = mechanismFactory.Create(CKM.CKM_SHA512_RSA_PKCS_PSS, pssParams);
+                                break;
+                            default:
+                                throw new ArgumentException("Not supported: " + digestAlgorithmName + "with" + signatureAlgorithmName);
+                        }
+                    }
+                    else
+                    {
+                        switch (digestAlgorithmName)
+                        {
+                            case "SHA1":
+                                mechanism = mechanismFactory.Create(CKM.CKM_SHA1_RSA_PKCS);
+                                break;
+                            case "SHA224":
+                                mechanism = mechanismFactory.Create(CKM.CKM_SHA224_RSA_PKCS);
+                                break;
+                            case "SHA256":
+                                mechanism = mechanismFactory.Create(CKM.CKM_SHA256_RSA_PKCS);
+                                break;
+                            case "SHA384":
+                                mechanism = mechanismFactory.Create(CKM.CKM_SHA384_RSA_PKCS);
+                                break;
+                            case "SHA512":
+                                mechanism = mechanismFactory.Create(CKM.CKM_SHA512_RSA_PKCS);
+                                break;
+                            default:
+                                throw new ArgumentException("Not supported: " + digestAlgorithmName + "with" + signatureAlgorithmName);
+                        }
                     }
                     break;
                 default:
@@ -246,11 +287,6 @@ namespace iText.SigningExamples.Pkcs11
             }
 
             return session.Sign(mechanism, privateKeyHandle, message);
-        }
-        
-        public ISignatureMechanismParams GetSignatureMechanismParameters()
-        {
-            return null;
         }
     }
 }
