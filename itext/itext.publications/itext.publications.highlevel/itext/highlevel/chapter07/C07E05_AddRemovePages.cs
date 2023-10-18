@@ -7,7 +7,6 @@ using iText.Kernel.Pdf.Canvas;
 using iText.Layout.Element;
 
 namespace iText.Highlevel.Chapter07 {
-    /// <author>iText</author>
     public class C07E05_AddRemovePages {
         public const String SRC = "../../../resources/pdfs/jekyll_hyde_bookmarked.pdf";
 

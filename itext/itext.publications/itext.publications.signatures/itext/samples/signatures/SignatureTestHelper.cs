@@ -82,7 +82,8 @@ namespace iText.Samples.Signatures
         protected static IX509Certificate LoadCertificateFromKeyStore(String keystorePath, char[] ksPass)
         {
             string alias = null;
-            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(keystorePath, FileMode.Open, FileAccess.Read), ksPass);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(keystorePath, FileMode.Open, FileAccess.Read), ksPass);
 
             foreach (var a in pk12.Aliases)
             {

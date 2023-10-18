@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Annotations
             PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
 
             Link link = new Link("The Best iText Questions on StackOverflow",
-                PdfAction.CreateURI("https://pages.itextpdf.com/ebook-stackoverflow-questions.html"));
+                PdfAction.CreateURI("https://kb.itextpdf.com/home/it7kb/ebooks/best-itext-7-questions-on-stackoverflow"));
             link.SetFont(bold);
             Paragraph p = new Paragraph("Download ")
                 .Add(link)

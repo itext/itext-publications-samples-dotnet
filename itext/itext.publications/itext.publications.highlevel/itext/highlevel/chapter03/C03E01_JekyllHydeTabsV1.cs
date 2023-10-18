@@ -9,7 +9,6 @@ using iText.Layout;
 using iText.Layout.Element;
 
 namespace iText.Highlevel.Chapter03 {
-    /// <author>iText</author>
     public class C03E01_JekyllHydeTabsV1 {
         public const String SRC = "../../../resources/data/jekyll_hyde.csv";
 

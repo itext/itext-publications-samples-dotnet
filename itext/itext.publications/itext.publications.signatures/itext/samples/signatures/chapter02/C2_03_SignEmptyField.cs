@@ -63,7 +63,8 @@ namespace iText.Samples.Signatures.Chapter02
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();
 
-            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(KEYSTORE, FileMode.Open, FileAccess.Read), PASSWORD);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(KEYSTORE, FileMode.Open, FileAccess.Read), PASSWORD);
             string alias = null;
             foreach (var a in pk12.Aliases)
             {

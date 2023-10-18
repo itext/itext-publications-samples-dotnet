@@ -66,7 +66,8 @@ namespace iText.Samples.Signatures.Chapter02
 
         public void Sign(String keystore, int level, String src, String name, String dest)
         {
-            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(keystore, FileMode.Open, FileAccess.Read), PASSWORD);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(keystore, FileMode.Open, FileAccess.Read), PASSWORD);
             string alias = null;
             foreach (var a in pk12.Aliases)
             {

@@ -7,7 +7,6 @@ using iText.Layout;
 using iText.Layout.Element;
 
 namespace iText.Highlevel.Chapter03 {
-    /// <author>iText</author>
     public class C03E20_XObjectTypes {
         public const String WMF = "../../../resources/img/test/butterfly.wmf";
 

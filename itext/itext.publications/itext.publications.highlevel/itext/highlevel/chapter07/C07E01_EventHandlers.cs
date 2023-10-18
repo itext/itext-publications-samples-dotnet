@@ -7,7 +7,6 @@ using iText.Layout;
 using iText.Layout.Element;
 
 namespace iText.Highlevel.Chapter07 {
-    /// <author>iText</author>
     public class C07E01_EventHandlers {
         public const String DEST = "../../../results/chapter07/jekyll_hyde_page_orientation.pdf";
 

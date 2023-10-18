@@ -62,7 +62,8 @@ namespace iText.Samples
         {
             using (FileStream stream = new FileStream(PRIVATE, FileMode.Open, FileAccess.Read))
             {
-                Pkcs12Store keyStore = new Pkcs12Store(stream, "kspass".ToCharArray());
+                Pkcs12Store keyStore = new Pkcs12StoreBuilder().Build();
+                keyStore.Load(stream, "kspass".ToCharArray());
                 return new PrivateKeyBC(keyStore.GetKey("sandbox").Key);
             }
         }

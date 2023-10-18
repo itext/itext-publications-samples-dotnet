@@ -22,7 +22,8 @@ namespace iText.SigningExamples.Simple
             char[] storePass = "test1234".ToCharArray();
             string storeAlias = "RSAkey";
 
-            Pkcs12Store pkcs12 = new Pkcs12Store(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
+            Pkcs12Store pkcs12 = new Pkcs12StoreBuilder().Build();
+            pkcs12.Load(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
             AsymmetricKeyParameter key = pkcs12.GetKey(storeAlias).Key;
             X509CertificateEntry[] chainEntries = pkcs12.GetCertificateChain(storeAlias);
             IX509Certificate[] chain = new IX509Certificate[chainEntries.Length];
@@ -48,7 +49,8 @@ namespace iText.SigningExamples.Simple
             char[] storePass = "test1234".ToCharArray();
             string storeAlias = "DSAkey";
 
-            Pkcs12Store pkcs12 = new Pkcs12Store(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
+            Pkcs12Store pkcs12 = new Pkcs12StoreBuilder().Build();
+            pkcs12.Load(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
             AsymmetricKeyParameter key = pkcs12.GetKey(storeAlias).Key;
             X509CertificateEntry[] chainEntries = pkcs12.GetCertificateChain(storeAlias);
             IX509Certificate[] chain = new IX509Certificate[chainEntries.Length];
@@ -74,7 +76,8 @@ namespace iText.SigningExamples.Simple
             char[] storePass = "test1234".ToCharArray();
             string storeAlias = "ECDSAkey";
 
-            Pkcs12Store pkcs12 = new Pkcs12Store(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
+            Pkcs12Store pkcs12 = new Pkcs12StoreBuilder().Build();
+            pkcs12.Load(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
             AsymmetricKeyParameter key = pkcs12.GetKey(storeAlias).Key;
             X509CertificateEntry[] chainEntries = pkcs12.GetCertificateChain(storeAlias);
             IX509Certificate[] chain = new IX509Certificate[chainEntries.Length];
@@ -100,7 +103,8 @@ namespace iText.SigningExamples.Simple
             char[] storePass = "test1234".ToCharArray();
             string storeAlias = "RSAkey";
 
-            Pkcs12Store pkcs12 = new Pkcs12Store(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
+            Pkcs12Store pkcs12 = new Pkcs12StoreBuilder().Build();
+            pkcs12.Load(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
             AsymmetricKeyParameter key = pkcs12.GetKey(storeAlias).Key;
             X509CertificateEntry[] chainEntries = pkcs12.GetCertificateChain(storeAlias);
             X509Certificate[] chain = new X509Certificate[chainEntries.Length];
@@ -125,7 +129,8 @@ namespace iText.SigningExamples.Simple
             char[] storePass = "test1234".ToCharArray();
             string storeAlias = "DSAkey";
 
-            Pkcs12Store pkcs12 = new Pkcs12Store(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
+            Pkcs12Store pkcs12 = new Pkcs12StoreBuilder().Build();
+            pkcs12.Load(new FileStream(storePath, FileMode.Open, FileAccess.Read), storePass);
             AsymmetricKeyParameter key = pkcs12.GetKey(storeAlias).Key;
             X509CertificateEntry[] chainEntries = pkcs12.GetCertificateChain(storeAlias);
             X509Certificate[] chain = new X509Certificate[chainEntries.Length];

@@ -66,12 +66,6 @@ namespace iText.Samples.Signatures.Chapter02
             black.Add(new PdfNumber(ColorConstants.BLACK.GetColorValue()[2]));
             mkDictionary.Put(PdfName.BC, black);
 
-            PdfArray white = new PdfArray();
-            white.Add(new PdfNumber(ColorConstants.WHITE.GetColorValue()[0]));
-            white.Add(new PdfNumber(ColorConstants.WHITE.GetColorValue()[1]));
-            white.Add(new PdfNumber(ColorConstants.WHITE.GetColorValue()[2]));
-            mkDictionary.Put(PdfName.BG, white);
-
             field.GetWidgets()[0].SetAppearanceCharacteristics(mkDictionary);
 
             PdfFormCreator.GetAcroForm(pdfDoc, true).AddField(field);
@@ -141,7 +135,8 @@ namespace iText.Samples.Signatures.Chapter02
             appCreate.CreatePdf(DEST + RESULT_FILES[0]);
             appCreate.AddField(SRC, DEST + RESULT_FILES[1]);
 
-            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(KEYSTORE, FileMode.Open, FileAccess.Read), PASSWORD);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(KEYSTORE, FileMode.Open, FileAccess.Read), PASSWORD);
             string alias = null;
             foreach (var a in pk12.Aliases)
             {

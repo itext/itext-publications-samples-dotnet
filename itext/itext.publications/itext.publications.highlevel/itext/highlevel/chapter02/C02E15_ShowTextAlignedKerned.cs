@@ -6,7 +6,6 @@ using iText.Layout.Properties;
 using iText.Licensing.Base;
 
 namespace iText.Highlevel.Chapter02 {
-    /// <author>iText</author>
     public class C02E15_ShowTextAlignedKerned {
         public static String KEY = "../../../resources/license/itextkey-typography.xml";
 

@@ -5,6 +5,8 @@ using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Utils;
+using iText.Forms.Fields.Properties;
+using iText.Forms.Form.Element;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.IO.Font;
@@ -65,12 +67,16 @@ namespace iText.Samples.Sandbox.Typography.Latin
             signer.SetFieldName("Field1");
 
             // Get Signature Appearance and set some of its properties
-            signer.GetSignatureAppearance()
-                    .SetPageRect(rect)
-                    .SetReason(line1)
-                    .SetLocation(line2)
-                    .SetReasonCaption(line3)
-                    .SetLayer2Font(font);
+            String signerName = CertificateInfo.GetSubjectFields(new X509CertificateBC(signChain[0])).GetField("CN");
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName())
+                    .SetContent(new SignedAppearanceText()
+                        .SetSignedBy(signerName)
+                        .SetReasonLine(line3 + line1)
+                        .SetLocationLine("Location: " + line2)
+                        .SetSignDate(signer.GetSignDate()))
+                    .SetFont(font);
+            signer.SetPageRect(rect)
+                    .SetSignatureAppearance(appearance);
 
             IX509Certificate[] certificateWrappers = new IX509Certificate[signChain.Length];
             for (int i = 0; i < certificateWrappers.Length; ++i) {
@@ -86,7 +92,8 @@ namespace iText.Samples.Sandbox.Typography.Latin
         {
             X509Certificate[] chain;
             String alias = null;
-            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(p12FileName, FileMode.Open, FileAccess.Read), ksPass);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(p12FileName, FileMode.Open, FileAccess.Read), ksPass);
 
             foreach (var a in pk12.Aliases)
             {
@@ -111,7 +118,8 @@ namespace iText.Samples.Sandbox.Typography.Latin
         private static ICipherParameters ReadFirstKey(String p12FileName, char[] ksPass, char[] keyPass)
         {
             String alias = null;
-            Pkcs12Store pk12 = new Pkcs12Store(new FileStream(p12FileName, FileMode.Open, FileAccess.Read), ksPass);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(p12FileName, FileMode.Open, FileAccess.Read), ksPass);
 
             foreach (var a in pk12.Aliases)
             {

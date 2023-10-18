@@ -8,9 +8,8 @@ using iText.Layout.Borders;
 using iText.Layout.Element;
 
 namespace iText.Highlevel.Chapter03 {
-    /// <author>iText</author>
     public class C03E18_ImageTypes {
-        public const String TEST1 = "../../../resources/img/test/map.jp2";
+        public const String TEST1 = "../../../resources/img/test/bee.jp2"; 
 
         public const String TEST2 = "../../../resources/img/test/butterfly.bmp";
 

@@ -26,7 +26,7 @@ namespace iText.Samples.Signatures.Testrunners
             classAreaMap.Add("iText.Samples.Signatures.Chapter02.C2_03_SignEmptyField",
                 new List<Rectangle>(new[] {new Rectangle(46, 472, 287, 255)}));
             classAreaMap.Add("iText.Samples.Signatures.Chapter02.C2_04_CreateEmptyField",
-                new List<Rectangle>(new[] {new Rectangle(72, 632, 200, 100)}));
+                new List<Rectangle>(new[] {new Rectangle(82, 662, 190, 20)}));
             classAreaMap.Add("iText.Samples.Signatures.Chapter02.C2_05_CustomAppearance",
                 new List<Rectangle>(new[] {new Rectangle(46, 472, 287, 255)}));
             classAreaMap.Add("iText.Samples.Signatures.Chapter02.C2_06_SignatureAppearance",

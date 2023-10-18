@@ -26,7 +26,7 @@ namespace iText.Samples.Sandbox.Annotations
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
             PdfPage firstPage = pdfDoc.GetFirstPage();
-            PdfAction linkAction = PdfAction.CreateURI("https://pages.itextpdf.com/ebook-stackoverflow-questions.html");
+            PdfAction linkAction = PdfAction.CreateURI("https://kb.itextpdf.com/home/it7kb/ebooks/best-itext-7-questions-on-stackoverflow");
 
             Rectangle annotLocation = new Rectangle(30, 770, 90, 30);
             PdfAnnotation link = new PdfLinkAnnotation(annotLocation)

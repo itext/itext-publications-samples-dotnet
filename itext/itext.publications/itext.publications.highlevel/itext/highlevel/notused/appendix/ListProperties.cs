@@ -12,7 +12,6 @@ using iText.Layout.Hyphenation;
 using iText.Layout.Properties;
 
 namespace iText.Highlevel.Notused.Appendix {
-    /// <author>iText</author>
     public class ListProperties {
         public const String DEST = "results/appendix/list_properties.pdf";
 

@@ -6,6 +6,7 @@ using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Bouncycastle.Crypto;
+using iText.Forms.Form.Element;
 using iText.IO.Image;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -57,14 +58,12 @@ namespace iText.Samples.Sandbox.Signatures
             // If you create new signature field (or use SetFieldName(System.String) with
             // the name that doesn't exist in the document or don't specify it at all) then
             // the signature is invisible by default.
-            PdfSignatureAppearance signatureAppearance = pdfSigner.GetSignatureAppearance();
-            signatureAppearance.SetRenderingMode(PdfSignatureAppearance.RenderingMode.GRAPHIC);
-            signatureAppearance.SetReason("");
-            signatureAppearance.SetLocationCaption("");
-            signatureAppearance.SetSignatureGraphic(clientSignatureImage);
-            signatureAppearance.SetPageNumber(signatureInfo.PageNumber);
-            signatureAppearance.SetPageRect(new Rectangle(signatureInfo.Left, signatureInfo.Bottom,
-                25, 25));
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName())
+                    .SetContent(clientSignatureImage);
+            pdfSigner.SetPageNumber(signatureInfo.PageNumber)
+                    .SetPageRect(new Rectangle(signatureInfo.Left, signatureInfo.Bottom,
+                25, 25))
+                    .SetSignatureAppearance(appearance);
 
             char[] password = "testpass".ToCharArray();
             IExternalSignature pks = GetPrivateKeySignature(CERT_PATH, password);
@@ -86,8 +85,8 @@ namespace iText.Samples.Sandbox.Signatures
         private PrivateKeySignature GetPrivateKeySignature(String certificatePath, char[] password)
         {
             String alias = null;
-            Pkcs12Store pk12 =
-                new Pkcs12Store(new FileStream(certificatePath, FileMode.Open, FileAccess.Read), password);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(certificatePath, FileMode.Open, FileAccess.Read), password);
 
             foreach (var a in pk12.Aliases)
             {
@@ -107,8 +106,8 @@ namespace iText.Samples.Sandbox.Signatures
         {
             IX509Certificate[] chain;
             String alias = null;
-            Pkcs12Store pk12 =
-                new Pkcs12Store(new FileStream(certificatePath, FileMode.Open, FileAccess.Read), password);
+            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
+            pk12.Load(new FileStream(certificatePath, FileMode.Open, FileAccess.Read), password);
 
             foreach (var a in pk12.Aliases)
             {
