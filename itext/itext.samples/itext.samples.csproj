@@ -20,7 +20,7 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
     <PackageReference Include="itext7.licensekey" Version="3.1.5" />
     <PackageReference Include="NVelocity" Version="1.1.1" />
-    <PackageReference Include="itext7.pdfxfa" Version="2.0.9" />
+    <PackageReference Include="itext7.pdfxfa" Version="2.0.12" />
   </ItemGroup>
   <PropertyGroup>
     <NoWarn>1701;1702;1591;1570;1572;1573;1574;1580;1584;1658</NoWarn>
