@@ -32,24 +32,24 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="itext.licensing.base" Version="4.0.6-SNAPSHOT" Condition="!Exists('..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
+    <PackageReference Include="itext.licensing.base" Version="4.0.6" Condition="!Exists('..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
     <ProjectReference Include="..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj" Condition="Exists('..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
     
-    <PackageReference Include="itext7" Version="7.2.6-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
+    <PackageReference Include="itext7" Version="7.2.6" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.layout\itext.layout.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.layout\itext.layout.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj')" />
-    <PackageReference Include="itext7.hyph" Version="7.2.6-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj')" />
+    <PackageReference Include="itext7.hyph" Version="7.2.6" Condition="!Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj')" />
-    <PackageReference Include="itext7.pdftest" Version="7.2.6-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')" />
+    <PackageReference Include="itext7.pdftest" Version="7.2.6" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')" />
-    <PackageReference Include="itext7.font-asian" Version="7.2.6-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj')" />
+    <PackageReference Include="itext7.font-asian" Version="7.2.6" Condition="!Exists('..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj')" />
     <!--This reference is added to let .NET automatically resolve version's conflict, when iText project version differs from the transitive dependency iText versions-->
-    <PackageReference Include="itext7.commons" Version="7.2.6-SNAPSHOT" IncludeAssets="none" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
+    <PackageReference Include="itext7.commons" Version="7.2.6" IncludeAssets="none" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.commons\itext.commons.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">

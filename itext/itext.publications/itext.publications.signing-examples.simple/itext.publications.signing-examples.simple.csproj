@@ -12,7 +12,7 @@
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="itext7" Version="7.2.6-SNAPSHOT" />
+    <PackageReference Include="itext7" Version="7.2.6" />
     <PackageReference Include="System.Security.Cryptography.Pkcs" Version="5.0.1" />
   </ItemGroup>
 </Project>
