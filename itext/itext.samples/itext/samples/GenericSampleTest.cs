@@ -98,6 +98,7 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoToPage");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.MergeAndCount");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Pades");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Appearance");
 
             // Not a sample classes
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Utils");

@@ -19,7 +19,6 @@ namespace iText.Samples.Sandbox.Signatures.Pades
         public static readonly String DEST = "results/sandbox/signatures/pades/padesProlongSignature.pdf";
 
         private static readonly String ROOT = "../../../resources/cert/root.pem";
-        private static readonly String SIGN = "../../../resources/cert/sign.pem";
         private static readonly String TSA = "../../../resources/cert/tsaCert.pem";
         private static readonly char[] PASSWORD = "testpassphrase".ToCharArray();
 
