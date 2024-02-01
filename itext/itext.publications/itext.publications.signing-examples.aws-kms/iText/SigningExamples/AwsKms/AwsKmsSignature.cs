@@ -26,11 +26,10 @@ namespace iText.SigningExamples.AwsKms
                     case "RSASSA_PKCS1_V1_5_SHA_256":
                     case "RSASSA_PKCS1_V1_5_SHA_384":
                     case "RSASSA_PKCS1_V1_5_SHA_512":
-                        break;
                     case "RSASSA_PSS_SHA_256":
                     case "RSASSA_PSS_SHA_384":
                     case "RSASSA_PSS_SHA_512":
-                        throw new ArgumentException(String.Format("Signing algorithm {0} not supported directly by iText", signingAlgorithm));
+                        break;
                     default:
                         throw new ArgumentException(String.Format("Unknown signing algorithm: {0}", signingAlgorithm));
                 }
@@ -49,6 +48,10 @@ namespace iText.SigningExamples.AwsKms
                 case "RSASSA_PKCS1_V1_5_SHA_384":
                 case "RSASSA_PKCS1_V1_5_SHA_512":
                     return "RSA";
+                case "RSASSA_PSS_SHA_256":
+                case "RSASSA_PSS_SHA_384":
+                case "RSASSA_PSS_SHA_512":
+                    return "RSASSA-PSS";
                 default:
                     return null;
             }
@@ -60,13 +63,37 @@ namespace iText.SigningExamples.AwsKms
             {
                 case "ECDSA_SHA_256":
                 case "RSASSA_PKCS1_V1_5_SHA_256":
+                case "RSASSA_PSS_SHA_256":
                     return "SHA-256";
                 case "ECDSA_SHA_384":
                 case "RSASSA_PKCS1_V1_5_SHA_384":
+                case "RSASSA_PSS_SHA_384":
                     return "SHA-384";
                 case "ECDSA_SHA_512":
                 case "RSASSA_PKCS1_V1_5_SHA_512":
+                case "RSASSA_PSS_SHA_512":
                     return "SHA-512";
+                default:
+                    return null;
+            }
+        }
+
+        public ISignatureMechanismParams GetSignatureMechanismParameters()
+        {
+            switch (signingAlgorithm)
+            {
+                case "RSASSA_PSS_SHA_256":
+                    return RSASSAPSSMechanismParams.CreateForDigestAlgorithm("SHA-256");
+                case "RSASSA_PSS_SHA_384":
+                    return RSASSAPSSMechanismParams.CreateForDigestAlgorithm("SHA-384");
+                case "RSASSA_PSS_SHA_512":
+                    return RSASSAPSSMechanismParams.CreateForDigestAlgorithm("SHA-512");
+                case "ECDSA_SHA_256":
+                case "ECDSA_SHA_384":
+                case "ECDSA_SHA_512":
+                case "RSASSA_PKCS1_V1_5_SHA_256":
+                case "RSASSA_PKCS1_V1_5_SHA_384":
+                case "RSASSA_PKCS1_V1_5_SHA_512":
                 default:
                     return null;
             }
@@ -86,14 +113,8 @@ namespace iText.SigningExamples.AwsKms
                 return signResponse.Signature.ToArray();
             }
         }
-        
-        public ISignatureMechanismParams GetSignatureMechanismParameters()
-        {
-            return null;
-        }
 
         string keyId;
         string signingAlgorithm;
     }
-    
 }

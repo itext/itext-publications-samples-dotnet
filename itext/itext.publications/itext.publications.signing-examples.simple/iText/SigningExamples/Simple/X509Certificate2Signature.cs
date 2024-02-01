@@ -2,6 +2,7 @@
 using Org.BouncyCastle.Asn1;
 using Org.BouncyCastle.Math;
 using System;
+using System.IO;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
@@ -45,9 +46,16 @@ namespace iText.SigningExamples.Simple
                 throw new ArgumentException("Unknown encryption algorithm " + certificate.GetKeyAlgorithm());
         }
 
+        public bool UsePssForRsaSsa { get; set; }
+
         public string GetSignatureAlgorithmName()
         {
-            return signatureAlgorithmName;
+            return UsePssForRsaSsa && "RSA".Equals(signatureAlgorithmName) ? "RSASSA-PSS" : signatureAlgorithmName;
+        }
+
+        public ISignatureMechanismParams GetSignatureMechanismParameters()
+        {
+            return UsePssForRsaSsa && "RSA".Equals(signatureAlgorithmName) ? RSASSAPSSMechanismParams.CreateForDigestAlgorithm(digestAlgorithmName) : null;
         }
 
         public string GetDigestAlgorithmName()
@@ -55,16 +63,22 @@ namespace iText.SigningExamples.Simple
             return digestAlgorithmName;
         }
 
+        /// <summary>
+        /// Beware: This implementation is geared towards DER/Standard encoding of [EC]DSA
+        /// signatures. For use with *-PLAIN-* algorithms you'll have to remove the calls of
+        /// <see cref="PlainToDer(byte[])"/>  and maybe even introduce a DerToPlain method.
+        /// </summary>
         public byte[] Sign(byte[] message)
         {
             switch(signatureAlgorithmName)
             {
                 case "RSA":
-                    return certificate.GetRSAPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName), RSASignaturePadding.Pkcs1);
+                    return certificate.GetRSAPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName),
+                        UsePssForRsaSsa ? RSASignaturePadding.Pss : RSASignaturePadding.Pkcs1);
                 case "DSA":
                     return PlainToDer(certificate.GetDSAPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName)));
                 case "ECDSA":
-                    return certificate.GetECDsaPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName));
+                    return PlainToDer(certificate.GetECDsaPrivateKey().SignData(message, new HashAlgorithmName(digestAlgorithmName)));
                 default:
                     throw new ArgumentException("Unknown encryption algorithm " + signatureAlgorithmName);
             }
@@ -72,15 +86,35 @@ namespace iText.SigningExamples.Simple
 
         byte[] PlainToDer(byte[] plain)
         {
+            if (IsDerEncoding(plain))
+                return plain;
+
             int valueLength = plain.Length / 2;
             BigInteger r = new BigInteger(1, plain, 0, valueLength);
             BigInteger s = new BigInteger(1, plain, valueLength, valueLength);
             return new DerSequence(new DerInteger(r), new DerInteger(s)).GetEncoded(Asn1Encodable.Der);
         }
-        
-        public ISignatureMechanismParams GetSignatureMechanismParameters()
+
+        bool IsDerEncoding(byte[] signatureBytes)
         {
-            return null;
+            try
+            {
+                Asn1Object prim = Asn1Object.FromByteArray(signatureBytes);
+                if (prim is Asn1Sequence)
+                {
+                    Asn1Sequence seq = (Asn1Sequence)prim;
+                    if (seq.Count == 2)
+                    {
+                        return (seq[0] is DerInteger) && (seq[1] is DerInteger);
+                    }
+                }
+            }
+            catch (IOException ex)
+            {
+                // could not be parsed as DER
+            }
+
+            return false;
         }
     }
 }

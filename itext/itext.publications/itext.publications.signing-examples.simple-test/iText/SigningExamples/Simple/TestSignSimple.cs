@@ -52,6 +52,43 @@ namespace iText.SigningExamples.Simple
         }
 
         [Test]
+        public void TestSignSimpleRsaSsaPss()
+        {
+            string testFileName = @"..\..\..\resources\circles.pdf";
+            string storePath = @"..\..\..\keystore\test1234.p12";
+            string storePass = "test1234";
+            string storeAlias = "RSAkey";
+
+            SystemCertificates.X509Certificate2Collection pkcs12 = new SystemCertificates.X509Certificate2Collection();
+            pkcs12.Import(storePath, storePass, SystemCertificates.X509KeyStorageFlags.DefaultKeySet);
+            SystemCertificates.X509Certificate2 certificate = null;
+            foreach (SystemCertificates.X509Certificate2 aCertificate in pkcs12)
+            {
+                if (storeAlias.Equals(aCertificate.FriendlyName, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    certificate = aCertificate;
+                    break;
+                }
+            }
+            Assert.NotNull(certificate, "Key with alias {0} not found.", storeAlias);
+
+            X509Certificate bcCertificate = new X509Certificate(X509CertificateStructure.GetInstance(certificate.RawData));
+            IX509Certificate[] chain = { new X509CertificateBC(bcCertificate) };
+
+            X509Certificate2Signature signature = new X509Certificate2Signature(certificate, "SHA384");
+            signature.UsePssForRsaSsa = true;
+
+            using (PdfReader pdfReader = new PdfReader(testFileName))
+            using (FileStream result = File.Create("circles-RSASSA_PSS-signed-simple.pdf"))
+            {
+                PdfSigner pdfSigner = new PdfSigner(pdfReader, result, new StampingProperties().UseAppendMode());
+                ITSAClient tsaClient = null;
+
+                pdfSigner.SignDetached(signature, chain, null, null, tsaClient, 0, PdfSigner.CryptoStandard.CMS);
+            }
+        }
+
+        [Test]
         public void TestSignSimpleDsa()
         {
             string testFileName = @"..\..\..\resources\circles.pdf";

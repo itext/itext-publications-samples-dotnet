@@ -12,8 +12,8 @@
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="itext" Version="8.0.2" />
-    <PackageReference Include="itext.bouncy-castle-adapter" Version="8.0.2" />
+    <PackageReference Include="itext" Version="8.0.3" />
+    <PackageReference Include="itext.bouncy-castle-adapter" Version="8.0.3" />
     <PackageReference Include="System.Security.Cryptography.Pkcs" Version="5.0.1" />
   </ItemGroup>
 </Project>
