@@ -40,6 +40,7 @@
     <ProjectReference Include="..\..\..\itextcore\itext\itext.forms\itext.forms.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.forms\itext.forms.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.sign\itext.sign.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.sign\itext.sign.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj')" />
+    <ProjectReference Include="..\..\..\itextcore\itext\itext.pdfua\itext.pdfua.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.pdfua\itext.pdfua.csproj')" />
     <PackageReference Include="itext.hyph" Version="8.0.4-SNAPSHOT" Condition="!Exists('..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj')" />
     <PackageReference Include="itext.pdftest" Version="8.0.4-SNAPSHOT" Condition="!Exists('..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')" />
