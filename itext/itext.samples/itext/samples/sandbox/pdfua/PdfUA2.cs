@@ -10,11 +10,11 @@ using iText.Kernel.Exceptions;
 namespace iText.Samples.Sandbox.Pdfua
 {
     public class PdfUA2 {
-        public const String DEST = "./target/sandbox/pdfua2/pdf_ua.pdf";
+        public const String DEST = "results/sandbox/pdfua2/pdf_ua.pdf";
 
-        public const String FONT = "./src/main/resources/font/FreeSans.ttf";
+        public const String FONT = "../../../resources/font/FreeSans.ttf";
 
-        public const String UA_XMP = "./src/main/resources/xml/pdf_ua_xmp.xmp";
+        public const String UA_XMP = "../../../resources/xml/pdf_ua_xmp.xmp";
 
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
