@@ -8,13 +8,10 @@ using iText.Kernel.Pdf;
 using iText.Samples.Sandbox.Signatures.Utils;
 using iText.Signatures;
 using iText.Signatures.Cms;
-using J2N.Collections.Generic.Extensions;
-using Org.BouncyCastle.Tls;
 using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Xml.Serialization;
-using Org.BouncyCastle.Security;
 
 namespace iText.Samples.Sandbox.Signatures.TwoPhase
 {
@@ -185,8 +182,12 @@ namespace iText.Samples.Sandbox.Signatures.TwoPhase
         /// <returns>the chain of certificates to be used for the signing operation.</returns>
         /// 
         protected IX509Certificate[] loadCertificatesFromFile(String certificatePath)
-        {
-            return PemFileHelper.ReadFirstChain(certificatePath).ToArray();
+        {            
+            var asCollection = PemFileHelper.ReadFirstChain(certificatePath);
+
+            var result = new IX509Certificate[asCollection.Length];
+            asCollection.CopyTo(result, 0);
+            return result;
         }
 
         ///<summary>Creates private key for the sample. This key shouldn't be used for the real signing.</summary>     
