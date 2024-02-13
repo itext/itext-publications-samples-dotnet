@@ -135,7 +135,7 @@ namespace iText.Samples
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 
-        [Timeout(600000)]
+        [Timeout(60000)]
         [Test, Description("{0}")]
         public virtual void Test()
         {
