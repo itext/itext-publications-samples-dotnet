@@ -63,8 +63,8 @@ namespace iText.Samples.Htmlsamples.Chapter04
             ConverterProperties properties = new ConverterProperties();
             properties.SetBaseUri(baseUri);
             OutlineHandler outlineHandler = new OutlineHandler();
-            outlineHandler.PutTagPriorityMapping("h1", 1);
-            outlineHandler.PutTagPriorityMapping("p", 2);
+            outlineHandler.PutMarkPriorityMapping("h1", 1);
+            outlineHandler.PutMarkPriorityMapping("p", 2);
             properties.SetOutlineHandler(outlineHandler);
             HtmlConverter.ConvertToPdf(new MemoryStream(html), new FileStream(dest, FileMode.Create),
                 properties);
