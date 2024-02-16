@@ -1,9 +1,9 @@
 using System;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
+using iText.Forms.Form.Element;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.IO.Image;
@@ -23,7 +23,7 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 
-        public static readonly String[] RESULT_FILES =
+        public static readonly string[] RESULT_FILES =
         {
             "signature_appearance_1.pdf",
             "signature_appearance_2.pdf",
@@ -31,29 +31,111 @@ namespace iText.Samples.Signatures.Chapter02
             "signature_appearance_4.pdf"
         };
 
-        public void Sign(String src, String name, String dest, X509Certificate[] chain,
-            ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter,
-            String reason, String location, PdfSignatureAppearance.RenderingMode renderingMode, ImageData image)
+        private void Sign1(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance.SetReason(reason);
-            appearance.SetLocation(location);
+            signer.SetReason(reason);
+            signer.SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
             signer.SetFieldName(name);
 
-            appearance.SetLayer2Text("Signed on " + DateTime.Now);
+            //Only description is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            appearance.SetContent("Signed by iText");
+            signer.SetSignatureAppearance(appearance);
 
-            // Set the rendering mode for this signature.
-            appearance.SetRenderingMode(renderingMode);
+            PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
-            // Set the Image object to render when the rendering mode is set to RenderingMode.GRAPHIC
-            // or RenderingMode.GRAPHIC_AND_DESCRIPTION.
-            appearance.SetSignatureGraphic(image);
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
+            // Sign the document using the detached mode, CMS or CAdES equivalent.
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
+        }
+        
+        private void Sign2(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location)
+        {
+            PdfReader reader = new PdfReader(src);
+            PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
+
+            // Create the signature appearance
+            signer.SetReason(reason);
+            signer.SetLocation(location);
+
+            // This name corresponds to the name of the field that already exists in the document.
+            signer.SetFieldName(name);
+
+            //Name and description is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            appearance.SetContent("", "Signed by iText");
+            signer.SetSignatureAppearance(appearance);
+
+            PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
+
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
+            // Sign the document using the detached mode, CMS or CAdES equivalent.
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
+        }
+        
+        private void Sign3(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location, ImageData image)
+        {
+            PdfReader reader = new PdfReader(src);
+            PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
+
+            // Create the signature appearance
+            signer.SetReason(reason);
+            signer.SetLocation(location);
+
+            // This name corresponds to the name of the field that already exists in the document.
+            signer.SetFieldName(name);
+
+            //Graphic and description is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            appearance.SetContent("Signed by iText", image);
+            signer.SetSignatureAppearance(appearance);
+
+            PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
+
+            IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
+            for (int i = 0; i < certificateWrappers.Length; ++i) {
+                certificateWrappers[i] = new X509CertificateBC(chain[i]);
+            }
+            // Sign the document using the detached mode, CMS or CAdES equivalent.
+            signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
+        }
+        
+        private void Sign4(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location, ImageData image)
+        {
+            PdfReader reader = new PdfReader(src);
+            PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
+
+            // Create the signature appearance
+            signer.SetReason(reason);
+            signer.SetLocation(location);
+
+            // This name corresponds to the name of the field that already exists in the document.
+            signer.SetFieldName(name);
+
+            //Graphic is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            appearance.SetContent(image);
+            signer.SetSignatureAppearance(appearance);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -65,7 +147,8 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public static void Main(String[] args)
+
+        public static void Main(string[] args)
         {
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();
@@ -91,23 +174,23 @@ namespace iText.Samples.Signatures.Chapter02
             ImageData image = ImageDataFactory.Create(IMG);
 
             C2_07_SignatureAppearances app = new C2_07_SignatureAppearances();
-            String signatureName = "Signature1";
-            String location = "Ghent";
-            app.Sign(SRC, signatureName, DEST + RESULT_FILES[0], chain, pk,
+            string signatureName = "Signature1";
+            string location = "Ghent";
+            app.Sign1(SRC, signatureName, DEST + RESULT_FILES[0], chain, pk,
                 DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS,
-                "Appearance 1", location, PdfSignatureAppearance.RenderingMode.DESCRIPTION, null);
+                "Appearance 1", location);
 
-            app.Sign(SRC, signatureName, DEST + RESULT_FILES[1], chain, pk,
+            app.Sign2(SRC, signatureName, DEST + RESULT_FILES[1], chain, pk,
                 DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS,
-                "Appearance 2", location, PdfSignatureAppearance.RenderingMode.NAME_AND_DESCRIPTION, null);
-
-            app.Sign(SRC, signatureName, DEST + RESULT_FILES[2], chain, pk,
+                "Appearance 2", location);
+            
+            app.Sign3(SRC, signatureName, DEST + RESULT_FILES[2], chain, pk,
                 DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS,
-                "Appearance 3", location, PdfSignatureAppearance.RenderingMode.GRAPHIC_AND_DESCRIPTION, image);
-
-            app.Sign(SRC, signatureName, DEST + RESULT_FILES[3], chain, pk,
+                "Appearance 3", location, image);
+            
+            app.Sign4(SRC, signatureName, DEST + RESULT_FILES[3], chain, pk,
                 DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS,
-                "Appearance 4", location, PdfSignatureAppearance.RenderingMode.GRAPHIC, image);
+                "Appearance 4", location, image);
         }
     }
 }

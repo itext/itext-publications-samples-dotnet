@@ -1,6 +1,4 @@
-using System;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
@@ -14,6 +12,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Signatures;
 using Org.BouncyCastle.Pkcs;
+using Rectangle = iText.Kernel.Geom.Rectangle;
 
 namespace iText.Samples.Signatures.Chapter02
 {
@@ -26,42 +25,41 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 
-        public static readonly String[] RESULT_FILES =
+        public static readonly string[] RESULT_FILES =
         {
             "signature_custom.pdf"
         };
 
-        public void Sign(String src, String name, String dest, X509Certificate[] chain,
-            ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter,
-            String reason, String location)
+        private void Sign(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
-            // Create the signature appearance
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance
-                .SetReason(reason)
-                .SetLocation(location);
-
             // This name corresponds to the name of the field that already exists in the document.
             signer.SetFieldName(name);
-
+            
+            // Create the signature appearance
+            signer
+                .SetReason(reason)
+                .SetLocation(location);
+            
+            var widget = signer.GetSignatureField().GetFirstFormAnnotation().GetWidget().GetRectangle()
+                .ToRectangle();
+            var SignatureRect = new Rectangle(0, 0, widget.GetWidth(), widget.GetHeight());
+            
             // Get the background layer and draw a gray rectangle as a background.
-            PdfFormXObject n0 = appearance.GetLayer0();
-            float x = n0.GetBBox().ToRectangle().GetLeft();
-            float y = n0.GetBBox().ToRectangle().GetBottom();
-            float width = n0.GetBBox().ToRectangle().GetWidth();
-            float height = n0.GetBBox().ToRectangle().GetHeight();
-            PdfCanvas canvas = new PdfCanvas(n0, signer.GetDocument());
+            var backgroundLayer = new PdfFormXObject(SignatureRect);
+            PdfCanvas canvas = new PdfCanvas(backgroundLayer, signer.GetDocument());
             canvas.SetFillColor(ColorConstants.LIGHT_GRAY);
-            canvas.Rectangle(x, y, width, height);
+            canvas.Rectangle(SignatureRect);
             canvas.Fill();
 
-            // Set the signature information on layer 2
-            PdfFormXObject n2 = appearance.GetLayer2();
-            Paragraph p = new Paragraph("This document was signed by Bruno Specimen.");
-            new Canvas(n2, signer.GetDocument()).Add(p);
+            var foregroundLayer = new PdfFormXObject(SignatureRect);
+            new Canvas(foregroundLayer, signer.GetDocument()).Add(new Paragraph("This document was signed by Bruno Specimen."));
+
+            signer.GetSignatureField().SetBackgroundLayer(backgroundLayer).SetSignatureAppearanceLayer(foregroundLayer);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -73,7 +71,7 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public static void Main(String[] args)
+        public static void Main(string[] args)
         {
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();

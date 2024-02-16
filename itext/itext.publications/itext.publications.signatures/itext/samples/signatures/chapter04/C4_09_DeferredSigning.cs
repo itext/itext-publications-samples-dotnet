@@ -1,9 +1,10 @@
 using System;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
+using iText.Forms.Fields.Properties;
+using iText.Forms.Form.Element;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Signatures;
@@ -15,20 +16,20 @@ namespace iText.Samples.Signatures.Chapter04
 {
     public class C4_09_DeferredSigning
     {
-        public static readonly String DEST = "results/signatures/chapter04/";
+        public static readonly string DEST = "results/signatures/chapter04/";
 
-        public static readonly String SRC = "../../../resources/pdfs/hello.pdf";
-        public static readonly String TEMP = "results/signatures/chapter04/hello_empty_sig.pdf";
-        public static readonly String KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
+        public static readonly string TEMP = "results/signatures/chapter04/hello_empty_sig.pdf";
+        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 
-        public static readonly String[] RESULT_FILES = new String[]
+        public static readonly string[] RESULT_FILES = new string[]
         {
             "hello_sig_ok.pdf"
         };
 
-        public static void Main(String[] args)
+        public static void Main(string[] args)
         {
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();
@@ -51,21 +52,23 @@ namespace iText.Samples.Signatures.Chapter04
             }
 
             C4_09_DeferredSigning app = new C4_09_DeferredSigning();
-            app.EmptySignature(SRC, TEMP, "sig", chain);
+            app.EmptySignature(SRC, TEMP, "sig");
             app.CreateSignature(TEMP, DEST + RESULT_FILES[0], "sig", pk, chain);
         }
 
-        public void EmptySignature(String src, String dest, String fieldname, X509Certificate[] chain)
+        public void EmptySignature(string src, string dest, string fieldname)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance
+            signer
                 .SetPageRect(new Rectangle(36, 748, 200, 100))
                 .SetPageNumber(1)
-                .SetCertificate(new X509CertificateBC(chain[0]));
-            signer.SetFieldName(fieldname);
+                .SetFieldName(fieldname);
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            appearance.SetContent(new SignedAppearanceText());
+            signer.SetSignatureAppearance(appearance);
+            
 
             /* ExternalBlankSignatureContainer constructor will create the PdfDictionary for the signature
              * information and will insert the /Filter and /SubFilter values into this dictionary.

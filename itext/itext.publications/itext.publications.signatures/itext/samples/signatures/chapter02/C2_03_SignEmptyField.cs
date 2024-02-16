@@ -21,7 +21,7 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 
-        public static readonly String[] RESULT_FILES =
+        public static readonly string[] RESULT_FILES =
         {
             "field_signed1.pdf",
             "field_signed2.pdf",
@@ -29,25 +29,23 @@ namespace iText.Samples.Signatures.Chapter02
             "field_signed4.pdf"
         };
 
-        public void Sign(String src, String name, String dest, X509Certificate[] chain,
-            ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter,
-            String reason, String location)
+        public void Sign(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
-            // Create the signature appearance
-            signer.GetSignatureAppearance()
-                .SetReason(reason)
-                .SetLocation(location)
-
-                // Specify if the appearance before field is signed will be used
-                // as a background for the signed field. The "false" value is the default value.
-                .SetReuseAppearance(false);
-
+            signer.SetReason(reason);
+            signer.SetLocation(location);
+            
             // This name corresponds to the name of the field that already exists in the document.
             signer.SetFieldName(name);
 
+            // Specify if the appearance before field is signed will be used
+            // as a background for the signed field. The "false" value is the default value.
+
+            signer.GetSignatureField().SetReuseAppearance(false);
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
             IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
@@ -58,7 +56,7 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public static void Main(String[] args)
+        public static void Main(string[] args)
         {
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();

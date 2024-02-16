@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
@@ -22,12 +21,12 @@ namespace iText.Samples.Signatures.Chapter03
         public static readonly string CRLURL = "../../../resources/encryption/revoke.crl";
         public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
 
-        public static readonly String[] RESULT_FILES =
+        public static readonly string[] RESULT_FILES =
         {
             "hello_cacert_crl_offline.pdf"
         };
 
-        public static void Main(String[] args)
+        public static void Main(string[] args)
         {
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();
@@ -44,7 +43,7 @@ namespace iText.Samples.Signatures.Chapter03
             string alias = null;
             foreach (var a in pk12.Aliases)
             {
-                alias = ((string) a);
+                alias = ((string)a);
                 if (pk12.IsKeyEntry(alias))
                     break;
             }
@@ -82,8 +81,8 @@ namespace iText.Samples.Signatures.Chapter03
                 crlList, null, null, 0);
         }
 
-        public void Sign(String src, String dest, X509Certificate[] chain, ICipherParameters pk,
-            String digestAlgorithm, PdfSigner.CryptoStandard subfilter, String reason, String location,
+        public void Sign(string src, string dest, X509Certificate[] chain, ICipherParameters pk,
+            string digestAlgorithm, PdfSigner.CryptoStandard subfilter, string reason, string location,
             ICollection<ICrlClient> crlList, IOcspClient ocspClient, ITSAClient tsaClient, int estimatedSize)
         {
             PdfReader reader = new PdfReader(src);
@@ -91,24 +90,25 @@ namespace iText.Samples.Signatures.Chapter03
 
             // Create the signature appearance
             Rectangle rect = new Rectangle(36, 648, 200, 100);
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance
+            signer
                 .SetReason(reason)
                 .SetLocation(location)
+                .SetFieldName("sig");
 
-                // Specify if the appearance before field is signed will be used
-                // as a background for the signed field. The "false" value is the default value.
-                .SetReuseAppearance(false)
-                .SetPageRect(rect)
+            // Specify if the appearance before field is signed will be used
+            // as a background for the signed field. The "false" value is the default value.
+            signer.GetSignatureField().SetReuseAppearance(false);
+            signer.SetPageRect(rect)
                 .SetPageNumber(1);
-            signer.SetFieldName("sig");
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
             IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
-            for (int i = 0; i < certificateWrappers.Length; ++i) {
+            for (int i = 0; i < certificateWrappers.Length; ++i)
+            {
                 certificateWrappers[i] = new X509CertificateBC(chain[i]);
             }
+
             // Sign the document using the detached mode, CMS or CAdES equivalent.
             // Pass the created CRL to the signing method.
             signer.SignDetached(pks, certificateWrappers, crlList, ocspClient, tsaClient, estimatedSize, subfilter);

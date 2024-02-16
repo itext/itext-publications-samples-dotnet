@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
@@ -25,7 +24,7 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 
-        public static readonly String[] RESULT_FILES =
+        public static readonly string[] RESULT_FILES =
         {
             "hello_level_1.pdf", "hello_level_2.pdf",
             "hello_level_3.pdf", "hello_level_4.pdf",
@@ -36,20 +35,19 @@ namespace iText.Samples.Signatures.Chapter02
             "hello_level_3_double.pdf", "hello_level_4_double.pdf",
         };
 
-        public void Sign(String src, String dest, X509Certificate[] chain, ICipherParameters pk,
-            String digestAlgorithm, PdfSigner.CryptoStandard subfilter,
-            int certificationLevel, String reason, String location)
+        public void Sign(string src, string dest, X509Certificate[] chain, ICipherParameters pk,
+            string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            int certificationLevel, string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance.SetReason(reason);
-            appearance.SetLocation(location);
+            signer.SetReason(reason);
+            signer.SetLocation(location);
 
             Rectangle rect = new Rectangle(36, 648, 200, 100);
-            appearance.SetPageRect(rect).SetPageNumber(1);
+            signer.SetPageRect(rect).SetPageNumber(1);
             signer.SetFieldName("sig");
 
             /* Set the document's certification level. This parameter defines if changes are allowed
@@ -67,7 +65,7 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public void AddText(String src, String dest)
+        public void AddText(string src, string dest)
         {
             PdfReader reader = new PdfReader(src);
             PdfDocument pdfDoc = new PdfDocument(reader, new PdfWriter(dest),
@@ -80,7 +78,7 @@ namespace iText.Samples.Signatures.Chapter02
             pdfDoc.Close();
         }
 
-        public void AddAnnotation(String src, String dest)
+        public void AddAnnotation(string src, string dest)
         {
             PdfReader reader = new PdfReader(src);
             PdfDocument pdfDoc = new PdfDocument(reader, new PdfWriter(dest),
@@ -111,20 +109,18 @@ namespace iText.Samples.Signatures.Chapter02
             pdfDoc.Close();
         }
 
-        public void SignAgain(String src, String dest, X509Certificate[] chain, ICipherParameters pk,
-            String digestAlgorithm, PdfSigner.CryptoStandard subfilter, String reason, String location)
+        public void SignAgain(string src, string dest, X509Certificate[] chain, ICipherParameters pk,
+            string digestAlgorithm, PdfSigner.CryptoStandard subfilter, string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create),
                 new StampingProperties().UseAppendMode());
 
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance.SetReason(reason);
-            appearance.SetLocation(location);
-            appearance.SetReuseAppearance(false);
+            signer.SetReason(reason)
+                .SetLocation(location)
+                .SetFieldName("Signature2");
             Rectangle rect = new Rectangle(36, 700, 200, 100);
-            appearance.SetPageRect(rect).SetPageNumber(1);
-            signer.SetFieldName("Signature2");
+            signer.SetPageRect(rect).SetPageNumber(1);
 
             IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
             for (int i = 0; i < certificateWrappers.Length; ++i) {
@@ -134,7 +130,7 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public static void Main(String[] args)
+        public static void Main(string[] args)
         {
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();
