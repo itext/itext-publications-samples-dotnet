@@ -109,6 +109,8 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfhtml.Headertagging");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.Densemerger.PageVerticalAnalyzer");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.Densemerger.PdfDenseMerger");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfhtml.Formtagging");
+
 
             // TODO DEVSIX-3189
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.TableBorder");
