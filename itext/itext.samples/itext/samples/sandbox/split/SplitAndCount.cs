@@ -4,11 +4,11 @@ using System.IO;
 using iText.Kernel.Pdf;
 using iText.Kernel.Utils;
 
-namespace iText.Samples.Sandbox.Merge
+namespace iText.Samples.Sandbox.Split
 {
-    public class MergeAndCount
+    public class SplitAndCount
     {
-        public static readonly String DEST = "results/sandbox/merge/splitDocument1_{0}.pdf";
+        public static readonly String DEST = "results/sandbox/split/splitDocument1_{0}.pdf";
 
         public static readonly String RESOURCE = "../../../resources/pdfs/Wrong.pdf";
 
@@ -17,7 +17,7 @@ namespace iText.Samples.Sandbox.Merge
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
 
-            new MergeAndCount().ManipulatePdf(DEST);
+            new SplitAndCount().ManipulatePdf(DEST);
         }
 
         protected void ManipulatePdf(String dest)
