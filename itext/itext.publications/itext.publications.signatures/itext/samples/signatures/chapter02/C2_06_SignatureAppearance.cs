@@ -1,9 +1,9 @@
 using System;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
+using iText.Forms.Form.Element;
 using iText.IO.Font;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
@@ -30,7 +30,7 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 
-        public static readonly String[] RESULT_FILES =
+        public static readonly string[] RESULT_FILES =
         {
             "signature_appearance1.pdf",
             "signature_appearance2.pdf",
@@ -38,25 +38,24 @@ namespace iText.Samples.Signatures.Chapter02
             "signature_appearance4.pdf"
         };
 
-        public void Sign1(String src, String name, String dest, X509Certificate[] chain,
-            ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter,
-            String reason, String location)
+        private void Sign1(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
-
-            // Create the signature appearance
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance
-                .SetReason(reason)
-                .SetLocation(location);
+            
+            signer.SetReason(reason);
+            signer.SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
             signer.SetFieldName(name);
 
             // Set the custom text and a custom font
-            appearance.SetLayer2Text("This document was signed by Bruno Specimen");
-            appearance.SetLayer2Font(PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN));
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            appearance.SetContent("This document was signed by Bruno Specimen");
+            appearance.SetFont(PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN));
+            signer.SetSignatureAppearance(appearance);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -68,28 +67,27 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public void Sign2(String src, String name, String dest, X509Certificate[] chain,
-            ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter,
-            String reason, String location)
+        private void Sign2(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
-
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance.SetReason(reason);
-            appearance.SetLocation(location);
+            
+            signer.SetReason(reason);
+            signer.SetLocation(location);
             signer.SetFieldName(name);
 
             // Creating the appearance for layer 2
-            PdfFormXObject n2 = appearance.GetLayer2();
-
             // Custom text, custom font, and right-to-left writing
             // Characters: لورانس العرب
             Text text = new Text("\u0644\u0648\u0631\u0627\u0646\u0633 \u0627\u0644\u0639\u0631\u0628");
             text.SetFont(PdfFontFactory.CreateFont("../../../resources/font/NotoNaskhArabic-Regular.ttf",
                 PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED));
             text.SetBaseDirection(BaseDirection.RIGHT_TO_LEFT);
-            new Canvas(n2, signer.GetDocument()).Add(new Paragraph(text).SetTextAlignment(TextAlignment.RIGHT));
+            var appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            appearance.SetContent(new Div().Add(new Paragraph(text).SetTextAlignment(TextAlignment.RIGHT)));
+            signer.SetSignatureAppearance(appearance);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
             IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
@@ -99,22 +97,33 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public void Sign3(String src, String name, String dest, X509Certificate[] chain,
-            ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter,
-            String reason, String location)
+        private void Sign3(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
-
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance.SetReason(reason);
-            appearance.SetLocation(location);
+            
+            signer.SetReason(reason);
+            signer.SetLocation(location);
             signer.SetFieldName(name);
 
             // Set a custom text and background image
-            appearance.SetLayer2Text("This document was signed by Bruno Specimen");
-            appearance.SetImage(ImageDataFactory.Create(IMG));
-            appearance.SetImageScale(1);
+            var imageData = ImageDataFactory.Create(IMG);
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            appearance.SetContent("This document was signed by Bruno Specimen");
+            BackgroundSize size = new BackgroundSize();
+            size.SetBackgroundSizeToValues(UnitValue.CreatePointValue(imageData.GetWidth()),
+                UnitValue.CreatePointValue(imageData.GetHeight()));
+            var backgroundPosition = new BackgroundPosition();
+            backgroundPosition.SetPositionX(BackgroundPosition.PositionX.CENTER)
+                .SetPositionY(BackgroundPosition.PositionY.CENTER);
+            appearance.SetBackgroundImage(new BackgroundImage.Builder()
+                .SetImage(new PdfImageXObject(imageData))
+                .SetBackgroundRepeat(new BackgroundRepeat(BackgroundRepeat.BackgroundRepeatValue.NO_REPEAT))
+                .SetBackgroundPosition(backgroundPosition)
+                .SetBackgroundSize(size).Build());
+            signer.SetSignatureAppearance(appearance);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
             IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
@@ -124,22 +133,30 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public void Sign4(String src, String name, String dest, X509Certificate[] chain,
-            ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter,
-            String reason, String location)
+        private void Sign4(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
-
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance.SetReason(reason);
-            appearance.SetLocation(location);
+            
+            signer.SetReason(reason);
+            signer.SetLocation(location);
             signer.SetFieldName(name);
 
             // Set a custom text and a scaled background image
-            appearance.SetLayer2Text("This document was signed by Bruno Specimen");
-            appearance.SetImage(ImageDataFactory.Create(IMG));
-            appearance.SetImageScale(-1);
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            appearance.SetContent("This document was signed by Bruno Specimen");
+            var backgroundSize = new BackgroundSize();
+            backgroundSize.SetBackgroundSizeToContain();
+            var backgroundPosition = new BackgroundPosition();
+            backgroundPosition.SetPositionX(BackgroundPosition.PositionX.CENTER)
+                .SetPositionY(BackgroundPosition.PositionY.CENTER);
+            appearance.SetBackgroundImage(new BackgroundImage.Builder()
+                .SetImage(new PdfImageXObject(ImageDataFactory.Create(IMG)))
+                .SetBackgroundRepeat(new BackgroundRepeat(BackgroundRepeat.BackgroundRepeatValue.NO_REPEAT))
+                .SetBackgroundPosition(backgroundPosition).SetBackgroundSize(backgroundSize).Build());
+            signer.SetSignatureAppearance(appearance);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
             IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
@@ -149,7 +166,7 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public static void Main(String[] args)
+        public static void Main(string[] args)
         {
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();

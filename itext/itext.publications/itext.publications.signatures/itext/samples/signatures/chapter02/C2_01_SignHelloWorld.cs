@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
@@ -22,7 +21,7 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 
-        public static readonly String[] RESULT_FILES =
+        public static readonly string[] RESULT_FILES =
         {
             "hello_signed1.pdf",
             "hello_signed2.pdf",
@@ -30,25 +29,20 @@ namespace iText.Samples.Signatures.Chapter02
             "hello_signed4.pdf"
         };
 
-        public void Sign(String src, String dest, X509Certificate[] chain, ICipherParameters pk,
-            String digestAlgorithm, PdfSigner.CryptoStandard subfilter, String reason, String location)
+        private void Sign(string src, string dest, X509Certificate[] chain, ICipherParameters pk,
+            string digestAlgorithm, PdfSigner.CryptoStandard subfilter, string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
             Rectangle rect = new Rectangle(36, 648, 200, 100);
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance
+            signer
                 .SetReason(reason)
                 .SetLocation(location)
-
-                // Specify if the appearance before field is signed will be used
-                // as a background for the signed field. The "false" value is the default value.
-                .SetReuseAppearance(false)
                 .SetPageRect(rect)
-                .SetPageNumber(1);
-            signer.SetFieldName("sig");
+                .SetPageNumber(1)
+                .SetFieldName("sig");
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -60,7 +54,7 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public static void Main(String[] args)
+        public static void Main(string[] args)
         {
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();

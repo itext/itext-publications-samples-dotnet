@@ -5,6 +5,7 @@ using iText.Commons.Utils;
 using iText.Html2pdf;
 using iText.Licensing.Base;
 using iText.StyledXmlParser.Css.Media;
+using NUnit.Framework;
 
 namespace iText.Samples.Htmlsamples.Chapter07
 {
@@ -57,13 +58,46 @@ namespace iText.Samples.Htmlsamples.Chapter07
             MediaDeviceDescription mediaDeviceDescription = new MediaDeviceDescription(MediaType.PRINT);
             properties.SetMediaDeviceDescription(mediaDeviceDescription);
             //Some websites forbid web-page access if user-agent is not defined.
-            using (var webClient = new WebClient())
+
+            using (var fileStream = new FileStream(dest, FileMode.Create))
             {
-                webClient.Headers.Add("User-Agent", USER_AGENT);
-                byte[] website = webClient.DownloadData(url);
-                using (var fileStream = new FileStream(dest, FileMode.Create))
+                var maxTries = 3;
+                while (maxTries != 0)
                 {
-                    HtmlConverter.ConvertToPdf(new MemoryStream(website), fileStream, properties);
+                    var webClient = new TimedWebClient();
+                    webClient.Headers.Add("User-Agent", USER_AGENT);
+
+                    int responseCode;
+                    try
+                    {
+                        byte[] website = webClient.DownloadData(url);
+                        HtmlConverter.ConvertToPdf(new MemoryStream(website), fileStream, properties);
+                        break;
+                    }
+                    catch (WebException e)
+                    {
+                        if (e.Status == WebExceptionStatus.Timeout)
+                        {
+                            responseCode = -1;
+                        }
+                        else
+                        {
+                            try
+                            {
+                                responseCode = (int)((HttpWebResponse)e.Response).StatusCode;
+                            }
+                            catch
+                            {
+                                responseCode = -1;
+                            }
+                        }
+                    }
+
+                    Assert.True(
+                        (responseCode >= 200 && responseCode < 300) || responseCode == -1,
+                        "Http request was not successful. Error code: " + responseCode);
+
+                    maxTries--;
                 }
             }
         }

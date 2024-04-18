@@ -9,16 +9,16 @@ using NUnit.Framework;
 namespace iText.Samples
 {
     [TestFixtureSource("Data")]
-    public class MergeAndCountSampleTest : WrappedSamplesRunner
+    public class SplitAndCountSampleTest : WrappedSamplesRunner
     {
-        public MergeAndCountSampleTest(RunnerParams runnerParams) : base(runnerParams)
+        public SplitAndCountSampleTest(RunnerParams runnerParams) : base(runnerParams)
         {
         }
 
         public static ICollection<TestFixtureData> Data()
         {
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-            searchConfig.AddClassToRunnerSearchPath("iText.Samples.Sandbox.Merge.MergeAndCount");
+            searchConfig.AddClassToRunnerSearchPath("iText.Samples.Sandbox.Split.SplitAndCount");
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }

@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
@@ -21,23 +20,22 @@ namespace iText.Samples.Signatures.Chapter02
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
 
-        public static readonly String[] RESULT_FILES =
+        public static readonly string[] RESULT_FILES =
         {
             "field_metadata.pdf"
         };
 
-        public void Sign(String src, String name, String dest, X509Certificate[] chain, ICipherParameters pk,
-            String digestAlgorithm, PdfSigner.CryptoStandard subfilter, String reason, String location,
-            String contact, String fullName)
+        public void Sign(string src, string name, string dest, X509Certificate[] chain, ICipherParameters pk,
+            string digestAlgorithm, PdfSigner.CryptoStandard subfilter, string reason, string location,
+            string contact, string fullName)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            PdfSignatureAppearance appearance = signer.GetSignatureAppearance();
-            appearance.SetReason(reason);
-            appearance.SetLocation(location);
-            appearance.SetContact(contact);
+            signer.SetLocation(location);
+            signer.SetReason(reason);
+            signer.SetContact(contact);
 
             signer.SetFieldName(name);
 
@@ -54,7 +52,7 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public static void Main(String[] args)
+        public static void Main(string[] args)
         {
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();
@@ -85,9 +83,9 @@ namespace iText.Samples.Signatures.Chapter02
 
         private class CustomISignatureEvent : PdfSigner.ISignatureEvent
         {
-            private readonly String fullName;
+            private readonly string fullName;
 
-            public CustomISignatureEvent(String fullName)
+            public CustomISignatureEvent(string fullName)
             {
                 this.fullName = fullName;
             }

@@ -1,12 +1,10 @@
 using System;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
-using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Colors;
 using iText.Kernel.Geom;
@@ -30,16 +28,16 @@ namespace iText.Samples.Signatures.Chapter02
         public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
 
         public static readonly char[] PASSWORD = "password".ToCharArray();
-        public const String SIGNAME = "Signature1";
+        public const string SIGNAME = "Signature1";
 
-        public static readonly String[] RESULT_FILES =
+        public static readonly string[] RESULT_FILES =
         {
             "hello_empty.pdf",
             "hello_empty2.pdf",
             "field_signed.pdf"
         };
 
-        public void CreatePdf(String filename)
+        private void CreatePdf(string filename)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfWriter(filename));
             Document doc = new Document(pdfDoc);
@@ -88,7 +86,7 @@ namespace iText.Samples.Signatures.Chapter02
             doc.Close();
         }
 
-        public void AddField(String src, String dest)
+        private void AddField(string src, string dest)
         {
             PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
 
@@ -103,17 +101,15 @@ namespace iText.Samples.Signatures.Chapter02
             pdfDoc.Close();
         }
 
-        public void Sign(String src, String name, String dest, X509Certificate[] chain,
-            ICipherParameters pk, String digestAlgorithm, PdfSigner.CryptoStandard subfilter,
-            String reason, String location)
+        private void Sign(string src, string name, string dest, X509Certificate[] chain,
+            ICipherParameters pk, string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
+            string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
-            // Create the signature appearance
-            signer.GetSignatureAppearance()
-                .SetReason(reason)
-                .SetLocation(location);
+            signer.SetReason(reason);
+            signer.SetLocation(location);
             signer.SetFieldName(name);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
@@ -126,7 +122,7 @@ namespace iText.Samples.Signatures.Chapter02
             signer.SignDetached(pks, certificateWrappers, null, null, null, 0, subfilter);
         }
 
-        public static void Main(String[] args)
+        public static void Main(string[] args)
         {
             DirectoryInfo directory = new DirectoryInfo(DEST);
             directory.Create();

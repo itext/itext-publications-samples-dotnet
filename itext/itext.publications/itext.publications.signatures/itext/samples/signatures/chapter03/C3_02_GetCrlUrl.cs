@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Commons.Utils;
 using Org.BouncyCastle.X509;
@@ -17,7 +16,7 @@ namespace iText.Samples.Signatures.Chapter03
 
             // Specify the correct path to the certificate
             properties.Load(new FileStream("c:/home/blowagie/key.properties", FileMode.Open, FileAccess.Read));
-            String path = properties.GetProperty("PRIVATE");
+            string path = properties.GetProperty("PRIVATE");
             char[] pass = properties.GetProperty("PASSWORD").ToCharArray();
 
             Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();

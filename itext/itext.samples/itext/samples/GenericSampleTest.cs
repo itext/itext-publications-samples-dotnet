@@ -96,9 +96,10 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Parse.ExtractStreams");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoto");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Annotations.RemoteGoToPage");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.MergeAndCount");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Split.SplitAndCount");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Pades");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Appearance");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.TwoPhase");
 
             // Not a sample classes
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Utils");
@@ -108,6 +109,8 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfhtml.Headertagging");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.Densemerger.PageVerticalAnalyzer");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Merge.Densemerger.PdfDenseMerger");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfhtml.Formtagging");
+
 
             // TODO DEVSIX-3189
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.TableBorder");

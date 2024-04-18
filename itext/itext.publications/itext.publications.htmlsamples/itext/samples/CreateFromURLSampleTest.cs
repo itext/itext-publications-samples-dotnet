@@ -1,15 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Reflection;
-using System.Text;
 using iText.IO.Font;
 using iText.Commons.Utils;
-using iText.Kernel.Pdf;
-using iText.Kernel.Pdf.Canvas.Parser;
-using iText.Kernel.Pdf.Canvas.Parser.Listener;
 using iText.Licensing.Base;
 using iText.Test;
 using NUnit.Framework;
@@ -59,5 +54,15 @@ namespace iText.Samples
         protected override void ComparePdf(string outPath, string dest, string cmp) {
         }
 
+    }
+}
+
+public class TimedWebClient : WebClient
+{
+    protected override WebRequest GetWebRequest(Uri address)
+    {
+        var webRequest = base.GetWebRequest(address);
+        webRequest.Timeout = 15000;
+        return webRequest;
     }
 }

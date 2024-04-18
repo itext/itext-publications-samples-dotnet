@@ -42,6 +42,7 @@ namespace iText.Samples
             RunnerSearchConfig searchConfig = new RunnerSearchConfig();
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox.Signatures.Pades");
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox.Signatures.Appearance");
+            searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox.Signatures.TwoPhase");
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
