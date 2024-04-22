@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using iText.IO.Font;
 using iText.Commons.Utils;
+using iText.IO.Util;
 using iText.Kernel.Geom;
 using iText.Kernel.Utils;
 using iText.Licensing.Base;
@@ -47,7 +48,9 @@ namespace iText.Samples
                 "iText.Samples.Sandbox.Parse.ParseCustom",
                 "iText.Samples.Sandbox.Parse.ParseCzech",
                 "iText.Samples.Sandbox.Logging.CounterDemo",
-                "iText.Samples.Sandbox.Tagging.WalkTheTree"
+                "iText.Samples.Sandbox.Tagging.WalkTheTree",
+                "iText.Samples.Sandbox.Signatures.Validation.ValidateChainBeforeSigningExample",
+                "iText.Samples.Sandbox.Signatures.Validation.ValidateSignatureExample"
             });
 
         /**
@@ -194,6 +197,8 @@ namespace iText.Samples
         private String CompareTxt(String dest, String cmp)
         {
             String errorMessage = null;
+            Console.Out.WriteLine("Out txt: " + UrlUtil.GetNormalizedFileUriString(dest));
+            Console.Out.WriteLine("Cmp txt: " + UrlUtil.GetNormalizedFileUriString(cmp)+ "\n");
 
             using (
                 StreamReader destReader = new StreamReader(dest),

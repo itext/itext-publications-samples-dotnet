@@ -1,0 +1,16 @@
+ValidationReport{reportItems=
+CertificateReportItem{baseclass=
+ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}
+certificate=C=BE,O=iText,CN=iTextTestRoot}
+CertificateReportItem{baseclass=
+ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}
+certificate=C=BE,O=iText,CN=iTextTestRoot}
+CertificateReportItem{baseclass=
+ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}
+certificate=C=BE,O=iText,CN=iTextTestRoot}
+CertificateReportItem{baseclass=
+ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}
+certificate=C=BE,O=iText,CN=iTextTestRoot}
+CertificateReportItem{baseclass=
+ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}
+certificate=C=BE,O=iText,CN=iTextTestRoot}}
