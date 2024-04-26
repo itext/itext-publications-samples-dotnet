@@ -28,7 +28,7 @@ namespace iText.Samples
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
         
-        [Timeout(60000)]
+        [Timeout(180000)]
         [Test, Description("{0}")]
         public virtual void Test()
         {
