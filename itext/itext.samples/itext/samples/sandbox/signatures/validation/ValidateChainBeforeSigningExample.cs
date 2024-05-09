@@ -70,14 +70,8 @@ namespace iText.Samples.Sandbox.Signatures.Validation
             // Write validation report to the file.
             using (FileStream fos = new FileStream(dest, FileMode.Create))
             {
-                string reportLogs = "ValidationReport{" + "reportItems=";
-                foreach (var reportItem in report.GetLogs())
-                {
-                    reportLogs += reportItem.ToString();
-                }
-                reportLogs += '}';
-                byte[] b = GetBytes(reportLogs);
-                fos.Write(b, 0, b.Length);
+                byte[] reportBytes = GetBytes(report.ToString());
+                fos.Write(reportBytes, 0, reportBytes.Length);
             }
         }
 
