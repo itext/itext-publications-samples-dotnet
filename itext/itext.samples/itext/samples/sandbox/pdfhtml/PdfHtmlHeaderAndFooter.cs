@@ -39,10 +39,11 @@ namespace iText.Samples.Sandbox.Pdfhtml
 
             // Base URI is required to resolve the path to source files
             ConverterProperties converterProperties = new ConverterProperties().SetBaseUri(SRC);
-            HtmlConverter.ConvertToDocument(new FileStream(htmlSource, FileMode.Open), pdfDocument, converterProperties);
+            Document converted = HtmlConverter.ConvertToDocument(new FileStream(htmlSource, FileMode.Open), pdfDocument, converterProperties);
 
             // Write the total number of pages to the placeholder
             footerHandler.WriteTotal(pdfDocument);
+            converted.Close();
             pdfDocument.Close();
         }
 
