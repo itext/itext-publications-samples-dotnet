@@ -60,12 +60,29 @@ namespace iText.SigningExamples.Pkcs11
             }
             return result;
         }
+        /// <summary>       
+        /// List the key info of keys and linked certificates available trough the selected Pkcs11 library.
+        /// 
+        /// A key can be used by multiple certificates.
+        /// </summary>
+        /// <param name="slotId">The numerical slot id</param>
+        /// <returns>a list of key info of keys and linked certificates available trough the selected Pkcs11 library</returns>
+        public List<Pkcs11KeyInfo> GetCertificatesWithPrivateKeys(ulong slotId) {
+            var slot = pkcs11Library.GetSlotList(SlotsType.WithOrWithoutTokenPresent).FindLast(s => s.SlotId == slotId);
+            if (slot == null)
+            {
+                throw new Exception("slot with slot id " + slotId + " was not found.");
+            }
+            return GetCertificatesWithPrivateKeys(new Pkcs11Signature.SlotInfo(slot));
+        }
+
 
         /// <summary>       
         /// List the key info of keys and linked certificates available trough the selected Pkcs11 library.
         /// 
         /// A key can be used by multiple certificates.
         /// </summary>
+        /// <param name="slotInfo">The slotinfo to retrieve the keys and certificates from</param>
         /// <returns>a list of key info of keys and linked certificates available trough the selected Pkcs11 library</returns>
         public List<Pkcs11KeyInfo> GetCertificatesWithPrivateKeys(SlotInfo slotInfo)
         {
@@ -195,6 +212,8 @@ namespace iText.SigningExamples.Pkcs11
         /// Remark, a copy of this value will be stored. You have to clean out the original value for security as soon as possible.
         /// 
         /// Sometimes the pin is only needed to perform the actual signing, sometimes it is needed for quering the keys.
+        /// 
+        /// On failure the pin will be reset to avoid locking tokens after too many failed login attempts        
         /// </summary>
         public byte[] Pin
         {
