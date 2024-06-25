@@ -54,9 +54,9 @@ namespace iText.SigningExamples.Pkcs11
                     var key = signature.GetCertificatesWithPrivateKeys(slot).Where(k => k.keyLabel.Equals("KEYALIAS")).FirstOrDefault();
 
                     // Entrust SAS
-                    //var key = signature.GetCertificatesWithPrivateKeys().Where(k => k.certificate.SubjectDN.ToString().Equals("CN=Entrust Limited,OU=ECS,O=Entrust Limited,L=Kanata,ST=Ontario,C=CA")).FirstOrDefault();
+                    //var key = signature.GetCertificatesWithPrivateKeys(slot).Where(k => k.certificate.SubjectDN.ToString().Equals("CN=Entrust Limited,OU=ECS,O=Entrust Limited,L=Kanata,ST=Ontario,C=CA")).FirstOrDefault();
                     // Utimaco HSM
-                    //var key = signature.GetCertificatesWithPrivateKeys().FirstOrDefault();
+                    //var key = signature.GetCertificatesWithPrivateKeys(slot).FirstOrDefault();
 
 
                     if (key != null)
