@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Remoting.Contexts;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Bouncycastle.Crypto;
-using iText.Commons.Bouncycastle.Security;
 using iText.Commons.Utils;
 using iText.Kernel.Exceptions;
 using iText.Kernel.Pdf;
@@ -22,12 +20,6 @@ namespace iText.Samples.Sandbox.Signatures.Validation
     {
         public static readonly String SRC = "../../../resources/pdfs/validDocWithTimestamp.pdf";
         public static readonly String DEST = "results/sandbox/signatures/validation/validateSignatureExample.txt";
-
-        private const String SIGNATURE_VERIFICATION = "Signature verification check.";
-        private const String CANNOT_VERIFY_SIGNATURE = "Signature {0} cannot be mathematically verified.";
-        private const String DOCUMENT_IS_NOT_COVERED = "Signature {0} doesn't cover entire document.";
-        private const String TIMESTAMP_VERIFICATION = "Timestamp verification check.";
-        private const String CANNOT_VERIFY_TIMESTAMP = "Signature timestamp attribute cannot be verified";
 
         private IX509Certificate[] certificateChain;
         private IPrivateKey privateKey;
@@ -47,39 +39,18 @@ namespace iText.Samples.Sandbox.Signatures.Validation
         {
             // Set up the validator.
             SignatureValidationProperties properties = GetSignatureValidationProperties();
+            properties.AddOcspClient(GetOcspClient());
             IssuingCertificateRetriever certificateRetriever = new IssuingCertificateRetriever();
             IX509Certificate rootCert = (IX509Certificate)GetCertificateChain()[2];
             certificateRetriever.SetTrustedCertificates(JavaCollectionsUtil.SingletonList(rootCert));
             ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder().WithIssuingCertificateRetriever(
                 certificateRetriever).WithSignatureValidationProperties(properties);
-            ValidationReport report = new ValidationReport();
+            ValidationReport report;
             using (PdfDocument document = new PdfDocument(new PdfReader(src)))
             {
-                CertificateChainValidator validator = validatorChainBuilder.BuildCertificateChainValidator();
-                validator.AddOcspClient(GetOcspClient());
-                // Validate the signature.
-                SignatureUtil signatureUtil = new SignatureUtil(document);
-                IList<String> signatures = signatureUtil.GetSignatureNames();
-                String latestSignatureName = signatures[signatures.Count - 1];
-                PdfPKCS7 pkcs7 = signatureUtil.ReadSignatureData(latestSignatureName);
-                ValidateSignature(report, signatureUtil, latestSignatureName, pkcs7);
-                DateTime signingDate = DateTimeUtil.GetCurrentUtcTime();
-                if (pkcs7.GetTimeStampTokenInfo() != null)
-                {
-                    // Validate timestamp.
-                    ValidateTimestamp(certificateRetriever, report, validator, pkcs7);
-                    signingDate = pkcs7.GetTimeStampDate().ToUniversalTime();
-                }
-
-                IX509Certificate[] certificates = pkcs7.GetCertificates();
-                certificateRetriever.AddKnownCertificates(JavaUtil.ArraysAsList(certificates));
-                IX509Certificate signingCertificate = pkcs7.GetSigningCertificate();
-                // Set up validation context related to CertificateChainValidator for the historical validation.
-                ValidationContext baseContext = new ValidationContext(ValidatorContext.CERTIFICATE_CHAIN_VALIDATOR,
-                    CertificateSource
-                        .SIGNER_CERT, TimeBasedContext.HISTORICAL);
-                // Validate the signing chain. ValidationReport will contain all the validation report messages.
-                report = validator.Validate(report, baseContext, signingCertificate, signingDate);
+                SignatureValidator validator = validatorChainBuilder.BuildSignatureValidator(document);
+                // Validate all signatures in the document.
+                report = validator.ValidateSignatures();
             }
 
             NUnit.Framework.Assert.AreEqual(report.GetValidationResult(), ValidationReport.ValidationResult.VALID);
@@ -128,81 +99,6 @@ namespace iText.Samples.Sandbox.Signatures.Validation
                 CertificateSources.Of(CertificateSource.CRL_ISSUER, CertificateSource.OCSP_ISSUER, CertificateSource
                     .CERT_ISSUER), false);
             return properties;
-        }
-
-        /// <summary>Check if the signature covers the entire document and verify signature integrity and authenticity.
-        ///     </summary>
-        /// <param name="report">validation report</param>
-        /// <param name="signatureUtil">signature util instance created for the signed document</param>
-        /// <param name="latestSignatureName">signature name</param>
-        /// <param name="pkcs7">
-        /// created
-        /// <see cref="iText.Signatures.PdfPKCS7"/>
-        /// instance
-        /// </param>
-        protected internal virtual void ValidateSignature(ValidationReport report, SignatureUtil signatureUtil, String
-            latestSignatureName, PdfPKCS7 pkcs7)
-        {
-            if (!signatureUtil.SignatureCoversWholeDocument(latestSignatureName))
-            {
-                report.AddReportItem(new ReportItem(SIGNATURE_VERIFICATION, MessageFormatUtil.Format(
-                    DOCUMENT_IS_NOT_COVERED
-                    , latestSignatureName), ReportItem.ReportItemStatus.INVALID));
-            }
-
-            try
-            {
-                if (!pkcs7.VerifySignatureIntegrityAndAuthenticity())
-                {
-                    report.AddReportItem(new ReportItem(SIGNATURE_VERIFICATION, MessageFormatUtil.Format(
-                        CANNOT_VERIFY_SIGNATURE
-                        , latestSignatureName), ReportItem.ReportItemStatus.INVALID));
-                }
-            }
-            catch (AbstractGeneralSecurityException e)
-            {
-                report.AddReportItem(new ReportItem(SIGNATURE_VERIFICATION, MessageFormatUtil.Format(
-                    CANNOT_VERIFY_SIGNATURE
-                    , latestSignatureName), e, ReportItem.ReportItemStatus.INVALID));
-            }
-        }
-
-        /// <summary>Verify timestamp imprint and validate timestamp certificates chain.</summary>
-        /// <param name="certificateRetriever">certificate retriever</param>
-        /// <param name="report">validation report</param>
-        /// <param name="validator">certificate chain validator instance</param>
-        /// <param name="pkcs7">
-        /// created
-        /// <see cref="iText.Signatures.PdfPKCS7"/>
-        /// instance
-        /// </param>
-        protected internal virtual void ValidateTimestamp(IssuingCertificateRetriever certificateRetriever,
-            ValidationReport report, CertificateChainValidator validator, PdfPKCS7 pkcs7)
-        {
-            try
-            {
-                if (!pkcs7.VerifyTimestampImprint())
-                {
-                    report.AddReportItem(new ReportItem(TIMESTAMP_VERIFICATION, CANNOT_VERIFY_TIMESTAMP, ReportItem
-                        .ReportItemStatus
-                        .INVALID));
-                }
-            }
-            catch (AbstractGeneralSecurityException e)
-            {
-                report.AddReportItem(new ReportItem(TIMESTAMP_VERIFICATION, CANNOT_VERIFY_TIMESTAMP, e, ReportItem
-                    .ReportItemStatus
-                    .INVALID));
-            }
-
-            // Validate timestamp certificates chain.
-            IX509Certificate[] timestampCertificates = pkcs7.GetTimestampCertificates();
-            certificateRetriever.AddKnownCertificates(JavaUtil.ArraysAsList(timestampCertificates));
-            ValidationContext baseContext = new ValidationContext(ValidatorContext.CERTIFICATE_CHAIN_VALIDATOR,
-                CertificateSource.TIMESTAMP, TimeBasedContext.PRESENT);
-            validator.Validate(report, baseContext, (IX509Certificate)timestampCertificates[0],
-                DateTimeUtil.GetCurrentUtcTime
-                    ());
         }
 
         /// <summary>Creates an OCSP client for the sample.</summary>
