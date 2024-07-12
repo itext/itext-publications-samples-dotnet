@@ -73,11 +73,6 @@ namespace iText.Samples.Sandbox.Signatures.TwoPhase
             {
                 PadesTwoPhaseSigningHelper helper = new PadesTwoPhaseSigningHelper();
                 helper.SetTrustedCertificates(GetTrustedStore());
-
-                // workaround for sizing issue in PadesTwoPhaseSigningHelper
-                // TODO remove at release DEVSIX-8115
-                helper.SetEstimatedSize(15000);
-
                 cmsContainer = helper.CreateCMSContainerWithoutSignature(certificateChain, digestAlgoritm, reader,
                     outputStream, signerProperties);
             }

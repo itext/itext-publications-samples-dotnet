@@ -68,8 +68,7 @@ namespace iText.Samples.Sandbox.Signatures
             char[] password = "testpass".ToCharArray();
             IExternalSignature pks = GetPrivateKeySignature(CERT_PATH, password);
             IX509Certificate[] chain = GetCertificateChain(CERT_PATH, password);
-            OCSPVerifier ocspVerifier = new OCSPVerifier(null, null);
-            OcspClientBouncyCastle ocspClient = new OcspClientBouncyCastle(ocspVerifier);
+            OcspClientBouncyCastle ocspClient = new OcspClientBouncyCastle();
             List<ICrlClient> crlClients = new List<ICrlClient>(new[] {new CrlClientOnline()});
 
             

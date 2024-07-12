@@ -1,0 +1,8 @@
+ValidationReport{validationResult=VALID
+reportItems=
+CertificateReportItem{baseclass=
+ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRootCert is trusted, revocation data checks are not required.', cause=, status=INFO}
+certificate=C=BE,O=iText,CN=iTextTestRootCert}, 
+CertificateReportItem{baseclass=
+ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRootCert is trusted, revocation data checks are not required.', cause=, status=INFO}
+certificate=C=BE,O=iText,CN=iTextTestRootCert}, }
