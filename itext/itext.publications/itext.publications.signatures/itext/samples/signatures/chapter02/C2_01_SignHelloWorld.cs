@@ -16,10 +16,10 @@ namespace iText.Samples.Signatures.Chapter02
     {
         public static readonly string DEST = "results/signatures/chapter02/";
 
-        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly string KEYSTORE = "../../../resources/encryption/certificate.p12";
         public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
 
-        public static readonly char[] PASSWORD = "password".ToCharArray();
+        public static readonly char[] PASSWORD = "testpassphrase".ToCharArray();
 
         public static readonly string[] RESULT_FILES =
         {

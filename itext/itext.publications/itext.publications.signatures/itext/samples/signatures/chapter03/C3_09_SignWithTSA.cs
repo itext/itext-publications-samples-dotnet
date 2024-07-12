@@ -58,7 +58,7 @@ namespace iText.Samples.Signatures.Chapter03
                 chain[k] = ce[k].Certificate;
             }
 
-            IOcspClient ocspClient = new OcspClientBouncyCastle(null);
+            IOcspClient ocspClient = new OcspClientBouncyCastle();
 
             /* Create an instance of TSAClientBouncyCastle, an implementation of TSAClient.
              * Pass the timestamp authority server url.

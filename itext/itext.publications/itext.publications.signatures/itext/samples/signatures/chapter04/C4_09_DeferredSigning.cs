@@ -20,9 +20,9 @@ namespace iText.Samples.Signatures.Chapter04
 
         public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
         public static readonly string TEMP = "results/signatures/chapter04/hello_empty_sig.pdf";
-        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly string KEYSTORE = "../../../resources/encryption/certificate.p12";
 
-        public static readonly char[] PASSWORD = "password".ToCharArray();
+        public static readonly char[] PASSWORD = "testpassphrase".ToCharArray();
 
         public static readonly string[] RESULT_FILES = new string[]
         {

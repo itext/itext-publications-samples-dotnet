@@ -59,7 +59,7 @@ namespace iText.Samples.Signatures.Chapter03
              * In the current sample it is not needed to verify the OCSP response,
              * that is why null is passed as verifier parameter.
              */
-            IOcspClient ocspClient = new OcspClientBouncyCastle(null);
+            IOcspClient ocspClient = new OcspClientBouncyCastle();
 
             new C3_07_SignWithOCSP().Sign(SRC, DEST + RESULT_FILES[0], chain, pk,
                 DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS,

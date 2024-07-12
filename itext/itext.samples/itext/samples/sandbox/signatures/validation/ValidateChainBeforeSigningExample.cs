@@ -49,13 +49,13 @@ namespace iText.Samples.Sandbox.Signatures.Validation
             IX509Certificate signingCert = (IX509Certificate)certificateChain[0];
             IX509Certificate rootCert = (IX509Certificate)certificateChain[1];
             // Set up the validator.
-            SignatureValidationProperties properties = new SignatureValidationProperties();
+            SignatureValidationProperties properties = new SignatureValidationProperties()
+                .AddOcspClient(GetOcspClient());
             IssuingCertificateRetriever certificateRetriever = new IssuingCertificateRetriever();
             ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder().WithIssuingCertificateRetriever(
                 certificateRetriever).WithSignatureValidationProperties(properties);
             CertificateChainValidator validator = validatorChainBuilder.BuildCertificateChainValidator();
             certificateRetriever.SetTrustedCertificates(JavaCollectionsUtil.SingletonList(rootCert));
-            validator.AddOcspClient(GetOcspClient());
             ValidationContext baseContext = new ValidationContext(ValidatorContext.CERTIFICATE_CHAIN_VALIDATOR,
                 CertificateSource.SIGNER_CERT, TimeBasedContext.PRESENT);
             // Validate the chain. ValidationReport will contain all the validation report messages.

@@ -58,7 +58,7 @@ namespace iText.Samples.Signatures.Chapter03
                 chain[k] = ce[k].Certificate;
             }
 
-            IOcspClient ocspClient = new OcspClientBouncyCastle(null);
+            IOcspClient ocspClient = new OcspClientBouncyCastle();
             ITSAClient tsaClient = new TSAClientBouncyCastle(tsaUrl, tsaUser, tsaPass);
             C3_12_SignWithEstimatedSize app = new C3_12_SignWithEstimatedSize();
 

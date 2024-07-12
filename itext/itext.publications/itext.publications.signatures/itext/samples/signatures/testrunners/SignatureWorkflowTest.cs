@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
+using iText.Bouncycastle.X509;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Geom;
 using iText.Samples.Signatures.Chapter02;
+using iText.Signatures;
 using iText.Test;
 using NUnit.Framework;
+using Org.BouncyCastle.X509;
 
 namespace iText.Samples.Signatures.Testrunners
 {
@@ -13,6 +17,11 @@ namespace iText.Samples.Signatures.Testrunners
     public class SignatureWorkflowTest : WrappedSamplesRunner
     {
         private static readonly IDictionary<int, IList<Rectangle>> ignoredAreaMap;
+
+        private static readonly String ALICE = "../../../resources/encryption/alice.crt";
+        private static readonly String BOB = "../../../resources/encryption/bob.crt";
+        private static readonly String CAROL = "../../../resources/encryption/carol.crt";
+        private static readonly String DAVE = "../../../resources/encryption/dave.crt";
 
         static SignatureWorkflowTest()
         {
@@ -92,17 +101,26 @@ namespace iText.Samples.Signatures.Testrunners
 
         private class CustomSignatureTest : SignatureTestHelper
         {
-            protected internal override void InitKeyStoreForVerification(List<IX509Certificate> ks)
+            protected internal override void AddTrustedCertificates(IssuingCertificateRetriever certificateRetriever,
+                ICollection<IX509Certificate> certificates)
             {
-                base.InitKeyStoreForVerification(ks);
-                ks.Add(LoadCertificateFromKeyStore(C2_11_SignatureWorkflow.ALICE,
-                    C2_11_SignatureWorkflow.PASSWORD));
-                ks.Add(LoadCertificateFromKeyStore(C2_11_SignatureWorkflow.BOB,
-                    C2_11_SignatureWorkflow.PASSWORD));
-                ks.Add(LoadCertificateFromKeyStore(C2_11_SignatureWorkflow.CAROL,
-                    C2_11_SignatureWorkflow.PASSWORD));
-                ks.Add(LoadCertificateFromKeyStore(C2_11_SignatureWorkflow.DAVE,
-                    C2_11_SignatureWorkflow.PASSWORD));
+                base.AddTrustedCertificates(certificateRetriever, certificates);
+                var parser = new X509CertificateParser();
+                IX509Certificate aliceCert;
+                IX509Certificate bobCert;
+                IX509Certificate carolCert;
+                IX509Certificate daveCert;
+                using (FileStream aliceStream = new FileStream(ALICE, FileMode.Open, FileAccess.Read),
+                       bobStream = new FileStream(BOB, FileMode.Open, FileAccess.Read),
+                       carolStream = new FileStream(CAROL, FileMode.Open, FileAccess.Read),
+                       daveStream = new FileStream(DAVE, FileMode.Open, FileAccess.Read))
+                {
+                    aliceCert = new X509CertificateBC(parser.ReadCertificate(aliceStream));
+                    bobCert = new X509CertificateBC(parser.ReadCertificate(bobStream));
+                    carolCert = new X509CertificateBC(parser.ReadCertificate(carolStream));
+                    daveCert = new X509CertificateBC(parser.ReadCertificate(daveStream));
+                }
+                certificateRetriever.AddTrustedCertificates(new[] { aliceCert, bobCert, carolCert, daveCert });
             }
         }
     }

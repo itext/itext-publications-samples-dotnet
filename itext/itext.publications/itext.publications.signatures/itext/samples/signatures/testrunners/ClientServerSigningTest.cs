@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
-using iText.Bouncycastle.Cert;
+using System.Text;
 using iText.Bouncycastle.X509;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Geom;
 using iText.Samples.Signatures.Chapter04;
+using iText.Signatures;
 using iText.Test;
 using NUnit.Framework;
 using Org.BouncyCastle.X509;
@@ -17,6 +18,14 @@ namespace iText.Samples.Signatures.Testrunners
     public class ClientServerSigningTest : WrappedSamplesRunner
     {
         private static readonly IDictionary<int, IList<Rectangle>> ignoredAreaMap;
+
+        private static readonly String EXPECTED_ERROR_TEXT =
+            "\nresults/signatures/chapter04/hello_server.pdf:\n" +
+            "Document signatures validation failed!\n\n" +
+            "CertificateReportItem{baseclass=\n" +
+            "ReportItem{checkName='Required certificate extensions check.', message=" +
+            "'Required extension 2.5.29.15 is missing or incorrect.', cause=, status=INVALID}\n" +
+            "certificate=C=Unknown,ST=Unknown,L=Unknown,O=Unknown,OU=Unknown,CN=Unknown}\n";
 
         static ClientServerSigningTest()
         {
@@ -55,14 +64,34 @@ namespace iText.Samples.Signatures.Testrunners
         protected override void ComparePdf(string outPath, string dest, string cmp)
         {
             String[] resultFiles = GetResultFiles(sampleClass);
+            StringBuilder errorTemp = new StringBuilder();
             for (int i = 0; i < resultFiles.Length; i++)
             {
                 String currentDest = dest + resultFiles[i];
                 String currentCmp = cmp + resultFiles[i];
 
-                AddError(new CustomSignatureTest().CheckForErrors(currentDest, currentCmp,
-                    outPath, ignoredAreaMap));
+                String result = new CustomSignatureTest().CheckForErrors(currentDest, currentCmp,
+                    outPath, ignoredAreaMap);
+                
+                if (result != null)
+                {
+                    errorTemp.Append(result);
+                }
             }
+            
+            String errorText = errorTemp.ToString();
+            if (!errorText.Contains(EXPECTED_ERROR_TEXT))
+            {
+                errorText += "\n'hello_server.pdf' file's signature is expected to be invalid due to " +
+                             "missing key usage extension for signing certificate.\n\n";
+            }
+            else
+            {
+                // Expected error should be ignored
+                errorText = errorText.Replace(EXPECTED_ERROR_TEXT, "");
+            }
+
+            AddError(errorText);
         }
 
         protected override String GetCmpPdf(String dest)
@@ -104,15 +133,16 @@ namespace iText.Samples.Signatures.Testrunners
 
         private class CustomSignatureTest : SignatureTestHelper
         {
-            protected internal override void InitKeyStoreForVerification(List<IX509Certificate> ks)
+            protected internal override void AddTrustedCertificates(IssuingCertificateRetriever certificateRetriever,
+                ICollection<IX509Certificate> certificates)
             {
-                base.InitKeyStoreForVerification(ks);
+                base.AddTrustedCertificates(certificateRetriever, certificates);
                 HttpWebRequest request = (HttpWebRequest) WebRequest.Create(C4_07_ClientServerSigning.CERT);
                 request.Method = WebRequestMethods.Http.Get;
                 HttpWebResponse response = (HttpWebResponse) request.GetResponse();
-                IX509Certificate chain = new X509CertificateBC(
+                IX509Certificate itextCert = new X509CertificateBC(
                     new X509CertificateParser().ReadCertificate(response.GetResponseStream()));
-                ks.Add(chain);
+                certificateRetriever.AddTrustedCertificates(new[] { itextCert });
             }
         }
     }

@@ -59,7 +59,7 @@ namespace iText.Samples.Signatures.Chapter03
                 chain[k] = ce[k].Certificate;
             }
 
-            IOcspClient ocspClient = new OcspClientBouncyCastle(null);
+            IOcspClient ocspClient = new OcspClientBouncyCastle();
             TSAClientBouncyCastle tsaClient = new TSAClientBouncyCastle(tsaUrl, tsaUser, tsaPass);
             tsaClient.SetTSAInfo(new CustomITSAInfoBouncyCastle());
 
