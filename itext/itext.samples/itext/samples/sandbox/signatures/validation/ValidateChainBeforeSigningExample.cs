@@ -52,8 +52,8 @@ namespace iText.Samples.Sandbox.Signatures.Validation
             SignatureValidationProperties properties = new SignatureValidationProperties()
                 .AddOcspClient(GetOcspClient());
             IssuingCertificateRetriever certificateRetriever = new IssuingCertificateRetriever();
-            ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder().WithIssuingCertificateRetriever(
-                certificateRetriever).WithSignatureValidationProperties(properties);
+            ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder().WithIssuingCertificateRetrieverFactory(
+                () => certificateRetriever).WithSignatureValidationProperties(properties);
             CertificateChainValidator validator = validatorChainBuilder.BuildCertificateChainValidator();
             certificateRetriever.SetTrustedCertificates(JavaCollectionsUtil.SingletonList(rootCert));
             ValidationContext baseContext = new ValidationContext(ValidatorContext.CERTIFICATE_CHAIN_VALIDATOR,

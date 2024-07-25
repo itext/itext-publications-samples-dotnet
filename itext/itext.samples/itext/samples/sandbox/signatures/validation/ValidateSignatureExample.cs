@@ -43,8 +43,8 @@ namespace iText.Samples.Sandbox.Signatures.Validation
             IssuingCertificateRetriever certificateRetriever = new IssuingCertificateRetriever();
             IX509Certificate rootCert = (IX509Certificate)GetCertificateChain()[2];
             certificateRetriever.SetTrustedCertificates(JavaCollectionsUtil.SingletonList(rootCert));
-            ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder().WithIssuingCertificateRetriever(
-                certificateRetriever).WithSignatureValidationProperties(properties);
+            ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder().WithIssuingCertificateRetrieverFactory(
+                () => certificateRetriever).WithSignatureValidationProperties(properties);
             ValidationReport report;
             using (PdfDocument document = new PdfDocument(new PdfReader(src)))
             {

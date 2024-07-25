@@ -59,7 +59,7 @@ namespace iText.Samples.Signatures.Chapter05
 
             certificateRetriever.AddTrustedCertificates(new[] { rootCert });
             ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder()
-                .WithIssuingCertificateRetriever(certificateRetriever)
+                .WithIssuingCertificateRetrieverFactory(() => certificateRetriever)
                 .WithSignatureValidationProperties(properties);
             ValidationReport report;
             using (PdfDocument document = new PdfDocument(new PdfReader(path)))

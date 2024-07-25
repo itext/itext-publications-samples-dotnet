@@ -84,7 +84,7 @@ namespace iText.Samples.Signatures
             AddTrustedCertificates(certificateRetriever, new List<IX509Certificate> { adobeCert, caCert, brunoCert });
 
             ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder()
-                .WithIssuingCertificateRetriever(certificateRetriever)
+                .WithIssuingCertificateRetrieverFactory(() => certificateRetriever)
                 .WithSignatureValidationProperties(properties);
 
             ValidationReport report;
