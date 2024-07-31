@@ -13,8 +13,8 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
 using iText.Kernel.Utils;
 using iText.Signatures;
-using iText.Signatures.Validation.V1;
-using iText.Signatures.Validation.V1.Report;
+using iText.Signatures.Validation;
+using iText.Signatures.Validation.Report;
 
 namespace iText.Samples.Signatures
 {

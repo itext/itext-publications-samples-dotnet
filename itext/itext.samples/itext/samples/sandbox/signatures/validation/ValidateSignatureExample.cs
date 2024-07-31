@@ -9,9 +9,9 @@ using iText.Kernel.Pdf;
 using iText.Samples.Sandbox.Signatures.Clients;
 using iText.Samples.Sandbox.Signatures.Utils;
 using iText.Signatures;
-using iText.Signatures.Validation.V1;
-using iText.Signatures.Validation.V1.Context;
-using iText.Signatures.Validation.V1.Report;
+using iText.Signatures.Validation;
+using iText.Signatures.Validation.Context;
+using iText.Signatures.Validation.Report;
 
 namespace iText.Samples.Sandbox.Signatures.Validation
 {

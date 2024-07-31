@@ -4,8 +4,8 @@ using iText.Bouncycastle.X509;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Pdf;
 using iText.Signatures;
-using iText.Signatures.Validation.V1;
-using iText.Signatures.Validation.V1.Report;
+using iText.Signatures.Validation;
+using iText.Signatures.Validation.Report;
 using Org.BouncyCastle.X509;
 
 namespace iText.Samples.Signatures.Chapter05
