@@ -59,10 +59,10 @@ namespace iText.Samples.Sandbox.Typography.Devanagari
             // Add a paragraph with a set bold font to the paragraph
             document.Add(new Paragraph(devanagariText).SetFont(fontBold));
 
-            // We don't suggest usage of setBold() method to reach text thickness since the result is written with the usual
+            // We don't suggest usage of SimulateBold() method to reach text thickness since the result is written with the usual
             // rather than the bold font: we only emulate "thickness". It's recommended to use an actual bold font instead.
             // For example NotoSansDevanagari-Bold
-            document.Add(new Paragraph(devanagariText).SetBold());
+            document.Add(new Paragraph(devanagariText).SimulateBold());
 
             document.Close();
         }

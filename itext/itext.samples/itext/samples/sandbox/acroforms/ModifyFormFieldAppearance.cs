@@ -33,7 +33,7 @@ namespace iText.Samples.Sandbox.Acroforms
                 // It is not recommended to change font preferences since those won't be preserved after appearance changes,
                 // but it is still possible.
                 textArea.SetProperty(Property.LEADING, new Leading(Leading.MULTIPLIED, 3f));
-                textArea.SetItalic();
+                textArea.SetFontColor(ColorConstants.RED);
                 textFormField.GetFirstFormAnnotation().SetFormFieldElement(textArea);
 
                 PdfButtonFormField buttonFormField = new PushButtonFormFieldBuilder(document, "button")

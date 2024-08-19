@@ -57,10 +57,10 @@ namespace iText.Samples.Sandbox.Typography.Bengali
             // Add a paragraph with a set bold font to the paragraph
             document.Add(new Paragraph(bengaliText).SetFont(fontBold));
 
-            // We don't suggest usage of setBold() method to reach text thickness since the result is written with the usual
+            // We don't suggest usage of SimulateBold() method to reach text thickness since the result is written with the usual
             // rather than the bold font: we only emulate "thickness". It's recommended to use an actual bold font instead.
             // For example NotoSansBengali-Bold
-            document.Add(new Paragraph(bengaliText).SetBold());
+            document.Add(new Paragraph(bengaliText).SimulateBold());
 
             document.Close();
         }

@@ -23,7 +23,7 @@ namespace iText.Highlevel.Notused.Appendix {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             // Initialize document
             Document document = new Document(pdf);
-            Style style = new Style().SetBold().SetDestination("Top");
+            Style style = new Style().SetDestination("Top");
             Text t1 = new Text("Test").AddStyle(style);
             document.Add(new Paragraph(t1));
             Text t2 = new Text("Test").SetBorder(new SolidBorder(0.5f));

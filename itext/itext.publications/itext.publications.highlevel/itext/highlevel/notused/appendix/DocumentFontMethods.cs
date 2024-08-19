@@ -38,11 +38,15 @@ namespace iText.Highlevel.Notused.Appendix {
             document.SetFontColor(ColorConstants.BLUE);
             p = new Paragraph("Testing font methods: changed color");
             document.Add(p);
-            document.SetBold();
-            p = new Paragraph("Testing font methods: to bold");
+            // We don't suggest usage of SimulateBold() method to reach text thickness since the result is written with the usual
+            // rather than the bold font: we only emulate "thickness". It's recommended to use an actual bold font instead.
+            document.SimulateBold();
+            p = new Paragraph("Testing font methods: simulated bold");
             document.Add(p);
-            document.SetItalic();
-            p = new Paragraph("Testing font methods: to italic");
+            // We don't suggest usage of SimulateItalic() method to reach text obliquity since the result is written with the usual
+            // rather than the italic font: we only emulate "obliquity". It's recommended to use an actual italic font instead.
+            document.SimulateItalic();
+            p = new Paragraph("Testing font methods: simulated italic");
             document.Add(p);
             document.SetProperty(Property.BOLD_SIMULATION, false);
             document.SetProperty(Property.ITALIC_SIMULATION, false);
