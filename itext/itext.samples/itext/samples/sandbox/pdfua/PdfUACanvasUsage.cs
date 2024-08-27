@@ -7,6 +7,7 @@ using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Tagging;
 using iText.Kernel.Pdf.Tagutils;
 using iText.Kernel.Utils;
+using iText.Kernel.Validation;
 using iText.Pdfua.Checkers;
 using iText.Pdfua.Exceptions;
 

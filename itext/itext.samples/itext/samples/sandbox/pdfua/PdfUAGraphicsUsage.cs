@@ -3,6 +3,7 @@ using System.IO;
 using iText.IO.Image;
 using iText.Kernel.Pdf;
 using iText.Kernel.Utils;
+using iText.Kernel.Validation;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Pdfua.Checkers;
