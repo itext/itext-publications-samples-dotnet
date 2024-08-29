@@ -33,11 +33,13 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            signer.SetLocation(location);
-            signer.SetReason(reason);
-            signer.SetContact(contact);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetLocation(location)
+                .SetReason(reason)
+                .SetContact(contact);
 
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
+            signer.SetSignerProperties(signerProperties);
 
             // Set the signature event to allow modification of the signature dictionary.
             signer.SetSignatureEvent(new CustomISignatureEvent(fullName));

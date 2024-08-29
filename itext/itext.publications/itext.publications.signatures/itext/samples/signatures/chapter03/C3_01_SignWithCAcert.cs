@@ -34,12 +34,16 @@ namespace iText.Samples.Signatures.Chapter03
 
             // Create the signature appearance
             Rectangle rect = new Rectangle(36, 648, 200, 100);
-            signer
+            SignerProperties signerProperties = new SignerProperties()
+                .SetFieldName("sig")
                 .SetReason(reason)
                 .SetLocation(location)
                 .SetPageRect(rect)
-                .SetPageNumber(1)
-                .SetFieldName("sig");
+                .SetPageNumber(1);        
+            signer.SetSignerProperties(signerProperties);
+            // Specify if the appearance before field is signed will be used
+            // as a background for the signed field. The "false" value is the default value.
+            signer.GetSignatureField().SetReuseAppearance(false);
             
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);

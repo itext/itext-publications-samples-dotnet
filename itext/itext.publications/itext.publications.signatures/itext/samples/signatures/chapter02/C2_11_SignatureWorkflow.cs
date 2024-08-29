@@ -109,8 +109,10 @@ namespace iText.Samples.Signatures.Chapter02
                 new StampingProperties().UseAppendMode());
 
             // Set signer options
-            signer.SetFieldName(name);
-            signer.SetCertificationLevel(PdfSigner.CERTIFIED_FORM_FILLING);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetFieldName(name)
+                .SetCertificationLevel(AccessPermissions.FORM_FIELDS_MODIFICATION);
+            signer.SetSignerProperties(signerProperties);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
 
@@ -152,7 +154,7 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create),
                 new StampingProperties().UseAppendMode());
-            signer.SetFieldName(name);
+            signer.SetSignerProperties(new SignerProperties().SetFieldName(name));
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
             signer.SignDetached(pks, chain, null, null, null, 0,
@@ -183,7 +185,7 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create),
                 new StampingProperties().UseAppendMode());
-            signer.SetFieldName(name);
+            signer.SetSignerProperties(new SignerProperties().SetFieldName(name));
 
             PdfAcroForm form = PdfFormCreator.GetAcroForm(signer.GetDocument(), true);
             form.GetField(fname).SetValue(value);

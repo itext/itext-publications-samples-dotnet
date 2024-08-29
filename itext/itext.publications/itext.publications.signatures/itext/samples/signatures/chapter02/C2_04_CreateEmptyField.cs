@@ -108,9 +108,11 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
-            signer.SetReason(reason);
-            signer.SetLocation(location);
-            signer.SetFieldName(name);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location)
+                .SetFieldName(name);
+            signer.SetSignerProperties(signerProperties);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 

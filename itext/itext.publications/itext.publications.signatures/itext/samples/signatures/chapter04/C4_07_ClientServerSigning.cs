@@ -51,12 +51,13 @@ namespace iText.Samples.Signatures.Chapter04
 
             // Create the signature appearance
             Rectangle rect = new Rectangle(36, 648, 200, 100);
-            signer
+            SignerProperties signerProperties = new SignerProperties()
                 .SetReason(reason)
                 .SetLocation(location)
                 .SetPageRect(rect)
                 .SetPageNumber(1)
                 .SetFieldName("sig");
+            signer.SetSignerProperties(signerProperties);
 
             IExternalSignature pks = new ServerSignature();
 

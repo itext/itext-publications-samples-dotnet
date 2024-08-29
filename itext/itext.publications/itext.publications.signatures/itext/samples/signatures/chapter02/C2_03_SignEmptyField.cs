@@ -36,15 +36,17 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
             
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
+
+            signer.SetSignerProperties(signerProperties);
 
             // Specify if the appearance before field is signed will be used
             // as a background for the signed field. The "false" value is the default value.
-
             signer.GetSignatureField().SetReuseAppearance(false);
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 

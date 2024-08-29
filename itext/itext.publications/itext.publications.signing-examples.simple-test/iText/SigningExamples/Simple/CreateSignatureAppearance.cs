@@ -69,10 +69,12 @@ namespace iText.Samples.Signatures.Chapter02
             using (var outputFile = new FileStream(RESULT_FOLDER + "/test-DESCRIPTION.pdf", FileMode.Create))
             {
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
-                pdfSigner.SetPageRect(new Rectangle(100, 500, 300, 100));
-                pdfSigner.SetPageNumber(1);
-                pdfSigner.SetReason("Specimen");
-                pdfSigner.SetLocation("Boston");
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(new Rectangle(100, 500, 300, 100))
+                    .SetPageNumber(1)
+                    .SetReason("Specimen")
+                    .SetLocation("Boston");
+                pdfSigner.SetSignerProperties(signerProps);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -92,15 +94,16 @@ namespace iText.Samples.Signatures.Chapter02
                 var data = ImageDataFactory.Create(StreamUtil.InputStreamToArray(imageResource));
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
-                pdfSigner.SetPageRect(new Rectangle(100, 500, 300, 100));
-                pdfSigner.SetPageNumber(1);
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(new Rectangle(100, 500, 300, 100))
+                    .SetPageNumber(1)
+                    .SetReason("Specimen")
+                    .SetLocation("Boston");
+                pdfSigner.SetSignerProperties(signerProps);
 
-                pdfSigner.SetReason("Specimen");
-                pdfSigner.SetLocation("Boston");
-
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                var appearance = new SignatureFieldAppearance(pdfSigner.GetSignerProperties().GetFieldName());
                 appearance.SetContent(data);
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -121,16 +124,17 @@ namespace iText.Samples.Signatures.Chapter02
 
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
-                pdfSigner.SetPageRect(new Rectangle(100, 500, 300, 100));
-                pdfSigner.SetPageNumber(1);
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(new Rectangle(100, 500, 300, 100))
+                    .SetPageNumber(1)
+                    .SetReason("Specimen")
+                    .SetLocation("Boston");
+                pdfSigner.SetSignerProperties(signerProps);
 
-                pdfSigner.SetReason("Specimen");
-                pdfSigner.SetLocation("Boston");
-
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                var appearance = new SignatureFieldAppearance(pdfSigner.GetSignerProperties().GetFieldName());
                 appearance.SetContent(new SignedAppearanceText(),
                     data); // SignedAppearanceText will be filled in automatically
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -147,16 +151,17 @@ namespace iText.Samples.Signatures.Chapter02
             {
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
-                pdfSigner.SetPageRect(new Rectangle(100, 500, 300, 100));
-                pdfSigner.SetPageNumber(1);
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(new Rectangle(100, 500, 300, 100))
+                    .SetPageNumber(1)
+                    .SetReason("Specimen")
+                    .SetLocation("Boston");
+                pdfSigner.SetSignerProperties(signerProps);
 
-                pdfSigner.SetReason("Specimen");
-                pdfSigner.SetLocation("Boston");
-
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
                 appearance.SetContent("",
                     new SignedAppearanceText()); // "" and SignedAppearanceText will be filled in automatically
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -173,16 +178,17 @@ namespace iText.Samples.Signatures.Chapter02
             using (var outputFile = new FileStream(RESULT_FOLDER + "/emptySignatureField-signed.pdf", FileMode.Create))
             {
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
-                pdfSigner.SetFieldName("Signature");
-
-                pdfSigner.SetReason("Specimen");
-                pdfSigner.SetLocation("Boston");
+                SignerProperties signerProps = new SignerProperties()
+                    .SetFieldName("Signature")
+                    .SetReason("Specimen")
+                    .SetLocation("Boston");
+                pdfSigner.SetSignerProperties(signerProps);
                 pdfSigner.GetSignatureField().SetReuseAppearance(true);
 
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
                 appearance.SetContent("",
                     new SignedAppearanceText()); // "" and SignedAppearanceText will be filled in automatically
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -238,13 +244,14 @@ namespace iText.Samples.Signatures.Chapter02
                 var data = ImageDataFactory.Create(StreamUtil.InputStreamToArray(imageResource));
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
-                pdfSigner.SetPageRect(new Rectangle(100, 500, 300, 100));
-                pdfSigner.SetPageNumber(1);
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(new Rectangle(100, 500, 300, 100))
+                    .SetPageNumber(1)
+                    .SetReason("Specimen")
+                    .SetLocation("Boston");
+                pdfSigner.SetSignerProperties(signerProps);
 
-                pdfSigner.SetReason("Specimen");
-                pdfSigner.SetLocation("Boston");
-
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
                 appearance.SetContent("",
                     new SignedAppearanceText()); // "" and SignedAppearanceText will be filled in automatically
                 var size = new BackgroundSize();
@@ -253,7 +260,7 @@ namespace iText.Samples.Signatures.Chapter02
                     .SetImage(new PdfImageXObject(data))
                     .SetBackgroundSize(size)
                     .Build());
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -270,17 +277,19 @@ namespace iText.Samples.Signatures.Chapter02
             {
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
-                pdfSigner.SetPageRect(new Rectangle(100, 500, 300, 100));
-                pdfSigner.SetPageNumber(1);
-                pdfSigner.SetReason("Specimen");
-                pdfSigner.SetLocation("Boston");
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(new Rectangle(100, 500, 300, 100))
+                    .SetPageNumber(1)
+                    .SetReason("Specimen")
+                    .SetLocation("Boston");
+                pdfSigner.SetSignerProperties(signerProps);
 
                 var appearanceText = new SignedAppearanceText();
-                appearanceText.SetReasonLine("Objective: " + pdfSigner.GetReason());
-                appearanceText.SetLocationLine("Whereabouts: " + pdfSigner.GetLocation());
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                appearanceText.SetReasonLine("Objective: " + signerProps.GetReason());
+                appearanceText.SetLocationLine("Whereabouts: " + signerProps.GetLocation());
+                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
                 appearance.SetContent(appearanceText);
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -297,19 +306,20 @@ namespace iText.Samples.Signatures.Chapter02
             {
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
-                pdfSigner.SetPageRect(new Rectangle(100, 500, 300, 100));
-                pdfSigner.SetPageNumber(1);
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(new Rectangle(100, 500, 300, 100))
+                    .SetPageNumber(1)
+                    .SetReason("Specimen")
+                    .SetLocation("Boston");
+                pdfSigner.SetSignerProperties(signerProps);
 
-                pdfSigner.SetReason("Specimen");
-                pdfSigner.SetLocation("Boston");
-
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
                 appearance.SetContent("",
                     new SignedAppearanceText()); // "" and SignedAppearanceText will be filled in automatically
                 appearance.SetFont(PdfFontFactory.CreateFont(StandardFonts.COURIER));
                 appearance.SetFontColor(new DeviceRgb(0xF9, 0x9D, 0x25));
                 appearance.SetFontSize(10);
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -331,16 +341,18 @@ namespace iText.Samples.Signatures.Chapter02
 
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
-                pdfSigner.SetPageRect(new Rectangle(100, 500, 300, 100));
-                pdfSigner.SetPageNumber(1);
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(new Rectangle(100, 500, 300, 100))
+                    .SetPageNumber(1);
 
                 var restriction =
                     "The qualified electronic signature at hand is restricted to present offers, invoices or credit notes to customers according to EU REGULATION No 910/2014 (23 July 2014) and German VAT law (§14 UStG).";
-                pdfSigner.SetReason(restriction);
+                signerProps.SetReason(restriction);
+                pdfSigner.SetSignerProperties(signerProps);
 
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
                 appearance.SetContent(restriction, data);
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -362,16 +374,17 @@ namespace iText.Samples.Signatures.Chapter02
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
                 var rectangle = new Rectangle(100, 500, 300, 100);
-                pdfSigner.SetPageRect(rectangle);
-                pdfSigner.SetPageNumber(1);
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(rectangle)
+                    .SetPageNumber(1)
+                    .SetReason("Specimen")
+                    .SetLocation("Boston");
+                pdfSigner.SetSignerProperties(signerProps);
 
-                pdfSigner.SetReason("Specimen");
-                pdfSigner.SetLocation("Boston");
-
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
                 appearance.SetContent(new SignedAppearanceText(),
                     data); // SignedAppearanceText will be filled in automatically
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var backgroundLayer = new PdfFormXObject(rectangle);
                 var canvas = new PdfCanvas(backgroundLayer, pdfSigner.GetDocument());
@@ -404,8 +417,10 @@ namespace iText.Samples.Signatures.Chapter02
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
                 var rectangle = new Rectangle(100, 500, 300, 100);
-                pdfSigner.SetPageRect(rectangle);
-                pdfSigner.SetPageNumber(1);
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(rectangle)
+                    .SetPageNumber(1);
+                pdfSigner.SetSignerProperties(signerProps);
 
                 var foregroundLayer = new PdfFormXObject(rectangle);
                 var canvas = new PdfCanvas(foregroundLayer, pdfSigner.GetDocument());
@@ -460,8 +475,10 @@ namespace iText.Samples.Signatures.Chapter02
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
                 var rectangle = new Rectangle(100, 500, 300, 100);
-                pdfSigner.SetPageRect(rectangle);
-                pdfSigner.SetPageNumber(1);
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(rectangle)
+                    .SetPageNumber(1);
+                pdfSigner.SetSignerProperties(signerProps);
 
                 var backgroundLayer = new PdfFormXObject(rectangle);
                 var canvas = new PdfCanvas(backgroundLayer, pdfSigner.GetDocument());
@@ -524,7 +541,7 @@ namespace iText.Samples.Signatures.Chapter02
                 var sign = ImageDataFactory.Create(StreamUtil.InputStreamToArray(signResource));
 
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
-                pdfSigner.SetFieldName("Signature");
+                pdfSigner.SetSignerProperties(new SignerProperties().SetFieldName("Signature"));
 
                 var rectangle = pdfSigner.GetSignatureField().GetFirstFormAnnotation().GetWidget().GetRectangle()
                     .ToRectangle();
@@ -576,10 +593,12 @@ namespace iText.Samples.Signatures.Chapter02
             {
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
-                pdfSigner.SetContact("Test content of Contact field");
-                pdfSigner.SetReason("Test content of Reason field");
-                pdfSigner.SetLocation("Test content of Location field");
-                pdfSigner.SetSignatureCreator("Test content of Signature Creator field");
+                SignerProperties signerProps = new SignerProperties()
+                    .SetContact("Test content of Contact field")
+                    .SetReason("Test content of Reason field")
+                    .SetLocation("Test content of Location field")
+                    .SetSignatureCreator("Test content of Signature Creator field");
+                pdfSigner.SetSignerProperties(signerProps);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -605,18 +624,19 @@ namespace iText.Samples.Signatures.Chapter02
                    new FileStream(RESULT_FOLDER + "/specialEmptySignatureField-signed.pdf", FileMode.Create))
             {
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
-                pdfSigner.SetFieldName("Signature");
+                SignerProperties signerProps = new SignerProperties().SetFieldName("Signature");
+                pdfSigner.SetSignerProperties(signerProps);
 
-                pdfSigner.SetReason("Specimen");
-                pdfSigner.SetLocation("Boston");
+                signerProps.SetReason("Specimen");
+                signerProps.SetLocation("Boston");
 
                 pdfSigner.GetSignatureField().SetReuseAppearance(true);
 
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
                 appearance.SetContent("",
                     new SignedAppearanceText()); // "" and SignedAppearanceText will be filled in automatically
                 appearance.SetFontColor(ColorConstants.LIGHT_GRAY);
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -679,13 +699,13 @@ namespace iText.Samples.Signatures.Chapter02
                 {
                     var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
-                    pdfSigner.SetFieldName("Form.Subform.Signature");
-
-                    pdfSigner.SetPageRect(new Rectangle(100, 500, 300, 100));
-                    pdfSigner.SetPageNumber(1);
-
-                    pdfSigner.SetReason("Hierarchical Signature Field");
-                    pdfSigner.SetLocation("Boston");
+                    SignerProperties signerProps = new SignerProperties()
+                        .SetFieldName("Form.Subform.Signature")
+                        .SetPageRect(new Rectangle(100, 500, 300, 100))
+                        .SetPageNumber(1)
+                        .SetReason("Hierarchical Signature Field")
+                        .SetLocation("Boston");
+                    pdfSigner.SetSignerProperties(signerProps);
 
                     var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                     pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,
@@ -711,8 +731,10 @@ namespace iText.Samples.Signatures.Chapter02
                 var pdfSigner = new PdfSigner(reader, outputFile, new StampingProperties());
 
                 var rectangle = new Rectangle(100, 500, 300, 100);
-                pdfSigner.SetPageRect(rectangle);
-                pdfSigner.SetPageNumber(1);
+                SignerProperties signerProps = new SignerProperties()
+                    .SetPageRect(rectangle)
+                    .SetPageNumber(1);
+                pdfSigner.SetSignerProperties(signerProps);
 
                 var paragraph = new Paragraph();
 
@@ -727,9 +749,9 @@ namespace iText.Samples.Signatures.Chapter02
                 var div = new Div();
                 div.Add(paragraph);
 
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName());
+                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
                 appearance.SetContent(div);
-                pdfSigner.SetSignatureAppearance(appearance);
+                signerProps.SetSignatureAppearance(appearance);
 
                 var pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
                 pdfSigner.SignDetached(new BouncyCastleDigest(), pks, chain, null, null, null, 0,

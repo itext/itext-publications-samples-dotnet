@@ -45,17 +45,19 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
             
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
 
             // Set the custom text and a custom font
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
             appearance.SetContent("This document was signed by Bruno Specimen");
             appearance.SetFont(PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN));
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -74,9 +76,10 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
             
-            signer.SetReason(reason);
-            signer.SetLocation(location);
-            signer.SetFieldName(name);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location)
+                .SetFieldName(name);
 
             // Creating the appearance for layer 2
             // Custom text, custom font, and right-to-left writing
@@ -85,9 +88,10 @@ namespace iText.Samples.Signatures.Chapter02
             text.SetFont(PdfFontFactory.CreateFont("../../../resources/font/NotoNaskhArabic-Regular.ttf",
                 PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED));
             text.SetBaseDirection(BaseDirection.RIGHT_TO_LEFT);
-            var appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            var appearance = new SignatureFieldAppearance(name);
             appearance.SetContent(new Div().Add(new Paragraph(text).SetTextAlignment(TextAlignment.RIGHT)));
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
             IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
@@ -104,13 +108,14 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
             
-            signer.SetReason(reason);
-            signer.SetLocation(location);
-            signer.SetFieldName(name);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location)
+                .SetFieldName(name);
 
             // Set a custom text and background image
             var imageData = ImageDataFactory.Create(IMG);
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
             appearance.SetContent("This document was signed by Bruno Specimen");
             BackgroundSize size = new BackgroundSize();
             size.SetBackgroundSizeToValues(UnitValue.CreatePointValue(imageData.GetWidth()),
@@ -123,7 +128,8 @@ namespace iText.Samples.Signatures.Chapter02
                 .SetBackgroundRepeat(new BackgroundRepeat(BackgroundRepeat.BackgroundRepeatValue.NO_REPEAT))
                 .SetBackgroundPosition(backgroundPosition)
                 .SetBackgroundSize(size).Build());
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
             IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
@@ -140,12 +146,13 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
             
-            signer.SetReason(reason);
-            signer.SetLocation(location);
-            signer.SetFieldName(name);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location)
+                .SetFieldName(name);
 
             // Set a custom text and a scaled background image
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
             appearance.SetContent("This document was signed by Bruno Specimen");
             var backgroundSize = new BackgroundSize();
             backgroundSize.SetBackgroundSizeToContain();
@@ -156,7 +163,8 @@ namespace iText.Samples.Signatures.Chapter02
                 .SetImage(new PdfImageXObject(ImageDataFactory.Create(IMG)))
                 .SetBackgroundRepeat(new BackgroundRepeat(BackgroundRepeat.BackgroundRepeatValue.NO_REPEAT))
                 .SetBackgroundPosition(backgroundPosition).SetBackgroundSize(backgroundSize).Build());
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
             IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];

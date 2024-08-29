@@ -61,14 +61,11 @@ namespace iText.Samples.Signatures.Chapter04
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
-            signer
+            SignerProperties signerProperties = new SignerProperties()
                 .SetPageRect(new Rectangle(36, 748, 200, 100))
                 .SetPageNumber(1)
                 .SetFieldName(fieldname);
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
-            appearance.SetContent(new SignedAppearanceText());
-            signer.SetSignatureAppearance(appearance);
-            
+            signer.SetSignerProperties(signerProperties);
 
             /* ExternalBlankSignatureContainer constructor will create the PdfDictionary for the signature
              * information and will insert the /Filter and /SubFilter values into this dictionary.

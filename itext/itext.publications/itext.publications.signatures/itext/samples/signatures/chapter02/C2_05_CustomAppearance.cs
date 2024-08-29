@@ -38,10 +38,10 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signer.SetSignerProperties(new SignerProperties().SetFieldName(name));
             
             // Create the signature appearance
-            signer
+            signer.GetSignerProperties() 
                 .SetReason(reason)
                 .SetLocation(location);
             

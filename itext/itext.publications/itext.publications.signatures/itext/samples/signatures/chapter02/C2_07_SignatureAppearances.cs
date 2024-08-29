@@ -39,16 +39,18 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
 
-            //Only description is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            // Only description is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
             appearance.SetContent("Signed by iText");
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -68,16 +70,18 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
 
-            //Name and description is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            // Name and description is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
             appearance.SetContent("", "Signed by iText");
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -97,16 +101,18 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
 
-            //Graphic and description is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            // Graphic and description is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
             appearance.SetContent("Signed by iText", image);
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -126,16 +132,18 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
 
-            //Graphic is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            // Graphic is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
             appearance.SetContent(image);
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 

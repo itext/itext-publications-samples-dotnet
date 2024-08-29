@@ -63,7 +63,7 @@ namespace iText.Samples.Signatures.Chapter02
             return cell;
         }
 
-        public void Sign(String keystore, int level, String src, String name, String dest)
+        public void Sign(String keystore, AccessPermissions level, String src, String name, String dest)
         {
             Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
             pk12.Load(new FileStream(keystore, FileMode.Open, FileAccess.Read), PASSWORD);
@@ -88,8 +88,10 @@ namespace iText.Samples.Signatures.Chapter02
                 new StampingProperties().UseAppendMode());
 
             // Set the signer options
-            signer.SetFieldName(name);
-            signer.SetCertificationLevel(level);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetFieldName(name)
+                .SetCertificationLevel(level);
+            signer.SetSignerProperties(signerProperties);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
 
@@ -109,41 +111,41 @@ namespace iText.Samples.Signatures.Chapter02
             /* Alice signs certification signature (allowing form filling),
              * then Bob and Carol sign approval signature (not certified).
              */
-            app.Sign(ALICE, PdfSigner.CERTIFIED_FORM_FILLING, FORM,
+            app.Sign(ALICE, AccessPermissions.FORM_FIELDS_MODIFICATION, FORM,
                 "sig1", DEST + RESULT_FILES[0]);
-            app.Sign(BOB, PdfSigner.NOT_CERTIFIED, DEST + RESULT_FILES[0],
+            app.Sign(BOB, AccessPermissions.UNSPECIFIED, DEST + RESULT_FILES[0],
                 "sig2", DEST + RESULT_FILES[1]);
-            app.Sign(CAROL, PdfSigner.NOT_CERTIFIED, DEST + RESULT_FILES[1],
+            app.Sign(CAROL, AccessPermissions.UNSPECIFIED, DEST + RESULT_FILES[1],
                 "sig3", DEST + RESULT_FILES[2]);
 
             /* Alice signs approval signatures (not certified), so does Bob
              * and then Carol signs certification signature allowing form filling.
              */
-            app.Sign(ALICE, PdfSigner.NOT_CERTIFIED, FORM,
+            app.Sign(ALICE, AccessPermissions.UNSPECIFIED, FORM,
                 "sig1", DEST + RESULT_FILES[3]);
-            app.Sign(BOB, PdfSigner.NOT_CERTIFIED, DEST + RESULT_FILES[3],
+            app.Sign(BOB, AccessPermissions.UNSPECIFIED, DEST + RESULT_FILES[3],
                 "sig2", DEST + RESULT_FILES[4]);
-            app.Sign(CAROL, PdfSigner.CERTIFIED_FORM_FILLING, DEST + RESULT_FILES[4],
+            app.Sign(CAROL, AccessPermissions.FORM_FIELDS_MODIFICATION, DEST + RESULT_FILES[4],
                 "sig3", DEST + RESULT_FILES[5]);
 
             /* Alice signs approval signatures (not certified), so does Bob
              * and then Carol signs certification signature forbidding any changes to the document.
              */
-            app.Sign(ALICE, PdfSigner.NOT_CERTIFIED, FORM,
+            app.Sign(ALICE, AccessPermissions.UNSPECIFIED, FORM,
                 "sig1", DEST + RESULT_FILES[6]);
-            app.Sign(BOB, PdfSigner.NOT_CERTIFIED, DEST + RESULT_FILES[6],
+            app.Sign(BOB, AccessPermissions.UNSPECIFIED, DEST + RESULT_FILES[6],
                 "sig2", DEST + RESULT_FILES[7]);
-            app.Sign(CAROL, PdfSigner.CERTIFIED_NO_CHANGES_ALLOWED, DEST + RESULT_FILES[7],
+            app.Sign(CAROL, AccessPermissions.NO_CHANGES_PERMITTED, DEST + RESULT_FILES[7],
                 "sig3", DEST + RESULT_FILES[8]);
 
             /* Alice signs certification signature (allowing form filling), then Bob signs approval
              * signatures (not certified) and then Carol signs certification signature allowing form filling.
              */
-            app.Sign(ALICE, PdfSigner.CERTIFIED_FORM_FILLING, FORM,
+            app.Sign(ALICE, AccessPermissions.FORM_FIELDS_MODIFICATION, FORM,
                 "sig1", DEST + RESULT_FILES[9]);
-            app.Sign(BOB, PdfSigner.NOT_CERTIFIED, DEST + RESULT_FILES[9],
+            app.Sign(BOB, AccessPermissions.UNSPECIFIED, DEST + RESULT_FILES[9],
                 "sig2", DEST + RESULT_FILES[10]);
-            app.Sign(CAROL, PdfSigner.CERTIFIED_FORM_FILLING, DEST + RESULT_FILES[10],
+            app.Sign(CAROL, AccessPermissions.FORM_FIELDS_MODIFICATION, DEST + RESULT_FILES[10],
                 "sig3", DEST + RESULT_FILES[11]);
         }
 
