@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using iText.Commons.Bouncycastle.Crypto;
+using iText.Commons.Digest;
 using iText.Signatures;
 using Org.BouncyCastle.Math;
 
@@ -52,7 +53,7 @@ namespace iText.Samples.Signatures.Chapter01
                                                         "Is the password 'secret'? False\n";
 
         protected byte[] digest;
-        protected IDigest messageDigest;
+        protected IMessageDigest messageDigest;
 
         protected C1_02_DigestBC(String password, String algorithm)
         {

@@ -7,6 +7,7 @@ using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Math;
 using iText.Commons.Bouncycastle.Tsp;
+using iText.Commons.Digest;
 using iText.Commons.Utils;
 using iText.Signatures;
 
@@ -33,7 +34,7 @@ namespace iText.Samples.Sandbox.Signatures.Clients {
             return 4096;
         }
 
-        public virtual IDigest GetMessageDigest()
+        public virtual IMessageDigest GetMessageDigest()
         {
             return BOUNCY_CASTLE_FACTORY.CreateIDigest(DIGEST_ALG);
         }
