@@ -41,7 +41,7 @@ namespace iText.Samples.Sandbox.Pdfua
                     //Embed font
                     PdfFont font = PdfFontFactory.CreateFont(FONT, "WinAnsi", PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
                     Paragraph paragraph = new Paragraph("Hello PdfUA2").SetFont(font);
-                    byte[] byteMetaData = pdfDocument.GetXmpMetadata();
+                    byte[] byteMetaData = pdfDocument.GetXmpMetadataBytes();
                     //PDF/UA
                     //Get string xmp metadata representation
                     String documentMetaData = iText.Commons.Utils.JavaUtil.GetStringForBytes(byteMetaData);
