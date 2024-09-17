@@ -40,9 +40,11 @@ namespace iText.Samples.Sandbox.Acroforms
                     .SetWidgetRectangle(new Rectangle(300, 400, 200, 200)).SetCaption("Send").CreatePushButton();
                 Button button = new Button("button");
                 button.SetOpacity(0.5f);
-                button.SetBorderLeft(new SolidBorder(ColorConstants.RED, 10));
                 button.SetProperty(Property.PADDING_LEFT, UnitValue.CreatePointValue(50));
                 button.SetProperty(Property.PADDING_TOP, UnitValue.CreatePointValue(50));
+                // Border property will be overridden by the border specified for the buttonFormField annotation
+                button.SetBorderLeft(new SolidBorder(ColorConstants.RED, 10));
+                buttonFormField.GetFirstFormAnnotation().SetBorderColor(ColorConstants.RED).SetBorderWidth(10);
                 buttonFormField.GetFirstFormAnnotation().SetFormFieldElement(button);
 
                 PdfAcroForm acroForm = PdfFormCreator.GetAcroForm(document, true);
