@@ -67,7 +67,7 @@ namespace iText.Samples.Htmlsamples.Chapter04
         public void CreatePdf(byte[] html, String baseUri, String dest, String intent)
         {
             PdfWriter writer = new PdfWriter(dest);
-            PdfADocument pdf = new PdfADocument(writer, PdfAConformanceLevel.PDF_A_2A,
+            PdfADocument pdf = new PdfADocument(writer, PdfAConformance.PDF_A_2A,
                 new PdfOutputIntent("Custom", "", "http://www.color.org",
                     "sRGB IEC61966-2.1", new FileStream(intent, FileMode.Open, FileAccess.Read)));
             pdf.SetTagged();

@@ -45,7 +45,7 @@ namespace iText.Samples.Sandbox.Pdfua
 
             var writerProperties = new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0);
             var pdfDocument = new PdfADocument(new PdfWriter(dest, writerProperties),
-                PdfAConformanceLevel.PDF_A_4, outputIntent);
+                PdfAConformance.PDF_A_4, outputIntent);
 
             // setup the general requirements for a wtpdf document
             var bytes = File.ReadAllBytes(Path.Combine(SOURCE_FOLDER + "simplePdfUA2.xmp"));

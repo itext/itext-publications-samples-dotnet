@@ -50,7 +50,7 @@ namespace iText.Samples.Sandbox.Pdfa
             FileStream fileStream =
                 new FileStream("../../../resources/data/sRGB_CS_profile.icm", FileMode.Open, FileAccess.Read);
 
-            PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_1A,
+            PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformance.PDF_A_1A,
                 new PdfOutputIntent("Custom", "",
                     null, "sRGB IEC61966-2.1", fileStream));
 

@@ -28,7 +28,7 @@ namespace Tutorial.Chapter07 {
 
         public virtual void CreatePdf(String dest) {
             //Initialize PDFA document with output intent
-            PdfADocument pdf = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_1A, new PdfOutputIntent
+            PdfADocument pdf = new PdfADocument(new PdfWriter(dest), PdfAConformance.PDF_A_1A, new PdfOutputIntent
                 ("Custom", "", "http://www.color.org", "sRGB IEC61966-2.1", new FileStream(INTENT, FileMode.Open, FileAccess.Read
                 )));
             Document document = new Document(pdf);
