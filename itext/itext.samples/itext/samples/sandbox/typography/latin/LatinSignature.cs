@@ -68,7 +68,7 @@ namespace iText.Samples.Sandbox.Typography.Latin
             // Get Signature Appearance and set some of its properties
             String signerName = CertificateInfo.GetSubjectFields(new X509CertificateBC(signChain[0])).GetField("CN");
             SignatureFieldAppearance appearance = 
-                new SignatureFieldAppearance(signer.GetSignerProperties().GetFieldName())
+                new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                     .SetContent(new SignedAppearanceText()
                         .SetSignedBy(signerName)
                         .SetReasonLine(line3 + line1)

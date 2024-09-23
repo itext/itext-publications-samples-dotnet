@@ -61,7 +61,7 @@ namespace iText.Samples.Sandbox.Signatures.Appearance
             SignerProperties signerProperties = new SignerProperties().SetFieldName("Signature1");
 
             // Create the appearance instance and set the signature content to be shown and different appearance properties.
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signerProperties.GetFieldName())
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .SetContent(new SignedAppearanceText().SetReasonLine("Customized reason: Reason")
                     .SetLocationLine("Customized location: Location"), ImageDataFactory.Create(IMAGE_PATH))
                 .SetBorder(new SolidBorder(ColorConstants.DARK_GRAY, 2))

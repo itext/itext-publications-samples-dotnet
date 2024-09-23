@@ -101,7 +101,7 @@ namespace iText.Samples.Signatures.Chapter02
                     .SetLocation("Boston");
                 pdfSigner.SetSignerProperties(signerProps);
 
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetSignerProperties().GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent(data);
                 signerProps.SetSignatureAppearance(appearance);
 
@@ -131,7 +131,7 @@ namespace iText.Samples.Signatures.Chapter02
                     .SetLocation("Boston");
                 pdfSigner.SetSignerProperties(signerProps);
 
-                var appearance = new SignatureFieldAppearance(pdfSigner.GetSignerProperties().GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent(new SignedAppearanceText(),
                     data); // SignedAppearanceText will be filled in automatically
                 signerProps.SetSignatureAppearance(appearance);
@@ -158,7 +158,7 @@ namespace iText.Samples.Signatures.Chapter02
                     .SetLocation("Boston");
                 pdfSigner.SetSignerProperties(signerProps);
 
-                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent("",
                     new SignedAppearanceText()); // "" and SignedAppearanceText will be filled in automatically
                 signerProps.SetSignatureAppearance(appearance);
@@ -185,7 +185,7 @@ namespace iText.Samples.Signatures.Chapter02
                 pdfSigner.SetSignerProperties(signerProps);
                 pdfSigner.GetSignatureField().SetReuseAppearance(true);
 
-                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent("",
                     new SignedAppearanceText()); // "" and SignedAppearanceText will be filled in automatically
                 signerProps.SetSignatureAppearance(appearance);
@@ -251,7 +251,7 @@ namespace iText.Samples.Signatures.Chapter02
                     .SetLocation("Boston");
                 pdfSigner.SetSignerProperties(signerProps);
 
-                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent("",
                     new SignedAppearanceText()); // "" and SignedAppearanceText will be filled in automatically
                 var size = new BackgroundSize();
@@ -287,7 +287,7 @@ namespace iText.Samples.Signatures.Chapter02
                 var appearanceText = new SignedAppearanceText();
                 appearanceText.SetReasonLine("Objective: " + signerProps.GetReason());
                 appearanceText.SetLocationLine("Whereabouts: " + signerProps.GetLocation());
-                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent(appearanceText);
                 signerProps.SetSignatureAppearance(appearance);
 
@@ -313,7 +313,7 @@ namespace iText.Samples.Signatures.Chapter02
                     .SetLocation("Boston");
                 pdfSigner.SetSignerProperties(signerProps);
 
-                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent("",
                     new SignedAppearanceText()); // "" and SignedAppearanceText will be filled in automatically
                 appearance.SetFont(PdfFontFactory.CreateFont(StandardFonts.COURIER));
@@ -350,7 +350,7 @@ namespace iText.Samples.Signatures.Chapter02
                 signerProps.SetReason(restriction);
                 pdfSigner.SetSignerProperties(signerProps);
 
-                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent(restriction, data);
                 signerProps.SetSignatureAppearance(appearance);
 
@@ -381,7 +381,7 @@ namespace iText.Samples.Signatures.Chapter02
                     .SetLocation("Boston");
                 pdfSigner.SetSignerProperties(signerProps);
 
-                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent(new SignedAppearanceText(),
                     data); // SignedAppearanceText will be filled in automatically
                 signerProps.SetSignatureAppearance(appearance);
@@ -632,7 +632,7 @@ namespace iText.Samples.Signatures.Chapter02
 
                 pdfSigner.GetSignatureField().SetReuseAppearance(true);
 
-                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent("",
                     new SignedAppearanceText()); // "" and SignedAppearanceText will be filled in automatically
                 appearance.SetFontColor(ColorConstants.LIGHT_GRAY);
@@ -749,7 +749,7 @@ namespace iText.Samples.Signatures.Chapter02
                 var div = new Div();
                 div.Add(paragraph);
 
-                var appearance = new SignatureFieldAppearance(signerProps.GetFieldName());
+                var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
                 appearance.SetContent(div);
                 signerProps.SetSignatureAppearance(appearance);
 

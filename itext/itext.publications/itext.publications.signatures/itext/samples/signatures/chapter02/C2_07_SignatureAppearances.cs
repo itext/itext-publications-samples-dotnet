@@ -47,7 +47,7 @@ namespace iText.Samples.Signatures.Chapter02
             signerProperties.SetFieldName(name);
 
             // Only description is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent("Signed by iText");
             signerProperties.SetSignatureAppearance(appearance);
             signer.SetSignerProperties(signerProperties);
@@ -78,7 +78,7 @@ namespace iText.Samples.Signatures.Chapter02
             signerProperties.SetFieldName(name);
 
             // Name and description is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent("", "Signed by iText");
             signerProperties.SetSignatureAppearance(appearance);
             signer.SetSignerProperties(signerProperties);
@@ -109,7 +109,7 @@ namespace iText.Samples.Signatures.Chapter02
             signerProperties.SetFieldName(name);
 
             // Graphic and description is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent("Signed by iText", image);
             signerProperties.SetSignatureAppearance(appearance);
             signer.SetSignerProperties(signerProperties);
@@ -140,7 +140,7 @@ namespace iText.Samples.Signatures.Chapter02
             signerProperties.SetFieldName(name);
 
             // Graphic is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent(image);
             signerProperties.SetSignatureAppearance(appearance);
             signer.SetSignerProperties(signerProperties);

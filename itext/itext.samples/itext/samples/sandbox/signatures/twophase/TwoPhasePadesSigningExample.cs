@@ -272,7 +272,7 @@ namespace iText.Samples.Sandbox.Signatures.TwoPhase
         protected SignerProperties CreateSignerProperties(String signaturefieldName)
         {
             SignerProperties signerProperties = new SignerProperties().SetFieldName(signaturefieldName);
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signerProperties.GetFieldName())
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .SetContent("Approval test signature.\nCreated by iText.");
             signerProperties
                 .SetPageNumber(1)

@@ -53,7 +53,7 @@ namespace iText.Samples.Signatures.Chapter02
             signerProperties.SetFieldName(name);
 
             // Set the custom text and a custom font
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent("This document was signed by Bruno Specimen");
             appearance.SetFont(PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN));
             signerProperties.SetSignatureAppearance(appearance);
@@ -88,7 +88,7 @@ namespace iText.Samples.Signatures.Chapter02
             text.SetFont(PdfFontFactory.CreateFont("../../../resources/font/NotoNaskhArabic-Regular.ttf",
                 PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED));
             text.SetBaseDirection(BaseDirection.RIGHT_TO_LEFT);
-            var appearance = new SignatureFieldAppearance(name);
+            var appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent(new Div().Add(new Paragraph(text).SetTextAlignment(TextAlignment.RIGHT)));
             signerProperties.SetSignatureAppearance(appearance);
             signer.SetSignerProperties(signerProperties);
@@ -115,7 +115,7 @@ namespace iText.Samples.Signatures.Chapter02
 
             // Set a custom text and background image
             var imageData = ImageDataFactory.Create(IMG);
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent("This document was signed by Bruno Specimen");
             BackgroundSize size = new BackgroundSize();
             size.SetBackgroundSizeToValues(UnitValue.CreatePointValue(imageData.GetWidth()),
@@ -152,7 +152,7 @@ namespace iText.Samples.Signatures.Chapter02
                 .SetFieldName(name);
 
             // Set a custom text and a scaled background image
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(name);
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent("This document was signed by Bruno Specimen");
             var backgroundSize = new BackgroundSize();
             backgroundSize.SetBackgroundSizeToContain();

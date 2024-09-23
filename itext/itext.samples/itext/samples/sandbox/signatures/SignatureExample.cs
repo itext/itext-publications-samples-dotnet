@@ -60,7 +60,7 @@ namespace iText.Samples.Sandbox.Signatures
             // the name that doesn't exist in the document or don't specify it at all) then
             // the signature is invisible by default.
             SignatureFieldAppearance appearance = 
-                new SignatureFieldAppearance(pdfSigner.GetSignerProperties().GetFieldName())
+                new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                     .SetContent(clientSignatureImage);
             signerProperties.SetPageNumber(signatureInfo.PageNumber)
                     .SetPageRect(new Rectangle(signatureInfo.Left, signatureInfo.Bottom,

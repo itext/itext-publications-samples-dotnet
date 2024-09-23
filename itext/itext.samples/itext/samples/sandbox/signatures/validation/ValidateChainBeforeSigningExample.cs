@@ -171,7 +171,7 @@ namespace iText.Samples.Sandbox.Signatures.Validation
         {
             SignerProperties signerProperties = new SignerProperties().SetFieldName("Signature1");
             SignatureFieldAppearance appearance =
-                new SignatureFieldAppearance(signerProperties.GetFieldName()).SetContent
+                new SignatureFieldAppearance(SignerProperties.IGNORED_ID).SetContent
                     ("Approval test signature.\nCreated by iText.");
             signerProperties.SetPageNumber(1).SetPageRect(new Rectangle(50, 650, 200, 100)).SetSignatureAppearance(
                 appearance
