@@ -13,6 +13,7 @@ using iText.IO.Image;
 using iText.IO.Util;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
+using iText.Kernel.Crypto;
 using Org.BouncyCastle.Crypto;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;

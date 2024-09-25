@@ -7,6 +7,7 @@ using iText.Forms.Form.Element;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.IO.Image;
+using iText.Kernel.Crypto;
 using iText.Kernel.Pdf;
 using iText.Signatures;
 using Org.BouncyCastle.Pkcs;

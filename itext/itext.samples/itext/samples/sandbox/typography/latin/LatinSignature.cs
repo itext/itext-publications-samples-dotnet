@@ -9,6 +9,7 @@ using iText.Forms.Form.Element;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.IO.Font;
+using iText.Kernel.Crypto;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;

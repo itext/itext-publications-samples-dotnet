@@ -7,6 +7,7 @@ using iText.Commons.Bouncycastle.Cert;
 using Org.BouncyCastle.Crypto;
 using iText.Forms;
 using iText.Forms.Fields;
+using iText.Kernel.Crypto;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
 using iText.Layout;

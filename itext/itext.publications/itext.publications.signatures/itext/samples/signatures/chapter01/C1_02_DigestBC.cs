@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using iText.Commons.Bouncycastle.Crypto;
 using iText.Commons.Digest;
+using iText.Kernel.Crypto;
 using iText.Signatures;
 using Org.BouncyCastle.Math;
 

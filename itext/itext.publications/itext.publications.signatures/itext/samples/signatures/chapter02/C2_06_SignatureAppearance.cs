@@ -9,6 +9,7 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.IO.Font.Constants;
 using iText.IO.Image;
+using iText.Kernel.Crypto;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Xobject;

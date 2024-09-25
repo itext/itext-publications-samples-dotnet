@@ -5,6 +5,7 @@ using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Utils;
+using iText.Kernel.Crypto;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.Kernel.Geom;

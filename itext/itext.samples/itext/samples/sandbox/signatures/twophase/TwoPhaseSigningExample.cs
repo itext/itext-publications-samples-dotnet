@@ -12,6 +12,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Xml.Serialization;
+using iText.Kernel.Crypto;
 
 namespace iText.Samples.Sandbox.Signatures.TwoPhase
 {

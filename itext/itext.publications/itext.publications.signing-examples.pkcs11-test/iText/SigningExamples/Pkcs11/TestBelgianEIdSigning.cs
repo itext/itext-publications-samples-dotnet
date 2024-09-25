@@ -4,6 +4,7 @@ using System.Linq;
 using iText.Bouncycastle.X509;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Pdf;
+using iText.Kernel.Crypto;
 using iText.Signatures;
 using NUnit.Framework;
 

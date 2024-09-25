@@ -1,4 +1,5 @@
 ﻿using iText.Signatures;
+using iText.Kernel.Crypto;
 using Org.BouncyCastle.Asn1;
 using Org.BouncyCastle.Math;
 using System;

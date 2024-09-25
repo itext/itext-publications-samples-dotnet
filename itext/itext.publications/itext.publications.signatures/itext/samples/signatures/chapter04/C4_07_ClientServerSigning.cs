@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using iText.Bouncycastle.X509;
 using iText.Commons.Bouncycastle.Cert;
+using iText.Kernel.Crypto;
 using iText.Kernel.Exceptions;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
