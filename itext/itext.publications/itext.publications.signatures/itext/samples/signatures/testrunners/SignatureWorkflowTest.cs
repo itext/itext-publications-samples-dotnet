@@ -28,7 +28,7 @@ namespace iText.Samples.Signatures.Testrunners
             ignoredAreaMap = new Dictionary<int, IList<Rectangle>>();
             ignoredAreaMap.Add(1, new List<Rectangle>(new[]
             {
-                new Rectangle(55, 440, 287, 365)
+                new Rectangle(55, 340, 287, 465)
             }));
         }
 
