@@ -2,16 +2,16 @@ ValidationReport{validationResult=VALID
 reportItems=
 ReportItem{checkName='Signature verification check.', message='Validating signature Signature1', cause=, status=INFO}, 
 CertificateReportItem{baseclass=
-ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}
+ReportItem{checkName='OCSP response check.', message='Responder certificate is the CA certificate.', cause=, status=INFO}
 certificate=C=BE,O=iText,CN=iTextTestRoot}, 
 CertificateReportItem{baseclass=
 ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}
 certificate=C=BE,O=iText,CN=iTextTestRoot}, 
 CertificateReportItem{baseclass=
-ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}
+ReportItem{checkName='OCSP response check.', message='Responder certificate is a trusted certificate.', cause=, status=INFO}
 certificate=C=BE,O=iText,CN=iTextTestRoot}, 
 CertificateReportItem{baseclass=
-ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}
+ReportItem{checkName='OCSP response check.', message='Responder certificate is the CA certificate.', cause=, status=INFO}
 certificate=C=BE,O=iText,CN=iTextTestRoot}, 
 CertificateReportItem{baseclass=
 ReportItem{checkName='Certificate check.', message='Certificate C=BE,O=iText,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}
