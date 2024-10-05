@@ -1,7 +1,7 @@
 using System;
 using System.IO;
-using iText.Kernel.Events;
 using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Element;
 
@@ -50,7 +50,7 @@ namespace iText.Samples.Sandbox.Events
             doc.Close();
         }
 
-        private class PageOrientationsEventHandler : IEventHandler
+        private class PageOrientationsEventHandler : AbstractPdfDocumentEventHandler      
         {
             private PdfNumber orientation = PORTRAIT;
 
@@ -59,7 +59,7 @@ namespace iText.Samples.Sandbox.Events
                 this.orientation = orientation;
             }
 
-            public void HandleEvent(Event currentEvent)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent currentEvent)
             {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
                 docEvent.GetPage().Put(PdfName.Rotate, orientation);

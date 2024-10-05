@@ -1,9 +1,9 @@
 using System;
 using System.IO;
-using iText.Kernel.Events;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;
 using iText.Layout.Element;
 
 namespace iText.Highlevel.Chapter07 {
@@ -35,14 +35,14 @@ namespace iText.Highlevel.Chapter07 {
             pdf.Close();
         }
 
-        protected internal class AddPageHandler : IEventHandler {
-            public virtual void HandleEvent(Event @event) {
+        protected internal class AddPageHandler : AbstractPdfDocumentEventHandler {
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event) {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent)@event;
                 PdfDocument pdf = docEvent.GetDocument();
                 PdfPage page = docEvent.GetPage();
                 PdfCanvas pdfCanvas = new PdfCanvas(page);
                 iText.Layout.Canvas canvas = new iText.Layout.Canvas(pdfCanvas, page.GetPageSize());
-                canvas.Add(new Paragraph().Add(docEvent.GetEventType()));
+                canvas.Add(new Paragraph().Add(docEvent.GetType()));
             }
 
             internal AddPageHandler() {
@@ -50,10 +50,10 @@ namespace iText.Highlevel.Chapter07 {
 
         }
 
-        protected internal class RemovePageHandler : IEventHandler {
-            public virtual void HandleEvent(Event @event) {
+        protected internal class RemovePageHandler : AbstractPdfDocumentEventHandler {
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event) {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent)@event;
-                System.Console.Out.WriteLine(docEvent.GetEventType());
+                System.Console.Out.WriteLine(docEvent.GetType());
             }
 
             internal RemovePageHandler() {

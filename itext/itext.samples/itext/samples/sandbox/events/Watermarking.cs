@@ -3,10 +3,10 @@ using System.IO;
 using iText.Commons.Utils;
 using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
-using iText.Kernel.Events;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
@@ -71,9 +71,9 @@ namespace iText.Samples.Sandbox.Events
             }
         }
 
-        private class WatermarkingEventHandler : IEventHandler
+        private class WatermarkingEventHandler : AbstractPdfDocumentEventHandler      
         {
-            public void HandleEvent(Event currentEvent)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent currentEvent)
             {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
                 PdfDocument pdfDoc = docEvent.GetDocument();

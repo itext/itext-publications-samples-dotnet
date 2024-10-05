@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using iText.IO.Font.Constants;
-using iText.Kernel.Events;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
@@ -41,7 +41,7 @@ namespace iText.Samples.Sandbox.Events
             doc.Close();
         }
 
-        private class TextFooterEventHandler : IEventHandler
+        private class TextFooterEventHandler : AbstractPdfDocumentEventHandler      
         {
             protected Document doc;
 
@@ -51,7 +51,7 @@ namespace iText.Samples.Sandbox.Events
             }
 
 
-            public void HandleEvent(Event currentEvent)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent currentEvent)
             {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
                 Rectangle pageSize = docEvent.GetPage().GetPageSize();

@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using iText.IO.Font.Constants;
-using iText.Kernel.Events;
-using iText.Kernel.Font;
 using iText.Kernel.Pdf;
-using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
@@ -70,7 +67,7 @@ namespace iText.Samples.Sandbox.Events
             return factors;
         }
 
-        private class VariableHeaderEventHandler : IEventHandler
+        private class VariableHeaderEventHandler : AbstractPdfDocumentEventHandler      
         {
             protected String header;
 
@@ -79,7 +76,7 @@ namespace iText.Samples.Sandbox.Events
                 this.header = header;
             }
 
-            public void HandleEvent(Event currentEvent)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent currentEvent)
             {
                 PdfDocumentEvent documentEvent = (PdfDocumentEvent) currentEvent;
                 PdfPage page = documentEvent.GetPage();

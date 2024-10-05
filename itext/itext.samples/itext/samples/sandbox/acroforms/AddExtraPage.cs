@@ -3,11 +3,11 @@ using System.IO;
 using iText.Forms;
 using iText.Forms.Fields;
 using iText.IO.Font.Constants;
-using iText.Kernel.Events;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;
 using iText.Kernel.Pdf.Xobject;
 using iText.Layout;
 using iText.Layout.Element;
@@ -64,7 +64,7 @@ namespace iText.Samples.Sandbox.Acroforms
             doc.Close();
         }
 
-        protected class PaginationEventHandler : IEventHandler
+        protected class PaginationEventHandler : AbstractPdfDocumentEventHandler      
         {
             protected PdfFormXObject background;
 
@@ -73,9 +73,9 @@ namespace iText.Samples.Sandbox.Acroforms
                 this.background = background;
             }
 
-            public void HandleEvent(Event currentEvent)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent currentEvent)
             {
-                PdfDocument pdfDoc = ((PdfDocumentEvent) currentEvent).GetDocument();
+                PdfDocument pdfDoc = currentEvent.GetDocument();
                 PdfPage currentPage = ((PdfDocumentEvent) currentEvent).GetPage();
 
                 // Add the background

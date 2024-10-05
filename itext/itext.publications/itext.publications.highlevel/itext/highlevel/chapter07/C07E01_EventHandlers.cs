@@ -1,8 +1,8 @@
 using System;
 using System.IO;
-using iText.Kernel.Events;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Element;
 
@@ -43,14 +43,14 @@ namespace iText.Highlevel.Chapter07 {
             document.Close();
         }
 
-        protected internal class PageRotationEventHandler : IEventHandler {
+        protected internal class PageRotationEventHandler : AbstractPdfDocumentEventHandler {
             protected internal PdfNumber rotation = C07E01_EventHandlers.PORTRAIT;
 
             public virtual void SetRotation(PdfNumber orientation) {
                 this.rotation = orientation;
             }
 
-            public virtual void HandleEvent(Event @event) {
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event) {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent)@event;
                 docEvent.GetPage().Put(PdfName.Rotate, this.rotation);
             }

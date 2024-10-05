@@ -1,14 +1,13 @@
 using System;
 using System.IO;
 
-using iText.IO.Font;
 using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
-using iText.Kernel.Events;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Hyphenation;
@@ -55,7 +54,7 @@ namespace iText.Highlevel.Chapter07 {
             document.Close();
         }
 
-        protected internal class TextWatermark : IEventHandler {
+        protected internal class TextWatermark : AbstractPdfDocumentEventHandler {
             internal Color lime;
 
             internal Color blue;
@@ -68,7 +67,7 @@ namespace iText.Highlevel.Chapter07 {
                 this.blue = new DeviceCmyk(0.445f, 0.0546f, 0, 0.0667f);
             }
 
-            public virtual void HandleEvent(Event @event) {
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event) {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent)@event;
                 PdfDocument pdf = docEvent.GetDocument();
                 PdfPage page = docEvent.GetPage();

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using iText.Kernel.Events;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
@@ -45,10 +45,10 @@ namespace iText.Samples.Sandbox.Tables
             document.Close();
         }
 
-        private class FooterEventHandler : IEventHandler
+        private class FooterEventHandler : AbstractPdfDocumentEventHandler      
         {
-            private Dictionary<int, int> pageRowsCounts = new Dictionary<int, int>();
-            private Document document;
+            private readonly Dictionary<int, int> pageRowsCounts = new Dictionary<int, int>();
+            private readonly Document document;
 
             public FooterEventHandler(Document document)
             {
@@ -73,7 +73,7 @@ namespace iText.Samples.Sandbox.Tables
                 return rows;
             }
 
-            public void HandleEvent(Event currentEvent)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent currentEvent)
             {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
                 PdfDocument pdfDoc = docEvent.GetDocument();

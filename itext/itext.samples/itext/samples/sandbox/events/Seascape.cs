@@ -1,7 +1,7 @@
 using System;
 using System.IO;
-using iText.Kernel.Events;
 using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Element;
 
@@ -38,9 +38,9 @@ namespace iText.Samples.Sandbox.Events
             doc.Close();
         }
 
-        private class SeascapeEventHandler : IEventHandler
+        private class SeascapeEventHandler : AbstractPdfDocumentEventHandler      
         {
-            public void HandleEvent(Event currentEvent)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent currentEvent)
             {
                 PdfDocumentEvent documentEvent = (PdfDocumentEvent) currentEvent;
                 documentEvent.GetPage().SetRotation(270);
