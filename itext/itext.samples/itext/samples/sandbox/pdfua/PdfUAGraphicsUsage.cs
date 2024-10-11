@@ -3,6 +3,7 @@ using System.IO;
 using iText.IO.Image;
 using iText.Kernel.Pdf;
 using iText.Kernel.Utils;
+using iText.Kernel.Validation;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Pdfua.Checkers;
@@ -23,8 +24,9 @@ namespace iText.Samples.Sandbox.Pdfua
         }
 
         public virtual void ManipulatePdf(String dest) {
-            PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest, new WriterProperties().AddUAXmpMetadata().SetPdfVersion
-                (PdfVersion.PDF_1_7)));
+            WriterProperties writerProperties = new WriterProperties().AddPdfUaXmpMetadata(PdfUAConformance.PDF_UA_1)
+                .SetPdfVersion(PdfVersion.PDF_1_7);
+            PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest, writerProperties));
             pdfDoc.SetTagged();
             pdfDoc.GetCatalog().SetViewerPreferences(new PdfViewerPreferences().SetDisplayDocTitle(true));
             pdfDoc.GetCatalog().SetLang(new PdfString("en-US"));

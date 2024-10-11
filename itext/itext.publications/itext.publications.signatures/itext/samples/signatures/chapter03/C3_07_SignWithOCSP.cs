@@ -5,6 +5,7 @@ using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Utils;
+using iText.Kernel.Crypto;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.Kernel.Geom;
@@ -59,7 +60,7 @@ namespace iText.Samples.Signatures.Chapter03
              * In the current sample it is not needed to verify the OCSP response,
              * that is why null is passed as verifier parameter.
              */
-            IOcspClient ocspClient = new OcspClientBouncyCastle(null);
+            IOcspClient ocspClient = new OcspClientBouncyCastle();
 
             new C3_07_SignWithOCSP().Sign(SRC, DEST + RESULT_FILES[0], chain, pk,
                 DigestAlgorithms.SHA256, PdfSigner.CryptoStandard.CMS,
@@ -75,16 +76,13 @@ namespace iText.Samples.Signatures.Chapter03
 
             // Create the signature appearance
             Rectangle rect = new Rectangle(36, 648, 200, 100);
-            signer
+            SignerProperties signerProperties = new SignerProperties()
                 .SetReason(reason)
                 .SetLocation(location)
-                .SetFieldName("sig");
-
-            // Specify if the appearance before field is signed will be used
-            // as a background for the signed field. The "false" value is the default value.
-            signer.GetSignatureField().SetReuseAppearance(false);
-            signer.SetPageRect(rect)
+                .SetFieldName("sig")
+                .SetPageRect(rect)
                 .SetPageNumber(1);
+            signer.SetSignerProperties(signerProperties);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 

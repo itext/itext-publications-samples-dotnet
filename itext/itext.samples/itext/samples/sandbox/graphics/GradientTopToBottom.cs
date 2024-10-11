@@ -5,6 +5,7 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Colorspace;
+using iText.Kernel.Pdf.Colorspace.Shading;
 
 namespace iText.Samples.Sandbox.Graphics
 {
@@ -27,7 +28,7 @@ namespace iText.Samples.Sandbox.Graphics
             pdfDoc.SetDefaultPageSize(pageSize);
 
             PdfCanvas canvas = new PdfCanvas(pdfDoc.AddNewPage());
-            PdfShading.Axial axial = new PdfShading.Axial(new PdfDeviceCs.Rgb(), 0, pageSize.GetHeight(),
+            PdfAxialShading axial = new PdfAxialShading(new PdfDeviceCs.Rgb(), 0, pageSize.GetHeight(),
                 ColorConstants.WHITE.GetColorValue(), 0, 0, ColorConstants.GREEN.GetColorValue());
             PdfPattern.Shading pattern = new PdfPattern.Shading(axial);
             canvas.SetFillColorShading(pattern);

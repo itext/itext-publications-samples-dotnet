@@ -10,9 +10,9 @@ using iText.Kernel.Pdf;
 using iText.Samples.Sandbox.Signatures.Clients;
 using iText.Samples.Sandbox.Signatures.Utils;
 using iText.Signatures;
-using iText.Signatures.Validation.V1;
-using iText.Signatures.Validation.V1.Context;
-using iText.Signatures.Validation.V1.Report;
+using iText.Signatures.Validation;
+using iText.Signatures.Validation.Context;
+using iText.Signatures.Validation.Report;
 
 namespace iText.Samples.Sandbox.Signatures.Validation
 {
@@ -49,13 +49,13 @@ namespace iText.Samples.Sandbox.Signatures.Validation
             IX509Certificate signingCert = (IX509Certificate)certificateChain[0];
             IX509Certificate rootCert = (IX509Certificate)certificateChain[1];
             // Set up the validator.
-            SignatureValidationProperties properties = new SignatureValidationProperties();
+            SignatureValidationProperties properties = new SignatureValidationProperties()
+                .AddOcspClient(GetOcspClient());
             IssuingCertificateRetriever certificateRetriever = new IssuingCertificateRetriever();
-            ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder().WithIssuingCertificateRetriever(
-                certificateRetriever).WithSignatureValidationProperties(properties);
+            ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder().WithIssuingCertificateRetrieverFactory(
+                () => certificateRetriever).WithSignatureValidationProperties(properties);
             CertificateChainValidator validator = validatorChainBuilder.BuildCertificateChainValidator();
             certificateRetriever.SetTrustedCertificates(JavaCollectionsUtil.SingletonList(rootCert));
-            validator.AddOcspClient(GetOcspClient());
             ValidationContext baseContext = new ValidationContext(ValidatorContext.CERTIFICATE_CHAIN_VALIDATOR,
                 CertificateSource.SIGNER_CERT, TimeBasedContext.PRESENT);
             // Validate the chain. ValidationReport will contain all the validation report messages.
@@ -171,7 +171,7 @@ namespace iText.Samples.Sandbox.Signatures.Validation
         {
             SignerProperties signerProperties = new SignerProperties().SetFieldName("Signature1");
             SignatureFieldAppearance appearance =
-                new SignatureFieldAppearance(signerProperties.GetFieldName()).SetContent
+                new SignatureFieldAppearance(SignerProperties.IGNORED_ID).SetContent
                     ("Approval test signature.\nCreated by iText.");
             signerProperties.SetPageNumber(1).SetPageRect(new Rectangle(50, 650, 200, 100)).SetSignatureAppearance(
                 appearance

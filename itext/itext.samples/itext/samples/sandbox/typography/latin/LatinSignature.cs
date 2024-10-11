@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
@@ -10,6 +9,7 @@ using iText.Forms.Form.Element;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.IO.Font;
+using iText.Kernel.Crypto;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -64,19 +64,19 @@ namespace iText.Samples.Sandbox.Typography.Latin
             Rectangle rect = new Rectangle(30, 500, 500, 100);
 
             // Set the name indicating the field to be signed
-            signer.SetFieldName("Field1");
+            signer.SetSignerProperties(new SignerProperties().SetFieldName("Field1"));
 
             // Get Signature Appearance and set some of its properties
             String signerName = CertificateInfo.GetSubjectFields(new X509CertificateBC(signChain[0])).GetField("CN");
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName())
+            SignatureFieldAppearance appearance = 
+                new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                     .SetContent(new SignedAppearanceText()
                         .SetSignedBy(signerName)
                         .SetReasonLine(line3 + line1)
                         .SetLocationLine("Location: " + line2)
-                        .SetSignDate(signer.GetSignDate()))
+                        .SetSignDate(signer.GetSignerProperties().GetClaimedSignDate()))
                     .SetFont(font);
-            signer.SetPageRect(rect)
-                    .SetSignatureAppearance(appearance);
+            signer.GetSignerProperties().SetPageRect(rect).SetSignatureAppearance(appearance);
 
             IX509Certificate[] certificateWrappers = new IX509Certificate[signChain.Length];
             for (int i = 0; i < certificateWrappers.Length; ++i) {

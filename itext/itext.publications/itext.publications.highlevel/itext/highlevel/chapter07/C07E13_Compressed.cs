@@ -5,13 +5,13 @@ using System.IO;
 
 using iText.IO.Font.Constants;
 using iText.IO.Image;
-using iText.Kernel.Events;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Action;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Canvas.Draw;
+using iText.Kernel.Pdf.Event;
 using iText.Kernel.Pdf.Extgstate;
 using iText.Layout;
 using iText.Layout.Element;
@@ -38,7 +38,7 @@ namespace iText.Highlevel.Chapter07 {
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest, new WriterProperties().SetFullCompressionMode(true))
                 );
             iText.Layout.Element.Image img = new Image(ImageDataFactory.Create(IMG));
-            IEventHandler handler = new C07E13_Compressed.TransparentImage(img);
+            AbstractPdfDocumentEventHandler handler = new C07E13_Compressed.TransparentImage(img);
             pdf.AddEventHandler(PdfDocumentEvent.START_PAGE, handler);
             // Initialize document
             Document document = new Document(pdf);
@@ -74,7 +74,7 @@ namespace iText.Highlevel.Chapter07 {
                     document.Add(p);
                 }
             }
-            pdf.RemoveEventHandler(PdfDocumentEvent.START_PAGE, handler);
+            pdf.RemoveEventHandler(handler);
             document.Add(new AreaBreak(AreaBreakType.NEXT_PAGE));
             p = new Paragraph().SetFont(bold).Add("Table of Contents").SetDestination("toc");
             document.Add(p);
@@ -91,7 +91,7 @@ namespace iText.Highlevel.Chapter07 {
             document.Close();
         }
 
-        protected internal class TransparentImage : IEventHandler {
+        protected internal class TransparentImage : AbstractPdfDocumentEventHandler {
             protected internal PdfExtGState gState;
 
             protected internal iText.Layout.Element.Image img;
@@ -101,7 +101,7 @@ namespace iText.Highlevel.Chapter07 {
                 this.gState = new PdfExtGState().SetFillOpacity(0.2f);
             }
 
-            public virtual void HandleEvent(Event @event) {
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event) {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent)@event;
                 PdfDocument pdf = docEvent.GetDocument();
                 PdfPage page = docEvent.GetPage();

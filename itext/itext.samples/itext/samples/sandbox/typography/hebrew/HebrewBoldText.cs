@@ -58,10 +58,10 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
             // Add a paragraph with a set bold font to the paragraph
             document.Add(CreateParagraph(hebrewText).SetFont(fontBold));
 
-            // We don't suggest usage of setBold() method to reach text thickness since the result is written with the usual
+            // We don't suggest usage of SimulateBold() method to reach text thickness since the result is written with the usual
             // rather than the bold font: we only emulate "thickness". It's recommended to use an actual bold font instead.
             // For example NotoSerifHebrew-Bold
-            document.Add(CreateParagraph(hebrewText).SetBold());
+            document.Add(CreateParagraph(hebrewText).SimulateBold());
 
             document.Close();
         }

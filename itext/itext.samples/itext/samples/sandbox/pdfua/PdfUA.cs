@@ -36,7 +36,7 @@ namespace iText.Samples.Sandbox.Pdfua
         private void ManipulatePdf(String dest)
         {
             PdfUADocument pdfDoc = new PdfUADocument(new PdfWriter(dest),
-                new PdfUAConfig(PdfUAConformanceLevel.PDFUA_1, "Some title", "en-US"));
+                new PdfUAConfig(PdfUAConformance.PDF_UA_1, "Some title", "en-US"));
             Document document = new Document(pdfDoc, PageSize.A4.Rotate());
 
 

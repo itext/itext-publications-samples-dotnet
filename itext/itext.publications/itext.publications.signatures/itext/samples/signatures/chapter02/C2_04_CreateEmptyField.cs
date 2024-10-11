@@ -7,6 +7,7 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.Forms.Fields;
 using iText.Kernel.Colors;
+using iText.Kernel.Crypto;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
@@ -24,10 +25,10 @@ namespace iText.Samples.Signatures.Chapter02
     {
         public static readonly string DEST = "results/signatures/chapter02/";
 
-        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly string KEYSTORE = "../../../resources/encryption/certificate.p12";
         public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
 
-        public static readonly char[] PASSWORD = "password".ToCharArray();
+        public static readonly char[] PASSWORD = "testpassphrase".ToCharArray();
         public const string SIGNAME = "Signature1";
 
         public static readonly string[] RESULT_FILES =
@@ -108,9 +109,11 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
-            signer.SetReason(reason);
-            signer.SetLocation(location);
-            signer.SetFieldName(name);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location)
+                .SetFieldName(name);
+            signer.SetSignerProperties(signerProperties);
 
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 

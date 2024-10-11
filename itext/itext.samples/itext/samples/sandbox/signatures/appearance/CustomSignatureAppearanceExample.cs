@@ -60,7 +60,7 @@ namespace iText.Samples.Sandbox.Signatures.Appearance
                 .SetTextAlignment(TextAlignment.CENTER);
 
             // Create the appearance instance and set the signature content to be shown and different appearance properties.
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signerProperties.GetFieldName())
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .SetContent(customAppearance)
                 .SetBackgroundColor(new DeviceRgb(255, 248, 220))
                 .SetFontColor(new DeviceRgb(160, 82, 45));

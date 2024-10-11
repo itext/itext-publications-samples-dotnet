@@ -3,6 +3,7 @@ using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Kernel.Colors;
+using iText.Kernel.Crypto;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.Kernel.Pdf;
@@ -20,10 +21,10 @@ namespace iText.Samples.Signatures.Chapter02
     {
         public static readonly string DEST = "results/signatures/chapter02/";
 
-        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly string KEYSTORE = "../../../resources/encryption/certificate.p12";
         public static readonly string SRC = "../../../resources/pdfs/hello_to_sign.pdf";
 
-        public static readonly char[] PASSWORD = "password".ToCharArray();
+        public static readonly char[] PASSWORD = "testpassphrase".ToCharArray();
 
         public static readonly string[] RESULT_FILES =
         {
@@ -38,10 +39,10 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signer.SetSignerProperties(new SignerProperties().SetFieldName(name));
             
             // Create the signature appearance
-            signer
+            signer.GetSignerProperties() 
                 .SetReason(reason)
                 .SetLocation(location);
             

@@ -4,6 +4,7 @@ using iText.Kernel.Colors;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Colorspace;
+using iText.Kernel.Pdf.Colorspace.Shading;
 
 namespace iText.Samples.Sandbox.Objects
 {
@@ -28,7 +29,7 @@ namespace iText.Samples.Sandbox.Objects
             // Side of an equilateral triangle
             float side = 70;
 
-            PdfShading.Axial axialShading = new PdfShading.Axial(new PdfDeviceCs.Rgb(), x, y,
+            PdfAxialShading axialShading = new PdfAxialShading(new PdfDeviceCs.Rgb(), x, y,
                 ColorConstants.PINK.GetColorValue(),
                 x + side, y, ColorConstants.BLUE.GetColorValue());
             PdfPattern.Shading shading = new PdfPattern.Shading(axialShading);

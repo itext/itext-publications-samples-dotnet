@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Apryse Group NV")]
 [assembly: AssemblyProduct("iText")]
-[assembly: AssemblyCopyright("Copyright (c) 1998-2024 Apryse Group NV")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -14,6 +13,6 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("065cbfea-af4c-4d42-812d-b42c375b7af7")]
 
-[assembly: AssemblyVersion("8.0.5.0")]
-[assembly: AssemblyFileVersion("8.0.5.0")]
-[assembly: AssemblyInformationalVersion("8.0.5")]
+[assembly: AssemblyVersion("9.0.0.0")]
+[assembly: AssemblyFileVersion("9.0.0.0")]
+[assembly: AssemblyInformationalVersion("9.0.0")]

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using iText.Html2pdf;
-using iText.Kernel.Events;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;
 using iText.Kernel.Pdf.Xobject;
 using iText.Layout;
 using iText.Layout.Element;
@@ -48,16 +48,16 @@ namespace iText.Samples.Sandbox.Pdfhtml
         }
 
         // Header event handler
-        protected class Header : IEventHandler
+        protected class Header : AbstractPdfDocumentEventHandler      
         {
-            private string header;
+            private readonly string header;
 
             public Header(string header)
             {
                 this.header = header;
             }
 
-            public virtual void HandleEvent(Event @event)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event)
             {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent) @event;
                 PdfDocument pdf = docEvent.GetDocument();
@@ -77,7 +77,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
         }
 
         // Footer event handler
-        protected class Footer : IEventHandler
+        protected class Footer : AbstractPdfDocumentEventHandler      
         {
             protected PdfFormXObject placeholder;
             protected float side = 20;
@@ -91,7 +91,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
                 placeholder = new PdfFormXObject(new Rectangle(0, 0, side, side));
             }
 
-            public virtual void HandleEvent(Event @event)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event)
             {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent) @event;
                 PdfDocument pdf = docEvent.GetDocument();

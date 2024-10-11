@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Bouncycastle.Crypto;
 using iText.Forms.Form.Element;
 using iText.IO.Image;
+using iText.Kernel.Crypto;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Signatures;
-using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Pkcs;
-using Org.BouncyCastle.X509;
 
 namespace iText.Samples.Sandbox.Signatures
 {
@@ -47,20 +45,25 @@ namespace iText.Samples.Sandbox.Signatures
         {
             PdfSigner pdfSigner = new PdfSigner(new PdfReader(SRC), new FileStream(filePath, FileMode.Create),
                 new StampingProperties());
-            pdfSigner.SetCertificationLevel(PdfSigner.CERTIFIED_NO_CHANGES_ALLOWED);
+            SignerProperties signerProperties = new SignerProperties();
+            signerProperties.SetCertificationLevel(AccessPermissions.NO_CHANGES_PERMITTED);
+
 
             // Set the name indicating the field to be signed.
             // The field can already be present in the document but shall not be signed
-            pdfSigner.SetFieldName("signature");
+            signerProperties.SetFieldName("signature");
+
+            pdfSigner.SetSignerProperties(signerProperties);
 
             ImageData clientSignatureImage = ImageDataFactory.Create(IMAGE_PATH);
 
             // If you create new signature field (or use SetFieldName(System.String) with
             // the name that doesn't exist in the document or don't specify it at all) then
             // the signature is invisible by default.
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(pdfSigner.GetFieldName())
+            SignatureFieldAppearance appearance = 
+                new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                     .SetContent(clientSignatureImage);
-            pdfSigner.SetPageNumber(signatureInfo.PageNumber)
+            signerProperties.SetPageNumber(signatureInfo.PageNumber)
                     .SetPageRect(new Rectangle(signatureInfo.Left, signatureInfo.Bottom,
                 25, 25))
                     .SetSignatureAppearance(appearance);

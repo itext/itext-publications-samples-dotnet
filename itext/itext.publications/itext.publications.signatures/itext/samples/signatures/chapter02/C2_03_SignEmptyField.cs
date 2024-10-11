@@ -4,6 +4,7 @@ using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
+using iText.Kernel.Crypto;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.Kernel.Pdf;
@@ -16,10 +17,10 @@ namespace iText.Samples.Signatures.Chapter02
     {
         public static readonly string DEST = "results/signatures/chapter02/";
 
-        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly string KEYSTORE = "../../../resources/encryption/certificate.p12";
         public static readonly string SRC = "../../../resources/pdfs/hello_to_sign.pdf";
 
-        public static readonly char[] PASSWORD = "password".ToCharArray();
+        public static readonly char[] PASSWORD = "testpassphrase".ToCharArray();
 
         public static readonly string[] RESULT_FILES =
         {
@@ -36,15 +37,17 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
             
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
+
+            signer.SetSignerProperties(signerProperties);
 
             // Specify if the appearance before field is signed will be used
             // as a background for the signed field. The "false" value is the default value.
-
             signer.GetSignatureField().SetReuseAppearance(false);
             IExternalSignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 

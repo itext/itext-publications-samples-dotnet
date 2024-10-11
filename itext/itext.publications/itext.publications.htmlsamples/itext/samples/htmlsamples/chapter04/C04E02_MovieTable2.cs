@@ -3,11 +3,11 @@ using System.IO;
 using System.Xml.Xsl;
 using iText.Commons.Utils;
 using iText.Html2pdf;
-using iText.Kernel.Colors;
-using iText.Kernel.Events;
+using iText.Kernel.Colors;  
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;     
 using iText.Kernel.Pdf.Xobject;
 using iText.Layout;
 using iText.Layout.Element;
@@ -80,7 +80,7 @@ namespace iText.Samples.Htmlsamples.Chapter04
             properties.SetBaseUri(baseUri);
             PdfWriter writer = new PdfWriter(dest);
             PdfDocument pdf = new PdfDocument(writer);
-            IEventHandler handler = new Background(pdf, stationery);
+            AbstractPdfDocumentEventHandler handler = new Background(pdf, stationery);
             pdf.AddEventHandler(PdfDocumentEvent.START_PAGE, handler);
             HtmlConverter.ConvertToPdf(new MemoryStream(html), pdf, properties);
         }
@@ -101,9 +101,9 @@ namespace iText.Samples.Htmlsamples.Chapter04
         }
 
         /// <summary>
-        /// Implementation of the IEventHandler to add a background and a page number to every page.
+        /// Implementation of the AbstractPdfDocumentEventHandler to add a background and a page number to every page.
         /// </summary>
-        class Background : IEventHandler
+        class Background : AbstractPdfDocumentEventHandler
         {
             /// <summary>
             /// The Form XObject that will be added as the background for every page.
@@ -123,10 +123,7 @@ namespace iText.Samples.Htmlsamples.Chapter04
                 template.Close();
             }
 
-            /* (non-Javadoc)
-             * @see com.itextpdf.kernel.events.IEventHandler#handleEvent(com.itextpdf.kernel.events.Event)
-             */
-            public void HandleEvent(Event @event)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event)
             {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent) @event;
                 PdfDocument pdf = docEvent.GetDocument();

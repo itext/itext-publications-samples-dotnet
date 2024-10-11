@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using iText.IO.Font.Constants;
-using iText.Kernel.Events;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Borders;
 using iText.Layout.Element;
@@ -73,9 +73,9 @@ namespace iText.Samples.Sandbox.Events
             }
         }
 
-        private class Footer : IEventHandler
+        private class Footer : AbstractPdfDocumentEventHandler      
         {
-            public void HandleEvent(Event @event)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event)
             {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent) @event;
                 PdfDocument pdf = docEvent.GetDocument();

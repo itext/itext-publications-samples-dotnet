@@ -1,12 +1,12 @@
 using System;
 using System.IO;
 using iText.Commons.Utils;
-using iText.IO.Font;
-using iText.Kernel.Events;
+using iText.IO.Font;     
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;  
 using iText.Kernel.Pdf.Tagging;
 using iText.Kernel.Pdf.Xobject;
 using iText.Layout;
@@ -50,7 +50,7 @@ namespace iText.Samples.Sandbox.Pdfa
             FileStream fileStream =
                 new FileStream("../../../resources/data/sRGB_CS_profile.icm", FileMode.Open, FileAccess.Read);
 
-            PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_1A,
+            PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformance.PDF_A_1A,
                 new PdfOutputIntent("Custom", "",
                     null, "sRGB IEC61966-2.1", fileStream));
 
@@ -120,7 +120,7 @@ namespace iText.Samples.Sandbox.Pdfa
             }
         }
 
-        private class HeaderHandler : IEventHandler
+        private class HeaderHandler : AbstractPdfDocumentEventHandler      
         {
             private readonly PdfA1a enclosing;
 
@@ -129,7 +129,7 @@ namespace iText.Samples.Sandbox.Pdfa
                 this.enclosing = enclosing;
             }
 
-            public virtual void HandleEvent(Event currentEvent)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent currentEvent)
             {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
                 PdfPage page = docEvent.GetPage();

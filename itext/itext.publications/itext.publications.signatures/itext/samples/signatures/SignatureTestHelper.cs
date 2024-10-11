@@ -2,9 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using iText.Bouncycastle.Asn1.Tsp;
-using iText.Bouncycastle.Cert;
 using iText.Bouncycastle.X509;
-using iText.Commons.Bouncycastle.Asn1.Ocsp;
 using iText.Commons.Bouncycastle.Asn1.Tsp;
 using iText.Commons.Bouncycastle.Cert;
 using Org.BouncyCastle.X509;
@@ -15,8 +13,8 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
 using iText.Kernel.Utils;
 using iText.Signatures;
-using Org.BouncyCastle.Pkcs;
-using Org.BouncyCastle.Security.Certificates;
+using iText.Signatures.Validation;
+using iText.Signatures.Validation.Report;
 
 namespace iText.Samples.Signatures
 {
@@ -53,159 +51,60 @@ namespace iText.Samples.Signatures
             return errorMessage;
         }
 
-        /// <summary>In this method we add trusted certificates.</summary>
+        /// <summary>In this method we add trusted certificates to the IssuingCertificateRetriever.</summary>
         /// <remarks>
         /// In this method we add trusted certificates.
         /// If document signatures certificates doesn't contain certificates that are added in this method, verification will fail.
         /// NOTE: Override this method to add additional certificates.
         /// </remarks>
-        protected internal virtual void InitKeyStoreForVerification(List<IX509Certificate> ks)
+        protected internal virtual void AddTrustedCertificates(IssuingCertificateRetriever certificateRetriever,
+            ICollection<IX509Certificate> certificates)
         {
-            var parser = new X509CertificateParser();
-            IX509Certificate adobeCert;
-            IX509Certificate cacertCert;
-            IX509Certificate brunoCert;
-            using (FileStream adobeStream = new FileStream(ADOBE, FileMode.Open, FileAccess.Read),
-                cacertStream = new FileStream(CACERT, FileMode.Open, FileAccess.Read),
-                brunoStream = new FileStream(BRUNO, FileMode.Open, FileAccess.Read))
-            {
-                adobeCert = new X509CertificateBC(parser.ReadCertificate(adobeStream));
-                cacertCert = new X509CertificateBC(parser.ReadCertificate(cacertStream));
-                brunoCert = new X509CertificateBC(parser.ReadCertificate(brunoStream));
-            }
-
-            ks.Add(adobeCert);
-            ks.Add(cacertCert);
-            ks.Add(brunoCert);
-        }
-
-        protected static IX509Certificate LoadCertificateFromKeyStore(String keystorePath, char[] ksPass)
-        {
-            string alias = null;
-            Pkcs12Store pk12 = new Pkcs12StoreBuilder().Build();
-            pk12.Load(new FileStream(keystorePath, FileMode.Open, FileAccess.Read), ksPass);
-
-            foreach (var a in pk12.Aliases)
-            {
-                alias = ((string) a);
-                if (pk12.IsKeyEntry(alias))
-                    break;
-            }
-
-            return new X509CertificateBC(pk12.GetCertificate(alias).Certificate);
+            certificateRetriever.AddTrustedCertificates(certificates);
         }
 
         private void VerifySignaturesForDocument(String documentPath)
         {
-            PdfReader reader = new PdfReader(documentPath);
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader(documentPath));
-            SignatureUtil signUtil = new SignatureUtil(pdfDoc);
-            IList<String> names = signUtil.GetSignatureNames();
-            VerifySignatures(signUtil, names);
-            reader.Close();
-        }
-
-        private void VerifySignatures(SignatureUtil signUtil, IList<String> names)
-        {
-            foreach (String name in names)
+            // Set up the validator.
+            SignatureValidationProperties properties = new SignatureValidationProperties();
+            IssuingCertificateRetriever certificateRetriever = new IssuingCertificateRetriever();
+            var parser = new X509CertificateParser();
+            IX509Certificate adobeCert;
+            IX509Certificate caCert;
+            IX509Certificate brunoCert;
+            using (FileStream adobeStream = new FileStream(ADOBE, FileMode.Open, FileAccess.Read),
+                   caCertStream = new FileStream(CACERT, FileMode.Open, FileAccess.Read),
+                   brunoStream = new FileStream(BRUNO, FileMode.Open, FileAccess.Read))
             {
-                PdfPKCS7 pkcs7 = signUtil.ReadSignatureData(name);
-                
-                // verify signature integrity
-                if (!pkcs7.VerifySignatureIntegrityAndAuthenticity())
+                adobeCert = new X509CertificateBC(parser.ReadCertificate(adobeStream));
+                caCert = new X509CertificateBC(parser.ReadCertificate(caCertStream));
+                brunoCert = new X509CertificateBC(parser.ReadCertificate(brunoStream));
+            }
+
+            AddTrustedCertificates(certificateRetriever, new List<IX509Certificate> { adobeCert, caCert, brunoCert });
+
+            ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder()
+                .WithIssuingCertificateRetrieverFactory(() => certificateRetriever)
+                .WithSignatureValidationProperties(properties);
+
+            ValidationReport report;
+            using (PdfDocument document = new PdfDocument(new PdfReader(documentPath)))
+            {
+                SignatureValidator validator = validatorChainBuilder.BuildSignatureValidator(document);
+
+                // Validate all signatures in the document.
+                report = validator.ValidateSignatures();
+                if (report.GetValidationResult() != ValidationReport.ValidationResult.VALID)
                 {
-                    AddError(String.Format("\"{0}\" signature integrity is invalid\n", name));
-                }
-
-                VerifyCertificates(pkcs7);
-            }
-        }
-
-        private void VerifyCertificates(PdfPKCS7 pkcs7)
-        {
-            List<IX509Certificate> ks = new List<IX509Certificate>();
-            InitKeyStoreForVerification(ks);
-            IX509Certificate[] certs = pkcs7.GetSignCertificateChain();
-            DateTime cal = pkcs7.GetSignDate();
-            IList<VerificationException> errors = CertificateVerification.VerifyCertificates(certs, ks, cal);
-            if (errors.Count > 0)
-            {
-                foreach (VerificationException e in errors)
-                {
-                    AddError(e.Message + "\n");
-                }
-            }
-
-            for (int i = 0; i < certs.Length; i++)
-            {
-                IX509Certificate cert = certs[i];
-                CheckCertificateInfo(cert, cal.ToUniversalTime(), pkcs7);
-            }
-
-            IX509Certificate signCert = certs[0];
-            IX509Certificate issuerCert = (certs.Length > 1 ? certs[1] : null);
-            
-            //Checking validity of the document at the time of signing
-            CheckRevocation(pkcs7, signCert, issuerCert, cal.ToUniversalTime());
-        }
-
-        private void CheckCertificateInfo(IX509Certificate cert, DateTime signDate, PdfPKCS7
-            pkcs7)
-        {
-            try
-            {
-                cert.CheckValidity(signDate);
-            }
-            catch (CertificateExpiredException)
-            {
-                AddError("The certificate was expired at the time of signing.");
-            }
-            catch (CertificateNotYetValidException)
-            {
-                AddError("The certificate wasn't valid yet at the time of signing.");
-            }
-
-		    if (TimestampConstants.UNDEFINED_TIMESTAMP_DATE != pkcs7.GetTimeStampDate())
-            {
-                if (!pkcs7.VerifyTimestampImprint())
-                {
-                    AddError("Timestamp is invalid.");
-                }
-            }
-        }
-
-        private void CheckRevocation(PdfPKCS7 pkcs7, IX509Certificate signCert, IX509Certificate issuerCert, 
-            DateTime date)
-        {
-            IList<IBasicOcspResponse> ocsps = new List<IBasicOcspResponse>();
-            if (pkcs7.GetOcsp() != null)
-            {
-                ocsps.Add(pkcs7.GetOcsp());
-            }
-
-            OCSPVerifier ocspVerifier = new OCSPVerifier(null, ocsps);
-            IList<VerificationOK> verification = ocspVerifier.Verify(signCert, issuerCert, date);
-            if (verification.Count == 0)
-            {
-                IList<IX509Crl> crls = new List<IX509Crl>();
-                if (pkcs7.GetCRLs() != null)
-                {
-                    foreach (IX509Crl crl in pkcs7.GetCRLs())
-                    {
-                        crls.Add((IX509Crl) crl);
+                    AddError("Document signatures validation failed!");
+                    foreach (ReportItem error in report.GetFailures()) {
+                        AddError(error.ToString());
                     }
                 }
 
-                CRLVerifier crlVerifier = new CRLVerifier(null, crls);
-                var verOks = crlVerifier.Verify(signCert, issuerCert, date);
-                foreach (VerificationOK verOk in verOks)
-                {
-                    verification.Add(verOk);
-                }
             }
         }
 
-        //if exception was not thrown document is not revoked or it couldn't be verified
         protected internal virtual void CompareSignatures(String outFile, String cmpFile)
         {
             SignedDocumentInfo outInfo = CollectInfo(outFile);
@@ -461,13 +360,13 @@ namespace iText.Samples.Signatures
                 {
                     CertificateInfo outCert = outSig.GetCertificateInfos()[j_1];
                     CertificateInfo cmpCert = cmpSig.GetCertificateInfos()[j_1];
-                    if (!outCert.GetIssuer().Equals(cmpCert.GetIssuer()))
+                    if (!outCert.GetIssuer().ToString().Equals(cmpCert.GetIssuer().ToString()))
                     {
                         AddComparisonError("Certificate issuer", outCert.GetIssuer().ToString(),
                             cmpCert.GetIssuer().ToString());
                     }
 
-                    if (!outCert.GetSubject().Equals(cmpCert.GetSubject()))
+                    if (!outCert.GetSubject().ToString().Equals(cmpCert.GetSubject().ToString()))
                     {
                         AddComparisonError("Certificate subject", outCert.GetSubject().ToString(), cmpCert
                             .GetSubject().ToString());

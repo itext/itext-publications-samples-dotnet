@@ -88,7 +88,7 @@ namespace iText.Samples.Sandbox.Signatures.Appearance
             SignerProperties signerProperties = new SignerProperties().SetFieldName(signatureName);
 
             // Create the appearance instance and set the signature content to be shown and different appearance properties.
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signerProperties.GetFieldName())
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .SetContent("Signer", "Signature description. " +
                                       "Signer is replaced to the one from the certificate.")
                 .SetBackgroundColor(ColorConstants.YELLOW);

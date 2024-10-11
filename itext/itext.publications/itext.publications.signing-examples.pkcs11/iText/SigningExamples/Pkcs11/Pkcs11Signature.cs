@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using iText.Signatures;
+using iText.Kernel.Crypto;
 using Net.Pkcs11Interop.Common;
 using Net.Pkcs11Interop.HighLevelAPI;
 using Net.Pkcs11Interop.HighLevelAPI.Factories;

@@ -7,6 +7,7 @@ using iText.Forms.Form.Element;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.IO.Image;
+using iText.Kernel.Crypto;
 using iText.Kernel.Pdf;
 using iText.Signatures;
 using Org.BouncyCastle.Pkcs;
@@ -17,11 +18,11 @@ namespace iText.Samples.Signatures.Chapter02
     {
         public static readonly string DEST = "results/signatures/chapter02/";
 
-        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly string KEYSTORE = "../../../resources/encryption/certificate.p12";
         public static readonly string SRC = "../../../resources/pdfs/hello_to_sign.pdf";
         public static readonly string IMG = "../../../resources/img/1t3xt.gif";
 
-        public static readonly char[] PASSWORD = "password".ToCharArray();
+        public static readonly char[] PASSWORD = "testpassphrase".ToCharArray();
 
         public static readonly string[] RESULT_FILES =
         {
@@ -39,16 +40,18 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
 
-            //Only description is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            // Only description is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent("Signed by iText");
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -68,16 +71,18 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
 
-            //Name and description is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            // Name and description is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent("", "Signed by iText");
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -97,16 +102,18 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
 
-            //Graphic and description is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            // Graphic and description is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent("Signed by iText", image);
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -126,16 +133,18 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
 
             // This name corresponds to the name of the field that already exists in the document.
-            signer.SetFieldName(name);
+            signerProperties.SetFieldName(name);
 
-            //Graphic is rendered
-            SignatureFieldAppearance appearance = new SignatureFieldAppearance(signer.GetFieldName());
+            // Graphic is rendered
+            SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID);
             appearance.SetContent(image);
-            signer.SetSignatureAppearance(appearance);
+            signerProperties.SetSignatureAppearance(appearance);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 

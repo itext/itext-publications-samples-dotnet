@@ -3,11 +3,11 @@ using System.IO;
 using iText.Commons.Utils;
 using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
-using iText.Kernel.Events;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Borders;
 using iText.Layout.Element;
@@ -70,8 +70,9 @@ namespace Tutorial.Chapter03 {
             }
         }
 
-        protected internal class MyEventHandler : IEventHandler {
-            public virtual void HandleEvent(Event @event) {
+        protected internal class MyEventHandler : AbstractPdfDocumentEventHandler {
+
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event) {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent)@event;
                 PdfDocument pdfDoc = docEvent.GetDocument();
                 PdfPage page = docEvent.GetPage();

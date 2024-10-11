@@ -41,11 +41,15 @@ namespace iText.Highlevel.Notused.Appendix {
             canvas.SetFontColor(ColorConstants.BLUE);
             p = new Paragraph("Testing font methods: changed color");
             canvas.Add(p);
-            canvas.SetBold();
-            p = new Paragraph("Testing font methods: to bold");
+            // We don't suggest usage of SimulateBold() method to reach text thickness since the result is written with the usual
+            // rather than the bold font: we only emulate "thickness". It's recommended to use an actual bold font instead.
+            canvas.SimulateBold();
+            p = new Paragraph("Testing font methods: simulated bold");
             canvas.Add(p);
-            canvas.SetItalic();
-            p = new Paragraph("Testing font methods: to italic");
+            // We don't suggest usage of SimulateItalic() method to reach text obliquity since the result is written with the usual
+            // rather than the italic font: we only emulate "obliquity". It's recommended to use an actual italic font instead.
+            canvas.SimulateItalic();
+            p = new Paragraph("Testing font methods: simulated italic");
             canvas.Add(p);
             canvas.SetProperty(Property.BOLD_SIMULATION, false);
             canvas.SetProperty(Property.ITALIC_SIMULATION, false);

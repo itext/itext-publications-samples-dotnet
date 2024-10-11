@@ -11,7 +11,7 @@ namespace iText.Samples.Signatures.Chapter04
     {
         public static readonly String DEST = "results/signatures/chapter04/";
 
-        public static readonly String KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly String KEYSTORE = "../../../resources/encryption/certificate.p12";
         public static readonly String CERT = "../../../resources/encryption/bruno.crt";
         public static readonly String PRE = "http://demo.itextsupport.com/SigningApp/presign";
         public static readonly String POST = "http://demo.itextsupport.com/SigningApp/postsign";
@@ -21,7 +21,7 @@ namespace iText.Samples.Signatures.Chapter04
             "hello_server2.pdf"
         };
 
-        public static readonly char[] PASSWORD = "password".ToCharArray();
+        public static readonly char[] PASSWORD = "testpassphrase".ToCharArray();
 
         public static void Main(String[] args)
         {

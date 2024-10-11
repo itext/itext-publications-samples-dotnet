@@ -2,11 +2,11 @@ using System;
 using System.IO;
 
 using iText.IO.Font.Constants;
-using iText.Kernel.Events;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;
 using iText.Kernel.Pdf.Xobject;
 using iText.Layout;
 using iText.Layout.Element;
@@ -30,7 +30,7 @@ namespace iText.Highlevel.Chapter07 {
             //Initialize PDF document
             PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
             pdf.AddEventHandler(PdfDocumentEvent.START_PAGE, new C07E03_PageXofY.Header("The Strange Case of Dr. Jekyll and Mr. Hyde"));
-            C07E03_PageXofY.PageXofY @event = new C07E03_PageXofY.PageXofY(pdf);
+            C07E03_PageXofY.PageXofY @event = new C07E03_PageXofY.PageXofY();
             pdf.AddEventHandler(PdfDocumentEvent.END_PAGE, @event);
             // Initialize document
             Document document = new Document(pdf);
@@ -57,14 +57,14 @@ namespace iText.Highlevel.Chapter07 {
             document.Close();
         }
 
-        protected internal class Header : IEventHandler {
+        protected internal class Header : AbstractPdfDocumentEventHandler {
             internal String header;
 
             public Header(String header) {
                 this.header = header;
             }
 
-            public virtual void HandleEvent(Event @event) {
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event) {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent)@event;
                 PdfDocument pdf = docEvent.GetDocument();
                 PdfPage page = docEvent.GetPage();
@@ -78,7 +78,7 @@ namespace iText.Highlevel.Chapter07 {
             }
         }
 
-        protected internal class PageXofY : IEventHandler {
+        protected internal class PageXofY : AbstractPdfDocumentEventHandler {
             protected internal PdfFormXObject placeholder;
 
             protected internal float side = 20;
@@ -91,11 +91,11 @@ namespace iText.Highlevel.Chapter07 {
 
             protected internal float descent = 3;
 
-            public PageXofY(PdfDocument pdf) {
+            public PageXofY() {
                 this.placeholder = new PdfFormXObject(new Rectangle(0, 0, this.side, this.side));
             }
 
-            public virtual void HandleEvent(Event @event) {
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent @event) {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent)@event;
                 PdfDocument pdf = docEvent.GetDocument();
                 PdfPage page = docEvent.GetPage();

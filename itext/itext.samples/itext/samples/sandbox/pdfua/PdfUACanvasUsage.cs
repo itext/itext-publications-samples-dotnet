@@ -7,6 +7,7 @@ using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Tagging;
 using iText.Kernel.Pdf.Tagutils;
 using iText.Kernel.Utils;
+using iText.Kernel.Validation;
 using iText.Pdfua.Checkers;
 using iText.Pdfua.Exceptions;
 
@@ -24,7 +25,8 @@ namespace iText.Samples.Sandbox.Pdfua
         }
 
         public virtual void ManipulatePdf(String dest) {
-            PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest, new WriterProperties().AddUAXmpMetadata()));
+            PdfDocument pdfDoc = new PdfDocument(
+                new PdfWriter(dest, new WriterProperties().AddPdfUaXmpMetadata(PdfUAConformance.PDF_UA_1)));
             pdfDoc.SetTagged();
             pdfDoc.GetCatalog().SetViewerPreferences(new PdfViewerPreferences().SetDisplayDocTitle(true));
             pdfDoc.GetCatalog().SetLang(new PdfString("en-US"));

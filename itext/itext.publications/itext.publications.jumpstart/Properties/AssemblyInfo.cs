@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Apryse Group NV")]
 [assembly: AssemblyProduct("iText")]
-[assembly: AssemblyCopyright("Copyright (c) 1998-2024 Apryse Group NV")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -14,9 +13,9 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("eee84512-f6a8-4cd0-946b-6513d33fdea1")]
 
-[assembly: AssemblyVersion("8.0.5.0")]
-[assembly: AssemblyFileVersion("8.0.5.0")]
-[assembly: AssemblyInformationalVersion("8.0.5")]
+[assembly: AssemblyVersion("9.0.0.0")]
+[assembly: AssemblyFileVersion("9.0.0.0")]
+[assembly: AssemblyInformationalVersion("9.0.0")]
 
 #if !NETSTANDARD2_0
 [assembly: NUnit.Framework.Timeout(60000)]

@@ -3,6 +3,7 @@ using System.IO;
 using iText.Bouncycastle.X509;
 using iText.Bouncycastle.Crypto;
 using iText.Commons.Bouncycastle.Cert;
+using iText.Kernel.Crypto;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 using iText.Kernel.Geom;
@@ -19,10 +20,10 @@ namespace iText.Samples.Signatures.Chapter02
     {
         public static readonly string DEST = "results/signatures/chapter02/";
 
-        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly string KEYSTORE = "../../../resources/encryption/certificate.p12";
         public static readonly string SRC = "../../../resources/pdfs/hello.pdf";
 
-        public static readonly char[] PASSWORD = "password".ToCharArray();
+        public static readonly char[] PASSWORD = "testpassphrase".ToCharArray();
 
         public static readonly string[] RESULT_FILES =
         {
@@ -37,23 +38,25 @@ namespace iText.Samples.Signatures.Chapter02
 
         public void Sign(string src, string dest, X509Certificate[] chain, ICipherParameters pk,
             string digestAlgorithm, PdfSigner.CryptoStandard subfilter,
-            int certificationLevel, string reason, string location)
+            AccessPermissions certificationLevel, string reason, string location)
         {
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create), new StampingProperties());
 
             // Create the signature appearance
-            signer.SetReason(reason);
-            signer.SetLocation(location);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetReason(reason)
+                .SetLocation(location);
 
             Rectangle rect = new Rectangle(36, 648, 200, 100);
-            signer.SetPageRect(rect).SetPageNumber(1);
-            signer.SetFieldName("sig");
+            signerProperties.SetPageRect(rect)
+                .SetPageNumber(1)
+                .SetFieldName("sig");
 
-            /* Set the document's certification level. This parameter defines if changes are allowed
-             * after the applying of the signature.
-             */
-            signer.SetCertificationLevel(certificationLevel);
+            // Set the document's certification level. This parameter defines if changes are allowed
+            // after the applying of the signature.
+            signerProperties.SetCertificationLevel(certificationLevel);
+            signer.SetSignerProperties(signerProperties);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), digestAlgorithm);
 
@@ -116,11 +119,14 @@ namespace iText.Samples.Signatures.Chapter02
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create),
                 new StampingProperties().UseAppendMode());
 
-            signer.SetReason(reason)
-                .SetLocation(location)
-                .SetFieldName("Signature2");
             Rectangle rect = new Rectangle(36, 700, 200, 100);
-            signer.SetPageRect(rect).SetPageNumber(1);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetFieldName("Signature2")
+                .SetReason(reason)
+                .SetLocation(location)
+                .SetPageRect(rect)
+                .SetPageNumber(1);
+            signer.SetSignerProperties(signerProperties);
 
             IX509Certificate[] certificateWrappers = new IX509Certificate[chain.Length];
             for (int i = 0; i < certificateWrappers.Length; ++i) {
@@ -155,16 +161,16 @@ namespace iText.Samples.Signatures.Chapter02
 
             C2_09_SignatureTypes app = new C2_09_SignatureTypes();
             app.Sign(SRC, DEST + RESULT_FILES[0], chain, pk, DigestAlgorithms.SHA256,
-                PdfSigner.CryptoStandard.CMS, PdfSigner.NOT_CERTIFIED,
+                PdfSigner.CryptoStandard.CMS, AccessPermissions.UNSPECIFIED,
                 "Test 1", "Ghent");
             app.Sign(SRC, DEST + RESULT_FILES[1], chain, pk, DigestAlgorithms.SHA256,
-                PdfSigner.CryptoStandard.CMS, PdfSigner.CERTIFIED_FORM_FILLING_AND_ANNOTATIONS,
+                PdfSigner.CryptoStandard.CMS, AccessPermissions.ANNOTATION_MODIFICATION,
                 "Test 1", "Ghent");
             app.Sign(SRC, DEST + RESULT_FILES[2], chain, pk, DigestAlgorithms.SHA256,
-                PdfSigner.CryptoStandard.CMS, PdfSigner.CERTIFIED_FORM_FILLING,
+                PdfSigner.CryptoStandard.CMS, AccessPermissions.FORM_FIELDS_MODIFICATION,
                 "Test 1", "Ghent");
             app.Sign(SRC, DEST + RESULT_FILES[3], chain, pk, DigestAlgorithms.SHA256,
-                PdfSigner.CryptoStandard.CMS, PdfSigner.CERTIFIED_NO_CHANGES_ALLOWED,
+                PdfSigner.CryptoStandard.CMS, AccessPermissions.NO_CHANGES_PERMITTED,
                 "Test 1", "Ghent");
 
             app.AddAnnotation(DEST + RESULT_FILES[0], DEST + RESULT_FILES[4]);

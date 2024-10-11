@@ -40,7 +40,7 @@ namespace iText.Samples.Signatures.Chapter03
             {
                 X509Certificate cert = chain[i];
                 Console.WriteLine("[{0}] {1}", i, cert.SubjectDN);
-                Console.WriteLine(CertificateUtil.GetCRLURL(new X509CertificateBC(cert)));
+                Console.WriteLine(CertificateUtil.GetCRLURLs(new X509CertificateBC(cert)));
             }
         }
     }

@@ -51,8 +51,7 @@ namespace iText.Samples.Sandbox.Objects
             {
                 return new Text("g")
                     .SetFontColor(ColorConstants.GREEN)
-                    .SetFont(helveticaFont)
-                    .SetItalic();
+                    .SetFont(helveticaFont);
             }
             else
             {

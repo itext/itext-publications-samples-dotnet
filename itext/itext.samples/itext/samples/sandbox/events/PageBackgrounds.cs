@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using iText.Kernel.Colors;
-using iText.Kernel.Events;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Event;
 using iText.Layout;
 using iText.Layout.Element;
 
@@ -70,9 +70,9 @@ namespace iText.Samples.Sandbox.Events
             return factors;
         }
 
-        private class PageBackgroundsEventHandler : IEventHandler
+        private class PageBackgroundsEventHandler : AbstractPdfDocumentEventHandler      
         {
-            public void HandleEvent(Event currentEvent)
+            protected override void OnAcceptedEvent(AbstractPdfDocumentEvent currentEvent)
             {
                 PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
                 PdfPage page = docEvent.GetPage();

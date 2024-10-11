@@ -7,6 +7,7 @@ using iText.Commons.Bouncycastle.Cert;
 using Org.BouncyCastle.Crypto;
 using iText.Forms;
 using iText.Forms.Fields;
+using iText.Kernel.Crypto;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
 using iText.Layout;
@@ -22,13 +23,12 @@ namespace iText.Samples.Signatures.Chapter02
         public static readonly string DEST = "results/signatures/chapter02/";
         public static readonly string FORM = "results/signatures/chapter02/form_lock.pdf";
 
-        public static readonly string ALICE = "../../../resources/encryption/alice";
-        public static readonly string BOB = "../../../resources/encryption/bob";
-        public static readonly string CAROL = "../../../resources/encryption/carol";
-        public static readonly string DAVE = "../../../resources/encryption/dave";
-        public static readonly string KEYSTORE = "../../../resources/encryption/ks";
+        public static readonly string ALICE = "../../../resources/encryption/alice.p12";
+        public static readonly string BOB = "../../../resources/encryption/bob.p12";
+        public static readonly string CAROL = "../../../resources/encryption/carol.p12";
+        public static readonly string DAVE = "../../../resources/encryption/dave.p12";
 
-        public static readonly char[] PASSWORD = "password".ToCharArray();
+        public static readonly char[] PASSWORD = "testpassphrase".ToCharArray();
 
         public static readonly String[] RESULT_FILES =
         {
@@ -113,8 +113,10 @@ namespace iText.Samples.Signatures.Chapter02
                 new StampingProperties().UseAppendMode());
 
             // Set signer options
-            signer.SetFieldName(name);
-            signer.SetCertificationLevel(PdfSigner.CERTIFIED_FORM_FILLING);
+            SignerProperties signerProperties = new SignerProperties()
+                .SetFieldName(name)
+                .SetCertificationLevel(AccessPermissions.FORM_FIELDS_MODIFICATION);
+            signer.SetSignerProperties(signerProperties);
 
             PdfAcroForm form = PdfFormCreator.GetAcroForm(signer.GetDocument(), true);
             form.GetField(name).SetReadOnly(true);
@@ -149,12 +151,10 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create),
                 new StampingProperties().UseAppendMode());
-            signer.SetFieldName(name);
+            signer.SetSignerProperties(new SignerProperties().SetFieldName(name));
 
             PdfAcroForm form = PdfFormCreator.GetAcroForm(signer.GetDocument(), true);
             form.GetField(fname).SetValue(value);
-            form.GetField(name).SetReadOnly(true);
-            form.GetField(fname).SetReadOnly(true);
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
             signer.SignDetached(pks, chain, null, null, null,
@@ -195,7 +195,7 @@ namespace iText.Samples.Signatures.Chapter02
             PdfReader reader = new PdfReader(src);
             PdfSigner signer = new PdfSigner(reader, new FileStream(dest, FileMode.Create),
                 new StampingProperties().UseAppendMode());
-            signer.SetFieldName(name);
+            signer.SetSignerProperties(new SignerProperties().SetFieldName(name));
 
             PrivateKeySignature pks = new PrivateKeySignature(new PrivateKeyBC(pk), DigestAlgorithms.SHA256);
             signer.SignDetached(pks, chain, null, null, null,
