@@ -50,7 +50,7 @@ namespace iText.Samples.Sandbox.Zugferd
             PdfDictionary parameters = new PdfDictionary();
             parameters.Put(PdfName.ModDate, new PdfDate().GetPdfObject());
             PdfFileSpec fileSpec = PdfFileSpec.CreateEmbeddedFileSpec(pdfDoc, File.ReadAllBytes(ZUGFERD_XML),
-                "ZUGFeRD invoice", "ZUGFeRD-invoice.xml", new PdfName("application/xml"), parameters,
+                "ZUGFeRD invoice", "factur-x.xml", new PdfName("application/xml"), parameters,
                 PdfName.Alternative);
             pdfDoc.AddFileAttachment("ZUGFeRD invoice", fileSpec);
             PdfArray array = new PdfArray();
@@ -136,11 +136,11 @@ namespace iText.Samples.Sandbox.Zugferd
         {
             XMPMeta xmp = pdfDoc.GetXmpMetadata(true);
             String zugferdNamespace = "urn:ferd:pdfa:CrossIndustryDocument:invoice:1p0#";
-            String zugferdPrefix = "zf";
+            String zugferdPrefix = "fx";
             XMPMetaFactory.GetSchemaRegistry().RegisterNamespace(zugferdNamespace, zugferdPrefix);
 
             xmp.SetProperty(zugferdNamespace, "DocumentType", "INVOICE");
-            xmp.SetProperty(zugferdNamespace, "Version", "1.0");
+            xmp.SetProperty(zugferdNamespace, "Version", "2p0");
             xmp.SetProperty(zugferdNamespace, "ConformanceLevel", "BASIC");
             xmp.SetProperty(zugferdNamespace, "DocumentFileName", "factur-x.xml");
 
