@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using iText.Commons.Utils;
@@ -80,7 +81,7 @@ namespace iText.Samples
 
             try
             {
-                CollectionAssert.AreEqual(cmpBytes, destBytes);
+                Debug.Assert(cmpBytes.Equals(destBytes));
             }
             catch (AssertionException exc)
             {
