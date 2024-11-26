@@ -140,7 +140,7 @@ namespace iText.Samples.Sandbox.Zugferd
             XMPMetaFactory.GetSchemaRegistry().RegisterNamespace(zugferdNamespace, zugferdPrefix);
 
             xmp.SetProperty(zugferdNamespace, "DocumentType", "INVOICE");
-            xmp.SetProperty(zugferdNamespace, "Version", "2p0");
+            xmp.SetProperty(zugferdNamespace, "Version", "1.0");
             xmp.SetProperty(zugferdNamespace, "ConformanceLevel", "BASIC");
             xmp.SetProperty(zugferdNamespace, "DocumentFileName", "factur-x.xml");
 
