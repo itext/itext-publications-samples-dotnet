@@ -158,7 +158,7 @@ namespace iText.Samples.Sandbox.Signatures.TwoPhase
                                              byte[] signature)
         {
             using (PdfReader reader = new PdfReader(preparedDocumentPath))
-            using (PdfDocument document = new PdfDocument(reader))
+            using (PdfDocument document = new PdfDocument(new PdfReader(preparedDocumentPath)))
             using (FileStream outputStream = FileUtil.GetFileOutputStream(targetPath))
             {
                 // 1. Read the documents CMS container
@@ -171,7 +171,7 @@ namespace iText.Samples.Sandbox.Signatures.TwoPhase
                 // 2. Add the signatureValue to the CMS
                 cmsContainer.GetSignerInfo().SetSignature(signature);
 
-                PdfTwoPhaseSigner.AddSignatureToPreparedDocument(document, fieldName, outputStream,
+                PdfTwoPhaseSigner.AddSignatureToPreparedDocument(reader, fieldName, outputStream,
                         cmsContainer.Serialize());
             }
         }
