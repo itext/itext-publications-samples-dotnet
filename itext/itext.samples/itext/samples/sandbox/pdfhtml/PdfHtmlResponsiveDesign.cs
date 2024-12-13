@@ -2,6 +2,7 @@
 using System.IO;
 using iText.Html2pdf;
 using iText.Html2pdf.Resolver.Font;
+using iText.StyledXmlParser.Resolver.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout.Font;
@@ -56,7 +57,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
             mediaDescription.SetWidth(screenWidth);
             converterProperties.SetMediaDeviceDescription(mediaDescription);
 
-            FontProvider fp = new DefaultFontProvider();
+            FontProvider fp = new BasicFontProvider();
 
             // Register external font directory
             fp.AddDirectory(resourceLoc);

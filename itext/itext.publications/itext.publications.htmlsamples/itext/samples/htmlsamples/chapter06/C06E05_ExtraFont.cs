@@ -3,6 +3,7 @@ using System.IO;
 using iText.Commons.Utils;
 using iText.Html2pdf;
 using iText.Html2pdf.Resolver.Font;
+using iText.StyledXmlParser.Resolver.Font;
 using iText.IO.Font;
 using iText.Layout.Font;
 using iText.Licensing.Base;
@@ -53,7 +54,7 @@ namespace iText.Samples.Htmlsamples.Chapter06
         public void CreatePdf(String src, String font, String dest)
         {
             ConverterProperties properties = new ConverterProperties();
-            FontProvider fontProvider = new DefaultFontProvider();
+            FontProvider fontProvider = new BasicFontProvider();
             FontProgram fontProgram = FontProgramFactory.CreateFont(font);
             fontProvider.AddFont(fontProgram);
             properties.SetFontProvider(fontProvider);

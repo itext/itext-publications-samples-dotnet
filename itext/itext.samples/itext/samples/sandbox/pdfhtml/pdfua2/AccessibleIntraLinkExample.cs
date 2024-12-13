@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using iText.Html2pdf.Resolver.Font;
+using iText.StyledXmlParser.Resolver.Font;
 using iText.Html2pdf;
 using iText.Kernel.Pdf;
 using iText.Kernel.XMP;
@@ -30,7 +31,7 @@ namespace iText.Samples.Sandbox.Pdfhtml.pdfua2
             // Create pdf/ua-2 document in which content will be placed
             CreateSimplePdfUA2Document(pdfDocument);
             ConverterProperties converterProperties = new ConverterProperties();
-            FontProvider fontProvider = new DefaultFontProvider(false, true, false);
+            FontProvider fontProvider = new BasicFontProvider(false, true, false);
             // Base URI is required to resolve the path to source files, setting font provider which provides only embeddable fonts
             converterProperties.SetFontProvider(fontProvider).SetBaseUri(resourceLoc);
             HtmlConverter.ConvertToPdf(new FileStream(htmlSource, FileMode.Open, FileAccess.Read), pdfDocument, converterProperties

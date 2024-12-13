@@ -6,6 +6,7 @@ using iText.Html2pdf.Attach;
 using iText.Html2pdf.Attach.Impl;
 using iText.Html2pdf.Attach.Impl.Tags;
 using iText.Html2pdf.Resolver.Font;
+using iText.StyledXmlParser.Resolver.Font;
 using iText.Kernel.Pdf;
 using iText.Kernel.XMP;
 using iText.Layout;
@@ -58,7 +59,7 @@ namespace iText.Samples.Sandbox.Pdfua
             info.SetTitle("Well tagged PDF document");
 
             // Use custom font provider as we only want embedded fonts
-            var fontProvider = new DefaultFontProvider(false, false, false);
+            var fontProvider = new BasicFontProvider(false, false, false);
             fontProvider.AddFont(SOURCE_FOLDER + "NotoSans-Regular.ttf");
             fontProvider.AddFont(SOURCE_FOLDER + "NotoEmoji-Regular.ttf");
 

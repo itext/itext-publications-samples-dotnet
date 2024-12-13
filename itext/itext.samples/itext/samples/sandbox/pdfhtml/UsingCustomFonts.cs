@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using iText.Html2pdf;
 using iText.Html2pdf.Resolver.Font;
+using iText.StyledXmlParser.Resolver.Font;
 using iText.Kernel.Pdf;
 using iText.Layout.Font;
 
@@ -29,7 +30,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
             PdfDocument pdfDoc = new PdfDocument(writer);
 
             // Default provider will register standard fonts and free fonts shipped with iText, but not system fonts
-            FontProvider provider = new DefaultFontProvider();
+            FontProvider provider = new BasicFontProvider();
 
             // 1. Register all fonts in a directory
             provider.AddDirectory(FONT_FOLDER);
