@@ -19,14 +19,6 @@ namespace iText.Samples.Signatures.Testrunners
     {
         private static readonly IDictionary<int, IList<Rectangle>> ignoredAreaMap;
 
-        private static readonly String EXPECTED_ERROR_TEXT =
-            "\nresults/signatures/chapter04/hello_server.pdf:\n" +
-            "Document signatures validation failed!\n\n" +
-            "CertificateReportItem{baseclass=\n" +
-            "ReportItem{checkName='Required certificate extensions check.', message=" +
-            "'Required extension 2.5.29.15 is missing or incorrect.', cause=, status=INVALID}\n" +
-            "certificate=C=Unknown,ST=Unknown,L=Unknown,O=Unknown,OU=Unknown,CN=Unknown}\n";
-
         static ClientServerSigningTest()
         {
             ignoredAreaMap = new Dictionary<int, IList<Rectangle>>();
@@ -80,17 +72,6 @@ namespace iText.Samples.Signatures.Testrunners
             }
             
             String errorText = errorTemp.ToString();
-            if (!errorText.Contains(EXPECTED_ERROR_TEXT))
-            {
-                errorText += "\n'hello_server.pdf' file's signature is expected to be invalid due to " +
-                             "missing key usage extension for signing certificate.\n\n";
-            }
-            else
-            {
-                // Expected error should be ignored
-                errorText = errorText.Replace(EXPECTED_ERROR_TEXT, "");
-            }
-
             AddError(errorText);
         }
 
