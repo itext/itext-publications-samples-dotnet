@@ -103,6 +103,7 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Pades");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Appearance");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.TwoPhase");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Signaturetag");
 
             // Not a sample classes
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Utils");

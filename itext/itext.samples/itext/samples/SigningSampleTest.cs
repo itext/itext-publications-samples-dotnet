@@ -43,6 +43,7 @@ namespace iText.Samples
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox.Signatures.Pades");
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox.Signatures.Appearance");
             searchConfig.AddPackageToRunnerSearchPath("iText.Samples.Sandbox.Signatures.TwoPhase");
+            searchConfig.AddClassToRunnerSearchPath("iText.Samples.Sandbox.Signatures.Signaturetag.ConvertToPdfAndSign");
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
