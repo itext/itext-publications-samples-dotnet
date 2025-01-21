@@ -41,7 +41,7 @@ namespace iText.Samples.Sandbox.Typography.Khmer
 
             PdfAcroForm form = PdfFormCreator.GetAcroForm(document.GetPdfDocument(), true);
 
-            PdfFont font = PdfFontFactory.CreateFont(FONTS_FOLDER + "KhmerOS.ttf",
+            PdfFont font = PdfFontFactory.CreateFont(FONTS_FOLDER + "NotoSansKhmer-Regular.ttf",
                     PdfEncodings.IDENTITY_H);
 
             // Embed entire font without any subsetting. Please note that without subset it's impossible to edit a form field
