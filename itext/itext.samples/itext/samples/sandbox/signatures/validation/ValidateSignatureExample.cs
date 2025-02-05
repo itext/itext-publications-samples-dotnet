@@ -1,6 +1,6 @@
 using System;
+using System.Diagnostics;
 using System.IO;
-using System.Runtime.Remoting.Contexts;
 using iText.Commons.Bouncycastle.Cert;
 using iText.Commons.Bouncycastle.Crypto;
 using iText.Commons.Utils;
@@ -53,7 +53,7 @@ namespace iText.Samples.Sandbox.Signatures.Validation
                 report = validator.ValidateSignatures();
             }
 
-            NUnit.Framework.Assert.AreEqual(report.GetValidationResult(), ValidationReport.ValidationResult.VALID);
+            Debug.Assert(report.GetValidationResult().Equals( ValidationReport.ValidationResult.VALID));
 
             // Write validation report to the file.
             using (FileStream fos = new FileStream(dest, FileMode.Create))

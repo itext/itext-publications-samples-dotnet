@@ -80,10 +80,9 @@ namespace iText.Samples.Sandbox.Signatures.TwoPhase
             // This is optional, the CMS container can be stored in any way. 
             // Adding the prepared CMS container to the prepared document
             using (PdfReader reader = new PdfReader(prep + ".working"))
-            using (PdfDocument doc = new PdfDocument(reader))
             using (FileStream outputStream = FileUtil.GetFileOutputStream(prep))
             {
-                PdfTwoPhaseSigner.AddSignatureToPreparedDocument(doc, signerProperties.GetFieldName(), outputStream,
+                PdfTwoPhaseSigner.AddSignatureToPreparedDocument(reader, signerProperties.GetFieldName(), outputStream,
                     cmsContainer);
             }
 

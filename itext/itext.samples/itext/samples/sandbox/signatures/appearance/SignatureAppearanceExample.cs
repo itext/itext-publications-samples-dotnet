@@ -3,6 +3,7 @@ using System.IO;
 using iText.Commons.Utils;
 using iText.Forms.Form.Element;
 using iText.Html2pdf.Resolver.Font;
+using iText.StyledXmlParser.Resolver.Font;
 using iText.IO.Font.Constants;
 using iText.IO.Image;
 using iText.Kernel.Colors;
@@ -63,7 +64,7 @@ namespace iText.Samples.Sandbox.Signatures.Appearance
             
             // Use setFont in order to specify the font, e.g. appearance.setFont(PdfFontFactory.createFont());
             appearance.SetFontFamily(StandardFontFamilies.HELVETICA)
-                .SetProperty(Property.FONT_PROVIDER, new DefaultFontProvider());
+                .SetProperty(Property.FONT_PROVIDER, new BasicFontProvider());
             
             // Set signer properties
             SignerProperties signerProperties = new SignerProperties()

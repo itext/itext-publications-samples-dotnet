@@ -6,6 +6,7 @@ using iText.Html2pdf.Css.Apply;
 using iText.Html2pdf.Css.Apply.Impl;
 using iText.Html2pdf.Html;
 using iText.Html2pdf.Resolver.Font;
+using iText.StyledXmlParser.Resolver.Font;
 using iText.Layout;
 using iText.Layout.Font;
 using iText.Layout.Properties;
@@ -41,7 +42,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
             // are specified explicitly by means of iText `FontProvider` class or CSS `@font-face` rule, then pdfHTML shipped fonts covering a wide range
             // of glyphs are used instead. In order to replicate old behavior, one needs to exclude from `FontProvider` the fonts shipped by default and
             // provide GNU Free Fonts instead. GNU Free Fonts can be found at https://www.gnu.org/software/freefont/.
-            FontProvider fontProvider = new DefaultFontProvider(true, false, false);
+            FontProvider fontProvider = new BasicFontProvider(true, false, false);
             fontProvider.AddDirectory(freeFontsDirectory);
 
             ConverterProperties converterProperties = new ConverterProperties()

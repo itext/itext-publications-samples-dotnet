@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using iText.Html2pdf;
 using iText.Html2pdf.Resolver.Font;
+using iText.StyledXmlParser.Resolver.Font;
 using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Pdfhtml 
@@ -30,7 +31,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
             converterProperties.SetPdfAConformance(PdfAConformance.PDF_A_3B);
             converterProperties.SetDocumentOutputIntent(new PdfOutputIntent("Custom", "", "http://www.color.org",
             "sRGB IEC61966-2.1", inputStream));
-            converterProperties.SetFontProvider(new DefaultFontProvider(false, true, false));
+            converterProperties.SetFontProvider(new BasicFontProvider(false, true, false));
             
             HtmlConverter.ConvertToPdf(new FileStream(htmlSource, FileMode.Open, FileAccess.Read), new FileStream(pdfDest, FileMode.Create), converterProperties);
         }

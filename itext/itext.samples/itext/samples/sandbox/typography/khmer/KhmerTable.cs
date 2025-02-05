@@ -40,7 +40,7 @@ namespace iText.Samples.Sandbox.Typography.Khmer
             // ភាសាខ្មែរ
             String text = "\u1797\u17B6\u179F\u17B6\u1781\u17D2\u1798\u17C2\u179A";
 
-            PdfFont font = PdfFontFactory.CreateFont(FONTS_FOLDER + "KhmerOS.ttf",
+            PdfFont font = PdfFontFactory.CreateFont(FONTS_FOLDER + "NotoSansKhmer-Regular.ttf",
                     PdfEncodings.IDENTITY_H);
 
             // Overwrite some default document font-related properties. From now on they will be used for all the elements

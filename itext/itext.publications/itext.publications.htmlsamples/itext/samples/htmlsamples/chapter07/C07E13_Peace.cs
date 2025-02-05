@@ -3,6 +3,7 @@ using System.IO;
 using iText.Commons.Utils;
 using iText.Html2pdf;
 using iText.Html2pdf.Resolver.Font;
+using iText.StyledXmlParser.Resolver.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout.Font;
@@ -57,7 +58,7 @@ namespace iText.Samples.Htmlsamples.Chapter07
             PdfDocument pdf = new PdfDocument(writer);
             pdf.SetDefaultPageSize(PageSize.A4.Rotate());
             ConverterProperties properties = new ConverterProperties();
-            FontProvider fontProvider = new DefaultFontProvider(false, false, false);
+            FontProvider fontProvider = new BasicFontProvider(false, false, false);
             fontProvider.AddDirectory(fonts);
             properties.SetFontProvider(fontProvider);
             HtmlConverter.ConvertToPdf(new FileStream(src, FileMode.Open, FileAccess.Read), pdf, properties);

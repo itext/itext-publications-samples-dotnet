@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using iText.Commons.Utils;
@@ -88,11 +89,8 @@ namespace iText.Samples.Htmlsamples.Chapter07
                             }
                         }
                     }
-
-                    Assert.True(
-                        (responseCode >= 200 && responseCode < 300) || responseCode == -1,
-                        "Http request was not successful. Error code: " + responseCode);
-
+                    
+                    Debug.Assert((responseCode >= 200 && responseCode < 300) || responseCode == -1);
                     maxTries--;
                 }
             }
