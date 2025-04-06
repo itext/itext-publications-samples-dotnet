@@ -4,6 +4,10 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Security
 {
+    /**
+     * This example shows how to open a pdf document that is encrypted without user password.
+     * Note, that it is required to use UnethicalReading in this case.
+     */
     public class DecryptPdf3
     {
         public static readonly String DEST = "results/sandbox/security/decrypt_pdf3.pdf";

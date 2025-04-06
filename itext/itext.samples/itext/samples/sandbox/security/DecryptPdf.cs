@@ -5,6 +5,10 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Security
 {
+    /**
+     * This example shows how to decrypt a pdf document using owner password.
+     * To show that decryption is successful, user password is revealed.
+     */
     public class DecryptPdf
     {
         public static readonly String DEST = "results/sandbox/security/decrypt_pdf.pdf";
