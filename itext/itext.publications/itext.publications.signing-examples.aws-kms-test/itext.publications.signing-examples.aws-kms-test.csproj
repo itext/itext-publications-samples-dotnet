@@ -20,4 +20,8 @@
   <ItemGroup>
     <ProjectReference Include="..\itext.publications.signing-examples.aws-kms\itext.publications.signing-examples.aws-kms.csproj" />
   </ItemGroup>
+  <PropertyGroup>
+    <!-- TODO DEVSIX-9075: remove this suppression -->
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+  </PropertyGroup>
 </Project>

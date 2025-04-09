@@ -45,4 +45,8 @@
         <PackageReference Include="itext.bouncy-castle-adapter" Version="9.2.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
         <ProjectReference Include="..\..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
     </ItemGroup>
+    <PropertyGroup>
+        <!-- TODO DEVSIX-9075: remove this suppression -->
+        <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+    </PropertyGroup>
 </Project>

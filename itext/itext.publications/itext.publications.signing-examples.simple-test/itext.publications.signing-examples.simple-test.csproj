@@ -19,4 +19,8 @@
   <ItemGroup>
 	<ProjectReference Include="..\itext.publications.signing-examples.simple\itext.publications.signing-examples.simple.csproj" />
   </ItemGroup>
+  <PropertyGroup>
+    <!-- TODO DEVSIX-9075: remove this suppression -->
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+  </PropertyGroup>
 </Project>

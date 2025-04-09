@@ -45,4 +45,8 @@
     <PackageReference Include="itext.pdfcalligraph" Version="5.0.2-SNAPSHOT" Condition="!Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
     <ProjectReference Include="..\..\..\..\typography\itext\itext.typography\itext.typography.csproj" Condition="Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
   </ItemGroup>
+  <PropertyGroup>
+    <!-- TODO DEVSIX-9075: remove this suppression -->
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+  </PropertyGroup>
 </Project>
