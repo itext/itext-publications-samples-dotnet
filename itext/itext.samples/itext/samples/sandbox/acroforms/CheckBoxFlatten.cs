@@ -6,6 +6,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // CheckBoxFlatten.cs
+    // 
+    // This example demonstrates how to flatten checkboxes in an existing PDF file.
+    // Flattening a form field means converting it into a static part of the PDF content.
+ 
     public class CheckBoxFlatten
     {
         public static readonly String DEST = "results/sandbox/acroforms/checkbox_flatten.pdf";

@@ -6,6 +6,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // HideButton.cs
+    // 
+    // This example demonstrates how to hide a button in a PDF form by setting
+    // its visibility flag to hidden.
+ 
     public class HideButton
     {
         public static readonly String DEST = "results/sandbox/acroforms/hide_button.pdf";

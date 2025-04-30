@@ -9,6 +9,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // CreateJapaneseButton.cs
+    // 
+    // This example demonstrates how to create a PDF with a push button containing Japanese text.
+    // It uses a custom font to ensure proper rendering of the Japanese characters.
+ 
     public class CreateJapaneseButton
     {
         public static readonly String DEST = "results/sandbox/acroforms/create_japanese_button.pdf";

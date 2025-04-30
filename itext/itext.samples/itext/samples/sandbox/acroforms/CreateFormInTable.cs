@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // CreateFormInTable.cs
+    // 
+    // This example demonstrates how to create a PDF table with interactive form fields
+    // (e.g., text fields) embedded in specific table cells using iText.
+ 
     public class CreateFormInTable
     {
         public static readonly String DEST = "results/sandbox/acroforms/create_form_in_table.pdf";

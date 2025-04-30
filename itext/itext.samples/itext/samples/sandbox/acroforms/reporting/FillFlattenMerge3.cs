@@ -17,6 +17,16 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Acroforms.Reporting
 {
+   
+    // FillFlattenMerge3.cs
+    // 
+    // This example demonstrates how to fill, flatten and merge forms with a custom event handler.
+    //
+    // The example reads a CSV file with data about US states and add text at the positions of the
+    // form fields with data.
+    // The pagenumber is added to the top right corner of each page.
+    // 
+ 
     public class FillFlattenMerge3
     {
         public static readonly String DEST = "results/sandbox/acroforms/reporting/fill_flatten_merge3.pdf";

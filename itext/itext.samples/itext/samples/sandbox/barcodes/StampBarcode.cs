@@ -9,6 +9,13 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Barcodes 
 {
+   
+    // StampBarcode.cs
+    // 
+    // This class demonstrates how to add EAN-8 barcodes to each page of an existing PDF document.
+    // The code opens a source PDF, iterates through all pages, and adds a barcode in the top-left
+    // corner of each page with a number corresponding to the page number.
+ 
     public class StampBarcode 
     {
         public static readonly String DEST = "results/sandbox/barcodes/stamp_barcode.pdf";

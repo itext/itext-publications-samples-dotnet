@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // AlignField.cs
+    // 
+    // This class demonstrates how to modify the alignment and values of fields in an existing PDF form.
+    // It sets different text alignments (left, center, right) for specific fields and updates their values.
+ 
     public class AlignField
     {
         public static readonly String DEST = "results/sandbox/acroforms/align_field.pdf";

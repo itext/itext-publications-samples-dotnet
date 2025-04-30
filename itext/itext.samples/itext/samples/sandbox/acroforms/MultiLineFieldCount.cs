@@ -10,6 +10,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms 
 {
+   
+    // MultiLineFieldCount.cs
+    // 
+    // This example demonstrates how to calculate the capacity of a multiline form field
+    // and fill it with a character sequence based on the field's dimensions and font properties.
+ 
     public class MultiLineFieldCount 
     {
         public static readonly string DEST = "results/sandbox/acroforms/multiLineFieldCount.pdf";

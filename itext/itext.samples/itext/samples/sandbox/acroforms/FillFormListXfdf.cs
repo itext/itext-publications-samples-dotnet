@@ -5,6 +5,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // FillFormListXfdf.cs
+    // 
+    // This example demonstrates how to populate a PDF form using data from an XFDF file.
+    // XFDF (XML Forms Data Format) is used to represent form data in a structured XML format.
+ 
     public class FillFormListXfdf
     {
         public static readonly String sourceFolder = "../../../resources/pdfs/";

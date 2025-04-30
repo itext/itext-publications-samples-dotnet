@@ -11,6 +11,14 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Barcodes
 {
+   
+    // BarcodeTypes.cs
+    // 
+    // This class demonstrates the various barcode formats supported by iText.
+    // It creates a comprehensive catalog of different barcode types including EAN,
+    // UPC, ISBN, Code 128, Interleaved 2 of 5, POSTNET, PLANET, Code 39, Codabar,
+    // PDF417, DataMatrix, and QR Code with different configurations and styles.
+ 
     public class BarcodeTypes
     {
         public static readonly String DEST = "results/sandbox/barcodes/barcodeLayout.pdf";

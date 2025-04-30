@@ -10,6 +10,16 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // AddPointerAnnotation.cs
+    // 
+    // This class demonstrates how to create a PDF document with a map image and add
+    // a pointer annotation to highlight a specific location. The code creates a new PDF
+    // with an image of a map, then adds a line annotation configured as an arrow pointer
+    // with custom styling (red color, specific border style). The annotation includes a
+    // title and description that identify a specific location on the map. This example
+    // shows how to create visual indicators on PDF content.
+ 
     public class AddPointerAnnotation
     {
         public static readonly String DEST = "results/sandbox/annotations/add_pointer_annotation.pdf";

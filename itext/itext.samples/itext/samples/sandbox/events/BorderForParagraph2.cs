@@ -7,6 +7,13 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Events
 {
+   
+    // BorderForParagraph2.cs
+    // 
+    // This class demonstrates how to add borders to multiple paragraphs in a PDF document.
+    // It extends the BorderForParagraph example by creating many alternating paragraphs with
+    // and without borders, showing how borders behave when content flows across multiple pages.
+ 
     public class BorderForParagraph2
     {
         public static readonly String DEST = "results/sandbox/events/border_for_paragraph2.pdf";

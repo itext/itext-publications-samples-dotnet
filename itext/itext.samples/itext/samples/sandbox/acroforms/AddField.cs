@@ -9,6 +9,13 @@ using iText.Kernel.Pdf.Action;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // AddField.cs
+    // 
+    // This class demonstrates how to add a button field to an existing PDF form.
+    // The button is configured with specific properties such as size, caption, background color,
+    // and an action to submit the form to a specified URL.
+ 
     public class AddField
     {
         public static readonly String DEST = "results/sandbox/acroforms/add_field.pdf";

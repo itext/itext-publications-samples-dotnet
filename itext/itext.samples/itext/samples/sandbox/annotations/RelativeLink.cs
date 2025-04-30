@@ -7,6 +7,15 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // RelativeLink.cs
+    // 
+    // This class demonstrates how to create a PDF document with a hyperlink that
+    // references a relative file path. The code creates a simple PDF with a "Click me"
+    // text link that, when clicked, attempts to open an XML file using a relative path.
+    // This example shows how to create external URI actions that point to local resources
+    // using relative paths rather than absolute URLs.
+ 
     public class RelativeLink
     {
         public static readonly String DEST = "results/sandbox/annotations/relative_link.pdf";

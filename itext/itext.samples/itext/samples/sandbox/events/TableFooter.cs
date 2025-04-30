@@ -10,6 +10,13 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Events
 {
+    
+    // TableFooter.cs
+    // 
+    // This class demonstrates how to add a consistent table footer to every page of a PDF document.
+    // It uses an event handler to automatically add a formatted table with test document information
+    // and a copyright notice at the bottom of each page when the page is completed.
+ 
     public class TableFooter
     {
         public static readonly String DEST = "results/sandbox/events/table_footer.pdf";

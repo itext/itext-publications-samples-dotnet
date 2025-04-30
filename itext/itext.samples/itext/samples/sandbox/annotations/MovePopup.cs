@@ -5,6 +5,16 @@ using iText.Layout;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // MovePopup.cs
+    // 
+    // This class demonstrates how to reposition existing annotations in a PDF document.
+    // The code opens a PDF file containing a sticky note annotation with an associated
+    // popup window, then modifies the position of both by changing their rectangle 
+    // coordinates. The sticky note is moved up and left, while its popup window is 
+    // repositioned to maintain a logical relationship with the note. This example shows
+    // how to manipulate the physical location of annotations within a document.
+ 
     public class MovePopup
     {
         public static readonly String DEST = "results/sandbox/annotations/move_popup.pdf";

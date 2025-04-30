@@ -8,6 +8,15 @@ using iText.Kernel.Pdf.Navigation;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // AddLinkAnnotation.cs
+    // 
+    // This class demonstrates how to add a link annotation to a PDF document.
+    // The code opens an existing PDF file and adds a clickable link to the first page
+    // that navigates to the third page when clicked. The link area is defined by a 
+    // rectangle, and the annotation is configured with specific visual properties
+    // including highlight mode and border appearance.
+ 
     public class AddLinkAnnotation
     {
         public static readonly String DEST = "results/sandbox/annotations/add_link_annotation.pdf";

@@ -6,6 +6,15 @@ using iText.Kernel.Pdf.Filespec;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // AddEmbeddedFiles.cs
+    // 
+    // This class demonstrates how to add multiple embedded file attachments to a PDF document.
+    // The code opens an existing PDF document and iterates through a predefined list of text strings,
+    // creating a separate file attachment for each one. Each attachment is a simple text file
+    // with content derived from the string. This example shows batch processing of file attachments
+    // at the document level.
+ 
     public class AddEmbeddedFiles
     {
         public static readonly String[] ATTACHMENTS =

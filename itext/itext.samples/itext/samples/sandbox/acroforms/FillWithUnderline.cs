@@ -11,6 +11,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // FillWithUnderline.cs
+    // 
+    // This example demonstrates how to fill a PDF form with formatted text, specifically text with underlining.
+    // It flattens form fields and then uses SAX parsing to process XML-formatted input that includes formatting tags.
+ 
     public class FillWithUnderline
     {
         public static readonly String DEST = "results/sandbox/acroforms/fill_with_underline.pdf";

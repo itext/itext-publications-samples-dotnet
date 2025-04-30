@@ -13,6 +13,13 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Events
 {
+    
+    // ThreeParts.cs
+    // 
+    // This class demonstrates how to create a PDF with three vertical sections per page.
+    // It loads text in three languages (Latin, English, French) and arranges each language
+    // in its own section, with content flowing from page to page while maintaining the sections.
+ 
     public class ThreeParts
     {
         public static readonly String DEST = "results/sandbox/events/three_parts.pdf";

@@ -6,6 +6,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // FlattenSignature.cs
+    // 
+    // This example demonstrates how to flatten a signed PDF form, converting the signature field
+    // into a static part of the PDF content.
+ 
     public class FlattenSignature
     {
         public static readonly String DEST = "results/sandbox/acroforms/flatten_signature.pdf";

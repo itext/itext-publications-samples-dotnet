@@ -7,6 +7,13 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Events
 {
+    
+    // PageOrientations.cs
+    // 
+    // This class demonstrates how to create pages with different orientations in a single PDF document.
+    // It uses an event handler to set the page rotation value for each new page, showing all four
+    // possible orientations: portrait (0°), landscape (90°), inverted portrait (180°), and seascape (270°).
+ 
     public class PageOrientations
     {
         public static readonly String DEST = "results/sandbox/events/page_orientations.pdf";

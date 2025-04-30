@@ -13,6 +13,13 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Events
 {
+    
+    // Watermarking.cs
+    // 
+    // This class demonstrates how to add a diagonal watermark to every page of a PDF document.
+    // It creates a tabular document from CSV data and adds a light gray "WATERMARK" text rotated
+    // 45 degrees across each page using a custom page event handler.
+ 
     public class Watermarking
     {
         public static readonly String DEST = "results/sandbox/events/watermarkings.pdf";

@@ -5,6 +5,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // MergeForms.cs
+    // 
+    // This example demonstrates how to merge multiple PDF files containing AcroForm fields
+    // while preserving the form fields' functionality in the resulting document.
+ 
     public class MergeForms
     {
         public static readonly String DEST = "results/sandbox/acroforms/merge_forms.pdf";

@@ -11,6 +11,16 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // AddLinkImages.cs
+    // 
+    // This class demonstrates how to create clickable image links in a PDF document.
+    // The code creates a new PDF and adds several different image formats (PNG, BMP, WMF)
+    // to a paragraph, each with a different URL action assigned. It shows two approaches
+    // for adding URL actions to images: using a helper method for standard image formats,
+    // and directly setting the action property for WMF images that require special handling.
+    // This example illustrates how to make various image types function as hyperlinks.
+ 
     public class AddLinkImages
     {
         public static readonly String DEST = "results/sandbox/annotations/add_link_images.pdf";

@@ -12,6 +12,13 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Events
 {
+   
+    // CreateTOC2.cs
+    // 
+    // This class demonstrates how to create an interactive table of contents with clickable entries.
+    // It enhances the basic TOC example by adding PDF destinations and actions to each entry,
+    // allowing readers to navigate directly to specific sections by clicking on TOC items.
+ 
     public class CreateTOC2
     {
         public static readonly String DEST = "results/sandbox/events/create_toc2.pdf";

@@ -11,6 +11,14 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // ModifyFormFieldAppearance.cs
+    // 
+    // This example demonstrates how to customize the appearance of PDF form fields by modifying 
+    // properties such as color, leading, opacity, padding, and borders of form elements.
+    // 
+    // Requires iText 8.0.1 or later.
+ 
     public class ModifyFormFieldAppearance
     {
         public static readonly String DEST = "results/sandbox/acroforms/modifyFormFieldAppearance.pdf";

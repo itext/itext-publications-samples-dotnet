@@ -8,6 +8,15 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // RemoveXFA.cs
+    // 
+    // This example demonstrates how to remove XFA (XML Forms Architecture) data from a PDF document
+    // while maintaining the AcroForm functionality, and then modify form fields by setting their values
+    // and changing some field colors.
+    // 
+    // Requires pdfXFA addon.
+ 
     public class RemoveXFA
     {
         public static readonly String DEST = "results/sandbox/acroforms/remove_xfa.pdf";

@@ -8,6 +8,13 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Columntext
 {
+   
+    // ColumnTextChunkImage.cs
+    // 
+    // This class demonstrates how to embed images inline with text in a paragraph.
+    // It creates a PDF with a paragraph that contains text and two images (a dog and a fox),
+    // positioned within the flow of the text.
+ 
     public class ColumnTextChunkImage
     {
         public static readonly String DEST = "results/sandbox/columntext/column_text_chunk_image.pdf";

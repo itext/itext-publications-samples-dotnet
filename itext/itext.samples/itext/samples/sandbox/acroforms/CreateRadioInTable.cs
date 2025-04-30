@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // CreateRadioInTable.cs
+    // 
+    // This example demonstrates how to create a PDF table with radio buttons embedded in specific cells.
+    // The radio buttons are grouped together, allowing only one option to be selected at a time.
+ 
     public class CreateRadioInTable
     {
         public static readonly String DEST = "results/sandbox/acroforms/create_radio_in_table.pdf";

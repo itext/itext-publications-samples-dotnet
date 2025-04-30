@@ -9,6 +9,15 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms.Reporting
 {
+   
+    // FillFlattenMerge2.cs
+    //
+    // This example demonstrates how to fill, flatten and merge forms with enabled smartMode.
+    //
+    // The example reads a CSV file with data about US states and fills a PDF form with that data.
+    // The filled form is then flattened and merged into a single PDF document.
+    //
+ 
     public class FillFlattenMerge2
     {
         public static readonly String DEST = "results/sandbox/acroforms/reporting/fill_flatten_merge2.pdf";

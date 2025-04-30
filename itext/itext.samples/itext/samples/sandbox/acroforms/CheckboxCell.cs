@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // CheckboxCell.cs
+    // 
+    // This example demonstrates how to create a PDF table where each cell contains a checkbox.
+    // It uses iText's AcroForm functionality to add interactive form fields to the PDF.
+ 
     public class CheckboxCell
     {
         public static readonly String DEST = "results/sandbox/acroforms/checkbox_cell.pdf";

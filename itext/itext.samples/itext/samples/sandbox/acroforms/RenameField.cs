@@ -7,6 +7,13 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // RenameField.cs
+    // 
+    // This example demonstrates how to rename a form field in a PDF document.
+    // It changes the field name from "personal.loginname" to "login" and then verifies 
+    // the change by reopening the document and printing all field names to the console.
+ 
     public class RenameField
     {
         public static readonly String DEST = "results/sandbox/acroforms/rename_field.pdf";

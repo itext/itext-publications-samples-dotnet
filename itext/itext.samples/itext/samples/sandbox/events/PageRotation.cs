@@ -7,6 +7,13 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Events
 {
+    
+    // PageRotation.cs
+    // 
+    // This class demonstrates how to rotate pages in a PDF document using event handlers.
+    // It creates a five-page document where each page has a different rotation angle (0°, 90°, 
+    // 180°, 270°, and back to 0°) while displaying the same "Hello World" content.
+ 
     public class PageRotation
     {
         public static readonly String DEST = "results/sandbox/events/page_rotation.pdf";

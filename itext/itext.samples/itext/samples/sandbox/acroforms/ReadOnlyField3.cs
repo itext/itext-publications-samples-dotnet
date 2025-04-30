@@ -9,6 +9,13 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // ReadOnlyField3.cs
+    // 
+    // This example demonstrates how to create multiple read-only text fields in a PDF form
+    // with the needAppearances flag set to true, instructing PDF viewers to generate appearance
+    // streams automatically for the form fields.
+ 
     public class ReadOnlyField3
     {
         public static readonly String DEST = "results/sandbox/acroforms/read_only_field3.pdf";

@@ -8,6 +8,14 @@ using iText.Kernel.Pdf.Annot;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // OverrideFormFieldMethods.cs
+    // 
+    // This example demonstrates how to customize form field appearance by overriding default form annotation behavior.
+    // It creates a custom form annotation factory to apply consistent styling (red borders) to all checkboxes.
+    // 
+    // Requires iText 8.0.1 or later.
+ 
     public class OverrideFormFieldMethods
     {
         public static readonly String DEST = "results/sandbox/acroforms/overrideFormFieldMethods.pdf";

@@ -8,6 +8,13 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Collections
 {
+   
+    // PortableCollection.cs
+    // 
+    // This class demonstrates how to create a PDF portfolio (collection) with multiple embedded files.
+    // It embeds three different file types (CSV, PDF, and JPG) into a single PDF document and
+    // configures the portfolio view to display attachments in a tile layout.
+ 
     public class PortableCollection
     {
         public static readonly String DEST = "results/sandbox/collections/portable_collection.pdf";

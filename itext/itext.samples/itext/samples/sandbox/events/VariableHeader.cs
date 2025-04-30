@@ -9,6 +9,13 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Events
 {
+    
+    // VariableHeader.cs
+    // 
+    // This class demonstrates how to create PDF pages with different header content on each page.
+    // It generates a document about factors of numbers from 2 to 300, with each page having a
+    // header that indicates which number's factors are being displayed on that page.
+ 
     public class VariableHeader
     {
         public static readonly String DEST = "results/sandbox/events/variable_header.pdf";

@@ -7,6 +7,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // MergeForms2.cs
+    // 
+    // This example demonstrates how to merge multiple copies of the same PDF form while 
+    // ensuring unique form field names to prevent conflicts. It renames form fields before merging.
+ 
     public class MergeForms2
     {
         public static readonly String DEST = "results/sandbox/acroforms/merge_forms2.pdf";

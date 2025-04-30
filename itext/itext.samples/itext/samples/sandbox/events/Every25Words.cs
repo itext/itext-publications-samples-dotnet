@@ -11,6 +11,13 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Events
 {
+   
+    // Every25Words.cs
+    // 
+    // This class demonstrates how to mark specific words in a text flow using custom rendering.
+    // It reads a text file, processes it word by word, and adds a dashed line around every
+    // 25th word using a custom TextRenderer implementation.
+ 
     public class Every25Words
     {
         public static readonly String DEST = "results/sandbox/events/every25words.pdf";

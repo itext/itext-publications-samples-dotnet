@@ -10,6 +10,16 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // AddLinkAnnotation5.cs
+    // 
+    // This class demonstrates how to create an internal navigation link in a PDF document.
+    // The code opens an existing PDF file and adds a descriptive text link that navigates
+    // to the third page when clicked. It combines high-level layout elements with low-level
+    // annotation properties to create a positioned link with custom highlight behavior.
+    // The example shows how to create internal document navigation with precise control
+    // over link appearance and positioning.
+ 
     public class AddLinkAnnotation5
     {
         public static readonly String SRC = "../../../resources/pdfs/primes.pdf";
