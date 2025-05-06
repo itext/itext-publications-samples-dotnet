@@ -12,7 +12,7 @@
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="itext" Version="9.1.0" />
+    <PackageReference Include="itext" Version="9.2.0" />
     <PackageReference Include="nunit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
@@ -21,4 +21,8 @@
   <ItemGroup>
     <ProjectReference Include="..\itext.publications.signing-examples.simple\itext.publications.signing-examples.simple.csproj" />
   </ItemGroup>
+  <PropertyGroup>
+    <!-- TODO DEVSIX-9075: remove this suppression -->
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+  </PropertyGroup>
 </Project>

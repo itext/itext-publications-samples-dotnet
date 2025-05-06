@@ -7,6 +7,10 @@ using Org.BouncyCastle.X509;
 
 namespace iText.Samples.Sandbox.Security
 {
+    /**
+     * This example shows how to encrypt a PDF document using AES algorithm
+     * and public key certificate.
+     */
     public class EncryptWithCertificate
     {
         public static readonly String DEST = "results/sandbox/security/encrypt_with_certificate.pdf";
