@@ -27,19 +27,19 @@
     <ProjectReference Include="..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj" Condition="Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
     <PackageReference Include="itext.licensing.base" Version="4.2.3-SNAPSHOT" Condition="!Exists('..\..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
     
-    <PackageReference Include="itext" Version="9.2.1-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
+    <PackageReference Include="itext" Version="9.3.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.io\itext.io.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.layout\itext.layout.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.layout\itext.layout.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.forms\itext.forms.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.forms\itext.forms.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj')" />
-    <PackageReference Include="itext.pdftest" Version="9.2.1-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')" />
+    <PackageReference Include="itext.pdftest" Version="9.3.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')" />
     <!--This reference is added to let .NET automatically resolve version's conflict, when iText project version differs from the transitive dependency iText versions-->
-    <PackageReference Include="itext.commons" Version="9.2.1-SNAPSHOT" IncludeAssets="none" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
+    <PackageReference Include="itext.commons" Version="9.3.0-SNAPSHOT" IncludeAssets="none" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.commons\itext.commons.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
-	<PackageReference Include="itext.bouncy-castle-adapter" Version="9.2.1-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
+	<PackageReference Include="itext.bouncy-castle-adapter" Version="9.3.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
     
     <PackageReference Include="itext.pdfhtml" Version="6.2.1-SNAPSHOT" Condition="!Exists('..\..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')" />
