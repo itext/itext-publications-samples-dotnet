@@ -2,11 +2,9 @@ using System;
 using System.IO;
 using iText.IO.Image;
 using iText.Kernel.Pdf;
-using iText.Kernel.Utils;
-using iText.Kernel.Validation;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Pdfua.Checkers;
+using iText.Pdfua;
 
 namespace iText.Samples.Sandbox.Pdfua 
 {
@@ -24,18 +22,9 @@ namespace iText.Samples.Sandbox.Pdfua
         }
 
         public virtual void ManipulatePdf(String dest) {
-            WriterProperties writerProperties = new WriterProperties().AddPdfUaXmpMetadata(PdfUAConformance.PDF_UA_1)
-                .SetPdfVersion(PdfVersion.PDF_1_7);
-            PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest, writerProperties));
-            pdfDoc.SetTagged();
-            pdfDoc.GetCatalog().SetViewerPreferences(new PdfViewerPreferences().SetDisplayDocTitle(true));
-            pdfDoc.GetCatalog().SetLang(new PdfString("en-US"));
-            PdfDocumentInfo info = pdfDoc.GetDocumentInfo();
-            info.SetTitle("English pangram");
-            //validation
-            ValidationContainer validationContainer = new ValidationContainer();
-            validationContainer.AddChecker(new PdfUA1Checker(pdfDoc));
-            pdfDoc.GetDiContainer().Register(typeof(ValidationContainer), validationContainer);
+            PdfDocument pdfDoc = new PdfUADocument(new PdfWriter(dest, new WriterProperties()),
+                            new PdfUAConfig(PdfUAConformance.PDF_UA_1, "English pangram", "en-US"));
+                        
             Document document = new Document(pdfDoc);
             iText.Layout.Element.Image img = new Image(ImageDataFactory.Create(DOG));
             img.GetAccessibilityProperties().SetAlternateDescription("Alternative description");

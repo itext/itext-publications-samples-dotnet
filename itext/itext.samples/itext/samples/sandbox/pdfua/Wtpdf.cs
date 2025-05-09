@@ -1,39 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using iText.Html2pdf;
-using iText.Html2pdf.Attach;
-using iText.Html2pdf.Attach.Impl;
-using iText.Html2pdf.Attach.Impl.Tags;
-using iText.Html2pdf.Resolver.Font;
 using iText.StyledXmlParser.Resolver.Font;
 using iText.Kernel.Pdf;
+using iText.Kernel.Validation;
 using iText.Kernel.XMP;
-using iText.Layout;
-using iText.Layout.Element;
+using iText.Layout.Tagging;
 using iText.Pdfa;
-using iText.StyledXmlParser.Node;
+using iText.Pdfua.Checkers;
 using iText.Test.Pdfa;
-using Org.BouncyCastle.Utilities;
 
-namespace iText.Samples.Sandbox.Pdfua
-{
-    public class Wtpdf
-    {
+namespace iText.Samples.Sandbox.Pdfua {
+    public class Wtpdf {
         public static readonly string DEST = "results/sandbox/pdfua/wtpdf.pdf";
         private static readonly string SOURCE_FOLDER = "../../../resources/wtpdf/";
 
 
-        public static void Main(String[] args)
-        {
+        public static void Main(String[] args) {
             var file = new FileInfo(DEST);
             file.Directory.Create();
 
             new Wtpdf().ManipulatePdf(DEST);
         }
 
-        private void ManipulatePdf(string dest)
-        {
+        private void ManipulatePdf(string dest) {
             var fileStream =
                 new FileStream("../../../resources/data/sRGB_CS_profile.icm", FileMode.Open, FileAccess.Read);
 
@@ -58,6 +48,17 @@ namespace iText.Samples.Sandbox.Pdfua
             var info = pdfDocument.GetDocumentInfo();
             info.SetTitle("Well tagged PDF document");
 
+
+            // By default PdfUADocument has a tag repairing mechanism under the hood, to avoid creating illegal
+            // tag structures for example from invalid html, but because PdfADocument as base we have to register it
+            // manually
+            pdfDocument.GetDiContainer().Register(typeof(ProhibitedTagRelationsResolver),
+                new ProhibitedTagRelationsResolver(pdfDocument));
+            ValidationContainer container = pdfDocument.GetDiContainer().GetInstance<ValidationContainer>();
+            //Because we are using PDF/A4, there will already be a pdf 2.0 checker , so we only need to add the pdf ua checker
+            container.AddChecker(new PdfUA2Checker(pdfDocument));
+
+
             // Use custom font provider as we only want embedded fonts
             var fontProvider = new BasicFontProvider(false, false, false);
             fontProvider.AddFont(SOURCE_FOLDER + "NotoSans-Regular.ttf");
@@ -65,9 +66,6 @@ namespace iText.Samples.Sandbox.Pdfua
 
             var converterProperties = new ConverterProperties()
                 .SetBaseUri(SOURCE_FOLDER)
-                // We need the custom factory to set role of children to null instead of P because P as in element of Hn
-                // is not allowed by PDF2.0 spec
-                .SetTagWorkerFactory(new CustomTagWorkerFactory())
                 .SetFontProvider(fontProvider);
 
 
@@ -76,48 +74,8 @@ namespace iText.Samples.Sandbox.Pdfua
             HtmlConverter.ConvertToPdf(fs, pdfDocument, converterProperties);
             pdfDocument.Close();
             var validator = new VeraPdfValidator();
-            if (null != validator.Validate(DEST))
-            {
+            if (null != validator.Validate(DEST)) {
                 throw new Exception("Should not happen");
-            }
-        }
-
-
-        class CustomTagWorkerFactory : DefaultTagWorkerFactory
-        {
-            private static readonly HashSet<String> H_TAGS = new HashSet<string>()
-                { "h1", "h2", "h3", "h4", "h5", "h6" };
-
-            public override ITagWorker GetCustomTagWorker(IElementNode tag, ProcessorContext context)
-            {
-                if (H_TAGS.Contains(tag.Name()))
-                {
-                    return new CustomHTagWorker(tag, context);
-                }
-
-                return base.GetCustomTagWorker(tag, context);
-            }
-        }
-
-        class CustomHTagWorker : HTagWorker
-        {
-            public CustomHTagWorker(IElementNode element, ProcessorContext context) : base(element, context)
-            {
-            }
-
-            public override IPropertyContainer GetElementResult()
-            {
-                var elementResult = base.GetElementResult();
-                if (!(elementResult is Div result)) return elementResult;
-                foreach (IElement child in result.GetChildren())
-                {
-                    if (child is Paragraph paragraph)
-                    {
-                        paragraph.SetNeutralRole();
-                    }
-                }
-
-                return elementResult;
             }
         }
     }

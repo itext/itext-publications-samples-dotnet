@@ -6,13 +6,10 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Tagging;
 using iText.Kernel.Pdf.Tagutils;
-using iText.Kernel.Utils;
-using iText.Kernel.Validation;
-using iText.Pdfua.Checkers;
+using iText.Pdfua;
 using iText.Pdfua.Exceptions;
 
-namespace iText.Samples.Sandbox.Pdfua 
-{
+namespace iText.Samples.Sandbox.Pdfua {
     public class PdfUACanvasUsage {
         public const String DEST = "results/sandbox/pdfua/pdf_ua_canvas.pdf";
 
@@ -25,19 +22,10 @@ namespace iText.Samples.Sandbox.Pdfua
         }
 
         public virtual void ManipulatePdf(String dest) {
-            PdfDocument pdfDoc = new PdfDocument(
-                new PdfWriter(dest, new WriterProperties().AddPdfUaXmpMetadata(PdfUAConformance.PDF_UA_1)));
-            pdfDoc.SetTagged();
-            pdfDoc.GetCatalog().SetViewerPreferences(new PdfViewerPreferences().SetDisplayDocTitle(true));
-            pdfDoc.GetCatalog().SetLang(new PdfString("en-US"));
-            PdfDocumentInfo info = pdfDoc.GetDocumentInfo();
-            info.SetTitle("English pangram");
-            //validation
-            ValidationContainer validationContainer = new ValidationContainer();
-            validationContainer.AddChecker(new PdfUA1Checker(pdfDoc));
-            pdfDoc.GetDiContainer().Register(typeof(ValidationContainer), validationContainer);
-            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI, PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED
-            );
+            PdfDocument pdfDoc = new PdfUADocument(new PdfWriter(dest, new WriterProperties()),
+                new PdfUAConfig(PdfUAConformance.PDF_UA_1, "English pangram", "en-US"));
+            PdfFont font = PdfFontFactory.CreateFont(FONT, PdfEncodings.WINANSI,
+                PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
             PdfPage page1 = pdfDoc.AddNewPage();
             PdfCanvas canvas = new PdfCanvas(page1);
             canvas.BeginText().SetFontAndSize(font, 12);
@@ -47,6 +35,7 @@ namespace iText.Samples.Sandbox.Pdfua
             }
             catch (PdfUAConformanceException) {
             }
+
             //do handling here
             TagTreePointer tagPointer = new TagTreePointer(pdfDoc).SetPageForTagging(page1).AddTag(StandardRoles.P);
             canvas.OpenTag(tagPointer.GetTagReference()).SaveState().BeginText().SetFontAndSize(font, 12).MoveText(200
