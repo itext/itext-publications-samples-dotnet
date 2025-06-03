@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Action;
@@ -41,7 +42,9 @@ namespace iText.Samples.Sandbox.Annotations
             Paragraph anchor = new Paragraph("This is a destination");
 
             // Set string destination, to which the created in the another pdf file link will lead.
-            anchor.SetProperty(Property.DESTINATION, "dest");
+            ICollection<Object> destinations = new HashSet<Object>();
+            destinations.Add("dest");
+            anchor.SetProperty(Property.DESTINATION, destinations);
             doc.Add(anchor);
 
             doc.Close();
