@@ -9,6 +9,13 @@ using iText.Layout;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // FillFormFieldOrder.cs
+    // 
+    // This example demonstrates how to partially flatten specific fields in a PDF form,
+    // and then fill additional fields while maintaining the correct field order.
+    // It showcases the use of partial form flattening in iText.
+ 
     public class FillFormFieldOrder
     {
         public static readonly String DEST = "results/sandbox/acroforms/fill_form_field_order.pdf";

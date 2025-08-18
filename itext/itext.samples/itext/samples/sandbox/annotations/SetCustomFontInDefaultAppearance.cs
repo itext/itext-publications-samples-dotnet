@@ -10,6 +10,16 @@ using iText.Kernel.Pdf.Annot;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // SetCustomFontInDefaultAppearance.cs
+    // 
+    // This class demonstrates how to create a free text annotation using a custom font
+    // in a PDF document. The code loads a custom TrueType font (Vollkorn-Regular),
+    // configures it for full embedding (no subsetting), adds it to the document's resources,
+    // and then creates a free text annotation with this font specified in its default appearance.
+    // The annotation is displayed with red text at 24pt size. This example shows how to
+    // customize the visual appearance of text annotations beyond the default fonts.
+ 
     public class SetCustomFontInDefaultAppearance
     {
         public static readonly String DEST = "results/sandbox/annotations/customFontInDA.pdf";

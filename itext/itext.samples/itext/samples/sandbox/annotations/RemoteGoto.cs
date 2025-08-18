@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Action;
@@ -8,6 +9,15 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // RemoteGoto.cs
+    // 
+    // This class demonstrates how to create links between separate PDF documents.
+    // The code creates two PDF files: one with a clickable link and another with a named
+    // destination. When the link in the first document is clicked, it navigates to the
+    // specific named destination in the second document. This example illustrates how to
+    // implement cross-document navigation using the GoToR action in PDF documents.
+ 
     public class RemoteGoto
     {
         public static readonly String DEST = "results/sandbox/annotations/";
@@ -41,7 +51,9 @@ namespace iText.Samples.Sandbox.Annotations
             Paragraph anchor = new Paragraph("This is a destination");
 
             // Set string destination, to which the created in the another pdf file link will lead.
-            anchor.SetProperty(Property.DESTINATION, "dest");
+            ICollection<Object> destinations = new HashSet<Object>();
+            destinations.Add("dest");
+            anchor.SetProperty(Property.DESTINATION, destinations);
             doc.Add(anchor);
 
             doc.Close();

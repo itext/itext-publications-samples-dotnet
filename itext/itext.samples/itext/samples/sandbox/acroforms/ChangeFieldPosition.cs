@@ -8,6 +8,12 @@ using iText.Kernel.Pdf.Annot;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // ChangeFieldPosition.cs
+    // 
+    // This example demonstrates how to modify the position of a form field in a PDF document.
+    // Specifically, it adjusts the right coordinate of the rectangle defining the field's position.
+ 
     public class ChangeFieldPosition
     {
         public static readonly String DEST = "results/sandbox/acroforms/change_field_position.pdf";

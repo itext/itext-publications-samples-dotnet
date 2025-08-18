@@ -11,6 +11,13 @@ using iText.StyledXmlParser.Jsoup.Select;
 
 namespace iText.Samples.Sandbox.Bookmarks
 {
+   
+    // DynamicallyAddToCAndBookmarksHtml.cs
+    // 
+    // This class demonstrates how to dynamically generate a table of contents and PDF bookmarks
+    // from an HTML document. It parses H2 headings, creates navigable links and page references,
+    // and adds corresponding PDF bookmarks.
+ 
     public class DynamicallyAddToCAndBookmarksHtml
     {
         public static readonly string DEST = "results/sandbox/bookmarks/DynamicallyAddToCAndBookmarksHtml.pdf";

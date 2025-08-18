@@ -7,6 +7,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // CheckBoxValues.cs
+    // 
+    // This example demonstrates how to read and manipulate the values of checkboxes in an existing PDF file.
+    // It swaps the checked and unchecked states of two checkboxes and prints all possible states to the console.
+ 
     public class CheckBoxValues
     {
         public static readonly String DEST = "results/sandbox/acroforms/check_box_values.pdf";

@@ -6,6 +6,14 @@ using iText.Kernel.Pdf.Filespec;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // AddEmbeddedFile.cs
+    // 
+    // This class demonstrates how to add an embedded file attachment to a PDF document.
+    // The code opens an existing PDF document, creates a file specification for a simple 
+    // text file, and attaches it at the document level. This process allows for embedding 
+    // arbitrary file data directly within the PDF structure.
+ 
     public class AddEmbeddedFile
     {
         public static readonly String DEST = "results/sandbox/annotations/add_embedded_file.pdf";

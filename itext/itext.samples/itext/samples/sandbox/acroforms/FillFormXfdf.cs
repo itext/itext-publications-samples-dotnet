@@ -5,6 +5,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // FillFormXfdf.cs
+    // 
+    // This example demonstrates how to fill a PDF form with data from an XFDF file.
+    // It reads both the PDF form and the XFDF data file, and merges the form data into the PDF.
+ 
     public class FillFormXfdf
     {
         public static readonly String sourceFolder = "../../../resources/pdfs/";

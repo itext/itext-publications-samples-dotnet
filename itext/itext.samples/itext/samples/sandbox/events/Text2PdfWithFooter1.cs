@@ -13,6 +13,13 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Events
 {
+    
+    // Text2PdfWithFooter1.cs
+    // 
+    // This class demonstrates how to convert a text file to PDF with page numbering in the footer.
+    // It reads structured text, formats titles with bold font and blue borders, and adds centered
+    // page numbers at the bottom of each page using a custom event handler.
+ 
     public class Text2PdfWithFooter1
     {
         public static readonly String TEXT = "../../../resources/txt/tree.txt";

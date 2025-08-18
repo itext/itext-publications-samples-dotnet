@@ -6,6 +6,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // FormatFields.cs
+    // 
+    // This example demonstrates how to format the display values of PDF form fields
+    // while preserving the underlying data values for calculations.
+ 
     public class FormatFields
     {
         public static readonly String DEST = "results/sandbox/acroforms/format_fields.pdf";

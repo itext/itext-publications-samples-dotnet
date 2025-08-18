@@ -1,15 +1,11 @@
 using System;
 using System.IO;
-using iText.Commons.Utils;
 using iText.IO.Font;
 using iText.IO.Image;
 using iText.Kernel.Font;
-using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
-using iText.Kernel.Pdf.Filespec;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Layout.Properties;
 using iText.Pdfa;
 using iText.Test.Pdfa;
 
@@ -36,7 +32,7 @@ namespace iText.Samples.Sandbox.Pdfa
         {
             Stream fileStream =
                 new FileStream("../../../resources/data/sRGB_CS_profile.icm", FileMode.Open, FileAccess.Read);
-            var pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformance.PDF_A_3B,
+            var pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformance.PDF_A_4,
                 new PdfOutputIntent("Custom", "",
                     null, "sRGB IEC61966-2.1", fileStream));
 

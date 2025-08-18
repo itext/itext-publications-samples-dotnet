@@ -11,6 +11,13 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Events
 {
+    
+    // PageBorder.cs
+    // 
+    // This class demonstrates how to add a border around each page using event handlers.
+    // It creates a multi-page document about prime numbers and factors, with each page
+    // surrounded by a thick red border drawn through a custom page event handler.
+ 
     public class PageBorder
     {
         public static readonly String DEST = "results/sandbox/events/page_border.pdf";

@@ -13,6 +13,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // RadioGroupMultiPage1.cs
+    // 
+    // This example demonstrates how to create a radio button group that spans multiple pages
+    // in a PDF document, with one radio button option per page.
+ 
     public class RadioGroupMultiPage1
     {
         public static readonly String DEST = "results/sandbox/acroforms/radio_group_multi_page1.pdf";

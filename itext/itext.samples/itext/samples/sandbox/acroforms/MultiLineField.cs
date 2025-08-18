@@ -8,6 +8,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // MultiLineField.cs
+    // 
+    // This example demonstrates how to create a PDF form with a multiline text field
+    // and populate it with content that spans multiple lines before flattening the form.
+ 
     public class MultiLineField
     {
         public static readonly String DEST = "results/sandbox/acroforms/multi_line_field.pdf";

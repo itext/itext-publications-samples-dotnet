@@ -6,6 +6,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms.Reporting
 {
+   
+    // FlattenForm.cs
+    // 
+    // This example demonstrates how to fill and flatten a form.
+ 
     public class FlattenForm
     {
         public static readonly String DEST = "results/sandbox/acroforms/reporting/flatten_form.pdf";

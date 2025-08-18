@@ -9,6 +9,14 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // CreateFormFieldThroughLayout.cs
+    // 
+    // This example demonstrates how to create a PDF with various interactive form fields
+    // (e.g., input fields, text areas, radio buttons, and a submit button) using iText's layout API.
+    // 
+    // Requires iText 8.0.1 or later.
+ 
     public class CreateFormFieldThroughLayout
     {
         public static readonly String DEST = "results/sandbox/acroforms/createFormFieldThroughLayout.pdf";

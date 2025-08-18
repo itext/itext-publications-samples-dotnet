@@ -10,6 +10,13 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Columntext
 {
+   
+    // WriteOnFirstPage.cs
+    // 
+    // This class demonstrates how to add dynamic content to the first page based on information
+    // determined after the document is created. It uses a PdfFormXObject as a placeholder that
+    // is populated at the end of document generation with the total page count.
+ 
     public class WriteOnFirstPage
     {
         public static readonly String DEST = "results/sandbox/columntext/write_on_first_page.pdf";

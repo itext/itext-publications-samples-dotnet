@@ -6,6 +6,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // FillForm.cs
+    // 
+    // This example demonstrates how to fill out an existing PDF form with specific values.
+    // It also shows how to flatten the form fields to make them part of the static PDF content.
+ 
     public class FillForm
     {
         public static readonly String DEST = "results/sandbox/acroforms/fill_form.pdf";

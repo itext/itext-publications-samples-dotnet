@@ -15,6 +15,13 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Bookmarks
 {
+   
+    // TableOfContents.cs
+    // 
+    // This class demonstrates how to create a PDF with an automatically generated table of contents.
+    // It reads text from a file, creates a structured document with bookmarks and destinations,
+    // then builds a clickable table of contents with page numbers and dotted leader lines.
+ 
     public class TableOfContents
     {
         public static readonly String DEST = "results/sandbox/bookmarks/table_of_contents.pdf";

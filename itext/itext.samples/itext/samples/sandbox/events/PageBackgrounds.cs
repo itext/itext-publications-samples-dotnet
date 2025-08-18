@@ -11,6 +11,13 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Events
 {
+   
+    // PageBackgrounds.cs
+    // 
+    // This class demonstrates how to use event handlers to apply different background colors to pages.
+    // It creates a multi-page document about prime numbers where the first page and all even-numbered
+    // pages have colored backgrounds (blue for the first two pages, light gray for the rest).
+ 
     public class PageBackgrounds
     {
         public static readonly String DEST = "results/sandbox/events/page_backgrounds.pdf";

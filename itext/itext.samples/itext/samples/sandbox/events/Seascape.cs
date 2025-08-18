@@ -7,6 +7,13 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Events
 {
+    
+    // Seascape.cs
+    // 
+    // This class demonstrates how to create a PDF document with all pages in seascape orientation.
+    // It uses an event handler to automatically rotate each page by 270 degrees, resulting in
+    // a document where text flows parallel to the short edge of the page (rotated landscape).
+ 
     public class Seascape
     {
         public static readonly String DEST = "results/sandbox/events/seascape.pdf";

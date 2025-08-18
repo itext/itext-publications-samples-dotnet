@@ -7,6 +7,12 @@ using iText.Kernel.Pdf.Annot;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // ChangeFieldSize.cs
+    // 
+    // This class demonstrates how to modify the size of a form field in a PDF document.
+    // It adjusts the rectangle dimensions of a specific field and sets its value.
+ 
     public class ChangeFieldSize
     {
         public static readonly String DEST = "results/sandbox/acroforms/change_field_size.pdf";

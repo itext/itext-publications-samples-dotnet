@@ -10,6 +10,13 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // AddFieldAfterParagraph.cs
+    //
+    // This example demonstrates how to add a form field to a PDF document
+    // immediately after a paragraph using two different methods: calculating
+    // the position manually and using a custom renderer.
+ 
     public class AddFieldAfterParagraph
     {
         public static readonly String DEST = "results/sandbox/acroforms/add_field_after_paragraph.pdf";

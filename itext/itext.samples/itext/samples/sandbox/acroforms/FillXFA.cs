@@ -7,6 +7,14 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // FillXFA.cs
+    // 
+    // This example demonstrates how to fill an XFA (XML Forms Architecture) form in a PDF document.
+    // It uses an external XML file as the data source to populate the form fields.
+    // 
+    // Requires pdfXFA addon
+ 
     public class FillXFA
     {
         public static readonly String DEST = "results/sandbox/acroforms/purchase_order_filled.pdf";

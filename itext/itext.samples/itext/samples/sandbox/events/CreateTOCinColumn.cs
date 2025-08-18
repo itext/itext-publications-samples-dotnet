@@ -11,6 +11,13 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Events
 {
+   
+    // CreateTOCinColumn.cs
+    // 
+    // This class demonstrates how to create a multi-column document with a table of contents.
+    // It arranges content in three columns, generates tables with numbered data, and creates
+    // both PDF bookmarks (outlines) and a linked table of contents at the end of the document.
+ 
     public class CreateTOCinColumn
     {
         public static readonly String DEST = "results/sandbox/events/create_toc_in_column.pdf";

@@ -10,6 +10,13 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Events
 {
+   
+    // CreateTOC.cs
+    // 
+    // This class demonstrates how to create a table of contents (TOC) by tracking text elements.
+    // It uses a custom renderer to collect title information and page numbers while generating
+    // content, then creates a TOC at the end with dotted line leaders to page numbers.
+ 
     public class CreateTOC
     {
         public static readonly String DEST = "results/sandbox/events/create_toc.pdf";

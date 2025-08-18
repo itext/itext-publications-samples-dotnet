@@ -6,6 +6,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // CreateXfdf.cs
+    // 
+    // This example demonstrates how to extract form data from a PDF document and save it as an XFDF file.
+    // XFDF (XML Forms Data Format) is used to represent form data in a structured XML format.
+ 
     public class CreateXfdf
     {
         public static readonly String sourceFolder = "../../../resources/pdfs/";

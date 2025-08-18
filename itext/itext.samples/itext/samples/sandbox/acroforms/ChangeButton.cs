@@ -6,6 +6,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // ChangeButton.cs
+    // 
+    // This class demonstrates how to modify a button field in an existing PDF form.
+    // It adjusts the button's size by modifying its rectangle coordinates and updates its label text.
+ 
     public class ChangeButton
     {
         public static readonly String DEST = "results/sandbox/acroforms/change_button.pdf";

@@ -6,6 +6,12 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // ReuseFont.cs
+    //
+    // This example demonstrates how to reuse an existing font from a PDF document
+    // and use it to add new text to the document.
+ 
     public class ReuseFont
     {
         public static readonly String DEST = "results/sandbox/acroforms/reuse_font.pdf";

@@ -6,6 +6,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms.Reporting
 {
+   
+    // FillForm.cs
+    // 
+    // This example demonstrates how to fill a form with data.
+ 
     public class FillForm
     {
         public static readonly String DEST = "results/sandbox/acroforms/reporting/fill_form.pdf";

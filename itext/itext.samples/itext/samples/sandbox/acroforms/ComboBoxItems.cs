@@ -17,6 +17,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // ComboBoxItems.cs
+    // 
+    // This example demonstrates how to create a PDF with a combobox form field.
+    // The combobox allows users to select one option from a predefined list of choices.
+ 
     public class ComboBoxItems
     {
         public static readonly String DEST = "results/sandbox/acroforms/combo_box_items.pdf";

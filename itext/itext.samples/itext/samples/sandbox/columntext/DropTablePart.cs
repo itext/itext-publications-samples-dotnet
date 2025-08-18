@@ -7,6 +7,13 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Columntext
 {
+   
+    // DropTablePart.cs
+    // 
+    // This class demonstrates how to create multiple large tables that flow across pages.
+    // It generates a PDF with four tables, each containing a header row and multiple data rows,
+    // allowing iText to automatically handle pagination when a table exceeds page boundaries.
+ 
     public class DropTablePart
     {
         public static readonly String DEST = "results/sandbox/columntext/drop_table_part.pdf";

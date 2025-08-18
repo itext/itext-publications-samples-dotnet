@@ -7,6 +7,13 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Events
 {
+    
+    // ScaleDown.cs
+    // 
+    // This class demonstrates how to scale down an existing PDF document to a smaller size.
+    // It reads a source PDF, creates a new document with pages at 50% scale while preserving
+    // page rotation settings, and adjusts both MediaBox and CropBox dimensions accordingly.
+ 
     public class ScaleDown
     {
         public static readonly String DEST = "results/sandbox/events/scale_down.pdf";

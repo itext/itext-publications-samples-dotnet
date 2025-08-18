@@ -6,6 +6,14 @@ using iText.Kernel.Pdf.Annot;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // AddAccepted.cs
+    // 
+    // This class demonstrates how to add a reply annotation to an existing sticky note
+    // in a PDF document. It opens a PDF with an existing annotation, retrieves it,
+    // and adds a new text annotation that serves as an "Accepted" reply to the original
+    // annotation, including specific presentation settings and metadata.
+ 
     public class AddAccepted
     {
         public static readonly String DEST = "results/sandbox/annotations/add_accepted.pdf";

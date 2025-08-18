@@ -10,6 +10,13 @@ using iText.Kernel.Pdf.Tagutils;
 
 namespace iText.Samples.Sandbox.Acroforms 
 {
+   
+    // JawsFlattenedButtonFieldsTagging.cs
+    // 
+    // This example demonstrates how to enhance accessibility in PDF forms by adding 
+    // appropriate structure attributes to radio buttons and checkboxes before flattening.
+    // The added attributes help screen readers like JAWS to correctly interpret form elements.
+ 
     public class JawsFlattenedButtonFieldsTagging 
     {
         public static readonly string DEST = "results/sandbox/acroforms/jawsRecognition.pdf";

@@ -8,6 +8,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // FillFormSpecialChars.cs
+    // 
+    // This example demonstrates how to fill a PDF form with special characters
+    // using a custom font to ensure proper rendering of the characters.
+ 
     public class FillFormSpecialChars
     {
         public static readonly String DEST = "results/sandbox/acroforms/fill_form_special_chars.pdf";

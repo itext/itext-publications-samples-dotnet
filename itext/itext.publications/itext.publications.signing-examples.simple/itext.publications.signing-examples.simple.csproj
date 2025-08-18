@@ -12,9 +12,9 @@
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="itext" Version="9.2.0" />
-    <PackageReference Include="itext.bouncy-castle-adapter" Version="9.2.0" />
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="5.0.1" />
+    <PackageReference Include="itext" Version="9.3.0" />
+    <PackageReference Include="itext.bouncy-castle-adapter" Version="9.3.0" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="6.0.5" />
   </ItemGroup>
   <PropertyGroup>
     <!-- TODO DEVSIX-9075: remove this suppression -->

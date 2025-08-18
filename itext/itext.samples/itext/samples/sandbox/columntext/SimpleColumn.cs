@@ -8,6 +8,13 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Columntext
 {
+   
+    // SimpleColumn.cs
+    // 
+    // This class demonstrates how to create text in a restricted column width.
+    // It creates a small PDF with a single paragraph of specified width and position,
+    // showing how to control text alignment and spacing in a constrained area.
+ 
     public class SimpleColumn
     {
         public static readonly String DEST = "results/sandbox/columntext/simple_column.pdf";

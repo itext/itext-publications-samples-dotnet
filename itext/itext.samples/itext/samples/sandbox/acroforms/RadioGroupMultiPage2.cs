@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // RadioGroupMultiPage2.cs
+    // 
+    // This example demonstrates how to create a radio button group in a table that may span 
+    // multiple pages. It uses custom cell renderers to place radio buttons in table cells.
+ 
     public class RadioGroupMultiPage2
     {
         public static readonly String DEST = "results/sandbox/acroforms/radio_group_multi_page2.pdf";

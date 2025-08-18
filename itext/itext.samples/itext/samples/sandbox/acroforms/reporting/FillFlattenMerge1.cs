@@ -9,6 +9,14 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms.Reporting
 {
+   
+    // FillFlattenMerge1.cs
+    // 
+    // This example demonstrates how to fill, flatten and merge forms.
+    // 
+    // The example reads a CSV file with data about US states and fills a PDF form with that data.
+    // The filled form is then flattened and merged into a single PDF document.
+ 
     public class FillFlattenMerge1
     {
         public static readonly String DEST = "results/sandbox/acroforms/reporting/fill_flatten_merge1.pdf";

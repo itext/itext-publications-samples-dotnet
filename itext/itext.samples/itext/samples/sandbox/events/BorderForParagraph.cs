@@ -7,6 +7,13 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Events
 {
+   
+    // BorderForParagraph.cs
+    // 
+    // This class demonstrates how to add borders to specific paragraphs in a PDF document.
+    // It creates a PDF with three paragraphs, applies a solid border to only the middle paragraph,
+    // and shows how iText's border functionality can be used to highlight content.
+ 
     public class BorderForParagraph
     {
         public static readonly String DEST = "results/sandbox/events/border_for_paragraph.pdf";

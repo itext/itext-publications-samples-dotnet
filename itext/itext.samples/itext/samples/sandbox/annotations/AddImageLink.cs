@@ -10,6 +10,15 @@ using iText.Kernel.Pdf.Navigation;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // AddImageLink.cs
+    // 
+    // This class demonstrates how to create a clickable image link in a PDF document.
+    // The code opens an existing PDF, adds an image to the first page, and then
+    // transforms that image into a clickable link that navigates to the last page
+    // of the document when clicked. It shows how to create interactive elements
+    // by combining images with link annotations.
+ 
     public class AddImageLink
     {
         public static readonly String DEST = "results/sandbox/annotations/add_image_link.pdf";

@@ -10,6 +10,15 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Annotations
 {
+   
+    // AddLinkAnnotation4.cs
+    // 
+    // This class demonstrates how to create a vertically oriented hyperlink in a PDF document.
+    // The code opens an existing PDF file and adds a paragraph containing a clickable
+    // external link with bold formatting. The entire paragraph, including the link,
+    // is rotated 90 degrees (vertically) and positioned at specific coordinates on the page.
+    // This example shows how to create text with hyperlinks in non-standard orientations.
+ 
     public class AddLinkAnnotation4
     {
         public static readonly String DEST = "results/sandbox/annotations/add_link_annotation4.pdf";

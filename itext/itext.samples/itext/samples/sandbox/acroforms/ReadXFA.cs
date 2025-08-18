@@ -10,6 +10,14 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Acroforms
 {
+   
+    // ReadXFA.cs
+    // 
+    // This example demonstrates how to extract XFA (XML Forms Architecture) data from a PDF document
+    // and save it as a well-formatted XML file with proper encoding and indentation.
+    // 
+    // Requires pdfXFA addon.
+ 
     public class ReadXFA
     {
         public static readonly String DEST = "results/xml/xfa_example.xml";
