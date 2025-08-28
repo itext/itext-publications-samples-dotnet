@@ -15,6 +15,25 @@
     <StartupObject />
     <AssemblyName>itext.samples</AssemblyName>
   </PropertyGroup>
+  <!-- RuntimeIdentifier is required for PdfOCR-OnnxTR to load native libraries for your system. -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOsPlatform('Windows'))">
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'AMD64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'X64'">win-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'x86' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'X86'">win-x86</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ARM64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64'">win-arm64</RuntimeIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOsPlatform('OSX'))">
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'AMD64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'X64'">osx-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ARM64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64'">osx-arm64</RuntimeIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOsPlatform('Linux'))">
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'AMD64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'X64'">linux-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ARM64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64'">linux-arm64</RuntimeIdentifier>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Default fallback -->
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">win-x64</RuntimeIdentifier>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.7.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
@@ -66,6 +85,13 @@
 
     <PackageReference Include="itext.pdfsweep" Version="5.0.4-SNAPSHOT" Condition="!Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')" />
     <ProjectReference Include="..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj" Condition="Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')" />
+
+    <PackageReference Include="itext.pdfocr.api" Version="4.1.1-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj')" />
+    <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj')" />
+    <PackageReference Include="itext.pdfocr.tesseract4" Version="4.1.1-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj')  And '$(TargetFramework)' == 'net461' " />
+    <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj')  And '$(TargetFramework)' == 'net461' " />
+    <PackageReference Include="itext.pdfocr.onnxtr" Version="4.1.1-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnxtr\itext.pdfocr.onnxtr.csproj')" />
+    <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.onnxtr\itext.pdfocr.onnxtr.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnxtr\itext.pdfocr.onnxtr.csproj')" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.IO" Condition="'$(TargetFramework)' == 'net461'" />
