@@ -38,6 +38,7 @@
     <PackageReference Include="NUnit" Version="3.7.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
     <PackageReference Include="NVelocity" Version="1.1.1" />
+    <PackageReference Include="itext.eu-trusted-lists-resources" Version="1.0.1" />
   </ItemGroup>
   <PropertyGroup>
     <NoWarn>1701;1702;1591;1570;1572;1573;1574;1580;1584;1658</NoWarn>
