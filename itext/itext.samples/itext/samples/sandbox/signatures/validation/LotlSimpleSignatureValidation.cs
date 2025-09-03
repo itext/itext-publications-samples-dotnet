@@ -65,7 +65,7 @@ namespace iText.Samples.Sandbox.Signatures.Validation {
             using (PdfDocument document = new PdfDocument(new PdfReader(SRC))) {
                 SignatureValidator validator = builder.BuildSignatureValidator(document);
                 ValidationReport r = validator.ValidateSignatures();
-                //Here you have the vaidation report and can use it as you need
+                // Here you have the validation report and can use it as you need
                 Console.WriteLine(r);
             }
         }
