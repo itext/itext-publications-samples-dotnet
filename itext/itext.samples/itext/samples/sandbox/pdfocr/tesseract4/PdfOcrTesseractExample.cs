@@ -53,16 +53,12 @@ namespace iText.Samples.Sandbox.Pdfocr.Tesseract4 {
             Tesseract4LibOcrEngine libOcrEngine = new Tesseract4LibOcrEngine(new Tesseract4OcrEngineProperties().SetPathToTessData
                 (GetTessDataDirectory()));
             OcrPdfCreator pdfCreator = new OcrPdfCreator(libOcrEngine);
-            using (PdfWriter writer = new PdfWriter(LIB_DEST)) {
-                pdfCreator.CreatePdf(images, writer).Close();
-            }
+            pdfCreator.CreatePdf(images, new PdfWriter(LIB_DEST)).Close();
             // Create PDF with Tesseract executable.
             Tesseract4ExecutableOcrEngine exeOcrEngine = new Tesseract4ExecutableOcrEngine(GetTesseractExecutableCommand
                 (), new Tesseract4OcrEngineProperties().SetPathToTessData(GetTessDataDirectory()));
             pdfCreator = new OcrPdfCreator(exeOcrEngine);
-            using (PdfWriter writer_1 = new PdfWriter(EXE_DEST)) {
-                pdfCreator.CreatePdf(images, writer_1).Close();
-            }
+            pdfCreator.CreatePdf(images, new PdfWriter(EXE_DEST)).Close();
         }
 
         protected internal static String GetTesseractExecutableCommand() {

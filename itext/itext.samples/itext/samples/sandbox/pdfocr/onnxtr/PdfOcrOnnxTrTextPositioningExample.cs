@@ -57,9 +57,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
                 OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties().SetTextLayerName("OnnxTR by lines example"
                     ).SetTextColor(ColorConstants.GREEN);
                 OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine, ocrPdfCreatorProperties);
-                using (PdfWriter writer = new PdfWriter(DEST)) {
-                    pdfCreator.CreatePdf(images, writer).Close();
-                }
+                pdfCreator.CreatePdf(images, new PdfWriter(DEST)).Close();
             }
         }
     }

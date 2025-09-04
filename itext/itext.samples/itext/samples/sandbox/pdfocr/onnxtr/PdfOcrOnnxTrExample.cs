@@ -52,9 +52,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
             using (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor
                 )) {
                 OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine);
-                using (PdfWriter writer = new PdfWriter(DEST)) {
-                    pdfCreator.CreatePdf(images, writer).Close();
-                }
+                pdfCreator.CreatePdf(images, new PdfWriter(DEST)).Close();
             }
         }
     }
