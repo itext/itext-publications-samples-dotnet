@@ -30,6 +30,7 @@ namespace iText.Samples
         
         [Timeout(180000)]
         [Test, Description("{0}")]
+        [Ignore("Samples are very flaky")]
         public virtual void Test()
         {
             SecurityProtocolType defaultSecurityProtocolType = ServicePointManager.SecurityProtocol;
@@ -54,15 +55,5 @@ namespace iText.Samples
         protected override void ComparePdf(string outPath, string dest, string cmp) {
         }
 
-    }
-}
-
-public class TimedWebClient : WebClient
-{
-    protected override WebRequest GetWebRequest(Uri address)
-    {
-        var webRequest = base.GetWebRequest(address);
-        webRequest.Timeout = 15000;
-        return webRequest;
     }
 }

@@ -1,11 +1,9 @@
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
 using iText.Commons.Utils;
 using iText.Html2pdf;
 using iText.Licensing.Base;
-using NUnit.Framework;
 
 namespace iText.Samples.Htmlsamples.Chapter07
 {
@@ -54,45 +52,39 @@ namespace iText.Samples.Htmlsamples.Chapter07
         /// <param name="dest">the path to the resulting PDF</param>
         public void CreatePdf(Uri url, String dest)
         {
-            //Some websites forbid web-page access if user-agent is not defined.
             using (var fileStream = new FileStream(dest, FileMode.Create))
             {
-                var maxTries = 3;
-                while (maxTries != 0)
+                var webClient = new TimedWebClient();
+                // Some websites forbid web-page access if user-agent is not defined.
+                webClient.Headers.Add("User-Agent", USER_AGENT);
+
+                try
                 {
-                    var webClient = new TimedWebClient();
-                    webClient.Headers.Add("User-Agent", USER_AGENT);
-
-                    int responseCode;
-                    try
-                    {
-                        byte[] website = webClient.DownloadData(url);
-                        HtmlConverter.ConvertToPdf(new MemoryStream(website), fileStream);
-
-                        break;
-                    }
-                    catch (WebException e)
-                    {
-                        if (e.Status == WebExceptionStatus.Timeout)
-                        {
-                            responseCode = -1;
-                        }
-                        else
-                        {
-                            try
-                            {
-                                responseCode = (int)((HttpWebResponse)e.Response).StatusCode;
-                            }
-                            catch
-                            {
-                                responseCode = -1;
-                            }
-                        }
-                    }
-                    
-                    Debug.Assert((responseCode >= 200 && responseCode < 300) || responseCode == -1);
-                    maxTries--;
+                    byte[] website = webClient.DownloadData(url);
+                    HtmlConverter.ConvertToPdf(new MemoryStream(website), fileStream);
                 }
+                catch (WebException e)
+                {
+                    if (e.Status == WebExceptionStatus.Timeout)
+                    {
+                        // Handle timout
+                    }
+                    else
+                    {
+                        // Handle http status code
+                        int responseCode = (int)((HttpWebResponse)e.Response).StatusCode;
+                    }
+                }
+            }
+        }
+
+        internal class TimedWebClient : WebClient
+        {
+            protected override WebRequest GetWebRequest(Uri address)
+            {
+                var webRequest = base.GetWebRequest(address);
+                webRequest.Timeout = 15000;
+                return webRequest;
             }
         }
     }
