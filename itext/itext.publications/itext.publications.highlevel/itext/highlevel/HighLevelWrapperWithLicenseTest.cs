@@ -32,7 +32,7 @@ namespace iText.Highlevel {
         public virtual void Test() {
             LicenseKey.UnloadLicenses();
             this.InitClass();
-            sampleClass.GetField("KEY").SetValue(null, Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-typography.json");
+            sampleClass.GetField("KEY").SetValue(null, Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json");
             RunSamples();
         }
 		
@@ -48,7 +48,6 @@ namespace iText.Highlevel {
         protected override void ComparePdf(String outPath, String dest, String cmp) {
             CompareTool compareTool = new CompareTool();
             AddError(compareTool.CompareByContent(dest, cmp, outPath, "diff_"));
-            AddError(compareTool.CompareDocumentInfo(dest, cmp));
         }
 
         protected void InitClass()

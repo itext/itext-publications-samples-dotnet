@@ -22,7 +22,7 @@ namespace iText.Samples.Sandbox.Typography.Malayalam
         {
             // Load the license file to use typography features
             using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-typography.json"))
+                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

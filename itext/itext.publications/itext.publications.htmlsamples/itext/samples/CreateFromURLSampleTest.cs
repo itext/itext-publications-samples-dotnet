@@ -42,7 +42,7 @@ namespace iText.Samples
             FontProgramFactory.ClearRegisteredFonts();
             
             using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.json"))
+                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json"))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

@@ -46,7 +46,7 @@ namespace iText.Samples.Htmlsamples.Chapter04
         public static void Main(String[] args)
         {
             using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.json"))
+                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-html2pdf_typography.json"))
             {
                 LicenseKey.LoadLicenseFile(license);
             }
