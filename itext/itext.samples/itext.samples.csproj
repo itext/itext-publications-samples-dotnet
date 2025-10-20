@@ -81,7 +81,7 @@
     <PackageReference Include="itext.pdfcalligraph" Version="5.0.4-SNAPSHOT" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
     <ProjectReference Include="..\..\..\typography\itext\itext.typography\itext.typography.csproj" Condition="Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
 
-    <PackageReference Include="itext.pdfhtml" Version="6.2.2-SNAPSHOT" Condition="!Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')" />
+    <PackageReference Include="itext.pdfhtml" Version="6.3.0-SNAPSHOT" Condition="!Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')" />
     <ProjectReference Include="..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj" Condition="Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')" />
 
     <PackageReference Include="itext.pdfsweep" Version="5.0.4-SNAPSHOT" Condition="!Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')" />
