@@ -19,29 +19,28 @@ namespace iText.Samples.Signatures.Chapter05
         public static readonly string EXAMPLE = "../../../resources/pdfs/signedPAdES-LT.pdf";
 
         public const String EXPECTED_OUTPUT =
-            "../../../resources/pdfs/signedPAdES-LT.pdf\n"
-            + "ValidationReport{validationResult=INDETERMINATE\n" +
+            "../../../resources/pdfs/signedPAdES-LT.pdf\n" +
+            "ValidationReport{validationResult=INDETERMINATE\n" +
             "reportItems=\n" +
-            "ReportItem{checkName='Signature verification check.', message='Validating signature Signature1', " +
-            "cause=, status=INFO}, \n" +
+            "ReportItem{checkName='Signature verification check.', message='Validating signature Signature1', cause=, status=INFO}, \n" +
             "CertificateReportItem{baseclass=\n" +
-            "ReportItem{checkName='Revocation data check.', message='Certificate revocation status " +
-            "cannot be checked: no revocation data available or the status cannot be determined.', " +
-            "cause=, status=INDETERMINATE}\n" +
-            "certificate=C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestTsCert}, \n" +
+            "ReportItem{checkName='Revocation data check.', message='Certificate revocation status cannot be checked: no revocation data available or the status cannot be determined.', cause=, status=INDETERMINATE}\n" +
+            "certificate=C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestTsCert},\n" +
             "CertificateReportItem{baseclass=\n" +
-            "ReportItem{checkName='Certificate check.', message='Certificate C=BY,L=Minsk,O=iText,OU=test," +
-            "CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}\n" +
-            "certificate=C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestRoot}, \n" +
+            "ReportItem{checkName='Certificate check.', message='Certificate C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}\n" +
+            "certificate=C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestRoot},\n" +
             "CertificateReportItem{baseclass=\n" +
-            "ReportItem{checkName='Revocation data check.', message='Certificate revocation status " +
-            "cannot be checked: no revocation data available or the status cannot be determined.', " +
-            "cause=, status=INDETERMINATE}\n" +
+            "ReportItem{checkName='Certificate check.', message='Trusted Certificate is taken from manually configured Trust List.', cause=, status=INFO}\n" +
+            "certificate=C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestRoot},\n" +
+            "CertificateReportItem{baseclass=\n" +
+            "ReportItem{checkName='Revocation data check.', message='Certificate revocation status cannot be checked: no revocation data available or the status cannot be determined.', cause=, status=INDETERMINATE}\n" +
             "certificate=C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestRsaCert01}, \n" +
             "CertificateReportItem{baseclass=\n" +
-            "ReportItem{checkName='Certificate check.', message='Certificate C=BY,L=Minsk,O=iText,OU=test," +
-            "CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}\n" +
-            "certificate=C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestRoot}, }";
+            "ReportItem{checkName='Certificate check.', message='Certificate C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestRoot is trusted, revocation data checks are not required.', cause=, status=INFO}\n" +
+            "certificate=C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestRoot}, \n" +
+            "CertificateReportItem{baseclass=\n" +
+            "ReportItem{checkName='Certificate check.', message='Trusted Certificate is taken from manually configured Trust List.', cause=, status=INFO}\n" +
+            "certificate=C=BY,L=Minsk,O=iText,OU=test,CN=iTextTestRoot}, }\n";
 
         public static TextWriter OUT_STREAM = Console.Out;
 
