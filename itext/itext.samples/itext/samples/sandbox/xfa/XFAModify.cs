@@ -20,7 +20,7 @@ namespace iText.Samples.Sandbox.Xfa
         {
             // Load the license file to use XFA features
             using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.json"))
+                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json"))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

@@ -35,7 +35,7 @@ namespace iText.Samples
             FontProgramFactory.ClearRegisteredFonts();
             LicenseKeyReportingConfigurer.UseLocalReporting("./target/test/com/itextpdf/samples/report/");
             using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.json"))
+                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json"))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

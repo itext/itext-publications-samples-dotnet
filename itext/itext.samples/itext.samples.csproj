@@ -15,10 +15,30 @@
     <StartupObject />
     <AssemblyName>itext.samples</AssemblyName>
   </PropertyGroup>
+  <!-- RuntimeIdentifier is required for PdfOCR-OnnxTR to load native libraries for your system. -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOsPlatform('Windows'))">
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'AMD64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'X64'">win-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'x86' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'X86'">win-x86</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ARM64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64'">win-arm64</RuntimeIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOsPlatform('OSX'))">
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'AMD64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'X64'">osx-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ARM64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64'">osx-arm64</RuntimeIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOsPlatform('Linux'))">
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'AMD64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'X64'">linux-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ARM64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64'">linux-arm64</RuntimeIdentifier>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Default fallback -->
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">win-x64</RuntimeIdentifier>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.7.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
     <PackageReference Include="NVelocity" Version="1.1.1" />
+    <PackageReference Include="itext.eu-trusted-lists-resources" Version="1.0.2" />
   </ItemGroup>
   <PropertyGroup>
     <NoWarn>1701;1702;1591;1570;1572;1573;1574;1580;1584;1658</NoWarn>
@@ -30,11 +50,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="itext.pdfxfa" Version="5.0.3" />
+    <PackageReference Include="itext.pdfxfa" Version="5.0.4" />
     
     <!--This reference is added to let .NET automatically resolve version's conflict, when iText project version differs from the transitive dependency iText versions-->
-    <PackageReference Include="itext" Version="9.3.0" IncludeAssets="none" Condition="Exists('..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
-    <PackageReference Include="itext" Version="9.3.0" Condition="!Exists('..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
+    <PackageReference Include="itext" Version="9.4.0" IncludeAssets="none" Condition="Exists('..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
+    <PackageReference Include="itext" Version="9.4.0" Condition="!Exists('..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.barcodes\itext.barcodes.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.io\itext.io.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.io\itext.io.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.kernel\itext.kernel.csproj')" />
@@ -43,29 +63,36 @@
     <ProjectReference Include="..\..\..\itextcore\itext\itext.sign\itext.sign.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.sign\itext.sign.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.pdfa\itext.pdfa.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.pdfua\itext.pdfua.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.pdfua\itext.pdfua.csproj')" />
-    <PackageReference Include="itext.hyph" Version="9.3.0" Condition="!Exists('..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj')" />
+    <PackageReference Include="itext.hyph" Version="9.4.0" Condition="!Exists('..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.hyph\itext.hyph.csproj')" />
-    <PackageReference Include="itext.pdftest" Version="9.3.0" Condition="!Exists('..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')" />
+    <PackageReference Include="itext.pdftest" Version="9.4.0" Condition="!Exists('..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.pdftest\itext.pdftest.csproj')" />
-    <PackageReference Include="itext.font-asian" Version="9.3.0" Condition="!Exists('..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj')" />
+    <PackageReference Include="itext.font-asian" Version="9.4.0" Condition="!Exists('..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.font-asian\itext.font-asian.csproj')" />
     <!--This reference is added to let .NET automatically resolve version's conflict, when iText project version differs from the transitive dependency iText versions-->
-    <PackageReference Include="itext.commons" Version="9.3.0" IncludeAssets="none" Condition="Exists('..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
+    <PackageReference Include="itext.commons" Version="9.4.0" IncludeAssets="none" Condition="Exists('..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.commons\itext.commons.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.commons\itext.commons.csproj')" />
-    <PackageReference Include="itext.bouncy-castle-adapter" Version="9.3.0" Condition="!Exists('..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
+    <PackageReference Include="itext.bouncy-castle-adapter" Version="9.4.0" Condition="!Exists('..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
     <ProjectReference Include="..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj" Condition="Exists('..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
     
-    <PackageReference Include="itext.licensing.base" Version="4.2.3" Condition="!Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
+    <PackageReference Include="itext.licensing.base" Version="4.2.4" Condition="!Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
     <ProjectReference Include="..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj" Condition="Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
 
-    <PackageReference Include="itext.pdfcalligraph" Version="5.0.3" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
+    <PackageReference Include="itext.pdfcalligraph" Version="5.0.4" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
     <ProjectReference Include="..\..\..\typography\itext\itext.typography\itext.typography.csproj" Condition="Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
 
-    <PackageReference Include="itext.pdfhtml" Version="6.2.1" Condition="!Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')" />
+    <PackageReference Include="itext.pdfhtml" Version="6.3.0" Condition="!Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')" />
     <ProjectReference Include="..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj" Condition="Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')" />
 
-    <PackageReference Include="itext.pdfsweep" Version="5.0.3" Condition="!Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')" />
+    <PackageReference Include="itext.pdfsweep" Version="5.0.4" Condition="!Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')" />
     <ProjectReference Include="..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj" Condition="Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')" />
+
+    <PackageReference Include="itext.pdfocr.api" Version="4.1.1" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj')" />
+    <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj')" />
+    <PackageReference Include="itext.pdfocr.tesseract4" Version="4.1.1" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj')  And '$(TargetFramework)' == 'net461' " />
+    <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj')  And '$(TargetFramework)' == 'net461' " />
+    <PackageReference Include="itext.pdfocr.onnxtr" Version="4.1.1" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnxtr\itext.pdfocr.onnxtr.csproj')" />
+    <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.onnxtr\itext.pdfocr.onnxtr.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnxtr\itext.pdfocr.onnxtr.csproj')" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.IO" Condition="'$(TargetFramework)' == 'net461'" />

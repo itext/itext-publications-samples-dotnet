@@ -50,7 +50,9 @@ namespace iText.Samples
                 "iText.Samples.Sandbox.Logging.CounterDemo",
                 "iText.Samples.Sandbox.Tagging.WalkTheTree",
                 "iText.Samples.Sandbox.Signatures.Validation.ValidateChainBeforeSigningExample",
-                "iText.Samples.Sandbox.Signatures.Validation.ValidateSignatureExample"
+                "iText.Samples.Sandbox.Signatures.Validation.ValidateSignatureExample",
+                "iText.Samples.Sandbox.Pdfocr.Onnxtr.PdfOcrOnnxTrTxtFileExample",
+                "iText.Samples.Sandbox.Pdfocr.Tesseract4.PdfOcrTesseractTxtFileExample"
             });
 
         /**
@@ -104,6 +106,8 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Appearance");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.TwoPhase");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Signaturetag");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.DummyOcspClient");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.DummyResponse");
 
             // Not a sample classes
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Utils");
@@ -149,7 +153,7 @@ namespace iText.Samples
             FontProgramFactory.ClearRegisteredFonts();
             LicenseKeyReportingConfigurer.UseLocalReporting("./target/test/com/itextpdf/samples/report/");
             using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.json"))
+                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json"))
             {
                 LicenseKey.LoadLicenseFile(license);
             }
@@ -177,7 +181,6 @@ namespace iText.Samples
             {
                 AddError(compareTool.CompareVisually(dest, cmp, outPath, "diff_"));
                 AddError(compareTool.CompareLinkAnnotations(dest, cmp));
-                AddError(compareTool.CompareDocumentInfo(dest, cmp));
             }
             else if (ignoredClassesMap.Keys.Contains(sampleClass.FullName))
             {

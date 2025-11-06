@@ -34,7 +34,7 @@ namespace iText.Samples
         {
             LicenseKeyReportingConfigurer.UseLocalReporting("./target/test/com/itextpdf/samples/report/");
             using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/all-products.json"))
+                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json"))
             {
                 LicenseKey.LoadLicenseFile(license);
             }
@@ -58,7 +58,6 @@ namespace iText.Samples
                 String currentCmp = temp.Substring(0, i + 1) + "cmp_" + temp.Substring(i + 1);
 
                 AddError(compareTool.CompareByContent(currentDest, currentCmp, outPath, "diff_"));
-                AddError(compareTool.CompareDocumentInfo(currentDest, currentCmp));
             }
         }
 

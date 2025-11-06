@@ -45,6 +45,13 @@ namespace iText.Samples.Signatures.Testrunners
             String[] expectedLines = GetStringField(sampleClass, "EXPECTED_OUTPUT")
                 .Split(new[] {"\n"}, StringSplitOptions.RemoveEmptyEntries);
 
+
+            if (expectedLines.Length != outputLines.Length)
+            {
+                AddError("Expected " + expectedLines.Length + " lines, but was " + outputLines.Length);
+                return;
+            }
+
             for (int i = 0; i < outputLines.Length; ++i)
             {
                 String line = outputLines[i];

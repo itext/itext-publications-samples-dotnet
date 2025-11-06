@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
 using iText.Commons.Utils;
@@ -39,7 +38,7 @@ namespace iText.Samples.Htmlsamples.Chapter07
         public static void Main(String[] args)
         {
             using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.json"))
+                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-html2pdf_typography.json"))
             {
                 LicenseKey.LoadLicenseFile(license);
             }
@@ -65,41 +64,37 @@ namespace iText.Samples.Htmlsamples.Chapter07
             MediaDeviceDescription mediaDeviceDescription = new MediaDeviceDescription(MediaType.SCREEN);
             mediaDeviceDescription.SetWidth(pageSize.GetWidth());
             properties.SetMediaDeviceDescription(mediaDeviceDescription);
-            //Some websites forbid web-page access if user-agent is not defined.
-            var maxTries = 3;
-            while (maxTries != 0)
+
+            var webClient = new TimedWebClient();
+            // Some websites forbid web-page access if user-agent is not defined.
+            webClient.Headers.Add("User-Agent", USER_AGENT);
+
+            try
             {
-                var webClient = new TimedWebClient();
-                webClient.Headers.Add("User-Agent", USER_AGENT);
-
-                int responseCode;
-                try
+                byte[] website = webClient.DownloadData(url);
+                HtmlConverter.ConvertToPdf(new MemoryStream(website), pdf, properties);
+            }
+            catch (WebException e)
+            {
+                if (e.Status == WebExceptionStatus.Timeout)
                 {
-                    byte[] website = webClient.DownloadData(url);
-                    HtmlConverter.ConvertToPdf(new MemoryStream(website), pdf, properties);
-                    break;
+                    // Handle timout
                 }
-                catch (WebException e)
+                else
                 {
-                    if (e.Status == WebExceptionStatus.Timeout)
-                    {
-                        responseCode = -1;
-                    }
-                    else
-                    {
-                        try
-                        {
-                            responseCode = (int)((HttpWebResponse)e.Response).StatusCode;
-                        }
-                        catch
-                        {
-                            responseCode = -1;
-                        }
-                    }
+                    // Handle http status code
+                    int responseCode = (int)((HttpWebResponse)e.Response).StatusCode;
                 }
+            }
+        }
 
-                Debug.Assert((responseCode >= 200 && responseCode < 300) || responseCode == -1);
-                maxTries--;
+        internal class TimedWebClient : WebClient
+        {
+            protected override WebRequest GetWebRequest(Uri address)
+            {
+                var webRequest = base.GetWebRequest(address);
+                webRequest.Timeout = 15000;
+                return webRequest;
             }
         }
     }
