@@ -27,7 +27,6 @@ namespace iText.Samples.Sandbox.Signatures.Validation {
 
         public void useLocalFirstAccess() {
             ValidatorChainBuilder builder = new ValidatorChainBuilder();
-            builder.WithOcspClient(() => new DummyOcspClient());
             // We want to use LOTL as a source of trusted certificates
             builder.TrustEuropeanLotl(true);
 

@@ -30,7 +30,6 @@ namespace iText.Samples.Sandbox.Signatures.Validation {
         public void loadEuropeanCertificatesFromPemFiles() {
             ValidatorChainBuilder builder = new ValidatorChainBuilder();
 
-            builder.WithOcspClient(() => new DummyOcspClient());
             builder.TrustEuropeanLotl(true);
             LotlFetchingProperties fetchingProperties = new LotlFetchingProperties(new RemoveOnFailingCountryData());
             fetchingProperties.SetCountryNames(LotlCountryCodeConstants.PORTUGAL);
