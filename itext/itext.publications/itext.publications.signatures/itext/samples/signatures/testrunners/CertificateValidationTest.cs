@@ -45,6 +45,8 @@ namespace iText.Samples.Signatures.Testrunners
             String[] expectedLines = GetStringField(sampleClass, "EXPECTED_OUTPUT")
                 .Split(new[] {"\n"}, StringSplitOptions.RemoveEmptyEntries);
 
+            String ignoreString = GetStringField(sampleClass, "STRING_TO_IGNORE");
+
 
             if (expectedLines.Length != outputLines.Length)
             {
@@ -55,6 +57,11 @@ namespace iText.Samples.Signatures.Testrunners
             for (int i = 0; i < outputLines.Length; ++i)
             {
                 String line = outputLines[i];
+                if (ignoreString != null && line.Contains(ignoreString))
+                {
+                    continue;
+                }
+
                 if (!line.Trim().Equals(expectedLines[i].Trim()))
                 {
                     AddError(String.Format("Unexpected output at line {0}.\nExpected: {1}\ngot: {2}",
