@@ -51,6 +51,7 @@ namespace iText.Samples
                 "iText.Samples.Sandbox.Tagging.WalkTheTree",
                 "iText.Samples.Sandbox.Signatures.Validation.ValidateChainBeforeSigningExample",
                 "iText.Samples.Sandbox.Signatures.Validation.ValidateSignatureExample",
+                "iText.Samples.Sandbox.Signatures.Validation.LotlValidationThirdCountryTL",
                 "iText.Samples.Sandbox.Pdfocr.Onnxtr.PdfOcrOnnxTrTxtFileExample",
                 "iText.Samples.Sandbox.Pdfocr.Tesseract4.PdfOcrTesseractTxtFileExample"
             });
