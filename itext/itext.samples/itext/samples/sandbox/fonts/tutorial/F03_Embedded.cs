@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
+   
+    // F03_Embedded.cs
+    //
+    // Example showing Czech text with embedded TrueType font and CP1250 encoding.
+    // Demonstrates proper rendering of accented characters with font embedding.
+ 
     public class F03_Embedded
     {
         public static readonly String DEST = "results/sandbox/fonts/tutorial/f03_embedded.pdf";

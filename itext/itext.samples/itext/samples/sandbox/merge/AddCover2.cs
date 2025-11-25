@@ -5,6 +5,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // AddCover2.cs
+    //
+    // Example showing how to insert a cover page into existing PDF document.
+    // Demonstrates copying pages with form fields using PdfPageFormCopier.
+ 
     public class AddCover2
     {
         public static readonly String DEST = "results/sandbox/merge/add_cover2.pdf";

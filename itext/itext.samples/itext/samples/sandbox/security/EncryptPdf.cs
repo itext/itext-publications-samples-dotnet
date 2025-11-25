@@ -5,9 +5,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Security
 {
-    /**
-     * This example shows how to encrypt a PDF document using AES algorithm.
-     */
+
+    // EncryptPdf.cs
+    //
+    // Example showing how to encrypt a PDF using AES-256 algorithm.
+    // Demonstrates setting user/owner passwords and encryption permissions.
+ 
     public class EncryptPdf
     {
         public static readonly String DEST = "results/sandbox/security/encrypt_pdf.pdf";

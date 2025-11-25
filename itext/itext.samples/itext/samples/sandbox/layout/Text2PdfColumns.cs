@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Layout
 {
+   
+    // Text2PdfColumns.cs
+    //
+    // Example showing how to convert text file to multi-column PDF layout.
+    // Demonstrates using ColumnDocumentRenderer for newspaper-style columns.
+ 
     public class Text2PdfColumns
     {
         public static readonly String TEXT = "../../../resources/txt/tree.txt";

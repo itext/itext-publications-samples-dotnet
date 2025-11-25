@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // DottedLineEnder.cs
+    //
+    // Example showing how to end paragraphs with dotted lines using tabs.
+    // Demonstrates TabStop with DottedLine for leader dot effects.
+ 
     public class DottedLineEnder
     {
         public static readonly string DEST = "results/sandbox/objects/dotted_line_ender.pdf";

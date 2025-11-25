@@ -11,6 +11,12 @@ using Image = iText.Layout.Element.Image;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // ReplaceImage.cs
+    //
+    // Example showing how to replace an existing image in a PDF.
+    // Demonstrates converting an image to grayscale and substituting it.
+ 
     public class ReplaceImage
     {
         public static readonly String DEST = "results/sandbox/images/replace_image.pdf";

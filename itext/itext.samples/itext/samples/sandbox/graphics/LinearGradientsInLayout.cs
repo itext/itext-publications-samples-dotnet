@@ -11,6 +11,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Graphics
 {
+   
+    // LinearGradientsInLayout.cs
+    //
+    // Example showing linear gradients as backgrounds and colors in layout.
+    // Demonstrates gradient backgrounds and position-based gradient colors.
+ 
     public class LinearGradientsInLayout
     {
         public static readonly string DEST = "results/sandbox/graphics/linearGradientsInLayout.pdf";

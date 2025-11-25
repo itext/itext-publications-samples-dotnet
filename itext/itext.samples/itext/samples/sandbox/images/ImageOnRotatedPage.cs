@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // ImageOnRotatedPage.cs
+    //
+    // Example showing how to center an image on a rotated page.
+    // Demonstrates scaling and positioning images on landscape orientation.
+ 
     public class ImageOnRotatedPage
     {
         public static readonly String DEST = "results/sandbox/images/image_on_rotated_page.pdf";

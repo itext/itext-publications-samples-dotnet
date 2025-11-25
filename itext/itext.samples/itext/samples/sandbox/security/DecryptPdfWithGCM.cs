@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 
 namespace itext.samples.itext.samples.sandbox.security
 {
-    /**
-     * This example shows how to decrypt a pdf document encrypted with AES_GCM using owner password.
-     */
+    // DecryptPdfWithGCM.cs
+    //
+    // Example showing how to decrypt PDF encrypted with AES-GCM algorithm.
+    // Demonstrates decryption using owner password for GCM-encrypted documents.
+ 
     internal class DecryptPdfWithGCM
     {
         public static readonly String DEST = "results/sandbox/security/decrypt_pdf_with_GCM.pdf";

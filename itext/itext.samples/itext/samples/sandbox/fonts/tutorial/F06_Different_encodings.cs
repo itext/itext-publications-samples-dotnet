@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
+   
+    // F06_Different_encodings.cs
+    //
+    // Example showing multilingual text with different character encodings.
+    // Demonstrates WINANSI for French, CP1250 for Czech, CP1251 for Russian.
+ 
     public class F06_Different_encodings
     {
         public static readonly String DEST = "results/sandbox/fonts/tutorial/f06_different_encodings.pdf";

@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // NotoExample.cs
+    //
+    // This example demonstrates rendering CJK (Chinese, Japanese, Korean) text in a PDF document using Noto Sans CJK font.
+    // The sample displays text in simplified Chinese, Japanese, and Korean scripts using Unicode encoding to show proper support for East Asian languages.
+ 
     public class NotoExample
     {
         public static readonly String DEST = "results/sandbox/fonts/chinese.pdf";

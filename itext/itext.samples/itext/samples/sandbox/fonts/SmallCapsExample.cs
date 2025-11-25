@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // SmallCapsExample.cs
+    //
+    // This example demonstrates rendering text in a PDF document using a Small Caps font variant.
+    // The sample loads and applies the Delicious-SmallCaps OpenType font with Unicode encoding to display text in small capital letters.
+ 
     public class SmallCapsExample
     {
         public static readonly String DEST = "results/sandbox/fonts/small_caps_example.pdf";

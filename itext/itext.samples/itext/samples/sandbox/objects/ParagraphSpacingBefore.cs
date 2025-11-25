@@ -5,6 +5,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ParagraphSpacingBefore.cs
+    //
+    // Example showing how to add vertical spacing before a paragraph.
+    // Demonstrates using margin-top to control spacing between paragraphs.
+ 
     public class ParagraphSpacingBefore
     {
         public static readonly string DEST = "results/sandbox/objects/paragraph_spacing_before.pdf";

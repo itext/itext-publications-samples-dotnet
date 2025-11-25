@@ -7,6 +7,12 @@ using iText.Samples.Sandbox.Merge.Densemerger;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // PdfDenseMergeExample.cs
+    //
+    // Example showing how to merge PDFs with dense layout optimization.
+    // Demonstrates using PdfDenseMerger to minimize vertical spacing.
+ 
     public class PdfDenseMergeExample
     {
         public static readonly String DEST = "results/sandbox/merge/denseMergeExample.pdf";

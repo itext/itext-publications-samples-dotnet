@@ -12,6 +12,12 @@ using Image = iText.Layout.Element.Image;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // MakeJpgMask.cs
+    //
+    // Example showing how to apply an image mask to a JPEG image.
+    // Demonstrates converting an image to grayscale and using it as a mask.
+ 
     public class MakeJpgMask
     {
         public static readonly String DEST = "results/sandbox/images/make_jpg_mask.pdf";

@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // LiberationSans.cs
+    //
+    // Example showing Greek text rendering with Liberation Sans font.
+    // Demonstrates font registration and CP1253 encoding for Greek script.
+ 
     public class LiberationSans
     {
         public static readonly String DEST = "results/sandbox/fonts/liberation_sans.pdf";

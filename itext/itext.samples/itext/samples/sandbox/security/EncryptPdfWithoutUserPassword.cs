@@ -5,10 +5,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Security
 {
-    /**
-     * This example shows how to encrypt a PDF document using AES algorithm without
-     * user password, which means password is only required to modify the document.
-     */
+
+    // EncryptPdfWithoutUserPassword.cs
+    //
+    // Example shows how to encrypt a PDF document using AES algorithm without
+    // user password, which means password is only required to modify the document.
+ 
     public class EncryptPdfWithoutUserPassword
     {
         public static readonly String DEST = "results/sandbox/security/encrypt_pdf_without_user_password.pdf";

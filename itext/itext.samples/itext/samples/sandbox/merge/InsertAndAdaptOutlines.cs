@@ -6,6 +6,12 @@ using iText.Kernel.Pdf.Navigation;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // InsertAndAdaptOutlines.cs
+    //
+    // Example showing how to insert a page and update document bookmarks.
+    // Demonstrates adding outlines/bookmarks for newly inserted pages.
+ 
     public class InsertAndAdaptOutlines
     {
         public static readonly String DEST = "results/sandbox/merge/insert_and_adapt_outlines.pdf";

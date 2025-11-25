@@ -7,6 +7,12 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // TileInTwo.cs
+    //
+    // Example showing how to split each page vertically into two halves.
+    // Demonstrates creating two pages from each original page by halving height.
+ 
     public class TileInTwo
     {
         public static readonly String DEST = "results/sandbox/merge/tile_in_two.pdf";

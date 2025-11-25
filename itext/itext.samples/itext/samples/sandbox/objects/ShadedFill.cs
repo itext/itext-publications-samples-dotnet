@@ -8,6 +8,12 @@ using iText.Kernel.Pdf.Colorspace.Shading;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ShadedFill.cs
+    //
+    // Example showing how to fill a shape with axial gradient shading.
+    // Demonstrates drawing a triangle with a color gradient from pink to blue.
+ 
     public class ShadedFill
     {
         public static readonly string DEST = "results/sandbox/objects/shaded_fill.pdf";

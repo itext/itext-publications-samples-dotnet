@@ -8,6 +8,12 @@ namespace iText.Samples.Sandbox.Security
      * This example shows how to open an encrypted pdf document without user password
      * for modifying with preserving an old owner password.
      */
+   
+    // DecryptPdf2.cs
+    //
+    // Example showing how to modify encrypted PDF preserving old encryption.
+    // Demonstrates unethical reading mode to bypass user password requirement.
+ 
     public class DecryptPdf2
     {
         public static readonly String DEST = "results/sandbox/security/decrypt_pdf2.pdf";

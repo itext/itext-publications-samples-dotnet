@@ -7,6 +7,12 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // TilingHero.cs
+    //
+    // Example showing how to create tiled pages from a scaled-up source page.
+    // Demonstrates splitting a 4x scaled page into 16 individual tiles.
+ 
     public class TilingHero
     {
         public static readonly String DEST = "results/sandbox/merge/tiling_hero.pdf";

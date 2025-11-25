@@ -11,6 +11,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Layout
 {
+   
+    // LayoutFormTagging.cs
+    //
+    // Example showing how to assign custom accessibility roles to form fields.
+    // Demonstrates overriding default roles for tagged PDF compliance.
+ 
     public class LayoutFormTagging
     {
         public static readonly string DEST = "results/sandbox/layout/changeFormRole.pdf";

@@ -10,9 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Layout
 {
-    /// <summary>
-    /// This example demonstrates how to enable orphans and widows processing in layout
-    /// </summary>
+
+    // OrphansWidowsExample.cs
+    //
+    // Example showing orphans and widows control in multi-column layout.
+    // Demonstrates preventing awkward paragraph breaks across columns.
+ 
     public class OrphansWidowsExample
     {
         public static readonly string DEST = "results/sandbox/layout/orphansWidows.pdf";

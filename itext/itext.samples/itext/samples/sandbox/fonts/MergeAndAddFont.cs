@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // MergeAndAddFont.cs
+    //
+    // Example showing PDF merging with various font embedding strategies.
+    // Demonstrates subset fonts, full fonts, and manual font embedding.
+ 
     public class MergeAndAddFont
     {
         public static readonly String FONT = "../../../resources/font/GravitasOne.ttf";

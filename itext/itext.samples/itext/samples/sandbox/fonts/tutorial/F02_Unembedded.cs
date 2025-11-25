@@ -6,6 +6,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
+   
+    // F02_Unembedded.cs
+    //
+    // Example showing Czech text with special characters using default fonts.
+    // Demonstrates rendering accented characters with Unicode escape sequences.
+ 
     public class F02_Unembedded
     {
         public static readonly String DEST = "results/sandbox/fonts/tutorial/f02_unembedded.pdf";

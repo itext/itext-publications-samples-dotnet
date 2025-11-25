@@ -5,6 +5,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // CustomMetaEntry.cs
+    //
+    // Example showing how to add custom metadata entries to a PDF document.
+    // Demonstrates setting standard and custom document information fields.
+ 
     public class CustomMetaEntry
     {
         public static readonly string DEST = "results/sandbox/objects/custom_meta_entry.pdf";

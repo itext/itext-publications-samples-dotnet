@@ -11,6 +11,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // WatermarkedImages4.cs
+    //
+    // Example showing how to add graphic watermarks to images with shapes.
+    // Demonstrates drawing lines and ellipses as watermarks using PdfCanvas.
+ 
     public class WatermarkedImages4
     {
         public static readonly String DEST = "results/sandbox/images/watermarked_images4.pdf";

@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // RawImages.cs
+    //
+    // Example showing how to create images from raw byte data in memory.
+    // Demonstrates generating colored squares using RGB and CMYK color spaces.
+ 
     public class RawImages
     {
         public static readonly String DEST = "results/sandbox/images/raw_images.pdf";

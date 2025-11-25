@@ -11,6 +11,12 @@ using iText.Pdfua.Checkers;
 using iText.Test.Pdfa;
 
 namespace iText.Samples.Sandbox.Pdfua {
+   
+    // Wtpdf.cs
+    //
+    // Example showing how to create well-tagged PDF/A-4 with PDF/UA-2 compliance.
+    // Demonstrates HTML to PDF conversion with accessibility and archiving standards.
+ 
     public class Wtpdf {
         public static readonly string DEST = "results/sandbox/pdfua/wtpdf.pdf";
         private static readonly string SOURCE_FOLDER = "../../../resources/wtpdf/";

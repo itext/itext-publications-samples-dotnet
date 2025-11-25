@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Logging
 {
+   
+    // CounterDemo.cs
+    //
+    // Example showing custom event handling and counting in iText.
+    // Demonstrates registering event handlers to log document creation events.
+ 
     public class CounterDemo
     {
         public const String DEST_PDF = "results/sandbox/logging/helloCounterDemo.pdf";

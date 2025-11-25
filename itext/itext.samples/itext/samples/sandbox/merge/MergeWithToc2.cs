@@ -12,6 +12,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // MergeWithToc2.cs
+    //
+    // Example showing how to merge PDFs with TOC as the first page.
+    // Demonstrates reordering pages to place table of contents at start.
+ 
     public class MergeWithToc2
     {
         public static readonly String DEST = "results/sandbox/merge/merge_with_toc2.pdf";

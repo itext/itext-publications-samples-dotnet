@@ -5,6 +5,12 @@ using iText.PdfCleanup;
 
 namespace iText.Samples.Sandbox.Parse
 {
+   
+    // RemoveRedactedContent.cs
+    //
+    // Example showing how to apply and remove redaction annotations.
+    // Demonstrates using PdfCleaner to process redact annotation markers.
+ 
     public class RemoveRedactedContent
     {
         public static readonly String DEST = "results/sandbox/parse/remove_redacted_content.pdf";

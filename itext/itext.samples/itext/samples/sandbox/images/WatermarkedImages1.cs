@@ -11,6 +11,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // WatermarkedImages1.cs
+    //
+    // Example showing how to add rotated text watermarks to images.
+    // Demonstrates creating form XObjects with overlaid text on images.
+ 
     public class WatermarkedImages1
     {
         public static readonly String DEST = "results/sandbox/images/watermarked_images1.pdf";

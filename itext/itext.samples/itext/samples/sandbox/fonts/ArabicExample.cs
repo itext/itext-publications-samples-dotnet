@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // ArabicExample.cs
+    //
+    // Example showing Arabic text rendering with proper font and encoding.
+    // Demonstrates combining Arabic and English text with Unicode support.
+ 
     public class ArabicExample
     {
         public static readonly String DEST = "results/sandbox/fonts/arabic_example.pdf";

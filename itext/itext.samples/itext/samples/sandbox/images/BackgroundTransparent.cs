@@ -10,6 +10,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // BackgroundTransparent.cs
+    //
+    // Example showing how to add a semi-transparent image as background.
+    // Demonstrates using extended graphics state for opacity control.
+ 
     public class BackgroundTransparent
     {
         public static readonly String DEST = "results/sandbox/images/background_transparent.pdf";

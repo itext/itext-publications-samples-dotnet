@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // OrdinalNumbers.cs
+    //
+    // Example showing how to create superscript ordinal number suffixes.
+    // Demonstrates using text rise for proper ordinal indicator positioning.
+ 
     public class OrdinalNumbers
     {
         public static readonly string DEST = "results/sandbox/objects/ordinal_numbers.pdf";

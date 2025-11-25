@@ -9,6 +9,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // CenterVertically.cs
+    //
+    // Example showing how to vertically center a table on a page.
+    // Demonstrates using custom renderer to position table in page center.
+ 
     public class CenterVertically
     {
         public static readonly string DEST = "results/sandbox/objects/center_vertically.pdf";

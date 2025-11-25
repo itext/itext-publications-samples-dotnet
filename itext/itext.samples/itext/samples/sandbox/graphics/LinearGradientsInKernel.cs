@@ -9,6 +9,12 @@ using iText.StyledXmlParser.Css.Util;
 
 namespace iText.Samples.Sandbox.Graphics
 {
+   
+    // LinearGradientsInKernel.cs
+    //
+    // Example showing three approaches to create linear gradients in PDF.
+    // Demonstrates iText API, CSS parsing, and direct coordinate methods.
+ 
     public class LinearGradientsInKernel
     {
         public static readonly string DEST = "results/sandbox/graphics/linearGradientsInKernel.pdf";

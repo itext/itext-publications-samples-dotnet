@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // Logo.cs
+    //
+    // This example demonstrates creating a custom Type 3 font by programmatically drawing individual glyphs using vector graphics.
+    // The sample creates colorized letters I, T, E, and X with custom stroke colors and line caps to form the "ITEXT" logo.
+ 
     public class Logo
     {
         public static readonly String DEST = "results/sandbox/fonts/logo.pdf";

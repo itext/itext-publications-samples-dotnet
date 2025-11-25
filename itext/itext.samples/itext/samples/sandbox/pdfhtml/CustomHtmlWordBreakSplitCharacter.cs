@@ -13,6 +13,12 @@ using iText.StyledXmlParser.Node;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // CustomHtmlWordBreakSplitCharacter.cs
+    //
+    // Example showing custom word breaking at slash characters in HTML to PDF.
+    // Demonstrates custom CSS applier and split character implementation.
+ 
     public class CustomHtmlWordBreakSplitCharacter
     {
         public static readonly String SRC =

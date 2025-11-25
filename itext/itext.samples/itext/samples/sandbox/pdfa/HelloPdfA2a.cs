@@ -9,6 +9,12 @@ using iText.Pdfa;
 
 namespace iText.Samples.Sandbox.Pdfa
 {
+   
+    // HelloPdfA2a.cs
+    //
+    // Example showing how to create a tagged PDF/A-2a compliant document.
+    // Demonstrates using embedded fonts, color profile, and document tagging.
+ 
     public class HelloPdfA2a
     {
         public static readonly string DEST = "results/sandbox/pdfa/hello_pdf_a_2a.pdf";

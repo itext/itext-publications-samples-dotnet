@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ChapterAndTitle.cs
+    //
+    // Example showing how to create a title with bookmarks and destinations.
+    // Demonstrates adding outline entries linked to document sections.
+ 
     public class ChapterAndTitle
     {
         public static readonly string DEST = "results/sandbox/objects/chapter_and_title.pdf";

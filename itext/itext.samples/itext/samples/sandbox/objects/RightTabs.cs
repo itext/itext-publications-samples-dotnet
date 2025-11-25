@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // RightTabs.cs
+    //
+    // Example showing how to use right-aligned tabs for text positioning.
+    // Demonstrates aligning text to left and right on the same line with tabs.
+ 
     public class RightTabs
     {
         public static readonly String DEST = "results/sandbox/objects/right_tabs.pdf";

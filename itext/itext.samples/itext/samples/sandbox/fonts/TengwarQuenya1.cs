@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // TengwarQuenya1.cs
+    //
+    // This example demonstrates rendering text using a custom Tengwar font (fictional Elvish script from Tolkien's works).
+    // The sample embeds the Greifswalder Tengwar TrueType font with WINANSI encoding to display Latin characters in Tengwar script style.
+ 
     public class TengwarQuenya1
     {
         public static readonly String DEST = "results/sandbox/fonts/tengwar_quenya1.pdf";

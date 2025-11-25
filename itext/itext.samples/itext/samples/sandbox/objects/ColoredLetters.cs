@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ColoredLetters.cs
+    //
+    // Example showing how to apply different colors to individual letters.
+    // Demonstrates character-level color and font styling in text.
+ 
     public class ColoredLetters
     {
         public static readonly string DEST = "results/sandbox/objects/colored_letters.pdf";

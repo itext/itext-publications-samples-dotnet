@@ -5,6 +5,12 @@ using iText.StyledXmlParser.Resolver.Resource;
 
 namespace iText.Samples.Sandbox.Pdfhtml.Resource.Retriever
 {
+   
+    // FilterUrlByCustomResourceRetriever.cs
+    //
+    // Example showing how to filter resources by URL path during retrieval.
+    // Demonstrates custom resource retriever with URL whitelist filtering.
+ 
     public class FilterUrlByCustomResourceRetriever
     {
         public static readonly string SRC = "../../../resources/pdfhtml/FilterUrlByCustomResourceRetriever/";

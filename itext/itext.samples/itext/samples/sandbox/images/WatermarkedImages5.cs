@@ -14,6 +14,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // WatermarkedImages5.cs
+    //
+    // Example showing how to add table watermarks to images dynamically.
+    // Demonstrates positioning tables as overlays using layout simulation.
+ 
     public class WatermarkedImages5
     {
         public static readonly String DEST = "results/sandbox/images/watermarked_images5.pdf";

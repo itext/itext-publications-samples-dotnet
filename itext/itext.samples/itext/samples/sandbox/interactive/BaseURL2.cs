@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Interactive
 {
+   
+    // BaseURL2.cs
+    //
+    // Example showing how to set a base URL for relative link resolution.
+    // Demonstrates creating links that resolve relative to a document base.
+ 
     public class BaseURL2
     {
         public static readonly String DEST = "results/sandbox/interactive/base_url2.pdf";

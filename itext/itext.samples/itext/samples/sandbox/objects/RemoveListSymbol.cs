@@ -6,6 +6,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // RemoveListSymbol.cs
+    //
+    // Example showing how to create a list without visible bullet symbols.
+    // Demonstrates setting an empty string as the list symbol to hide markers.
+ 
     public class RemoveListSymbol
     {
         public static readonly string DEST = "results/sandbox/objects/remove_list_symbol.pdf";

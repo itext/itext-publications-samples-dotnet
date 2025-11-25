@@ -10,6 +10,12 @@ using iText.Pdfua;
 using iText.Pdfua.Exceptions;
 
 namespace iText.Samples.Sandbox.Pdfua {
+   
+    // PdfUACanvasUsage.cs
+    //
+    // Example showing proper canvas usage in PDF/UA documents with tagging.
+    // Demonstrates handling conformance exceptions and tagged canvas operations.
+ 
     public class PdfUACanvasUsage {
         public const String DEST = "results/sandbox/pdfua/pdf_ua_canvas.pdf";
 

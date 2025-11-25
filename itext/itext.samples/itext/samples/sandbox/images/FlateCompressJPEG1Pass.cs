@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // FlateCompressJPEG1Pass.cs
+    //
+    // Example showing how to add additional compression to JPEG images.
+    // Demonstrates applying best compression level to DCT-encoded images.
+ 
     public class FlateCompressJPEG1Pass
     {
         public static readonly String DEST = "results/sandbox/images/flate_compress_jpeg_1pass.pdf";

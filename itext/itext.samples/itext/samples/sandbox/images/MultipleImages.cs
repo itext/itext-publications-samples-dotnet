@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // MultipleImages.cs
+    //
+    // Example showing how to add multiple images to separate PDF pages.
+    // Demonstrates creating custom page sizes matching each image dimension.
+ 
     public class MultipleImages
     {
         public static readonly String DEST = "results/sandbox/images/multiple_images.pdf";

@@ -6,6 +6,12 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // Rectangles.cs
+    //
+    // Example showing how to draw filled and stroked rectangles with colors.
+    // Demonstrates overlaying rectangles with different stroke and fill styles.
+ 
     public class Rectangles
     {
         public static readonly string DEST = "results/sandbox/objects/rectangles.pdf";

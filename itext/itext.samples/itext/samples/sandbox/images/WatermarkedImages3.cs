@@ -11,6 +11,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // WatermarkedImages3.cs
+    //
+    // Example showing watermarked images in tables with rotated text overlay.
+    // Demonstrates combining image watermarks with document-level text rotation.
+ 
     public class WatermarkedImages3
     {
         public static readonly String DEST = "results/sandbox/images/watermarked_images3.pdf";

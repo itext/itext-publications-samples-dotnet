@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // CenterColumnVertically.cs
+    //
+    // Example showing how to vertically center text within a rectangle.
+    // Demonstrates calculating text height and positioning it in the middle.
+ 
     public class CenterColumnVertically
     {
         public static readonly string DEST = "results/sandbox/objects/center_column_vertically.pdf";

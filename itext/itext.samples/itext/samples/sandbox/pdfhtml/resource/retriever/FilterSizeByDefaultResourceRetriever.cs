@@ -5,6 +5,12 @@ using iText.StyledXmlParser.Resolver.Resource;
 
 namespace iText.Samples.Sandbox.Pdfhtml.Resource.Retriever
 {
+   
+    // FilterSizeByDefaultResourceRetriever.cs
+    //
+    // Example showing how to filter resources by size during HTML conversion.
+    // Demonstrates setting resource size limit to exclude large files.
+ 
     public class FilterSizeByDefaultResourceRetriever
     {
         public static readonly string SRC = "../../../resources/pdfhtml/FilterSizeByDefaultResourceRetriever/";

@@ -7,6 +7,12 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // CutAndPaste.cs
+    //
+    // Example showing how to cut and reposition a rectangular area from a page.
+    // Demonstrates clipping paths and XObject manipulation for content movement.
+ 
     public class CutAndPaste
     {
         public static readonly String DEST = "results/sandbox/merge/page229_cut_paste.pdf";

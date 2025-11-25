@@ -10,6 +10,12 @@ using iText.Pdfa;
 
 namespace iText.Samples.Sandbox.Pdfa
 {
+   
+    // PdfA1a_images.cs
+    //
+    // Example showing how to create PDF/A-1a document with images.
+    // Demonstrates tagged PDF with embedded fonts, metadata, and alt text.
+ 
     public class PdfA1a_images
     {
         public const float MARGIN_OF_ONE_CM = 28.8f;

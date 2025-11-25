@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ColumnTextAscender.cs
+    //
+    // Example showing how to control text positioning at column top.
+    // Demonstrates using ascender and leading for precise text placement.
+ 
     public class ColumnTextAscender
     {
         public static readonly string DEST = "results/sandbox/objects/column_text_ascender.pdf";

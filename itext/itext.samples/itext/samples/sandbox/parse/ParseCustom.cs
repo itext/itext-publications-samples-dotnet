@@ -10,6 +10,12 @@ using iText.Kernel.Pdf.Canvas.Parser.Listener;
 
 namespace iText.Samples.Sandbox.Parse
 {
+   
+    // ParseCustom.cs
+    //
+    // Example showing custom text extraction with font-based filtering.
+    // Demonstrates extracting only bold and oblique text from a region.
+ 
     public class ParseCustom
     {
         public static readonly String DEST = "results/txt/parse_custom.txt";

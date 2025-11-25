@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // ArabicExample2.cs
+    //
+    // Example showing Arabic text in table cells with RTL base direction.
+    // Demonstrates right-to-left text alignment for bidirectional content.
+ 
     public class ArabicExample2
     {
         public static readonly String DEST = "results/sandbox/fonts/arabic_example2.pdf";

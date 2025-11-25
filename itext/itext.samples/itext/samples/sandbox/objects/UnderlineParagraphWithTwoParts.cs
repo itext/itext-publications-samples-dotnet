@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // UnderlineParagraphWithTwoParts.cs
+    //
+    // Example showing how to underline paragraphs with two-part content.
+    // Demonstrates using tabs and line separators for split text underlining.
+ 
     public class UnderlineParagraphWithTwoParts
     {
         public static readonly string DEST = "results/sandbox/objects/underline_paragraph_with_two_parts.pdf";

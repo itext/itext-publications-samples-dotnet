@@ -8,6 +8,12 @@ using iText.Layout;
 using iText.Pdfua;
 
 namespace iText.Samples.Sandbox.Pdfua {
+   
+    // PdfUA2.cs
+    //
+    // Example showing how to create a PDF/UA-2 compliant document with PDF 2.0.
+    // Demonstrates basic universal accessibility setup with embedded fonts.
+ 
     public class PdfUA2 {
         public const String DEST = "results/sandbox/pdfua2/pdf_ua.pdf";
 

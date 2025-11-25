@@ -6,6 +6,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // SpaceCharRatioExample.cs
+    //
+    // Example showing how to control word spacing in justified text.
+    // Demonstrates using spacing ratio for text justification adjustment.
+ 
     public class SpaceCharRatioExample
     {
         public static readonly string DEST = "results/sandbox/objects/space_char_ratio.pdf";

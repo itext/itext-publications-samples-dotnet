@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ColumnTextParagraphs.cs
+    //
+    // Example showing how to flow paragraphs through multiple columns.
+    // Demonstrates custom renderer for alternating left and right columns.
+ 
     public class ColumnTextParagraphs
     {
         public static readonly string DEST = "results/sandbox/objects/column_text_paragraphs.pdf";

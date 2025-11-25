@@ -9,6 +9,12 @@ using iText.Layout;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // TextPattern.cs
+    //
+    // Example showing how to create a tiling text pattern as fill color.
+    // Demonstrates using repeating text as a pattern for filling rectangles.
+ 
     public class TextPattern
     {
         public static readonly string DEST = "results/sandbox/objects/text_pattern.pdf";

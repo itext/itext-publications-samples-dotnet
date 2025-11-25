@@ -6,6 +6,12 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Graphics
 {
+   
+    // DrawingLines.cs
+    //
+    // Example showing how to draw lines on a PDF canvas with custom colors.
+    // Demonstrates basic path operations and CMYK color usage.
+ 
     public class DrawingLines
     {
         public static readonly string DEST = "results/sandbox/graphics/drawing_lines.pdf";

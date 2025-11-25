@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // SubSuperScript.cs
+    //
+    // Example showing how to display subscript and superscript characters.
+    // Demonstrates using Unicode subscript/superscript characters in text.
+ 
     public class SubSuperScript
     {
         public static readonly string DEST = "results/sandbox/objects/sub_super_script.pdf";

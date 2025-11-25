@@ -7,6 +7,12 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // MakeBooklet.cs
+    //
+    // Example showing how to create a booklet with 16-page signatures.
+    // Demonstrates arranging pages for printing and folding into booklets.
+ 
     public class MakeBooklet
     {
         public static readonly String DEST = "results/sandbox/merge/make_booklet.pdf";

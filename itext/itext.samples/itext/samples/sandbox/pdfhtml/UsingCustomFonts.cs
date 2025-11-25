@@ -7,6 +7,12 @@ using iText.Layout.Font;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // UsingCustomFonts.cs
+    //
+    // Example showing different ways to register custom fonts for HTML to PDF.
+    // Demonstrates directory, file path, and byte array font registration.
+ 
     public class UsingCustomFonts
     {
         public static readonly string SRC = "../../../resources/pdfhtml/FontExample/";

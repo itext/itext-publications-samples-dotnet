@@ -7,6 +7,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Pdfhtml 
 {
+   
+    // HtmlToPdfA3Convert.cs
+    //
+    // Example showing how to convert HTML to PDF/A-3B compliant document.
+    // Demonstrates setting output intent and embedded font requirements.
+ 
     public class HtmlToPdfA3Convert 
     {
         public static readonly string SRC = "../../../resources/pdfhtml/HtmlToPdfA3Convert/";

@@ -7,6 +7,12 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // ReduceSize.cs
+    //
+    // Example showing how to reduce PDF file size by downscaling images.
+    // Demonstrates scaling JPEG images and replacing them in the PDF.
+ 
     public class ReduceSize
     {
         public static readonly String DEST = "results/sandbox/images/reduce_size.pdf";

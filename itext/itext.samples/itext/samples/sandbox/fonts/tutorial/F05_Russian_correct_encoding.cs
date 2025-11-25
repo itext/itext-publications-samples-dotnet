@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
+   
+    // F05_Russian_correct_encoding.cs
+    //
+    // Example showing correct Russian text rendering with CP1251 encoding.
+    // Demonstrates proper Cyrillic character display with embedded font.
+ 
     public class F05_Russian_correct_encoding
     {
         public static readonly String DEST = "results/sandbox/fonts/tutorial/f05_russian_encoding.pdf";

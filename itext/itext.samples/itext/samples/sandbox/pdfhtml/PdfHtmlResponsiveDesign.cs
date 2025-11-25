@@ -11,6 +11,12 @@ using iText.StyledXmlParser.Css.Util;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // PdfHtmlResponsiveDesign.cs
+    //
+    // Example showing how to convert responsive HTML to PDFs at different widths.
+    // Demonstrates media device description for responsive design rendering.
+ 
     public class PdfHtmlResponsiveDesign
     {
         public static readonly string SRC = "../../../resources/pdfhtml/ResponsiveDesign/responsive/";

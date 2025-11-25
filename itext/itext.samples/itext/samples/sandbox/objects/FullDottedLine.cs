@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // FullDottedLine.cs
+    //
+    // Example showing how to draw a dotted line spanning full page width.
+    // Demonstrates custom DottedLine extending from left to right edge.
+ 
     public class FullDottedLine
     {
         public static readonly string DEST = "results/sandbox/objects/full_dotted_line.pdf";

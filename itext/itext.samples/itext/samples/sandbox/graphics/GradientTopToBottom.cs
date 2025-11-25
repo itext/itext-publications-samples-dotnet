@@ -9,6 +9,12 @@ using iText.Kernel.Pdf.Colorspace.Shading;
 
 namespace iText.Samples.Sandbox.Graphics
 {
+   
+    // GradientTopToBottom.cs
+    //
+    // Example showing how to create an axial gradient from top to bottom.
+    // Demonstrates shading patterns with color transition on a PDF page.
+ 
     public class GradientTopToBottom
     {
         public static readonly string DEST = "results/sandbox/graphics/gradient_top_to_bottom.pdf";

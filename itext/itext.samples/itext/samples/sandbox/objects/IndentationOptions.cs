@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // IndentationOptions.cs
+    //
+    // Example showing different approaches to create hanging indentations.
+    // Demonstrates using List, Paragraph margins, and Table for indented text.
+ 
     public class IndentationOptions
     {
         public static readonly string CONTENT =

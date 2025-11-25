@@ -9,6 +9,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // TableInColumn.cs
+    //
+    // Example showing how to vertically center tables within a column area.
+    // Demonstrates custom table renderer for centered vertical positioning.
+ 
     public class TableInColumn
     {
         public static readonly string DEST = "results/sandbox/objects/table_in_column.pdf";

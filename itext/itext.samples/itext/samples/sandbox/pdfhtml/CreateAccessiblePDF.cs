@@ -7,6 +7,12 @@ using iText.Samples.Sandbox.Pdfhtml.Headertagging;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // CreateAccessiblePDF.cs
+    //
+    // Example showing how to create accessible tagged PDF from HTML content.
+    // Demonstrates setting metadata, language, and custom tag worker factory.
+ 
     public class CreateAccessiblePDF
     {
         public static readonly string SRC = "../../../resources/pdfhtml/AccessiblePDF/";

@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ChunkBackground.cs
+    //
+    // Example showing how to add background color to text segments.
+    // Demonstrates styling text with custom font and background colors.
+ 
     public class ChunkBackground
     {
         public static readonly string DEST = "results/sandbox/objects/chunk_background.pdf";

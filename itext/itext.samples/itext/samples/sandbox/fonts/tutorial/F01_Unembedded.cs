@@ -6,6 +6,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
+   
+    // F01_Unembedded.cs
+    //
+    // Example showing French text with special characters using default fonts.
+    // Demonstrates rendering accented characters with Unicode escape sequences.
+ 
     public class F01_Unembedded
     {
         public static readonly String DEST = "results/sandbox/fonts/tutorial/f01_unembedded.pdf";

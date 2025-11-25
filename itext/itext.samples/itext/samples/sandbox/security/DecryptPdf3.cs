@@ -8,6 +8,13 @@ namespace iText.Samples.Sandbox.Security
      * This example shows how to open a pdf document that is encrypted without user password.
      * Note, that it is required to use UnethicalReading in this case.
      */
+   
+    // DecryptPdf3.cs
+    //
+    // Example showing how to open PDF encrypted without user password.
+    // Demonstrates unethical reading to access encrypted documents.
+    // Note, that it is required to use UnethicalReading in this case.
+ 
     public class DecryptPdf3
     {
         public static readonly String DEST = "results/sandbox/security/decrypt_pdf3.pdf";

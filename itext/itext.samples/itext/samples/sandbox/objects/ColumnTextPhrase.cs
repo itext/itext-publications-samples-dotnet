@@ -10,6 +10,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ColumnTextPhrase.cs
+    //
+    // Example showing how to add text in specific rectangular areas.
+    // Demonstrates using Canvas with custom fonts and leading settings.
+ 
     public class ColumnTextPhrase
     {
         public static readonly string DEST = "results/sandbox/objects/column_text_phrase.pdf";

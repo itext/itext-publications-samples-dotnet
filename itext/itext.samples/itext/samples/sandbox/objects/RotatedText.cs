@@ -14,6 +14,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // RotatedText.cs
+    //
+    // Example showing how to rotate text and barcode elements in a document.
+    // Demonstrates creating a rotated barcode with text on a narrow page.
+ 
     public class RotatedText
     {
         public static readonly string DEST = "results/sandbox/objects/rotated_text.pdf";

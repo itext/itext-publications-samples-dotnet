@@ -6,6 +6,12 @@ using iText.Kernel.Pdf.Annot;
 
 namespace iText.Samples.Sandbox.Interactive
 {
+   
+    // ChangeAuthor.cs
+    //
+    // Example showing how to modify annotation author names in a PDF.
+    // Demonstrates updating the title property of all page annotations.
+ 
     public class ChangeAuthor
     {
         public static readonly String DEST = "results/sandbox/interactive/change_author.pdf";

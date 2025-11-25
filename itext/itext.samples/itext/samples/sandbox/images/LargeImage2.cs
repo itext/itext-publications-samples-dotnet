@@ -10,6 +10,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // LargeImage2.cs
+    //
+    // Example showing how to process and copy large images via temp memory.
+    // Demonstrates extracting, scaling, and transferring huge images in PDF.
+ 
     public class LargeImage2
     {
         public static readonly String DEST = "results/sandbox/images/large_image2.pdf";

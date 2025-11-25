@@ -5,6 +5,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Interactive
 {
+   
+    // FetchBookmarkTitles.cs
+    //
+    // Example showing how to extract bookmark titles from a PDF document.
+    // Demonstrates recursive traversal of outline tree and output to file.
+ 
     public class FetchBookmarkTitles
     {
         public static readonly String DEST = "results/txt/bookmarks.txt";
