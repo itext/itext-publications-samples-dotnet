@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Layout
 {
+   
+    // ParagraphTextWithStyle.cs
+    //
+    // Example showing how to apply reusable styles to text segments.
+    // Demonstrates creating and applying Style objects for consistent formatting.
+ 
     public class ParagraphTextWithStyle
     {
         public static readonly String DEST = "results/sandbox/layout/paragraphTextWithStyle.pdf";

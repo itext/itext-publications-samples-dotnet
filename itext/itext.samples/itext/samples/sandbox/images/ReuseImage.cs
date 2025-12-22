@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // ReuseImage.cs
+    //
+    // Example showing how to extract and reuse an image from an existing PDF.
+    // Demonstrates copying an image XObject and centering it on a new page.
+ 
     public class ReuseImage
     {
         public static readonly String DEST = "results/sandbox/images/reuse_image.pdf";

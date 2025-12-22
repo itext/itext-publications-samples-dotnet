@@ -6,6 +6,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // UnderlineWithDottedLine.cs
+    //
+    // Example showing how to underline text with a dotted line.
+    // Demonstrates using LineSeparator for custom paragraph underlining.
+ 
     public class UnderlineWithDottedLine
     {
         public static readonly string DEST = "results/sandbox/objects/underline_with_dotted_line.pdf";

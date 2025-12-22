@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Layout
 {
+   
+    // TwoColumnParagraphLayout.cs
+    //
+    // Example showing custom paragraph renderer for two-column layout.
+    // Demonstrates splitting a single paragraph across two side-by-side areas.
+ 
     public class TwoColumnParagraphLayout
     {
         public static readonly string DEST = "results/sandbox/layout/complexElementLayout.pdf";

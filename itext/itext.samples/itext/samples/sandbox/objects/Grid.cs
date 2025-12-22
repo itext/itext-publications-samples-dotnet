@@ -5,6 +5,12 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // Grid.cs
+    //
+    // Example showing how to create a grid of dots on a PDF page.
+    // Demonstrates drawing regularly spaced circle markers using PdfCanvas.
+ 
     public class Grid
     {
         public static readonly string DEST = "results/sandbox/objects/grid.pdf";

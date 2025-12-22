@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // DivExample.cs
+    //
+    // Example showing how to use Div elements for grouping content.
+    // Demonstrates creating bordered, centered containers with multiple elements.
+ 
     public class DivExample
     {
         public readonly static String DEST = "results/sandbox/objects/divExample.pdf";

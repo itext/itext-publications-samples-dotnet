@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Layout
 {
+   
+    // PageSizeAndMargins.cs
+    //
+    // Example showing how to set and modify page sizes and margins.
+    // Demonstrates changing page dimensions and margins during document creation.
+ 
     public class PageSizeAndMargins
     {
         public static readonly string DEST = "results/sandbox/layout/pageSizeAndMargins.pdf";

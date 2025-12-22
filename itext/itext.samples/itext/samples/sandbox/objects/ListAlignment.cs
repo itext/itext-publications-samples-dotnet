@@ -6,6 +6,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ListAlignment.cs
+    //
+    // Example showing how to apply text alignment to list items.
+    // Demonstrates justified alignment for multi-line list item content.
+ 
     public class ListAlignment
     {
         public static readonly string DEST = "results/sandbox/objects/list_alignment.pdf";

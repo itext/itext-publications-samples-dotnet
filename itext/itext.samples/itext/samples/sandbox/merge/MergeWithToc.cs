@@ -11,6 +11,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // MergeWithToc.cs
+    //
+    // Example showing how to merge PDFs and generate a table of contents.
+    // Demonstrates creating TOC with links to named destinations in merged docs.
+ 
     public class MergeWithToc
     {
         public static readonly String DEST = "results/sandbox/merge/merge_with_toc.pdf";

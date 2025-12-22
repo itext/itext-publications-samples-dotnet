@@ -12,6 +12,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // CenterText.cs
+    //
+    // Example showing how to center text using tabs and line drawers.
+    // Demonstrates creating centered text with decorative lines on both sides.
+ 
     public class CenterText
     {
         public static readonly String DEST = "results/sandbox/objects/center_text.pdf";

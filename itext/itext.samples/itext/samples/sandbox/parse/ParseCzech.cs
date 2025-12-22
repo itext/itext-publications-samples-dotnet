@@ -7,6 +7,12 @@ using iText.Kernel.Pdf.Canvas.Parser.Listener;
 
 namespace iText.Samples.Sandbox.Parse
 {
+   
+    // ParseCzech.cs
+    //
+    // Example showing how to extract text from a PDF with Czech characters.
+    // Demonstrates text extraction with proper UTF-8 encoding support.
+ 
     public class ParseCzech
     {
         public static readonly String DEST = "results/txt/czech.txt";

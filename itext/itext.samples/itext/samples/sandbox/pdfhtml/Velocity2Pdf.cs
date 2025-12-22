@@ -6,6 +6,12 @@ using NVelocity.App;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // Velocity2Pdf.cs
+    //
+    // Example showing how to convert Velocity templates to PDF via HTML.
+    // Demonstrates rendering Velocity template and converting result to PDF.
+ 
     public class Velocity2Pdf
     {
         public static readonly String DEST = "results/sandbox/pdfhtml/velocity-test.pdf";

@@ -8,6 +8,12 @@ using iText.Pdfua;
 
 namespace iText.Samples.Sandbox.Pdfua 
 {
+   
+    // PdfUAGraphicsUsage.cs
+    //
+    // Example showing how to add images with alt text in PDF/UA documents.
+    // Demonstrates setting alternative descriptions for accessibility compliance.
+ 
     public class PdfUAGraphicsUsage {
         public const String DEST = "results/sandbox/pdfua/pdf_ua_graphics.pdf";
 

@@ -9,6 +9,12 @@ using iText.Layout.Font;
 
 namespace iText.Samples.Sandbox.Pdfhtml.pdfua2
 {
+   
+    // AccessibleIntraLinkExample.cs
+    //
+    // Example showing how to create accessible PDF/UA-2 with internal links.
+    // Demonstrates converting HTML with links to tagged PDF 2.0 document.
+ 
     public class AccessibleIntraLinkExample {
         public const String DEST = "results/sandbox/pdfua2/pdf_ua_links.pdf";
 

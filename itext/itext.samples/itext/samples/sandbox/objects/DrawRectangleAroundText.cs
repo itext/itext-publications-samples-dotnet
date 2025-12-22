@@ -9,6 +9,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // DrawRectangleAroundText.cs
+    //
+    // Example showing how to draw rectangles around paragraph content areas.
+    // Demonstrates calculating text bounds and drawing custom borders.
+ 
     public class DrawRectangleAroundText
     {
         public static readonly string DEST = "results/sandbox/objects/draw_rectangle_around_text.pdf";

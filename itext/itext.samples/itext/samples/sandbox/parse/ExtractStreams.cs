@@ -6,6 +6,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Parse
 {
+   
+    // ExtractStreams.cs
+    //
+    // Example showing how to extract all stream objects from a PDF document.
+    // Demonstrates iterating through PDF objects and saving stream data to files.
+ 
     public class ExtractStreams
     {
         public static readonly String DEST = "results/sandbox/parse";

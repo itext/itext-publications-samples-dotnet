@@ -5,6 +5,12 @@ using iText.StyledXmlParser.Resolver.Resource;
 
 namespace iText.Samples.Sandbox.Pdfhtml.Resource.Retriever
 {
+   
+    // AddDefaultImagesCustomRetriever.cs
+    //
+    // Example showing how to replace images with default ones during retrieval.
+    // Demonstrates custom IResourceRetriever for conditional image substitution.
+ 
     public class AddDefaultImagesCustomRetriever
     {
         public static readonly string SRC = "../../../resources/pdfhtml/";

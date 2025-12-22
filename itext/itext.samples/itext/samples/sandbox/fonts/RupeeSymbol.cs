@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // RupeeSymbol.cs
+    //
+    // This example demonstrates rendering Indian Rupee currency symbols (₹ and ₨) using different fonts and encodings.
+    // The sample compares how various TrueType fonts display the Rupee character with both Unicode (IDENTITY_H) and WINANSI encodings.
+ 
     public class RupeeSymbol
     {
         public static readonly String DEST = "results/sandbox/fonts/rupee_symbol.pdf";

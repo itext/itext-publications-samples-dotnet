@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // LeftRight.cs
+    //
+    // Example showing how to align text to left and right on same line.
+    // Demonstrates using tabs and tables for horizontal text alignment.
+ 
     public class LeftRight
     {
         public static readonly string DEST = "results/sandbox/objects/left_right.pdf";

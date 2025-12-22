@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // AddPointer.cs
+    //
+    // Example showing how to add a custom pointer shape over an image.
+    // Demonstrates drawing vector graphics on top of a background image.
+ 
     public class AddPointer
     {
         public static readonly string DEST = "results/sandbox/objects/add_pointer.pdf";

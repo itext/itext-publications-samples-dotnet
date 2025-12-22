@@ -8,6 +8,12 @@ using iText.PdfCleanup;
 
 namespace iText.Samples.Sandbox.Parse
 {
+   
+    // RemoveContentInRectangle.cs
+    //
+    // Example showing how to remove content from a specific rectangular area.
+    // Demonstrates using PdfCleaner to redact content and fill with color.
+ 
     public class RemoveContentInRectangle
     {
         public static readonly String DEST = "results/sandbox/parse/remove_content_in_rectangle.pdf";

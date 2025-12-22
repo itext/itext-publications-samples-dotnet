@@ -6,6 +6,12 @@ using iText.Kernel.Utils;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // MergeWithOutlines.cs
+    //
+    // Example showing how to merge PDFs and add bookmarks/outlines.
+    // Demonstrates creating hierarchical outline structure for merged docs.
+ 
     public class MergeWithOutlines
     {
         public static readonly String DEST = "results/sandbox/merge/merge_with_outlines.pdf";

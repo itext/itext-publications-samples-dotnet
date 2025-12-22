@@ -14,6 +14,12 @@ using iText.StyledXmlParser.Node;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // PdfHtmlRenderingMode.cs
+    //
+    // Example showing how to switch HTML rendering to default layout mode.
+    // Demonstrates custom CSS applier for legacy line spacing behavior.
+ 
     public class PdfHtmlRenderingMode
     {
         public static readonly String SRC = "../../../resources/pdfhtml/PdfHtmlRenderingMode/";

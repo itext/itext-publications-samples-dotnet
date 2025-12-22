@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // FreeSansBold.cs
+    //
+    // Example showing FreeSans regular and bold font variants comparison.
+    // Demonstrates rendering the same character in different font weights.
+ 
     public class FreeSansBold
     {
         public static readonly String DEST = "results/sandbox/fonts/free_sans_bold.pdf";

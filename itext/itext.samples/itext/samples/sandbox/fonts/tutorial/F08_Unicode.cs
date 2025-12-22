@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
+   
+    // F08_Unicode.cs
+    //
+    // Example showing multilingual text with Unicode encoding and no embedding.
+    // Demonstrates French, Czech, and Russian with PREFER_NOT_EMBEDDED strategy.
+ 
     public class F08_Unicode
     {
         public static readonly String DEST = "results/sandbox/fonts/tutorial/f08_unicode.pdf";

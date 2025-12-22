@@ -11,6 +11,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // RepeatImage.cs
+    //
+    // Example showing how to reuse an existing image by reference.
+    // Demonstrates extracting and overlaying an image to cover text.
+ 
     public class RepeatImage
     {
         public static readonly String DEST = "results/sandbox/images/repeat_image.pdf";

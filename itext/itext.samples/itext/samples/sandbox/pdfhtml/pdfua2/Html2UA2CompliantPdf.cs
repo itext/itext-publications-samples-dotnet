@@ -5,6 +5,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Pdfhtml.pdfua2
 {
+   
+    // Html2UA2CompliantPdf.cs
+    //
+    // Example showing how to convert HTML to PDF/UA-2 compliant document.
+    // Demonstrates setting PDF 2.0 version with universal accessibility.
+ 
     public class Html2UA2CompliantPdf
     {
         public const String DEST = "results/sandbox/pdfua2/html2UA2CompliantPdf.pdf";

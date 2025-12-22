@@ -3,6 +3,12 @@ using iText.Html2pdf;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // ParseHtmlSimple.cs
+    //
+    // Example showing basic HTML to PDF conversion with resource resolution.
+    // Demonstrates simple HtmlConverter usage with base URI configuration.
+ 
     public class ParseHtmlSimple
     {
         public static readonly string SRC = "../../../resources/pdfhtml/rainbow/";

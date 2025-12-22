@@ -6,6 +6,12 @@ using iText.Samples.Sandbox.Pdfhtml.Formtagging;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // PdfHtmlFormTagging.cs
+    //
+    // Example showing how to convert HTML forms to tagged PDF with custom roles.
+    // Demonstrates using custom tag worker factory for form element tagging.
+ 
     public class PdfHtmlFormTagging
     {
         public static readonly string SRC = "../../../resources/pdfhtml/PdfHtmlFormTagging/changeFormRole.html";

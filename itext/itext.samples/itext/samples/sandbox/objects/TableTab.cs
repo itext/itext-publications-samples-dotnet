@@ -6,6 +6,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // TableTab.cs
+    //
+    // Example showing how to align text columns using tab stops.
+    // Demonstrates creating fixed-width formatted text with tab alignment.
+ 
     public class TableTab
     {
         public static readonly string DEST = "results/sandbox/objects/table_tab.pdf";

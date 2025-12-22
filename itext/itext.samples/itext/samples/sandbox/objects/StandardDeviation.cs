@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // StandardDeviation.cs
+    //
+    // Example showing how to display the standard deviation symbol (σ).
+    // Demonstrates using Symbol font for mathematical symbols in text.
+ 
     public class StandardDeviation
     {
         public static readonly string DEST = "results/sandbox/objects/standard_deviation.pdf";

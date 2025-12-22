@@ -51,6 +51,7 @@ namespace iText.Samples
                 "iText.Samples.Sandbox.Tagging.WalkTheTree",
                 "iText.Samples.Sandbox.Signatures.Validation.ValidateChainBeforeSigningExample",
                 "iText.Samples.Sandbox.Signatures.Validation.ValidateSignatureExample",
+                "iText.Samples.Sandbox.Signatures.Validation.LotlValidationThirdCountryTL",
                 "iText.Samples.Sandbox.Pdfocr.Onnxtr.PdfOcrOnnxTrTxtFileExample",
                 "iText.Samples.Sandbox.Pdfocr.Tesseract4.PdfOcrTesseractTxtFileExample"
             });
@@ -138,9 +139,13 @@ namespace iText.Samples
             // TODO DEVSIX-3326
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Tables.SplittingNestedTable2");
             
-            //TODO DEVSIX-6508 remove unnecessary makeFormField calls
+            // TODO DEVSIX-6508 remove unnecessary makeFormField calls
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Acroforms.RemoveXFA");
 
+            // TODO DEVSIX-9261 Investigate test failures on Windows Server 2025 and Windows 11
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Images.ReplaceImage");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Images.MakeJpgMask");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Images.ReduceSize");
 
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }

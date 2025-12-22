@@ -6,6 +6,12 @@ using iText.Samples.Sandbox.Pdfhtml.Qrcodetag;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // ParseHtmlQRcode.cs
+    //
+    // Example showing how to convert HTML with custom QR code tags to PDF.
+    // Demonstrates custom tag worker and CSS applier for QR code generation.
+ 
     public class ParseHtmlQRcode
     {
         public static readonly string SRC = "../../../resources/pdfhtml/qrcode/";

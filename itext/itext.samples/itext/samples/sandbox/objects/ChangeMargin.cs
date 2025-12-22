@@ -6,6 +6,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ChangeMargin.cs
+    //
+    // Example showing how to set and modify document margins dynamically.
+    // Demonstrates changing margins during document creation.
+ 
     public class ChangeMargin
     {
         public static readonly string DEST = "results/sandbox/objects/change_margin.pdf";

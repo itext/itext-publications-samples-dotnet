@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // BackgroundImage.cs
+    //
+    // Example showing how to add an image as a page background.
+    // Demonstrates fitting an image into the entire page size.
+ 
     public class BackgroundImage
     {
         public static readonly String DEST = "results/sandbox/images/background_image.pdf";

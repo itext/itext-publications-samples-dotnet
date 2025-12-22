@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // TickboxCharacter.cs
+    //
+    // This example demonstrates displaying a checkbox character in a PDF document using the ZapfDingbats standard font.
+    // The sample shows how to render special symbol characters by utilizing one of PDF's built-in fonts without requiring font embedding.
+ 
     public class TickboxCharacter
     {
         public static readonly String DEST = "results/sandbox/fonts/tickbox_character.pdf";

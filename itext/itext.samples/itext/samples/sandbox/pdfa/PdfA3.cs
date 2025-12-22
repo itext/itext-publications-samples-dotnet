@@ -13,6 +13,12 @@ using iText.Pdfa;
 
 namespace iText.Samples.Sandbox.Pdfa
 {
+   
+    // PdfA3.cs
+    //
+    // Example showing how to create PDF/A-3 with embedded file attachments.
+    // Demonstrates embedding CSV data file and displaying it in a table.
+ 
     public class PdfA3
     {
         public static readonly string DEST = "results/sandbox/pdfa/pdf_a3.pdf";

@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Layout
 {
+   
+    // Text2Pdf.cs
+    //
+    // Example showing how to convert a text file to a PDF document.
+    // Demonstrates reading text lines and applying title/body formatting.
+ 
     public class Text2Pdf
     {
         public static readonly String TEXT = "../../../resources/txt/tree.txt";

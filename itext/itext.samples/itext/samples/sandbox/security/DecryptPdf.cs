@@ -9,6 +9,12 @@ namespace iText.Samples.Sandbox.Security
      * This example shows how to decrypt a pdf document using owner password.
      * To show that decryption is successful, user password is revealed.
      */
+   
+    // DecryptPdf.cs
+    //
+    // Example showing how to decrypt a PDF using owner password.
+    // Demonstrates password removal and user password retrieval.
+ 
     public class DecryptPdf
     {
         public static readonly String DEST = "results/sandbox/security/decrypt_pdf.pdf";

@@ -5,6 +5,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // FlateCompressJPEG2Passes.cs
+    //
+    // Example showing how to add Flate compression to existing JPEG images.
+    // Demonstrates post-processing a PDF to apply dual-filter compression.
+ 
     public class FlateCompressJPEG2Passes
     {
         public static readonly String DEST = "results/sandbox/images/flate_compress_jpeg_2passes.pdf";

@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ListInColumn.cs
+    //
+    // Example showing how to add a numbered list within a column layout.
+    // Demonstrates using ColumnDocumentRenderer for constrained list placement.
+ 
     public class ListInColumn
     {
         public static readonly string DEST = "results/sandbox/objects/list_in_column.pdf";

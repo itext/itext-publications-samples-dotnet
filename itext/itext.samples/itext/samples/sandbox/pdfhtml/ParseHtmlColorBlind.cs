@@ -5,6 +5,12 @@ using iText.Samples.Sandbox.Pdfhtml.Colorblindness;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // ParseHtmlColorBlind.cs
+    //
+    // Example showing HTML to PDF conversion simulating color blindness vision.
+    // Demonstrates custom CSS applier to transform colors for accessibility.
+ 
     public class ParseHtmlColorBlind
     {
         public static readonly string SRC = "../../../resources/pdfhtml/rainbow/";

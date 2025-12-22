@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // MathSymbols.cs
+    //
+    // This example demonstrates rendering mathematical symbols in a PDF document using Unicode characters.
+    // The sample displays common math symbols including ∈, ∩, ∑, ∫ and ∆ using FreeSans.ttf font with Unicode encoding.
+ 
     public class MathSymbols
     {
         public static readonly String DEST = "results/sandbox/fonts/math_symbols.pdf";

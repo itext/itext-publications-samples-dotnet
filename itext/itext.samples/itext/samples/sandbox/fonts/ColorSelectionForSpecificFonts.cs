@@ -14,6 +14,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // ColorSelectionForSpecificFonts.cs
+    //
+    // Example showing automatic text coloring based on detected font.
+    // Demonstrates custom renderer for font-dependent color assignment.
+ 
     public class ColorSelectionForSpecificFonts
     {
         public static readonly String DEST = "results/sandbox/fonts/color_selection_for_specific_fonts.pdf";

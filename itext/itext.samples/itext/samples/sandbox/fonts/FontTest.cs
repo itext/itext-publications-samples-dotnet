@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // FontTest.cs
+    //
+    // Example showing font testing across multiple scripts and encodings.
+    // Demonstrates Unicode support for various languages in registered fonts.
+ 
     public class FontTest
     {
         public static readonly String DEST = "results/sandbox/fonts/font_test.pdf";

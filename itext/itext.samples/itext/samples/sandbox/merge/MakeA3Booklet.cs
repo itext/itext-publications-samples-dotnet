@@ -7,6 +7,12 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // MakeA3Booklet.cs
+    //
+    // Example showing how to create an A3 booklet from A4 pages.
+    // Demonstrates placing two A4 pages side-by-side on A3 landscape sheets.
+ 
     public class MakeA3Booklet
     {
         public static readonly String DEST = "results/sandbox/merge/make_a3_booklet.pdf";

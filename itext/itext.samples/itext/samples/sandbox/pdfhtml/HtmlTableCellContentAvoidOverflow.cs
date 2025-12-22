@@ -12,6 +12,12 @@ using iText.StyledXmlParser.Node;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // HtmlTableCellContentAvoidOverflow.cs
+    //
+    // Example showing how to prevent table cell content overflow in HTML to PDF.
+    // Demonstrates custom CSS applier setting overflow property to FIT.
+ 
     public class HtmlTableCellContentAvoidOverflow
     {
         public static readonly String DEST = "results/sandbox/pdfhtml/htmlTableCellContentAvoidOverflow.pdf";

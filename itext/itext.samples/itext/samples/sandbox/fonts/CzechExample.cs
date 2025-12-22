@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // CzechExample.cs
+    //
+    // Example showing Czech special characters with different encodings.
+    // Demonstrates CP1250 vs Unicode encoding for diacritical marks.
+ 
     public class CzechExample
     {
         public static readonly String DEST = "results/sandbox/fonts/czech_example.pdf";

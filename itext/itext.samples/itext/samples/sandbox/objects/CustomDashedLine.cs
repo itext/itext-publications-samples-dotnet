@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // CustomDashedLine.cs
+    //
+    // Example showing how to create a custom dashed line separator.
+    // Demonstrates extending DottedLine with custom dash and phase patterns.
+ 
     public class CustomDashedLine
     {
         public static readonly string DEST = "results/sandbox/objects/custom_dashed_line.pdf";

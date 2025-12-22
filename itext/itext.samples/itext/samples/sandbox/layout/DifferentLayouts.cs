@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Layout
 {
+   
+    // DifferentLayouts.cs
+    //
+    // Example showing floating vs fixed layout positioning for paragraphs.
+    // Demonstrates normal flow layout and absolute positioned elements.
+ 
     public class DifferentLayouts
     {
         public static readonly string DEST = "results/sandbox/layout/differentLayouts.pdf";

@@ -10,6 +10,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ColoredText.cs
+    //
+    // Example showing how to create colored text with different fonts.
+    // Demonstrates text styling and positioning with Canvas element.
+ 
     public class ColoredText
     {
         public static readonly string DEST = "results/sandbox/objects/colored_text.pdf";

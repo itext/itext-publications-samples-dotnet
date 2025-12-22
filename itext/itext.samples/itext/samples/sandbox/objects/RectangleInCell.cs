@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // RectangleInCell.cs
+    //
+    // Example showing different approaches to add rectangles in table cells.
+    // Demonstrates scaling, padding, and overflow behavior of cell content.
+ 
     public class RectangleInCell
     {
         public static readonly string DEST = "results/sandbox/objects/rectangle_in_cell.pdf";

@@ -7,6 +7,12 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // TiledImage.cs
+    //
+    // Example showing how to tile an image across multiple PDF pages.
+    // Demonstrates positioning image quadrants using transformation matrices.
+ 
     public class TiledImage
     {
         public static readonly String DEST = "results/sandbox/images/tiled_image.pdf";

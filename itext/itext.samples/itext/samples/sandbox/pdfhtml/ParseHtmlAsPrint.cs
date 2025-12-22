@@ -4,6 +4,12 @@ using iText.StyledXmlParser.Css.Media;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // ParseHtmlAsPrint.cs
+    //
+    // Example showing how to parse HTML with print media type for PDF output.
+    // Demonstrates setting media device description for CSS media queries.
+ 
     public class ParseHtmlAsPrint
     {
         public static readonly string SRC = "../../../resources/pdfhtml/media/";

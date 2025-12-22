@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // UnembedFont.cs
+    //
+    // This example demonstrates removing embedded TrueType fonts from an existing PDF document to reduce file size.
+    // The sample creates a PDF with an embedded font, then processes it to remove font file data while preserving font references.
+ 
     public class UnembedFont
     {
         public static readonly String DEST = "results/sandbox/fonts/unembed_font.pdf";

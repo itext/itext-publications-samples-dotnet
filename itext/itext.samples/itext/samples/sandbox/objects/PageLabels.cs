@@ -12,6 +12,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // PageLabels.cs
+    //
+    // Example showing how to set custom page labels and numbering styles.
+    // Demonstrates various page configurations, boxes, and viewer preferences.
+ 
     public class PageLabels
     {
         public static readonly string DEST = "results/sandbox/objects/page_labels.pdf";

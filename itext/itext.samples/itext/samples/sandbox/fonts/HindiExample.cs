@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Fonts
 {
+   
+    // HindiExample.cs
+    //
+    // Example showing Hindi (Devanagari) text rendering with Unicode.
+    // Demonstrates character breakdown and colored text in tables.
+ 
     public class HindiExample
     {
         public static readonly String DEST = "results/sandbox/fonts/hindi_example.pdf";

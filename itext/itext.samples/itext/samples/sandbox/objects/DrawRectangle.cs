@@ -5,6 +5,12 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // DrawRectangle.cs
+    //
+    // Example showing how to draw a rectangle on a PDF page using PdfCanvas.
+    // Demonstrates basic shape drawing with custom stroke width.
+ 
     public class DrawRectangle
     {
         public static readonly string DEST = "results/sandbox/objects/draw_rectangle.pdf";

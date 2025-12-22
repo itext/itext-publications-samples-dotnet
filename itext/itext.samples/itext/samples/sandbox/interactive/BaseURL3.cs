@@ -4,6 +4,12 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Interactive
 {
+   
+    // BaseURL3.cs
+    //
+    // Example showing how to add a base URL to an existing PDF document.
+    // Demonstrates modifying the URI dictionary in the document catalog.
+ 
     public class BaseURL3
     {
         public static readonly String DEST = "results/sandbox/interactive/base_url3.pdf";

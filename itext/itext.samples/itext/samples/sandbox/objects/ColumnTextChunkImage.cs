@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ColumnTextChunkImage.cs
+    //
+    // Example showing how to inline images within text paragraphs.
+    // Demonstrates mixing text and images seamlessly in a single line.
+ 
     public class ColumnTextChunkImage
     {
         public static readonly string DOG = "../../../resources/img/dog.bmp";

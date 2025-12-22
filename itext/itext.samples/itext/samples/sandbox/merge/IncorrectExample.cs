@@ -7,6 +7,14 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // IncorrectExample.cs
+    //
+    // Example showing non-standard approach to rotating pages during merge.
+    // Demonstrates specific use case; not typical best practice solution.
+    // This example is named IncorrectExample because this is not how the problem of rotating pages
+    // or of merging documents typically should be solved.
+ 
     public class IncorrectExample
     {
         public static readonly String DEST = "results/sandbox/merge/incorrect_example.pdf";

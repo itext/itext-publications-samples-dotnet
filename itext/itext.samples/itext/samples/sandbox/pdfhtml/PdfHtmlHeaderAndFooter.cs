@@ -12,6 +12,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Pdfhtml
 {
+   
+    // PdfHtmlHeaderAndFooter.cs
+    //
+    // Example showing how to add headers and footers to HTML-converted PDFs.
+    // Demonstrates using event handlers for page numbering and custom headers.
+ 
     public class PdfHtmlHeaderAndFooter
     {
         public static readonly string SRC = "../../../resources/pdfhtml/";

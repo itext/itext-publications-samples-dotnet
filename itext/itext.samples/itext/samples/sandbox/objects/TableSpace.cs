@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // TableSpace.cs
+    //
+    // Example showing how to create fixed-width formatted text with spacing.
+    // Demonstrates aligning text columns using string formatting with spaces.
+ 
     public class TableSpace
     {
         public static readonly string DEST = "results/sandbox/objects/table_space.pdf";

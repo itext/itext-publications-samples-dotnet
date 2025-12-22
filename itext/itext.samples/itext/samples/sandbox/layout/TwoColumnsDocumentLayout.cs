@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Layout
 {
+   
+    // TwoColumnsDocumentLayout.cs
+    //
+    // Example showing document-wide two-column layout using ColumnRenderer.
+    // Demonstrates defining custom column areas for automatic text flow.
+ 
     public class TwoColumnsDocumentLayout
     {
         public static readonly string DEST = "results/sandbox/layout/complexDocumentLayout.pdf";

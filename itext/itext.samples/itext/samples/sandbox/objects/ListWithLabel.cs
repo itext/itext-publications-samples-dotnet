@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ListWithLabel.cs
+    //
+    // Example showing how to create a labeled list using table layout.
+    // Demonstrates placing a text label next to a bulleted list.
+ 
     public class ListWithLabel
     {
         public static readonly string DEST = "results/sandbox/objects/list_with_label.pdf";

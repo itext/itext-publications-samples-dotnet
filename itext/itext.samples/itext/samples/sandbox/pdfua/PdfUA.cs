@@ -15,6 +15,12 @@ using iText.Pdfua;
 
 namespace iText.Samples.Sandbox.Pdfua
 {
+   
+    // PdfUA.cs
+    //
+    // Example showing how to create PDF/UA-1 accessible documents.
+    // Demonstrates images, lists, tables, headings, and form fields with tags.
+ 
     public class PdfUA
     {
         public static readonly string DEST = "results/sandbox/pdfua/pdf_ua.pdf";

@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // Bullet.cs
+    //
+    // Example showing different approaches to creating bulleted lists.
+    // Demonstrates controlling line breaking behavior with bullet points.
+ 
     public class Bullet
     {
         public static readonly string DEST = "results/sandbox/objects/bullets.pdf";

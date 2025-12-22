@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using iText.Kernel.Pdf;
 using iText.Signatures.Validation;
@@ -23,7 +24,6 @@ namespace iText.Samples.Sandbox.Signatures.Validation {
         public void showCaseCacheInitializationAndSimpleUsage() {
             ValidatorChainBuilder builder = new ValidatorChainBuilder();
             // We want to use LOTL as a source of trusted certificates
-            builder.WithOcspClient(() => new DummyOcspClient());
             builder.TrustEuropeanLotl(true);
             //We need to configure some additional properties for LOTL fetching
             // First of all we want to remove country data if something goes wrong during fetching,
@@ -40,7 +40,7 @@ namespace iText.Samples.Sandbox.Signatures.Validation {
             //fetchingProperties
             // .setCountryNamesToIgnore(LotlCountryCodeConstants.ITALY, LotlCountryCodeConstants.UNITED_KINGDOM);
 
-            //By default the cache is considered valid for 24 hours, if you want to change this you can use method
+            //By default, the cache is considered valid for 24 hours, if you want to change this you can use method
             //fetchingProperties.setCacheStalenessInMilliseconds
             //We highly recommend to not set this value too low as fetching the lotl data is network intensive,
             //and we want to avoid fetching it too often if not really needed.
@@ -55,6 +55,13 @@ namespace iText.Samples.Sandbox.Signatures.Validation {
             //If you want to disable the automatic refresh you can use INT.MAX_VALUE as the refresh interval
             // fetchingProperties.setRefreshIntervalCalculator((cacheStalenessInMilliseconds) => Integer.MAX_VALUE);
 
+            //If you want to additionally perform Qualification validation, you need to provide QualifiedValidator instance.
+            //You can use this same QualifiedValidator instance to obtain the results, after the validation.
+            //Be careful not to use the same QualifiedValidator instance for multiple documents,
+            //without obtaining the results. Such attempt will produce an exception.
+            QualifiedValidator qualifiedValidator = new QualifiedValidator();
+            builder.WithQualifiedValidator(qualifiedValidator);
+
             //If you ran it without adding to the dependencies:
             // eu-trusted-lists-resources
             // you would get an exception here as the resources are not found. Something along the lines of:
@@ -67,6 +74,14 @@ namespace iText.Samples.Sandbox.Signatures.Validation {
                 ValidationReport r = validator.ValidateSignatures();
                 // Here you have the validation report and can use it as you need
                 Console.WriteLine(r);
+
+                // Separately, now you can obtain Qualification results
+                foreach (KeyValuePair<String, QualifiedValidator.QualificationValidationData> result in qualifiedValidator.ObtainAllSignaturesValidationResults()) {
+                    // An explanation on QualificationConclusion values meaning can be found in QualificationConclusion docs
+                    Console.WriteLine("Signature: " + result.Key + " is validated. The result: " + result.Value.GetQualificationConclusion());
+                    // You can also get the report items, which led to such results.
+                    Console.WriteLine("Report items: " + result.Value.GetValidationReport());
+                }
             }
         }
     }

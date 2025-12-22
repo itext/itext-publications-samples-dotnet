@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
+   
+    // F07_Unicode.cs
+    //
+    // Example showing multilingual text using Unicode (IDENTITY_H) encoding.
+    // Demonstrates French, Czech, and Russian text with a single embedded font.
+ 
     public class F07_Unicode
     {
         public static readonly String DEST = "results/sandbox/fonts/tutorial/f07_unicode.pdf";

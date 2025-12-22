@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 using iText.Pdfua;
 
 namespace iText.Samples.Sandbox.Pdfua {
+   
+    // PdfUA2TableCaption.cs
+    //
+    // Example showing how to add table captions in PDF/UA-2 documents.
+    // Demonstrates positioning captions at top and bottom of tables.
+ 
     public class PdfUA2TableCaption {
         public const String DEST = "results/sandbox/pdfua2/pdf_ua_table_caption.pdf";
 

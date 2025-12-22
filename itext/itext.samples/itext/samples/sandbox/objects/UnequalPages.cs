@@ -6,6 +6,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // UnequalPages.cs
+    //
+    // Example showing how to create pages with different sizes and margins.
+    // Demonstrates changing page dimensions dynamically within a document.
+ 
     public class UnequalPages
     {
         public static readonly string DEST = "results/sandbox/objects/unequal_pages.pdf";

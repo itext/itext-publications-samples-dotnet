@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ListWithImageAsBullet.cs
+    //
+    // Example showing how to use an image as a custom list bullet symbol.
+    // Demonstrates replacing standard bullets with image-based list markers.
+ 
     public class ListWithImageAsBullet
     {
         public static readonly string DEST = "results/sandbox/objects/list_with_image_bullet.pdf";

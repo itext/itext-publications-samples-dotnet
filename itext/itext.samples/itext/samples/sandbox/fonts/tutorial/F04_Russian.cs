@@ -8,6 +8,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Fonts.Tutorial
 {
+   
+    // F04_Russian.cs
+    //
+    // Example showing incorrect Russian text rendering with wrong encoding.
+    // Demonstrates why CP1250 encoding fails for Cyrillic characters.
+ 
     public class F04_Russian
     {
         public static readonly String DEST = "results/sandbox/fonts/tutorial/f04_russian.pdf";

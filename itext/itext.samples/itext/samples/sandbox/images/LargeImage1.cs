@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // LargeImage1.cs
+    //
+    // Example showing how to extract and scale a large image from a PDF.
+    // Demonstrates creating a new PDF with custom page size for the image.
+ 
     public class LargeImage1
     {
         public static readonly String DEST = "results/sandbox/images/large_image1.pdf";

@@ -6,6 +6,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // NestedLists.cs
+    //
+    // Example showing how to create multi-level nested lists.
+    // Demonstrates hierarchical list structure with sub-items.
+ 
     public class NestedLists
     {
         public static readonly String DEST = "results/sandbox/objects/nested_list.pdf";

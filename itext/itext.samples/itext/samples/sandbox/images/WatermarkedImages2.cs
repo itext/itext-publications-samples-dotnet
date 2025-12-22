@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Images
 {
+   
+    // WatermarkedImages2.cs
+    //
+    // Example showing how to watermark images in table cells using renderers.
+    // Demonstrates custom cell rendering with rotated text overlays on images.
+ 
     public class WatermarkedImages2
     {
         public static readonly String DEST = "results/sandbox/images/watermarked_images2.pdf";

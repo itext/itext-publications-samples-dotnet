@@ -16,6 +16,12 @@ using iText.Pdfa;
 
 namespace iText.Samples.Sandbox.Pdfa
 {
+   
+    // PdfA1a.cs
+    //
+    // Example showing how to create a tagged PDF/A-1a document with table.
+    // Demonstrates CSV import, custom headers, and page numbering.
+ 
     public class PdfA1a
     {
         public static readonly string DEST = "results/sandbox//pdfa/pdf_a_1a.pdf";

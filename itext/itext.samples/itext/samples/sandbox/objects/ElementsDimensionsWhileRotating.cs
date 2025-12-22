@@ -9,6 +9,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ElementsDimensionsWhileRotating.cs
+    //
+    // Example showing how element dimensions behave with rotation angles.
+    // Demonstrates auto and fixed width handling for rotated paragraphs.
+ 
     public class ElementsDimensionsWhileRotating
     {
         public static readonly string DEST = "results/sandbox/objects/elementsDimensionsWhileRotating.pdf";

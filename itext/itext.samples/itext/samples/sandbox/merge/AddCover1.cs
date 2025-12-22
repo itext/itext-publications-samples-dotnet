@@ -5,6 +5,12 @@ using iText.Kernel.Utils;
 
 namespace iText.Samples.Sandbox.Merge
 {
+   
+    // AddCover1.cs
+    //
+    // Example showing how to add a cover page to an existing PDF document.
+    // Demonstrates merging a single cover page with a multi-page document.
+ 
     public class AddCover1
     {
         public static readonly String DEST = "results/sandbox/merge/add_cover.pdf";

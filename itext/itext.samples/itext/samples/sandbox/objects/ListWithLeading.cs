@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // ListWithLeading.cs
+    //
+    // Example showing how to control spacing between list items using leading.
+    // Demonstrates fixed leading for custom vertical spacing in lists.
+ 
     public class ListWithLeading
     {
         public static readonly string DEST = "results/sandbox/objects/list_with_leading.pdf";

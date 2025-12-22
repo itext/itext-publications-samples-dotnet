@@ -6,6 +6,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Objects
 {
+   
+    // Tabs.cs
+    //
+    // Example showing different ways to use tabs in paragraphs.
+    // Demonstrates leading tabs, inline tabs, and combined tab usage.
+ 
     public class Tabs
     {
         public static readonly string DEST = "results/sandbox/objects/tabs.pdf";
