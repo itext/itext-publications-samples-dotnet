@@ -24,7 +24,11 @@ namespace iText.Samples
          */
         private static readonly List<string> renderCompareList = new List<string>()
         {
-            "iText.Samples.Sandbox.Signatures.SignatureExample"
+            "iText.Samples.Sandbox.Signatures.SignatureExample",
+            "iText.Samples.Sandbox.Signatures.Pqc.MLDSA",
+            "iText.Samples.Sandbox.Signatures.Pqc.SLHDSA",
+            "iText.Samples.Sandbox.Signatures.Pqc.FNDSA",
+            "iText.Samples.Sandbox.Signatures.Pqc.Picnic"
         };
 
         /**
@@ -35,7 +39,6 @@ namespace iText.Samples
                     "iText.Samples.Sandbox.Acroforms.ReadXFA", 
                     "iText.Samples.Sandbox.Acroforms.CreateXfdf",
                     "iText.Samples.Sandbox.Stamper.AddNamedDestinations"
-
             });
 
         /**
@@ -109,6 +112,7 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Signaturetag");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.DummyOcspClient");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.DummyResponse");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Pqc.PqcSignatureExample");
 
             // Not a sample classes
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Utils");
