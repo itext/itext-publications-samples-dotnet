@@ -8,6 +8,7 @@ using iText.Forms.Fields;
 using iText.Forms.Xfa;
 using iText.Kernel.Pdf;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Xfa
 {
@@ -19,8 +20,8 @@ namespace iText.Samples.Sandbox.Xfa
         public static void Main(String[] args)
         {
             // Load the license file to use XFA features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfHtmlAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

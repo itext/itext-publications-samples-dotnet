@@ -4,6 +4,7 @@ using iText.Commons.Utils;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 using iText.Svg.Converter;
 
 namespace iText.Samples.Sandbox.Svg
@@ -16,8 +17,8 @@ namespace iText.Samples.Sandbox.Svg
         public static void Main(string[] args)
         {
             // Load the license file to use typography features
-            using (var license = FileUtil.GetInputStreamForFile(
-                       Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }
