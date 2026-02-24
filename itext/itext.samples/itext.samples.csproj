@@ -91,8 +91,8 @@
     <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj')" />
     <PackageReference Include="itext.pdfocr.tesseract4" Version="4.2.0-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj')  And '$(TargetFramework)' == 'net461' " />
     <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj')  And '$(TargetFramework)' == 'net461' " />
-    <PackageReference Include="itext.pdfocr.onnxtr" Version="4.2.0-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnxtr\itext.pdfocr.onnxtr.csproj')" />
-    <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.onnxtr\itext.pdfocr.onnxtr.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnxtr\itext.pdfocr.onnxtr.csproj')" />
+    <PackageReference Include="itext.pdfocr.onnx.cpu" Version="4.2.0-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnx.cpu\itext.pdfocr.onnx.cpu.csproj')" />
+    <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.onnx.cpu\itext.pdfocr.onnx.cpu.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnx.cpu\itext.pdfocr.onnx.cpu.csproj')" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.IO" Condition="'$(TargetFramework)' == 'net461'" />
