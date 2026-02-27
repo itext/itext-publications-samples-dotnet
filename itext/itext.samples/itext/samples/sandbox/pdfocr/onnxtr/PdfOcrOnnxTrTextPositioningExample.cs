@@ -15,7 +15,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
     /// <para />
     /// This example demonstrates how to define the way text is retrieved from ocr engine output
     /// specifying
-    /// <see cref="iText.Pdfocr.Onnxtr.TextPositioning"/>
+    /// <see cref="iText.Pdfocr.Onnxtr.Text.TextPositioning"/>
     /// in
     /// <see cref="OnnxTrEngineProperties"/>
     /// in order to perform OCR
@@ -50,9 +50,10 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
             IList<FileInfo> images = new List<FileInfo> { new FileInfo(IMAGE) };
             IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.Fast(FAST);
             IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.CrnnVgg16(CRNNVGG16);
-            // It is possible to specify text positioning mode through OnnxTrEngineProperties. Default value is BY_LINES.
+            // It is possible to specify text positioning mode through OnnxTrEngineProperties.
+            // Default value is BY_WORDS_AND_LINES.
             using (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, null, recognitionPredictor, new 
-                OnnxTrEngineProperties().SetTextPositioning(TextPositioning.BY_WORDS))) {
+                OnnxTrEngineProperties().SetTextPositioning(iText.Pdfocr.Onnxtr.Text.TextPositioning.BY_WORDS))) {
                 // Set green text color to show the recognition result. Skip that step for real usages.
                 OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties().SetTextLayerName("OnnxTR by lines example"
                     ).SetTextColor(ColorConstants.GREEN);
