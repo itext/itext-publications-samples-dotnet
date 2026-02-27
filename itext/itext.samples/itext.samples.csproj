@@ -87,11 +87,11 @@
     <PackageReference Include="itext.pdfsweep" Version="5.0.6-SNAPSHOT" Condition="!Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')" />
     <ProjectReference Include="..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj" Condition="Exists('..\..\..\cleanup\itext\itext.cleanup\itext.cleanup.csproj')" />
 
-    <PackageReference Include="itext.pdfocr.api" Version="4.2.0-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj')" />
+    <PackageReference Include="itext.pdfocr.api" Version="5.0.0-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj')" />
     <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.api\itext.pdfocr.api.csproj')" />
-    <PackageReference Include="itext.pdfocr.tesseract4" Version="4.2.0-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj')  And '$(TargetFramework)' == 'net461' " />
+    <PackageReference Include="itext.pdfocr.tesseract4" Version="5.0.0-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj')  And '$(TargetFramework)' == 'net461' " />
     <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.tesseract4\itext.pdfocr.tesseract4.csproj')  And '$(TargetFramework)' == 'net461' " />
-    <PackageReference Include="itext.pdfocr.onnx.cpu" Version="4.2.0-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnx.cpu\itext.pdfocr.onnx.cpu.csproj')" />
+    <PackageReference Include="itext.pdfocr.onnx.cpu" Version="5.0.0-SNAPSHOT" Condition="!Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnx.cpu\itext.pdfocr.onnx.cpu.csproj')" />
     <ProjectReference Include="..\..\..\pdfocr\itext\itext.pdfocr.onnx.cpu\itext.pdfocr.onnx.cpu.csproj" Condition="Exists('..\..\..\pdfocr\itext\itext.pdfocr.onnx.cpu\itext.pdfocr.onnx.cpu.csproj')" />
   </ItemGroup>
   <ItemGroup>
