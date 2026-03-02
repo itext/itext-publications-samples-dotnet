@@ -4,9 +4,9 @@ using System.IO;
 using iText.Kernel.Colors;
 using iText.Kernel.Pdf;
 using iText.Pdfocr;
-using iText.Pdfocr.Onnxtr;
-using iText.Pdfocr.Onnxtr.Detection;
-using iText.Pdfocr.Onnxtr.Recognition;
+using iText.Pdfocr.Onnx;
+using iText.Pdfocr.Onnx.Detection;
+using iText.Pdfocr.Onnx.Recognition;
 
 namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
     /// <summary>PdfOcrOnnxTrTextPositioningExample.java</summary>
@@ -53,7 +53,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
             // It is possible to specify text positioning mode through OnnxTrEngineProperties.
             // Default value is BY_WORDS_AND_LINES.
             using (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, null, recognitionPredictor, new 
-                OnnxTrEngineProperties().SetTextPositioning(iText.Pdfocr.Onnxtr.Text.TextPositioning.BY_WORDS))) {
+                OnnxTrEngineProperties().SetTextPositioning(iText.Pdfocr.Onnx.Text.TextPositioning.BY_WORDS))) {
                 // Set green text color to show the recognition result. Skip that step for real usages.
                 OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties().SetTextLayerName("OnnxTR by lines example"
                     ).SetTextColor(ColorConstants.GREEN);

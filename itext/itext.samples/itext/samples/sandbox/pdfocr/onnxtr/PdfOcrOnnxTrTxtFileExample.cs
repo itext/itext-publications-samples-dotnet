@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using iText.Pdfocr.Onnxtr;
-using iText.Pdfocr.Onnxtr.Detection;
-using iText.Pdfocr.Onnxtr.Recognition;
+using iText.Pdfocr.Onnx;
+using iText.Pdfocr.Onnx.Detection;
+using iText.Pdfocr.Onnx.Recognition;
 
 namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
     /// <summary>PdfOcrOnnxTrTxtFileExample.java</summary>

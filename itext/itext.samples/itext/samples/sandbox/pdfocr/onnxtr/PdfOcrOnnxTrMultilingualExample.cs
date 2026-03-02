@@ -4,10 +4,10 @@ using System.IO;
 using iText.Kernel.Colors;
 using iText.Kernel.Pdf;
 using iText.Pdfocr;
-using iText.Pdfocr.Onnxtr;
-using iText.Pdfocr.Onnxtr.Detection;
-using iText.Pdfocr.Onnxtr.Orientation;
-using iText.Pdfocr.Onnxtr.Recognition;
+using iText.Pdfocr.Onnx;
+using iText.Pdfocr.Onnx.Detection;
+using iText.Pdfocr.Onnx.Orientation;
+using iText.Pdfocr.Onnx.Recognition;
 
 namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
     /// <summary>PdfOcrOnnxTrMultilingualExample.java</summary>
