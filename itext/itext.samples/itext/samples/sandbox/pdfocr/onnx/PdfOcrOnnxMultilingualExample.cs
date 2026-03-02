@@ -9,10 +9,10 @@ using iText.Pdfocr.Onnx.Detection;
 using iText.Pdfocr.Onnx.Orientation;
 using iText.Pdfocr.Onnx.Recognition;
 
-namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
-    /// <summary>PdfOcrOnnxTrMultilingualExample.java</summary>
+namespace iText.Samples.Sandbox.Pdfocr.Onnx {
+    /// <summary>PdfOcrOnnxMultilingualExample.java</summary>
     /// <remarks>
-    /// PdfOcrOnnxTrMultilingualExample.java
+    /// PdfOcrOnnxMultilingualExample.java
     /// <para />
     /// This example demonstrates how to perform OCR using
     /// <c>onnxtr-parseq-multilingual-v1.onnx</c>
@@ -22,10 +22,10 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
     /// <see cref="iText.Pdfocr.OcrPdfCreatorProperties"/>
     /// to set color for recognized text.
     /// <para />
-    /// Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+    /// Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
     /// </remarks>
-    public class PdfOcrOnnxTrMultilingualExample {
-        public const String DEST = "results/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrMultilingualExample/result.pdf";
+    public class PdfOcrOnnxMultilingualExample {
+        public const String DEST = "results/sandbox/pdfocr/onnx/PdfOcrOnnxMultilingualExample/result.pdf";
 
         private const String FRENCH = "../../../resources/img/french.png";
 
@@ -44,7 +44,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
-            new PdfOcrOnnxTrMultilingualExample().Manipulate();
+            new PdfOcrOnnxMultilingualExample().Manipulate();
         }
 
         protected internal virtual void Manipulate() {

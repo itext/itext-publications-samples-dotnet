@@ -15,7 +15,7 @@
     <StartupObject />
     <AssemblyName>itext.samples</AssemblyName>
   </PropertyGroup>
-  <!-- RuntimeIdentifier is required for PdfOCR-OnnxTR to load native libraries for your system. -->
+  <!-- RuntimeIdentifier is required for PdfOCR-Onnx to load native libraries for your system. -->
   <PropertyGroup Condition="'$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOsPlatform('Windows'))">
     <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'AMD64' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'X64'">win-x64</RuntimeIdentifier>
     <RuntimeIdentifier Condition="'$(PROCESSOR_ARCHITECTURE)' == 'x86' Or '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'X86'">win-x86</RuntimeIdentifier>

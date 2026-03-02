@@ -5,19 +5,19 @@ using iText.Pdfocr.Onnx;
 using iText.Pdfocr.Onnx.Detection;
 using iText.Pdfocr.Onnx.Recognition;
 
-namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
-    /// <summary>PdfOcrOnnxTrTxtFileExample.java</summary>
+namespace iText.Samples.Sandbox.Pdfocr.Onnx {
+    /// <summary>PdfOcrOnnxTxtFileExample.java</summary>
     /// <remarks>
-    /// PdfOcrOnnxTrTxtFileExample.java
+    /// PdfOcrOnnxTxtFileExample.java
     /// <para />
     /// This example demonstrates how to perform OCR using provided
-    /// <see cref="OnnxTrOcrEngine"/>
+    /// <see cref="OnnxOcrEngine"/>
     /// for the given list of input images and save output to a text file using provided path.
     /// <para />
-    /// Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+    /// Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
     /// </remarks>
-    public class PdfOcrOnnxTrTxtFileExample {
-        public const String DEST = "results/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrTxtFileExample/ocr_result.txt";
+    public class PdfOcrOnnxTxtFileExample {
+        public const String DEST = "results/sandbox/pdfocr/onnx/PdfOcrOnnxTxtFileExample/ocr_result.txt";
 
         private const String BASIC_IMAGE = "../../../resources/img/ocrExample.png";
 
@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
-            new PdfOcrOnnxTrTxtFileExample().Manipulate();
+            new PdfOcrOnnxTxtFileExample().Manipulate();
         }
 
         protected internal virtual void Manipulate() {

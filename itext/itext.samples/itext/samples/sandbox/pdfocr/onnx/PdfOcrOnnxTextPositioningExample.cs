@@ -8,14 +8,14 @@ using iText.Pdfocr.Onnx;
 using iText.Pdfocr.Onnx.Detection;
 using iText.Pdfocr.Onnx.Recognition;
 
-namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
-    /// <summary>PdfOcrOnnxTrTextPositioningExample.java</summary>
+namespace iText.Samples.Sandbox.Pdfocr.Onnx {
+    /// <summary>PdfOcrOnnxTextPositioningExample.java</summary>
     /// <remarks>
-    /// PdfOcrOnnxTrTextPositioningExample.java
+    /// PdfOcrOnnxTextPositioningExample.java
     /// <para />
     /// This example demonstrates how to define the way text is retrieved from ocr engine output
     /// specifying
-    /// <see cref="iText.Pdfocr.Onnxtr.Text.TextPositioning"/>
+    /// <see cref="iText.Pdfocr.Onnx.Text.TextPositioning"/>
     /// in
     /// <see cref="OnnxTrEngineProperties"/>
     /// in order to perform OCR
@@ -27,10 +27,10 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
     /// <see cref="iText.Pdfocr.OcrPdfCreatorProperties"/>
     /// to set color for recognized text.
     /// <para />
-    /// Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+    /// Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
     /// </remarks>
-    public class PdfOcrOnnxTrTextPositioningExample {
-        public const String DEST = "results/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrTextPositioningExample/result.pdf";
+    public class PdfOcrOnnxTextPositioningExample {
+        public const String DEST = "results/sandbox/pdfocr/onnx/PdfOcrOnnxTextPositioningExample/result.pdf";
 
         private const String IMAGE = "../../../resources/img/scanned.png";
 
@@ -43,7 +43,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
-            new PdfOcrOnnxTrTextPositioningExample().Manipulate();
+            new PdfOcrOnnxTextPositioningExample().Manipulate();
         }
 
         protected internal virtual void Manipulate() {
