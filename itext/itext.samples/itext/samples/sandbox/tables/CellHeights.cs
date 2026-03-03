@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // CellHeights.cs
+    //
+    // Illustrates different ways to control cell height including setting
+    // fixed height, minimum height, and extending the last row.
+ 
     public class CellHeights
     {
         public static readonly string DEST = "results/sandbox/tables/cell_heights.pdf";

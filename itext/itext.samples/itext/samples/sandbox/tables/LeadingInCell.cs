@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // LeadingInCell.cs
+    //
+    // Demonstrates how to control line spacing (leading) for text within
+    // table cells to adjust vertical text density.
+ 
     public class LeadingInCell
     {
         public static readonly string DEST = "results/sandbox/tables/leading_in_cell.pdf";

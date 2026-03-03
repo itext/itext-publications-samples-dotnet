@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Tamil
 {
+   
+    // TamilList.cs
+    //
+    // Generates PDF list elements containing Tamil text to showcase
+    // typography capabilities in structured list formats.
+ 
     public class TamilList
     {
         public const String DEST = "results/sandbox/typography/TamilList.pdf";

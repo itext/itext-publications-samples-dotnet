@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Telugu
 {
+   
+    // TeluguTextFormField.cs
+    //
+    // Creates PDF text input field with Telugu placeholder and value to
+    // demonstrate complex script support in form fields.
+ 
     public class TeluguTextFormField
     {
         public const String DEST = "results/sandbox/typography/TeluguTextFormField.pdf";

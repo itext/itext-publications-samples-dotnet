@@ -12,6 +12,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ImageBackground.cs
+    //
+    // Shows how to add a background image to table cells using custom
+    // cell rendering techniques.
+ 
     public class ImageBackground
     {
         public static readonly string DEST = "results/sandbox/tables/image_background.pdf";

@@ -11,6 +11,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
+   
+    // GurmukhiList.cs
+    //
+    // Generates PDF list elements containing Gurmukhi text to showcase
+    // typography capabilities in structured list formats.
+ 
     public class GurmukhiList
     {
         public const String DEST = "results/sandbox/typography/GurmukhiList.pdf";

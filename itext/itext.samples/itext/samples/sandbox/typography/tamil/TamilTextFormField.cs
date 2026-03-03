@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Tamil
 {
+   
+    // TamilTextFormField.cs
+    //
+    // Creates PDF text input field with Tamil placeholder and value to
+    // demonstrate complex script support in form fields.
+ 
     public class TamilTextFormField
     {
         public const String DEST = "results/sandbox/typography/TamilTextFormField.pdf";

@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables 
 {
+   
+    // CustomBorder4.cs
+    //
+    // Illustrates yet another custom border technique for tables with
+    // specialized rendering requirements for split cells.
+ 
     public class CustomBorder4 
     {
         public static readonly String DEST = "results/sandbox/tables/custom_border4.pdf";

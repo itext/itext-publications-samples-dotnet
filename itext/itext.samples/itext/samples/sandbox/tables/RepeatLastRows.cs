@@ -9,6 +9,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // RepeatLastRows.cs
+    //
+    // Illustrates how to configure tables to repeat footer rows at the
+    // bottom of each page when a table spans multiple pages.
+ 
     public class RepeatLastRows
     {
         public static readonly string DEST = "results/sandbox/tables/repeat_last_rows.pdf";

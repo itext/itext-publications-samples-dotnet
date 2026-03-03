@@ -15,6 +15,11 @@ using Org.BouncyCastle.Pkcs;
 
 namespace iText.Samples.Sandbox.Signatures
 {
+   
+    // SignatureExample.cs
+    //
+    // Signs PDF documents with digital signatures and custom appearance.
+ 
     public class SignatureExample
     {
         public static readonly String DEST = "results/sandbox/signatures/signExample.pdf";

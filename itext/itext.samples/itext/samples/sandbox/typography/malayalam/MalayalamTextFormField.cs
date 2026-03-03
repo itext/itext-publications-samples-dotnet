@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Malayalam
 {
+   
+    // MalayalamTextFormField.cs
+    //
+    // Creates PDF text input field with Malayalam placeholder and value to
+    // demonstrate complex script support in form fields.
+ 
     public class MalayalamTextFormField
     {
         public const String DEST = "results/sandbox/typography/MalayalamTextFormField.pdf";

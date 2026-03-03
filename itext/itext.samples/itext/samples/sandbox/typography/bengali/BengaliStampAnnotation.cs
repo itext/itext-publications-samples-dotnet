@@ -10,6 +10,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Bengali
 {
+   
+    // BengaliStampAnnotation.cs
+    //
+    // Demonstrates creating a stamp annotation with Bengali text content in a 
+    // PDF document. The annotation is positioned on the page with a cyan 
+    // color.
+ 
     public class BengaliStampAnnotation
     {
         public const String DEST = "results/sandbox/typography/BengaliStampAnnotation.pdf";

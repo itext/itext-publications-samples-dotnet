@@ -11,6 +11,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Bengali
 {
+   
+    // BengaliList.cs
+    //
+    // Demonstrates creating a bulleted list with Bengali text items in a PDF 
+    // document. Uses NotoSansBengali font to properly render Bengali script.
+ 
     public class BengaliList
     {
         public const String DEST = "results/sandbox/typography/BengaliList.pdf";

@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Malayalam
 {
+   
+    // MalayalamTable.cs
+    //
+    // Demonstrates rendering Malayalam text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class MalayalamTable
     {
         public const String DEST = "results/sandbox/typography/MalayalamTable.pdf";

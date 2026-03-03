@@ -7,6 +7,12 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ImagesInChunkInCell.cs
+    //
+    // Shows how to add multiple images as chunks within a paragraph inside
+    // a table cell for inline image placement.
+ 
     public class ImagesInChunkInCell
     {
         public static readonly string DEST = "results/sandbox/tables/images_in_chunk_in_cell.pdf";

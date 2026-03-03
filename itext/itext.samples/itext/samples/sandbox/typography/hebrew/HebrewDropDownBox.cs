@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Hebrew text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class HebrewDropDownBox
     {
         public const String DEST = "results/sandbox/typography/HebrewDropDownBox.pdf";

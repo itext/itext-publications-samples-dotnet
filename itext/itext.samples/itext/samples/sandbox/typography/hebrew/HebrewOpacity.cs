@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewOpacity.cs
+    //
+    // Renders Hebrew text with varying opacity levels to demonstrate
+    // transparency control in typography elements.
+ 
     public class HebrewOpacity
     {
         public const String DEST = "results/sandbox/typography/HebrewOpacity.pdf";

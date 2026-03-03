@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Telugu
 {
+   
+    // TeluguOpacity.cs
+    //
+    // Renders Telugu text with varying opacity levels to demonstrate
+    // transparency control in typography elements.
+ 
     public class TeluguOpacity
     {
         public const String DEST = "results/sandbox/typography/TeluguOpacity.pdf";

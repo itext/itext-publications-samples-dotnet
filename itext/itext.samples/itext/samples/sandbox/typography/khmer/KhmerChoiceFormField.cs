@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Khmer
 {
+   
+    // KhmerChoiceFormField.cs
+    //
+    // Creates PDF form with choice field containing Khmer text options
+    // to demonstrate form field typography support.
+ 
     public class KhmerChoiceFormField
     {
         public const String DEST = "results/sandbox/typography/KhmerChoiceFormField.pdf";

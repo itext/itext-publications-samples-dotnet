@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Telugu
 {
+   
+    // TeluguLink.cs
+    //
+    // Creates PDF hyperlinks with Telugu text to demonstrate typography
+    // support in interactive link elements.
+ 
     public class TeluguLink
     {
         public const String DEST = "results/sandbox/typography/TeluguLink.pdf";

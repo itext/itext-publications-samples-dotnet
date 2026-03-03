@@ -14,6 +14,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiTextFormField.cs
+    //
+    // Creates PDF text input field with Gujarati placeholder and value to
+    // demonstrate complex script support in form fields.
+ 
     public class GujaratiTextFormField
     {
         public const String DEST = "results/sandbox/typography/GujaratiTextFormField.pdf";

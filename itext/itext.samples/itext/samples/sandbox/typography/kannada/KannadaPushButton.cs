@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Kannada
 {
+   
+    // KannadaPushButton.cs
+    //
+    // Creates PDF push button form field with Kannada caption text to
+    // illustrate typography in interactive button elements.
+ 
     public class KannadaPushButton
     {
         public const String DEST = "results/sandbox/typography/KannadaPushButton.pdf";

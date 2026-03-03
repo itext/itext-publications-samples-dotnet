@@ -14,6 +14,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
+   
+    // GurmukhiDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Gurmukhi text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class GurmukhiDropDownBox
     {
         public const String DEST = "results/sandbox/typography/GurmukhiDropDownBox.pdf";

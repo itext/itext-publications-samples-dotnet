@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Khmer
 {
+   
+    // KhmerPushButton.cs
+    //
+    // Creates PDF push button form field with Khmer caption text to
+    // illustrate typography in interactive button elements.
+ 
     public class KhmerPushButton
     {
         public const String DEST = "results/sandbox/typography/KhmerPushButton.pdf";

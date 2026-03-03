@@ -14,6 +14,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SplitRowAtSpecificRow.cs
+    //
+    // Demonstrates techniques for forcing a table to split at a specific
+    // row position rather than automatic page-break splitting.
+ 
     public class SplitRowAtSpecificRow
     {
         public static readonly string DEST = "results/sandbox/tables/split_row_at_specific_row.pdf";

@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Khmer
 {
+   
+    // KhmerList.cs
+    //
+    // Generates PDF list elements containing Khmer text to showcase
+    // typography capabilities in structured list formats.
+ 
     public class KhmerList
     {
         public const String DEST = "results/sandbox/typography/KhmerList.pdf";

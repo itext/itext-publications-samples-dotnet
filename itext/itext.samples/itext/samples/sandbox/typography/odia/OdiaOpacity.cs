@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Odia
 {
+   
+    // OdiaOpacity.cs
+    //
+    // Renders Odia text with varying opacity levels to demonstrate
+    // transparency control in typography elements.
+ 
     public class OdiaOpacity
     {
         public const String DEST = "results/sandbox/typography/OdiaOpacity.pdf";

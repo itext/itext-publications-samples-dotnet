@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // FitTableOnPage.cs
+    //
+    // Demonstrates techniques for scaling and fitting a table to properly
+    // fit within a single page without splitting.
+ 
     public class FitTableOnPage
     {
         public static readonly string DEST = "results/sandbox/tables/fit_table_on_page.pdf";

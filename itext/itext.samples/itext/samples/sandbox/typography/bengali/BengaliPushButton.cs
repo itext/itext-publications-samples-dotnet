@@ -12,6 +12,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Bengali
 {
+   
+    // BengaliPushButton.cs
+    //
+    // Demonstrates creating a PDF form with a push button field displaying 
+    // Bengali text. Uses NotoSansBengali font to render the button caption 
+    // properly.
+ 
     public class BengaliPushButton
     {
         public const String DEST = "results/sandbox/typography/BengaliPushButton.pdf";

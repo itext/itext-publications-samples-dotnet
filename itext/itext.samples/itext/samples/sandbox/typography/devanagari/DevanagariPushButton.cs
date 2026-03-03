@@ -12,6 +12,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariPushButton.cs
+    //
+    // Demonstrates creating a PDF form with a push button field displaying 
+    // Devanagari text. Uses NotoSansDevanagari font to render the button 
+    // caption properly.
+ 
     public class DevanagariPushButton
     {
         public const String DEST = "results/sandbox/typography/DevanagariPushButton.pdf";

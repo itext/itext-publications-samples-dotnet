@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
+   
+    // GurmukhiWordSpacing.cs
+    //
+    // Demonstrates adjusting word spacing in Gurmukhi text with standard
+    // and custom spacing configurations.
+ 
     public class GurmukhiWordSpacing
     {
         public const String DEST = "results/sandbox/typography/GurmukhiWordSpacing.pdf";

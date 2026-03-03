@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // DiagonalCell.cs
+    //
+    // Demonstrates how to draw a diagonal line through a table cell using
+    // a custom cell renderer that paints on the cell's canvas.
+ 
     public class DiagonalCell
     {
         public static readonly string DEST = "results/sandbox/tables/diagonal_cell.pdf";

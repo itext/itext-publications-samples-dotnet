@@ -13,6 +13,11 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicHiddenTextForm.cs
+    //
+    // Updates form fields with Arabic text and hides field appearances.
+ 
     public class ArabicHiddenTextForm
     {
         public const String DEST = "results/sandbox/typography/ArabicHiddenTextForm.pdf";

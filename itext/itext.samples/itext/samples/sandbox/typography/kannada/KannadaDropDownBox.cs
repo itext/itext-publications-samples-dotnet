@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Kannada
 {
+   
+    // KannadaDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Kannada text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class KannadaDropDownBox
     {
         public const String DEST = "results/sandbox/typography/KannadaDropDownBox.pdf";

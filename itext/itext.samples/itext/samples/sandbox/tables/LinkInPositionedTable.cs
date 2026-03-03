@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // LinkInPositionedTable.cs
+    //
+    // Shows how to add clickable links to cells in a table that has been
+    // positioned at a specific location on the page.
+ 
     public class LinkInPositionedTable
     {
         public static readonly string DEST = "results/sandbox/tables/link_in_positioned_table.pdf";

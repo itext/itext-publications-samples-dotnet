@@ -10,6 +10,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariCircleAnnotation.cs
+    //
+    // Demonstrates creating a circle annotation with Devanagari text content 
+    // in a PDF document. The annotation is positioned on the page with a 
+    // magenta color.
+ 
     public class DevanagariCircleAnnotation
     {
         public const String DEST = "results/sandbox/typography/DevanagariCircleAnnotation.pdf";

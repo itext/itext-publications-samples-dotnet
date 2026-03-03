@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Khmer
 {
+   
+    // KhmerDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Khmer text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class KhmerDropDownBox
     {
         public const String DEST = "results/sandbox/typography/KhmerDropDownBox.pdf";

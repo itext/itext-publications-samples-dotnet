@@ -10,6 +10,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // StampHeader2.cs
+    //
+    // Adds centered text headers to PDF pages.
+ 
     public class StampHeader2 
     {
         public static readonly String DEST = "results/sandbox/stamper/stamp_header2.pdf";

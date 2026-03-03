@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ListInCell.cs
+    //
+    // Demonstrates how to add bulleted or numbered lists as content within
+    // table cells for structured information display.
+ 
     public class ListInCell
     {
         public static readonly string DEST = "results/sandbox/tables/list_in_cell.pdf";

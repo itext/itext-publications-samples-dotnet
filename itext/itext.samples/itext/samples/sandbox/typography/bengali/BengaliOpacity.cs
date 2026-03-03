@@ -11,6 +11,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Bengali
 {
+   
+    // BengaliOpacity.cs
+    //
+    // Demonstrates rendering Bengali text with varying opacity levels in a PDF 
+    // document. Creates paragraphs with the same text at different opacity 
+    // values (0.1, 0.5, and default).
+ 
     public class BengaliOpacity
     {
         public const String DEST = "results/sandbox/typography/BengaliOpacity.pdf";

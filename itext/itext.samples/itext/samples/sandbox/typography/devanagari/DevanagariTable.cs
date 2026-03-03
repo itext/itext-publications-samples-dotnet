@@ -12,6 +12,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariTable.cs
+    //
+    // Demonstrates creating a table with Devanagari text in a PDF document. 
+    // Uses NotoSansDevanagari font to properly render Devanagari script 
+    // characters in table cells.
+ 
     public class DevanagariTable
     {
         public const String DEST = "results/sandbox/typography/DevanagariTable.pdf";

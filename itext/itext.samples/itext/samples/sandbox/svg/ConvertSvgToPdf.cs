@@ -3,6 +3,11 @@ using iText.Svg.Converter;
 
 namespace iText.Samples.Sandbox.Svg
 {
+   
+    // ConvertSvgToPdf.cs
+    //
+    // Converts SVG files directly to PDF documents.
+ 
     public class ConvertSvgToPdf
     {
         public static readonly string SRC = "../../../resources/svg/";

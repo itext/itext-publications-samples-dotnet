@@ -10,6 +10,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Kannada
 {
+   
+    // KannadaCircleAnnotation.cs
+    //
+    // Creates PDF annotations with Kannada text content to show
+    // typography support in annotation elements.
+ 
     public class KannadaCircleAnnotation
     {
         public const String DEST = "results/sandbox/typography/KannadaCircleAnnotation.pdf";

@@ -14,6 +14,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Zugferd
 {
+   
+    // BasicSample.cs
+    //
+    // Creates a PDF/A-3 compliant ZUGFeRD invoice with embedded XML data.
+ 
     public class BasicSample
     {
         public const String DEST = "results/sandbox/zugferd/invoice_with_zugferd.pdf";

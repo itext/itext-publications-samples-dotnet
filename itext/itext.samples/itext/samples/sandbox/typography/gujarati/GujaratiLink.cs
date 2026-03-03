@@ -12,6 +12,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiLink.cs
+    //
+    // Creates PDF hyperlinks with Gujarati text to demonstrate typography
+    // support in interactive link elements.
+ 
     public class GujaratiLink
     {
         public const String DEST = "results/sandbox/typography/GujaratiLink.pdf";

@@ -12,6 +12,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
+   
+    // GurmukhiTable.cs
+    //
+    // Demonstrates rendering Gurmukhi text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class GurmukhiTable
     {
         public const String DEST = "results/sandbox/typography/GurmukhiTable.pdf";

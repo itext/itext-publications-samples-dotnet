@@ -11,6 +11,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiCharacterSpacing.cs
+    //
+    // Demonstrates adjusting character spacing in Gujarati text with
+    // standard and custom spacing values.
+ 
     public class GujaratiCharacterSpacing
     {
         public const String DEST = "results/sandbox/typography/GujaratiCharacterSpacing.pdf";

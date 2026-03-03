@@ -10,6 +10,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiCircleAnnotation.cs
+    //
+    // Creates PDF annotations with Gujarati text content to show
+    // typography support in annotation elements.
+ 
     public class GujaratiCircleAnnotation
     {
         public const String DEST = "results/sandbox/typography/GujaratiCircleAnnotation.pdf";

@@ -11,6 +11,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
+   
+    // GurmukhiCharacterSpacing.cs
+    //
+    // Demonstrates adjusting character spacing in Gurmukhi text with
+    // standard and custom spacing values.
+ 
     public class GurmukhiCharacterSpacing
     {
         public const String DEST = "results/sandbox/typography/GurmukhiCharacterSpacing.pdf";

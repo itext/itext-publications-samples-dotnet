@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Kannada
 {
+   
+    // KannadaCharacterSpacing.cs
+    //
+    // Demonstrates adjusting character spacing in Kannada text with
+    // standard and custom spacing values.
+ 
     public class KannadaCharacterSpacing
     {
         public const String DEST = "results/sandbox/typography/KannadaCharacterSpacing.pdf";

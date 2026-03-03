@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Odia
 {
+   
+    // OdiaDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Odia text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class OdiaDropDownBox
     {
         public const String DEST = "results/sandbox/typography/OdiaDropDownBox.pdf";

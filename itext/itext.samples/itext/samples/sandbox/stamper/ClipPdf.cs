@@ -6,6 +6,11 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ClipPdf.cs
+    //
+    // Clips PDF pages with custom rectangular clipping paths.
+ 
     public class ClipPdf 
     {
         public static readonly String DEST = "results/sandbox/stamper/clip_pdf.pdf";

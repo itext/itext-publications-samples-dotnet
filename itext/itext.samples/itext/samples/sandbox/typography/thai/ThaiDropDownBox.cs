@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Thai
 {
+   
+    // ThaiDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Thai text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class ThaiDropDownBox
     {
         public const String DEST = "results/sandbox/typography/ThaiDropDownBox.pdf";

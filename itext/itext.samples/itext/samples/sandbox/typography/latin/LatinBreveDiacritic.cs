@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Latin
 {
+   
+    // LatinBreveDiacritic.cs
+    //
+    // Demonstrates rendering Latin text with breve diacritical marks using
+    // typography features for proper accent display.
+ 
     public class LatinBreveDiacritic
     {
         public const String DEST = "results/sandbox/typography/LatinBreveDiacritic.pdf";

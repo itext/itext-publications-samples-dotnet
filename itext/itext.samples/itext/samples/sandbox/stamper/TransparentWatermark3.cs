@@ -14,6 +14,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // TransparentWatermark3.cs
+    //
+    // Adds centered transparent watermarks to PDF pages.
+ 
     public class TransparentWatermark3 
     {
         public static readonly String DEST = "results/sandbox/stamper/transparent_watermark3.pdf";

@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Kannada
 {
+   
+    // KannadaList.cs
+    //
+    // Generates PDF list elements containing Kannada text to showcase
+    // typography capabilities in structured list formats.
+ 
     public class KannadaList
     {
         public const String DEST = "results/sandbox/typography/KannadaList.pdf";

@@ -7,6 +7,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddFieldAndKids.cs
+    //
+    // Adds form fields with parent-child relationships to PDF.
+ 
     public class AddFieldAndKids {
         public static readonly String DEST = "results/sandbox/stamper/add_field_and_kids.pdf";
         public static readonly String SRC = "../../../resources/pdfs/hello.pdf";

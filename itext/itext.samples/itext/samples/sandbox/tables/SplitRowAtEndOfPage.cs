@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SplitRowAtEndOfPage.cs
+    //
+    // Shows how table rows behave when they need to split at page
+    // boundaries and how to control this splitting behavior.
+ 
     public class SplitRowAtEndOfPage
     {
         public static readonly string DEST = "results/sandbox/tables/split_row_at_end_of_page.pdf";

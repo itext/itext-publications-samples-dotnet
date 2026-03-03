@@ -9,6 +9,11 @@ using iText.Svg.Converter;
 
 namespace iText.Samples.Sandbox.Svg
 {
+   
+    // ConvertSvgToPdfWithPdfCalligraph.cs
+    //
+    // Converts SVG to PDF using typography features.
+ 
     public class ConvertSvgToPdfWithPdfCalligraph
     {
         private static readonly string SRC = "../../../resources/svg/";

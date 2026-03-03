@@ -9,6 +9,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // PositionContentInCell2.cs
+    //
+    // Demonstrates alternative techniques for positioning and aligning
+    // content within cells, including vertical alignment options.
+ 
     public class PositionContentInCell2
     {
         public static readonly string DEST = "results/sandbox/tables/position_content_in_cell2.pdf";

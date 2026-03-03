@@ -14,6 +14,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Gujarati text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class GujaratiDropDownBox
     {
         public const String DEST = "results/sandbox/typography/GujaratiDropDownBox.pdf";

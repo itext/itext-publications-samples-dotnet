@@ -11,6 +11,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
+   
+    // GurmukhiOpacity.cs
+    //
+    // Renders Gurmukhi text with varying opacity levels to demonstrate
+    // transparency control in typography elements.
+ 
     public class GurmukhiOpacity
     {
         public const String DEST = "results/sandbox/typography/GurmukhiOpacity.pdf";

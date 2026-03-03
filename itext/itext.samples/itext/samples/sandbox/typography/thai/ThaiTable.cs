@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Thai
 {
+   
+    // ThaiTable.cs
+    //
+    // Demonstrates rendering Thai text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class ThaiTable
     {
         public const String DEST = "results/sandbox/typography/ThaiTable.pdf";

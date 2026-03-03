@@ -13,6 +13,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewLink.cs
+    //
+    // Creates PDF hyperlinks with Hebrew text to demonstrate typography
+    // support in interactive link elements.
+ 
     public class HebrewLink
     {
         public const String DEST = "results/sandbox/typography/HebrewLink.pdf";

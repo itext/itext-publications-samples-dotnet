@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewTable.cs
+    //
+    // Demonstrates rendering Hebrew text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class HebrewTable
     {
         public const String DEST = "results/sandbox/typography/HebrewTable.pdf";

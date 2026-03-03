@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewWordSpacing.cs
+    //
+    // Demonstrates adjusting word spacing in Hebrew text with standard
+    // and custom spacing configurations.
+ 
     public class HebrewWordSpacing
     {
         public const String DEST = "results/sandbox/typography/HebrewWordSpacing.pdf";

@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Odia
 {
+   
+    // OdiaPushButton.cs
+    //
+    // Creates PDF push button form field with Odia caption text to
+    // illustrate typography in interactive button elements.
+ 
     public class OdiaPushButton
     {
         public const String DEST = "results/sandbox/typography/OdiaPushButton.pdf";

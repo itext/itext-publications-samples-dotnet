@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Odia
 {
+   
+    // OdiaWordSpacing.cs
+    //
+    // Demonstrates adjusting word spacing in Odia text with standard
+    // and custom spacing configurations.
+ 
     public class OdiaWordSpacing
     {
         public const String DEST = "results/sandbox/typography/OdiaWordSpacing.pdf";

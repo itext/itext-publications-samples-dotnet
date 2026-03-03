@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Malayalam
 {
+   
+    // MalayalamCharacterSpacing.cs
+    //
+    // Demonstrates adjusting character spacing in Malayalam text with
+    // standard and custom spacing values.
+ 
     public class MalayalamCharacterSpacing
     {
         public const String DEST = "results/sandbox/typography/MalayalamCharacterSpacing.pdf";

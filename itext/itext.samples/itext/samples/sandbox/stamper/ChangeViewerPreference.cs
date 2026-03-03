@@ -4,6 +4,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ChangeViewerPreference.cs
+    //
+    // Sets PDF viewer preferences such as duplex printing mode.
+ 
     public class ChangeViewerPreference 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_viewer_preference.pdf";

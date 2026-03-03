@@ -11,6 +11,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariBoldText.cs
+    //
+    // Demonstrates rendering Devanagari text with bold font styling in a PDF. 
+    // Compares regular font, actual bold font, and simulated bold text to 
+    // show proper typography handling.
+ 
     public class DevanagariBoldText
     {
         public const String DEST = "results/sandbox/typography/DevanagariBoldText.pdf";

@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Tamil
 {
+   
+    // TamilPushButton.cs
+    //
+    // Creates PDF push button form field with Tamil caption text to
+    // illustrate typography in interactive button elements.
+ 
     public class TamilPushButton
     {
         public const String DEST = "results/sandbox/typography/TamilPushButton.pdf";

@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Kannada
 {
+   
+    // KannadaTable.cs
+    //
+    // Demonstrates rendering Kannada text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class KannadaTable
     {
         public const String DEST = "results/sandbox/typography/KannadaTable.pdf";

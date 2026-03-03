@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SimpleTable12.cs
+    //
+    // Illustrates a twelfth simple table example focusing on fundamental
+    // table features and cell content.
+ 
     public class SimpleTable12
     {
         public static readonly string DEST = "results/sandbox/tables/simple_table12.pdf";

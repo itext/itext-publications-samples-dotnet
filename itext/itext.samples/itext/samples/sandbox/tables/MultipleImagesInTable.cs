@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // MultipleImagesInTable.cs
+    //
+    // Demonstrates distributing multiple images across table cells to
+    // create a grid or gallery layout.
+ 
     public class MultipleImagesInTable
     {
         public static readonly string DEST = "results/sandbox/tables/multiple_images_in_table.pdf";

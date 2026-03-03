@@ -14,6 +14,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariTextFormField.cs
+    //
+    // Demonstrates creating a PDF form with a text input field containing 
+    // Devanagari text. Uses NotoSansDevanagari font with center alignment for 
+    // proper script rendering.
+ 
     public class DevanagariTextFormField
     {
         public const String DEST = "results/sandbox/typography/DevanagariTextFormField.pdf";

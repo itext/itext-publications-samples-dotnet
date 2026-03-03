@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables 
 {
+   
+    // DottedLineCell.cs
+    //
+    // Shows how to create table cells with dotted line borders using
+    // DashedBorder with custom dash pattern settings.
+ 
     public class DottedLineCell 
     {
         public static readonly string DEST = "results/sandbox/tables/dotted_line_cell.pdf";

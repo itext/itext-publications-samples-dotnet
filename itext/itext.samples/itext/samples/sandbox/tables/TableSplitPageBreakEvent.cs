@@ -14,6 +14,12 @@ namespace iText.Samples.Sandbox.Tables
     // the second one is the on which the required split logic will be performed.
     // Mind that for simplification reasons the way in which we handle overflow rows is not designed for a generic case.
     // For example, if your table has cells with big rowspan and/or colspans, you may want to update the code a bit.
+   
+    // TableSplitPageBreakEvent.cs
+    //
+    // Shows how to use page event handlers to control table splitting
+    // behavior and add custom content at split points.
+ 
     public class TableSplitPageBreakEvent
     {
         public static readonly String DEST = "results/sandbox/tables/tables_split_pageBreak_event.pdf";

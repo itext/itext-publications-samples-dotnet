@@ -12,6 +12,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariChoiceFormField.cs
+    //
+    // Demonstrates creating a PDF form with a choice field (list box) 
+    // containing Devanagari text options. Uses NotoSansDevanagari font for 
+    // proper script rendering.
+ 
     public class DevanagariChoiceFormField
     {
         public const String DEST = "results/sandbox/typography/DevanagariChoiceFormField.pdf";

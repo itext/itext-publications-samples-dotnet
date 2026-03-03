@@ -5,6 +5,11 @@ using iText.Kernel.Pdf.Layer;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ChangeOCGOrder.cs
+    //
+    // Reorders optional content groups in PDF documents.
+ 
     public class ChangeOCGOrder 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_ocg_order.pdf";

@@ -12,6 +12,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicTable.cs
+    //
+    // Demonstrates creating a table with Arabic text in a PDF document. Uses 
+    // right-to-left text alignment and NotoNaskhArabic font for proper Arabic 
+    // text rendering.
+ 
     public class ArabicTable
     {
         public const String DEST = "results/sandbox/typography/ArabicTable.pdf";

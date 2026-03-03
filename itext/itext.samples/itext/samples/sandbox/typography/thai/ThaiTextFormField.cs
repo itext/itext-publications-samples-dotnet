@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Thai
 {
+   
+    // ThaiTextFormField.cs
+    //
+    // Creates PDF text input field with Thai placeholder and value to
+    // demonstrate complex script support in form fields.
+ 
     public class ThaiTextFormField
     {
         public const String DEST = "results/sandbox/typography/ThaiTextFormField.pdf";

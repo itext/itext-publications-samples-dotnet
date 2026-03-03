@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Tamil
 {
+   
+    // TamilOpacity.cs
+    //
+    // Renders Tamil text with varying opacity levels to demonstrate
+    // transparency control in typography elements.
+ 
     public class TamilOpacity
     {
         public const String DEST = "results/sandbox/typography/TamilOpacity.pdf";

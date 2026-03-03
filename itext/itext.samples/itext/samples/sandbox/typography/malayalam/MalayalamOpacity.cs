@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Malayalam
 {
+   
+    // MalayalamOpacity.cs
+    //
+    // Renders Malayalam text with varying opacity levels to demonstrate
+    // transparency control in typography elements.
+ 
     public class MalayalamOpacity
     {
         public const String DEST = "results/sandbox/typography/MalayalamOpacity.pdf";

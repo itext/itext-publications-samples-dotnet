@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Malayalam
 {
+   
+    // MalayalamList.cs
+    //
+    // Generates PDF list elements containing Malayalam text to showcase
+    // typography capabilities in structured list formats.
+ 
     public class MalayalamList
     {
         public const String DEST = "results/sandbox/typography/MalayalamList.pdf";

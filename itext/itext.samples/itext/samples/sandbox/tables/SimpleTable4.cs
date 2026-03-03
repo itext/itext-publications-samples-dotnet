@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SimpleTable4.cs
+    //
+    // Demonstrates a fourth variation of basic table creation with
+    // different styling or configuration approaches.
+ 
     public class SimpleTable4
     {
         public static readonly string DEST = "results/sandbox/tables/simple_table4.pdf";

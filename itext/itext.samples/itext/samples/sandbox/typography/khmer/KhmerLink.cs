@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Khmer
 {
+   
+    // KhmerLink.cs
+    //
+    // Creates PDF hyperlinks with Khmer text to demonstrate typography
+    // support in interactive link elements.
+ 
     public class KhmerLink
     {
         public const String DEST = "results/sandbox/typography/KhmerLink.pdf";

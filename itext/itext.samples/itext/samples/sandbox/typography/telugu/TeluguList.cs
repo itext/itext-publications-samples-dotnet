@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Telugu
 {
+   
+    // TeluguList.cs
+    //
+    // Generates PDF list elements containing Telugu text to showcase
+    // typography capabilities in structured list formats.
+ 
     public class TeluguList
     {
         public const String DEST = "results/sandbox/typography/TeluguList.pdf";

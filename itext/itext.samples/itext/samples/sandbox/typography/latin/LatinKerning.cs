@@ -13,6 +13,12 @@ using iText.Typography.Config;
 
 namespace iText.Samples.Sandbox.Typography.Latin
 {
+   
+    // LatinKerning.cs
+    //
+    // Demonstrates kerning feature for Latin text by comparing paragraphs
+    // with kerning enabled and disabled to show spacing differences.
+ 
     public class LatinKerning
     {
         public const String DEST = "results/sandbox/typography/LatinKerning.pdf";

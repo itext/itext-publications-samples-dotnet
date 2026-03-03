@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // Splitting2.cs
+    //
+    // Shows alternative approaches to controlling table splitting behavior
+    // across page boundaries.
+ 
     public class Splitting2
     {
         public static readonly string DEST = "results/sandbox/tables/splitting2.pdf";

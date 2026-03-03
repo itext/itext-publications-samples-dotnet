@@ -11,6 +11,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiList.cs
+    //
+    // Generates PDF list elements containing Gujarati text to showcase
+    // typography capabilities in structured list formats.
+ 
     public class GujaratiList
     {
         public const String DEST = "results/sandbox/typography/GujaratiList.pdf";

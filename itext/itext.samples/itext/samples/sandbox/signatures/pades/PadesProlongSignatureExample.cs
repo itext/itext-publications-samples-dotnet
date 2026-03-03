@@ -13,6 +13,11 @@ using iText.Signatures;
 namespace iText.Samples.Sandbox.Signatures.Pades
 {
     /// <summary>Basic example of document signature prolongation.</summary>
+   
+    // PadesProlongSignatureExample.cs
+    //
+    // Extends PAdES signature validity using timestamp and revocation data.
+ 
     public class PadesProlongSignatureExample
     {
         public static readonly String SRC = "../../../resources/pdfs/padesSignatureLTLevel.pdf";

@@ -11,6 +11,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // StampHeader1.cs
+    //
+    // Adds text headers to PDF pages.
+ 
     public class StampHeader1 
     {
         public static readonly String DEST = "results/sandbox/stamper/stamp_header1.pdf";

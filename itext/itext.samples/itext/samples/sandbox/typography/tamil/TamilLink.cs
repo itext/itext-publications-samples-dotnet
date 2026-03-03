@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Tamil
 {
+   
+    // TamilLink.cs
+    //
+    // Creates PDF hyperlinks with Tamil text to demonstrate typography
+    // support in interactive link elements.
+ 
     public class TamilLink
     {
         public const String DEST = "results/sandbox/typography/TamilLink.pdf";

@@ -14,6 +14,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Bengali
 {
+   
+    // BengaliDropDownBox.cs
+    //
+    // Demonstrates creating a PDF form with a dropdown (combo box) field 
+    // containing Bengali text options. Uses NotoSansBengali font with center 
+    // alignment.
+ 
     public class BengaliDropDownBox
     {
         public const String DEST = "results/sandbox/typography/BengaliDropDownBox.pdf";

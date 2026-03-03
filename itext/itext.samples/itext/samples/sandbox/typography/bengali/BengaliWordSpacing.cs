@@ -11,6 +11,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Bengali
 {
+   
+    // BengaliWordSpacing.cs
+    //
+    // Demonstrates rendering Bengali text with different word spacing values in 
+    // a PDF. Creates paragraphs with default spacing, 10-point spacing, and 
+    // 20-point spacing.
+ 
     public class BengaliWordSpacing
     {
         public const String DEST = "results/sandbox/typography/BengaliWordSpacing.pdf";

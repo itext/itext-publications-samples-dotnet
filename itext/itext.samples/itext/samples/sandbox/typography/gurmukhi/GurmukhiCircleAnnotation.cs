@@ -10,6 +10,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
+   
+    // GurmukhiCircleAnnotation.cs
+    //
+    // Creates PDF annotations with Gurmukhi text content to show
+    // typography support in annotation elements.
+ 
     public class GurmukhiCircleAnnotation
     {
         public const String DEST = "results/sandbox/typography/GurmukhiCircleAnnotation.pdf";

@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // FixedHeightCell.cs
+    //
+    // Shows how to create table cells with fixed heights and demonstrates
+    // how content behavior changes when it doesn't fit the fixed size.
+ 
     public class FixedHeightCell
     {
         public static readonly string DEST = "results/sandbox/tables/fixed_height_cell.pdf";

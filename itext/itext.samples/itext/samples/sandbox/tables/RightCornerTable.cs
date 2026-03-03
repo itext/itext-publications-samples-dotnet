@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // RightCornerTable.cs
+    //
+    // Demonstrates how to position a table in the top-right corner of a
+    // page using fixed positioning or alignment.
+ 
     public class RightCornerTable
     {
         public static readonly string DEST = "results/sandbox/tables/right_corner_table.pdf";

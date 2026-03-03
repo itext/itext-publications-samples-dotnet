@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Malayalam
 {
+   
+    // MalayalamPushButton.cs
+    //
+    // Creates PDF push button form field with Malayalam caption text to
+    // illustrate typography in interactive button elements.
+ 
     public class MalayalamPushButton
     {
         public const String DEST = "results/sandbox/typography/MalayalamPushButton.pdf";

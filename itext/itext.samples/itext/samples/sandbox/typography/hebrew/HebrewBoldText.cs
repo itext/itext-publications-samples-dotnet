@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewBoldText.cs
+    //
+    // Demonstrates rendering bold Hebrew text in PDF documents using
+    // typography features with regular and bold fonts.
+ 
     public class HebrewBoldText
     {
         public const String DEST = "results/sandbox/typography/HebrewBoldText.pdf";

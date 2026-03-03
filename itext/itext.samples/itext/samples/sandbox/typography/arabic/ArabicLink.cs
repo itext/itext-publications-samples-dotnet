@@ -13,6 +13,11 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicLink.cs
+    //
+    // Creates a hyperlink element with Arabic text in a PDF document.
+ 
     public class ArabicLink
     {
         public const String DEST = "results/sandbox/typography/ArabicLink.pdf";

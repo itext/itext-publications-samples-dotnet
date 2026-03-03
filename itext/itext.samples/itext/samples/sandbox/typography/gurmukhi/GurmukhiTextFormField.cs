@@ -14,6 +14,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
+   
+    // GurmukhiTextFormField.cs
+    //
+    // Creates PDF text input field with Gurmukhi placeholder and value to
+    // demonstrate complex script support in form fields.
+ 
     public class GurmukhiTextFormField
     {
         public const String DEST = "results/sandbox/typography/GurmukhiTextFormField.pdf";

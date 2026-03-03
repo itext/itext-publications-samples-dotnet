@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // TiledBackgroundColor2.cs
+    //
+    // Demonstrates an alternative approach to tiled color backgrounds with
+    // different pattern and styling options.
+ 
     public class TiledBackgroundColor2
     {
         public static readonly string DEST = "results/sandbox/tables/tiled_background_color2.pdf";

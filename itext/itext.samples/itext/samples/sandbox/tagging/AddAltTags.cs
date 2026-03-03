@@ -4,6 +4,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Tagging
 {
+   
+    // AddAltTags.cs
+    //
+    // Adds Alt text descriptions to Figure elements in PDF tag structure.
+ 
     public class AddAltTags
     {
         public static readonly string DEST = "results/sandbox/tagging/add_alt_tags.pdf";

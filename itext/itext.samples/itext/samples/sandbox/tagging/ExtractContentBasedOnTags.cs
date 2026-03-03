@@ -12,6 +12,11 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Tagging
 {
+   
+    // ExtractContentBasedOnTags.cs
+    //
+    // Extracts and displays content from PDF based on tag structure.
+ 
     public class ExtractContentBasedOnTags
     {
         public static readonly string DEST = "results/sandbox/tagging/starter_pdfua1.pdf"; 

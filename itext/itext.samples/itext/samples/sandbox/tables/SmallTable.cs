@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SmallTable.cs
+    //
+    // Demonstrates how to create a compact table that doesn't use the full
+    // page width and can be positioned as desired.
+ 
     public class SmallTable
     {
         public static readonly string DEST = "results/sandbox/tables/small_table.pdf";

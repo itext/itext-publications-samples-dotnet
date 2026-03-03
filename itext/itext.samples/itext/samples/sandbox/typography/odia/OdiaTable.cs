@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Odia
 {
+   
+    // OdiaTable.cs
+    //
+    // Demonstrates rendering Odia text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class OdiaTable
     {
         public const String DEST = "results/sandbox/typography/OdiaTable.pdf";

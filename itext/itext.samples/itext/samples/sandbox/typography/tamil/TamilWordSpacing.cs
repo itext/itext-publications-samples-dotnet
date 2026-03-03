@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Tamil
 {
+   
+    // TamilWordSpacing.cs
+    //
+    // Demonstrates adjusting word spacing in Tamil text with standard
+    // and custom spacing configurations.
+ 
     public class TamilWordSpacing
     {
         public const String DEST = "results/sandbox/typography/TamilWordSpacing.pdf";

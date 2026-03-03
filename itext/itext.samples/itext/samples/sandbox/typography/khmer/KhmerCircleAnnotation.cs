@@ -10,6 +10,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Khmer
 {
+   
+    // KhmerCircleAnnotation.cs
+    //
+    // Creates PDF annotations with Khmer text content to show
+    // typography support in annotation elements.
+ 
     public class KhmerCircleAnnotation
     {
         public const String DEST = "results/sandbox/typography/KhmerCircleAnnotation.pdf";

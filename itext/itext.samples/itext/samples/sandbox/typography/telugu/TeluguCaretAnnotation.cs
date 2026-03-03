@@ -10,6 +10,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Telugu
 {
+   
+    // TeluguCaretAnnotation.cs
+    //
+    // Creates PDF annotations with Telugu text content to show
+    // typography support in annotation elements.
+ 
     public class TeluguCaretAnnotation
     {
         public const String DEST = "results/sandbox/typography/TeluguCaretAnnotation.pdf";

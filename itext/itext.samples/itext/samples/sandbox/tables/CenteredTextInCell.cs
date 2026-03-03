@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // CenteredTextInCell.cs
+    //
+    // Demonstrates how to center text both horizontally and vertically
+    // within table cells using alignment properties.
+ 
     public class CenteredTextInCell
     {
         public static readonly string DEST = "results/sandbox/tables/centered_text_in_cell.pdf";

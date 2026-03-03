@@ -11,6 +11,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Bengali
 {
+   
+    // BengaliBoldText.cs
+    //
+    // Demonstrates rendering Bengali text with bold font styling in a PDF. 
+    // Compares regular font, actual bold font, and simulated bold text to 
+    // show proper typography handling.
+ 
     public class BengaliBoldText
     {
         public const String DEST = "results/sandbox/typography/BengaliBoldText.pdf";

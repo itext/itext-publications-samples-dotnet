@@ -11,6 +11,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariCharacterSpacing.cs
+    //
+    // Demonstrates rendering Devanagari text with varying character spacing in 
+    // a PDF document. Creates paragraphs with default spacing, 5-point 
+    // spacing, and 10-point spacing.
+ 
     public class DevanagariCharacterSpacing
     {
         public const String DEST = "results/sandbox/typography/DevanagariCharacterSpacing.pdf";

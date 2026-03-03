@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables 
 {
+   
+    // DottedLineCell2.cs
+    //
+    // Demonstrates an alternative approach to creating dotted line borders
+    // in table cells with different styling options.
+ 
     public class DottedLineCell2 
     {
         public static readonly string DEST = "results/sandbox/tables/dotted_line_cell2.pdf";

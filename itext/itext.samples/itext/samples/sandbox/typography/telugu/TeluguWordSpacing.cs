@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Telugu
 {
+   
+    // TeluguWordSpacing.cs
+    //
+    // Demonstrates adjusting word spacing in Telugu text with standard
+    // and custom spacing configurations.
+ 
     public class TeluguWordSpacing
     {
         public const String DEST = "results/sandbox/typography/TeluguWordSpacing.pdf";

@@ -11,6 +11,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariList.cs
+    //
+    // Demonstrates creating a bulleted list with Devanagari text items in a 
+    // PDF document. Uses NotoSansDevanagari font to properly render 
+    // Devanagari script.
+ 
     public class DevanagariList
     {
         public const String DEST = "results/sandbox/typography/DevanagariList.pdf";

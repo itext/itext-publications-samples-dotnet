@@ -8,6 +8,11 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ReorderPages.cs
+    //
+    // Reorders pages in PDF documents to custom sequence.
+ 
     public class ReorderPages 
     {
         public const String DEST = "results/sandbox/stamper/reorder_pages.pdf";

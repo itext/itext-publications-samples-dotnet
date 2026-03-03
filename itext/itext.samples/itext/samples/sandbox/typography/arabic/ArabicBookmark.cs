@@ -7,6 +7,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicBookmark.cs
+    //
+    // Demonstrates creating PDF bookmarks with Arabic text using iText
+    // typography features.
+ 
     public class ArabicBookmark
     {
         public const String DEST = "results/sandbox/typography/ArabicBookmark.pdf";

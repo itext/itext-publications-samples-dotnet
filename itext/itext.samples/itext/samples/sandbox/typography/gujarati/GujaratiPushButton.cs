@@ -12,6 +12,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiPushButton.cs
+    //
+    // Creates PDF push button form field with Gujarati caption text to
+    // illustrate typography in interactive button elements.
+ 
     public class GujaratiPushButton
     {
         public const String DEST = "results/sandbox/typography/GujaratiPushButton.pdf";

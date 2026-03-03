@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Thai
 {
+   
+    // ThaiPushButton.cs
+    //
+    // Creates PDF push button form field with Thai caption text to
+    // illustrate typography in interactive button elements.
+ 
     public class ThaiPushButton
     {
         public const String DEST = "results/sandbox/typography/ThaiPushButton.pdf";

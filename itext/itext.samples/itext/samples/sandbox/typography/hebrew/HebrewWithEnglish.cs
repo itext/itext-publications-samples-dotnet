@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewWithEnglish.cs
+    //
+    // Demonstrates bidirectional text rendering with mixed Hebrew and
+    // English content in a single PDF document.
+ 
     public class HebrewWithEnglish
     {
         public const String DEST = "results/sandbox/typography/HebrewWithEnglish.pdf";

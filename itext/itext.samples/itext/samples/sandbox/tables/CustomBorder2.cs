@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // CustomBorder2.cs
+    //
+    // Demonstrates advanced custom border rendering with conditional border
+    // styling based on cell position within the table structure.
+ 
     public class CustomBorder2
     {
         public static readonly string DEST = "results/sandbox/tables/custom_border2.pdf";

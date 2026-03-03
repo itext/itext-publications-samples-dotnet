@@ -12,6 +12,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
+   
+    // GurmukhiPushButton.cs
+    //
+    // Creates PDF push button form field with Gurmukhi caption text to
+    // illustrate typography in interactive button elements.
+ 
     public class GurmukhiPushButton
     {
         public const String DEST = "results/sandbox/typography/GurmukhiPushButton.pdf";

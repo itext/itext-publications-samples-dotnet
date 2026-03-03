@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Malayalam
 {
+   
+    // MalayalamDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Malayalam text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class MalayalamDropDownBox
     {
         public const String DEST = "results/sandbox/typography/MalayalamDropDownBox.pdf";

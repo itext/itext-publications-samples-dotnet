@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // IncompleteTable.cs
+    //
+    // Shows how iText handles incomplete tables where the last row doesn't
+    // have all cells filled, demonstrating auto-completion behavior.
+ 
     public class IncompleteTable
     {
         public static readonly string DEST = "results/sandbox/tables/incomplete_table.pdf";

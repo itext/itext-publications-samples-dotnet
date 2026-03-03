@@ -12,6 +12,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicCharacterSpacing.cs
+    //
+    // Demonstrates applying different character spacing values to Arabic text
+    // in PDF documents.
+ 
     public class ArabicCharacterSpacing
     {
         public const String DEST = "results/sandbox/typography/ArabicCharacterSpacing.pdf";

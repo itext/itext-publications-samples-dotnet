@@ -10,6 +10,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicStampAnnotation.cs
+    //
+    // Demonstrates creating a stamp annotation with Arabic text content in a 
+    // PDF document. The annotation is positioned on the page with a cyan 
+    // color.
+ 
     public class ArabicStampAnnotation
     {
         public const String DEST = "results/sandbox/typography/ArabicStampAnnotation.pdf";

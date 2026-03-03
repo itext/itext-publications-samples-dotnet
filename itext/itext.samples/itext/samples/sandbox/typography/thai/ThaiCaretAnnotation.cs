@@ -10,6 +10,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Thai
 {
+   
+    // ThaiCaretAnnotation.cs
+    //
+    // Creates PDF annotations with Thai text content to show
+    // typography support in annotation elements.
+ 
     public class ThaiCaretAnnotation
     {
         public const String DEST = "results/sandbox/typography/ThaiCaretAnnotation.pdf";

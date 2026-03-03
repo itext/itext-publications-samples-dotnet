@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Khmer
 {
+   
+    // KhmerTable.cs
+    //
+    // Demonstrates rendering Khmer text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class KhmerTable
     {
         public const String DEST = "results/sandbox/typography/KhmerTable.pdf";

@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // TableWithTab.cs
+    //
+    // Demonstrates how to use tab stops within table cell content for
+    // aligned text positioning and formatting.
+ 
     public class TableWithTab
     {
         public static readonly string DEST = "results/sandbox/tables/table_with_tab.pdf";

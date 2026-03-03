@@ -12,6 +12,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicPushButton.cs
+    //
+    // Demonstrates creating a PDF form with a push button field displaying 
+    // Arabic text. Uses NotoNaskhArabic font to render the button caption 
+    // properly.
+ 
     public class ArabicPushButton
     {
         public const String DEST = "results/sandbox/typography/ArabicPushButton.pdf";

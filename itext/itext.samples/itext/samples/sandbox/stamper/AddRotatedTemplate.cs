@@ -9,6 +9,11 @@ using iText.Layout.Element;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddRotatedTemplate.cs
+    //
+    // Adds rotated form XObjects/templates to PDF documents.
+ 
     public class AddRotatedTemplate 
     {
         public static readonly String SRC = "../../../resources/pdfs/hello.pdf";

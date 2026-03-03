@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Kannada
 {
+   
+    // KannadaOpacity.cs
+    //
+    // Renders Kannada text with varying opacity levels to demonstrate
+    // transparency control in typography elements.
+ 
     public class KannadaOpacity
     {
         public const String DEST = "results/sandbox/typography/KannadaOpacity.pdf";

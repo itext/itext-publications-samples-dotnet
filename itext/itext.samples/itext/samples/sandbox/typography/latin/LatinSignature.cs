@@ -20,6 +20,12 @@ using Org.BouncyCastle.Pkcs;
 
 namespace iText.Samples.Sandbox.Typography.Latin
 {
+   
+    // LatinSignature.cs
+    //
+    // Creates digital signature with custom Latin fonts in PDF, signing
+    // existing document with certificate and displaying signature info.
+ 
     public class LatinSignature
     {
         public const String DEST = "results/sandbox/typography/LatinSignature.pdf";

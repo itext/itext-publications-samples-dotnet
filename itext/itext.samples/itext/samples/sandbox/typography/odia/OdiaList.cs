@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Odia
 {
+   
+    // OdiaList.cs
+    //
+    // Generates PDF list elements containing Odia text to showcase
+    // typography capabilities in structured list formats.
+ 
     public class OdiaList
     {
         public const String DEST = "results/sandbox/typography/OdiaList.pdf";

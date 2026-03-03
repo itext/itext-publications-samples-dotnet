@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // Splitting.cs
+    //
+    // Illustrates how tables automatically split across multiple pages and
+    // how to use keepTogether to prevent splitting.
+ 
     public class Splitting
     {
         public static readonly string DEST = "results/sandbox/tables/splitting.pdf";

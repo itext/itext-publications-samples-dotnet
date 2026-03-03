@@ -15,6 +15,11 @@ namespace iText.Samples.Sandbox.Signatures.Appearance
 {
     /// <summary>Basic example of the signature appearance customizing during the document signing
     /// using the SignatureFieldAppearance class and ReuseAppearances.</summary>
+   
+    // SignatureReuseAppearanceExample.cs
+    //
+    // Signs existing signature fields while reusing their appearance.
+ 
     public class SignatureReuseAppearanceExample
     {
         private static char[] PASSWORD = "testpassphrase".ToCharArray();

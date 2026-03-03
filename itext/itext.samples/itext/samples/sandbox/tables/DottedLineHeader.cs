@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // DottedLineHeader.cs
+    //
+    // Illustrates how to create a table with a dotted line separator
+    // between the header row and the data rows.
+ 
     public class DottedLineHeader
     {
         public static readonly string DEST = "results/sandbox/tables/dotted_line_header.pdf";

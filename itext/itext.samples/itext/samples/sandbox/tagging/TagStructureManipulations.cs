@@ -8,6 +8,11 @@ using iText.Kernel.Pdf.Tagutils;
 
 namespace iText.Samples.Sandbox.Tagging
 {
+   
+    // TagStructureManipulations.cs
+    //
+    // Demonstrates modifying and relocating elements in PDF tag structure.
+ 
     public class TagStructureManipulations
     {
         public static readonly String DEST = "results/sandbox/tagging/88th_Academy_Awards_with_stars.pdf";

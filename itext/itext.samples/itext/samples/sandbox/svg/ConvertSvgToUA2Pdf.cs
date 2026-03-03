@@ -7,6 +7,11 @@ using iText.Svg.Processors.Impl;
 
 namespace iText.Samples.Sandbox.Svg
 {
+   
+    // ConvertSvgToUA2Pdf.cs
+    //
+    // Converts SVG to PDF/UA-2 compliant accessible documents.
+ 
     public class ConvertSvgToUA2Pdf
     {
         public static readonly string SRC = "../../../resources/svg/";

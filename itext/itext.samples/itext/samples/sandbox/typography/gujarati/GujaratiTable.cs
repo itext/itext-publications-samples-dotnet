@@ -12,6 +12,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiTable.cs
+    //
+    // Demonstrates rendering Gujarati text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class GujaratiTable
     {
         public const String DEST = "results/sandbox/typography/GujaratiTable.pdf";

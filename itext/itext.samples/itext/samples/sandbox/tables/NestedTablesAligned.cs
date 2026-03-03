@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // NestedTablesAligned.cs
+    //
+    // Demonstrates how to properly align nested tables within parent table
+    // cells using vertical and horizontal alignment properties.
+ 
     public class NestedTablesAligned
     {
         public static readonly string DEST = "results/sandbox/tables/nested_tables_aligned.pdf";

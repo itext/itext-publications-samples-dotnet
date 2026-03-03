@@ -13,6 +13,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewHiddenTextForm.cs
+    //
+    // Creates hidden text form fields with Hebrew content to demonstrate
+    // typography support in non-visible form elements.
+ 
     public class HebrewHiddenTextForm
     {
         public const String DEST = "results/sandbox/typography/HebrewHiddenTextForm.pdf";

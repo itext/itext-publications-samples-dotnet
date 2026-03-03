@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SimpleRowColspan.cs
+    //
+    // Shows a basic example of using colspan to merge cells horizontally
+    // across multiple columns in a table.
+ 
     public class SimpleRowColspan
     {
         public static readonly string DEST = "results/sandbox/tables/simple_row_colspan.pdf";

@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Malayalam
 {
+   
+    // MalayalamLink.cs
+    //
+    // Creates PDF hyperlinks with Malayalam text to demonstrate typography
+    // support in interactive link elements.
+ 
     public class MalayalamLink
     {
         public const String DEST = "results/sandbox/typography/MalayalamLink.pdf";

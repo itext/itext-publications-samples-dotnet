@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Tamil
 {
+   
+    // TamilTable.cs
+    //
+    // Demonstrates rendering Tamil text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class TamilTable
     {
         public const String DEST = "results/sandbox/typography/TamilTable.pdf";

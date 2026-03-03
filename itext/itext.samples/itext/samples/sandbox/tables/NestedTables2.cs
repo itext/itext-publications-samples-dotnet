@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // NestedTables2.cs
+    //
+    // Shows another variation of nested table layouts with different
+    // configuration and styling approaches.
+ 
     public class NestedTables2
     {
         public static readonly string DEST = "results/sandbox/tables/nested_tables2.pdf";

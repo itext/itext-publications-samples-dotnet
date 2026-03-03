@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Tamil
 {
+   
+    // TamilDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Tamil text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class TamilDropDownBox
     {
         public const String DEST = "results/sandbox/typography/TamilDropDownBox.pdf";

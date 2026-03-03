@@ -11,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Thai
 {
+   
+    // ThaiOpacity.cs
+    //
+    // Renders Thai text with varying opacity levels to demonstrate
+    // transparency control in typography elements.
+ 
     public class ThaiOpacity
     {
         public const String DEST = "results/sandbox/typography/ThaiOpacity.pdf";

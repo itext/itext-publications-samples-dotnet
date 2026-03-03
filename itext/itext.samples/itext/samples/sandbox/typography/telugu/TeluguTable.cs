@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Telugu
 {
+   
+    // TeluguTable.cs
+    //
+    // Demonstrates rendering Telugu text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class TeluguTable
     {
         public const String DEST = "results/sandbox/typography/TeluguTable.pdf";

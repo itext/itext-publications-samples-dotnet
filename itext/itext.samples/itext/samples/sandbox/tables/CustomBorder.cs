@@ -9,6 +9,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // CustomBorder.cs
+    //
+    // Shows how to create a custom table border renderer that selectively
+    // removes bottom borders from cells except for the last row on each page.
+ 
     public class CustomBorder
     {
         public static readonly string DEST = "results/sandbox/tables/custom_border.pdf";

@@ -10,6 +10,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewCircleAnnotation.cs
+    //
+    // Creates PDF annotations with Hebrew text content to show
+    // typography support in annotation elements.
+ 
     public class HebrewCircleAnnotation
     {
         public const String DEST = "results/sandbox/typography/HebrewCircleAnnotation.pdf";

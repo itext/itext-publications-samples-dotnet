@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Thai
 {
+   
+    // ThaiLink.cs
+    //
+    // Creates PDF hyperlinks with Thai text to demonstrate typography
+    // support in interactive link elements.
+ 
     public class ThaiLink
     {
         public const String DEST = "results/sandbox/typography/ThaiLink.pdf";

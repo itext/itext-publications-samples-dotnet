@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // RowColumnOrder.cs
+    //
+    // Shows how cells are added to tables and explains the row-by-row
+    // filling order when creating table structures.
+ 
     public class RowColumnOrder
     {
         public static readonly string DEST = "results/sandbox/tables/row_column_order.pdf";

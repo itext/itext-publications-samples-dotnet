@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // AddOverlappingImage.cs
+    //
+    // Demonstrates how to add an image that overlaps a table using a custom
+    // table renderer that draws an image on top of the table content.
+ 
     public class AddOverlappingImage
     {
         public static readonly string DEST = "results/sandbox/tables/add_overlapping_image.pdf";

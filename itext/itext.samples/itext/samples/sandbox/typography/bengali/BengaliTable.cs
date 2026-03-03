@@ -12,6 +12,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Bengali
 {
+   
+    // BengaliTable.cs
+    //
+    // Demonstrates creating a table with Bengali text in a PDF document. Uses 
+    // NotoSansBengali font to properly render Bengali script characters in 
+    // table cells.
+ 
     public class BengaliTable
     {
         public const String DEST = "results/sandbox/typography/BengaliTable.pdf";

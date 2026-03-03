@@ -11,6 +11,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiOpacity.cs
+    //
+    // Renders Gujarati text with varying opacity levels to demonstrate
+    // transparency control in typography elements.
+ 
     public class GujaratiOpacity
     {
         public const String DEST = "results/sandbox/typography/GujaratiOpacity.pdf";

@@ -5,6 +5,11 @@ using iText.Kernel.XMP;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddXmpToPage.cs
+    //
+    // Adds XMP metadata to PDF pages.
+ 
     public class AddXmpToPage 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_xmp_to_page.pdf";

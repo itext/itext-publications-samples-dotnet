@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // RotatedCell.cs
+    //
+    // Shows how to rotate text within table cells using rotation angle
+    // properties for vertical or angled text display.
+ 
     public class RotatedCell
     {
         public static readonly string DEST = "results/sandbox/tables/rotated_cell.pdf";

@@ -14,6 +14,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Telugu
 {
+   
+    // TeluguDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Telugu text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class TeluguDropDownBox
     {
         public const String DEST = "results/sandbox/typography/TeluguDropDownBox.pdf";

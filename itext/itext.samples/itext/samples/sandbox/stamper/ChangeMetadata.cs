@@ -4,6 +4,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ChangeMetadata.cs
+    //
+    // Updates PDF document metadata and adds XMP metadata.
+ 
     public class ChangeMetadata 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_meta_data.pdf";

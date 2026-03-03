@@ -12,6 +12,11 @@ using iText.Layout.Tagging;
 
 namespace iText.Samples.Sandbox.Tagging 
 {
+   
+    // TableHeaderCellAssociatedWithSubCellsTagging.cs
+    //
+    // Creates tagged tables with proper header cell associations.
+ 
     public class TableHeaderCellAssociatedWithSubCellsTagging 
     {
         public static readonly String DEST = "results/sandbox/tagging/TableHeaderCellAssociatedWithSubCellsTagging.pdf";

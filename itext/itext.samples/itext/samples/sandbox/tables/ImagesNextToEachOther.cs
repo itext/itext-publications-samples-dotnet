@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ImagesNextToEachOther.cs
+    //
+    // Demonstrates how to place multiple images side-by-side in table cells
+    // to create an image gallery layout.
+ 
     public class ImagesNextToEachOther
     {
         public static readonly string DEST = "results/sandbox/tables/image_next_to_each_other.pdf";

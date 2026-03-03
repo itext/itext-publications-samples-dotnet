@@ -14,6 +14,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariDropDownBox.cs
+    //
+    // Demonstrates creating a PDF form with a dropdown (combo box) field 
+    // containing Devanagari text options. Uses NotoSansDevanagari font with 
+    // center alignment.
+ 
     public class DevanagariDropDownBox
     {
         public const String DEST = "results/sandbox/typography/DevanagariDropDownBox.pdf";

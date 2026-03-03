@@ -12,6 +12,12 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiChoiceFormField.cs
+    //
+    // Creates PDF form with choice field containing Gujarati text options
+    // to demonstrate form field typography support.
+ 
     public class GujaratiChoiceFormField
     {
         public const String DEST = "results/sandbox/typography/GujaratiChoiceFormField.pdf";

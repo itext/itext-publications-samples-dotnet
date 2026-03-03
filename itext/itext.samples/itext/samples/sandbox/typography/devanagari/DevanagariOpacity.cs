@@ -11,6 +11,13 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariOpacity.cs
+    //
+    // Demonstrates rendering Devanagari text with varying opacity levels in a 
+    // PDF document. Creates paragraphs with the same text at different 
+    // opacity values (0.1, 0.5, and default).
+ 
     public class DevanagariOpacity
     {
         public const String DEST = "results/sandbox/typography/DevanagariOpacity.pdf";

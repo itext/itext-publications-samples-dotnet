@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ClippedCell.cs
+    //
+    // Demonstrates how content that exceeds cell boundaries is clipped
+    // rather than being wrapped or split across pages.
+ 
     public class ClippedCell
     {
         public static readonly string DEST = "results/sandbox/tables/clipped_cell.pdf";

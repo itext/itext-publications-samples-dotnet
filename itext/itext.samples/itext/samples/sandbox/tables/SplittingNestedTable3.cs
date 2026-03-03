@@ -7,6 +7,12 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables {
+   
+    // SplittingNestedTable3.cs
+    //
+    // Illustrates a third variation of nested table splitting behavior
+    // with specific use case scenarios.
+ 
     public class SplittingNestedTable3 {
         public static readonly string DEST = "results/sandbox/tables/splitting_nested_table3.pdf";
 

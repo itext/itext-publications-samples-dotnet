@@ -12,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewPushButton.cs
+    //
+    // Creates PDF push button form field with Hebrew caption text to
+    // illustrate typography in interactive button elements.
+ 
     public class HebrewPushButton
     {
         public const String DEST = "results/sandbox/typography/HebrewPushButton.pdf";

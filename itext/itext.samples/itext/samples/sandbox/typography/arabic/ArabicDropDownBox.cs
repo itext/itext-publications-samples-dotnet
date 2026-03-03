@@ -14,6 +14,11 @@ using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicDropDownBox.cs
+    //
+    // Creates a combo box form field with Arabic text options.
+ 
     public class ArabicDropDownBox
     {
         public const String DEST = "results/sandbox/typography/ArabicDropDownBox.pdf";

@@ -6,6 +6,11 @@ using iText.Svg.Processors.Impl;
 
 namespace iText.Samples.Sandbox.Svg
 {
+   
+    // ConvertSvgToPdfPage.cs
+    //
+    // Converts SVG to specific pages in PDF documents.
+ 
     public class ConvertSvgToPdfPage
     {
         private static readonly string SRC = "../../../resources/svg/";
