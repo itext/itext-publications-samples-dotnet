@@ -72,6 +72,17 @@ namespace iText.Samples
             });
 
         /**
+         * List of samples, which should be visually compared with ImageMagick fuzz value
+         * (to reduce flaky diffs on some Windows versions).
+         */
+        private static readonly IDictionary<string, int> visualCompareWithFuzzMap = new Dictionary<string, int>()
+        {
+            { "iText.Samples.Sandbox.Images.ReplaceImage", 1 },
+            { "iText.Samples.Sandbox.Images.MakeJpgMask", 1 },
+            { "iText.Samples.Sandbox.Images.ReduceSize", 15 }
+        };
+        
+        /**
          * Global map of classes with ignored areas
          */
         private static readonly IDictionary<String, IDictionary<int, IList<Rectangle>>> ignoredClassesMap;
@@ -145,12 +156,7 @@ namespace iText.Samples
             
             // TODO DEVSIX-6508 remove unnecessary makeFormField calls
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Acroforms.RemoveXFA");
-
-            // TODO DEVSIX-9261 Investigate test failures on Windows Server 2025 and Windows 11
-            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Images.ReplaceImage");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Images.MakeJpgMask");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Images.ReduceSize");
-
+            
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }
 
@@ -185,6 +191,11 @@ namespace iText.Samples
             else if (txtCompareList.Contains(sampleClass.FullName))
             {
                 AddError(CompareTxt(dest, cmp));
+            }
+            else if (visualCompareWithFuzzMap.ContainsKey(sampleClass.FullName))
+            {
+                AddError(compareTool.CompareVisually(dest, cmp, outPath,
+                    visualCompareWithFuzzMap[sampleClass.FullName]));
             }
             else if (renderCompareList.Contains(sampleClass.FullName))
             {
