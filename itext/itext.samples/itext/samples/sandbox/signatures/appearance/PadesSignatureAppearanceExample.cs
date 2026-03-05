@@ -18,8 +18,6 @@ using iText.Signatures;
 
 namespace iText.Samples.Sandbox.Signatures.Appearance
 {
-    /// <summary>Basic example of the signature appearance customizing during the document signing.</summary>
-   
     // PadesSignatureAppearanceExample.cs
     //
     // Customizes PAdES signature appearance with images and fonts.

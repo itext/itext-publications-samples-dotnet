@@ -16,8 +16,6 @@ using iText.Kernel.Crypto;
 
 namespace iText.Samples.Sandbox.Signatures.TwoPhase
 {
-    /// <summary> Basic example of document two-phase signing.</summary>
-   
     // TwoPhaseSigningExample.cs
     //
     // Demonstrates two-phase PDF signing with external signature creation.

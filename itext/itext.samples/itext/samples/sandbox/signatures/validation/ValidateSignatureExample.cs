@@ -15,13 +15,6 @@ using iText.Signatures.Validation.Report;
 
 namespace iText.Samples.Sandbox.Signatures.Validation
 {
-    /// <summary>Basic example of the existing signature validation.</summary>
-   
-    // ValidateSignatureExample.cs
-    //
-    // Validates existing signatures in PDF documents. (Basic example)
- 
-   
     // ValidateSignatureExample.cs
     //
     // Validates existing signatures in PDF documents. (Basic example)

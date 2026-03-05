@@ -7,15 +7,8 @@ using iText.Kernel.Pdf;
 using iText.Signatures.Validation;
 using iText.Signatures.Validation.Lotl;
 using iText.Signatures.Validation.Report;
-using NVelocity.Runtime;
 
 namespace iText.Samples.Sandbox.Signatures.Validation {
-   
-    // LotlValidationWithLocalFirstFileAccess.cs
-    //
-    // Validates signatures using List of Trusted Lists (LOTL) with local file caching.
- 
-   
     // LotlValidationWithLocalFirstFileAccess.cs
     //
     // Validates signatures using List of Trusted Lists (LOTL) with local file caching.

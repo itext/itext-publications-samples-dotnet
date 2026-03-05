@@ -16,13 +16,6 @@ using iText.Signatures.Validation.Report;
 
 namespace iText.Samples.Sandbox.Signatures.Validation
 {
-    /// <summary>Basic example of the certificate chain validation before the document signing.</summary>
-   
-    // ValidateChainBeforeSigningExample.cs
-    //
-    // Validates certificate chain before signing PDF documents.
- 
-   
     // ValidateChainBeforeSigningExample.cs
     //
     // Validates certificate chain before signing PDF documents.

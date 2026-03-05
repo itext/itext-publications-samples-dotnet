@@ -15,9 +15,6 @@ using iText.Signatures;
 
 namespace iText.Samples.Sandbox.Signatures.Appearance
 {
-    /// <summary>Basic example of the signature appearance customizing during the document signing
-    /// using the SignatureFieldAppearance class and layers.</summary>
-   
     // SignatureAppearanceLayersExample.cs
     //
     // Creates PDF signatures using custom appearance layers.

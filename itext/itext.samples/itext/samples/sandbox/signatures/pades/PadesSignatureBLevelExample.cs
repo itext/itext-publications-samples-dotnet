@@ -12,8 +12,6 @@ using iText.Signatures;
 
 namespace iText.Samples.Sandbox.Signatures.Pades
 {
-    /// <summary>Basic example of document signing with PaDES Baseline-B Profile.</summary>
-   
     // PadesSignatureBLevelExample.cs
     //
     // Creates PAdES Baseline-B signatures with basic validation data.

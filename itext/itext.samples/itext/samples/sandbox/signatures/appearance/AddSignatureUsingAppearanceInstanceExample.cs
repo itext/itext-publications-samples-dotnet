@@ -14,8 +14,6 @@ using iText.Signatures;
 
 namespace iText.Samples.Sandbox.Signatures.Appearance
 {
-    /// <summary>Basic example of creating the signature field via signature appearance layout element.</summary>
-   
     // AddSignatureUsingAppearanceInstanceExample.cs
     //
     // Creates and signs PDF signature fields using custom appearance.
