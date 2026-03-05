@@ -56,7 +56,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnx {
             // This PARSeq model supports latin languages/symbols collected into Vocabulary.LATIN_EXTENDED.
             IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.ParSeq(MULTILANG, Vocabulary.LATIN_EXTENDED
                 , 0);
-            using (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor
+            using (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor
                 )) {
                 // Set green text color to show the recognition result. Skip that step for real usages.
                 OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties().SetTextLayerName("OnnxTR multilingual example"

@@ -14,7 +14,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnx {
     /// PdfOcrOnnxExample.java
     /// <para />
     /// This example demonstrates how to perform OCR using provided
-    /// <see cref="iText.Pdfocr.Onnx.OnnxTrOcrEngine"/>
+    /// <see cref="iText.Pdfocr.Onnx.OnnxOcrEngine"/>
     /// for the given list of input images and save output to a PDF file using provided path.
     /// <para />
     /// Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
@@ -47,9 +47,9 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnx {
             IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.Fast(FAST);
             IOrientationPredictor orientationPredictor = OnnxOrientationPredictor.MobileNetV3(MOBILENETV3);
             IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.CrnnVgg16(CRNNVGG16);
-            // OnnxTrOcrEngine shall be closed after usage to avoid native allocations leak.
+            // OnnxOcrEngine shall be closed after usage to avoid native allocations leak.
             // It will also close all predictors used for its creation.
-            using (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor
+            using (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor
                 )) {
                 OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine);
                 pdfCreator.CreatePdf(images, new PdfWriter(DEST)).Close();

@@ -37,9 +37,9 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnx {
             IList<FileInfo> images = new List<FileInfo> { new FileInfo(BASIC_IMAGE) };
             IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.Fast(FAST);
             IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.CrnnVgg16(CRNNVGG16);
-            // OnnxTrOcrEngine shall be closed after usage to avoid native allocations leak.
+            // OnnxOcrEngine shall be closed after usage to avoid native allocations leak.
             // It will also close all predictors used for its creation.
-            using (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, recognitionPredictor)) {
+            using (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, recognitionPredictor)) {
                 ocrEngine.CreateTxtFile(images, new FileInfo(DEST));
             }
         }
