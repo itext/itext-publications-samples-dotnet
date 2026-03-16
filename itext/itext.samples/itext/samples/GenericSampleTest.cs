@@ -55,7 +55,6 @@ namespace iText.Samples
                 "iText.Samples.Sandbox.Signatures.Validation.ValidateChainBeforeSigningExample",
                 "iText.Samples.Sandbox.Signatures.Validation.ValidateSignatureExample",
                 "iText.Samples.Sandbox.Signatures.Validation.LotlValidationThirdCountryTL",
-                "iText.Samples.Sandbox.Pdfocr.Onnx.PdfOcrOnnxTxtFileExample",
                 "iText.Samples.Sandbox.Pdfocr.Tesseract4.PdfOcrTesseractTxtFileExample"
             });
 
@@ -124,6 +123,7 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.DummyOcspClient");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.DummyResponse");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Pqc.PqcSignatureExample");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfocr.Onnx");
 
             // Not a sample classes
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Utils");
