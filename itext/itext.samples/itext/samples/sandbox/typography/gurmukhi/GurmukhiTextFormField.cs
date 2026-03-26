@@ -10,9 +10,16 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Properties;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gurmukhi
 {
+   
+    // GurmukhiTextFormField.cs
+    //
+    // Creates PDF text input field with Gurmukhi placeholder and value to
+    // demonstrate complex script support in form fields.
+ 
     public class GurmukhiTextFormField
     {
         public const String DEST = "results/sandbox/typography/GurmukhiTextFormField.pdf";
@@ -21,8 +28,8 @@ namespace iText.Samples.Sandbox.Typography.Gurmukhi
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

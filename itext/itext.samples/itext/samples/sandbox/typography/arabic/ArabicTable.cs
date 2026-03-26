@@ -8,9 +8,17 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicTable.cs
+    //
+    // Demonstrates creating a table with Arabic text in a PDF document. Uses 
+    // right-to-left text alignment and NotoNaskhArabic font for proper Arabic 
+    // text rendering.
+ 
     public class ArabicTable
     {
         public const String DEST = "results/sandbox/typography/ArabicTable.pdf";
@@ -19,8 +27,8 @@ namespace iText.Samples.Sandbox.Typography.Arabic
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

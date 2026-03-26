@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // CellWithGlue.cs
+    //
+    // Shows how to create cells with content aligned to left and right using
+    // tab stops, simulating a "glue" effect between text elements.
+ 
     public class CellWithGlue
     {
         public static readonly string DEST = "results/sandbox/tables/cell_with_glue.pdf";

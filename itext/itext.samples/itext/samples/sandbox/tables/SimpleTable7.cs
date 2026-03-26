@@ -11,6 +11,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SimpleTable7.cs
+    //
+    // Illustrates a seventh simple table example with focus on specific
+    // cell construction or formatting techniques.
+ 
     public class SimpleTable7
     {
         public static readonly string DEST = "results/sandbox/tables/simple_table7.pdf";

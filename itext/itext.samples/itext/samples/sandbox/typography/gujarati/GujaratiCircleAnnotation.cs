@@ -6,9 +6,16 @@ using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Annot;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiCircleAnnotation.cs
+    //
+    // Creates PDF annotations with Gujarati text content to show
+    // typography support in annotation elements.
+ 
     public class GujaratiCircleAnnotation
     {
         public const String DEST = "results/sandbox/typography/GujaratiCircleAnnotation.pdf";
@@ -16,8 +23,8 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

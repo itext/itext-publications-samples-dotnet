@@ -11,6 +11,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ColoredBackground.cs
+    //
+    // Shows how to set background colors for table cells and remove borders
+    // to create a styled table appearance.
+ 
     public class ColoredBackground
     {
         public static readonly string DEST = "results/sandbox/tables/colored_background.pdf";

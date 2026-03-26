@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // NestedTables4.cs
+    //
+    // Illustrates advanced nested table techniques with complex cell
+    // merging and alignment scenarios.
+ 
     public class NestedTables4
     {
         public static readonly string DEST = "results/sandbox/tables/nested_tables4.pdf";

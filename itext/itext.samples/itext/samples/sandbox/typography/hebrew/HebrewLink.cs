@@ -1,3 +1,4 @@
+using iText.Samples.Util;
 using System;
 using System.IO;
 using iText.Commons.Utils;
@@ -12,6 +13,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewLink.cs
+    //
+    // Creates PDF hyperlinks with Hebrew text to demonstrate typography
+    // support in interactive link elements.
+ 
     public class HebrewLink
     {
         public const String DEST = "results/sandbox/typography/HebrewLink.pdf";
@@ -20,8 +27,8 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables 
 {
+   
+    // CustomBorder3.cs
+    //
+    // Shows another variation of custom border rendering with specific
+    // border patterns applied to table cells based on custom logic.
+ 
     public class CustomBorder3 
     {
         public static readonly String DEST = "results/sandbox/tables/custom_border3.pdf";

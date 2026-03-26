@@ -4,6 +4,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ChangeVersion.cs
+    //
+    // Changes the PDF version of existing documents.
+ 
     public class ChangeVersion 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_version.pdf";

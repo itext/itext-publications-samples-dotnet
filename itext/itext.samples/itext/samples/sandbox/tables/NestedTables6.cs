@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // NestedTables6.cs
+    //
+    // Shows yet another nested table example demonstrating specific layout
+    // and spacing requirements for complex documents.
+ 
     public class NestedTables6
     {
         public static readonly string DEST = "results/sandbox/tables/nested_tables6.pdf";

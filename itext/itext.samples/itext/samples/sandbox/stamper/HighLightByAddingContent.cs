@@ -6,6 +6,11 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // HighLightByAddingContent.cs
+    //
+    // Adds highlighting by drawing colored rectangles on PDF.
+ 
     public class HighLightByAddingContent 
     {
         public static readonly String DEST = "results/sandbox/stamper/high_light_by_adding_content.pdf";

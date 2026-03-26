@@ -11,6 +11,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tagging
 {
+   
+    // CreateTaggedDocument.cs
+    //
+    // Creates a tagged PDF document with structured content and tables.
+ 
     public class CreateTaggedDocument
     {
         public static readonly String DEST = "results/sandbox/tagging/88th_Academy_Awards.pdf";

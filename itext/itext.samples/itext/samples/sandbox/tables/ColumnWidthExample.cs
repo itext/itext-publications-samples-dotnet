@@ -11,6 +11,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ColumnWidthExample.cs
+    //
+    // Shows different methods for specifying column widths including
+    // absolute values, percentages, and point unit values.
+ 
     public class ColumnWidthExample
     {
         public static readonly string DEST = "results/sandbox/tables/column_width_example.pdf";

@@ -10,9 +10,17 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Properties;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariTextFormField.cs
+    //
+    // Demonstrates creating a PDF form with a text input field containing 
+    // Devanagari text. Uses NotoSansDevanagari font with center alignment for 
+    // proper script rendering.
+ 
     public class DevanagariTextFormField
     {
         public const String DEST = "results/sandbox/typography/DevanagariTextFormField.pdf";
@@ -21,8 +29,8 @@ namespace iText.Samples.Sandbox.Typography.Devanagari
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

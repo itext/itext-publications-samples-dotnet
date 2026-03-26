@@ -7,9 +7,17 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Bengali
 {
+   
+    // BengaliWordSpacing.cs
+    //
+    // Demonstrates rendering Bengali text with different word spacing values in 
+    // a PDF. Creates paragraphs with default spacing, 10-point spacing, and 
+    // 20-point spacing.
+ 
     public class BengaliWordSpacing
     {
         public const String DEST = "results/sandbox/typography/BengaliWordSpacing.pdf";
@@ -18,8 +26,8 @@ namespace iText.Samples.Sandbox.Typography.Bengali
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

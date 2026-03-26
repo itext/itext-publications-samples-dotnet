@@ -13,6 +13,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // TransparentWatermark.cs
+    //
+    // Adds transparent watermarks above and below PDF content.
+ 
     public class TransparentWatermark 
     {
         public static readonly String DEST = "results/sandbox/stamper/transparent_watermark.pdf";

@@ -1,3 +1,4 @@
+using iText.Samples.Util;
 using System;
 using System.IO;
 using iText.Commons.Utils;
@@ -11,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Hebrew
 {
+   
+    // HebrewBoldText.cs
+    //
+    // Demonstrates rendering bold Hebrew text in PDF documents using
+    // typography features with regular and bold fonts.
+ 
     public class HebrewBoldText
     {
         public const String DEST = "results/sandbox/typography/HebrewBoldText.pdf";
@@ -19,8 +26,8 @@ namespace iText.Samples.Sandbox.Typography.Hebrew
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

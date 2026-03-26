@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // HyphenationExample.cs
+    //
+    // Shows how to enable automatic hyphenation for text in table cells
+    // to improve text flow and layout appearance.
+ 
     public class HyphenationExample
     {
         public static readonly string DEST = "results/sandbox/tables/hyphenation_example.pdf";

@@ -6,6 +6,11 @@ using iText.Svg.Converter;
 
 namespace iText.Samples.Sandbox.Svg
 {
+   
+    // ConvertSvgToXObject.cs
+    //
+    // Converts SVG files to PDF XObjects for reuse.
+ 
     public class ConvertSvgToXObject
     {
         public static readonly string SRC = "../../../resources/svg/";

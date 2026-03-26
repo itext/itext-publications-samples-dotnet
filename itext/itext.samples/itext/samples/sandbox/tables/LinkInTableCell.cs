@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // LinkInTableCell.cs
+    //
+    // Illustrates how to add hyperlinks and action links within table
+    // cells for interactive PDF documents.
+ 
     public class LinkInTableCell
     {
         public static readonly string DEST = "results/sandbox/tables/link_in_table_cell.pdf";

@@ -6,6 +6,11 @@ using iText.Kernel.Utils;
 
 namespace iText.Samples.Sandbox.Split
 {
+   
+    // SplitAndCount.cs
+    //
+    // Splits PDF documents into smaller files based on size limit.
+ 
     public class SplitAndCount
     {
         public static readonly String DEST = "results/sandbox/split/splitDocument1_{0}.pdf";

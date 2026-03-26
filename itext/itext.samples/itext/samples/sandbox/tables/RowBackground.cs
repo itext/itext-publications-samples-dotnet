@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // RowBackground.cs
+    //
+    // Illustrates how to apply alternating or specific background colors
+    // to entire table rows for improved readability.
+ 
     public class RowBackground
     {
         public static readonly string DEST = "results/sandbox/tables/row_background.pdf";

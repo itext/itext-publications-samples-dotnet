@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // CountRows.cs
+    //
+    // Demonstrates how to access and count the number of rows in a table
+    // programmatically using the table's internal structure.
+ 
     public class CountRows
     {
         public static readonly String DEST = "results/sandbox/tables/row_count.pdf";

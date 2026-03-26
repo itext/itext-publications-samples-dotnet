@@ -6,6 +6,11 @@ using iText.Kernel.Pdf.Tagging;
 
 namespace iText.Samples.Sandbox.Tagging
 {
+   
+    // WalkTheTree.cs
+    //
+    // Traverses and outputs the tag structure tree of a PDF document.
+ 
     public class WalkTheTree
     {
         public static readonly String DEST = "results/txt/walk_the_tree.txt";

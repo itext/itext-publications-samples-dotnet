@@ -18,7 +18,10 @@ using Org.BouncyCastle.Utilities;
 
 namespace iText.Samples.Sandbox.Signatures.TwoPhase
 {
-    /// <summary>Basic example of two phaser document signing with PaDES Baseline-LT Profile.</summary>
+    // TwoPhasePadesSigningExample.cs
+    //
+    // Demonstrates two-phase PAdES signing with baseline-LT profile.
+ 
     public class TwoPhasePadesSigningExample
     {
         public static readonly String SRC = "../../../resources/pdfs/hello.pdf";

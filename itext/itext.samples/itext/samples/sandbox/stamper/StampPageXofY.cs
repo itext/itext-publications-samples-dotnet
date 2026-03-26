@@ -7,6 +7,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // StampPageXofY.cs
+    //
+    // Adds page numbers with "page X of Y" format to PDF.
+ 
     public class StampPageXofY 
     {
         public static readonly String DEST = "results/sandbox/stamper/stamp_page_x_of_y.pdf";

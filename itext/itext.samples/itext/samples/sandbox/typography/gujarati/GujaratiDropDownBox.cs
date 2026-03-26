@@ -10,9 +10,16 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Properties;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiDropDownBox.cs
+    //
+    // Creates PDF dropdown form field with Gujarati text options to
+    // demonstrate complex script rendering in interactive forms.
+ 
     public class GujaratiDropDownBox
     {
         public const String DEST = "results/sandbox/typography/GujaratiDropDownBox.pdf";
@@ -21,8 +28,8 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

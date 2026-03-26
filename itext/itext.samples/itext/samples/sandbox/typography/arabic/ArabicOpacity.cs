@@ -8,9 +8,17 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicOpacity.cs
+    //
+    // Demonstrates rendering Arabic text with varying opacity levels in a PDF 
+    // document. Creates paragraphs with the same Arabic text at different 
+    // opacity values (0.1, 0.5, and default) using right-to-left alignment.
+ 
     public class ArabicOpacity
     {
         public const String DEST = "results/sandbox/typography/ArabicOpacity.pdf";
@@ -19,8 +27,8 @@ namespace iText.Samples.Sandbox.Typography.Arabic
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

@@ -6,6 +6,11 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddExtraMargin.cs
+    //
+    // Adds extra margin with gray rectangle to PDF pages.
+ 
     public class AddExtraMargin 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_extra_margin.pdf";

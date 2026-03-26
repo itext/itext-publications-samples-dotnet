@@ -7,9 +7,12 @@ using iText.Kernel.Pdf;
 using iText.Signatures.Validation;
 using iText.Signatures.Validation.Lotl;
 using iText.Signatures.Validation.Report;
-using NVelocity.Runtime;
 
 namespace iText.Samples.Sandbox.Signatures.Validation {
+    // LotlValidationWithLocalFirstFileAccess.cs
+    //
+    // Validates signatures using List of Trusted Lists (LOTL) with local file caching.
+ 
     public class LotlValidationWithLocalFirstFileAccess {
         public static readonly string SRC = "../../../resources/pdfs"
                                             + "/super_official_document_signed.pdf";

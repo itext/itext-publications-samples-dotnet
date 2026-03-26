@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // CellTitle.cs
+    //
+    // Demonstrates how to add a title attribute to table cells using a
+    // custom cell renderer that writes additional metadata.
+ 
     public class CellTitle
     {
         public static readonly string DEST = "results/sandbox/tables/cell_title.pdf";

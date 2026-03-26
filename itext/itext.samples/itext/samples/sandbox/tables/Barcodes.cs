@@ -9,6 +9,12 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // Barcodes.cs
+    //
+    // Demonstrates how to create EAN8 barcodes and add them as images in
+    // table cells using PdfFormXObject.
+ 
     public class Barcodes
     {
         public static readonly string DEST = "results/sandbox/tables/barcodes.pdf";

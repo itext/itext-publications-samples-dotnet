@@ -4,6 +4,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // Rotate90Degrees.cs
+    //
+    // Rotates all PDF pages by 90 degrees.
+ 
     public class Rotate90Degrees 
     {
         public static readonly String DEST = "results/sandbox/stamper/rotate90degrees.pdf";

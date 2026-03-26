@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // TruncateTextInCell.cs
+    //
+    // Illustrates how to truncate or clip text that exceeds cell
+    // boundaries rather than wrapping or splitting it.
+ 
     public class TruncateTextInCell
     {
         public static readonly string DEST = "results/sandbox/tables/truncate_text_in_cell.pdf";

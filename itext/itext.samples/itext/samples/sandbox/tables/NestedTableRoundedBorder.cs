@@ -9,6 +9,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // NestedTableRoundedBorder.cs
+    //
+    // Shows how to apply rounded borders to nested tables for enhanced
+    // visual styling of complex table structures.
+ 
     public class NestedTableRoundedBorder
     {
         public static readonly String DEST = "results/sandbox/tables/nested_table_rounded_border.pdf";

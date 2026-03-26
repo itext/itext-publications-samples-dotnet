@@ -8,9 +8,17 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicWordSpacing.cs
+    //
+    // Demonstrates rendering Arabic text with different word spacing values in 
+    // a PDF. Creates paragraphs with default spacing, 10-point spacing, and 
+    // 20-point spacing.
+ 
     public class ArabicWordSpacing
     {
         public const String DEST = "results/sandbox/typography/ArabicWordSpacing.pdf";
@@ -19,8 +27,8 @@ namespace iText.Samples.Sandbox.Typography.Arabic
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

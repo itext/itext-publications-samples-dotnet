@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // CellMethod.cs
+    //
+    // Shows how to create table cells with different fonts and encodings
+    // including Greek and Czech character sets.
+ 
     public class CellMethod
     {
         public static readonly string DEST = "results/sandbox/tables/cell_method.pdf";

@@ -6,6 +6,11 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // SuperImpose.cs
+    //
+    // Superimposes multiple PDFs onto a single document.
+ 
     public class SuperImpose 
     {
         public static readonly String DEST = "results/sandbox/stamper/super_impose.pdf";

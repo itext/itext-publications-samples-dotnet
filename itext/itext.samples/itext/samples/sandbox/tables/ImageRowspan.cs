@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ImageRowspan.cs
+    //
+    // Illustrates how to add an image to a cell that spans multiple rows
+    // while maintaining proper alignment and sizing.
+ 
     public class ImageRowspan
     {
         public static readonly string DEST = "results/sandbox/tables/image_rowspan.pdf";

@@ -8,6 +8,11 @@ using iText.Kernel.Pdf.Function;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddSpotColorShape.cs
+    //
+    // Adds spot color shapes to PDF documents.
+ 
     public class AddSpotColorShape 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_spot_color_shape.pdf";

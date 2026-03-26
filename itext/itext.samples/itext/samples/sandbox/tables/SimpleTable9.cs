@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SimpleTable9.cs
+    //
+    // Demonstrates a ninth simple table variation exploring foundational
+    // table features and properties.
+ 
     public class SimpleTable9
     {
         public static readonly string DEST = "results/sandbox/tables/simple_table9.pdf";

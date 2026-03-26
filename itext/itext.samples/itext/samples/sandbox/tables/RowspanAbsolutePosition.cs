@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // RowspanAbsolutePosition.cs
+    //
+    // Demonstrates how to position a table with rowspan cells at an
+    // absolute position on the page.
+ 
     public class RowspanAbsolutePosition
     {
         public static readonly string DEST = "results/sandbox/tables/rowspan_absolute_position.pdf";

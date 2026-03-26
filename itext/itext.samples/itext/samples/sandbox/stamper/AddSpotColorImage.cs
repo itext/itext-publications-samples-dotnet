@@ -11,6 +11,11 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddSpotColorImage.cs
+    //
+    // Adds spot color images to PDF documents.
+ 
     public class AddSpotColorImage 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_spot_color_image.pdf";

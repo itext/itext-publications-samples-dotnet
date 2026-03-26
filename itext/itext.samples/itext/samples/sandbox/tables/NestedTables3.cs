@@ -11,6 +11,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // NestedTables3.cs
+    //
+    // Demonstrates a third variation of nested tables focusing on specific
+    // use cases for hierarchical data presentation.
+ 
     public class NestedTables3
     {
         public static readonly string DEST = "results/sandbox/tables/nested_tables3.pdf";

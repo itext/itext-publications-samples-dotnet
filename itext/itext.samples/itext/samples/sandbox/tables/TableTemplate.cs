@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // TableTemplate.cs
+    //
+    // Demonstrates how to create a table as a template (XObject) and reuse
+    // it multiple times or clip portions for display.
+ 
     public class TableTemplate
     {
         public static readonly string DEST = "results/sandbox/tables/table_template.pdf";

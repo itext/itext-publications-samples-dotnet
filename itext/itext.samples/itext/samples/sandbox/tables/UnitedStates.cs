@@ -11,6 +11,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // UnitedStates.cs
+    //
+    // Demonstrates reading data from a CSV file and generating a formatted
+    // table with proper headers and data rows.
+ 
     public class UnitedStates
     {
         public static readonly string DEST = "results/sandbox/tables/united_states.pdf";

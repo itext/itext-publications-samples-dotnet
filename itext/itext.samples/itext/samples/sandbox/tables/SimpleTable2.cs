@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SimpleTable2.cs
+    //
+    // Shows a second basic table example with variations in cell content
+    // or table configuration.
+ 
     public class SimpleTable2
     {
         public static readonly string DEST = "results/sandbox/tables/simple_table2.pdf";

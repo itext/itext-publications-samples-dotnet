@@ -9,6 +9,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // WatermarkToTheSide.cs
+    //
+    // Adds watermarks to the sides of PDF pages.
+ 
     public class WatermarkToTheSide 
     {
         public static readonly String DEST = "results/sandbox/stamper/watermark_to_the_side.pdf";

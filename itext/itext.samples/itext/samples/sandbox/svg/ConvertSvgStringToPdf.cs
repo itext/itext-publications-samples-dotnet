@@ -6,6 +6,11 @@ using iText.Svg.Processors.Impl;
 
 namespace iText.Samples.Sandbox.Svg
 {
+   
+    // ConvertSvgStringToPdf.cs
+    //
+    // Converts SVG string content directly to PDF documents.
+ 
     public class ConvertSvgStringToPdf
     {
         public static readonly string DEST = "results/sandbox/svg/SvgStringToPdf.pdf";

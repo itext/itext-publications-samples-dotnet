@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // KeyValueTable2.cs
+    //
+    // Shows an alternative approach to creating key-value tables with
+    // different styling and formatting options.
+ 
     public class KeyValueTable2
     {
         public static readonly string DEST = "results/sandbox/tables/key_value_table2.pdf";

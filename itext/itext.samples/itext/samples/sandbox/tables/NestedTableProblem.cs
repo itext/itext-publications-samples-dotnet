@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // NestedTableProblem.cs
+    //
+    // Illustrates a common issue with nested tables and demonstrates the
+    // proper way to handle table-within-table layouts.
+ 
     public class NestedTableProblem
     {
         public static readonly string DEST = "results/sandbox/tables/nested_table_problem.pdf";

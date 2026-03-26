@@ -7,6 +7,11 @@ using iText.Kernel.Pdf.Xobject;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // TileClipped.cs
+    //
+    // Creates tiled and clipped versions of PDF pages.
+ 
     public class TileClipped 
     {
         public static readonly String DEST = "results/sandbox/stamper/tile_clipped.pdf";

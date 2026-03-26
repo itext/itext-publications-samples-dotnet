@@ -6,6 +6,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ReplaceStream.cs
+    //
+    // Replaces text content in PDF page content streams.
+ 
     public class ReplaceStream 
     {
         public static readonly String DEST = "results/sandbox/stamper/replace_stream.pdf";

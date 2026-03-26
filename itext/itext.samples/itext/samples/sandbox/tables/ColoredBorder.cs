@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ColoredBorder.cs
+    //
+    // Demonstrates how to apply colored borders to individual sides of table
+    // cells using SolidBorder with different colors and widths.
+ 
     public class ColoredBorder
     {
         public static readonly string DEST = "results/sandbox/tables/colored_border.pdf";

@@ -14,7 +14,10 @@ using iText.Signatures;
 
 namespace iText.Samples.Sandbox.Signatures.Pades
 {
-    /// <summary>Basic example of document signing with PaDES Baseline-LT Profile.</summary>
+    // PadesSignatureLTLevelExample.cs
+    //
+    // Creates PAdES Baseline-LT signatures with long-term validation data.
+ 
     public class PadesSignatureLTLevelExample
     {
         public static readonly String SRC = "../../../resources/pdfs/hello.pdf";

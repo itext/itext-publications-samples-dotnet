@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // PositionContentInCell.cs
+    //
+    // Shows how to precisely position content within table cells using
+    // alignment and padding properties.
+ 
     public class PositionContentInCell
     {
         public static readonly string DEST = "results/sandbox/tables/position_content_in_cell.pdf";

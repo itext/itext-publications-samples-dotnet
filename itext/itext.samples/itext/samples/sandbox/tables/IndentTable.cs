@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // IndentTable.cs
+    //
+    // Illustrates how to indent an entire table from the left margin using
+    // margin or horizontal alignment properties.
+ 
     public class IndentTable
     {
         public static readonly string DEST = "results/sandbox/tables/indent_table.pdf";

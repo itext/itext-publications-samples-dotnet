@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // KeepingTogetherInnerTable.cs
+    //
+    // Shows how to use the setKeepTogether property to prevent nested
+    // tables from being split across pages.
+ 
     public class KeepingTogetherInnerTable
     {
         public static readonly string DEST = "results/sandbox/tables/keeping_together_inner_table.pdf";

@@ -8,9 +8,16 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiTable.cs
+    //
+    // Demonstrates rendering Gujarati text within PDF table cells to show
+    // typography support in tabular layouts.
+ 
     public class GujaratiTable
     {
         public const String DEST = "results/sandbox/typography/GujaratiTable.pdf";
@@ -19,8 +26,8 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

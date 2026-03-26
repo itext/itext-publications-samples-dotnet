@@ -8,6 +8,11 @@ using iText.Kernel.Pdf.Navigation;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddNavigation.cs
+    //
+    // Adds navigation links between PDF pages.
+ 
     public class AddNavigation 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_navigation.pdf";

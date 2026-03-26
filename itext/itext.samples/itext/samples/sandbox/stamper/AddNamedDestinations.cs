@@ -8,6 +8,12 @@ using iText.Kernel.Pdf.Navigation;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddNamedDestinations.cs
+    //
+    // Creates XML file with named destinations from PDF document, mapping
+    // page numbers to destination objects for navigation purposes.
+ 
     public class AddNamedDestinations
     {
         public static readonly String PDF = "results/sandbox/stamper/add_named_destinations.pdf";

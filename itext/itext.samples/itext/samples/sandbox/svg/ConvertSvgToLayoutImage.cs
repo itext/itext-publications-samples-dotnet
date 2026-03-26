@@ -7,6 +7,11 @@ using iText.Svg.Converter;
 
 namespace iText.Samples.Sandbox.Svg
 {
+   
+    // ConvertSvgToLayoutImage.cs
+    //
+    // Converts SVG to layout Image elements in PDF documents.
+ 
     public class ConvertSvgToLayoutImage
     {
         private static readonly string SRC = "../../../resources/svg/";

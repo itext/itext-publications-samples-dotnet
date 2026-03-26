@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // FullPageTable.cs
+    //
+    // Demonstrates how to create a table that spans the entire page with
+    // zero margins and fills all available space.
+ 
     public class FullPageTable
     {
         public static readonly string DEST = "results/sandbox/tables/full_page_table.pdf";

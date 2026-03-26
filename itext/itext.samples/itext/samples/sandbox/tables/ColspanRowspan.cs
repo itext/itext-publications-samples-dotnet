@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ColspanRowspan.cs
+    //
+    // Illustrates how to create table cells that span multiple columns and
+    // rows using the Cell constructor with colspan and rowspan parameters.
+ 
     public class ColspanRowspan
     {
         public static readonly string DEST = "results/sandbox/tables/colspan_rowspan.pdf";

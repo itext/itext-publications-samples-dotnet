@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // IconDescriptionTable.cs
+    //
+    // Demonstrates how to create a two-column table with icons in one
+    // column and corresponding descriptions in another.
+ 
     public class IconDescriptionTable
     {
         public static readonly string DEST = "results/sandbox/tables/icon_description_table.pdf";

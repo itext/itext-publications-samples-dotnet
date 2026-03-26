@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // IndentationInCell.cs
+    //
+    // Demonstrates how to add indentation to paragraphs within table cells
+    // for nested or hierarchical content presentation.
+ 
     public class IndentationInCell
     {
         public static readonly string DEST = "results/sandbox/tables/indentation_in_cell.pdf";

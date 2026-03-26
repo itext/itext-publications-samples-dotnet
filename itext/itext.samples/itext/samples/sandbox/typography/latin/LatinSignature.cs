@@ -1,3 +1,4 @@
+using iText.Samples.Util;
 using System;
 using System.IO;
 using iText.Bouncycastle.X509;
@@ -19,6 +20,12 @@ using Org.BouncyCastle.Pkcs;
 
 namespace iText.Samples.Sandbox.Typography.Latin
 {
+   
+    // LatinSignature.cs
+    //
+    // Creates digital signature with custom Latin fonts in PDF, signing
+    // existing document with certificate and displaying signature info.
+ 
     public class LatinSignature
     {
         public const String DEST = "results/sandbox/typography/LatinSignature.pdf";
@@ -30,8 +37,8 @@ namespace iText.Samples.Sandbox.Typography.Latin
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

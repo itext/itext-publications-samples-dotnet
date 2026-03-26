@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // MultipleImagesInCell.cs
+    //
+    // Shows how to add multiple images within a single table cell by
+    // combining them in a paragraph or using nested layout elements.
+ 
     public class MultipleImagesInCell
     {
         public static readonly string DEST = "results/sandbox/tables/multiple_images_in_cell.pdf";

@@ -1,3 +1,4 @@
+using iText.Samples.Util;
 using System;
 using System.IO;
 using iText.Commons.Utils;
@@ -11,6 +12,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Thai
 {
+   
+    // ThaiPushButton.cs
+    //
+    // Creates PDF push button form field with Thai caption text to
+    // illustrate typography in interactive button elements.
+ 
     public class ThaiPushButton
     {
         public const String DEST = "results/sandbox/typography/ThaiPushButton.pdf";
@@ -19,8 +26,8 @@ namespace iText.Samples.Sandbox.Typography.Thai
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

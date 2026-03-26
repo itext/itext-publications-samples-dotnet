@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SplittingAndRowspan.cs
+    //
+    // Demonstrates the interaction between table splitting and cells with
+    // rowspan when tables cross page boundaries.
+ 
     public class SplittingAndRowspan
     {
         public static readonly string DEST = "results/sandbox/tables/splitting_and_rowspan.pdf";

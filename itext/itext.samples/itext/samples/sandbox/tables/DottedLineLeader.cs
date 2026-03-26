@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // DottedLineLeader.cs
+    //
+    // Shows how to use dotted line leaders to connect text elements within
+    // a cell, similar to table of contents formatting.
+ 
     public class DottedLineLeader
     {
         public static readonly string DEST = "results/sandbox/tables/dotted_line_leader.pdf";

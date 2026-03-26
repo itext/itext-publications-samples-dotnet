@@ -3,9 +3,16 @@ using System.IO;
 using iText.Commons.Utils;
 using iText.Kernel.Pdf;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Arabic
 {
+   
+    // ArabicBookmark.cs
+    //
+    // Demonstrates creating PDF bookmarks with Arabic text using iText
+    // typography features.
+ 
     public class ArabicBookmark
     {
         public const String DEST = "results/sandbox/typography/ArabicBookmark.pdf";
@@ -13,8 +20,8 @@ namespace iText.Samples.Sandbox.Typography.Arabic
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

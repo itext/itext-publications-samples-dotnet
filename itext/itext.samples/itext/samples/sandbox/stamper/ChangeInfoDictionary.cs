@@ -6,6 +6,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ChangeInfoDictionary.cs
+    //
+    // Modifies PDF info dictionary with custom metadata entries.
+ 
     public class ChangeInfoDictionary 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_info_dictionary.pdf";

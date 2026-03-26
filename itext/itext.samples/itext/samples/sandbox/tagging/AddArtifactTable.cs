@@ -9,6 +9,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tagging
 {
+   
+    // AddArtifactTable.cs
+    //
+    // Adds an artifact table to the last page of a tagged PDF document.
+ 
     public class AddArtifactTable
     {
         public static readonly String DEST = "results/sandbox/tagging/88th_Academy_Awards_artifact_table.pdf";

@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ImageNextToText.cs
+    //
+    // Demonstrates how to position an image next to text within a table
+    // using a two-column layout with proper alignment.
+ 
     public class ImageNextToText
     {
         public static readonly string DEST = "results/sandbox/tables/image_next_to_text.pdf";

@@ -13,6 +13,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // TableSplitTest.cs
+    //
+    // Tests and demonstrates different scenarios for table splitting
+    // across pages with various configurations.
+ 
     public class TableSplitTest
     {
         public static readonly string DEST = "results/sandbox/tables/tables_split_test.pdf";

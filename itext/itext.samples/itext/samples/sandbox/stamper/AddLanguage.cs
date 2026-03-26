@@ -4,6 +4,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddLanguage.cs
+    //
+    // Sets the document language metadata in PDF.
+ 
     public class AddLanguage 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_language.pdf";

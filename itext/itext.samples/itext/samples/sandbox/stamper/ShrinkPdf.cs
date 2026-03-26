@@ -6,6 +6,11 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ShrinkPdf.cs
+    //
+    // Shrinks PDF page content to 50% of original size.
+ 
     public class ShrinkPdf 
     {
         public static readonly String DEST = "results/sandbox/stamper/shrink_pdf.pdf";

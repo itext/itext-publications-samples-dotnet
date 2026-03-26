@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // RoundedCorners.cs
+    //
+    // Demonstrates how to create table cells and tables with rounded
+    // corners using custom border rendering techniques.
+ 
     public class RoundedCorners
     {
         public static readonly string DEST = "results/sandbox/tables/rounded_corners.pdf";

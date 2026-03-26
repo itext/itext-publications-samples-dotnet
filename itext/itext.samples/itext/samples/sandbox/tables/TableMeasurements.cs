@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // TableMeasurements.cs
+    //
+    // Demonstrates how to retrieve and work with table measurements like
+    // width, height, and cell dimensions.
+ 
     public class TableMeasurements
     {
         public static readonly string DEST = "results/sandbox/tables/tables_measurements.pdf";

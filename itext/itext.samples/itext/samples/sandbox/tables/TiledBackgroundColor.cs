@@ -11,6 +11,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // TiledBackgroundColor.cs
+    //
+    // Shows how to create tiled color patterns as backgrounds for table
+    // cells using custom rendering techniques.
+ 
     public class TiledBackgroundColor
     {
         public static readonly string DEST = "results/sandbox/tables/tiled_background_color.pdf";

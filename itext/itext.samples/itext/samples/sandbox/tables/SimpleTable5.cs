@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SimpleTable5.cs
+    //
+    // Shows a fifth simple table example with specific focus on table
+    // dimensions or cell content types.
+ 
     public class SimpleTable5
     {
         public static readonly string DEST = "results/sandbox/tables/simple_table5.pdf";

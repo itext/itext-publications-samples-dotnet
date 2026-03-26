@@ -10,6 +10,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // StampHeader3.cs
+    //
+    // Adds headers to PDF pages respecting page rotation.
+ 
     public class StampHeader3 
     {
         public static readonly String DEST = "results/sandbox/stamper/stamp_header3.pdf";

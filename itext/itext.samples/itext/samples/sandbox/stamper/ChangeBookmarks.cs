@@ -5,6 +5,11 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ChangeBookmarks.cs
+    //
+    // Modifies bookmark destinations in PDF documents.
+ 
     public class ChangeBookmarks 
     {
         public static readonly String DEST = "results/sandbox/stamper/change_bookmarks.pdf";

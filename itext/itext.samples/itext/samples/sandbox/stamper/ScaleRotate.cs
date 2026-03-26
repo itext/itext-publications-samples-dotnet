@@ -4,6 +4,10 @@ using iText.Kernel.Pdf;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+    // ScaleRotate.cs
+    //
+    // Example that shows how to scale an existing PDF using the UserUnit and how to remove the rotation of a page.
+ 
     public class ScaleRotate 
     {
         public static readonly String DEST = "results/sandbox/stamper/scale_rotate.pdf";

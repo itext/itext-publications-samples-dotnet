@@ -13,6 +13,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // TiledBackground.cs
+    //
+    // Demonstrates how to create a tiled pattern background for table
+    // cells using repeating images or graphics.
+ 
     public class TiledBackground
     {
         public static readonly string DEST = "results/sandbox/tables/tiled_background.pdf";

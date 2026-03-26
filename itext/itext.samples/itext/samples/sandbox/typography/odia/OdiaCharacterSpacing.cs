@@ -1,3 +1,4 @@
+using iText.Samples.Util;
 using System;
 using System.IO;
 using iText.Commons.Utils;
@@ -10,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Odia
 {
+   
+    // OdiaCharacterSpacing.cs
+    //
+    // Demonstrates adjusting character spacing in Odia text with
+    // standard and custom spacing values.
+ 
     public class OdiaCharacterSpacing
     {
         public const String DEST = "results/sandbox/typography/OdiaCharacterSpacing.pdf";
@@ -18,8 +25,8 @@ namespace iText.Samples.Sandbox.Typography.Odia
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

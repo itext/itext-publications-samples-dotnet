@@ -10,6 +10,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // TableBorder.cs
+    //
+    // Shows how to apply borders to the entire table versus individual
+    // cells and control border appearance.
+ 
     public class TableBorder
     {
         public static readonly string DEST = "results/sandbox/tables/tables_border.pdf";

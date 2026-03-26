@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.IO;
 using iText.Kernel.Pdf;
 using iText.Pdfocr;
-using iText.Pdfocr.Onnxtr;
-using iText.Pdfocr.Onnxtr.Detection;
-using iText.Pdfocr.Onnxtr.Orientation;
-using iText.Pdfocr.Onnxtr.Recognition;
+using iText.Pdfocr.Onnx;
+using iText.Pdfocr.Onnx.Detection;
+using iText.Pdfocr.Onnx.Orientation;
+using iText.Pdfocr.Onnx.Recognition;
 
-namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
-    /// <summary>PdfOcrOnnxTrExample.java</summary>
+namespace iText.Samples.Sandbox.Pdfocr.Onnx {
+    /// <summary>PdfOcrOnnxExample.java</summary>
     /// <remarks>
-    /// PdfOcrOnnxTrExample.java
+    /// PdfOcrOnnxExample.java
     /// <para />
     /// This example demonstrates how to perform OCR using provided
-    /// <see cref="iText.Pdfocr.Onnxtr.OnnxTrOcrEngine"/>
+    /// <see cref="iText.Pdfocr.Onnx.OnnxOcrEngine"/>
     /// for the given list of input images and save output to a PDF file using provided path.
     /// <para />
-    /// Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+    /// Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
     /// </remarks>
-    public class PdfOcrOnnxTrExample {
-        public const String DEST = "results/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrExample/result.pdf";
+    public class PdfOcrOnnxExample {
+        public const String DEST = "results/sandbox/pdfocr/onnx/PdfOcrOnnxExample/result.pdf";
 
         private const String BASIC_IMAGE = "../../../resources/img/ocrExample.png";
 
@@ -37,7 +37,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
-            new PdfOcrOnnxTrExample().Manipulate();
+            new PdfOcrOnnxExample().Manipulate();
         }
 
         protected internal virtual void Manipulate() {
@@ -47,9 +47,9 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnxtr {
             IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.Fast(FAST);
             IOrientationPredictor orientationPredictor = OnnxOrientationPredictor.MobileNetV3(MOBILENETV3);
             IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.CrnnVgg16(CRNNVGG16);
-            // OnnxTrOcrEngine shall be closed after usage to avoid native allocations leak.
+            // OnnxOcrEngine shall be closed after usage to avoid native allocations leak.
             // It will also close all predictors used for its creation.
-            using (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor
+            using (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor
                 )) {
                 OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine);
                 pdfCreator.CreatePdf(images, new PdfWriter(DEST)).Close();

@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SimpleTable10.cs
+    //
+    // Shows a tenth simple table example with additional basic table
+    // construction techniques.
+ 
     public class SimpleTable10
     {
         public static readonly string DEST = "results/sandbox/tables/simple_table10.pdf";

@@ -10,6 +10,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddOCG.cs
+    //
+    // Adds optional content groups (layers) to PDF documents for
+    // controlling visibility of content elements.
+ 
     public class AddOCG 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_ocg.pdf";

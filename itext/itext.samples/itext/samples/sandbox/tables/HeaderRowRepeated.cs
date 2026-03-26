@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // HeaderRowRepeated.cs
+    //
+    // Illustrates how to configure a table so that its header row is
+    // automatically repeated at the top of each page when the table splits.
+ 
     public class HeaderRowRepeated
     {
         public static readonly string DEST = "results/sandbox/tables/header_row_repeated.pdf";

@@ -8,9 +8,17 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Bengali
 {
+   
+    // BengaliTable.cs
+    //
+    // Demonstrates creating a table with Bengali text in a PDF document. Uses 
+    // NotoSansBengali font to properly render Bengali script characters in 
+    // table cells.
+ 
     public class BengaliTable
     {
         public const String DEST = "results/sandbox/typography/BengaliTable.pdf";
@@ -19,8 +27,8 @@ namespace iText.Samples.Sandbox.Typography.Bengali
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

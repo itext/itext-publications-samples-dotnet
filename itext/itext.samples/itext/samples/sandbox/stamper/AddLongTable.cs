@@ -8,6 +8,11 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddLongTable.cs
+    //
+    // Adds a long table spanning multiple pages to PDF.
+ 
     public class AddLongTable 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_long_table.pdf";

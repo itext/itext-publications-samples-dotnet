@@ -5,6 +5,11 @@ using iTextSharp.tool.xml.xtra.xfa;
 
 namespace iText.Samples.Sandbox.Xfa
 {
+   
+    // FlattenXfaDocument.cs
+    //
+    // Demonstrates flattening XFA forms to static PDF with metadata.
+ 
     public class FlattenXfaDocument
     {
         public static readonly String DEST = "results/sandbox/xfa/flattened.pdf";

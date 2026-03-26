@@ -9,11 +9,17 @@ using iText.Layout.Renderer;
 namespace iText.Samples.Sandbox.Tables
 {
     
+    // TableSplitPageBreakEvent.cs
+    //
+    // Shows how to use page event handlers to control table splitting
+    // behavior and add custom content at split points.
+    
     // In this sample we will show how one can change the text of the cell on split.
     // The table contains two columns: the first one will be processed as usually and
     // the second one is the on which the required split logic will be performed.
     // Mind that for simplification reasons the way in which we handle overflow rows is not designed for a generic case.
     // For example, if your table has cells with big rowspan and/or colspans, you may want to update the code a bit.
+ 
     public class TableSplitPageBreakEvent
     {
         public static readonly String DEST = "results/sandbox/tables/tables_split_pageBreak_event.pdf";

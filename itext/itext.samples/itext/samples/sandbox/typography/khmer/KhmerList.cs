@@ -1,3 +1,4 @@
+using iText.Samples.Util;
 using System;
 using System.IO;
 using iText.Commons.Utils;
@@ -10,6 +11,12 @@ using iText.Licensing.Base;
 
 namespace iText.Samples.Sandbox.Typography.Khmer
 {
+   
+    // KhmerList.cs
+    //
+    // Generates PDF list elements containing Khmer text to showcase
+    // typography capabilities in structured list formats.
+ 
     public class KhmerList
     {
         public const String DEST = "results/sandbox/typography/KhmerList.pdf";
@@ -18,8 +25,8 @@ namespace iText.Samples.Sandbox.Typography.Khmer
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

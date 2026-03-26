@@ -18,8 +18,10 @@ using iText.Signatures;
 
 namespace iText.Samples.Sandbox.Signatures.Appearance
 {
-    /// <summary>Basic example of the signature appearance customizing during the document signing
-    /// using the SignatureFieldAppearance class.</summary>
+    // SignatureAppearanceExample.cs
+    //
+    // Creates PDF signatures with custom appearance, images, and fonts.
+ 
     public class SignatureAppearanceExample
     {
         public static readonly String DEST = "results/sandbox/signatures/appearance/signatureAppearanceExample.pdf";

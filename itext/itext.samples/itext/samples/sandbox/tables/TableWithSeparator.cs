@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // TableWithSeparator.cs
+    //
+    // Shows how to add visual separators or dividers between table rows
+    // or sections for improved readability.
+ 
     public class TableWithSeparator
     {
         public static readonly string DEST = "results/sandbox/tables/table_with_separator.pdf";

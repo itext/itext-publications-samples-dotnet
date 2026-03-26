@@ -8,9 +8,17 @@ using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Devanagari
 {
+   
+    // DevanagariChoiceFormField.cs
+    //
+    // Demonstrates creating a PDF form with a choice field (list box) 
+    // containing Devanagari text options. Uses NotoSansDevanagari font for 
+    // proper script rendering.
+ 
     public class DevanagariChoiceFormField
     {
         public const String DEST = "results/sandbox/typography/DevanagariChoiceFormField.pdf";
@@ -19,8 +27,8 @@ namespace iText.Samples.Sandbox.Typography.Devanagari
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

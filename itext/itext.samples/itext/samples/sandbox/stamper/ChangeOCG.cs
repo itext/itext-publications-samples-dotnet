@@ -6,6 +6,11 @@ using iText.Kernel.Pdf.Layer;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // ChangeOCG.cs
+    //
+    // Modifies optional content group (layer) visibility in PDF.
+ 
     public class ChangeOCG {
         public static readonly String DEST = "results/sandbox/stamper/change_ocg.pdf";
         public static readonly String SRC = "../../../resources/pdfs/ocg.pdf";

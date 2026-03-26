@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ArrayToTable.cs
+    //
+    // Shows how to convert a two-dimensional array of data into a PDF table
+    // by iterating through the dataset and adding cells to the table.
+ 
     public class ArrayToTable
     {
         public static readonly string DEST = "results/sandbox/tables/array_to_table.pdf";

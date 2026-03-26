@@ -7,6 +7,11 @@ using iText.Kernel.Pdf.Canvas;
 
 namespace iText.Samples.Sandbox.Stamper 
 {
+   
+    // AddImageAffineTransform.cs
+    //
+    // Adds images to PDF using affine transformations.
+ 
     public class AddImageAffineTransform 
     {
         public static readonly String DEST = "results/sandbox/stamper/add_image_affine_transform.pdf";

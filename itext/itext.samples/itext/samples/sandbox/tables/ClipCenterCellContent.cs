@@ -12,6 +12,12 @@ using iText.Layout.Renderer;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // ClipCenterCellContent.cs
+    //
+    // Shows how to clip and center cell content that exceeds the cell's
+    // boundaries using custom rendering logic.
+ 
     public class ClipCenterCellContent
     {
         public static readonly string DEST = "results/sandbox/tables/clip_center_cell_content.pdf";

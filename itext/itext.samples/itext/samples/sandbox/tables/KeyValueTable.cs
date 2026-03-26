@@ -9,6 +9,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // KeyValueTable.cs
+    //
+    // Demonstrates creating a simple two-column key-value pair table layout
+    // commonly used for displaying data in a structured format.
+ 
     public class KeyValueTable
     {
         public static readonly string DEST = "results/sandbox/tables/key_value_table.pdf";

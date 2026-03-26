@@ -8,9 +8,16 @@ using iText.Kernel.Pdf.Action;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Licensing.Base;
+using iText.Samples.Util;
 
 namespace iText.Samples.Sandbox.Typography.Gujarati
 {
+   
+    // GujaratiLink.cs
+    //
+    // Creates PDF hyperlinks with Gujarati text to demonstrate typography
+    // support in interactive link elements.
+ 
     public class GujaratiLink
     {
         public const String DEST = "results/sandbox/typography/GujaratiLink.pdf";
@@ -19,8 +26,8 @@ namespace iText.Samples.Sandbox.Typography.Gujarati
         public static void Main(String[] args)
         {
             // Load the license file to use typography features
-            using (Stream license = FileUtil.GetInputStreamForFile(
-                Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/itextkey-typography.json"))
+            String licensePath = LicenseUtil.GetPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+            using (Stream license = FileUtil.GetInputStreamForFile(licensePath))
             {
                 LicenseKey.LoadLicenseFile(license);
             }

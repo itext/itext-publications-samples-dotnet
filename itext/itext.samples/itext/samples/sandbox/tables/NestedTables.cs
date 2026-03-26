@@ -8,6 +8,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // NestedTables.cs
+    //
+    // Demonstrates how to add tables as content within cells of another
+    // table to create complex nested layouts.
+ 
     public class NestedTables
     {
         public static readonly string DEST = "results/sandbox/tables/nested_tables.pdf";

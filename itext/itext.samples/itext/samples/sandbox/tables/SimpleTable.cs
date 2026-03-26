@@ -7,6 +7,12 @@ using iText.Layout.Properties;
 
 namespace iText.Samples.Sandbox.Tables
 {
+   
+    // SimpleTable.cs
+    //
+    // Demonstrates the most basic table creation with a simple grid of
+    // cells containing plain text.
+ 
     public class SimpleTable
     {
         public static readonly string DEST = "results/sandbox/tables/simple_table.pdf";
