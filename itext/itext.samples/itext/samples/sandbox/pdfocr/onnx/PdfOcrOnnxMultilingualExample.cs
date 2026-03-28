@@ -10,19 +10,21 @@ using iText.Pdfocr.Onnx.Orientation;
 using iText.Pdfocr.Onnx.Recognition;
 
 namespace iText.Samples.Sandbox.Pdfocr.Onnx {
-    /// <summary>PdfOcrOnnxMultilingualExample.java</summary>
+    /// <summary>PdfOcrOnnxMultilingualExample.cs</summary>
     /// <remarks>
-    /// PdfOcrOnnxMultilingualExample.java
+    /// PdfOcrOnnxMultilingualExample.cs
     /// <para />
     /// This example demonstrates how to perform OCR using
     /// <c>onnxtr-parseq-multilingual-v1.onnx</c>
     /// recognition model for the given list of input images with different latin languages.
     /// <para />
-    ///  Also, this example demonstrates how to show the recognition result using
+    /// Also, this example demonstrates how to show the recognition result using
     /// <see cref="iText.Pdfocr.OcrPdfCreatorProperties"/>
     /// to set color for recognized text.
     /// <para />
-    /// Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
+    /// Required software: iText 9.6.0, pdfOCR-Onnx 5.0.0
+    /// (itext.pdfocr.onnx.cpu dependency to execute ONNX models on CPU or
+    /// itext.pdfocr.onnx.abstract and Microsoft.ML.OnnxRuntime.Gpu dependencies to execute ONNX models on GPU).
     /// </remarks>
     public class PdfOcrOnnxMultilingualExample {
         public const String DEST = "results/sandbox/pdfocr/onnx/PdfOcrOnnxMultilingualExample/result.pdf";
@@ -44,6 +46,7 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnx {
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
+
             new PdfOcrOnnxMultilingualExample().Manipulate();
         }
 
@@ -51,16 +54,21 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnx {
             IList<FileInfo> images = new List<FileInfo> { 
                 new FileInfo(FRENCH), new FileInfo(GERMAN), new FileInfo(SPANISH)
             };
+
             IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.Fast(FAST);
             IOrientationPredictor orientationPredictor = OnnxOrientationPredictor.MobileNetV3(MOBILENETV3);
+
             // This PARSeq model supports latin languages/symbols collected into Vocabulary.LATIN_EXTENDED.
-            IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.ParSeq(MULTILANG, Vocabulary.LATIN_EXTENDED
-                , 0);
-            using (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor
-                )) {
+            IRecognitionPredictor recognitionPredictor = 
+                OnnxRecognitionPredictor.ParSeq(MULTILANG, Vocabulary.LATIN_EXTENDED, 0);
+
+            using (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, orientationPredictor, 
+                       recognitionPredictor)) {
+
                 // Set green text color to show the recognition result. Skip that step for real usages.
-                OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties().SetTextLayerName("OnnxTR multilingual example"
-                    ).SetTextColor(ColorConstants.GREEN);
+                OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties()
+                    .SetTextLayerName("OnnxTR multilingual example").SetTextColor(ColorConstants.GREEN);
+
                 OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine, ocrPdfCreatorProperties);
                 pdfCreator.CreatePdf(images, new PdfWriter(DEST)).Close();
             }

@@ -52,7 +52,7 @@ namespace iText.Samples
         [Test, Description("{0}")]
         public virtual void Test()
         {
-            LicenseKeyReportingConfigurer.UseLocalReporting("./target/test/com/itextpdf/samples/report/");
+            LicenseKeyReportingConfigurer.UseLocalReporting("results/test/com/itextpdf/samples/report/");
             using (Stream license = FileUtil.GetInputStreamForFile(
                        Environment.GetEnvironmentVariable("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json"))
             {

@@ -9,25 +9,27 @@ using iText.Pdfocr.Onnx.Detection;
 using iText.Pdfocr.Onnx.Recognition;
 
 namespace iText.Samples.Sandbox.Pdfocr.Onnx {
-    /// <summary>PdfOcrOnnxTextPositioningExample.java</summary>
+    /// <summary>PdfOcrOnnxTextPositioningExample.cs</summary>
     /// <remarks>
-    /// PdfOcrOnnxTextPositioningExample.java
+    /// PdfOcrOnnxTextPositioningExample.cs
     /// <para />
     /// This example demonstrates how to define the way text is retrieved from ocr engine output
     /// specifying
     /// <see cref="iText.Pdfocr.Onnx.Text.TextPositioning"/>
     /// in
-    /// <see cref="OnnxEngineProperties"/>
+    /// <see cref="iText.Pdfocr.Onnx.OnnxEngineProperties"/>
     /// in order to perform OCR
     /// using provided
-    /// <see cref="OnnxOcrEngine"/>
+    /// <see cref="iText.Pdfocr.Onnx.OnnxOcrEngine"/>
     /// for the given images and save output to a PDF file.
     /// <para />
-    ///  Also, this example demonstrates how to show the recognition result using
+    /// Also, this example demonstrates how to show the recognition result using
     /// <see cref="iText.Pdfocr.OcrPdfCreatorProperties"/>
     /// to set color for recognized text.
     /// <para />
-    /// Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
+    /// Required software: iText 9.6.0, pdfOCR-Onnx 5.0.0
+    /// (itext.pdfocr.onnx.cpu dependency to execute ONNX models on CPU or
+    /// itext.pdfocr.onnx.abstract and Microsoft.ML.OnnxRuntime.Gpu dependencies to execute ONNX models on GPU).
     /// </remarks>
     public class PdfOcrOnnxTextPositioningExample {
         public const String DEST = "results/sandbox/pdfocr/onnx/PdfOcrOnnxTextPositioningExample/result.pdf";
@@ -43,20 +45,25 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnx {
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
+
             new PdfOcrOnnxTextPositioningExample().Manipulate();
         }
 
         protected internal virtual void Manipulate() {
             IList<FileInfo> images = new List<FileInfo> { new FileInfo(IMAGE) };
+
             IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.Fast(FAST);
             IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.CrnnVgg16(CRNNVGG16);
+
             // It is possible to specify text positioning mode through OnnxEngineProperties.
             // Default value is BY_WORDS_AND_LINES.
             using (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, null, recognitionPredictor, new 
                 OnnxEngineProperties().SetTextPositioning(iText.Pdfocr.Onnx.Text.TextPositioning.BY_WORDS))) {
+
                 // Set green text color to show the recognition result. Skip that step for real usages.
-                OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties().SetTextLayerName("OnnxTR by lines example"
-                    ).SetTextColor(ColorConstants.GREEN);
+                OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties()
+                    .SetTextLayerName("OnnxTR by lines example").SetTextColor(ColorConstants.GREEN);
+
                 OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine, ocrPdfCreatorProperties);
                 pdfCreator.CreatePdf(images, new PdfWriter(DEST)).Close();
             }
