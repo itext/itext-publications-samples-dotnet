@@ -11,13 +11,7 @@ namespace iText.Samples.Sandbox.Signatures.Validation {
         public static readonly string SRC = "../../../resources/pdfs"
                                             + "/super_official_document_signed.pdf";
 
-        public static readonly string DEST = "results/sandbox/signatures/validation/somepdf.pdf";
-        public static readonly string DUMMY_PDF = "../../../resources/validation/pdf/dummy.pdf";
-
         public static void Main(String[] args) {
-            FileInfo file = new FileInfo(DEST);
-            file.Directory.Create();
-            File.Copy(DUMMY_PDF, DEST, true);
             new LotlSimpleSignatureValidation().showCaseCacheInitializationAndSimpleUsage();
         }
 
