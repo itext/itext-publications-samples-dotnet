@@ -67,7 +67,11 @@ namespace iText.Samples
                 "iText.Samples.Sandbox.Pdfa.HelloPdfA2a",
                 "iText.Samples.Sandbox.Pdfa.PdfA1a",
                 "iText.Samples.Sandbox.Pdfa.PdfA1a_images",
-                "iText.Samples.Sandbox.Pdfa.PdfA3"
+                "iText.Samples.Sandbox.Pdfa.PdfA3",
+                "iText.Samples.Sandbox.Pdfa.PdfA4",
+                "iText.Samples.Sandbox.Pdfa.PdfUA2PdfA4",
+                "iText.Samples.Sandbox.Pdfa.SimpleWtpdf",
+                "iText.Samples.Sandbox.Pdfa.WtpdfWithUA2"
             });
 
         /**

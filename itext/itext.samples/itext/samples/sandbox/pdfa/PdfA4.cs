@@ -56,10 +56,6 @@ namespace iText.Samples.Sandbox.Pdfa
             document.Add(element);
 
             pdfDoc.Close();
-            if (null != new VeraPdfValidator().Validate(dest))
-            {
-                throw new Exception("Pdfdocument should be compliant");
-            }
         }
     }
 }
