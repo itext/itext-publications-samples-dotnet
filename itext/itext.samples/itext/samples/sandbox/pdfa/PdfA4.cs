@@ -56,6 +56,7 @@ namespace iText.Samples.Sandbox.Pdfa
             document.Add(element);
 
             pdfDoc.Close();
+            document.Close();
         }
     }
 }

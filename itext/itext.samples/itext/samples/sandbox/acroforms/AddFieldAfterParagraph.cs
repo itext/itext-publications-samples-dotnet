@@ -57,6 +57,7 @@ namespace iText.Samples.Sandbox.Acroforms
             doc.Add(new Paragraph("This paragraph follows the form field"));
 
             pdfDoc.Close();
+            doc.Close();
         }
 
         private class TextFieldRenderer : DivRenderer

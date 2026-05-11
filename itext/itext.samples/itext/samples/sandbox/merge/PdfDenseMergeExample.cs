@@ -51,6 +51,7 @@ namespace iText.Samples.Sandbox.Merge
             {
                 src.Close();
             }
+            doc.Close();
         }
 
         private static List<PdfDocument> InitSourceDocuments()

@@ -56,6 +56,7 @@ namespace iText.Samples.Sandbox.Stamper
             }
             
             pdfDoc.Close();
+            srcDoc.Close();
         }
     }
 }

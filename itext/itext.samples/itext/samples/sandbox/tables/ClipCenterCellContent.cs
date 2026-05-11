@@ -107,6 +107,7 @@ namespace iText.Samples.Sandbox.Tables
 
                 drawContext.GetCanvas().AddXObjectAt(xObject, occupiedArea.GetBBox().GetLeft(),
                     occupiedArea.GetBBox().GetBottom());
+                layoutCanvas.Close();
             }
         }
     }

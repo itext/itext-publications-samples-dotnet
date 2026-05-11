@@ -63,6 +63,7 @@ namespace iText.Samples.Sandbox.Objects
             doc.Add(para);
 
             pdfDocument.Close();
+            doc.Close();
         }
     }
 }

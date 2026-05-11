@@ -40,6 +40,7 @@ namespace iText.Samples.Sandbox.Interactive
             doc.Add(new Paragraph(link));
 
             pdfDoc.Close();
+            doc.Close();
         }
     }
 }

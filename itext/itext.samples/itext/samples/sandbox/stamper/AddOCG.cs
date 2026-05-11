@@ -115,6 +115,7 @@ namespace iText.Samples.Sandbox.Stamper
             canvas.EndLayer();
             
             pdfDoc.Close();
+            canvasModel.Close();
         }
     }
 }
