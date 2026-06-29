@@ -42,7 +42,7 @@
 	<PackageReference Include="itext.bouncy-castle-adapter" Version="9.7.0-SNAPSHOT" Condition="!Exists('..\..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
     <ProjectReference Include="..\..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj" Condition="Exists('..\..\..\..\itextcore\itext\itext.bouncy-castle-adapter\itext.bouncy-castle-adapter.csproj')" />
 
-    <PackageReference Include="itext.pdfcalligraph" Version="5.0.7-SNAPSHOT" Condition="!Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
+    <PackageReference Include="itext.pdfcalligraph" Version="5.1.0-SNAPSHOT" Condition="!Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
     <ProjectReference Include="..\..\..\..\typography\itext\itext.typography\itext.typography.csproj" Condition="Exists('..\..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
   </ItemGroup>
   <PropertyGroup>

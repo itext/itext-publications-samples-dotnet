@@ -78,7 +78,7 @@
     <PackageReference Include="itext.licensing.base" Version="4.2.7-SNAPSHOT" Condition="!Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
     <ProjectReference Include="..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj" Condition="Exists('..\..\..\licensekey\itext\itext.licensing.base\itext.licensing.base.csproj')" />
 
-    <PackageReference Include="itext.pdfcalligraph" Version="5.0.7-SNAPSHOT" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
+    <PackageReference Include="itext.pdfcalligraph" Version="5.1.0-SNAPSHOT" Condition="!Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
     <ProjectReference Include="..\..\..\typography\itext\itext.typography\itext.typography.csproj" Condition="Exists('..\..\..\typography\itext\itext.typography\itext.typography.csproj')" />
 
     <PackageReference Include="itext.pdfhtml" Version="6.3.3-SNAPSHOT" Condition="!Exists('..\..\..\html2pdf\itext\itext.html2pdf\itext.html2pdf.csproj')" />
