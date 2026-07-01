@@ -31,6 +31,7 @@ namespace iText.Samples.Sandbox.Tagging
             StringBuilder builder = new StringBuilder();
 
             Process(pdfDoc.GetStructTreeRoot(), builder);
+            pdfDoc.Close();
 
             CreateResultTxt(dest, builder.ToString());
         }

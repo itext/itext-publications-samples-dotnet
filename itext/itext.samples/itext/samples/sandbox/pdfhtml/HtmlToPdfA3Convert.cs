@@ -30,7 +30,7 @@ namespace iText.Samples.Sandbox.Pdfhtml
         {
             var htmlSource = SRC + "MixedContent.html";
             
-            var inputStream = new FileStream(SRC + "sRGB Color Space Profile.icm", FileMode.Open, FileAccess.Read);
+            var inputStream = new FileStream("../../../resources/data/sRGB_CS_profile.icm", FileMode.Open, FileAccess.Read);
             
             var converterProperties = new ConverterProperties();
             converterProperties.SetBaseUri(SRC);

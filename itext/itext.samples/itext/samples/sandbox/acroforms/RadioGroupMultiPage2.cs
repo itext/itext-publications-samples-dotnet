@@ -66,6 +66,7 @@ namespace iText.Samples.Sandbox.Acroforms
             form.AddField(radioGroup);
 
             pdfDoc.Close();
+            doc.Close();
         }
 
         private class AddRadioButtonRenderer : CellRenderer

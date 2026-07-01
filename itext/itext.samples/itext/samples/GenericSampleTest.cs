@@ -67,7 +67,11 @@ namespace iText.Samples
                 "iText.Samples.Sandbox.Pdfa.HelloPdfA2a",
                 "iText.Samples.Sandbox.Pdfa.PdfA1a",
                 "iText.Samples.Sandbox.Pdfa.PdfA1a_images",
-                "iText.Samples.Sandbox.Pdfa.PdfA3"
+                "iText.Samples.Sandbox.Pdfa.PdfA3",
+                "iText.Samples.Sandbox.Pdfa.PdfA4",
+                "iText.Samples.Sandbox.Pdfa.PdfUA2PdfA4",
+                "iText.Samples.Sandbox.Pdfa.SimpleWtpdf",
+                "iText.Samples.Sandbox.Pdfa.WtpdfWithUA2"
             });
 
         /**
@@ -120,8 +124,6 @@ namespace iText.Samples
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Appearance");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.TwoPhase");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Signaturetag");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.DummyOcspClient");
-            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.DummyResponse");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Pqc.PqcSignatureExample");
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Pdfocr.Onnx");
 
@@ -156,6 +158,12 @@ namespace iText.Samples
             
             // TODO DEVSIX-6508 remove unnecessary makeFormField calls
             searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Acroforms.RemoveXFA");
+            
+            // Ignored due to natural LOTL retrieval instability.
+            // Covered in com.itextpdf.crossmodule.sign.lotl.CompleteLotlValidationTest#simpleCompleteLotlValidationTest.
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.LotlSimpleSignatureValidation");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.LotlLoadEuropeanCertificatesFromDifferentSource");
+            searchConfig.IgnorePackageOrClass("iText.Samples.Sandbox.Signatures.Validation.LotlValidationThirdCountryTL");
             
             return GenerateTestsList(Assembly.GetExecutingAssembly(), searchConfig);
         }

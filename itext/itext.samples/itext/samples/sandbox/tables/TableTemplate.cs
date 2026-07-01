@@ -65,6 +65,7 @@ namespace iText.Samples.Sandbox.Tables
             }
 
             pdfDoc.Close();
+            canvas.Close();
         }
     }
 }

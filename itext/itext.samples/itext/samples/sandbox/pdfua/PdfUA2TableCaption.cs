@@ -66,6 +66,7 @@ namespace iText.Samples.Sandbox.Pdfua {
                     }
 
                     document.Add(captionTopTable);
+                    document.Close();
                 }
             }
             catch (System.IO.IOException e) {

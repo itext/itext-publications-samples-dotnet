@@ -50,6 +50,7 @@ namespace iText.Samples.Sandbox.Svg
                 doc.Add(image);
                 
                 doc.Add(new Paragraph("This is some text added after the SVG image."));
+                doc.Close();
             }
         }
     }

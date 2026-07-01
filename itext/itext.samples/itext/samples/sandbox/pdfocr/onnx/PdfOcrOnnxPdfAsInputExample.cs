@@ -6,15 +6,17 @@ using iText.Pdfocr.Onnx.Detection;
 using iText.Pdfocr.Onnx.Recognition;
 
 namespace iText.Samples.Sandbox.Pdfocr.Onnx {
-    /// <summary>PdfOcrOnnxPdfAsInputExample.java</summary>
+    /// <summary>PdfOcrOnnxPdfAsInputExample.cs</summary>
     /// <remarks>
-    /// PdfOcrOnnxPdfAsInputExample.java
+    /// PdfOcrOnnxPdfAsInputExample.cs
     /// <para />
     /// This example demonstrates how to perform OCR of all images in an input PDF file
     /// and generate searchable PDF using provided
-    /// <see cref="OnnxOcrEngine"/>.
+    /// <see cref="iText.Pdfocr.Onnx.OnnxOcrEngine"/>.
     /// <para />
-    /// Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
+    /// Required software: iText 9.6.0, pdfOCR-Onnx 5.0.0
+    /// (itext.pdfocr.onnx.cpu dependency to execute ONNX models on CPU or
+    /// itext.pdfocr.onnx.abstract and Microsoft.ML.OnnxRuntime.Gpu dependencies to execute ONNX models on GPU).
     /// </remarks>
     public class PdfOcrOnnxPdfAsInputExample {
         public const String DEST = "results/sandbox/pdfocr/onnx/PdfOcrOnnxPdfAsInputExample/result.pdf";
@@ -30,12 +32,14 @@ namespace iText.Samples.Sandbox.Pdfocr.Onnx {
         public static void Main(String[] args) {
             FileInfo file = new FileInfo(DEST);
             file.Directory.Create();
+
             new PdfOcrOnnxPdfAsInputExample().Manipulate();
         }
 
         protected internal virtual void Manipulate() {
             IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.Fast(FAST);
             IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.CrnnVgg16(CRNNVGG16);
+
             using (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, recognitionPredictor)) {
                 OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine);
                 pdfCreator.MakePdfSearchable(new FileInfo(PDF), new FileInfo(DEST));
