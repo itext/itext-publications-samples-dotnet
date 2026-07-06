@@ -43,10 +43,11 @@ namespace iText.Samples.Sandbox.Graphics
         {
             doc.Add(new Paragraph("The \"addLinearGradientAsElementBackground\" starts here."));
 
-            AbstractLinearGradientBuilder gradientBuilder = new StrategyBasedLinearGradientBuilder()
-                    .AddColorStop(new GradientColorStop(ColorConstants.RED.GetColorValue()))
-                    .AddColorStop(new GradientColorStop(ColorConstants.GREEN.GetColorValue()))
-                    .AddColorStop(new GradientColorStop(ColorConstants.BLUE.GetColorValue()));
+            StrategyBasedLinearGradientBuilder gradientBuilder = new StrategyBasedLinearGradientBuilder();
+            gradientBuilder
+                    .AddStopColor(new GradientColorStop(ColorConstants.RED.GetColorValue()))
+                    .AddStopColor(new GradientColorStop(ColorConstants.GREEN.GetColorValue()))
+                    .AddStopColor(new GradientColorStop(ColorConstants.BLUE.GetColorValue()));
             BackgroundImage backgroundImage = new BackgroundImage.Builder().SetLinearGradientBuilder(gradientBuilder).Build();
 
             if (backgroundImage.IsBackgroundSpecified())
@@ -74,11 +75,11 @@ namespace iText.Samples.Sandbox.Graphics
         {
             // The below such linear gradient spans across the whole page and therefore color created from it will be
             // different based at the location of the page
-            AbstractLinearGradientBuilder gradientBuilder = new LinearGradientBuilder()
+            AbstractGradientBuilder<Point> gradientBuilder = new LinearGradientBuilder()
                     .SetGradientVector(PageSize.A4.GetLeft(), PageSize.A4.GetBottom(), PageSize.A4.GetRight(), PageSize.A4.GetTop())
-                    .AddColorStop(new GradientColorStop(ColorConstants.RED.GetColorValue()))
-                    .AddColorStop(new GradientColorStop(ColorConstants.PINK.GetColorValue()))
-                    .AddColorStop(new GradientColorStop(ColorConstants.BLUE.GetColorValue()));
+                    .AddStopColor(new GradientColorStop(ColorConstants.RED.GetColorValue()))
+                    .AddStopColor(new GradientColorStop(ColorConstants.PINK.GetColorValue()))
+                    .AddStopColor(new GradientColorStop(ColorConstants.BLUE.GetColorValue()));
 
             Color gradientColor = gradientBuilder.BuildColor(PageSize.A4.Clone(), null, doc.GetPdfDocument());
 

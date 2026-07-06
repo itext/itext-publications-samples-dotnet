@@ -40,12 +40,12 @@ namespace iText.Samples.Sandbox.Graphics
 
         private void AddLinearGradientITextAPIApproach(PdfDocument pdfDoc)
         {
-            AbstractLinearGradientBuilder gradientBuilder = new StrategyBasedLinearGradientBuilder()
+            AbstractGradientBuilder<Point> gradientBuilder = new StrategyBasedLinearGradientBuilder()
                     .SetGradientDirectionAsStrategy(StrategyBasedLinearGradientBuilder.GradientStrategy.TO_TOP_RIGHT)
-                    .SetSpreadMethod(GradientSpreadMethod.PAD)
-                    .AddColorStop(new GradientColorStop(ColorConstants.CYAN.GetColorValue()))
-                    .AddColorStop(new GradientColorStop(ColorConstants.GREEN.GetColorValue()))
-                    .AddColorStop(new GradientColorStop(new float[] {1f, 0f, 0f}, 0.5f, GradientColorStop.OffsetType.RELATIVE));
+                    .SetSpread(GradientSpreadMethod.PAD)
+                    .AddStopColor(new GradientColorStop(ColorConstants.CYAN.GetColorValue()))
+                    .AddStopColor(new GradientColorStop(ColorConstants.GREEN.GetColorValue()))
+                    .AddStopColor(new GradientColorStop(new float[] {1f, 0f, 0f}, 0.5f, GradientColorStop.OffsetType.RELATIVE));
 
             AffineTransform canvasTransform = AffineTransform.GetTranslateInstance(50, -50);
             canvasTransform.Scale(0.8, 1.1);
@@ -81,20 +81,20 @@ namespace iText.Samples.Sandbox.Graphics
         private void AddLinearGradientDirectCoordinatesApproach(PdfDocument pdfDoc) 
         {
             Rectangle targetBoundingBox = new Rectangle(50f, 450f, 300f, 300f);
-            AbstractLinearGradientBuilder gradientBuilder = new LinearGradientBuilder()
+            AbstractGradientBuilder<Point> gradientBuilder = new LinearGradientBuilder()
                     .SetGradientVector(targetBoundingBox.GetLeft() + 100f, targetBoundingBox.GetBottom() + 100f,
                             targetBoundingBox.GetRight() - 100f, targetBoundingBox.GetTop() - 100f)
-                    .SetSpreadMethod(GradientSpreadMethod.REPEAT)
+                    .SetSpread(GradientSpreadMethod.REPEAT)
 
                     // For the RELATIVE offset type "0" value means the target vector start and the "1" value means the target vector end
-                    .AddColorStop(new GradientColorStop(ColorConstants.BLUE.GetColorValue(), 0.5, GradientColorStop.OffsetType.RELATIVE))
-                    .AddColorStop(new GradientColorStop(ColorConstants.GREEN.GetColorValue(), 1, GradientColorStop.OffsetType.RELATIVE));
+                    .AddStopColor(new GradientColorStop(ColorConstants.BLUE.GetColorValue(), 0.5, GradientColorStop.OffsetType.RELATIVE))
+                    .AddStopColor(new GradientColorStop(ColorConstants.GREEN.GetColorValue(), 1, GradientColorStop.OffsetType.RELATIVE));
 
             GeneratePdf(pdfDoc, null, gradientBuilder, targetBoundingBox);
         }
 
         private void GeneratePdf(PdfDocument pdfDocument, AffineTransform transform,
-                AbstractLinearGradientBuilder gradientBuilder, Rectangle rectangleToDraw)
+                AbstractGradientBuilder<Point> gradientBuilder, Rectangle rectangleToDraw)
         {
             PdfCanvas canvas = new PdfCanvas(pdfDocument.AddNewPage());
 
