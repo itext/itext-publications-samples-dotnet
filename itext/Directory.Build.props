@@ -1,0 +1,20 @@
+<Project>
+    <!-- Build.props file evaluated before .csproj file processing -->
+    <PropertyGroup Label="Common">
+        <!-- SDK-generated assembly attributes -->
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
+        <!-- Binding redirects -->
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+
+        <!-- Output -->
+        <OutputType>library</OutputType>
+
+        <!-- TODO DEVSIX-9075: remove this suppression -->
+        <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+
+        <RootNamespace/>
+    </PropertyGroup>
+
+</Project>
