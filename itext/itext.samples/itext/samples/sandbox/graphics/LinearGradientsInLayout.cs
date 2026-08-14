@@ -48,7 +48,7 @@ namespace iText.Samples.Sandbox.Graphics
                     .AddStopColor(new GradientColorStop(ColorConstants.RED.GetColorValue()))
                     .AddStopColor(new GradientColorStop(ColorConstants.GREEN.GetColorValue()))
                     .AddStopColor(new GradientColorStop(ColorConstants.BLUE.GetColorValue()));
-            BackgroundImage backgroundImage = new BackgroundImage.Builder().SetLinearGradientBuilder(gradientBuilder).Build();
+            BackgroundImage backgroundImage = new BackgroundImage.Builder().SetGradientBuilder(gradientBuilder).Build();
 
             if (backgroundImage.IsBackgroundSpecified())
             {
@@ -75,7 +75,7 @@ namespace iText.Samples.Sandbox.Graphics
         {
             // The below such linear gradient spans across the whole page and therefore color created from it will be
             // different based at the location of the page
-            AbstractGradientBuilder<Point> gradientBuilder = new LinearGradientBuilder()
+            IGradientBuilder gradientBuilder = new LinearGradientBuilder()
                     .SetGradientVector(PageSize.A4.GetLeft(), PageSize.A4.GetBottom(), PageSize.A4.GetRight(), PageSize.A4.GetTop())
                     .AddStopColor(new GradientColorStop(ColorConstants.RED.GetColorValue()))
                     .AddStopColor(new GradientColorStop(ColorConstants.PINK.GetColorValue()))

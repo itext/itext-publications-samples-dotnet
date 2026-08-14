@@ -40,7 +40,7 @@ namespace iText.Samples.Sandbox.Graphics
 
         private void AddLinearGradientITextAPIApproach(PdfDocument pdfDoc)
         {
-            AbstractGradientBuilder<Point> gradientBuilder = new StrategyBasedLinearGradientBuilder()
+            IGradientBuilder gradientBuilder = new StrategyBasedLinearGradientBuilder()
                     .SetGradientDirectionAsStrategy(StrategyBasedLinearGradientBuilder.GradientStrategy.TO_TOP_RIGHT)
                     .SetSpread(GradientSpreadMethod.PAD)
                     .AddStopColor(new GradientColorStop(ColorConstants.CYAN.GetColorValue()))
@@ -81,7 +81,7 @@ namespace iText.Samples.Sandbox.Graphics
         private void AddLinearGradientDirectCoordinatesApproach(PdfDocument pdfDoc) 
         {
             Rectangle targetBoundingBox = new Rectangle(50f, 450f, 300f, 300f);
-            AbstractGradientBuilder<Point> gradientBuilder = new LinearGradientBuilder()
+            IGradientBuilder gradientBuilder = new LinearGradientBuilder()
                     .SetGradientVector(targetBoundingBox.GetLeft() + 100f, targetBoundingBox.GetBottom() + 100f,
                             targetBoundingBox.GetRight() - 100f, targetBoundingBox.GetTop() - 100f)
                     .SetSpread(GradientSpreadMethod.REPEAT)
@@ -94,7 +94,7 @@ namespace iText.Samples.Sandbox.Graphics
         }
 
         private void GeneratePdf(PdfDocument pdfDocument, AffineTransform transform,
-                AbstractGradientBuilder<Point> gradientBuilder, Rectangle rectangleToDraw)
+                IGradientBuilder gradientBuilder, Rectangle rectangleToDraw)
         {
             PdfCanvas canvas = new PdfCanvas(pdfDocument.AddNewPage());
 
