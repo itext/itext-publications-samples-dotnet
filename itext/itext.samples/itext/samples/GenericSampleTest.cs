@@ -27,8 +27,7 @@ namespace iText.Samples
             "iText.Samples.Sandbox.Signatures.SignatureExample",
             "iText.Samples.Sandbox.Signatures.Pqc.MLDSA",
             "iText.Samples.Sandbox.Signatures.Pqc.SLHDSA",
-            "iText.Samples.Sandbox.Signatures.Pqc.FNDSA",
-            "iText.Samples.Sandbox.Signatures.Pqc.Picnic"
+            "iText.Samples.Sandbox.Signatures.Pqc.FNDSA"
         };
 
         /**
