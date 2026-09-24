@@ -14,6 +14,6 @@
     <ItemGroup>
         <ProjectReference Include="..\itext.publications.signing-examples.simple\itext.publications.signing-examples.simple.csproj" />
 
-        <PackageReference Include="itext" Version="9.8.0-SNAPSHOT" />
+        <PackageReference Include="itext" Version="9.9.0-SNAPSHOT" />
     </ItemGroup>
 </Project>
